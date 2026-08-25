@@ -1,0 +1,16 @@
+{
+  "zip": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/patched_bima/ota_star-air_1.0.12.83_BIMA.zip",
+  "digest": "4346da917424b35d4cfc4ef559826584",
+  "fileSize": 4542401,
+  "latestVersion": "1.0.12.99",
+  "bins": {
+    "best1600_watch_bth.bin": {
+      "size": 1341116,
+      "md5": "05d0138bb6969ce4c25ceb0da5ec07a4"
+    },
+    "platform_tester.bin": {
+      "size": 6771708,
+      "md5": "9f4289fc5d07a4d83bcb59fa94fd5052"
+    }
+  }
+}

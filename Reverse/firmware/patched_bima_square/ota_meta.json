@@ -1,0 +1,17 @@
+{
+  "zip": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/patched_bima_square/ota_star-air_1.0.12.83_BIMA_square.zip",
+  "digest": "5fcc21d9c5d223ed2856ca9ee96cf3ac",
+  "fileSize": 4529585,
+  "latestVersion": "1.0.12.99",
+  "note": "BIMA rebrand + StandBy dock circles->squares (6x radius CIRCLE->0)",
+  "bins": {
+    "best1600_watch_bth.bin": {
+      "size": 1341116,
+      "md5": "05d0138bb6969ce4c25ceb0da5ec07a4"
+    },
+    "platform_tester.bin": {
+      "size": 6771708,
+      "md5": "2f292f8927071a93873931ba9f0f52fc"
+    }
+  }
+}
