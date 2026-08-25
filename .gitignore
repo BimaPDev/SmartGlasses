@@ -5,14 +5,19 @@
 *.apk
 *.xapk
 
-# Decompiled APKs, firmware dumps, and local Python env (too many files for GitHub)
+# Decompiled APKs and local Python env (too many files for GitHub)
 Reverse/extracted/
 Reverse/extracted2/
 Reverse/jadx-intl-2.40.51/
-Reverse/firmware/
 Reverse/tools/venv/
 __pycache__/
 *.pyc
+
+# Firmware analysis dumps (track .bin images only)
+Reverse/firmware/analysis/
+Reverse/firmware/ghidra/
+Reverse/firmware/export/
+Reverse/firmware/extracted_assets/
 
 .swiftpm/
 Packages/
