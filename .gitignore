@@ -5,6 +5,15 @@
 *.apk
 *.xapk
 
+# Decompiled APKs, firmware dumps, and local Python env (too many files for GitHub)
+Reverse/extracted/
+Reverse/extracted2/
+Reverse/jadx-intl-2.40.51/
+Reverse/firmware/
+Reverse/tools/venv/
+__pycache__/
+*.pyc
+
 .swiftpm/
 Packages/
 *.xcodeproj/project.xcworkspace/
