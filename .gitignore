@@ -1,0 +1,22 @@
+.DS_Store
+.build/
+
+# Android packages (too large for GitHub; keep local only)
+*.apk
+*.xapk
+
+.swiftpm/
+Packages/
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# Ghidra headless project (rebuilt by firmware/ghidra/import_bth.sh)
+Reverse/firmware/ghidra/project/
+Reverse/firmware/ghidra/analyzeHeadless.log
+
+# Unlazy session ledgers, leases, and hook state (Leonxlnx/unlazy)
+.unlazy/
+.unlazy-hook-state.json

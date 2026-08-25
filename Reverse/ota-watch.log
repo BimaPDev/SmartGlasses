@@ -1,0 +1,225 @@
+2026-08-22 05:28:16 watching 10 identities x 3 hosts, every 900s
+2026-08-22 05:28:16 hits -> /Users/bimap/Documents/Coding/SmartGlasses/Reverse/ota-hit.jsonl
+2026-08-22 05:28:16 bins -> /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware
+2026-08-22 05:28:17 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 05:28:18 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12.88 -> no update
+2026-08-22 05:28:20 xr-nbs-global.myvu.cn/ar-ota XGA010C Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 05:28:21 xr-nbs-global.myvu.cn/ar-ota Air 1.0.12 -> no update
+2026-08-22 05:28:22 xr-nbs-global.myvu.cn/ar-ota XGA020C 1.0.0 -> no update
+2026-08-22 05:28:23 xr-nbs-global.myvu.cn/ar-ota XGZ030C 1.0.0 -> no update
+2026-08-22 05:28:24 xr-nbs-global.myvu.cn/ar-ota XGG010C 1.0.0 -> no update
+2026-08-22 05:28:25 xr-nbs-global.myvu.cn/ar-ota Air2 1.0.0 -> no update
+2026-08-22 05:28:26 xr-nbs-global.myvu.cn/ar-ota View 1.0.0 -> no update
+2026-08-22 05:28:27 xr-nbs-global.myvu.cn/ar-ota Snap 1.0.0 -> no update
+2026-08-22 05:28:29 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 05:28:30 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12.88 -> no update
+2026-08-22 05:28:32 xr-nbs.myvu.cn/ar-ota XGA010C Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 05:28:33 xr-nbs.myvu.cn/ar-ota Air 1.0.12 -> no update
+2026-08-22 05:28:35 xr-nbs.myvu.cn/ar-ota XGA020C 1.0.0 -> no update
+2026-08-22 05:28:36 xr-nbs.myvu.cn/ar-ota XGZ030C 1.0.0 -> no update
+2026-08-22 05:28:39 xr-nbs.myvu.cn/ar-ota XGG010C 1.0.0 -> no update
+2026-08-22 05:28:59 xr-nbs.myvu.cn/ar-ota Air2 1.0.0 ERR <urlopen error [Errno 51] Network is unreachable>
+2026-08-22 05:28:59 xr-nbs.myvu.cn/ar-ota View 1.0.0 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs.myvu.cn/ar-ota Snap 1.0.0 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12.88 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota XGA010C Flyme XR 1.0.12.88.20250217_Air_FR ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota Air 1.0.12 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota XGA020C 1.0.0 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota XGZ030C 1.0.0 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota XGG010C 1.0.0 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota Air2 1.0.0 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota View 1.0.0 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 xr-nbs-uat.myvu.cn/ar-ota Snap 1.0.0 ERR <urlopen error [Errno 8] nodename nor servname provided, or not known>
+2026-08-22 05:28:59 cycle done, 0 hit(s); sleeping 900s
+2026-08-22 05:40:14 watching 10 identities x 3 hosts, every 900s
+2026-08-22 05:40:14 hits -> /Users/bimap/Documents/Coding/SmartGlasses/Reverse/ota-hit.jsonl
+2026-08-22 05:40:14 bins -> /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware
+2026-08-22 05:40:16 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 05:40:17 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12.88 -> no update
+2026-08-22 05:40:19 xr-nbs-global.myvu.cn/ar-ota XGA010C Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 05:40:20 xr-nbs-global.myvu.cn/ar-ota Air 1.0.12 -> no update
+2026-08-22 05:40:21 xr-nbs-global.myvu.cn/ar-ota XGA020C 1.0.0 -> no update
+2026-08-22 05:40:22 xr-nbs-global.myvu.cn/ar-ota XGZ030C 1.0.0 -> no update
+2026-08-22 05:40:23 xr-nbs-global.myvu.cn/ar-ota XGG010C 1.0.0 -> no update
+2026-08-22 05:40:24 xr-nbs-global.myvu.cn/ar-ota Air2 1.0.0 -> no update
+2026-08-22 05:40:25 xr-nbs-global.myvu.cn/ar-ota View 1.0.0 -> no update
+2026-08-22 05:40:27 xr-nbs-global.myvu.cn/ar-ota Snap 1.0.0 -> no update
+2026-08-22 05:40:28 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 05:40:29 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12.88 -> no update
+2026-08-22 05:40:31 xr-nbs.myvu.cn/ar-ota XGA010C Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 05:40:32 xr-nbs.myvu.cn/ar-ota Air 1.0.12 -> no update
+2026-08-22 05:40:33 xr-nbs.myvu.cn/ar-ota XGA020C 1.0.0 -> no update
+2026-08-22 05:40:34 xr-nbs.myvu.cn/ar-ota XGZ030C 1.0.0 -> no update
+2026-08-22 05:40:36 xr-nbs.myvu.cn/ar-ota XGG010C 1.0.0 -> no update
+2026-08-22 05:40:37 xr-nbs.myvu.cn/ar-ota Air2 1.0.0 -> no update
+2026-08-22 05:40:39 xr-nbs.myvu.cn/ar-ota View 1.0.0 -> no update
+2026-08-22 05:40:40 xr-nbs.myvu.cn/ar-ota Snap 1.0.0 -> no update
+2026-08-22 05:40:42 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 05:40:43 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12.88 -> no update
+2026-08-22 05:40:44 xr-nbs-uat.myvu.cn/ar-ota XGA010C Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 05:40:45 xr-nbs-uat.myvu.cn/ar-ota Air 1.0.12 -> no update
+2026-08-22 05:40:46 xr-nbs-uat.myvu.cn/ar-ota XGA020C 1.0.0 -> no update
+2026-08-22 05:40:47 xr-nbs-uat.myvu.cn/ar-ota XGZ030C 1.0.0 -> no update
+2026-08-22 05:40:48 xr-nbs-uat.myvu.cn/ar-ota XGG010C 1.0.0 -> no update
+2026-08-22 05:40:49 xr-nbs-uat.myvu.cn/ar-ota Air2 1.0.0 -> no update
+2026-08-22 05:40:50 xr-nbs-uat.myvu.cn/ar-ota View 1.0.0 -> no update
+2026-08-22 05:40:53 xr-nbs-uat.myvu.cn/ar-ota Snap 1.0.0 -> no update
+2026-08-22 05:40:53 cycle done, 0 hit(s); sleeping 900s
+2026-08-22 05:50:17 watching 7 identities x 3 hosts, every 900s
+2026-08-22 05:50:17 hits -> /Users/bimap/Documents/Coding/SmartGlasses/Reverse/ota-hit.jsonl
+2026-08-22 05:50:17 bins -> /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware
+2026-08-22 05:50:18 xr-nbs-global.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 05:50:19 xr-nbs-global.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 05:50:20 xr-nbs-global.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 05:50:21 xr-nbs-global.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 05:50:22 xr-nbs-global.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 05:50:23 xr-nbs-global.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 05:50:24 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 05:50:26 xr-nbs.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 05:50:27 xr-nbs.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 05:50:28 xr-nbs.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 05:50:29 xr-nbs.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 05:50:31 xr-nbs.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 05:50:32 xr-nbs.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 05:50:34 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 05:50:35 xr-nbs-uat.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 05:50:36 xr-nbs-uat.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 05:50:37 xr-nbs-uat.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 05:50:39 xr-nbs-uat.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 05:50:39 xr-nbs-uat.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 05:50:41 xr-nbs-uat.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 05:50:42 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 05:50:42 cycle done, 0 hit(s); sleeping 900s
+2026-08-22 06:05:43 xr-nbs-global.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 06:05:44 xr-nbs-global.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 06:05:45 xr-nbs-global.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 06:05:46 xr-nbs-global.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 06:05:47 xr-nbs-global.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 06:05:48 xr-nbs-global.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 06:05:49 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 06:05:50 xr-nbs.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 06:05:52 xr-nbs.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 06:05:54 xr-nbs.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 06:05:55 xr-nbs.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 06:05:57 xr-nbs.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 06:05:58 xr-nbs.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 06:05:59 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 06:06:02 xr-nbs-uat.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 06:06:03 xr-nbs-uat.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 06:06:04 xr-nbs-uat.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 06:06:06 xr-nbs-uat.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 06:06:07 xr-nbs-uat.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 06:06:08 xr-nbs-uat.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 06:06:09 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 06:06:09 cycle done, 0 hit(s); sleeping 900s
+2026-08-22 07:05:39 xr-nbs-global.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:05:40 xr-nbs-global.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:05:41 xr-nbs-global.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:05:42 xr-nbs-global.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:05:43 xr-nbs-global.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:05:44 xr-nbs-global.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:05:45 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:05:47 xr-nbs.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:05:48 xr-nbs.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:05:50 xr-nbs.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:05:51 xr-nbs.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:05:52 xr-nbs.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:05:53 xr-nbs.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:05:55 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:05:56 xr-nbs-uat.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:05:58 xr-nbs-uat.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:05:59 xr-nbs-uat.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:06:00 xr-nbs-uat.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:06:01 xr-nbs-uat.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:06:03 xr-nbs-uat.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:06:04 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:06:04 cycle done, 0 hit(s); sleeping 900s
+2026-08-22 07:21:06 xr-nbs-global.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:21:06 xr-nbs-global.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:21:08 xr-nbs-global.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:21:11 xr-nbs-global.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:21:12 xr-nbs-global.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:21:13 xr-nbs-global.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:21:14 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:21:16 xr-nbs.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:21:17 xr-nbs.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:21:18 xr-nbs.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:21:28 xr-nbs.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:21:30 xr-nbs.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:21:31 xr-nbs.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:21:33 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:21:35 xr-nbs-uat.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:21:37 xr-nbs-uat.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:21:38 xr-nbs-uat.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:21:39 xr-nbs-uat.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:21:41 xr-nbs-uat.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:21:42 xr-nbs-uat.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:21:43 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:21:43 cycle done, 0 hit(s); sleeping 900s
+2026-08-22 07:36:45 xr-nbs-global.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:36:46 xr-nbs-global.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:36:47 xr-nbs-global.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:36:48 xr-nbs-global.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:36:49 xr-nbs-global.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:36:50 xr-nbs-global.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:36:51 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:36:52 xr-nbs.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:36:52 xr-nbs.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:36:53 xr-nbs.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:36:54 xr-nbs.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:36:55 xr-nbs.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:36:56 xr-nbs.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:36:56 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:36:58 xr-nbs-uat.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:37:00 xr-nbs-uat.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:37:01 xr-nbs-uat.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:37:02 xr-nbs-uat.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:37:04 xr-nbs-uat.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:37:04 xr-nbs-uat.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:37:06 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:37:06 cycle done, 0 hit(s); sleeping 900s
+2026-08-22 07:52:07 xr-nbs-global.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:52:08 xr-nbs-global.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:52:10 xr-nbs-global.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:52:10 xr-nbs-global.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:52:12 xr-nbs-global.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:52:13 xr-nbs-global.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:52:14 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:52:15 xr-nbs.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:52:17 xr-nbs.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:52:18 xr-nbs.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:52:19 xr-nbs.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:52:21 xr-nbs.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:52:22 xr-nbs.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:52:23 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:52:26 xr-nbs-uat.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 07:52:27 xr-nbs-uat.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 07:52:28 xr-nbs-uat.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 07:52:30 xr-nbs-uat.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 07:52:31 xr-nbs-uat.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 07:52:32 xr-nbs-uat.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 07:52:33 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 07:52:33 cycle done, 0 hit(s); sleeping 900s
+2026-08-22 08:12:22 xr-nbs-global.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 08:12:23 xr-nbs-global.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 08:12:24 xr-nbs-global.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 08:12:25 xr-nbs-global.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 08:12:27 xr-nbs-global.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 08:12:28 xr-nbs-global.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 08:12:29 xr-nbs-global.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 08:12:31 xr-nbs.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 08:12:32 xr-nbs.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 08:13:04 xr-nbs.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 08:13:05 xr-nbs.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 08:13:06 xr-nbs.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 08:13:07 xr-nbs.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 08:13:08 xr-nbs.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 08:13:10 xr-nbs-uat.myvu.cn/ar-ota Star Air Flyme XR 1.0.12.88.20250217_Air_FR -> no update
+2026-08-22 08:13:11 xr-nbs-uat.myvu.cn/ar-ota Star Air 1.0.12.88 -> no update
+2026-08-22 08:13:12 xr-nbs-uat.myvu.cn/ar-ota Star Air 0 -> no update
+2026-08-22 08:13:13 xr-nbs-uat.myvu.cn/ar-ota StarV Air2 1.0.0 -> no update
+2026-08-22 08:13:14 xr-nbs-uat.myvu.cn/ar-ota StarV Snap 1.0.0 -> no update
+2026-08-22 08:13:16 xr-nbs-uat.myvu.cn/ar-ota StarV View 1.0.0 -> no update
+2026-08-22 08:13:17 xr-nbs-uat.myvu.cn/ar-ota XGA010C 1.0.12 -> no update
+2026-08-22 08:13:17 cycle done, 0 hit(s); sleeping 900s

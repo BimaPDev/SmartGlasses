@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A100000000000000000001 /* MyvuCore in Frameworks */ = {isa = PBXBuildFile; productRef = C100000000000000000001 /* MyvuCore */; };
+		A100000000000000000002 /* MyvuNav in Frameworks */ = {isa = PBXBuildFile; productRef = C100000000000000000002 /* MyvuNav */; };
+		A100000000000000000003 /* MyvuAI in Frameworks */ = {isa = PBXBuildFile; productRef = C100000000000000000003 /* MyvuAI */; };
+		A100000000000000000004 /* MyvuWeather in Frameworks */ = {isa = PBXBuildFile; productRef = C100000000000000000004 /* MyvuWeather */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D100000000000000000001 /* MyvuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyvuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E100000000000000000001 /* MyvuDemo */ = {isa = PBXFileSystemSynchronizedRootGroup; path = MyvuDemo; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F100000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000000000000000001 /* MyvuCore in Frameworks */,
+				A100000000000000000002 /* MyvuNav in Frameworks */,
+				A100000000000000000003 /* MyvuAI in Frameworks */,
+				A100000000000000000004 /* MyvuWeather in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B100000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				E100000000000000000001 /* MyvuDemo */,
+				B100000000000000000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B100000000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D100000000000000000001 /* MyvuDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1100000000000000000001 /* MyvuDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2100000000000000000002 /* Build configuration list for PBXNativeTarget "MyvuDemo" */;
+			buildPhases = (
+				3100000000000000000001 /* Sources */,
+				F100000000000000000001 /* Frameworks */,
+				4100000000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E100000000000000000001 /* MyvuDemo */,
+			);
+			name = MyvuDemo;
+			packageProductDependencies = (
+				C100000000000000000001 /* MyvuCore */,
+				C100000000000000000002 /* MyvuNav */,
+				C100000000000000000003 /* MyvuAI */,
+				C100000000000000000004 /* MyvuWeather */,
+			);
+			productName = MyvuDemo;
+			productReference = D100000000000000000001 /* MyvuDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0100000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					1100000000000000000001 = {
+						CreatedOnToolsVersion = 26.4;
+					};
+				};
+			};
+			buildConfigurationList = 2100000000000000000001 /* Build configuration list for PBXProject "MyvuDemo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B100000000000000000001;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9100000000000000000001 /* XCLocalSwiftPackageReference "../.." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B100000000000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1100000000000000000001 /* MyvuDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4100000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3100000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5100000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5100000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5100000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connects to your MYVU glasses.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Keeps turn-by-turn running on the glasses when the phone is locked or another app is open.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Used for the weather panel and turn-by-turn navigation on the glasses.";
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.myvu.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5100000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connects to your MYVU glasses.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Keeps turn-by-turn running on the glasses when the phone is locked or another app is open.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Used for the weather panel and turn-by-turn navigation on the glasses.";
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.myvu.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2100000000000000000001 /* Build configuration list for PBXProject "MyvuDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5100000000000000000001 /* Debug */,
+				5100000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2100000000000000000002 /* Build configuration list for PBXNativeTarget "MyvuDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5100000000000000000003 /* Debug */,
+				5100000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9100000000000000000001 /* XCLocalSwiftPackageReference "../.." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C100000000000000000001 /* MyvuCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyvuCore;
+		};
+		C100000000000000000002 /* MyvuNav */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyvuNav;
+		};
+		C100000000000000000003 /* MyvuAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyvuAI;
+		};
+		C100000000000000000004 /* MyvuWeather */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyvuWeather;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0100000000000000000001 /* Project object */;
+}

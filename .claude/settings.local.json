@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export PATH=\"/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/usr/bin:/bin\")",
+      "Bash(cd /Users/bimap/Documents/Coding/SmartGlasses/Reverse/jadx-intl-2.40.51/sources)",
+      "Bash(echo \"=== httplib: OkHttpClient builder + interceptors \\(HttpUtils m\\(\\)/j\\(\\), HttpInstance\\) ===\")",
+      "Bash(sed -n '36,58p' com/upuphone/star/httplib/HttpUtils.java)",
+      "Bash(echo \"--- HttpInstance ---\")"
+    ]
+  }
+}

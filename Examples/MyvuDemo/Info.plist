@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- UIBackgroundModes has no INFOPLIST_KEY_ equivalent, so it has to live in
+	     a real file. GENERATE_INFOPLIST_FILE stays on and merges the rest of the
+	     keys into this one. Without bluetooth-central the 3s heartbeat stops the
+	     moment the app is suspended and the glasses' watchdog drops the link;
+	     without location, turn-by-turn dies when the screen locks. -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>location</string>
+	</array>
+	<!-- Spotify PKCE redirect for lyrics (must match SpotifyAuth.redirectURI). -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>dev.myvu.demo.spotify</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>myvudemo</string>
+			</array>
+		</dict>
+	</array>
+	<!-- Lets Files.app show Documents/MyvuReceived (HUD screenshots, glass logs). -->
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
+</dict>
+</plist>
