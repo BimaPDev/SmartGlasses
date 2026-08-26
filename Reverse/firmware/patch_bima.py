@@ -442,6 +442,9 @@ What changed
 - Left alone: `myvu` / `Myvu` (e.g. `handleMyvuLoginStatus`)
 
 Previews: `<ver>/fonts/*_BIMA.png`
+
+**Before flashing:** `python3 Reverse/firmware/sandbox/patch_check.py` on the
+patched `platform_tester.bin` (see `sandbox/README.md`). Exit non-zero = do not flash.
 """
     )
     print("\nWrote", OUT)

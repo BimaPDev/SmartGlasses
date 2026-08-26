@@ -17,3 +17,12 @@ What changed
 - Left alone: `myvu` / `Myvu` (e.g. `handleMyvuLoginStatus`)
 
 Previews: `<ver>/fonts/*_BIMA.png`
+
+**Before flashing:** run the pre-flash sandbox (not a SoC emulator):
+
+```bash
+python3 Reverse/firmware/sandbox/patch_check.py Reverse/firmware/patched_bima/1.0.12.83/platform_tester.bin
+python3 Reverse/firmware/sandbox/hud_preview.py --time 19:23 --soc 68
+```
+
+See `Reverse/firmware/sandbox/README.md`. Do not flash if `patch_check` exits non-zero.
