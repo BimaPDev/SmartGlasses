@@ -1,0 +1,378 @@
+fileoff,w,h,dsc_off,data_size,palette_opaque_count,period16?,notes
+0x30fd40,8,8,0x33811c,96,5,N,ok;coh=0.071;score=0.000;opaque_ge2;strips=1;rowmajor
+0x30fdc0,204,92,0x338194,9448,2,N,ok;coh=0.140;score=0.009;opaque_ge2;strips=2
+0x3122c0,40,22,0x33a69c,504,3,N,ok;coh=0.115;score=0.006;opaque_ge2;strips=1;rowmajor
+0x312500,40,22,0x33a8ac,504,2,N,ok;coh=0.180;score=0.015;opaque_ge2;strips=1;rowmajor
+0x312740,20,28,0x33aaec,344,2,N,ok;coh=0.144;score=0.009;opaque_ge2;strips=1;rowmajor
+0x3128c0,20,20,0x33ac8c,264,5,N,ok;coh=0.149;score=0.010;opaque_ge2;strips=1;rowmajor
+0x312a00,204,62,0x33adbc,6388,6,N,ok;coh=0.148;score=0.010;opaque_ge2;strips=2
+0x314380,8,8,0x33c740,96,2,N,ok;coh=0.089;score=0.000;opaque_ge2;strips=1;rowmajor
+0x314400,16,16,0x33c7d4,192,4,N,ok;coh=0.104;score=0.004;opaque_ge2;strips=1;rowmajor
+0x314500,24,24,0x33c8b4,352,4,N,ok;coh=0.111;score=0.005;opaque_ge2;strips=1;rowmajor
+0x314680,26,24,0x33ca54,376,2,N,ok;coh=0.100;score=0.005;opaque_ge2;strips=1;rowmajor
+0x314840,26,24,0x33cbec,376,6,N,ok;coh=0.101;score=0.005;opaque_ge2;strips=1;rowmajor
+0x314a00,26,24,0x33cdac,376,5,N,ok;coh=0.144;score=0.010;opaque_ge2;strips=1;rowmajor
+0x314bc0,12,24,0x33cf6c,208,2,N,ok;coh=0.114;score=0.005;opaque_ge2;strips=1;rowmajor
+0x314cc0,44,44,0x33d084,1032,5,N,ok;coh=0.133;score=0.008;opaque_ge2;strips=1;rowmajor
+0x315100,26,24,0x33d4bc,376,2,N,ok;coh=0.159;score=0.011;opaque_ge2;strips=1;rowmajor
+0x3152c0,26,24,0x33d66c,376,3,N,ok;coh=0.129;score=0.008;opaque_ge2;strips=1;rowmajor
+0x3158c0,44,44,0x33dc7c,1032,2,N,ok;coh=0.152;score=0.010;opaque_ge2;strips=1;rowmajor
+0x315d00,26,24,0x33e0bc,376,1,N,ok;coh=0.117;score=0.006;a0_transp;strips=1;rowmajor
+0x315ec0,26,24,0x33e26c,376,2,N,ok;coh=0.103;score=0.005;opaque_ge2;strips=1;rowmajor
+0x316240,70,70,0x33e5ec,2514,7,N,ok;coh=0.129;score=0.008;opaque_ge2;strips=1;rowmajor
+0x316c40,44,44,0x33f008,1032,4,N,ok;coh=0.117;score=0.006;opaque_ge2;strips=1;rowmajor
+0x317080,12,24,0x33f43c,208,3,N,ok;coh=0.111;score=0.006;opaque_ge2;strips=1;rowmajor
+0x317180,26,24,0x33f544,376,4,N,ok;coh=0.138;score=0.009;opaque_ge2;strips=1;rowmajor
+0x317340,256,80,0x33f6ec,10304,3,N,ok;coh=0.124;score=0.007;opaque_ge2;strips=3
+0x319bc0,10,24,0x341f74,184,2,N,ok;coh=0.268;score=0.000;opaque_ge2;strips=1;rowmajor
+0x31a080,28,28,0x342464,456,2,N,ok;coh=0.215;score=0.016;opaque_ge2;strips=1;rowmajor
+0x31a280,26,24,0x34263c,376,2,N,ok;coh=0.254;score=0.010;opaque_ge2;strips=1;rowmajor
+0x31b040,48,48,0x3433ec,1216,1,N,ok;coh=0.298;score=0.029;a0_transp;strips=1;rowmajor
+0x31b540,64,64,0x3438f4,2112,4,N,ok;coh=0.403;score=0.057;opaque_ge2;strips=1;rowmajor
+0x31c2c0,26,24,0x344674,376,3,N,ok;coh=0.336;score=0.014;opaque_ge2;strips=1;rowmajor
+0x31c480,64,64,0x34482c,2112,2,N,ok;coh=0.404;score=0.059;opaque_ge2;strips=1;rowmajor
+0x31d9c0,26,24,0x345d74,376,2,N,ok;coh=0.129;score=0.007;opaque_ge2;strips=1;rowmajor
+0x33a800,32,44,0x362bb4,768,5,N,ok;coh=0.664;score=0.201;opaque_ge2;strips=1;rowmajor
+0x33ab40,32,44,0x362ef4,768,0,N,ok;coh=0.708;score=0.304;a0_allzero;strips=1;rowmajor
+0x33cf00,32,44,0x3652b4,768,0,N,ok;coh=0.780;score=0.000;a0_allzero;strips=1;rowmajor
+0x33d240,32,44,0x3655f4,768,1,N,ok;coh=0.758;score=0.000;a0_transp;strips=1;rowmajor
+0x33d8c0,32,44,0x365c74,768,0,N,ok;coh=0.688;score=0.148;a0_allzero;strips=1;rowmajor
+0x33dc00,32,44,0x365fb4,768,0,N,ok;coh=0.762;score=0.128;a0_allzero;strips=1;rowmajor
+0x33df40,32,44,0x3662f4,768,5,N,ok;coh=0.856;score=0.000;opaque_ge2;strips=1;rowmajor
+0x33e900,32,44,0x366cb4,768,2,N,ok;coh=0.707;score=0.211;opaque_ge2;strips=1;rowmajor
+0x33ec40,32,44,0x366ff4,768,1,N,ok;coh=0.779;score=0.327;a0_transp;strips=1;rowmajor
+0x33ef80,32,44,0x367334,768,0,N,ok;coh=0.816;score=0.000;a0_allzero;strips=1;rowmajor
+0x33f600,32,44,0x3679b4,768,4,N,ok;coh=0.780;score=0.251;opaque_ge2;strips=1;rowmajor
+0x341d00,32,44,0x36a0b4,768,0,N,ok;coh=0.840;score=0.316;a0_allzero;strips=1;rowmajor
+0x342a00,32,44,0x36adb4,768,2,N,ok;coh=0.761;score=0.577;opaque_ge2;strips=1;rowmajor
+0x342d40,32,44,0x36b0f4,768,2,N,ok;coh=0.684;score=0.000;opaque_ge2;strips=1;rowmajor
+0x343700,32,44,0x36bab4,768,3,N,ok;coh=0.715;score=0.437;opaque_ge2;strips=1;rowmajor
+0x343a40,32,44,0x36bdf4,768,0,N,ok;coh=0.734;score=0.302;a0_allzero;strips=1;rowmajor
+0x343d80,32,44,0x36c134,768,4,N,ok;coh=0.747;score=0.300;opaque_ge2;strips=1;rowmajor
+0x3440c0,52,52,0x36c474,1416,0,N,ok;coh=0.700;score=0.310;a0_allzero;strips=1;rowmajor
+0x344900,26,26,0x36ccb4,402,0,N,ok;coh=0.920;score=0.000;a0_allzero;strips=1;rowmajor
+0x344ac0,36,36,0x36ce88,712,4,N,ok;coh=0.554;score=0.318;opaque_ge2;strips=1;rowmajor
+0x344dc0,24,24,0x36d17c,352,2,N,ok;coh=0.830;score=0.000;opaque_ge2;strips=1;rowmajor
+0x346fc0,36,36,0x36f374,712,3,N,ok;coh=0.663;score=0.356;opaque_ge2;strips=1;rowmajor
+0x349600,36,36,0x3719b8,712,0,N,ok;coh=0.759;score=0.000;a0_allzero;strips=1;rowmajor
+0x34a300,26,26,0x3726c8,402,4,N,ok;coh=0.630;score=0.000;opaque_ge2;strips=1;rowmajor
+0x34bb00,28,28,0x373edc,456,3,N,ok;coh=0.620;score=0.000;opaque_ge2;strips=1;rowmajor
+0x34f5c0,48,48,0x377990,1216,0,N,ok;coh=0.933;score=0.000;a0_allzero;strips=1;rowmajor
+0x34fac0,28,28,0x377e74,456,4,N,ok;coh=0.656;score=0.000;opaque_ge2;strips=1;rowmajor
+0x34fcc0,40,40,0x37807c,864,2,N,ok;coh=0.837;score=0.000;a0_transp;strips=1;rowmajor
+0x350040,28,28,0x378414,456,2,N,ok;coh=0.836;score=0.000;a0_transp;strips=1;rowmajor
+0x350240,56,56,0x3785fc,1632,2,N,ok;coh=0.849;score=0.525;a0_transp;strips=1;rowmajor
+0x3508c0,40,40,0x378c94,864,2,N,ok;coh=0.691;score=0.646;opaque_ge2;strips=1;rowmajor
+0x350c40,12,17,0x379014,166,3,N,ok;coh=0.720;score=0.000;opaque_ge2;strips=1;rowmajor
+0x352280,112,112,0x37a658,6336,8,N,ok;coh=0.839;score=0.670;opaque_ge2;strips=1;rowmajor
+0x353f00,32,32,0x37c2d4,576,4,N,ok;coh=0.583;score=0.000;opaque_ge2;strips=1;rowmajor
+0x354180,36,36,0x37c534,712,5,N,ok;coh=0.819;score=0.000;opaque_ge2;strips=1;rowmajor
+0x354580,176,128,0x37c964,11328,0,N,ok;coh=0.798;score=1.156;a0_allzero;strips=2
+0x35e080,40,40,0x38645c,864,0,N,ok;coh=0.861;score=0.000;a0_allzero;strips=1;rowmajor
+0x35e500,44,44,0x3868d8,1032,0,N,ok;coh=0.751;score=0.292;a0_allzero;strips=1;rowmajor
+0x35f340,40,40,0x387714,864,4,N,ok;coh=0.816;score=0.000;a0_transp;strips=1;rowmajor
+0x360700,112,112,0x388abc,6336,4,N,ok;coh=0.760;score=0.000;a0_transp;strips=1;rowmajor
+0x362380,112,112,0x38a754,6336,4,N,ok;coh=0.775;score=0.495;a0_transp;strips=1;rowmajor
+0x363c80,40,40,0x38c034,864,0,N,ok;coh=0.777;score=0.000;a0_allzero;strips=1;rowmajor
+0x364bc0,112,112,0x38cf94,6336,0,N,ok;coh=0.814;score=0.500;a0_allzero;strips=1;rowmajor
+0x36b3c0,40,40,0x393798,864,0,N,ok;coh=0.774;score=0.000;a0_allzero;strips=1;rowmajor
+0x36d040,146,146,0x3953f4,10722,3,N,ok;coh=0.781;score=0.543;opaque_ge2;strips=2
+0x3737c0,32,32,0x39bb74,576,4,N,ok;coh=0.089;score=0.003;opaque_ge2;strips=1;rowmajor
+0x373ac0,220,72,0x39be7c,7984,2,N,ok;coh=0.196;score=0.014;opaque_ge2;strips=2
+0x375d00,48,48,0x39e0b4,1216,3,N,ok;coh=0.086;score=0.004;opaque_ge2;strips=1;rowmajor
+0x376600,256,256,0x39e9c4,32832,3,N,ok;coh=0.708;score=0.260;opaque_ge2;strips=3
+0x386e40,40,40,0x3af1f4,864,10,N,ok;coh=0.823;score=0.421;opaque_ge2;strips=1;rowmajor
+0x3871c0,399,145,0x3af594,29064,5,N,ok;coh=0.623;score=0.187;opaque_ge2;strips=4
+0x394940,36,36,0x3bccf0,712,6,N,ok;coh=0.490;score=0.152;opaque_ge2;strips=1;rowmajor
+0x394c40,280,280,0x3bcffc,39264,6,N,ok;coh=0.856;score=1.101;opaque_ge2;strips=3
+0x39ee40,64,64,0x3c71f4,2112,4,N,ok;coh=0.896;score=0.000;opaque_ge2;strips=1;rowmajor
+0x3a74c0,120,120,0x3cf890,7264,0,N,ok;coh=0.929;score=0.000;a0_allzero;strips=2
+0x3acd80,120,120,0x3d5134,7264,0,N,ok;coh=0.947;score=0.000;a0_allzero;strips=2
+0x3b3f00,80,80,0x3dc2e8,3264,0,N,ok;coh=0.940;score=0.000;a0_allzero;strips=1;rowmajor
+0x3b4f40,120,120,0x3dd2fc,7264,0,N,ok;coh=0.872;score=0.626;a0_allzero;strips=2
+0x3b6e40,64,64,0x3df1f4,2112,2,N,ok;coh=0.069;score=0.002;opaque_ge2;strips=1;rowmajor
+0x3b76c0,32,32,0x3dfa74,576,5,N,ok;coh=0.079;score=0.003;opaque_ge2;strips=1;rowmajor
+0x3b7940,24,24,0x3dfcf4,352,2,N,ok;coh=0.083;score=0.003;opaque_ge2;strips=1;rowmajor
+0x3b7ac0,20,20,0x3dfe94,264,3,N,ok;coh=0.067;score=0.002;opaque_ge2;strips=1;rowmajor
+0x3b7c80,36,36,0x3e0040,712,2,N,ok;coh=0.079;score=0.003;opaque_ge2;strips=1;rowmajor
+0x3bb780,36,36,0x3e3b44,712,6,N,ok;coh=0.085;score=0.003;opaque_ge2;strips=1;rowmajor
+0x3c3a00,48,48,0x3ebdb0,1216,1,N,ok;coh=0.893;score=0.000;a0_transp;strips=1;rowmajor
+0x3c3f00,48,48,0x3ec2b4,1216,2,N,ok;coh=0.894;score=0.000;opaque_ge2;strips=1;rowmajor
+0x3c6200,48,48,0x3ee5b4,1216,1,N,ok;coh=0.882;score=0.000;a0_transp;strips=1;rowmajor
+0x3c8740,48,48,0x3f0b28,1216,3,N,ok;coh=0.070;score=0.002;opaque_ge2;strips=1;rowmajor
+0x3c8c40,44,36,0x3f0ff4,856,4,N,ok;coh=0.067;score=0.002;opaque_ge2;strips=1;rowmajor
+0x3c94c0,48,48,0x3f1874,1216,3,N,ok;coh=0.068;score=0.002;opaque_ge2;strips=1;rowmajor
+0x3ca8c0,48,48,0x3f2c74,1216,2,N,ok;coh=0.066;score=0.002;opaque_ge2;strips=1;rowmajor
+0x3cadc0,48,48,0x3f3174,1216,3,N,ok;coh=0.063;score=0.002;opaque_ge2;strips=1;rowmajor
+0x3cb7c0,40,40,0x3f3b74,864,3,N,ok;coh=0.077;score=0.003;opaque_ge2;strips=1;rowmajor
+0x3cbb40,48,48,0x3f3f14,1216,3,N,ok;coh=0.074;score=0.003;opaque_ge2;strips=1;rowmajor
+0x3cc040,48,48,0x3f43f4,1216,2,N,ok;coh=0.075;score=0.003;opaque_ge2;strips=1;rowmajor
+0x3cc540,48,48,0x3f48f4,1216,3,N,ok;coh=0.074;score=0.003;opaque_ge2;strips=1;rowmajor
+0x3cca40,48,48,0x3f4df4,1216,2,N,ok;coh=0.066;score=0.002;opaque_ge2;strips=1;rowmajor
+0x3ccf40,48,48,0x3f52f4,1216,2,N,ok;coh=0.672;score=0.000;opaque_ge2;strips=1;rowmajor
+0x3cd440,48,48,0x3f57f4,1216,3,N,ok;coh=0.672;score=0.000;opaque_ge2;strips=1;rowmajor
+0x3cf980,40,40,0x3f7d34,864,0,N,ok;coh=0.833;score=0.000;a0_allzero;strips=1;rowmajor
+0x3d1680,32,32,0x3f9a54,576,4,N,ok;coh=0.575;score=0.081;opaque_ge2;strips=1;rowmajor
+0x3d1900,25,24,0x3f9cb4,376,0,N,ok;coh=0.852;score=0.000;a0_allzero;strips=1;rowmajor
+0x3d1d00,32,32,0x3fa0ac,576,0,N,ok;coh=0.864;score=0.000;a0_allzero;strips=1;rowmajor
+0x3d1f80,62,45,0x3fa334,1459,2,N,ok;coh=0.727;score=0.198;opaque_ge2;strips=1;rowmajor
+0x3d2c80,32,32,0x3fb034,576,0,N,ok;coh=0.897;score=0.000;a0_allzero;strips=1;rowmajor
+0x3d2f00,40,22,0x3fb2b4,504,4,N,ok;coh=0.477;score=0.163;opaque_ge2;strips=1;rowmajor
+0x3d3400,32,32,0x3fb7ac,576,2,N,ok;coh=0.504;score=0.249;opaque_ge2;strips=1;rowmajor
+0x3d5380,32,32,0x3fd734,576,0,N,ok;coh=0.804;score=0.000;a0_allzero;strips=1;rowmajor
+0x3d63c0,32,32,0x3fe774,576,1,N,ok;coh=0.540;score=0.000;a0_transp;strips=1;rowmajor
+0x3d7540,32,32,0x3ff8f4,576,1,N,ok;coh=0.675;score=0.000;a0_transp;strips=1;rowmajor
+0x3dec80,48,48,0x407064,1216,1,N,ok;coh=0.826;score=0.000;a0_transp;strips=1;rowmajor
+0x3df940,32,32,0x407cfc,576,1,N,ok;coh=0.681;score=0.000;a0_transp;strips=1;rowmajor
+0x3f8300,84,84,0x4206ac,3592,9,N,ok;coh=0.680;score=0.412;opaque_ge2;strips=1;rowmajor
+0x3f9140,84,84,0x4214fc,3592,4,N,ok;coh=0.635;score=0.143;opaque_ge2;strips=1;rowmajor
+0x3fa380,32,32,0x422740,576,10,N,ok;coh=0.298;score=0.063;opaque_ge2;strips=1;rowmajor
+0x3fa600,32,32,0x4229b4,576,10,N,ok;coh=0.285;score=0.054;opaque_ge2;strips=1;rowmajor
+0x3fa880,32,32,0x422c34,576,8,N,ok;coh=0.655;score=0.372;opaque_ge2;strips=1;rowmajor
+0x3fb980,32,32,0x423d34,576,5,N,ok;coh=0.791;score=0.526;opaque_ge2;strips=1;rowmajor
+0x315480,44,44,0x33d82c,1032,1,N,REJECT: pal_fail
+0x316080,26,24,0x33e42c,376,1,N,REJECT: pal_fail
+0x319cc0,26,24,0x34206c,376,0,N,REJECT: pal_fail
+0x319e80,10,86,0x34222c,494,1,N,REJECT: pal_fail
+0x31a440,26,24,0x3427ec,376,0,N,REJECT: pal_fail
+0x31a600,26,24,0x3429ac,376,0,N,REJECT: pal_fail
+0x31a7c0,48,48,0x342b6c,1216,0,N,REJECT: pal_fail
+0x31acc0,26,24,0x343074,376,1,N,REJECT: pal_fail
+0x31ae80,26,24,0x34322c,376,1,N,REJECT: pal_fail
+0x31bdc0,48,48,0x344174,1216,0,N,REJECT: pal_fail
+0x31cd00,44,44,0x3450b4,1032,0,N,REJECT: pal_fail
+0x31d140,64,64,0x3454fc,2112,0,N,REJECT: pal_fail
+0x31db80,14,8,0x345f2c,120,1,N,REJECT: pal_fail
+0x31dc40,64,64,0x345fec,2112,2,N,REJECT: pal_records;inc_table
+0x31e4c0,44,44,0x346874,1032,0,N,REJECT: inc_table;pal_fail
+0x31e900,26,24,0x346cbc,376,0,N,REJECT: pal_records;inc_table;pal_fail
+0x31eac0,26,24,0x346e6c,376,1,N,REJECT: pal_records;inc_table;pal_fail
+0x31ec80,48,48,0x34702c,1216,0,N,REJECT: pal_records;inc_table;pal_fail
+0x31f180,44,44,0x347534,1032,2,N,REJECT: pal_records;inc_table
+0x31f5c0,48,48,0x34797c,1216,0,N,REJECT: pal_records;inc_table;pal_fail
+0x31fac0,26,24,0x347e74,376,2,N,REJECT: pal_records;inc_table
+0x31fc80,44,44,0x34802c,1032,0,N,REJECT: inc_table;pal_fail
+0x3200c0,64,64,0x34847c,2112,2,N,REJECT: pal_records;inc_table
+0x320940,64,64,0x348cf4,2112,3,N,REJECT: pal_records;inc_table
+0x3211c0,44,44,0x349574,1032,0,N,REJECT: inc_table;pal_fail
+0x321600,48,48,0x3499bc,1216,3,N,REJECT: pal_records;inc_table;pal_fail
+0x321b00,26,24,0x349eb4,376,0,N,REJECT: pal_records;inc_table;pal_fail
+0x321cc0,24,24,0x34a06c,352,0,N,REJECT: inc_table;pal_fail
+0x321e40,24,24,0x34a214,352,1,N,REJECT: pal_records;inc_table
+0x321fc0,24,24,0x34a394,352,3,N,REJECT: pal_records;inc_table;pal_fail
+0x322140,24,24,0x34a514,352,4,N,REJECT: pal_records;inc_table;pal_fail
+0x3222c0,24,24,0x34a694,352,4,N,REJECT: inc_table
+0x322440,24,24,0x34a814,352,0,N,REJECT: pal_records;inc_table;pal_fail
+0x3225c0,24,24,0x34a994,352,0,N,REJECT: pal_records;inc_table;pal_fail
+0x322740,24,24,0x34ab14,352,1,N,REJECT: inc_table;pal_fail
+0x3228c0,24,24,0x34ac94,352,1,N,REJECT: pal_records;inc_table
+0x322a40,24,24,0x34ae14,352,2,Y,"REJECT: inc_table;period16(c=0.93,peak=16)"
+0x322bc0,24,24,0x34af94,352,3,N,REJECT: pal_records;inc_table
+0x322d40,24,24,0x34b114,352,3,Y,"REJECT: inc_table;period16(c=0.88,peak=16)"
+0x322ec0,24,24,0x34b294,352,4,Y,"REJECT: pal_records;inc_table;period16(c=0.91,peak=16)"
+0x323040,24,24,0x34b414,352,3,N,REJECT: pal_records;inc_table
+0x3231c0,24,24,0x34b594,352,3,Y,"REJECT: inc_table;period16(c=0.92,peak=16)"
+0x323340,24,24,0x34b714,352,4,Y,"REJECT: pal_records;inc_table;period16(c=0.97,peak=16)"
+0x3234c0,24,24,0x34b894,352,4,N,REJECT: inc_table
+0x323640,24,24,0x34ba14,352,3,N,REJECT: inc_table
+0x3237c0,24,24,0x34bb94,352,0,N,REJECT: inc_table;pal_fail
+0x323940,24,24,0x34bd14,352,1,N,REJECT: inc_table;pal_fail
+0x323ac0,24,24,0x34be94,352,3,N,REJECT: inc_table
+0x323c40,24,24,0x34c014,352,2,N,REJECT: inc_table
+0x323dc0,24,24,0x34c194,352,3,N,REJECT: inc_table
+0x323f40,80,80,0x34c314,3264,3,Y,"REJECT: skip_known_table;pal_records;inc_table;period16(c=0.94,peak=16);pal_fail"
+0x324c40,80,80,0x34cff4,3264,4,Y,"REJECT: inc_table;period16(c=0.96,peak=16)"
+0x325940,80,80,0x34dcf4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.96,peak=16);pal_fail"
+0x326640,80,80,0x34e9f4,3264,3,Y,"REJECT: inc_table;period16(c=0.96,peak=16)"
+0x327340,80,80,0x34f6f4,3264,4,Y,"REJECT: inc_table;period16(c=0.97,peak=16)"
+0x328040,80,80,0x3503f4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.98,peak=16);pal_fail"
+0x328d40,80,80,0x3510f4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.98,peak=16);pal_fail"
+0x329a40,80,80,0x351df4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.98,peak=16)"
+0x32a740,80,80,0x352af4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.97,peak=16);pal_fail"
+0x32b440,80,80,0x3537f4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.97,peak=16)"
+0x32c140,80,80,0x3544f4,3264,4,Y,"REJECT: inc_table;period16(c=0.96,peak=16)"
+0x32ce40,80,80,0x3551f4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.95,peak=16);pal_fail"
+0x32db40,80,80,0x355ef4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.97,peak=16);pal_fail"
+0x32e840,80,80,0x356bf4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.97,peak=16);pal_fail"
+0x32f540,80,80,0x3578f4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.98,peak=16)"
+0x330240,80,80,0x3585f4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.98,peak=16);pal_fail"
+0x330f40,80,80,0x3592f4,3264,4,Y,"REJECT: inc_table;period16(c=0.97,peak=16)"
+0x331c40,80,80,0x359ff4,3264,4,Y,"REJECT: pal_records;inc_table;period16(c=0.88,peak=16);pal_fail"
+0x332940,80,80,0x35acf4,3264,2,Y,"REJECT: inc_table;period16(c=0.89,peak=16)"
+0x333640,32,44,0x35b9f4,768,3,N,REJECT: pal_records;inc_table
+0x333980,32,44,0x35bd34,768,2,N,REJECT: inc_table
+0x333cc0,32,44,0x35c074,768,3,Y,"REJECT: inc_table;period16(c=0.95,peak=16)"
+0x334000,32,44,0x35c3b4,768,4,N,REJECT: pal_records;inc_table
+0x334340,32,44,0x35c6f4,768,3,N,REJECT: inc_table
+0x334680,32,44,0x35ca34,768,4,N,REJECT: inc_table
+0x3349c0,32,44,0x35cd74,768,3,N,REJECT: inc_table
+0x334d00,32,44,0x35d0b4,768,1,N,REJECT: pal_records;inc_table
+0x335040,32,44,0x35d3f4,768,0,N,REJECT: inc_table;pal_fail
+0x335380,32,44,0x35d734,768,1,N,REJECT: pal_fail
+0x3356c0,32,44,0x35da74,768,0,N,REJECT: pal_fail
+0x335a00,32,44,0x35ddb4,768,0,N,REJECT: pal_fail
+0x335d40,32,44,0x35e0f4,768,0,N,REJECT: inc_table;pal_fail
+0x336080,32,44,0x35e434,768,0,N,REJECT: pal_fail
+0x3363c0,32,44,0x35e774,768,9,N,REJECT: inc_table
+0x336700,32,44,0x35eab4,768,0,N,REJECT: inc_table;pal_fail
+0x336a40,32,44,0x35edf4,768,0,N,REJECT: inc_table;pal_fail
+0x336d80,32,44,0x35f134,768,0,N,REJECT: inc_table;pal_fail
+0x3370c0,32,44,0x35f474,768,0,N,REJECT: inc_table;pal_fail
+0x337400,32,44,0x35f7b4,768,0,N,REJECT: inc_table;pal_fail
+0x337740,32,44,0x35faf4,768,0,N,REJECT: inc_table;pal_fail
+0x337a80,32,44,0x35fe34,768,0,N,REJECT: inc_table;pal_fail
+0x337dc0,32,44,0x360174,768,0,N,REJECT: inc_table;pal_fail
+0x338100,32,44,0x3604b4,768,0,N,REJECT: pal_fail
+0x338440,32,44,0x3607f4,768,0,N,REJECT: pal_fail;flat_nibble(0.993)
+0x338780,32,44,0x360b34,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x338ac0,32,44,0x360e74,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x338e00,32,44,0x3611b4,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x339140,32,44,0x3614f4,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x339480,32,44,0x361834,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x3397c0,32,44,0x361b74,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x339b00,32,44,0x361eb4,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x339e40,32,44,0x3621f4,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x33a180,32,44,0x362534,768,0,N,REJECT: pal_fail;flat_nibble(0.989)
+0x33a4c0,32,44,0x362874,768,0,N,REJECT: pal_fail
+0x33ae80,32,44,0x363234,768,0,N,REJECT: pal_fail;flat_nibble(0.970)
+0x33b1c0,32,44,0x363574,768,0,N,REJECT: pal_fail;flat_nibble(0.999)
+0x33b500,32,44,0x3638b4,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x33b840,32,44,0x363bf4,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x33bb80,32,44,0x363f34,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x33bec0,32,44,0x364274,768,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x33c200,32,44,0x3645b4,768,0,N,REJECT: pal_fail;flat_nibble(0.985)
+0x33c540,32,44,0x3648f4,768,0,N,REJECT: pal_fail
+0x33c880,32,44,0x364c34,768,0,N,REJECT: pal_fail
+0x33cbc0,32,44,0x364f74,768,0,N,REJECT: pal_fail
+0x33d580,32,44,0x365934,768,0,N,REJECT: pal_fail
+0x33e280,32,44,0x366634,768,0,N,REJECT: pal_fail
+0x33e5c0,32,44,0x366974,768,0,N,REJECT: pal_fail
+0x33f2c0,32,44,0x367674,768,0,N,REJECT: pal_fail
+0x33f940,32,44,0x367cf4,768,0,N,REJECT: pal_fail;flat_nibble(0.972)
+0x33fc80,32,44,0x368034,768,0,N,REJECT: flat_nibble(0.990)
+0x33ffc0,32,44,0x368374,768,0,N,REJECT: pal_fail;flat_nibble(0.987)
+0x340300,32,44,0x3686b4,768,0,N,REJECT: flat_nibble(0.999)
+0x340640,32,44,0x3689f4,768,0,N,REJECT: pal_fail;flat_nibble(0.986)
+0x340980,32,44,0x368d34,768,0,N,REJECT: flat_nibble(0.999)
+0x340cc0,32,44,0x369074,768,0,N,REJECT: pal_fail;flat_nibble(0.986)
+0x341000,32,44,0x3693b4,768,0,N,REJECT: flat_nibble(0.996)
+0x341340,32,44,0x3696f4,768,0,N,REJECT: flat_nibble(0.990)
+0x341680,32,44,0x369a34,768,0,N,REJECT: flat_nibble(0.987)
+0x3419c0,32,44,0x369d74,768,0,N,REJECT: flat_nibble(0.979)
+0x342040,32,44,0x36a3f4,768,0,N,REJECT: pal_fail
+0x342380,32,44,0x36a734,768,0,N,REJECT: pal_fail
+0x3426c0,32,44,0x36aa74,768,0,N,REJECT: pal_fail
+0x343080,32,44,0x36b434,768,0,N,REJECT: pal_fail
+0x3433c0,32,44,0x36b774,768,0,N,REJECT: pal_fail
+0x344680,32,32,0x36ca3c,576,0,N,REJECT: pal_fail
+0x344f40,48,48,0x36d314,1216,0,N,REJECT: pal_fail
+0x345440,10,106,0x36d7f4,594,1,N,REJECT: pal_fail
+0x3456c0,112,112,0x36da88,6336,1,N,REJECT: pal_fail
+0x3472c0,26,26,0x36f67c,402,1,N,REJECT: pal_fail
+0x347480,130,130,0x36f848,8514,0,N,REJECT: pal_fail
+0x349900,70,70,0x371cbc,2514,1,N,REJECT: pal_fail
+0x34a4c0,62,62,0x372888,1986,0,N,REJECT: pal_fail
+0x353b80,40,40,0x37bf34,864,0,N,REJECT: pal_fail
+0x35e400,18,18,0x3867d4,226,0,N,REJECT: pal_fail
+0x35e940,36,36,0x386cfc,712,0,N,REJECT: pal_fail
+0x35ec40,40,40,0x386ffc,864,1,Y,"REJECT: period16(c=0.86,peak=16)"
+0x35efc0,40,40,0x387394,864,0,N,REJECT: pal_fail
+0x360500,28,28,0x3888d8,456,3,Y,"REJECT: period16(c=0.88,peak=16);pal_fail"
+0x362000,40,40,0x38a3b4,864,0,N,REJECT: pal_fail
+0x3640c0,13,17,0x38c47c,183,0,Y,"REJECT: period16(c=0.99,peak=16);pal_fail"
+0x3641c0,56,56,0x38c56c,1632,0,N,REJECT: pal_fail
+0x364840,40,40,0x38cc14,864,0,N,REJECT: pal_fail
+0x3664c0,24,24,0x38e874,352,0,Y,"REJECT: period16(c=0.95,peak=16);pal_fail"
+0x366640,188,128,0x38ea14,12096,0,N,REJECT: pal_fail
+0x3695c0,60,60,0x391974,1864,0,N,REJECT: pal_fail
+0x369d40,13,17,0x3920fc,183,0,N,REJECT: pal_fail
+0x36b740,112,112,0x393b14,6336,0,N,REJECT: pal_fail
+0x36fa40,160,160,0x397e18,12864,0,N,REJECT: pal_fail
+0x372cc0,48,48,0x39b074,1216,1,N,REJECT: pal_fail
+0x3731c0,12,24,0x39b574,208,0,N,REJECT: pal_fail
+0x3732c0,48,48,0x39b684,1216,1,N,REJECT: pal_fail
+0x375a80,32,32,0x39de44,576,1,N,REJECT: pal_fail
+0x376200,32,32,0x39e5b4,576,1,N,REJECT: pal_fail
+0x37e680,48,74,0x3a6a34,1840,0,N,REJECT: pal_fail;flat_nibble(1.000)
+0x37edc0,256,256,0x3a71a4,32832,0,N,REJECT: pal_fail
+0x39e5c0,64,64,0x3c6994,2112,0,N,REJECT: pal_fail
+0x3a4c40,36,36,0x3cd000,712,0,N,REJECT: pal_fail;flat_nibble(0.973)
+0x3a4f40,29,31,0x3cd2fc,529,0,N,REJECT: pal_fail
+0x3a5180,28,28,0x3cd548,456,0,N,REJECT: pal_fail
+0x3a5380,40,18,0x3cd73c,424,0,N,REJECT: pal_fail
+0x3a5540,32,32,0x3cd91c,576,0,N,REJECT: pal_fail
+0x3a57c0,120,120,0x3cdb74,7264,0,N,REJECT: pal_fail
+0x3a9140,72,20,0x3d1514,784,0,N,REJECT: pal_fail;flat_nibble(0.974)
+0x3a9480,54,54,0x3d1844,1522,0,N,REJECT: pal_fail;flat_nibble(0.975)
+0x3a9a80,28,28,0x3d1e68,456,0,N,REJECT: flat_nibble(0.976)
+0x3a9d00,24,24,0x3d20c4,352,0,N,REJECT: flat_nibble(0.979)
+0x3a9e80,32,32,0x3d2254,576,0,N,REJECT: flat_nibble(0.978)
+0x3aa100,128,128,0x3d24b4,8256,0,N,REJECT: flat_nibble(0.979)
+0x3ac2c0,24,24,0x3d4680,352,0,N,REJECT: pal_fail;flat_nibble(0.979)
+0x3ac440,32,32,0x3d4814,576,0,N,REJECT: pal_fail;flat_nibble(0.977)
+0x3ac6c0,24,24,0x3d4a74,352,0,N,REJECT: pal_fail;flat_nibble(0.979)
+0x3ac940,40,18,0x3d4cfc,424,0,N,REJECT: pal_fail;flat_nibble(0.983)
+0x3acb00,32,32,0x3d4edc,576,0,N,REJECT: flat_nibble(0.975)
+0x3aea00,128,128,0x3d6dd4,8256,0,N,REJECT: pal_fail
+0x3b4c00,24,24,0x3dcfb4,352,0,N,REJECT: flat_nibble(0.972)
+0x3b4e00,20,20,0x3dd1c4,264,0,N,REJECT: pal_fail
+0x3b6bc0,32,32,0x3def94,576,0,N,REJECT: pal_fail
+0x3b7f80,32,32,0x3e033c,576,1,N,REJECT: pal_fail
+0x3be900,100,100,0x3e6cbc,5064,0,N,REJECT: pal_fail
+0x3bfd00,36,36,0x3e80bc,712,0,N,REJECT: pal_fail
+0x3c0000,48,48,0x3e83bc,1216,0,N,REJECT: pal_fail
+0x3c0500,48,48,0x3e88b4,1216,0,N,REJECT: pal_fail
+0x3c0a00,48,48,0x3e8db4,1216,0,N,REJECT: pal_fail
+0x3c0f00,48,48,0x3e92b4,1216,0,N,REJECT: pal_fail
+0x3c1400,48,48,0x3e97b4,1216,0,N,REJECT: pal_fail
+0x3c1900,48,48,0x3e9cb4,1216,0,N,REJECT: pal_fail;flat_nibble(0.975)
+0x3c1e00,48,48,0x3ea1b4,1216,0,N,REJECT: pal_fail;flat_nibble(0.972)
+0x3c2300,48,48,0x3ea6b4,1216,0,N,REJECT: pal_fail
+0x3c2800,56,56,0x3eabb4,1632,0,N,REJECT: pal_fail
+0x3c2e80,48,48,0x3eb254,1216,0,N,REJECT: pal_fail
+0x3c4400,48,48,0x3ec7b4,1216,0,N,REJECT: flat_nibble(0.971)
+0x3c4900,48,48,0x3eccb4,1216,0,N,REJECT: pal_fail;flat_nibble(0.970)
+0x3c4e00,48,48,0x3ed1b4,1216,0,N,REJECT: pal_fail
+0x3c5300,48,48,0x3ed6b4,1216,0,N,REJECT: pal_fail
+0x3c5800,48,48,0x3edbb4,1216,0,N,REJECT: pal_fail
+0x3c5d00,48,48,0x3ee0b4,1216,0,N,REJECT: pal_fail
+0x3c8fc0,48,48,0x3f138c,1216,1,N,REJECT: pal_fail
+0x3c99c0,24,24,0x3f1d74,352,1,N,REJECT: pal_fail
+0x3c9b40,48,48,0x3f1f14,1216,0,N,REJECT: pal_fail
+0x3ca040,40,40,0x3f23f4,864,1,N,REJECT: pal_fail
+0x3ca3c0,48,48,0x3f2794,1216,1,N,REJECT: pal_fail
+0x3cb2c0,48,48,0x3f3674,1216,1,N,REJECT: pal_fail
+0x3cd940,48,48,0x3f5cf4,1216,4,N,REJECT: pal_fail
+0x3cef80,24,24,0x3f7340,352,0,N,REJECT: pal_fail
+0x3cf100,40,40,0x3f74d4,864,0,N,REJECT: pal_fail
+0x3cf480,48,48,0x3f7854,1216,0,N,REJECT: pal_fail
+0x3cfd00,48,48,0x3f80d4,1216,0,N,REJECT: pal_fail
+0x3d0200,48,48,0x3f85b4,1216,0,N,REJECT: pal_fail
+0x3d0700,48,48,0x3f8ab4,1216,0,N,REJECT: pal_fail
+0x3d0c00,144,36,0x3f8fb4,2656,0,N,REJECT: pal_fail
+0x3d1ac0,40,22,0x3f9e6c,504,0,N,REJECT: pal_fail
+0x3d2540,44,44,0x3fa928,1032,0,N,REJECT: flat_nibble(1.000)
+0x3d2a00,32,32,0x3fadc8,576,0,N,REJECT: flat_nibble(1.000)
+0x3d3140,28,28,0x3fb4ec,456,1,N,REJECT: pal_fail
+0x3d3340,8,14,0x3fb6fc,120,0,N,REJECT: pal_fail
+0x3d3800,100,100,0x3fbbc8,5064,1,N,REJECT: pal_fail
+0x3d4c00,32,32,0x3fcfbc,576,0,N,REJECT: pal_fail
+0x3d4e80,32,32,0x3fd234,576,0,N,REJECT: pal_fail
+0x3d5100,32,32,0x3fd4b4,576,0,N,REJECT: pal_fail
+0x3d5600,20,20,0x3fd9b4,264,0,N,REJECT: pal_fail
+0x3d5740,48,48,0x3fdafc,1216,0,N,REJECT: pal_fail
+0x3d5c40,48,48,0x3fdff4,1216,0,N,REJECT: pal_fail
+0x3d6140,32,32,0x3fe4f4,576,0,N,REJECT: pal_fail
+0x3d6640,32,32,0x3fe9f4,576,0,N,REJECT: pal_fail
+0x3d68c0,32,32,0x3fec74,576,1,N,REJECT: pal_fail
+0x3d6b40,32,32,0x3feef4,576,0,N,REJECT: flat_nibble(1.000)
+0x3d6dc0,32,32,0x3ff174,576,0,N,REJECT: pal_fail
+0x3d7040,32,32,0x3ff3f4,576,0,N,REJECT: flat_nibble(1.000)
+0x3d72c0,32,32,0x3ff674,576,0,N,REJECT: pal_fail
+0x3d77c0,32,32,0x3ffb74,576,1,N,REJECT: pal_fail
+0x3de440,290,14,0x4067f0,2094,0,N,REJECT: pal_fail
+0x3df500,44,44,0x4078dc,1032,0,N,REJECT: pal_fail
+0x3fb700,32,32,0x423ac0,576,0,N,REJECT: pal_fail
+0x3fbc00,32,32,0x423fb4,576,8,N,REJECT: flat_nibble(1.000)
+0x3fbe80,32,32,0x424234,576,0,N,REJECT: flat_nibble(1.000)
+0x3fc880,80,80,0x424c44,3264,0,N,REJECT: pal_fail

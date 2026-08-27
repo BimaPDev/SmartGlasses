@@ -1,0 +1,79 @@
+{
+  "firmware": "1.0.12.83",
+  "bin": "platform_tester.bin",
+  "xip_base": "0x2c000000",
+  "string_base": "0x3c000000",
+  "sensor_hub_flash_base": "0x34000000",
+  "functions": [
+    {
+      "va": "0x2c5267c0",
+      "name": "xjxr_mcu_sensor_ipc_trace",
+      "role": "TRACE helper after MCU-sensor IPC vtable probe; pool → xjxr_mcu_sensor_communicate.cpp + hal_rmt_ipc_send_seq"
+    },
+    {
+      "va": "0x2c52680c",
+      "name": "xjxr_mcu_sensor_msg_dispatch",
+      "role": "Message route/dispatch for xjxr_m552sns / sns2m55; Capstone pool → msg_id fmt, register_rx_msg_handler (Ghidra unnamed)"
+    },
+    {
+      "va": "0x2c526a40",
+      "name": "xjxr_mcu_sensor_bridge_locked",
+      "role": "Mutex-guarded bridge send path; pool → xjxr_ms_mutex + mcu_sensor communication"
+    },
+    {
+      "va": "0x2c527144",
+      "name": "hal_mcu2sens_recv_fail_trace",
+      "role": "Noreturn TRACE for hal_mcu2sens_start_recv failed"
+    },
+    {
+      "va": "0x2c527494",
+      "name": "notify_mcu_sensorhub_ready_trace",
+      "role": "Noreturn TRACE referencing notify_mcu_sensorhub_ready"
+    },
+    {
+      "va": "0x2c52751c",
+      "name": "xjxr_common_sensor_init_guard",
+      "role": "Init probe; failure TRACE into xjxr_common_sensor.c"
+    },
+    {
+      "va": "0x2c527564",
+      "name": "xjxr_common_sensor_bad_dtype",
+      "role": "Rejects/traces sensor Data type 0xd path; pool → sensor: Data type %d not supported"
+    },
+    {
+      "va": "0x2c5282a0",
+      "name": "ui_sns_ready_bind",
+      "role": "LVGL view update using sns_ready registry string (UI↔sensor hub ready edge)"
+    },
+    {
+      "va": "0x2c5299c8",
+      "name": "sensor_agm_event_callback_trace",
+      "role": "TRACE stub for sensor_agm_event_callback / accel_gyro_s.cpp line 0x2c"
+    },
+    {
+      "va": "0x2c529b34",
+      "name": "sensor_factory_data_callback_trace",
+      "role": "TRACE stub for sensor_factory_data_callback"
+    },
+    {
+      "va": "0x2c529be4",
+      "name": "sensor_agm_registry_dump",
+      "role": "Dumps amg_type / g_ag_init / g_m_init / g_ag_reg / g_m_reg AGM software state"
+    },
+    {
+      "va": "0x2c5af350",
+      "name": "app_sensor_hub_cmd_guard",
+      "role": "app_sensor_hub.cpp command entry checks; pool → app_sensor_hub.cpp path"
+    }
+  ],
+  "string_evidence": [
+    {"off": "0x38d28", "text": "init_xr_m55_sensor_mgr"},
+    {"off": "0x38d40", "text": "accel_gyro.cpp"},
+    {"off": "0x38e9c", "text": "register_accel_gyro_listner"},
+    {"off": "0x41b74", "text": "xjxr_sns2m55"},
+    {"off": "0x41b84", "text": "xjxr_m552sns"},
+    {"off": "0x148f78", "text": "sensor_agm_event_callback"},
+    {"off": "0x148fc8", "text": "amg_type=%d, g_ag_init=%d, ..."},
+    {"off": "0x14a663", "text": "CHIP_SUBSYS=sensor_hub FLASH_BASE=0x34000000"}
+  ]
+}

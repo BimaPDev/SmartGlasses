@@ -1,0 +1,239 @@
+{
+  "kernel": "FreeRTOS 10.4.1",
+  "binary": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "xip_base": "0x2C000000",
+  "sram_string_alias": "0x3C000000",
+  "method": "string scan + Capstone xref/CMP hunt; TRACE-interned asserts block numeric recovery for MAX_PRIORITIES / NAME_LEN / HEAP / TICK",
+  "entries": [
+    {
+      "name": "kernel_version",
+      "value": "FreeRTOS 10.4.1",
+      "unit": "",
+      "evidence": "banner string `FreeRTOS V10.4.1`",
+      "file_offset": "0x12BECC",
+      "confidence": "high",
+      "notes": "Same banner attributed to M55 CMSIS-RTOS2 stack in RTOS_MAP; co-located with HiFi4/Xtensa port assert cluster (see hifi4_port)."
+    },
+    {
+      "name": "cmsis_rtos2_shim",
+      "value": "present",
+      "unit": "",
+      "evidence": "source path cmsis_os2.c + API symbols (osThreadSetPriority/GetPriority/Yield/Suspend/Resume, osDelay/osDelayUntil, osEventFlags*, osMutex*, osSemaphore*, osMessageQueue*)",
+      "file_offset": "0x12BE5D",
+      "confidence": "high",
+      "notes": "CMSIS-RTOS2 over FreeRTOS; osThreadNew fail log also at 0x160808."
+    },
+    {
+      "name": "heap_implementation",
+      "value": "heap_4",
+      "unit": "",
+      "evidence": "assert/source path `../../rtos/freertos/Source/portable/MemMang/heap_4.c` + `pvPortMalloc` / `vPortFree` asserts",
+      "file_offset": "0x12D613",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configMAX_PRIORITIES",
+      "value": null,
+      "unit": "levels",
+      "evidence": "assert string `( uxNewPriority < configMAX_PRIORITIES )` beside `vTaskPrioritySet` in tasks.c cluster",
+      "file_offset": "0x12CB89",
+      "confidence": "unrecovered",
+      "notes": "assert present @ 0x12CB89 but 0 literal-pool / interior VA refs (TRACE-interned); Capstone CMP hunt unbound"
+    },
+    {
+      "name": "configMAX_TASK_NAME_LEN",
+      "value": null,
+      "unit": "chars",
+      "evidence": "assert string `strlen( pcNameToQuery ) < configMAX_TASK_NAME_LEN` beside `xTaskGetHandle`",
+      "file_offset": "0x12CC9A",
+      "confidence": "unrecovered",
+      "notes": "assert present @ 0x12CC9A but 0 VA refs (TRACE-interned)"
+    },
+    {
+      "name": "configTOTAL_HEAP_SIZE",
+      "value": null,
+      "unit": "bytes",
+      "evidence": "no `configTOTAL_HEAP_SIZE` / `ucHeap` / sized heap banner in image; heap_4 present but array extent not statically bound",
+      "file_offset": "",
+      "confidence": "unrecovered",
+      "notes": "Do not confuse with multi_heap / med_heap / LV_MEM pools elsewhere."
+    },
+    {
+      "name": "configTICK_RATE_HZ",
+      "value": null,
+      "unit": "Hz",
+      "evidence": "no `configTICK_RATE_HZ` / `osKernelGetTickFreq` / `OS_TICK_FREQ` string; tick/ms dump formats exist under RTX introspection only",
+      "file_offset": "",
+      "confidence": "unrecovered",
+      "notes": "LVGL `lvgl_os_tick_timer` proves a software tick consumer, not the rate."
+    },
+    {
+      "name": "configMINIMAL_STACK_SIZE",
+      "value": null,
+      "unit": "words",
+      "evidence": "format `%%d-%%s minisize %%d` @ test_freertos.c cluster prints a runtime minisize but the immediate is not recoverable (no VA xref)",
+      "file_offset": "0x12BA7A",
+      "confidence": "unrecovered",
+      "notes": "Idle/Timer daemon stack sizes also unrecovered statically."
+    },
+    {
+      "name": "configCHECK_FOR_STACK_OVERFLOW",
+      "value": "enabled (1 or 2)",
+      "unit": "",
+      "evidence": "`vApplicationStackOverflowHook` + `task %s stack overflow` strings",
+      "file_offset": "0x12BA86",
+      "confidence": "high",
+      "notes": "Method 1 vs 2 (canary-only vs canary+SP check) not distinguished; value left as enabled-not-enumerated."
+    },
+    {
+      "name": "configSUPPORT_STATIC_ALLOCATION",
+      "value": "1",
+      "unit": "",
+      "evidence": "`xTaskCreateStatic` / `xEventGroupCreateStatic` / `xStreamBufferGenericCreateStatic` / `xTimerCreateStatic` / `xQueueGenericCreateStatic` + static TCB assert",
+      "file_offset": "0x12CAA1",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configSUPPORT_DYNAMIC_ALLOCATION",
+      "value": "1",
+      "unit": "",
+      "evidence": "`xQueueGenericCreate` + `pvPortMalloc`/`vPortFree` heap_4 asserts (dynamic path compiled alongside static)",
+      "file_offset": "0x12D0AA",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configUSE_TIMERS",
+      "value": "1",
+      "unit": "",
+      "evidence": "timers.c path + timer daemon name `Tmr Svc` + `xTimerCreateTimerTask`",
+      "file_offset": "0x12C862",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configUSE_EVENT_GROUPS",
+      "value": "1",
+      "unit": "",
+      "evidence": "event_groups.c path + xEventGroup* assert cluster",
+      "file_offset": "0x12C1BD",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configUSE_STREAM_BUFFERS",
+      "value": "1",
+      "unit": "",
+      "evidence": "stream_buffer.c path + xStreamBuffer* asserts",
+      "file_offset": "0x12C412",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configUSE_TASK_NOTIFICATIONS",
+      "value": "1",
+      "unit": "",
+      "evidence": "`xTaskGenericNotify` / `xTaskGenericNotifyFromISR` / `vTaskNotifyGiveFromISR` asserts in tasks.c",
+      "file_offset": "0x12CF5C",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configUSE_MUTEXES",
+      "value": "1",
+      "unit": "",
+      "evidence": "queue.c mutex recursive + `xQueueGetMutexHolderFromISR` asserts",
+      "file_offset": "0x12D1C2",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configUSE_COUNTING_SEMAPHORES",
+      "value": "1",
+      "unit": "",
+      "evidence": "`xQueueCreateCountingSemaphore` / Static variant asserts",
+      "file_offset": "0x12D1FC",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "configASSERT",
+      "value": "enabled",
+      "unit": "",
+      "evidence": "dense FreeRTOS configASSERT condition strings + `vPortAssertIfInISR` / `assert %ld, %s`",
+      "file_offset": "0x12BE99",
+      "confidence": "high",
+      "notes": ""
+    },
+    {
+      "name": "portBYTE_ALIGNMENT",
+      "value": null,
+      "unit": "bytes",
+      "evidence": "`( xWantedSize & portBYTE_ALIGNMENT_MASK ) == 0` in heap_4; mask width not bound to an immediate via xref",
+      "file_offset": "0x12D64A",
+      "confidence": "unrecovered",
+      "notes": "Cortex-M ports commonly use 8, but that default is not evidenced here."
+    },
+    {
+      "name": "hifi4_freertos_port",
+      "value": "XCC/Xtensa",
+      "unit": "",
+      "evidence": "`../../rtos/freertos/Source/portable/XCC/Xtensa/port.c` + `portclib.c` + `hifi4 freertos run!` + `frxt_blinky`",
+      "file_offset": "0x12D7AB",
+      "confidence": "high",
+      "notes": "No ARM_CM55 / GCC/ARM_CMx FreeRTOS port path strings in this image; M55 kernel port path unrecovered (BES custom / stripped)."
+    },
+    {
+      "name": "smf_thread_hifi4",
+      "value": "present",
+      "unit": "",
+      "evidence": "`smf_thread_print` + `%s:stack=%d/%d` under `smf/porting/hifi4/thread.cpp` / `smf_rpc.cpp`",
+      "file_offset": "0xC5F55",
+      "confidence": "high",
+      "notes": "HiFi4 SMF thread wrapper over FreeRTOS; stack used/total only at runtime."
+    },
+    {
+      "name": "cmsis_osThreadFlags_max",
+      "value": null,
+      "unit": "flags",
+      "evidence": "osEventFlags* API strings present; no `osThreadFlags*` / `osFlagsError*` banners; 31-bit CMSIS default not proven from immediates",
+      "file_offset": "0x12BFAD",
+      "confidence": "unrecovered",
+      "notes": ""
+    },
+    {
+      "name": "cmsis_osMessageQueue_max",
+      "value": null,
+      "unit": "messages",
+      "evidence": "`osMessageQueuePut/Get/Reset/Delete` present; no compile-time max capacity constant recovered",
+      "file_offset": "0x12C035",
+      "confidence": "unrecovered",
+      "notes": "Per-queue capacities belong to leaf stacks/IPC inventories, not kernel config."
+    },
+    {
+      "name": "idle_task_name",
+      "value": "IDLE",
+      "unit": "",
+      "evidence": "NUL-terminated `IDLE` immediately before `vTaskStartScheduler` string",
+      "file_offset": "0x12CBEC",
+      "confidence": "high",
+      "notes": "Standard FreeRTOS idle task name when configIDLE_TASK_NAME unset/default."
+    },
+    {
+      "name": "vTaskStartScheduler",
+      "value": "present",
+      "unit": "",
+      "evidence": "symbol/assert name `vTaskStartScheduler` in tasks.c cluster",
+      "file_offset": "0x12CBF1",
+      "confidence": "high",
+      "notes": ""
+    }
+  ],
+  "stats": {
+    "total": 25,
+    "recovered_valued": 17,
+    "unrecovered": 8
+  }
+}

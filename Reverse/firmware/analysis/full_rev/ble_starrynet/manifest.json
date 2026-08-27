@@ -1,0 +1,68 @@
+{
+  "leaf": "1.2.1",
+  "subsystem": "ble_starrynet",
+  "firmware": "platform_tester.bin 1.0.12.83",
+  "xip_base": "0x2c000000",
+  "rodata_alias": "0x3c000000",
+  "note": "Thumb entry VAs for MessageModel methods are unrecovered (BES TRACE-hash: zero abs/MOVW/MOVT xrefs into the action blob). Entries below are stable string / symbol anchors with semantic roles.",
+  "functions": [
+    {
+      "va": "0x2c194d54",
+      "name": "MessageModel::handleSystemMsg",
+      "role": "Inner data.action dispatcher for top-level action=system; miss path logs no handler for action %s"
+    },
+    {
+      "va": "0x2c194fa8",
+      "name": "MessageModel::handleScreenShot",
+      "role": "Framebuffer capture + ShareAbility send; refuse screen-off / business-app / UUID fail"
+    },
+    {
+      "va": "0x2c195360",
+      "name": "MessageModel::handleGetLog",
+      "role": "ASL user_feed_back.log pull for user_feedback / get_glass_log path"
+    },
+    {
+      "va": "0x2c195220",
+      "name": "MessageModel::handleScreenShotMsg",
+      "role": "Top-level screenshot model: routes get_glass_screenshot / show_screenshot_save_result"
+    },
+    {
+      "va": "0x2c195498",
+      "name": "MessageModel::handleGetLogMsg",
+      "role": "Top-level user_feedback model wrapper around handleGetLog"
+    },
+    {
+      "va": "0x2c192dac",
+      "name": "MessageModel::handlePhonePadMsg",
+      "role": "Phone-pad / TP gesture events over StarryNet JSON"
+    },
+    {
+      "va": "0x2c18f2d8",
+      "name": "AncsManager",
+      "role": "iOS ANCS notification bridge (SmartLife); registerAncs / handleAncs*Message"
+    },
+    {
+      "va": "0x2c189990",
+      "name": "register_starry_net",
+      "role": "StarryNet stack registration hook (launcher/adapter edge into xjxr_starrynet)"
+    },
+    {
+      "va": "0x2c0282ee",
+      "name": "FUN_2c0282ee",
+      "role": "Ghidra-decompiled xjxr_starrynet_test / eshell StarryNet test command body"
+    },
+    {
+      "va": "0x2c194bcc",
+      "name": "handleSystemMsg_packed_action_table",
+      "role": "Start of packed inner-action C-string blob (through miss path @ 0x2c194f68)"
+    }
+  ],
+  "absences": [
+    "set_demo_mode",
+    "get_demo_mode",
+    "screen_record",
+    "get_glass_screen_record",
+    "toggle_wifi",
+    "set_wifi"
+  ]
+}

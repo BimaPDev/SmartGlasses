@@ -1,0 +1,358 @@
+{
+  "firmware": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/best1600_watch_bth.bin",
+  "firmware_size": 1341116,
+  "load_base": "0x14000000",
+  "image_end_va": "0x141476bc",
+  "kernel": {
+    "kernel": "RTX5",
+    "version_banner": "P RTX V5.5.1",
+    "kernel_define": "KERNEL=RTX5",
+    "chip": "CHIP=best1600",
+    "chip_subsys": "CHIP_SUBSYS=bth",
+    "build_date": "BUILD_DATE=Dec 31 2024 14:02:34",
+    "rev_info": "REV_INFO=422729f-dirty:best1600_watch_bth",
+    "sw_ver": "SW_VER=Flyme XR 1.0.12.83.20241231_Air_FR",
+    "flash_base": "FLASH_BASE=0x34000000",
+    "flash_size": "FLASH_SIZE=0x400000"
+  },
+  "rtx5_source_paths": [
+    "../../rtos/rtx5/rtx_evr.c",
+    "../../rtos/rtx5/rtx_thread_dump.c"
+  ],
+  "kernel_config_strings": [
+    "BUILD_DATE=Dec 31 2024 14:02:34",
+    "CHIP=best1600",
+    "CHIP_SUBSYS=bth",
+    "FLASH_BASE=0x34000000",
+    "FLASH_NC_BASE=0x30000000",
+    "FLASH_SIZE=0x400000",
+    "KERNEL=RTX5",
+    "OTA_CODE_OFFSET=0x10000",
+    "OTA_REMAP_OFFSET=0x400000/2-0x10000",
+    "P RTX V5.5.1",
+    "REV_INFO=422729f-dirty:best1600_watch_bth",
+    "SW_VER=Flyme XR 1.0.12.83.20241231_Air_FR"
+  ],
+  "thread_dump_formats": [
+    {
+      "format": " thread=0x%x, prio=%u state=%-9s thread_addr=0x%08X",
+      "file_offset": "0xa620",
+      "va": "0x1400a620"
+    },
+    {
+      "format": "    stack_mem=0x%08X stack_size=%u sp:0x%04x min_stack_free=%u",
+      "file_offset": "0xa7e4",
+      "va": "0x1400a7e4"
+    },
+    {
+      "format": "    stack_mem=0x%08X stack_size=%u",
+      "file_offset": "0xa824",
+      "va": "0x1400a824"
+    },
+    {
+      "format": "    sp:0x%04x min_stack_free=%u",
+      "file_offset": "0xa848",
+      "va": "0x1400a848"
+    },
+    {
+      "format": "rtx_show_all_threads_usage",
+      "file_offset": "0xaaf0",
+      "va": "0x1400aaf0"
+    },
+    {
+      "format": "Thread List:",
+      "file_offset": "0xab0c",
+      "va": "0x1400ab0c"
+    },
+    {
+      "format": "--- Thread name=%s cpu=%%%d min-free-stack=%d",
+      "file_offset": "0xa510",
+      "va": "0x1400a510"
+    },
+    {
+      "format": "--- Thread BAD",
+      "file_offset": "0xa540",
+      "va": "0x1400a540"
+    },
+    {
+      "format": "--- Thread NONE",
+      "file_offset": "0xa554",
+      "va": "0x1400a554"
+    },
+    {
+      "format": "INACTIVE",
+      "file_offset": "0xa56c",
+      "va": "0x1400a56c"
+    },
+    {
+      "format": "RUNNING",
+      "file_offset": "0xa578",
+      "va": "0x1400a578"
+    },
+    {
+      "format": "TERMINAT",
+      "file_offset": "0xa580",
+      "va": "0x1400a580"
+    },
+    {
+      "format": "WAIT_DLY",
+      "file_offset": "0xa58c",
+      "va": "0x1400a58c"
+    },
+    {
+      "format": "WAIT_JOIN",
+      "file_offset": "0xa598",
+      "va": "0x1400a598"
+    },
+    {
+      "format": "WAIT_FLAG",
+      "file_offset": "0xa5a4",
+      "va": "0x1400a5a4"
+    },
+    {
+      "format": "WAIT_SEM",
+      "file_offset": "0xa5b0",
+      "va": "0x1400a5b0"
+    },
+    {
+      "format": "WAIT_MEM",
+      "file_offset": "0xa5bc",
+      "va": "0x1400a5bc"
+    },
+    {
+      "format": "WAIT_MUT",
+      "file_offset": "0xa5c8",
+      "va": "0x1400a5c8"
+    },
+    {
+      "format": "READY",
+      "file_offset": "0xa5d4",
+      "va": "0x1400a5d4"
+    },
+    {
+      "format": "WAIT_EVE",
+      "file_offset": "0xa5dc",
+      "va": "0x1400a5dc"
+    },
+    {
+      "format": "WAIT_MGET",
+      "file_offset": "0xa5e8",
+      "va": "0x1400a5e8"
+    },
+    {
+      "format": "WAIT_MPUT",
+      "file_offset": "0xa5f4",
+      "va": "0x1400a5f4"
+    },
+    {
+      "format": "--- Thread  %d ",
+      "file_offset": "0xa608",
+      "va": "0x1400a608"
+    },
+    {
+      "format": "--- Thread  %d thread=0x%x name=%s",
+      "file_offset": "0xa654",
+      "va": "0x1400a654"
+    },
+    {
+      "format": "    prio=%u state=%-9s thread_addr=0x%08X",
+      "file_offset": "0xa678",
+      "va": "0x1400a678"
+    },
+    {
+      "format": "    thread_next=0x%08X thread_prev=0x%08X delay_next=0x%08X delay_prev=0x%08X",
+      "file_offset": "0xa6a4",
+      "va": "0x1400a6a4"
+    },
+    {
+      "format": "    thread_next=0x%08X thread_prev=0x%08X",
+      "file_offset": "0xa6f4",
+      "va": "0x1400a6f4"
+    },
+    {
+      "format": "    thread_join=0x%08X flags_options=%u wait_flags=%u thread_flags=%u",
+      "file_offset": "0xa74c",
+      "va": "0x1400a74c"
+    },
+    {
+      "format": "    thread_join=0x%08X flags_options=%u",
+      "file_offset": "0xa794",
+      "va": "0x1400a794"
+    }
+  ],
+  "thread_dump_source": "../../rtos/rtx5/rtx_thread_dump.c",
+  "thread_dump_fn": "rtx_show_all_threads_usage",
+  "evr_source": "../../rtos/rtx5/rtx_evr.c",
+  "osif_source": "../../services/osif/osif_rtx.c",
+  "osif_thread_gate_strings": [
+    "../../services/osif/osif_rtx.c",
+    "request_thread:%s"
+  ],
+  "entries": [
+    {
+      "name": "APPTHREAD",
+      "category": "bt_stack",
+      "source_hint": "",
+      "file_offset": "0xe6688",
+      "va": "0x140e6688"
+    },
+    {
+      "name": "BesbtThread",
+      "category": "bt_stack",
+      "source_hint": "bthost BT main stack",
+      "file_offset": "0x11a7a0",
+      "va": "0x1411a7a0"
+    },
+    {
+      "name": "af_thread",
+      "category": "audio",
+      "source_hint": "audioflinger (services/audioflinger)",
+      "file_offset": "0x12cccc",
+      "va": "0x1412cccc"
+    },
+    {
+      "name": "app_bt_cmd_thread",
+      "category": "bt_stack",
+      "source_hint": "../../services/../bthost/service/bt_app/test/app_bt_cmd.cpp",
+      "file_offset": "0x11623c",
+      "va": "0x1411623c"
+    },
+    {
+      "name": "app_thread",
+      "category": "app_main",
+      "source_hint": "../../apps/common/app_thread.c",
+      "file_offset": "0x13805c",
+      "va": "0x1413805c"
+    },
+    {
+      "name": "bth_dsp_tx_thread",
+      "category": "audio_dsp",
+      "source_hint": "../../apps/app_rpc/rpc_bth_dsp/rpc_bth_dsp.c",
+      "file_offset": "0x131ac8",
+      "va": "0x14131ac8"
+    },
+    {
+      "name": "bth_if_thread",
+      "category": "bt_stack",
+      "source_hint": "../../apps/bth_if/bt_if_server/bth_if_thread_server.c",
+      "file_offset": "0x130dc8",
+      "va": "0x14130dc8"
+    },
+    {
+      "name": "eshell_rpc_rx_thread",
+      "category": "shell",
+      "source_hint": "../../utils/eshell/eshell.c",
+      "file_offset": "0x141adc",
+      "va": "0x14141adc"
+    },
+    {
+      "name": "eshell_thread...",
+      "category": "shell",
+      "source_hint": "",
+      "file_offset": "0x140a3c",
+      "va": "0x14140a3c"
+    },
+    {
+      "name": "hci_rx_thread",
+      "category": "bt_stack",
+      "source_hint": "bthost/stack (HCI RX path)",
+      "file_offset": "0x11efb4",
+      "va": "0x1411efb4"
+    },
+    {
+      "name": "intersys_tx_thread_id",
+      "category": "intersys",
+      "source_hint": "../../apps/main/watch_src/.../xjxr_intersys_bth.c",
+      "file_offset": "0x1402fc",
+      "va": "0x141402fc"
+    },
+    {
+      "name": "ota_thread",
+      "category": "ota",
+      "source_hint": "../../services/ota/bes_ota/src/ota_config.cpp",
+      "file_offset": "0x1311f8",
+      "va": "0x141311f8"
+    },
+    {
+      "name": "restart_eshell_thread",
+      "category": "shell",
+      "source_hint": "",
+      "file_offset": "0x140b94",
+      "va": "0x14140b94"
+    },
+    {
+      "name": "rpc_rx_thread",
+      "category": "rpc_ipc",
+      "source_hint": "../../apps/app_rpc/rpc_rx_thread.c",
+      "file_offset": "0x1317ac",
+      "va": "0x141317ac"
+    },
+    {
+      "name": "xjxr_audio_event_thread",
+      "category": "audio",
+      "source_hint": "../../services/../bthost/service/bt_app/../../../xjxr_audio/",
+      "file_offset": "0x11ab5c",
+      "va": "0x1411ab5c"
+    },
+    {
+      "name": "xjxr_audio_msg_handler_thread",
+      "category": "audio",
+      "source_hint": "../../services/../bthost/service/bt_app/../../../xjxr_audio/",
+      "file_offset": "0x11aad8",
+      "va": "0x1411aad8"
+    }
+  ],
+  "thread_count": 16,
+  "eshell_commands": [
+    "close threads usage",
+    "close_threads_uasges",
+    "close_threads_usage",
+    "comp",
+    "comp16",
+    "comp32",
+    "debug_i2c",
+    "dump threads stack",
+    "dump_all_threads",
+    "gpioget",
+    "gpioset",
+    "md16",
+    "md32",
+    "msleep",
+    "mw16",
+    "mw32",
+    "pmugpioget",
+    "pmugpioset",
+    "restart_eshell_thread",
+    "shell_sleep",
+    "show all threads usage",
+    "show memory map",
+    "show status of threads",
+    "show_threads_uasges",
+    "show_threads_usage",
+    "show_threads_usage_once",
+    "sleep"
+  ],
+  "ipc_strings": [
+    "INTERSYS-OPEN: rx_flowctrl=%d (should be %d)",
+    "INTERSYS-RX: Handler missing",
+    "INTERSYS-RX: Invalid msg type: %d",
+    "INTERSYS-TX: Invalid msg type: %d",
+    "M55_TO_BTH_READ_FLASH",
+    "M55_TO_BTH_WRITE_FLASH",
+    "XRM_ESHELL",
+    "eshell_corebridge_comm",
+    "m55_ble_remove_bond",
+    "m55_bt_adapter_disconnect_acl_cb",
+    "m55_bt_adapter_remove_bond_cb",
+    "m55_bt_adapter_remove_bond_ios",
+    "m55_get_local_name_intersys_cb",
+    "m55_get_remote_address_intersys_cb",
+    "notify_a2dp_connected_status_to_M55",
+    "notify_a2dp_position_to_m55",
+    "notify_a2dp_status_to_m55",
+    "send_bth_to_m55_msg",
+    "send_m55_to_bth_msg",
+    "xjxr_bth2m55",
+    "xjxr_m552bth"
+  ]
+}

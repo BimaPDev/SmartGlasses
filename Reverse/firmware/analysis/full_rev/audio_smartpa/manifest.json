@@ -1,0 +1,108 @@
+{
+  "firmware": "1.0.12.83",
+  "xip_base": "0x2C000000",
+  "cluster": "0x2C4A8020-0x2C4B1338",
+  "chip_id": "0x2049",
+  "functions": [
+    {
+      "va": "0x2c4a8fcc",
+      "name": "aw883xx_init",
+      "role": "Probe REG0 until chip-id 0x2049; malloc wrapper; run pid_2049_dev_init; install g_aw883xx[dev]"
+    },
+    {
+      "va": "0x2c4aa018",
+      "name": "aw883xx_pid_2049_dev_init",
+      "role": "PID-2049 device object + ops vtable; vol_max=0x2D0; bind profiles"
+    },
+    {
+      "va": "0x2c4a8638",
+      "name": "aw883xx_reg_read",
+      "role": "16-bit I2C register read with endian swap via board i2c_read cb"
+    },
+    {
+      "va": "0x2c4a85ac",
+      "name": "aw883xx_reg_write",
+      "role": "16-bit I2C register write (BE on wire) via board i2c_write cb"
+    },
+    {
+      "va": "0x2c4a87c4",
+      "name": "aw883xx_reg_write_bits",
+      "role": "Locked RMW register update (mask/val)"
+    },
+    {
+      "va": "0x2c4a88c8",
+      "name": "aw883xx_dsp_write",
+      "role": "DSP 16/32-bit write through addr/data regs at device+0x1CC/0x1D0"
+    },
+    {
+      "va": "0x2c4a8a8c",
+      "name": "aw883xx_dsp_read",
+      "role": "DSP 16/32-bit read companion"
+    },
+    {
+      "va": "0x2c4a9894",
+      "name": "smartpa_set_volume",
+      "role": "UI level 0..16 → vol_value; TRACE; apply to PA0 then PA1"
+    },
+    {
+      "va": "0x2c4a8d30",
+      "name": "aw883xx_volume_apply",
+      "role": "g_aw883xx[dev] lookup → aw883xx_volume_ops"
+    },
+    {
+      "va": "0x2c4aaac0",
+      "name": "aw883xx_volume_ops",
+      "role": "Clamp vs vol_max (+0x19C), store +0x1A0, call set_volume op +0x350"
+    },
+    {
+      "va": "0x2c4a9f58",
+      "name": "aw883xx_set_volume_reg",
+      "role": "Encode volume into register 5"
+    },
+    {
+      "va": "0x2c4a9b28",
+      "name": "aw883xx_get_volume_reg",
+      "role": "Decode volume from register 5"
+    },
+    {
+      "va": "0x2c4a8f1e",
+      "name": "aw883xx_set_profile_byname",
+      "role": "Match profile name (Mmi/Music/Receiver) on device"
+    },
+    {
+      "va": "0x2c4a96fa",
+      "name": "smartpa_set_profile_rate",
+      "role": "Accept 8k/16k/44.1k/48k before profile load"
+    },
+    {
+      "va": "0x2c4a8dce",
+      "name": "aw883xx_ctrl_state",
+      "role": "Start/stop gate into device_start / device_stop"
+    },
+    {
+      "va": "0x2c4abfec",
+      "name": "aw883xx_device_stop",
+      "role": "Mute/power-down sequence with status checks"
+    },
+    {
+      "va": "0x2c4a92ba",
+      "name": "aw883xx_cali_re_f0",
+      "role": "Factory cali entry: prepare + re + f0 for one PA"
+    },
+    {
+      "va": "0x2c4a99c8",
+      "name": "smartpa_get_factory_re",
+      "role": "Read factory Re from both devices (re[0]/re[1] logs)"
+    },
+    {
+      "va": "0x2c4a93ec",
+      "name": "aw883xx_i2c_writes",
+      "role": "Build {reg|payload} and hal_i2c_write (FUN_2c4bd438)"
+    },
+    {
+      "va": "0x2c4a8cac",
+      "name": "g_aw883xx_get",
+      "role": "Return g_aw883xx[dev] pointer"
+    }
+  ]
+}

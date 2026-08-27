@@ -1,0 +1,289 @@
+== 0. forced function creation from BL targets ==
+  created=0 already=9126 failed=2857
+  gap-scan created=20
+  exported 12226 function entries to ghidra_functions.txt
+
+== program ==
+  imageBase = 00000000
+  minAddr   = 2c000000
+  maxAddr   = 2c6753fb
+  language  = ARM:LE:32:v8-m
+  functions = 12231
+
+== A. control 0x2C499270 (jbd4010_display, known-good VA) ==
+  entry=2c499270 size=20 entryMatches=true
+  noReturnFlow=true backEdges=0
+  callees=
+
+== B. LVGL core link band ==
+  wrapper 0x2c606ce8 -> 2c606ce8
+  wrapper 0x2c606cf4 -> 2c606cf4
+  wrapper 0x2c606f34 -> 2c606f34
+  wrapper 0x2c606fa8 -> 2c606fa8
+  wrapper 0x2c606ff8 -> 2c606ff8
+  wrapper 0x2c607048 -> 2c607048
+  wrapper 0x2c6070bc -> 2c6070bc
+  wrapper 0x2c60710c -> 2c60710c
+  wrapper 0x2c6072b4 -> 2c6072b4
+  wrapper 0x2c6072bc -> 2c6072bc
+  wrapper 0x2c62b030 -> 2c62b030
+  wrapper 0x2c62c6a0 -> 2c62c6a0
+  wrapper 0x2c62c6b0 -> 2c62c6b0
+  wrapper 0x2c62c730 -> 2c62c730
+  wrapper 0x2c62c770 -> 2c62c770
+  wrapper 0x2c62c7e8 -> 2c62c7e8
+  wrapper span 0x2c606ce8 .. 0x2c62c7e8
+
+== C. never-returning functions with a back edge (while(1) bodies) ==
+  count = 118
+  0x2c00647c size=702   callers=4   band=no  callees=0x2c013c4c
+  0x2c00b384 size=42    callers=1   band=no  callees=0x2c007708 0x2c008498 0x2c008af4 0x2c008b54 0x2c00aebc 0x2c00b36c 0x2c013870
+  0x2c00c094 size=420   callers=1   band=no  callees=0x2c009b20 0x2c00abe4 0x2c00aebc 0x2c00b160 0x2c00b1ac 0x2c00b250 0x2c00b36c 0x2c00b384 0x2c00b428 0x2c00b47c 0x2c00b4d4 0x2c00bc5c 0x2c00bccc 0x2c00be0c 0x2c00bf74 ...
+  0x2c019ef4 size=186   callers=1   band=no  callees=
+  0x2c01b404 size=2018  callers=1   band=no  callees=
+  0x2c0217b8 size=2230  callers=1   band=no  callees=
+  0x2c02381c size=458   callers=1   band=no  callees=
+  0x2c0239f0 size=542   callers=0   band=no  callees=
+  0x2c1361a4 size=404   callers=1   band=no  callees=0x2c134260 0x2c134f0c 0x2c13529c 0x2c1352b4 0x2c1353a0 0x2c135420 0x2c135458 0x2c135590 0x2c1355b4 0x2c135620 0x2c135678 0x2c135da4 0x2c135e14 0x2c135f50 0x2c13608c ...
+  0x2c1363b4 size=1790  callers=0   band=no  callees=0x2c134f0c 0x2c13529c 0x2c1352b4 0x2c1353a0 0x2c135420 0x2c135458 0x2c135590 0x2c1355b4 0x2c135620 0x2c135678 0x2c135da4 0x2c135e14 0x2c135f50 0x2c13608c 0x2c13635c ...
+  0x2c142474 size=36    callers=0   band=no  callees=
+  0x2c2d48d4 size=80    callers=0   band=no  callees=
+  0x2c2d5b90 size=56    callers=0   band=no  callees=
+  0x2c46a680 size=1906  callers=1   band=no  callees=0x2c46a598 0x2c46a5bc 0x2c46bc5c 0x2c46c508 0x2c46c5e8 0x2c46c72c 0x2c46c768 0x2c46c8d8 0x2c669494 0x2c669588 0x2c66b60a 0x2c66b660 0x2c66c4fc 0x2c66c540 0x2c674668 ...
+  0x2c47f118 size=102   callers=1   band=no  callees=
+  0x2c48d3f2 size=324   callers=0   band=no  callees=0x2c48d300
+  0x2c48e3e8 size=62    callers=47  band=no  callees=0x2c674268
+  0x2c49fb3a size=272   callers=0   band=no  callees=
+  0x2c4a7ba0 size=354   callers=0   band=no  callees=
+  0x2c4ac670 size=122   callers=2   band=no  callees=0x2c4ac5f0 0x2c6444fc
+  0x2c4af5fa size=542   callers=0   band=no  callees=0x2c4add48 0x2c4ae004 0x2c4ae148 0x2c4ae20c
+  0x2c4b6804 size=628   callers=1   band=no  callees=0x2c4b6d30 0x2c4b6dc8 0x2c4b6e64 0x2c4b6fc4 0x2c4b7018 0x2c4b706c 0x2c4b70c0 0x2c4b7178 0x2c4b71dc 0x2c4b723c 0x2c673d68
+  0x2c4b754c size=106   callers=1   band=no  callees=
+  0x2c4c75b2 size=634   callers=0   band=no  callees=0x2c4c6710 0x2c673b08 0x2c6741e8
+  0x2c4ce4e0 size=568   callers=2   band=no  callees=0x2c4d74d4
+  0x2c4cede0 size=876   callers=0   band=no  callees=0x2c4d74d4 0x2c4d7598 0x2c4d766c 0x2c4d768c 0x2c4d76a8
+  0x2c4d04da size=314   callers=0   band=no  callees=0x2c4cca80 0x2c4d7080 0x2c674268
+  0x2c4d4ada size=46    callers=0   band=no  callees=0x2c4d74d4
+  0x2c4d4b5c size=1108  callers=3   band=no  callees=0x2c4d74d4
+  0x2c4d6f58 size=104   callers=0   band=no  callees=0x2c4d74d4 0x2c4d7598
+  0x2c4d7746 size=96    callers=0   band=no  callees=
+  0x2c4d8848 size=2530  callers=1   band=no  callees=
+  0x2c4d9604 size=296   callers=1   band=no  callees=0x2c4d954c 0x2c4d95b0 0x2c4da7c0
+  0x2c4d972c size=208   callers=0   band=no  callees=0x2c4d9db4
+  0x2c4da6b4 size=42    callers=0   band=no  callees=
+  0x2c4da7c0 size=264   callers=1   band=no  callees=0x2c4d94e8
+  0x2c4dad9a size=922   callers=0   band=no  callees=0x2c4d74d4 0x2c4d7598 0x2c4d766c 0x2c674268
+  0x2c4e3bb4 size=44    callers=1   band=no  callees=0x2c4e3b34
+  0x2c4e4ff0 size=414   callers=1   band=no  callees=0x2c6741e8
+  0x2c4e51a4 size=1946  callers=1   band=no  callees=0x2c666230 0x2c666d78 0x2c6670a0 0x2c6741e8
+  0x2c4ee4d0 size=32    callers=0   band=no  callees=0x2b7ac4ec 0x2cf930e8
+  0x2c4f2d00 size=114   callers=2   band=no  callees=0x2c4f2d00
+  0x2c4f384c size=672   callers=5   band=no  callees=0x2c4f1588 0x2c4f1b28 0x2c4f2ab8 0x2c4f2bfc 0x2c4f3220
+  0x2c50f9b8 size=620   callers=8   band=YES callees=0x2c50f11c 0x2c6033b4 0x2c60747c 0x2c62c0d8 0x2c62ca10 0x2c62ca20 0x2c62e838
+  0x2c514bec size=184   callers=3   band=no  callees=0x2c511f90 0x2c512360 0x2c5125b8 0x2c5167a4 0x2c5167fc 0x2c51681c
+  0x2c516126 size=98    callers=0   band=no  callees=0x2c5115bc 0x2c5115c0 0x2c516324 0x2c5166cc 0x2c62c82c
+  0x2c51e44c size=86    callers=0   band=no  callees=0x2c62c82c
+  0x2c52e9c0 size=76    callers=0   band=no  callees=0x2c472680
+  0x2c530e58 size=144   callers=0   band=no  callees=0x2c47245c 0x2c48dea0 0x2c48e3b8 0x2c5315e0 0x2c5321c4
+  0x2c53129c size=732   callers=0   band=no  callees=0x2c47245c 0x2c472680 0x2c530f1c 0x2c53159c 0x2c62c82c 0x2c674668
+  0x2c5385f4 size=64    callers=1   band=no  callees=0x2c5361c4 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c5512b8 size=386   callers=0   band=no  callees=0x2c47245c 0x2c54f538 0x2c674668
+  0x2c5518bc size=608   callers=0   band=no  callees=
+  0x2c557a0e size=74    callers=0   band=no  callees=
+  0x2c55a1a0 size=654   callers=4   band=no  callees=0x2c47245c 0x2c472680 0x2c541e5c 0x2c557fc0 0x2c5580bc 0x2c5581ac 0x2c558840 0x2c64cdb4
+  0x2c55a42e size=4272  callers=0   band=no  callees=0x2c4723c4 0x2c47245c 0x2c472680 0x2c541e5c 0x2c557f50 0x2c557fc0 0x2c5580bc 0x2c5581ac 0x2c558840 0x2c64cdb4 0x2c674668
+  0x2c569308 size=66    callers=1   band=no  callees=0x2c63df78 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c569360 size=66    callers=1   band=no  callees=0x2c63e030 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c56ca64 size=146   callers=1   band=no  callees=0x2c472680 0x2c6043d8 0x2c64c9d2
+  0x2c56ce26 size=140   callers=0   band=no  callees=0x2c673eb8 0x2c674668
+  0x2c576d04 size=196   callers=0   band=no  callees=0x2c472680 0x2c52f5f4 0x2c576ad0
+  0x2c578d2c size=80    callers=0   band=no  callees=0x2c5949f4 0x2c62c82c 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c57e4f8 size=118   callers=0   band=no  callees=0x2c4723c4 0x2c47245c 0x2c57e018
+  0x2c584c58 size=214   callers=0   band=no  callees=0x2c472680 0x2c58c558 0x2c58c608 0x2c58c9d8 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c591218 size=466   callers=0   band=no  callees=0x2c472680 0x2c556ca0 0x2c58d598 0x2c58d6c0 0x2c58e14c 0x2c590f14 0x2c62c82c 0x2c66b624 0x2c674668
+  0x2c5924cc size=178   callers=1   band=no  callees=0x2c5942ec 0x2c59431c 0x2c594324 0x2c5949f4 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c5924fc size=114   callers=0   band=no  callees=0x2c58df6c 0x2c58e9f8 0x2c62c82c
+  0x2c5925f8 size=78    callers=0   band=no  callees=0x2c62c82c
+  0x2c592b00 size=1076  callers=1   band=no  callees=0x2c4723c4 0x2c47245c 0x2c472680 0x2c52f5f4 0x2c543d78 0x2c5561f0 0x2c58c9d8 0x2c58df6c 0x2c58e644 0x2c591d68 0x2c591dd8 0x2c591ec8 0x2c66c4ec 0x2c674268 0x2c674668 ...
+  0x2c5958dc size=84    callers=1   band=no  callees=0x2c5949f4 0x2c62c82c 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c59594c size=86    callers=1   band=no  callees=0x2c5949f4 0x2c62c82c 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c595aac size=86    callers=1   band=no  callees=0x2c5949f4 0x2c62c82c 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c59a6f4 size=90    callers=0   band=no  callees=0x2c62c82c 0x2c63b4b8
+  0x2c59c5e4 size=306   callers=0   band=no  callees=0x2c59c5dc 0x2c64c9ce
+  0x2c5aff78 size=50    callers=0   band=no  callees=0x2c5abf68 0x2c5ac178
+  0x2c5b10b8 size=456   callers=2   band=YES callees=0x2c5afd38 0x2c5eba54 0x2c602454 0x2c6036dc 0x2c603a04 0x2c6041dc 0x2c6041fc 0x2c6043d8 0x2c60497c 0x2c606a10 0x2c606a28 0x2c606d30 0x2c606d3c 0x2c606d54 0x2c606d60 ...
+  0x2c5b8bfc size=956   callers=0   band=YES callees=0x2c47245c 0x2c48e424 0x2c48e83c 0x2c48e84c 0x2c5b8a68 0x2c62be88 0x2c62c82c 0x2c6435c4 0x2c66c4ec 0x2c672b70 0x2c674268
+  0x2c5bfa56 size=380   callers=0   band=no  callees=0x2c472680 0x2c5c0cec 0x2c5c0e60 0x2c64c9c4 0x2c64c9d6 0x2c64c9ee
+  0x2c5bfc80 size=60    callers=0   band=no  callees=0x2c674668
+  0x2c5c6cc4 size=128   callers=0   band=no  callees=0x2c5958dc 0x2c59594c 0x2c5c55d8 0x2c5c5a38 0x2c5c5b3c 0x2c62c82c 0x2c66b624
+  0x2c5cdd20 size=126   callers=0   band=no  callees=0x2c673eb8 0x2c674668
+  0x2c5ce90a size=46    callers=0   band=no  callees=0x2c66960c
+  0x2c5d7570 size=122   callers=0   band=no  callees=0x2c48e5b4 0x2c48e738 0x2c5d73dc 0x2c5dcca4 0x2c62c82c
+  0x2c5de488 size=292   callers=6   band=no  callees=0x2c472680 0x2c5ddc98 0x2c5de330 0x2c66b624
+  0x2c5dff30 size=142   callers=1   band=no  callees=0x2c5df27c 0x2c5dfbc0 0x2c5dfde4 0x2c62c82c
+  0x2c5ebf7c size=64    callers=1   band=no  callees=0x2c5e8de4 0x2c5ebdc4
+  0x2c5ebfc0 size=88    callers=1   band=no  callees=0x2c5e8de4 0x2c5e8f58 0x2c5ebdc4
+  0x2c5f4e70 size=194   callers=2   band=no  callees=0x2c5fa100 0x2c66b60a
+  0x2c5f545c size=124   callers=3   band=no  callees=0x2c5f7ad4 0x2c5fb8a0 0x2c5fb8f8 0x2c5fb994
+  0x2c5f7944 size=80    callers=0   band=no  callees=0x2c5fb998
+  0x2c603eb8 size=236   callers=1   band=YES callees=0x2c62b108
+  0x2c604b28 size=206   callers=4   band=YES callees=0x2c6033b4 0x2c60460c 0x2c6046d8 0x2c608c7c
+  0x2c609196 size=1108  callers=0   band=YES callees=0x2c602340 0x2c6041d4 0x2c604a04 0x2c604a14 0x2c604a20 0x2c604a44 0x2c604a50 0x2c605068 0x2c605090 0x2c606b94 0x2c608cbc 0x2c608dec 0x2c608f1c 0x2c62a624
+  0x2c60a5d0 size=428   callers=0   band=YES callees=0x2c61314c 0x2c613e5c 0x2c614414 0x2c6144a0
+  0x2c60ab7c size=710   callers=0   band=YES callees=0x2c61319c 0x2c613e5c 0x2c6144a0 0x2c62a6b4 0x2c62e208
+  0x2c60f7a8 size=414   callers=0   band=YES callees=0x2c62a6b4 0x2c62bf1c
+  0x2c613762 size=220   callers=0   band=YES callees=0x2c62c3b0
+  0x2c6167f4 size=50    callers=0   band=no  callees=0x2c62ca28
+  0x2c61d868 size=2360  callers=1   band=YES callees=0x2c62a470 0x2c62a47c 0x2c62a4c4 0x2c62ae04 0x2c62b03c 0x2c62be88 0x2c62c6a0 0x2c62c6d0 0x2c62c6d8 0x2c62c6e0 0x2c62c6e8 0x2c62c6f0 0x2c62c6f8 0x2c62c700 0x2c62c708 ...
+  0x2c622734 size=54    callers=0   band=no  callees=
+  0x2c634b52 size=66    callers=0   band=no  callees=0x2c5ff4d8 0x2c5ff4e4 0x2c602340
+  0x2c63f0a8 size=202   callers=3   band=no  callees=0x2c48ef34 0x2c48f2d4 0x2c63ef20 0x2c64078c 0x2c640a50 0x2c640dc0
+  0x2c64447c size=40    callers=3   band=no  callees=
+  0x2c64e54c size=448   callers=0   band=no  callees=0x2c64e3e6 0x2c64e410
+  0x2c65a4e4 size=304   callers=1   band=no  callees=0x2c659c12 0x2c659cfe 0x2c659d1a 0x2c65a49c
+  0x2c65c7b8 size=454   callers=0   band=no  callees=0x2c6510f6 0x2c651292 0x2c652d58 0x2c652d76 0x2c652d9a 0x2c658fa0 0x2c65a49c
+  0x2c65d3c6 size=244   callers=0   band=no  callees=0x2c6510f6 0x2c651292 0x2c652d58 0x2c652d9a 0x2c658fa0 0x2c672ae8
+  0x2c660aba size=244   callers=1   band=no  callees=0x2c65fe28 0x2c65fe52 0x2c660988
+  0x2c66bb40 size=148   callers=0   band=no  callees=0x2c66d654
+  0x2c66cda2 size=1220  callers=0   band=no  callees=0x2c66c60c 0x2c6706e0 0x2c670760 0x2c670968 0x2c670994 0x2c670ae4 0x2c670b98 0x2c670c78 0x2c670cb0 0x2c670dd0 0x2c670ec4 0x2c670f7c 0x2c6729ec 0x2c672b40 0x2c674668 ...
+  0x2c66f3cc size=1324  callers=0   band=no  callees=0x2c670760 0x2c6707a4 0x2c6708c8 0x2c670968 0x2c670994 0x2c670ae4 0x2c670b98 0x2c670c78
+  0x2c66f950 size=654   callers=0   band=no  callees=0x2c66f008 0x2c6706e0 0x2c670760 0x2c6707a4 0x2c670b98 0x2c670c78 0x2c670cb0 0x2c674668
+  0x2c671178 size=354   callers=3   band=no  callees=0x2c643680 0x2c669c14 0x2c6710c2
+  0x2c67142c size=168   callers=1   band=no  callees=0x2c6813f2
+  0x2c6717d8 size=452   callers=1   band=no  callees=0x2c643680 0x2c6719ec 0x2c67d650
+  0x2c671d74 size=922   callers=0   band=no  callees=0x2c668520 0x2c669c14 0x2c6710c2 0x2c671b48
+  0x2c6720cc size=352   callers=0   band=no  callees=0x2c669b3c 0x2c6710c2
+  0x2c672442 size=542   callers=0   band=no  callees=0x2c6710c2
+
+== D. LVGL-band functions with exactly one caller, caller loops ==
+  callee 0x2c5e70b0 size=224    <- caller 0x2c5b3c98 size=550   noRet=false
+  callee 0x2c5e73f8 size=206    <- caller 0x2c5e7b34 size=710   noRet=false
+  callee 0x2c5e7538 size=286    <- caller 0x2c5c90e4 size=868   noRet=false
+  callee 0x2c5e7b34 size=710    <- caller 0x2c5c90e4 size=868   noRet=false
+  callee 0x2c5e8e7c size=314    <- caller 0x2c5bd528 size=292   noRet=false
+  callee 0x2c5ebb8c size=156    <- caller 0x2c58c664 size=2286  noRet=false
+  callee 0x2c5ee110 size=326    <- caller 0x2c5de678 size=116   noRet=false
+  callee 0x2c5ee43c size=302    <- caller 0x2c5de6f0 size=166   noRet=false
+  callee 0x2c5f03f4 size=234    <- caller 0x2c5f54d4 size=802   noRet=false
+  callee 0x2c5f07d4 size=150    <- caller 0x2c5f7ad4 size=5098  noRet=false
+  callee 0x2c5f0ce8 size=150    <- caller 0x2c5f7ad4 size=5098  noRet=false
+  callee 0x2c5f118c size=404    <- caller 0x2c5f6f50 size=818   noRet=false
+  callee 0x2c5f50e4 size=140    <- caller 0x2c5f5938 size=3108  noRet=false
+  callee 0x2c5f53dc size=196    <- caller 0x2c5f6de4 size=60    noRet=false
+  callee 0x2c5f583c size=232    <- caller 0x2c5f5938 size=3108  noRet=false
+  callee 0x2c5f6f50 size=818    <- caller 0x2c5f7ad4 size=5098  noRet=false
+  callee 0x2c5f7280 size=920    <- caller 0x2c5f7ad4 size=5098  noRet=false
+  callee 0x2c5f76c4 size=370    <- caller 0x2c5f904c size=780   noRet=false
+  callee 0x2c5f7ad4 size=5098   <- caller 0x2c5f545c size=124   noRet=true
+  callee 0x2c5f904c size=780    <- caller 0x2c5f52a4 size=140   noRet=false
+  callee 0x2c5f960c size=786    <- caller 0x2c5f5938 size=3108  noRet=false
+  callee 0x2c5f9924 size=456    <- caller 0x2c5f5938 size=3108  noRet=false
+  callee 0x2c5f9f08 size=286    <- caller 0x2c5f5938 size=3108  noRet=false
+  callee 0x2c5fa100 size=260    <- caller 0x2c5f4e70 size=194   noRet=true
+  callee 0x2c5fa21c size=204    <- caller 0x2c5fb9e0 size=138   noRet=false
+  callee 0x2c5fa348 size=3698   <- caller 0x2c5f7ad4 size=5098  noRet=false
+  callee 0x2c5fb510 size=358    <- caller 0x2c5fb510 size=358   noRet=false
+  callee 0x2c5fb768 size=162    <- caller 0x2c5f6de4 size=60    noRet=false
+  callee 0x2c5fb8f8 size=134    <- caller 0x2c5f545c size=124   noRet=true
+  callee 0x2c5fbaa4 size=168    <- caller 0x2c5f904c size=780   noRet=false
+  callee 0x2c5fbb60 size=238    <- caller 0x2c5f7ad4 size=5098  noRet=false
+  callee 0x2c5fd510 size=186    <- caller 0x2c511ef0 size=126   noRet=false
+  callee 0x2c5ff4ec size=168    <- caller 0x2c604248 size=322   noRet=false
+  callee 0x2c600ac0 size=218    <- caller 0x2c639164 size=198   noRet=false
+  callee 0x2c600c44 size=134    <- caller 0x2c600c44 size=134   noRet=false
+  callee 0x2c60125c size=298    <- caller 0x2c60138c size=840   noRet=false
+  callee 0x2c6019b8 size=404    <- caller 0x2c6078f0 size=112   noRet=false
+  callee 0x2c60322c size=166    <- caller 0x2c603cfc size=368   noRet=false
+  callee 0x2c603cfc size=368    <- caller 0x2c6061ec size=640   noRet=false
+  callee 0x2c603eb8 size=236    <- caller 0x2c6061ec size=640   noRet=false
+  callee 0x2c606e98 size=150    <- caller 0x2c607654 size=110   noRet=false
+  callee 0x2c607b48 size=1148   <- caller 0x2c608744 size=176   noRet=false
+  callee 0x2c607f9c size=138    <- caller 0x2c60802c size=1410  noRet=false
+  callee 0x2c60a540 size=144    <- caller 0x2c60a780 size=852   noRet=false
+  callee 0x2c60b2f8 size=492    <- caller 0x2c60c244 size=2924  noRet=false
+  callee 0x2c60bb78 size=508    <- caller 0x2c60c244 size=2924  noRet=false
+  callee 0x2c610588 size=262    <- caller 0x2c610690 size=698   noRet=false
+  callee 0x2c610690 size=698    <- caller 0x2c60b4e4 size=1054  noRet=false
+  callee 0x2c611d2c size=234    <- caller 0x2c639778 size=216   noRet=false
+  callee 0x2c611e18 size=320    <- caller 0x2c639778 size=216   noRet=false
+  callee 0x2c612898 size=216    <- caller 0x2c6132c8 size=88    noRet=false
+  callee 0x2c613670 size=276    <- caller 0x2c613b8c size=720   noRet=false
+  callee 0x2c614414 size=136    <- caller 0x2c60a5d0 size=428   noRet=true
+  callee 0x2c61495c size=172    <- caller 0x2c6389d8 size=1804  noRet=false
+  callee 0x2c6155cc size=222    <- caller 0x2c6156e6 size=380   noRet=false
+  callee 0x2c615c44 size=806    <- caller 0x2c616ad4 size=4126  noRet=false
+  callee 0x2c615f78 size=974    <- caller 0x2c616ad4 size=4126  noRet=false
+  callee 0x2c616410 size=210    <- caller 0x2c617d00 size=144   noRet=false
+  callee 0x2c6164e4 size=436    <- caller 0x2c616ad4 size=4126  noRet=false
+  callee 0x2c61669c size=388    <- caller 0x2c616854 size=631   noRet=false
+  callee 0x2c616854 size=631    <- caller 0x2c616ad4 size=4126  noRet=false
+  callee 0x2c6173f8 size=360    <- caller 0x2c627228 size=728   noRet=false
+  callee 0x2c617f84 size=142    <- caller 0x2c60802c size=1410  noRet=false
+  callee 0x2c619aa4 size=230    <- caller 0x2c619b8c size=156   noRet=false
+  callee 0x2c61d868 size=2360   <- caller 0x2c62a2f8 size=344   noRet=false
+  callee 0x2c621554 size=298    <- caller 0x2c624090 size=2672  noRet=false
+  callee 0x2c6218e4 size=140    <- caller 0x2c624090 size=2672  noRet=false
+  callee 0x2c6223f8 size=152    <- caller 0x2c622e8c size=2354  noRet=false
+  callee 0x2c622564 size=414    <- caller 0x2c624090 size=2672  noRet=false
+  callee 0x2c622e8c size=2354   <- caller 0x2c6237e4 size=274   noRet=false
+  callee 0x2c6237e4 size=274    <- caller 0x2c623904 size=152   noRet=false
+  callee 0x2c625b00 size=222    <- caller 0x2c62603e size=2730  noRet=false
+  callee 0x2c625f8c size=178    <- caller 0x2c626d14 size=288   noRet=false
+  callee 0x2c627144 size=174    <- caller 0x2c627514 size=2164  noRet=false
+  callee 0x2c627228 size=728    <- caller 0x2c627514 size=2164  noRet=false
+  callee 0x2c62992c size=262    <- caller 0x2c629aa4 size=368   noRet=false
+  callee 0x2c629c2c size=202    <- caller 0x2c629d00 size=188   noRet=false
+  callee 0x2c62af34 size=238    <- caller 0x2c6032d4 size=194   noRet=false
+  callee 0x2c62ed70 size=224    <- caller 0x2c60802c size=1410  noRet=false
+  callee 0x2c630880 size=140    <- caller 0x2c630c30 size=248   noRet=false
+  callee 0x2c631810 size=1256   <- caller 0x2c631d04 size=606   noRet=false
+  callee 0x2c6340f4 size=310    <- caller 0x2c634864 size=242   noRet=false
+  callee 0x2c634864 size=242    <- caller 0x2c634958 size=1994  noRet=false
+  callee 0x2c635da8 size=680    <- caller 0x2c61bcd8 size=326   noRet=false
+  callee 0x2c637138 size=156    <- caller 0x2c627514 size=2164  noRet=false
+  callee 0x2c637598 size=652    <- caller 0x2c637b3c size=1992  noRet=false
+  callee 0x2c6389d8 size=1804   <- caller 0x2c639164 size=198   noRet=false
+  callee 0x2c63e954 size=254    <- caller 0x2c5d6608 size=504   noRet=false
+  callee 0x2c63faf0 size=196    <- caller 0x2c64129c size=132   noRet=false
+  callee 0x2c641abc size=362    <- caller 0x2c641ef4 size=762   noRet=false
+  callee 0x2c645190 size=140    <- caller 0x2c644324 size=94    noRet=false
+  callee 0x2c647930 size=768    <- caller 0x2c647c80 size=66    noRet=false
+  callee 0x2c647cd0 size=682    <- caller 0x2c6481b0 size=248   noRet=false
+  callee 0x2c6484d0 size=148    <- caller 0x2c6481b0 size=248   noRet=false
+  callee 0x2c64e740 size=222    <- caller 0x2c64ed20 size=48    noRet=false
+  callee 0x2c64e8fc size=150    <- caller 0x2c64eb60 size=132   noRet=false
+  callee 0x2c650874 size=146    <- caller 0x2c6558c0 size=134   noRet=false
+  callee 0x2c650b64 size=146    <- caller 0x2c655bf4 size=134   noRet=false
+  callee 0x2c651c5c size=298    <- caller 0x2c651eb4 size=108   noRet=false
+  callee 0x2c652e62 size=364    <- caller 0x2c653130 size=1400  noRet=false
+  callee 0x2c656ce2 size=368    <- caller 0x2c656fb8 size=1392  noRet=false
+  callee 0x2c65a4e4 size=304    <- caller 0x2c65a64a size=252   noRet=false
+  callee 0x2c65b0d0 size=364    <- caller 0x2c65b39c size=1400  noRet=false
+  callee 0x2c65bef8 size=852    <- caller 0x2c65c286 size=432   noRet=false
+  callee 0x2c65dd48 size=994    <- caller 0x2c65e140 size=126   noRet=false
+  callee 0x2c65ecf0 size=244    <- caller 0x2c6527b0 size=556   noRet=false
+  callee 0x2c660aba size=244    <- caller 0x2c660c2a size=238   noRet=false
+  callee 0x2c6616d4 size=366    <- caller 0x2c6619ac size=1392  noRet=false
+  callee 0x2c6624d0 size=818    <- caller 0x2c66283e size=434   noRet=false
+  callee 0x2c664bbc size=264    <- caller 0x2c65661c size=560   noRet=false
+  callee 0x2c6656d8 size=148    <- caller 0x2c65e140 size=126   noRet=false
+  callee 0x2c666588 size=1464   <- caller 0x2c46fdb0 size=238   noRet=false
+  callee 0x2c6688d8 size=130    <- caller 0x2c668868 size=108   noRet=false
+  callee 0x2c6690f4 size=332    <- caller 0x2c651d74 size=74    noRet=false
+  callee 0x2c66962c size=426    <- caller 0x2c6697dc size=806   noRet=false
+  callee 0x2c669fb0 size=164    <- caller 0x2c66a0d0 size=1050  noRet=false
+  callee 0x2c66a838 size=644    <- caller 0x2c6714d4 size=316   noRet=false
+  callee 0x2c66ee38 size=180    <- caller 0x2c64c9c4 size=34    noRet=false
+  callee 0x2c66f008 size=290    <- caller 0x2c66f950 size=654   noRet=true
+  callee 0x2c66fc0c size=132    <- caller 0x2c66fcc8 size=116   noRet=false
+  callee 0x2c66fd14 size=130    <- caller 0x2c66fdd4 size=126   noRet=false
+  callee 0x2c66fe48 size=162    <- caller 0x2c66ff14 size=1146  noRet=false
+  callee 0x2c66ff14 size=1146   <- caller 0x2c66c640 size=1146  noRet=false
+  callee 0x2c6703ec size=312    <- caller 0x2c66c640 size=1146  noRet=false
+  callee 0x2c671724 size=174    <- caller 0x2c6714d4 size=316   noRet=false
+  callee 0x2c6717d8 size=452    <- caller 0x2c6714d4 size=316   noRet=false
+  callee 0x2c671b48 size=204    <- caller 0x2c671d74 size=922   noRet=true
+  callee 0x2c671c18 size=218    <- caller 0x2c671a5c size=100   noRet=false
+
+== E. dumps ==
+  dumped 1 functions to /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/rtos/lvgl/disasm

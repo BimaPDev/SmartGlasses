@@ -1,0 +1,1447 @@
+{
+  "kernel": "FreeRTOS 10.4.1",
+  "firmware": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "firmware_version": "1.0.12.83",
+  "cmsis_rtos2_apis_observed": [
+    "osEventFlagsClear",
+    "osEventFlagsDelete",
+    "osEventFlagsSet",
+    "osEventFlagsWait",
+    "osMessageQueueDelete",
+    "osMessageQueueGet",
+    "osMessageQueuePut",
+    "osMessageQueueReset",
+    "osMutexAcquire",
+    "osMutexDelete",
+    "osMutexRelease",
+    "osSemaphoreAcquire",
+    "osSemaphoreDelete",
+    "osSemaphoreRelease",
+    "osTimerDelete",
+    "osTimerStart",
+    "osTimerStop"
+  ],
+  "entry_count": 133,
+  "entries": [
+    {
+      "name": "a2dp_sink_player_mailbox",
+      "type": "mailbox",
+      "subsystem": "audio",
+      "file_offset": 1460900,
+      "evidence": "named RTOS object string @0x164aa4; failure string @0x164a64: Failed to Create a2dp_sink_player_mailbox",
+      "related_threads": [
+        "a2dp_sink_player_thread"
+      ]
+    },
+    {
+      "name": "app_audio_focus_state_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 259303,
+      "evidence": "named RTOS object string @0x3f4e7",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "audio_req_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 259936,
+      "evidence": "named RTOS object string @0x3f760",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "audio_rpc0_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 251880,
+      "evidence": "named RTOS object string @0x3d7e8",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "audio_rpc1_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 251900,
+      "evidence": "named RTOS object string @0x3d7fc",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "audio_rpc_seq_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 251920,
+      "evidence": "named RTOS object string @0x3d810",
+      "related_threads": [
+        "rpc_rx_thread",
+        "xjxr_audio_msg_handler_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "audio_test_pcmbuff_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 250016,
+      "evidence": "named RTOS object string @0x3d0a0",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "audioflinger_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 1369312,
+      "evidence": "named RTOS object string @0x14e4e0",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "a2dp_sink_player_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "aw_smartpa_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 314456,
+      "evidence": "named RTOS object string @0x4cc58",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "a2dp_sink_player_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "lyric_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 1592892,
+      "evidence": "named RTOS object string @0x184e3c",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "a2dp_sink_player_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "pause_music_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 1600644,
+      "evidence": "named RTOS object string @0x186c84",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "a2dp_sink_player_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "player_state_mutex",
+      "type": "mutex",
+      "subsystem": "audio",
+      "file_offset": 255116,
+      "evidence": "named RTOS object string @0x3e48c",
+      "related_threads": [
+        "xjxr_audio_msg_handler_thread",
+        "a2dp_sink_player_thread",
+        "af_thread"
+      ]
+    },
+    {
+      "name": "xrbm_mailbox",
+      "type": "mailbox",
+      "subsystem": "battery/xrbm",
+      "file_offset": 235100,
+      "evidence": "named RTOS object string @0x3965c; failure string @0x393bc: create xrbm mailbox fail!",
+      "related_threads": [
+        "xrbm_thread"
+      ]
+    },
+    {
+      "name": "battery_mgr_mutex",
+      "type": "mutex",
+      "subsystem": "battery/xrbm",
+      "file_offset": 235116,
+      "evidence": "named RTOS object string @0x3966c",
+      "related_threads": [
+        "xrbm_thread"
+      ]
+    },
+    {
+      "name": "ota_checker_mutex",
+      "type": "mutex",
+      "subsystem": "battery/xrbm",
+      "file_offset": 165844,
+      "evidence": "named RTOS object string @0x287d4",
+      "related_threads": [
+        "ota_checker"
+      ]
+    },
+    {
+      "name": "power_state_mutex",
+      "type": "mutex",
+      "subsystem": "battery/xrbm",
+      "file_offset": 4351140,
+      "evidence": "named RTOS object string @0x4264a4; failure string @0x4261dc: Create power state update lock failed",
+      "related_threads": [
+        "xrbm_thread",
+        "battery_mgr",
+        "ota_checker"
+      ]
+    },
+    {
+      "name": "powerkey_mgr_mutex",
+      "type": "mutex",
+      "subsystem": "battery/xrbm",
+      "file_offset": 233704,
+      "evidence": "named RTOS object string @0x390e8",
+      "related_threads": [
+        "xrbm_thread",
+        "battery_mgr",
+        "ota_checker"
+      ]
+    },
+    {
+      "name": "xrm_mutex_psram",
+      "type": "mutex",
+      "subsystem": "battery/xrbm",
+      "file_offset": 179388,
+      "evidence": "named RTOS object string @0x2bcbc",
+      "related_threads": [
+        "xrbm_thread"
+      ]
+    },
+    {
+      "name": "xrm_mutex_sys",
+      "type": "mutex",
+      "subsystem": "battery/xrbm",
+      "file_offset": 179404,
+      "evidence": "named RTOS object string @0x2bccc",
+      "related_threads": [
+        "xrbm_thread"
+      ]
+    },
+    {
+      "name": "ota_checker_semaphore",
+      "type": "semaphore",
+      "subsystem": "battery/xrbm",
+      "file_offset": 165604,
+      "evidence": "creation failure string @0x286e4: create ota checker sema failed!",
+      "related_threads": [
+        "ota_checker"
+      ]
+    },
+    {
+      "name": "pmu_semaphore",
+      "type": "semaphore",
+      "subsystem": "battery/xrbm",
+      "file_offset": 88104,
+      "evidence": "creation failure string @0x15828: Create pmu semaphore failed!",
+      "related_threads": [
+        "xrbm_thread",
+        "battery_mgr",
+        "ota_checker"
+      ]
+    },
+    {
+      "name": "battery_info_timer",
+      "type": "timer",
+      "subsystem": "battery/xrbm",
+      "file_offset": 232444,
+      "evidence": "named RTOS object string @0x38bfc",
+      "related_threads": [
+        "xrbm_thread"
+      ]
+    },
+    {
+      "name": "dump_battery_info_timer",
+      "type": "timer",
+      "subsystem": "battery/xrbm",
+      "file_offset": 276172,
+      "evidence": "named RTOS object string @0x436cc",
+      "related_threads": [
+        "xrbm_thread"
+      ]
+    },
+    {
+      "name": "pmu_pwrkey_check_timer",
+      "type": "timer",
+      "subsystem": "battery/xrbm",
+      "file_offset": 88340,
+      "evidence": "named RTOS object string @0x15914",
+      "related_threads": [
+        "xrbm_thread",
+        "battery_mgr",
+        "ota_checker"
+      ]
+    },
+    {
+      "name": "start_batterystats_timer",
+      "type": "timer",
+      "subsystem": "battery/xrbm",
+      "file_offset": 268676,
+      "evidence": "named RTOS object string @0x41984",
+      "related_threads": [
+        "xrbm_thread"
+      ]
+    },
+    {
+      "name": "jbd_mailbox",
+      "type": "mailbox",
+      "subsystem": "display",
+      "file_offset": 271668,
+      "evidence": "named RTOS object string @0x42534",
+      "related_threads": [
+        "jbd4010_display",
+        "jbd_thread"
+      ]
+    },
+    {
+      "name": "lv_ipc_mailbox",
+      "type": "mailbox",
+      "subsystem": "display",
+      "file_offset": 4344824,
+      "evidence": "named RTOS object string @0x424bf8; failure string @0x424b78: Failed to Create lv_ipc_mailbox",
+      "related_threads": [
+        "lvgl_async",
+        "assert_lvgl_ui_thread"
+      ]
+    },
+    {
+      "name": "lv_to_async_ipc_mailbox",
+      "type": "mailbox",
+      "subsystem": "display",
+      "file_offset": 4314976,
+      "evidence": "named RTOS object string @0x41d760; failure string @0x41d61c: Failed to Create lv_to_async_ipc_mailbox",
+      "related_threads": [
+        "lvgl_async",
+        "assert_lvgl_ui_thread"
+      ]
+    },
+    {
+      "name": "display_ctrl_mutex",
+      "type": "mutex",
+      "subsystem": "display",
+      "file_offset": 4323160,
+      "evidence": "named RTOS object string @0x41f758",
+      "related_threads": [
+        "display_mgr",
+        "jbd4010_display"
+      ]
+    },
+    {
+      "name": "display_frame_mutex",
+      "type": "mutex",
+      "subsystem": "display",
+      "file_offset": 271648,
+      "evidence": "named RTOS object string @0x42520; nearby thread @0x424b0",
+      "related_threads": [
+        "display_mgr",
+        "jbd4010_display",
+        "jbd_thread"
+      ]
+    },
+    {
+      "name": "display_mgr_mutex",
+      "type": "mutex",
+      "subsystem": "display",
+      "file_offset": 234120,
+      "evidence": "named RTOS object string @0x39288",
+      "related_threads": [
+        "display_mgr",
+        "jbd4010_display"
+      ]
+    },
+    {
+      "name": "jbd_panel_sem",
+      "type": "semaphore",
+      "subsystem": "display",
+      "file_offset": 270848,
+      "evidence": "creation failure string @0x42200: [panel]%s: osSemaphoreNew failed; failure string @0x42200: [panel]%s: osSemaphoreNew failed",
+      "related_threads": [
+        "jbd4010_display",
+        "jbd_thread"
+      ]
+    },
+    {
+      "name": "JBD_TIMER",
+      "type": "timer",
+      "subsystem": "display",
+      "file_offset": 271548,
+      "evidence": "named RTOS object string @0x424bc",
+      "related_threads": [
+        "jbd4010_display",
+        "jbd_thread"
+      ]
+    },
+    {
+      "name": "lv_ipc_timer",
+      "type": "timer",
+      "subsystem": "display",
+      "file_offset": 4344728,
+      "evidence": "creation failure string @0x424b98: Create lv_ipc timer failed",
+      "related_threads": [
+        "lvgl_async",
+        "assert_lvgl_ui_thread"
+      ]
+    },
+    {
+      "name": "app_core_bridge_tx_mailbox",
+      "type": "mailbox",
+      "subsystem": "dsp",
+      "file_offset": 1340104,
+      "evidence": "named RTOS object string @0x1472c8; failure string @0x147238: Failed to Create core bridge mailbox; failure string @0x162e54: Failed to Create core bridge mailbox",
+      "related_threads": [
+        "core_bridge_tx_thread",
+        "core_bridge_rx_thread"
+      ]
+    },
+    {
+      "name": "bth_if_client_mailbox",
+      "type": "mailbox",
+      "subsystem": "dsp",
+      "file_offset": 1458364,
+      "evidence": "named RTOS object string @0x1640bc",
+      "related_threads": [
+        "bth_if_client_thread"
+      ]
+    },
+    {
+      "name": "rpc_rx_mailbox",
+      "type": "mailbox",
+      "subsystem": "dsp",
+      "file_offset": 1455208,
+      "evidence": "named RTOS object string @0x163468; failure string @0x1633f8: Failed to Create rpc mailbox; nearby thread @0x163270",
+      "related_threads": [
+        "rpc_rx_thread",
+        "bth_dsp_tx_thread"
+      ]
+    },
+    {
+      "name": "app_core_bridge_tx_mutex",
+      "type": "mutex",
+      "subsystem": "dsp",
+      "file_offset": 1340076,
+      "evidence": "named RTOS object string @0x1472ac",
+      "related_threads": [
+        "core_bridge_tx_thread",
+        "core_bridge_rx_thread"
+      ]
+    },
+    {
+      "name": "bth_if_client_comm_sem",
+      "type": "semaphore",
+      "subsystem": "dsp",
+      "file_offset": 1457796,
+      "evidence": "creation failure string @0x163e84: create _bth_if_thread_client_comm_semap_init fail!",
+      "related_threads": [
+        "bth_if_client_thread"
+      ]
+    },
+    {
+      "name": "mcpp_cmd_sema",
+      "type": "semaphore",
+      "subsystem": "dsp",
+      "file_offset": 723132,
+      "evidence": "creation failure string @0xb08bc: create mcpp_cmd_sema_id fail!; failure string @0x164eb4: create mcpp_cmd_sema_id fail!",
+      "related_threads": [
+        "mcpp_srv_thread"
+      ]
+    },
+    {
+      "name": "fac_cmd_pool",
+      "type": "memory_pool",
+      "subsystem": "factory",
+      "file_offset": 1441160,
+      "evidence": "named RTOS object string @0x15fd88",
+      "related_threads": [
+        "fac_cmd_trd"
+      ]
+    },
+    {
+      "name": "cmd_mutex",
+      "type": "mutex",
+      "subsystem": "factory",
+      "file_offset": 1441148,
+      "evidence": "named RTOS object string @0x15fd7c",
+      "related_threads": [
+        "fac_cmd_trd"
+      ]
+    },
+    {
+      "name": "lv_startup_sync_sem",
+      "type": "semaphore",
+      "subsystem": "lvgl",
+      "file_offset": 250564,
+      "evidence": "creation failure string @0x3d2c4: Create semaphore(lv_startup_sync_sem_id) failed!",
+      "related_threads": [
+        "lvgl_async",
+        "assert_lvgl_ui_thread"
+      ]
+    },
+    {
+      "name": "lvgl_async_handler_sem",
+      "type": "semaphore",
+      "subsystem": "lvgl",
+      "file_offset": 4315304,
+      "evidence": "creation failure string @0x41d8a8: Create async handler semaphore fail",
+      "related_threads": [
+        "lvgl_async",
+        "assert_lvgl_ui_thread"
+      ]
+    },
+    {
+      "name": "lvgl_os_tick_timer",
+      "type": "timer",
+      "subsystem": "lvgl",
+      "file_offset": 4315856,
+      "evidence": "named RTOS object string @0x41dad0; failure string @0x41da78: Warning: can not create lvgl os_tick timer",
+      "related_threads": [
+        "lvgl_async",
+        "assert_lvgl_ui_thread"
+      ]
+    },
+    {
+      "name": "SHARE_STREAM_TYPE__SIGNAL",
+      "type": "event_flags",
+      "subsystem": "other",
+      "file_offset": 184224,
+      "evidence": "named RTOS object string @0x2cfa0",
+      "related_threads": []
+    },
+    {
+      "name": "bt_signal_strength",
+      "type": "event_flags",
+      "subsystem": "other",
+      "file_offset": 226916,
+      "evidence": "named RTOS object string @0x37664",
+      "related_threads": []
+    },
+    {
+      "name": "wifi_signal_strength",
+      "type": "event_flags",
+      "subsystem": "other",
+      "file_offset": 226892,
+      "evidence": "named RTOS object string @0x3764c",
+      "related_threads": []
+    },
+    {
+      "name": "os_memory_pool",
+      "type": "memory_pool",
+      "subsystem": "other",
+      "file_offset": 1443744,
+      "evidence": "creation failure string @0x1607a0: osMemoryPoolAlloc fail; failure string @0x1607dc: osMemoryPoolnew fail",
+      "related_threads": []
+    },
+    {
+      "name": "smf_get_pool",
+      "type": "memory_pool",
+      "subsystem": "other",
+      "file_offset": 891668,
+      "evidence": "named RTOS object string @0xd9b14",
+      "related_threads": []
+    },
+    {
+      "name": "smf_set_pool",
+      "type": "memory_pool",
+      "subsystem": "other",
+      "file_offset": 891681,
+      "evidence": "named RTOS object string @0xd9b21",
+      "related_threads": []
+    },
+    {
+      "name": "generic_msg_queue",
+      "type": "message_queue",
+      "subsystem": "other",
+      "file_offset": 1447292,
+      "evidence": "creation failure string @0x16157c: create msg queue fail",
+      "related_threads": []
+    },
+    {
+      "name": "nv_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 1445908,
+      "evidence": "named RTOS object string @0x161014",
+      "related_threads": []
+    },
+    {
+      "name": "postion_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 1592876,
+      "evidence": "named RTOS object string @0x184e2c",
+      "related_threads": []
+    },
+    {
+      "name": "quick_start_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 4325724,
+      "evidence": "named RTOS object string @0x42015c",
+      "related_threads": []
+    },
+    {
+      "name": "ring_manager_mtx",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 250868,
+      "evidence": "named RTOS object string @0x3d3f4",
+      "related_threads": []
+    },
+    {
+      "name": "rx_cmd_queue_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 4365536,
+      "evidence": "named RTOS object string @0x429ce0; nearby thread @0x429ca8",
+      "related_threads": [
+        "eshell_rpc_rx_thread"
+      ]
+    },
+    {
+      "name": "rx_result_queue_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 4365556,
+      "evidence": "named RTOS object string @0x429cf4; nearby thread @0x429ca8",
+      "related_threads": [
+        "eshell_rpc_rx_thread"
+      ]
+    },
+    {
+      "name": "xjxr_common_system_sleep_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 268132,
+      "evidence": "named RTOS object string @0x41764",
+      "related_threads": []
+    },
+    {
+      "name": "xjxr_mltc_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 1455536,
+      "evidence": "named RTOS object string @0x1635b0; nearby thread @0x163430",
+      "related_threads": [
+        "rpc_rx_thread"
+      ]
+    },
+    {
+      "name": "xjxr_wd_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 235496,
+      "evidence": "named RTOS object string @0x397e8; nearby thread @0x39650",
+      "related_threads": [
+        "wear_detect_handler",
+        "sensor_main",
+        "xrbm_thread"
+      ]
+    },
+    {
+      "name": "xr_user_data_mutex",
+      "type": "mutex",
+      "subsystem": "other",
+      "file_offset": 178252,
+      "evidence": "named RTOS object string @0x2b84c",
+      "related_threads": []
+    },
+    {
+      "name": "create_phase_reset_timer",
+      "type": "other",
+      "subsystem": "other",
+      "file_offset": 286464,
+      "evidence": "named RTOS object string @0x45f00; nearby thread @0x45d9c; nearby thread @0x45fd8",
+      "related_threads": [
+        "sar_thread",
+        "stk_touch_trd"
+      ]
+    },
+    {
+      "name": "create_stk_timer",
+      "type": "other",
+      "subsystem": "other",
+      "file_offset": 286444,
+      "evidence": "named RTOS object string @0x45eec; nearby thread @0x45d9c; nearby thread @0x45fd8",
+      "related_threads": [
+        "sar_thread",
+        "stk_touch_trd"
+      ]
+    },
+    {
+      "name": "WAIT_SEM",
+      "type": "semaphore",
+      "subsystem": "other",
+      "file_offset": 1349008,
+      "evidence": "named RTOS object string @0x149590",
+      "related_threads": []
+    },
+    {
+      "name": "generic_semaphore",
+      "type": "semaphore",
+      "subsystem": "other",
+      "file_offset": 4315740,
+      "evidence": "creation failure string @0x41da5c: Create semaphore failed!",
+      "related_threads": []
+    },
+    {
+      "name": "APP_PING_BTH_CONN_TIMER",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 250792,
+      "evidence": "named RTOS object string @0x3d3a8",
+      "related_threads": []
+    },
+    {
+      "name": "BATTERSTATS_TIMER",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 268876,
+      "evidence": "named RTOS object string @0x41a4c",
+      "related_threads": []
+    },
+    {
+      "name": "OTA_TRANSFER_TIMEOUT_TIMER",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1588516,
+      "evidence": "named RTOS object string @0x183d24",
+      "related_threads": []
+    },
+    {
+      "name": "PING_CIRCLE_JSON_TIMER",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 266488,
+      "evidence": "named RTOS object string @0x410f8",
+      "related_threads": []
+    },
+    {
+      "name": "SYSTEM_SLEEP_AGAIN_TIMER",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 268104,
+      "evidence": "named RTOS object string @0x41748",
+      "related_threads": []
+    },
+    {
+      "name": "cpu_usage_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 4357924,
+      "evidence": "named RTOS object string @0x427f24",
+      "related_threads": []
+    },
+    {
+      "name": "deferred_init_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1347324,
+      "evidence": "named RTOS object string @0x148efc",
+      "related_threads": []
+    },
+    {
+      "name": "dump_uart_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1364324,
+      "evidence": "named RTOS object string @0x14d164",
+      "related_threads": []
+    },
+    {
+      "name": "init_delay_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1621824,
+      "evidence": "named RTOS object string @0x18bf40",
+      "related_threads": []
+    },
+    {
+      "name": "ota_start_transfer_timeout_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1584476,
+      "evidence": "named RTOS object string @0x182d5c",
+      "related_threads": []
+    },
+    {
+      "name": "ota_stop_transfer_timeout_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1584356,
+      "evidence": "named RTOS object string @0x182ce4",
+      "related_threads": []
+    },
+    {
+      "name": "reset_message_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1640824,
+      "evidence": "named RTOS object string @0x190978",
+      "related_threads": []
+    },
+    {
+      "name": "wakeup_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1234904,
+      "evidence": "named RTOS object string @0x12d7d8",
+      "related_threads": []
+    },
+    {
+      "name": "wdt_ping_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 1455900,
+      "evidence": "named RTOS object string @0x16371c; failure string @0x1636d4: Warning: can not create watchdog ping timer",
+      "related_threads": []
+    },
+    {
+      "name": "xjxr_sleep_confirm_timer",
+      "type": "timer",
+      "subsystem": "other",
+      "file_offset": 268076,
+      "evidence": "named RTOS object string @0x4172c",
+      "related_threads": []
+    },
+    {
+      "name": "sar_mailbox",
+      "type": "mailbox",
+      "subsystem": "sensor",
+      "file_offset": 286816,
+      "evidence": "named RTOS object string @0x46060; failure string @0x1479a4: [SAR]: sar_mailbox_init failed; nearby thread @0x45fd8",
+      "related_threads": [
+        "sar_thread",
+        "sar_thread_51155",
+        "sar_thread_51158",
+        "stk_touch_trd"
+      ]
+    },
+    {
+      "name": "sar_mailbox_51155",
+      "type": "mailbox",
+      "subsystem": "sensor",
+      "file_offset": 283116,
+      "evidence": "named RTOS object string @0x451ec",
+      "related_threads": [
+        "sar_thread",
+        "sar_thread_51155",
+        "sar_thread_51158"
+      ]
+    },
+    {
+      "name": "sar_mailbox_51155_4pad",
+      "type": "mailbox",
+      "subsystem": "sensor",
+      "file_offset": 279464,
+      "evidence": "named RTOS object string @0x443a8",
+      "related_threads": [
+        "sar_thread",
+        "sar_thread_51155",
+        "sar_thread_51158"
+      ]
+    },
+    {
+      "name": "sar_mailbox_51158",
+      "type": "mailbox",
+      "subsystem": "sensor",
+      "file_offset": 277616,
+      "evidence": "named RTOS object string @0x43c70; nearby thread @0x43bc0; nearby thread @0x43bd4",
+      "related_threads": [
+        "sar_thread",
+        "sar_thread_51155",
+        "sar_thread_51158",
+        "touch_job_thread",
+        "touch_trd"
+      ]
+    },
+    {
+      "name": "wear_input_mutex",
+      "type": "mutex",
+      "subsystem": "sensor",
+      "file_offset": 4325452,
+      "evidence": "named RTOS object string @0x42004c",
+      "related_threads": [
+        "wear_detect_handler",
+        "sensor_main"
+      ]
+    },
+    {
+      "name": "wear_policy_mutex",
+      "type": "mutex",
+      "subsystem": "sensor",
+      "file_offset": 4325472,
+      "evidence": "named RTOS object string @0x420060",
+      "related_threads": [
+        "wear_detect_handler",
+        "sensor_main"
+      ]
+    },
+    {
+      "name": "xjxr_ag_mutex",
+      "type": "mutex",
+      "subsystem": "sensor",
+      "file_offset": 233300,
+      "evidence": "named RTOS object string @0x38f54",
+      "related_threads": [
+        "sensor_main",
+        "mcu2sensor_msg_handler"
+      ]
+    },
+    {
+      "name": "xjxr_ms_mutex",
+      "type": "mutex",
+      "subsystem": "sensor",
+      "file_offset": 269512,
+      "evidence": "named RTOS object string @0x41cc8",
+      "related_threads": [
+        "mcu2sensor_msg_handler",
+        "sensor_main"
+      ]
+    },
+    {
+      "name": "xjxr_sensor_mutex",
+      "type": "mutex",
+      "subsystem": "sensor",
+      "file_offset": 1341436,
+      "evidence": "named RTOS object string @0x1477fc",
+      "related_threads": [
+        "sensor_main",
+        "mcu2sensor_msg_handler"
+      ]
+    },
+    {
+      "name": "SAR_TIMER",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 286120,
+      "evidence": "named RTOS object string @0x45da8",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155"
+      ]
+    },
+    {
+      "name": "SAR_TIMER_51155",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 282512,
+      "evidence": "named RTOS object string @0x44f90",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155"
+      ]
+    },
+    {
+      "name": "SAR_TIMER_51155_4pad",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 279280,
+      "evidence": "named RTOS object string @0x442f0",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155"
+      ]
+    },
+    {
+      "name": "SAR_TIMER_51158",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 277492,
+      "evidence": "named RTOS object string @0x43bf4; nearby thread @0x43bc0; nearby thread @0x43bd4",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155",
+        "touch_job_thread",
+        "touch_trd"
+      ]
+    },
+    {
+      "name": "sensor_hub_ping_mcu_timer",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 1340928,
+      "evidence": "named RTOS object string @0x147600",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155"
+      ]
+    },
+    {
+      "name": "stk5115_alg_timer",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 286088,
+      "evidence": "named RTOS object string @0x45d88",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155"
+      ]
+    },
+    {
+      "name": "stk5115_phase_timer",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 286068,
+      "evidence": "named RTOS object string @0x45d74",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155"
+      ]
+    },
+    {
+      "name": "stk5115_stk_timer",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 286048,
+      "evidence": "named RTOS object string @0x45d60",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155"
+      ]
+    },
+    {
+      "name": "stk5115_wdt_timer",
+      "type": "timer",
+      "subsystem": "sensor",
+      "file_offset": 286028,
+      "evidence": "named RTOS object string @0x45d4c",
+      "related_threads": [
+        "sensor_main",
+        "sar_thread",
+        "sar_thread_51155"
+      ]
+    },
+    {
+      "name": "app_eshell_cmd_done_signal_wait",
+      "type": "event_flags",
+      "subsystem": "shell",
+      "file_offset": 4365504,
+      "evidence": "named RTOS object string @0x429cc0",
+      "related_threads": [
+        "eshell_rpc_rx_thread",
+        "aslt_thread"
+      ]
+    },
+    {
+      "name": "aslt_mailbox",
+      "type": "mailbox",
+      "subsystem": "shell",
+      "file_offset": 229508,
+      "evidence": "named RTOS object string @0x38084; failure string @0x38034: create asl mailbox fail!",
+      "related_threads": [
+        "eshell_rpc_rx_thread",
+        "aslt_thread"
+      ]
+    },
+    {
+      "name": "trace_send_mutex",
+      "type": "mutex",
+      "subsystem": "shell",
+      "file_offset": 4355680,
+      "evidence": "named RTOS object string @0x427660; nearby thread @0x427840",
+      "related_threads": [
+        "eshell_rpc_rx_thread",
+        "aslt_thread",
+        "restart_eshell_thread"
+      ]
+    },
+    {
+      "name": "ESHELL_SLEEP_TIMER",
+      "type": "timer",
+      "subsystem": "shell",
+      "file_offset": 1440764,
+      "evidence": "named RTOS object string @0x15fbfc; nearby thread @0x15fdb0",
+      "related_threads": [
+        "eshell_rpc_rx_thread",
+        "aslt_thread",
+        "fac_cmd_trd"
+      ]
+    },
+    {
+      "name": "rx_msg_mailbox",
+      "type": "mailbox",
+      "subsystem": "starrynet",
+      "file_offset": 207180,
+      "evidence": "named RTOS object string @0x3294c; failure string @0x32638: Failed to Create rx_msg_mailbox; nearby thread @0x327fc",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread"
+      ]
+    },
+    {
+      "name": "tx_msg_mailbox",
+      "type": "mailbox",
+      "subsystem": "starrynet",
+      "file_offset": 207196,
+      "evidence": "named RTOS object string @0x3295c; failure string @0x3265c: Failed to Create tx msg mailbox; nearby thread @0x32814",
+      "related_threads": [
+        "starrynet_tx_msg_thread",
+        "starrynet_rx_msg_thread"
+      ]
+    },
+    {
+      "name": "app_msg_neg_fallback_mutex",
+      "type": "mutex",
+      "subsystem": "starrynet",
+      "file_offset": 4302048,
+      "evidence": "named RTOS object string @0x41a4e0",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "app_msg_proxy_mutex",
+      "type": "mutex",
+      "subsystem": "starrynet",
+      "file_offset": 250848,
+      "evidence": "named RTOS object string @0x3d3e0",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "clear_device_info_mutex",
+      "type": "mutex",
+      "subsystem": "starrynet",
+      "file_offset": 222676,
+      "evidence": "named RTOS object string @0x365d4; failure string @0x36520: %s clear_device_info_mtx create failed",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "device_name_mutex",
+      "type": "mutex",
+      "subsystem": "starrynet",
+      "file_offset": 168420,
+      "evidence": "named RTOS object string @0x291e4",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "init_clear_device_info_mutex",
+      "type": "mutex",
+      "subsystem": "starrynet",
+      "file_offset": 222600,
+      "evidence": "named RTOS object string @0x36588",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "msg_emergency_list_mutex",
+      "type": "mutex",
+      "subsystem": "starrynet",
+      "file_offset": 209840,
+      "evidence": "named RTOS object string @0x333b0",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "msg_send_list_mutex",
+      "type": "mutex",
+      "subsystem": "starrynet",
+      "file_offset": 209868,
+      "evidence": "named RTOS object string @0x333cc",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "xrrts_mutex",
+      "type": "mutex",
+      "subsystem": "starrynet",
+      "file_offset": 217148,
+      "evidence": "named RTOS object string @0x3503c",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "APP_MSG_NEG_FALLBACK_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 4301824,
+      "evidence": "named RTOS object string @0x41a400",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "CHANNEL_RECV_WAIT_MSG_ACK_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 207620,
+      "evidence": "named RTOS object string @0x32b04",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "CHANNEL_SEND_WAIT_MSG_ACK_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 207652,
+      "evidence": "named RTOS object string @0x32b24",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "IOS_CTKD_BOND_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 202640,
+      "evidence": "named RTOS object string @0x31790",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "SPP_CNANNEL_CONN_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 208880,
+      "evidence": "named RTOS object string @0x32ff0",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "SPP_CNANNEL_MSG_RECV_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 208904,
+      "evidence": "named RTOS object string @0x33008",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "UPDATE_ADV_DATA_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 217608,
+      "evidence": "named RTOS object string @0x35208",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "WAIT_EMERGENCY_MSG_ACK_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 205396,
+      "evidence": "named RTOS object string @0x32254",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "WAIT_EXTERNAL_MSG_ACK_TIMER",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 205428,
+      "evidence": "named RTOS object string @0x32274",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "start_spp_conn_timer",
+      "type": "timer",
+      "subsystem": "starrynet",
+      "file_offset": 209252,
+      "evidence": "named RTOS object string @0x33164",
+      "related_threads": [
+        "starrynet_rx_msg_thread",
+        "starrynet_tx_msg_thread",
+        "xr_starrynet_thread_start"
+      ]
+    },
+    {
+      "name": "stk_alg_work_queue",
+      "type": "message_queue",
+      "subsystem": "touch",
+      "file_offset": 286644,
+      "evidence": "named RTOS object string @0x45fb4",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread",
+        "stk_touch_trd"
+      ]
+    },
+    {
+      "name": "stk_phase_reset_queue",
+      "type": "message_queue",
+      "subsystem": "touch",
+      "file_offset": 286620,
+      "evidence": "named RTOS object string @0x45f9c; nearby thread @0x45d9c",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread",
+        "stk_touch_trd",
+        "sar_thread"
+      ]
+    },
+    {
+      "name": "stk_work_queue",
+      "type": "message_queue",
+      "subsystem": "touch",
+      "file_offset": 282872,
+      "evidence": "named RTOS object string @0x450f8",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread",
+        "stk_touch_trd"
+      ]
+    },
+    {
+      "name": "xjxr_tp_mutex",
+      "type": "mutex",
+      "subsystem": "touch",
+      "file_offset": 4327052,
+      "evidence": "named RTOS object string @0x42068c",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread"
+      ]
+    },
+    {
+      "name": "STK501XX_FAR_CHECK_TIMER",
+      "type": "timer",
+      "subsystem": "touch",
+      "file_offset": 1346628,
+      "evidence": "named RTOS object string @0x148c44; nearby thread @0x148be4; nearby thread @0x148c18",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread",
+        "stk_touch_trd",
+        "stk501xx_cust_thread",
+        "stk501xx_thread"
+      ]
+    },
+    {
+      "name": "STK501XX_TRACE_DATA_TIMER",
+      "type": "timer",
+      "subsystem": "touch",
+      "file_offset": 1346556,
+      "evidence": "named RTOS object string @0x148bfc; nearby thread @0x148be4; nearby thread @0x148c18",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread",
+        "stk_touch_trd",
+        "stk501xx_cust_thread",
+        "stk501xx_thread"
+      ]
+    },
+    {
+      "name": "STK501XX_WEAR_DAEMON_TIMER",
+      "type": "timer",
+      "subsystem": "touch",
+      "file_offset": 1346600,
+      "evidence": "named RTOS object string @0x148c28; nearby thread @0x148be4; nearby thread @0x148c18",
+      "related_threads": [
+        "wear_detect_handler",
+        "sensor_main",
+        "stk501xx_cust_thread",
+        "stk501xx_thread"
+      ]
+    },
+    {
+      "name": "stk51155_4pad_timer",
+      "type": "timer",
+      "subsystem": "touch",
+      "file_offset": 279332,
+      "evidence": "named RTOS object string @0x44324",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread",
+        "stk_touch_trd"
+      ]
+    },
+    {
+      "name": "stk51155_create_and_start_timer",
+      "type": "timer",
+      "subsystem": "touch",
+      "file_offset": 282816,
+      "evidence": "named RTOS object string @0x450c0",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread",
+        "stk_touch_trd"
+      ]
+    },
+    {
+      "name": "stk51155_timer",
+      "type": "timer",
+      "subsystem": "touch",
+      "file_offset": 282548,
+      "evidence": "named RTOS object string @0x44fb4",
+      "related_threads": [
+        "touch_trd",
+        "touch_job_thread",
+        "stk_touch_trd"
+      ]
+    }
+  ]
+}

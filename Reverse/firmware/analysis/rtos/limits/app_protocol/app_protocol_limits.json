@@ -1,0 +1,361 @@
+{
+  "schema": 1,
+  "leaf": "leaf-1.3.2",
+  "binary": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "binary_size": 6771708,
+  "entry_count": 36,
+  "category_counts": {
+    "display": 8,
+    "ble_starrynet": 6,
+    "share_transfer": 5,
+    "ota": 4,
+    "audio": 3,
+    "power": 2,
+    "factory": 3,
+    "ui_lvgl": 5
+  },
+  "probes": {
+    "display_movw_0x76c": true,
+    "display_cmp_0x50": true,
+    "packed_actions_found": 27,
+    "packed_actions_expected": 27,
+    "share_stream_types": 15,
+    "starry_msg_cmds": 8,
+    "absent_gadget_hal_usb": true,
+    "max_names": [
+      "DDSP_DL_MBAND_MAX_NUM_SUBBANDS",
+      "LV_MEM_BUF_MAX_NUM",
+      "MAX_GAIN",
+      "MED_HEAP_BLOCK_MAX_NUM",
+      "PMAX_M",
+      "configMAX_PRIORITIES",
+      "configMAX_TASK_NAME_LEN"
+    ]
+  },
+  "entries": [
+    {
+      "name": "jbd013_panel_resolution",
+      "category": "display",
+      "value": "640x480",
+      "numeric": null,
+      "evidence": "JBD013_DECOMP.md panel geometry 0x280\u00d70x1E0; binary AA_Pattern_640_480 @ file 0x161d80 (0x2C161D80); writeup gpu_fill(640,480) / vg_lite_init(640,480)",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "jbd_framebuffer_bytes",
+      "category": "display",
+      "value": "0x25800 (153600 bytes)",
+      "numeric": 153600,
+      "evidence": "jbd013_reconstructed.c JBD_FB_BYTES=0x25800; STAR_AIR_FULL_WRITEUP \u00a7JBD framebuffer size in reconstruction; 640\u00d7480\u00d74bpp packed = 153600",
+      "source": "writeup",
+      "confidence": "high"
+    },
+    {
+      "name": "jbd_display_msg_type",
+      "category": "display",
+      "value": "0x20",
+      "numeric": 32,
+      "evidence": "jbd4010_display_thread decomp: while msg.type != 0x20 continue (FUN_2c499270); thread name jbd4010_display @ file 0x42510",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "jbd_fps_throttle_frames",
+      "category": "display",
+      "value": ">80 frames queued triggers throttle/trace dump",
+      "numeric": 80,
+      "evidence": "decomp FUN_2c499270: if (0x50 < counter) dump; binary Thumb cmp r2,#0x50 (50 2a) in thread @ file 0x499270 present=True; JBD013_DECOMP.md / writeup 'FPS throttle if more than 80 frames queued'",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "jbd_frame_watchdog_ticks",
+      "category": "display",
+      "value": "0x76C (~1.9s) outside factory/test",
+      "numeric": 1900,
+      "evidence": "decomp FUN_2c499270 calls FUN_2c498db4(0x76c); binary movw r0,#0x76c (40 f2 6c 70) present=True at display thread",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "jbd_brightness_ble_max",
+      "category": "display",
+      "value": "0..7109 (0x1BC5), special 0x1C03",
+      "numeric": 7109,
+      "evidence": "set_jbd_brightness @ 0x2C499B04 (JBD013_DECOMP.md / writeup); binary invalid brightness to set @ file 0x39268",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "companion_brightness_scales",
+      "category": "display",
+      "value": "flat set_brightness string 0-10; setScreenBrightness TRACE 0-100",
+      "numeric": null,
+      "evidence": "STAR_AIR_FULL_WRITEUP C5: companion set_brightness flat string 0\u201310; method-adjacent setScreenBrightness TRACE range 0\u2013100; packed notify set_brightness_finish only",
+      "source": "writeup",
+      "confidence": "high"
+    },
+    {
+      "name": "display_ipc_object_count",
+      "category": "display",
+      "value": "9 named IPC objects (mailbox/mutex/sem/timer)",
+      "numeric": 9,
+      "evidence": "IPC_OBJECTS.md \u00a7display: jbd_mailbox, lv_ipc_mailbox, lv_to_async_ipc_mailbox, display_* mutexes, jbd_panel_sem, JBD_TIMER, lv_ipc_timer",
+      "source": "writeup",
+      "confidence": "high"
+    },
+    {
+      "name": "starrynet_handleSystemMsg_action_count",
+      "category": "ble_starrynet",
+      "value": "27 packed inner actions (9 get + 18 set/notify/sync)",
+      "numeric": 27,
+      "evidence": "writeup C5 + BLE_STARRYNET.md; binary confirms 27/27 names; miss path @ file 0x194f7f",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "starrynet_msg_cmd_enum_count",
+      "category": "ble_starrynet",
+      "value": "8 STARRY__MSG__CMD__* symbols",
+      "numeric": 8,
+      "evidence": "binary protobuf enum strings: STARRY__MSG__CMD__KEY_EVENT, STARRY__MSG__CMD__MSG_INIT, STARRY__MSG__CMD__NOTIFY, STARRY__MSG__CMD__OTA, STARRY__MSG__CMD__SYS_BRIGHT, STARRY__MSG__CMD__SYS_INFO, STARRY__MSG__CMD__SYS_VOLUME, STARRY__MSG__CMD__VIDEO",
+      "source": "binary",
+      "confidence": "high"
+    },
+    {
+      "name": "starrynet_recv_mtu_negotiated",
+      "category": "ble_starrynet",
+      "value": "runtime negotiated (logged, not fixed constant)",
+      "numeric": null,
+      "evidence": "binary '%s recv mtu = %d, phone starrynet version = %d' @ file 0x31703 (0x2C031703)",
+      "source": "binary",
+      "confidence": "high"
+    },
+    {
+      "name": "starrynet_tx_queue_overflow",
+      "category": "ble_starrynet",
+      "value": "hard fail on transmission queue overflow",
+      "numeric": null,
+      "evidence": "binary 'Transmission queue overflow!' @ file 0x332db (0x2C0332DB); message_sender.c",
+      "source": "binary",
+      "confidence": "high"
+    },
+    {
+      "name": "starrynet_absent_demo_and_wifi_actions",
+      "category": "ble_starrynet",
+      "value": "set_demo_mode/get_demo_mode/toggle_wifi/set_wifi/screen_record absent",
+      "numeric": null,
+      "evidence": "writeup C5 absences; binary set_demo_mode absent=True, screen_record absent=True",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "ring_ble_name_len_limit",
+      "category": "ble_starrynet",
+      "value": "max_len=30 min_len=1",
+      "numeric": 30,
+      "evidence": "binary 'the ring name len illegal! max_len[30] min_len[1]' @ file 0x33f1c (0x2C033F1C)",
+      "source": "binary",
+      "confidence": "high"
+    },
+    {
+      "name": "share_api_chunkSize_field",
+      "category": "share_transfer",
+      "value": "protobuf field chunkSize present (ShareApi.Message)",
+      "numeric": null,
+      "evidence": "binary 'chunkSize' @ file 0x2d1c4 near share_api.pb-c.c @ 0x2ce8e; file_transfer.c logs size/chunkSize/count",
+      "source": "binary",
+      "confidence": "high"
+    },
+    {
+      "name": "share_preferred_ack_chunk_bytes",
+      "category": "share_transfer",
+      "value": "4096 (phone preferred RECEIVER_ACK)",
+      "numeric": 4096,
+      "evidence": "STAR_AIR_FULL_WRITEUP \u00a7Share: Preferred phone ACK chunk 4096; iOS ShareAbility.preferredChunkSize=4096 (SDK mirrors writeup). No ASCII '4096' constant beside chunkSize in M55 image \u2014 writeup/SDK.",
+      "source": "writeup",
+      "confidence": "medium"
+    },
+    {
+      "name": "share_glasses_asked_chunk_bytes",
+      "category": "share_transfer",
+      "value": "8192 (8 KiB) on some builds",
+      "numeric": 8192,
+      "evidence": "STAR_AIR_FULL_WRITEUP: glasses have asked 8 KiB on some builds; ShareAbility.maxChunkSize=8192. Marked writeup-only for firmware immediate binding.",
+      "source": "writeup",
+      "confidence": "medium"
+    },
+    {
+      "name": "share_stream_type_enum_count",
+      "category": "share_transfer",
+      "value": "15 SHARE_STREAM_TYPE__* including RECEIVE_OTA_FINISH",
+      "numeric": 15,
+      "evidence": "binary enums @ share_api; RECEIVE_OTA_FINISH @ file 0x2d10c; writeup lists types 1..14",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "share_md5_check_on_transfer",
+      "category": "share_transfer",
+      "value": "MD5 required on file receive",
+      "numeric": null,
+      "evidence": "binary 'transfer check md5 failed' @ 0x2a620; file_transfer.c 'md5 check fail/success'",
+      "source": "binary",
+      "confidence": "high"
+    },
+    {
+      "name": "ota_delivery_path",
+      "category": "ota",
+      "value": "StarryNet Share RECEIVE_OTA_FINISH (not USB/ADB)",
+      "numeric": null,
+      "evidence": "writeup C7; binary SHARE_STREAM_TYPE__RECEIVE_OTA_FINISH @ 0x2d10c; app ota progress strings",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "ota_dual_md5_gates",
+      "category": "ota",
+      "value": "transfer-file MD5 + written-flash MD5",
+      "numeric": 2,
+      "evidence": "binary 'transfer check md5 failed' @ 0x2a620; 'ota failed to check written flash md5' @ 0x182ef4; writeup C7 A/B MD5",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "ota_rollback_on_failure",
+      "category": "ota",
+      "value": "do_ota_rollback",
+      "numeric": null,
+      "evidence": "binary do_ota_rollback @ file 0x1658b4; writeup C7",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "ota_no_usb_gadget",
+      "category": "ota",
+      "value": "user image has no USB gadget / hal_usb (charge-only Type-C)",
+      "numeric": null,
+      "evidence": "writeup USB section; binary strings 'gadget' and 'hal_usb' absent=True; en_usb name exists @ 0x1605e8 but no stack",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "smartpa_ui_volume_levels",
+      "category": "audio",
+      "value": "UI param 0..16",
+      "numeric": 16,
+      "evidence": "writeup C3 / AUDIO_SMARTPA.md: smartpa_set_volume accepts [0,16] (cmp #0x10); binary PA set volume / vol_value @ 0x39d01 / 0x46e33",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "smartpa_vol_value_max",
+      "category": "audio",
+      "value": "0x2D0 (720) into AW883 reg 5",
+      "numeric": 720,
+      "evidence": "writeup: vol_value max 0x2D0; audio_reconstructed.c AW883XX_VOL_VALUE_MAX; u16 0x2D0 appears in AW883 cluster; binary string vol_value present",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "audio_sample_rates_accepted",
+      "category": "audio",
+      "value": "8 / 16 / 44.1 / 48 kHz",
+      "numeric": null,
+      "evidence": "STAR_AIR_FULL_WRITEUP audio section \u2014 sample rates accepted list (writeup; not re-derived from immediates here)",
+      "source": "writeup",
+      "confidence": "medium"
+    },
+    {
+      "name": "battery_soc_clamp",
+      "category": "power",
+      "value": "0..100 percent",
+      "numeric": 100,
+      "evidence": "power_reconstructed.c clamp_u0_100 in battery_mgr_poll_level_voltage (FUN_2c489bd0); writeup C4; binary 'get new battery level: %d' @ 0x39308",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "battery_icon_soc_bands",
+      "category": "power",
+      "value": "thresholds 10,20,...,90",
+      "numeric": 9,
+      "evidence": "writeup C4 icon band picker 0x2C5CFE2C; power_reconstructed.c bands[]",
+      "source": "writeup",
+      "confidence": "high"
+    },
+    {
+      "name": "factory_nv_start",
+      "category": "factory",
+      "value": "__factory_start=0x28FFF000",
+      "numeric": 687861760,
+      "evidence": "binary string @ file 0x6752d7; writeup factory NV",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "factory_eshell_prompt",
+      "category": "factory",
+      "value": "eshell > (UART/debug_i2c; not Type-C)",
+      "numeric": null,
+      "evidence": "binary prompt @ file 0x4274e2 (0x2C4274E2); writeup C6 \u2014 Type-C charge-only does not expose REPL",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "factory_en_usb_no_gadget",
+      "category": "factory",
+      "value": "en_usb fac_cmd name present; USB gadget stack absent",
+      "numeric": null,
+      "evidence": "binary en_usb @ 0x1605e8; gadget/hal_usb absent; writeup C6/C7",
+      "source": "both",
+      "confidence": "high"
+    },
+    {
+      "name": "lvgl_mem_buf_max_num_guard",
+      "category": "ui_lvgl",
+      "value": "LV_MEM_BUF_MAX_NUM exhaust string present",
+      "numeric": null,
+      "evidence": "binary 'no more buffers. (increase LV_MEM_BUF_MAX_NUM)' @ 0x41cef8; MAX_* inventory includes LV_MEM_BUF_MAX_NUM",
+      "source": "binary",
+      "confidence": "high"
+    },
+    {
+      "name": "launcher_dock_tile_count",
+      "category": "ui_lvgl",
+      "value": "4 dock tiles (time, weather, date, Flyme)",
+      "numeric": 4,
+      "evidence": "STAR_AIR_FULL_WRITEUP idle HUD / launcher dock section",
+      "source": "writeup",
+      "confidence": "high"
+    },
+    {
+      "name": "nlu_domain_cpp_count",
+      "category": "ui_lvgl",
+      "value": "21 Domain*.cpp application domains (+ DomainRuntime registry)",
+      "numeric": 21,
+      "evidence": "STAR_AIR_FULL_WRITEUP NLU/domain section",
+      "source": "writeup",
+      "confidence": "medium"
+    },
+    {
+      "name": "MAX_string_MED_HEAP_BLOCK_MAX_NUM",
+      "category": "ui_lvgl",
+      "value": "MED_HEAP_BLOCK_MAX_NUM assert guard",
+      "numeric": null,
+      "evidence": "binary '[%s] g_block_index(%d) >= MED_HEAP_BLOCK_MAX_NUM' / name @ 0xafe5e; listed in MAX_* scan",
+      "source": "binary",
+      "confidence": "high"
+    },
+    {
+      "name": "MAX_string_inventory_app_relevant",
+      "category": "ui_lvgl",
+      "value": "DDSP_DL_MBAND_MAX_NUM_SUBBANDS,LV_MEM_BUF_MAX_NUM,MAX_GAIN,MED_HEAP_BLOCK_MAX_NUM,PMAX_M,configMAX_PRIORITIES,configMAX_TASK_NAME_LEN",
+      "numeric": 7,
+      "evidence": "platform_tester.bin ASCII MAX_* / configMAX_* strings (app-adjacent subset)",
+      "source": "binary",
+      "confidence": "high"
+    }
+  ]
+}

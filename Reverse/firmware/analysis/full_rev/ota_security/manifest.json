@@ -1,0 +1,64 @@
+{
+  "leaf": "1.2.3",
+  "subsystem": "ota_security",
+  "firmware": "platform_tester.bin",
+  "version": "1.0.12.83",
+  "load_base": "0x2c000000",
+  "rodata_alias": "0x3c000000",
+  "functions": [
+    {
+      "va": "0x2c5b9e10",
+      "name": "do_ota_rollback",
+      "role": "Restore previous A/B boot info and flash metadata after failed OTA; TRACE __func__ at 0x3c1658b4 (pool 0x2c5ba100)"
+    },
+    {
+      "va": "0x2c5b8bfc",
+      "name": "is_normal_boot",
+      "role": "bes_ota boot-mode query / object init path; literal pool holds is_normal_boot @ 0x3c1656d4"
+    },
+    {
+      "va": "0x2c5aa01c",
+      "name": "OtaMsgModel_event_TRACE_set_sn",
+      "role": "LVGL OtaMsgModel event handler; call edge into TRACE 0x2c62c82c / Pages/Ota UI"
+    },
+    {
+      "va": "0x2c48c450",
+      "name": "fault_cause_printer",
+      "role": "Exception pretty-printer; literal pool references HardFault/SecureFault strings (0x3c014f00 band)"
+    },
+    {
+      "va": "0x2c5ba550",
+      "name": "update_boot_type_to_normal_site",
+      "role": "Adjacent to update_boot_type_to_normal literal 0x3c165990 (pool 0x2c5ba544); clears OTA boot sticky state"
+    },
+    {
+      "va": "0x3c1654a0",
+      "name": "ota_flash_program",
+      "role": "STRING: dual-image program API name in bes_ota_api.cpp (code xrefs via TRACE IDs, not abs ptr)"
+    },
+    {
+      "va": "0x3c028660",
+      "name": "init_xjxr_ota_checker",
+      "role": "STRING: post-OTA business checker init in xjxr_ota_checker.cpp"
+    },
+    {
+      "va": "0x3c02b4f0",
+      "name": "xr_flash_first_ota_ab",
+      "role": "STRING: first-OTA A/B policy log — read A, next write B"
+    },
+    {
+      "va": "0x3c014f21",
+      "name": "SecureFault_label",
+      "role": "STRING: ARMv8-M SecureFault fault-name token (no TrustZone ASCII in image)"
+    }
+  ],
+  "string_anchors": {
+    "bes_ota_api.cpp": "0x3c165470",
+    "xjxr_ota_checker.cpp": "0x3c02840c",
+    "OtaMsgModel.cpp": "0x3c18261c",
+    "transfer_md5_fail": "0x3c182fec",
+    "written_md5_fail": "0x3c182ef4",
+    "magic_fail": "0x3c182f1c",
+    "do_ota_rollback": "0x3c1658b4"
+  }
+}

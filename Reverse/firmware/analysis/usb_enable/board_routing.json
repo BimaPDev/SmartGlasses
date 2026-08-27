@@ -1,0 +1,81 @@
+{
+  "operator_asserts_dplus_dminus_connected": true,
+  "usb_c_connector": {
+    "part": "2308017021",
+    "dplus_dminus": "two center tongue contacts",
+    "shell_marking": "2308017021 (photo also readable as 230817021)",
+    "silkscreen": "BB:V2.1 / ZB002A",
+    "photo": "board_picture/ANNOTATED_dplus_dminus.png"
+  },
+  "charger_ic": {
+    "part": "SC7288",
+    "role": "Southchip single-cell linear charger with power-path / VBUS management (I2C). Sits immediately inland of Type-C. Firmware sc7288_charger.c logs [CHG] vbus usb_enable — that is VBUS path control, not a USB 2.0 PHY. Photos mark SOUTHCHIP SC7288 (not SC7285).",
+    "photo": "board_picture/3xy77nh926lh1.jpeg"
+  },
+  "soc": {
+    "part": "BES2700BP-W",
+    "photo": "board_picture/t9c895t926lh1.jpeg",
+    "lot": "F4125013002Z6611",
+    "usb_balls": "USB_DP J17 / USB_DN H17 (public BES2700BP datasheet); LDO_USB / VUSB / Avdd1p8_USB must be up for protocol"
+  },
+  "other_ics": [
+    {
+      "marking": "3240 VC19",
+      "guess": "Microchip USB3740B (QFN-10) high-speed USB 2.0 1:2 mux with connector-side ESD; S / OE_N select which DP/DM pair is live",
+      "photo": "board_picture/3xy77nh926lh1.jpeg"
+    },
+    {
+      "marking": "8105 ZE01",
+      "guess": "Paired small QFNs used as USB D+/D− ESD/TVS (or tiny analog switch). One pair sits left of SC7288 at the Type-C cluster; a second pair sits to the right of BES2700BP-W — classic connector-end plus SoC-end protection on a wired pair",
+      "photo": "board_picture/ANNOTATED_uart_candidates.png"
+    },
+    {
+      "marking": "HVTW AAB1",
+      "guess": "Two identical square analog ICs inland/right of SC7288 + 3240. Secondary USB analog-switch / SEL companion candidates (not the primary mux). Not identified to a public P/N from top-mark alone",
+      "photo": "board_picture/uds5cxz926lh1.jpeg"
+    },
+    {
+      "marking": "5641 07EW",
+      "guess": "WillSemi ESD5641D07-class VBUS TVS (7 V) under the 3240 mux, protecting Type-C VBUS rather than D+/D−",
+      "photo": "board_picture/3xy77nh926lh1.jpeg"
+    },
+    {
+      "marking": "2215 BAAC LY36",
+      "guess": "CellWise CW2215 fuel gauge (firmware cw221X-fuel-gauge.c); not on the USB data path",
+      "photo": "board_picture/uds5cxz926lh1.jpeg"
+    },
+    {
+      "marking": "TYND ACK8",
+      "guess": "Awinic AW883xx Class-D speaker amps (stereo pair); audio, not USB",
+      "photo": "board_picture/kcumfab926lh1.jpeg"
+    },
+    {
+      "marking": "515 PS43",
+      "guess": "Sensortek STK5115 capacitive-touch controller; not USB",
+      "photo": "board_picture/kcumfab926lh1.jpeg"
+    }
+  ],
+  "photos": [
+    "board_picture/ANNOTATED_dplus_dminus.png",
+    "board_picture/3xy77nh926lh1.jpeg",
+    "board_picture/uds5cxz926lh1.jpeg",
+    "board_picture/t9c895t926lh1.jpeg",
+    "board_picture/kcumfab926lh1.jpeg",
+    "board_picture/af5dhu5a26lh1.jpeg",
+    "board_picture/9jahw5z826lh1.jpeg",
+    "board_picture/4w1ekzm926lh1.jpeg",
+    "board_picture/5136g16926lh1.jpeg",
+    "board_picture/ANNOTATED_uart_candidates.png"
+  ],
+  "path": {
+    "summary": "Type-C 2308017021 center-tongue D+/D− → ~12-part filter/ESD row above the shell → 8105 ZE01 pair → 3240 VC19 (USB3740B mux) beside SC7288 → SoC-side 8105 ZE01 pair beside BES2700BP-W USB_DP/USB_DN. USB-C, charger, mux, and SoC share the same temple PCB; B2B/flex (421P and neighbors) carry display/audio/sensor off-board, not the D+/D− pair.",
+    "flex_b2b": "B2B marked 421P plus additional gold B2B near USB-C (board_picture/5136g16926lh1.jpeg) and speaker/mic-side B2B (board_picture/af5dhu5a26lh1.jpeg). D+/D− do not need to leave via flex to reach BES2700BP-W."
+  },
+  "routing_conclusion": "wired_via_mux",
+  "mux_or_switch": {
+    "present": true,
+    "candidate": "3240 VC19 = USB3740B HS USB 2.0 mux (primary); HVTW AAB1 pair = secondary analog-switch candidates",
+    "notes": "3240 sits immediately right of SOUTHCHIP SC7288, inland of the Type-C filter row — the USB3740B COM DP/DM face the connector and the two mux ports split charger-neighborhood vs SoC. USB3740B is gated by OE_N (high = Hi-Z) and S (port 1 vs port 2). HVTW AAB1 twins sit further inland in the same cluster and could be extra analog switches or LDOs; they are not required to explain a mux in the path. SC7288 is a VBUS linear charger: it can still steal or clamp DP/DM only if a BC1.2 tap exists on one mux port, but it is not a charge-only dead-end (operator asserts the pair is wired through)."
+  },
+  "conclusion": "Given wired Type-C D+/D− through the 3240/USB3740B mux to BES2700BP-W, USB protocol can still fail if LDO_USB/VUSB/Avdd1p8_USB stay off, if mux OE_N/S leave the PHY Hi-Z or parked on a charger/BC1.2 tap, if HVTW SEL is wrong, or if SC7288 VBUS usb_enable is treated as enumeration — none of those are missing tongue contacts."
+}

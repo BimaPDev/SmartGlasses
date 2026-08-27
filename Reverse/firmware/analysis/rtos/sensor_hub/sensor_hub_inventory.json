@@ -1,0 +1,274 @@
+{
+  "kernel": "RTX5",
+  "firmware": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "firmware_version": "1.0.12.83",
+  "carve": {
+    "file_offset": 1261680,
+    "file_offset_hex": "0x134070",
+    "size": 1048576,
+    "size_hex": "0x100000",
+    "flash_base": 872415232,
+    "confidence": "high",
+    "method": "bes_ota_header+hub_banner",
+    "notes": [
+      "BES 16-byte OTA header (FF FF FF FF 00 00 04 00)",
+      "CHIP_SUBSYS=sensor_hub build banner in range",
+      "RTX V5.5.1 marker in range",
+      "12 ../../tests/sensor_hub/ path strings in range",
+      "sensor_main + sensor_hub_main.c",
+      "both xjxr IPC channel names in range",
+      "header +0x14 code-size field = 0x16734 (91956 B)"
+    ]
+  },
+  "banners": [
+    {
+      "key": "CHIP=best1600",
+      "value": "CHIP=best1600",
+      "file_offset": 1353301
+    },
+    {
+      "key": "CHIP_SUBSYS=sensor_hub",
+      "value": "CHIP_SUBSYS=sensor_hub",
+      "file_offset": 1353315
+    },
+    {
+      "key": "KERNEL=RTX5",
+      "value": "KERNEL=RTX5",
+      "file_offset": 1353338
+    },
+    {
+      "key": "FLASH_BASE=0x34000000",
+      "value": "FLASH_BASE=0x34000000",
+      "file_offset": 1353498
+    },
+    {
+      "key": "FLASH_SIZE=0x100000",
+      "value": "FLASH_SIZE=0x100000",
+      "file_offset": 1353545
+    },
+    {
+      "key": "REV_INFO=422729f-dirty:sensor_hub",
+      "value": "REV_INFO=422729f-dirty:sensor_hub",
+      "file_offset": 1353597
+    }
+  ],
+  "ipc_channels": [
+    {
+      "name": "xjxr_m552sns",
+      "direction": "M55\u2192hub",
+      "description": "MCU sensor command / config channel",
+      "file_offsets": [
+        1338540
+      ],
+      "evidence": "named channel in xjxr_mcu_sensor_communicate.cpp (hub and M55 copies)"
+    },
+    {
+      "name": "xjxr_sns2m55",
+      "direction": "hub\u2192M55",
+      "description": "sensor samples, wear, IMU events to M55",
+      "file_offsets": [
+        1338524
+      ],
+      "evidence": "named channel in xjxr_mcu_sensor_communicate.cpp (hub and M55 copies)"
+    }
+  ],
+  "thread_count": 6,
+  "entries": [
+    {
+      "name": "accel_gyro_s",
+      "type": "module",
+      "kernel": "RTX5",
+      "file_offset": 1347364,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/accel_gyro_s.cpp",
+      "role": "6-axis IMU aggregator (hub-side)",
+      "evidence": "hub source file tag @0x148F24 (accel_gyro_s.cpp)"
+    },
+    {
+      "name": "core_bridge_rx_thread",
+      "type": "thread",
+      "kernel": "RTX5",
+      "file_offset": 1340052,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/../../utils/heap/multi_heap.c",
+      "role": "M55\u2194hub core bridge IPC pump",
+      "evidence": "RTOS thread name string @0x147294 inside carved hub image"
+    },
+    {
+      "name": "core_bridge_tx_thread",
+      "type": "thread",
+      "kernel": "RTX5",
+      "file_offset": 1340028,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/../../utils/heap/multi_heap.c",
+      "role": "M55\u2194hub core bridge IPC pump",
+      "evidence": "RTOS thread name string @0x14727C inside carved hub image"
+    },
+    {
+      "name": "mcu2sensor_msg_handler",
+      "type": "module",
+      "kernel": "RTX5",
+      "file_offset": 1341028,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/../../platform/drivers/sensor/xjxr_common_sensor/xjxr_common_sensor.c",
+      "role": "M55\u2192hub IPC dispatch entry",
+      "evidence": "symbol @0x147664 in sensor_hub_core_app.c bring-up path"
+    },
+    {
+      "name": "sar_thread",
+      "type": "thread",
+      "kernel": "RTX5",
+      "file_offset": 1342044,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/../../platform/drivers/sensor/sar/stk5115.c",
+      "role": "STK5115 capacitive SAR (temple touch proxy on hub)",
+      "evidence": "RTOS thread name string @0x147A5C inside carved hub image"
+    },
+    {
+      "name": "sensor_hub_core_app",
+      "type": "module",
+      "kernel": "RTX5",
+      "file_offset": 1340792,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/sensor_hub_core_app.c",
+      "role": "sensor hub worker",
+      "evidence": "hub source file tag @0x147578 (sensor_hub_core_app.c)"
+    },
+    {
+      "name": "sensor_main",
+      "type": "thread",
+      "kernel": "RTX5",
+      "file_offset": 1340584,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/sensor_hub_main.c",
+      "role": "hub entry / sensor_hub_main.c",
+      "evidence": "RTOS thread name string @0x1474A8 inside carved hub image"
+    },
+    {
+      "name": "snshub_sensor_mgr",
+      "type": "module",
+      "kernel": "RTX5",
+      "file_offset": 1347208,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/snshub_sensor_mgr.cpp",
+      "role": "6-axis IMU aggregator (hub-side)",
+      "evidence": "hub source file tag @0x148E88 (snshub_sensor_mgr.cpp)"
+    },
+    {
+      "name": "stk501xx_cust_thread",
+      "type": "thread",
+      "kernel": "RTX5",
+      "file_offset": 1346532,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/wear_detection_s.cpp",
+      "role": "STK501xx wear/proximity SAR",
+      "evidence": "RTOS thread name string @0x148BE4 inside carved hub image"
+    },
+    {
+      "name": "stk501xx_thread",
+      "type": "thread",
+      "kernel": "RTX5",
+      "file_offset": 1346584,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/wear_detection_s.cpp",
+      "role": "STK501xx wear/proximity SAR",
+      "evidence": "RTOS thread name string @0x148C18 inside carved hub image"
+    },
+    {
+      "name": "wear_detection_s",
+      "type": "module",
+      "kernel": "RTX5",
+      "file_offset": 1347044,
+      "in_carved_image": true,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/wear_detection_s.cpp",
+      "role": "wear FSM (hub-side)",
+      "evidence": "hub source file tag @0x148DE4 (wear_detection_s.cpp)"
+    }
+  ],
+  "rtos_objects": [
+    {
+      "name": "SAR_TIMER",
+      "type": "other",
+      "file_offset": 1342056,
+      "evidence": "named RTX5 object @0x147A68 in hub region"
+    },
+    {
+      "name": "STK501XX_FAR_CHECK_TIMER",
+      "type": "other",
+      "file_offset": 1346628,
+      "evidence": "named RTX5 object @0x148C44 in hub region"
+    },
+    {
+      "name": "STK501XX_TRACE_DATA_TIMER",
+      "type": "other",
+      "file_offset": 1346556,
+      "evidence": "named RTX5 object @0x148BFC in hub region"
+    },
+    {
+      "name": "STK501XX_WEAR_DAEMON_TIMER",
+      "type": "other",
+      "file_offset": 1346600,
+      "evidence": "named RTX5 object @0x148C28 in hub region"
+    },
+    {
+      "name": "WAIT_SEM",
+      "type": "other",
+      "file_offset": 1349008,
+      "evidence": "named RTX5 object @0x149590 in hub region"
+    },
+    {
+      "name": "app_core_bridge_tx_mailbox",
+      "type": "mailbox",
+      "file_offset": 1340104,
+      "evidence": "named RTX5 object @0x1472C8 in hub region"
+    },
+    {
+      "name": "app_core_bridge_tx_mailbox_heap_malloc",
+      "type": "mailbox",
+      "file_offset": 1339640,
+      "evidence": "named RTX5 object @0x1470F8 in hub region"
+    },
+    {
+      "name": "app_core_bridge_tx_mutex",
+      "type": "mutex",
+      "file_offset": 1340076,
+      "evidence": "named RTX5 object @0x1472AC in hub region"
+    },
+    {
+      "name": "app_sensor_hub_core_timer_init",
+      "type": "timer",
+      "file_offset": 1340968,
+      "evidence": "named RTX5 object @0x147628 in hub region"
+    },
+    {
+      "name": "deferred_init_timer",
+      "type": "timer",
+      "file_offset": 1347324,
+      "evidence": "named RTX5 object @0x148EFC in hub region"
+    },
+    {
+      "name": "sar_mailbox",
+      "type": "mailbox",
+      "file_offset": 1342068,
+      "evidence": "named RTX5 object @0x147A74 in hub region"
+    },
+    {
+      "name": "sensor_hub_ping_mcu_timer",
+      "type": "timer",
+      "file_offset": 1340928,
+      "evidence": "named RTX5 object @0x147600 in hub region"
+    },
+    {
+      "name": "xjxr_ms_mutex",
+      "type": "mutex",
+      "file_offset": 1338960,
+      "evidence": "named RTX5 object @0x146E50 in hub region"
+    },
+    {
+      "name": "xjxr_sensor_mutex",
+      "type": "mutex",
+      "file_offset": 1341436,
+      "evidence": "named RTX5 object @0x1477FC in hub region"
+    }
+  ]
+}

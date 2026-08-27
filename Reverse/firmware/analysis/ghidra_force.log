@@ -1,0 +1,331 @@
+2026-08-22 08:16:43 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-08-22 08:16:43 INFO  (LoggingInitialization) Using log file: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_force.log  
+2026-08-22 08:16:43 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-08-22 08:16:43 INFO  (Preferences) Loading user preferences: /Users/bimap/Library/ghidra/ghidra_12.1.3_PUBLIC/preferences  
+2026-08-22 08:16:43 INFO  (ClassSearcher) Searching for classes...  
+2026-08-22 08:16:44 INFO  (ClassSearcher) Class search complete (608 ms)  
+2026-08-22 08:16:44 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-08-22 08:16:44 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-08-22 08:16:44 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-08-22 08:16:44 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-08-22 08:16:45 INFO  (AnalyzeHeadless) Headless startup complete (2172 ms)  
+2026-08-22 08:16:45 INFO  (ClassSearcher) Class searcher loaded 211 extension points (114 false positives)  
+2026-08-22 08:16:45 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/8051/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/PDB/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/BSim/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/BytePatterns/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/DATA/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Base/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/FunctionID/ghidra_scripts
+    /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts  
+2026-08-22 08:16:45 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-08-22 08:16:45 INFO  (HeadlessAnalyzer) Creating project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_proj/star_air3  
+2026-08-22 08:16:45 INFO  (DefaultProject) Creating project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_proj/star_air3  
+2026-08-22 08:16:45 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2026-08-22 08:16:45 INFO  (HeadlessAnalyzer)      project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_proj/star_air3  
+2026-08-22 08:16:45 INFO  (HeadlessAnalyzer) IMPORTING: file:///Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin  
+2026-08-22 08:16:45 INFO  (ProgramLoader) Successfully applied "-loader-baseAddr" to "Base Address" (old: "null", new: "0x2C000000")  
+2026-08-22 08:16:45 INFO  (ProgramLoader) Using Loader: Raw Binary  
+2026-08-22 08:16:45 INFO  (ProgramLoader) Using Language/Compiler: ARM:LE:32:Cortex:default  
+2026-08-22 08:16:45 INFO  (ProgramLoader) Using Library Search Path: [., /System/Library/dyld/dyld_shared_cache_arm64e, /System/Library/dyld/dyld_shared_cache_x86_64, /System/Library/dyld/dyld_shared_cache_x86_64h, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_x86_64, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_x86_64h, /Users/bimap/Library/Java/Extensions, /Library/Java/Extensions, /Network/Library/Java/Extensions, /System/Library/Java/Extensions, /usr/lib/java]  
+2026-08-22 08:16:45 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2026-08-22 08:16:46 INFO  (HeadlessAnalyzer) REPORT: Execute script: ForceDis.java   
+2026-08-22 08:16:46 ERROR (HeadlessAnalyzer) REPORT SCRIPT ERROR: ForceDis.java : The class could not be found. It must be the public class of the .java file: Failed to get OSGi bundle containing script: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts/ForceDis.java ghidra.app.script.GhidraScriptLoadException: The class could not be found. It must be the public class of the .java file: Failed to get OSGi bundle containing script: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts/ForceDis.java
+	at ghidra.app.script.JavaScriptProvider.getScriptInstance(JavaScriptProvider.java:114)
+	at ghidra.app.util.headless.HeadlessAnalyzer.runScriptsList(HeadlessAnalyzer.java:915)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1004)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1583)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1743)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1684)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1768)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:452)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:199)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+Caused by: java.lang.ClassNotFoundException: Failed to get OSGi bundle containing script: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts/ForceDis.java
+	at ghidra.app.script.JavaScriptProvider.loadClass(JavaScriptProvider.java:163)
+	at ghidra.app.script.JavaScriptProvider.getScriptInstance(JavaScriptProvider.java:97)
+	... 10 more
+ 
+2026-08-22 08:16:46 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin  
+2026-08-22 08:16:46 ERROR (PngDataType) Invalid PNG data at 2c41c1cc  
+2026-08-22 08:16:51 ERROR (CreateFunctionCmd) Failed to create function at 2c5b63dc since its body contains referring thunk at 2c5b64e8  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c57e4f8, pcode error at 2c57db82: Unable to resolve constructor at 2c57db82  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a78e: Could not follow disassembly flow into non-existing memory at 2c67a78e  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a614: Could not follow disassembly flow into non-existing memory at 2c67a614  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a6c8: Could not follow disassembly flow into non-existing memory at 2c67a6c8  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a7c6: Could not follow disassembly flow into non-existing memory at 2c67a7c6  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a786: Could not follow disassembly flow into non-existing memory at 2c67a786  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a7a4: Could not follow disassembly flow into non-existing memory at 2c67a7a4  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a698: Could not follow disassembly flow into non-existing memory at 2c67a698  
+2026-08-22 08:17:03 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a684: Could not follow disassembly flow into non-existing memory at 2c67a684  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f3ca: Could not follow disassembly flow into non-existing memory at 0064f3ca  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f250: Could not follow disassembly flow into non-existing memory at 0064f250  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f304: Could not follow disassembly flow into non-existing memory at 0064f304  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f402: Could not follow disassembly flow into non-existing memory at 0064f402  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f3c2: Could not follow disassembly flow into non-existing memory at 0064f3c2  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f3e0: Could not follow disassembly flow into non-existing memory at 0064f3e0  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f2d4: Could not follow disassembly flow into non-existing memory at 0064f2d4  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f2c0: Could not follow disassembly flow into non-existing memory at 0064f2c0  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a9b4: Could not follow disassembly flow into non-existing memory at 2c67a9b4  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a978: Could not follow disassembly flow into non-existing memory at 2c67a978  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a89c: Could not follow disassembly flow into non-existing memory at 2c67a89c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa5e: Could not follow disassembly flow into non-existing memory at 2c67aa5e  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a9ca: Could not follow disassembly flow into non-existing memory at 2c67a9ca  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a9d8: Could not follow disassembly flow into non-existing memory at 2c67a9d8  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa20: Could not follow disassembly flow into non-existing memory at 2c67aa20  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa4a: Could not follow disassembly flow into non-existing memory at 2c67aa4a  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa72: Could not follow disassembly flow into non-existing memory at 2c67aa72  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa12: Could not follow disassembly flow into non-existing memory at 2c67aa12  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e912: Could not follow disassembly flow into non-existing memory at 2c67e912  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e8ac: Could not follow disassembly flow into non-existing memory at 2c67e8ac  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e350: Could not follow disassembly flow into non-existing memory at 2c67e350  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e890: Could not follow disassembly flow into non-existing memory at 2c67e890  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e0c8: Could not follow disassembly flow into non-existing memory at 2c67e0c8  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7de: Could not follow disassembly flow into non-existing memory at 2c67e7de  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7c6: Could not follow disassembly flow into non-existing memory at 2c67e7c6  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e6c0: Could not follow disassembly flow into non-existing memory at 2c67e6c0  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e346: Could not follow disassembly flow into non-existing memory at 2c67e346  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e660: Could not follow disassembly flow into non-existing memory at 2c67e660  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e650: Could not follow disassembly flow into non-existing memory at 2c67e650  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e646: Could not follow disassembly flow into non-existing memory at 2c67e646  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e61c: Could not follow disassembly flow into non-existing memory at 2c67e61c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e60e: Could not follow disassembly flow into non-existing memory at 2c67e60e  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e63e: Could not follow disassembly flow into non-existing memory at 2c67e63e  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e2c0: Could not follow disassembly flow into non-existing memory at 2c67e2c0  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e494: Could not follow disassembly flow into non-existing memory at 2c67e494  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e3e0: Could not follow disassembly flow into non-existing memory at 2c67e3e0  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e31a: Could not follow disassembly flow into non-existing memory at 2c67e31a  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e254: Could not follow disassembly flow into non-existing memory at 2c67e254  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e98a: Could not follow disassembly flow into non-existing memory at 2c67e98a  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e8c8: Could not follow disassembly flow into non-existing memory at 2c67e8c8  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e35a: Could not follow disassembly flow into non-existing memory at 2c67e35a  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e89c: Could not follow disassembly flow into non-existing memory at 2c67e89c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e82c: Could not follow disassembly flow into non-existing memory at 2c67e82c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7f8: Could not follow disassembly flow into non-existing memory at 2c67e7f8  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7d0: Could not follow disassembly flow into non-existing memory at 2c67e7d0  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7c2: Could not follow disassembly flow into non-existing memory at 2c67e7c2  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e6ac: Could not follow disassembly flow into non-existing memory at 2c67e6ac  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e64c: Could not follow disassembly flow into non-existing memory at 2c67e64c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e530: Could not follow disassembly flow into non-existing memory at 2c67e530  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e450: Could not follow disassembly flow into non-existing memory at 2c67e450  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e406: Could not follow disassembly flow into non-existing memory at 2c67e406  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e364: Could not follow disassembly flow into non-existing memory at 2c67e364  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e2ec: Could not follow disassembly flow into non-existing memory at 2c67e2ec  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e292: Could not follow disassembly flow into non-existing memory at 2c67e292  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e9dc: Could not follow disassembly flow into non-existing memory at 2c67e9dc  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c3f4: Could not follow disassembly flow into non-existing memory at 2c67c3f4  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c386: Could not follow disassembly flow into non-existing memory at 2c67c386  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67be1e: Could not follow disassembly flow into non-existing memory at 2c67be1e  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c368: Could not follow disassembly flow into non-existing memory at 2c67c368  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bba4: Could not follow disassembly flow into non-existing memory at 2c67bba4  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c2b0: Could not follow disassembly flow into non-existing memory at 2c67c2b0  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c296: Could not follow disassembly flow into non-existing memory at 2c67c296  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c192: Could not follow disassembly flow into non-existing memory at 2c67c192  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67be16: Could not follow disassembly flow into non-existing memory at 2c67be16  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c12e: Could not follow disassembly flow into non-existing memory at 2c67c12e  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c11e: Could not follow disassembly flow into non-existing memory at 2c67c11e  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c114: Could not follow disassembly flow into non-existing memory at 2c67c114  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c0ea: Could not follow disassembly flow into non-existing memory at 2c67c0ea  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c0dc: Could not follow disassembly flow into non-existing memory at 2c67c0dc  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c10c: Could not follow disassembly flow into non-existing memory at 2c67c10c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bd96: Could not follow disassembly flow into non-existing memory at 2c67bd96  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bf68: Could not follow disassembly flow into non-existing memory at 2c67bf68  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bea8: Could not follow disassembly flow into non-existing memory at 2c67bea8  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bdec: Could not follow disassembly flow into non-existing memory at 2c67bdec  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bd2c: Could not follow disassembly flow into non-existing memory at 2c67bd2c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c46c: Could not follow disassembly flow into non-existing memory at 2c67c46c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c3a2: Could not follow disassembly flow into non-existing memory at 2c67c3a2  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67be26: Could not follow disassembly flow into non-existing memory at 2c67be26  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c376: Could not follow disassembly flow into non-existing memory at 2c67c376  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c2da: Could not follow disassembly flow into non-existing memory at 2c67c2da  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c2ca: Could not follow disassembly flow into non-existing memory at 2c67c2ca  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c2a2: Could not follow disassembly flow into non-existing memory at 2c67c2a2  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c292: Could not follow disassembly flow into non-existing memory at 2c67c292  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c180: Could not follow disassembly flow into non-existing memory at 2c67c180  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c11a: Could not follow disassembly flow into non-existing memory at 2c67c11a  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c004: Could not follow disassembly flow into non-existing memory at 2c67c004  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bf16: Could not follow disassembly flow into non-existing memory at 2c67bf16  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67becc: Could not follow disassembly flow into non-existing memory at 2c67becc  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67be2e: Could not follow disassembly flow into non-existing memory at 2c67be2e  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bdc0: Could not follow disassembly flow into non-existing memory at 2c67bdc0  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bd68: Could not follow disassembly flow into non-existing memory at 2c67bd68  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c4be: Could not follow disassembly flow into non-existing memory at 2c67c4be  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c6815f6: Could not follow disassembly flow into non-existing memory at 2c6815f6  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c68151c: Could not follow disassembly flow into non-existing memory at 2c68151c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c681640: Could not follow disassembly flow into non-existing memory at 2c681640  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c681676: Could not follow disassembly flow into non-existing memory at 2c681676  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c6815ee: Could not follow disassembly flow into non-existing memory at 2c6815ee  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c68164c: Could not follow disassembly flow into non-existing memory at 2c68164c  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c68167a: Could not follow disassembly flow into non-existing memory at 2c68167a  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c681644: Could not follow disassembly flow into non-existing memory at 2c681644  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c6815ce: Could not follow disassembly flow into non-existing memory at 2c6815ce  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c68166a: Could not follow disassembly flow into non-existing memory at 2c68166a  
+2026-08-22 08:17:04 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c681654: Could not follow disassembly flow into non-existing memory at 2c681654  
+2026-08-22 08:17:07 WARN  (DecompileCallback) Decompiling 2c4fd520, pcode error at 2c4fd546: Unable to resolve constructor at 2c4fd546  
+2026-08-22 08:17:14 WARN  (DecompileCallback) Decompiling 2c13635c, pcode error at 2c1364aa: Unable to resolve constructor at 2c1364aa  
+2026-08-22 08:17:19 DEBUG (FidAnalyzer) No FID Libraries apply for language ARM:LE:32:Cortex  
+2026-08-22 08:17:19 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/bimap-ghidra/packed-db-cache  
+2026-08-22 08:17:19 DEBUG (PackedDatabaseCache) Using cached packed database: /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Base/data/typeinfo/generic/generic_clib.gdt  
+2026-08-22 08:17:19 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib  
+2026-08-22 08:17:35 WARN  (DecompileCallback) Decompiling 2c5701f0, pcode error at 2c5716ce: Unable to resolve constructor at 2c5716ce  
+2026-08-22 08:17:40 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ARM Constant Reference Analyzer            5.099 secs
+    ARM Symbol                                 0.000 secs
+    ASCII Strings                              0.608 secs
+    Apply Data Archives                        0.328 secs
+    Call-Fixup Installer                       0.043 secs
+    Create Address Tables                      0.120 secs
+    Create Address Tables - One Time           1.659 secs
+    Create Function                            0.601 secs
+    Data Reference                             0.877 secs
+    Decompiler Switch Analysis                24.092 secs
+    Demangler GNU                              0.005 secs
+    Disassemble                                5.053 secs
+    Disassemble Entry Points                   0.001 secs
+    Embedded Media                             0.047 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.057 secs
+    Function Start Pre Search                  0.062 secs
+    Function Start Search                      0.231 secs
+    Function Start Search After Code           0.254 secs
+    Function Start Search After Data           0.039 secs
+    Function Start Search delayed - One Time   0.033 secs
+    Non-Returning Functions - Discovered       8.468 secs
+    Reference                                  1.152 secs
+    Shared Return Calls                        0.167 secs
+    Stack                                      4.248 secs
+    Subroutine References                      0.880 secs
+    Subroutine References - One Time           0.000 secs
+-----------------------------------------------------
+     Total Time   54 secs
+-----------------------------------------------------
+  
+2026-08-22 08:17:40 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin  
+2026-08-22 08:17:40 INFO  (HeadlessAnalyzer) REPORT: Execute script: DumpLeftovers.java   
+2026-08-22 08:17:40 INFO  (HeadlessAnalyzer) SCRIPT: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts/DumpLeftovers.java  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> function count=4993  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> insn @ 2c5aa114=null  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> func containing set_sn=null  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> 
+MEM BLOCKS:  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>   ram 2c000000-2c6753fb mapped=false  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR en_usb @2c1605e8  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [en_usb] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [en_usb(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR enable usb @2c1605f0  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [enable usb] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [enable usb(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR set_sn @2c15fdbc  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [set_sn] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [set_sn(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR eshell > @2c4274e2  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [eshell >] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [eshell >(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR handleSystemMsg @2c194d54  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [handleSystemMsg] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [handleSystemMsg(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR no handler for action %s @2c182b64  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [no handler for action %s] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [no handler for action %s(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR no handler for action %s @2c194f8f  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [no handler for action %s] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [no handler for action %s(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR get_glass_screenshot @2c194580  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [get_glass_screenshot] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [get_glass_screenshot(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR get_glass_log @2c195528  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [get_glass_log] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [get_glass_log(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR Invalid UART ID: %d @2c129e44  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [Invalid UART ID: %d] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [Invalid UART ID: %d(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR Invalid UART ID: %d @2c14b568  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [Invalid UART ID: %d] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [Invalid UART ID: %d(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR hal_uart_open @2c129e36  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [hal_uart_open] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [hal_uart_open(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR hal_iomux_best1600.c @2c014500  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [hal_iomux_best1600.c] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [hal_iomux_best1600.c(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR hal_iomux_best1600.c @2c1458cc  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [hal_iomux_best1600.c] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [hal_iomux_best1600.c(3C)] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java> STR debug_i2c @2c427824  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [debug_i2c] NO refs  
+2026-08-22 08:17:41 INFO  (GhidraScript) DumpLeftovers.java>     [debug_i2c(3C)] NO refs  
+2026-08-22 08:17:42 INFO  (GhidraScript) DumpLeftovers.java>   [set_sn] no function  
+2026-08-22 08:17:42 INFO  (GhidraScript) DumpLeftovers.java> 
+===== DECOMP id_lookup: FUN_2c5e33f0 @2c5e33f0 =====  
+2026-08-22 08:17:42 INFO  (GhidraScript) DumpLeftovers.java> 
+void FUN_2c5e33f0(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  undefined8 uVar6;
+  int local_18;
+  uint local_14;
+  
+  local_14 = *DAT_2c5e344c;
+  local_18 = 0;
+  uVar6 = FUN_2c5e32bc(*DAT_2c5e3448,&local_18,param_3,0);
+  iVar3 = (int)((ulonglong)uVar6 >> 0x20);
+  iVar1 = (int)uVar6;
+  uVar2 = 0;
+  if (iVar1 != 0) {
+    if (local_18 == 0) {
+      uVar2 = 0;
+    }
+    else {
+      iVar5 = 0;
+      iVar4 = iVar1;
+      do {
+        iVar3 = *(int *)(iVar1 + iVar5 * 8);
+        if (iVar3 == param_1) {
+          uVar2 = *(undefined4 *)(iVar4 + 4);
+          goto LAB_2c5e342a;
+        }
+        iVar5 = iVar5 + 1;
+        iVar4 = iVar4 + 8;
+      } while (local_18 != iVar5);
+      uVar2 = 0;
+    }
+  }
+LAB_2c5e342a:
+  if ((*DAT_2c5e344c ^ local_14) == 0) {
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_2c674828(uVar2,iVar3,*DAT_2c5e344c ^ local_14,0);
+}
+
+  
+2026-08-22 08:17:42 INFO  (GhidraScript) DumpLeftovers.java> 
+############ functions matching uart/usb/eshell/systemmsg/iomux ############  
+2026-08-22 08:17:42 INFO  (GhidraScript) DumpLeftovers.java> matched named funcs=0  
+2026-08-22 08:17:42 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin  
+2026-08-22 08:17:42 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin  
+2026-08-22 08:17:42 INFO  (LocalFileSystem) /platform_tester.bin: file created (bimap)  
+2026-08-22 08:17:42 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /platform_tester.bin (star_air3:/platform_tester.bin)  
+2026-08-22 08:17:42 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  

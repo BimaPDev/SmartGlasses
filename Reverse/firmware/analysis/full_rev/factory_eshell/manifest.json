@@ -1,0 +1,152 @@
+{
+  "leaf": "1.2.2",
+  "image": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "xip_base": "0x2C000000",
+  "rodata_alias": "0x3C000000",
+  "handler_bind_status": "unrecovered_static",
+  "functions": [
+    {
+      "va": "0x2C15FDBC",
+      "name": "set_sn",
+      "role": "fac_cmd_name_string",
+      "file_off": "0x15FDBC",
+      "help_va": "0x2C15FDC4",
+      "help": "write sn cmd",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C1605E8",
+      "name": "en_usb",
+      "role": "fac_cmd_name_string",
+      "file_off": "0x1605E8",
+      "help_va": "0x2C1605F0",
+      "help": "enable usb",
+      "handler_va": null,
+      "note": "not a USB gadget bring-up; parallel handler array not statically found"
+    },
+    {
+      "va": "0x2C4274E2",
+      "name": "eshell_prompt",
+      "role": "eshell_prompt_string",
+      "file_off": "0x4274E2",
+      "string": "eshell >",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C160088",
+      "name": "close_eshell",
+      "role": "fac_cmd_name_string",
+      "file_off": "0x160088",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C15FD98",
+      "name": "fac_cmd",
+      "role": "rtos_or_module_name_string",
+      "file_off": "0x15FD98",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C15FDB0",
+      "name": "fac_cmd_trd",
+      "role": "rtos_thread_name_string",
+      "file_off": "0x15FDB0",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C16071C",
+      "name": "fac_cmd.c",
+      "role": "source_path_string",
+      "file_off": "0x16071C",
+      "string": "../../factory/fac_cmd/fac_cmd.c"
+    },
+    {
+      "va": "0x2C427354",
+      "name": "eshell.c",
+      "role": "source_path_string",
+      "file_off": "0x427354",
+      "string": "../../utils/eshell/eshell.c"
+    },
+    {
+      "va": "0x2C427610",
+      "name": "eshell_paltform_init",
+      "role": "eshell_platform_trace_string",
+      "file_off": "0x427610",
+      "string": "eshell_paltform_init open=%d"
+    },
+    {
+      "va": "0x2C427824",
+      "name": "debug_i2c",
+      "role": "eshell_cmd_name_string",
+      "file_off": "0x427824",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C427B80",
+      "name": "xmodem",
+      "role": "eshell_cmd_name_string",
+      "file_off": "0x427B80",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C42884C",
+      "name": "mw",
+      "role": "eshell_cmd_name_string",
+      "file_off": "0x42884C",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C4288A0",
+      "name": "md16",
+      "role": "eshell_cmd_name_string",
+      "file_off": "0x4288A0",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C162124",
+      "name": "factory_init",
+      "role": "factory_symbol_string",
+      "file_off": "0x162124",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C16457C",
+      "name": "BTH_TO_M55_FACTORY_TEST_MODE",
+      "role": "mailbox_symbol_string",
+      "file_off": "0x16457C",
+      "handler_va": null
+    },
+    {
+      "va": "0x2C5AAB48",
+      "name": "FUN_2C5AAB48",
+      "role": "rejected_not_en_usb_handler",
+      "note": "LVGL TRACE/invalidate path; prior misattribution"
+    },
+    {
+      "va": "0x2C5AA114",
+      "name": "FUN_2C5AA114",
+      "role": "rejected_not_set_sn_handler",
+      "note": "LVGL Model method; registry IDs 0x5059/0x5060"
+    },
+    {
+      "va": "0x2C606A28",
+      "name": "FUN_2C606A28",
+      "role": "rejected_not_fac_cmd_helper",
+      "note": "LVGL object flag/invalidate"
+    }
+  ],
+  "packed_blob": {
+    "start_file_off": "0x15FDBC",
+    "start_va": "0x2C15FDBC",
+    "end_name_file_off": "0x1606B0",
+    "end_name_va": "0x2C1606B0",
+    "source_anchor_va": "0x2C16071C"
+  },
+  "evidence": [
+    "Reverse/FIRMWARE_FINDINGS.md §3, §8.3–§8.4",
+    "Reverse/firmware/analysis/ghidra_en_usb_hunt.md",
+    "Reverse/firmware/analysis/usb_enable/en_usb.json",
+    "Reverse/tools/fw_ghidra_leftovers.py",
+    "Reverse/firmware/export/1.0.12.83/strings/m55_ascii.txt"
+  ]
+}

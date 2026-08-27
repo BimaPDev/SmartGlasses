@@ -1,0 +1,79 @@
+{
+  "leaf": "1.3.3",
+  "image": "x_1.0.12.83/platform_tester.bin",
+  "load_base": "0x2C000000",
+  "rodata_alias": "0x3C000000",
+  "companion_bth": "x_1.0.12.83/best1600_watch_bth.bin",
+  "bth_load_base": "0x14000000",
+  "functions": [
+    {
+      "va": "0x2C5CA080",
+      "name": "ViewController_ring_connect_state_callback",
+      "role": "LVGL ViewController ring connect-state callback; TRACE ViewController.cpp lines 0x472/0x476/0x479",
+      "ghidra": "FUN_2c5ca080",
+      "evidence": "litpool ViewController::ring_connect_state_callback"
+    },
+    {
+      "va": "0x2C5CC130",
+      "name": "RingOtaManager_handle_ota_list",
+      "role": "RingOtaManager OTA package handler; logs com.upuphone.star.ring.ota",
+      "ghidra": "FUN_2c5cc130",
+      "evidence": "litpool RingOtaManager.cpp + com.upuphone.star.ring.ota"
+    },
+    {
+      "va": "0x2C5CB758",
+      "name": "ConnectingView_connect_result",
+      "role": "ConnectingView success/fail → ConnectedViewV1 or GuideSearchView",
+      "ghidra": "FUN_2c5cb758",
+      "evidence": "litpool ring connect succeed / ConnectingView.cpp"
+    },
+    {
+      "va": "0x2C5CBC30",
+      "name": "ConnectedViewV1_set_lv_ring_unconnect",
+      "role": "Sets LV_RING_UNCONNECT/UNCONNECTED via registry 0x2C5E33F0 ids 0x1050/0x1051",
+      "ghidra": "FUN_2c5cbc30",
+      "evidence": "Capstone bl 0x2C5E33F0; litpool set LV_RING_UNCONNECT"
+    },
+    {
+      "va": "0x2C5CC710",
+      "name": "RingService_sync_unicron_update_info",
+      "role": "RingService unicron update sync / check_unicron_update path",
+      "ghidra": "FUN_2c5cc710",
+      "evidence": "litpool sync_unicron_update_info + check_unicron_update"
+    },
+    {
+      "va": "0x2C5CD118",
+      "name": "RingService_onRingBondEventListener",
+      "role": "Bond-event listener; single-unbound + MAC update",
+      "ghidra": "FUN_2c5cd118",
+      "evidence": "litpool onRingBondEventListener / isSingleUnbound"
+    },
+    {
+      "va": "0x2C531C44",
+      "name": "Ring_stop_scan_on_disappear",
+      "role": "Stops ring scan when Ring app page disappears",
+      "ghidra": "FUN_2c531c44",
+      "evidence": "litpool ring app will disappear, stop scan"
+    },
+    {
+      "va": "0x2C62C82C",
+      "name": "bes_trace_ring_cpp",
+      "role": "TRACE sink used by Ring C++ (level, tag, line, file, fmt)",
+      "ghidra": "FUN_2c62c82c",
+      "evidence": "Capstone bl from ViewController/RingService/RingOtaManager"
+    },
+    {
+      "va": "0x2C034560",
+      "name": "ring_ota_rope_rose_string_table",
+      "role": "ROPE_*/ROSE_* OTA enum name table (rodata; not Thumb)",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x14136B2B",
+      "name": "xr_app_hogprh_server_c",
+      "role": "BTH HOGPRH server source path string (companion image)",
+      "image": "best1600_watch_bth.bin",
+      "kind": "rodata_label"
+    }
+  ]
+}

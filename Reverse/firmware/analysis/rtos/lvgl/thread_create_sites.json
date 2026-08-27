@@ -1,0 +1,181 @@
+{
+  "image": {
+    "path": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+    "size": 6771708,
+    "size_hex": "0x6753fc",
+    "sha256": "4e3128d52410294ae42e0827d5e42c3aa1b5275d1efb4dff05f044aa0ffcec85"
+  },
+  "address_model": {
+    "text_base": "0x2c010000",
+    "data_alias_base": "0x3bfd7c0c",
+    "derivation_text": {
+      "pairs_tested": 442,
+      "winner_hits": 343,
+      "runner_up_hits": 17
+    },
+    "derivation_data": {
+      "path_anchors": 50,
+      "unique_3c_words": 20083,
+      "winner_hits": 50,
+      "runner_up_hits": 0,
+      "intersection_size": 1
+    }
+  },
+  "threads": [
+    {
+      "name": "lvgl_async",
+      "name_string_file_off": "0x41d930",
+      "name_string_va": "0x3c3f553c",
+      "name_true_start_count": 1,
+      "name_va_dword_hits": [
+        "0x41d970"
+      ],
+      "osThreadAttr_t": {
+        "struct": "osThreadAttr_t",
+        "descriptor_file_off": "0x41d970",
+        "descriptor_va": "0x3c3f557c",
+        "raw_words": [
+          "0x3c3f553c",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x3d6a1008",
+          "0x00000800",
+          "0x0000002a",
+          "0x00000001",
+          "0x00000000"
+        ],
+        "fields": {
+          "+0x00 name": "0x3c3f553c",
+          "+0x04 attr_bits": "0x0",
+          "+0x08 cb_mem": "0x0",
+          "+0x0c cb_size": "0x0",
+          "+0x10 stack_mem": "0x3d6a1008",
+          "+0x14 stack_size": "0x800 (2048)",
+          "+0x18 priority": "0x2a (42)",
+          "+0x1c tz_module": "0x1",
+          "+0x20 reserved": "0x0"
+        }
+      },
+      "packed_def": {
+        "file_off": "0x41d96c",
+        "va": "0x3c3f5578",
+        "entry_word": "0x2c63f0d9",
+        "entry_fn_file_off": "0x62f0d8",
+        "entry_fn_va": "0x2c63f0d8",
+        "prologue_bytes": "00b50d4c",
+        "literal_pool_file_off": "0x62f1dc",
+        "literal_pool_hits": 1,
+        "attr_alone_va_hits": 0
+      },
+      "create_site": {
+        "ldr_literal_file_off": "0x62f174",
+        "ldr_literal_va": "0x2c63f174",
+        "ldr_rt": 0,
+        "ldr_bytes": "1948",
+        "bl_file_off": "0x62f176",
+        "bl_va": "0x2c63f176",
+        "bl_target_va": "0x2c6540f0",
+        "bl_target_file_off": "0x6440f0",
+        "helper_prologue_file_off": "0x62f124",
+        "helper_prologue_va": "0x2c63f124",
+        "helper_prologue_bytes": "10b582b0"
+      }
+    },
+    {
+      "name": "lvgl_ui",
+      "name_string_file_off": "0x41c9f0",
+      "name_string_va": "0x3c3f45fc",
+      "name_true_start_count": 1,
+      "name_va_dword_hits": [
+        "0x41daf8",
+        "0x628cd8"
+      ],
+      "osThreadAttr_t": {
+        "struct": "osThreadAttr_t",
+        "descriptor_file_off": "0x41daf8",
+        "descriptor_va": "0x3c3f5704",
+        "raw_words": [
+          "0x3c3f45fc",
+          "0x00000000",
+          "0x00000000",
+          "0x00000000",
+          "0x3d6a1818",
+          "0x00008000",
+          "0x00000028",
+          "0x00000001",
+          "0x00000000"
+        ],
+        "fields": {
+          "+0x00 name": "0x3c3f45fc",
+          "+0x04 attr_bits": "0x0",
+          "+0x08 cb_mem": "0x0",
+          "+0x0c cb_size": "0x0",
+          "+0x10 stack_mem": "0x3d6a1818",
+          "+0x14 stack_size": "0x8000 (32768)",
+          "+0x18 priority": "0x28 (40)",
+          "+0x1c tz_module": "0x1",
+          "+0x20 reserved": "0x0"
+        }
+      },
+      "packed_def": {
+        "file_off": "0x41daf4",
+        "va": "0x3c3f5700",
+        "entry_word": "0x2c63f229",
+        "entry_fn_file_off": "0x62f228",
+        "entry_fn_va": "0x2c63f228",
+        "prologue_bytes": "30b53f4c",
+        "literal_pool_file_off": "0x62f418",
+        "literal_pool_hits": 1,
+        "attr_alone_va_hits": 0
+      },
+      "create_site": {
+        "ldr_literal_file_off": "0x62f3b2",
+        "ldr_literal_va": "0x2c63f3b2",
+        "ldr_rt": 0,
+        "ldr_bytes": "1948",
+        "bl_file_off": "0x62f3b4",
+        "bl_va": "0x2c63f3b4",
+        "bl_target_va": "0x2c6540f0",
+        "bl_target_file_off": "0x6440f0",
+        "helper_prologue_file_off": "0x62f3a2",
+        "helper_prologue_va": "0x2c63f3a2",
+        "helper_prologue_bytes": "10b582b0"
+      }
+    }
+  ],
+  "osThreadNew_wrapper": {
+    "peeler_file_off": "0x6440f0",
+    "peeler_va": "0x2c6540f0",
+    "peeler_signature_hex": "024618b152f8040b",
+    "osThreadNew_file_off": "0x6467e4",
+    "osThreadNew_va": "0x2c6567e4",
+    "abi": "BES peeler: r0=&{entry,attr}, r1=argument; loads entry into r0, leaves attr pointer in r2, then B.W to osThreadNew"
+  },
+  "inferences": [
+    {
+      "id": "INF-1",
+      "label": "inference",
+      "claim": "The shared create helper at peeler_file_off is a BES ABI peeler: callers pass r0=&{entry,attr} (not stock CMSIS osThreadNew args), and the peeler loads entry then B.W to the real osThreadNew.",
+      "reason": "Both create sites BL the same 8-byte signature 024618b152f8040b, which Capstone/bytes decode as mov r2,r0; cbz; ldr.w r0,[r2],#4; b.w osThreadNew."
+    },
+    {
+      "id": "INF-2",
+      "label": "inference",
+      "claim": "tz_module=1 on both LVGL thread attrs means TrustZone module assignment is enabled for these threads in the CMSIS-RTOS2 sense.",
+      "reason": "osThreadAttr_t[+0x1c] is 1 for both lvgl_async and lvgl_ui; CMSIS names that field tz_module."
+    },
+    {
+      "id": "INF-3",
+      "label": "inference",
+      "claim": "Priority values 42 (lvgl_async) and 40 (lvgl_ui) are CMSIS-RTOS2 osPriority_t ordinals, not FreeRTOS native priorities.",
+      "reason": "The descriptors classify as osThreadAttr_t under the CMSIS layout (name/attr_bits/cb/stack/prio/tz), and prio fields sit in 1..56."
+    },
+    {
+      "id": "FACT-boundary",
+      "label": "fact",
+      "claim": "This leaf proves only the osThreadAttr_t packed defs, entry prologues, and peeler create sites for lvgl_async/lvgl_ui; it does not prove the service-loop bodies (leaf-3.3) or tick/flush map (leaf-3.4).",
+      "reason": "Scope boundary recorded so later consumers do not over-read this artifact."
+    }
+  ]
+}

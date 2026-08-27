@@ -1,0 +1,25 @@
+name,kind,status,string_off,files
+FONT_DUMMY_16,compiled_face,extracted,0x166950,FONT_DUMMY_16/
+FONT_DUMMY_20,compiled_face,extracted,0x166af0,FONT_DUMMY_20/
+FONT_CN_36_BOLD,named_face,not_in_ota,0x16fc10,
+FONT_CN_32_NORMAL,named_face,not_in_ota,0x3ffdf4,
+FONT_EN_32_NORMAL,named_face,not_in_ota,0x3ffe08,
+FONT_EN_36_BOLD,named_face,not_in_ota,0x3ffe1c,
+FONT_CN_16_NORMAL,compiled_face,extracted,0x3ffe2c,FONT_CN_16_NORMAL/
+FONT_CN_20_NORMAL,compiled_face,extracted,0x3ffe40,FONT_CN_20_NORMAL/
+FONT_CN_24_NORMAL,compiled_face,extracted,0x3ffe54,FONT_CN_24_NORMAL/
+lv_font_is_all_character_showable,function,not_a_font,0x41cc28,
+lv_font_lfs_deinit,function,not_a_font,0x41d1f8,
+lv_font_lfs_init,function,not_a_font,0x41d218,
+lv_font_do_load_font %d fail,trace_format,not_a_font,0x41d6a0,
+B:lv_font_air_full_cn_20_bpp1.bin,littlefs_file,not_in_ota,0x426664,
+FONT_20 Already loaded,trace,not_a_font,0x426730,
+FONT_20 Succ,trace,not_a_font,0x426794,
+lv_font_do_load_font,function,not_a_font,0x4267a4,
+lv_font_load_from_file,function,not_a_font,0x4267bc,
+lv_font_free_font_file,function,not_a_font,0x4267d4,
+lv_font_on_load_finished,function,not_a_font,0x4267ec,
+lv_font_load_prepare,function,not_a_font,0x426808,
+lv_font_air_mgr_load_all,function,not_a_font,0x426820,
+lv_font_mgr_get_file,function,not_a_font,0x42683c,
+lv_font_mgr_get_font,function,not_a_font,0x426854,

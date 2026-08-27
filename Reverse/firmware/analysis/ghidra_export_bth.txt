@@ -1,0 +1,86 @@
+openjdk version "21.0.12.1" 2026-08-18
+OpenJDK Runtime Environment Homebrew (build 21.0.12.1)
+OpenJDK 64-Bit Server VM Homebrew (build 21.0.12.1, mixed mode)
+INFO  Using log config file: jar:file:/opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /Users/bimap/Library/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /Users/bimap/Library/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (694 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (1373 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/8051/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/PDB/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/BSim/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/BytePatterns/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/DATA/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Base/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/FunctionID/ghidra_scripts
+    /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/ghidra/project/StarAirBth (HeadlessAnalyzer)  
+INFO  Opening project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/ghidra/project/StarAirBth (HeadlessProject)  
+INFO  REPORT: Processing project file: /best1600_watch_bth.bin (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ExportAll.java '/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/export/1.0.12.83/functions/bth'  (HeadlessAnalyzer)  
+INFO  SCRIPT: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts/ExportAll.java (HeadlessAnalyzer)  
+INFO  ExportAll.java> exported 100 ok=100 fail=0 (GhidraScript)  
+WARN  Decompiling 14018b68, pcode error at 1401964a: Unable to resolve constructor at 1401964a (DecompileCallback)  
+WARN  Decompiling 140190e0, pcode error at 1401964a: Unable to resolve constructor at 1401964a (DecompileCallback)  
+INFO  ExportAll.java> exported 200 ok=200 fail=0 (GhidraScript)  
+WARN  Decompiling 14023528, pcode error at 005d8f1a: Could not follow disassembly flow into non-existing memory at 005d8f1a (DecompileCallback)  
+WARN  Decompiling 14023528, pcode error at 005d92a2: Could not follow disassembly flow into non-existing memory at 005d92a2 (DecompileCallback)  
+WARN  Decompiling 14023528, pcode error at 005d92b0: Could not follow disassembly flow into non-existing memory at 005d92b0 (DecompileCallback)  
+WARN  Decompiling 14023528, pcode error at 005d8f2a: Could not follow disassembly flow into non-existing memory at 005d8f2a (DecompileCallback)  
+WARN  Decompiling 14023528, pcode error at 005d9366: Could not follow disassembly flow into non-existing memory at 005d9366 (DecompileCallback)  
+INFO  ExportAll.java> exported 300 ok=300 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 400 ok=400 fail=0 (GhidraScript)  
+WARN  Decompiling 14032b18, pcode error at 14044e10: Failed to resolve varnode <thv_Qd1>, index=15 (DecompileCallback)  
+WARN  Decompiling 14034df0, pcode error at 14044e10: Failed to resolve varnode <thv_Qd1>, index=15 (DecompileCallback)  
+INFO  ExportAll.java> exported 500 ok=500 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 600 ok=600 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 700 ok=700 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 800 ok=800 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 900 ok=900 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1000 ok=1000 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1100 ok=1100 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1200 ok=1200 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1300 ok=1300 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1400 ok=1400 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1500 ok=1500 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1600 ok=1600 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1700 ok=1700 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1800 ok=1800 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 1900 ok=1900 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2000 ok=2000 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2100 ok=2100 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2200 ok=2200 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2300 ok=2300 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2400 ok=2400 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2500 ok=2500 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2600 ok=2600 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2700 ok=2700 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2800 ok=2800 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 2900 ok=2900 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 3000 ok=3000 fail=0 (GhidraScript)  
+INFO  ExportAll.java> exported 3100 ok=3100 fail=0 (GhidraScript)  
+INFO  ExportAll.java> DONE n=3101 decomp_ok=3101 decomp_fail=0 skipped_3c=0 out=/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/export/1.0.12.83/functions/bth (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /best1600_watch_bth.bin (HeadlessAnalyzer)  

@@ -1,0 +1,51 @@
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> function count=4993  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> insn @ 2c5aa114=null  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> func containing set_sn=null  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>   ram 2c000000-2c6753fb mapped=false  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR en_usb @2c1605e8  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [en_usb] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [en_usb(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR enable usb @2c1605f0  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [enable usb] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [enable usb(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR set_sn @2c15fdbc  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [set_sn] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [set_sn(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR eshell > @2c4274e2  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [eshell >] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [eshell >(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR handleSystemMsg @2c194d54  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [handleSystemMsg] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [handleSystemMsg(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR no handler for action %s @2c182b64  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [no handler for action %s] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [no handler for action %s(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR no handler for action %s @2c194f8f  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [no handler for action %s] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [no handler for action %s(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR get_glass_screenshot @2c194580  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [get_glass_screenshot] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [get_glass_screenshot(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR get_glass_log @2c195528  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [get_glass_log] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [get_glass_log(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR Invalid UART ID: %d @2c129e44  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [Invalid UART ID: %d] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [Invalid UART ID: %d(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR Invalid UART ID: %d @2c14b568  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [Invalid UART ID: %d] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [Invalid UART ID: %d(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR hal_uart_open @2c129e36  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [hal_uart_open] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [hal_uart_open(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR hal_iomux_best1600.c @2c014500  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [hal_iomux_best1600.c] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [hal_iomux_best1600.c(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR hal_iomux_best1600.c @2c1458cc  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [hal_iomux_best1600.c] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [hal_iomux_best1600.c(3C)] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java> STR debug_i2c @2c427824  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [debug_i2c] NO refs  
+2026-08-22 08:17:41 INFO  DumpLeftovers.java>     [debug_i2c(3C)] NO refs  
+2026-08-22 08:17:42 INFO  DumpLeftovers.java>   [set_sn] no function  
+2026-08-22 08:17:42 INFO  DumpLeftovers.java> matched named funcs=0  

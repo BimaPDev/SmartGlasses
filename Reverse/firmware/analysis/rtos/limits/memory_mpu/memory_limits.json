@@ -1,0 +1,313 @@
+{
+  "leaf": "leaf-1.2.2",
+  "binaries": [
+    "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+    "Reverse/firmware/x_1.0.12.83/best1600_watch_bth.bin"
+  ],
+  "xip_base": "0x2c000000",
+  "method": "string banners + Capstone Thumb immediates (FB 0x25800, LV_MEM_BUF_MAX_NUM); honesty on UNRECOVERED heap/LV_MEM/PSRAM sizes",
+  "entry_count": 33,
+  "entries": [
+    {
+      "name": "m55_factory_nv_start",
+      "value": "0x28FFF000",
+      "bytes": null,
+      "region": "flash",
+      "evidence": "M55 build banner `__factory_start=0x28FFF000` (FLASH_NC_BASE 0x28000000 + last 4K of 16MB)",
+      "file_offset": "0x6752D7",
+      "confidence": "high"
+    },
+    {
+      "name": "m55_factory_sec_size",
+      "value": "0x1000",
+      "bytes": 4096,
+      "region": "flash",
+      "evidence": "banner `FACT_SEC_SIZE=0x1000` beside factory NV",
+      "file_offset": "0x6752F2",
+      "confidence": "high"
+    },
+    {
+      "name": "m55_flash_base",
+      "value": "0x2C000000",
+      "bytes": null,
+      "region": "flash",
+      "evidence": "banner `FLASH_BASE=0x2C000000` (XIP) + `FLASH_NC_BASE=0x28000000`",
+      "file_offset": "0x675319",
+      "confidence": "high"
+    },
+    {
+      "name": "m55_flash_nc_base",
+      "value": "0x28000000",
+      "bytes": null,
+      "region": "flash",
+      "evidence": "banner `FLASH_NC_BASE=0x28000000` non-cache alias of M55 NOR",
+      "file_offset": "0x67532F",
+      "confidence": "high"
+    },
+    {
+      "name": "m55_flash_size",
+      "value": "0x1000000",
+      "bytes": 16777216,
+      "region": "flash",
+      "evidence": "banner `FLASH_SIZE=0x1000000` (16 MiB) on platform_tester / M55 image",
+      "file_offset": "0x675348",
+      "confidence": "high"
+    },
+    {
+      "name": "m55_userdata_start",
+      "value": "0x28FFC000",
+      "bytes": null,
+      "region": "flash",
+      "evidence": "banner `__userdata_start=0x28FFC000` + `USER_SEC_SIZE=0x1000`",
+      "file_offset": "0x675280",
+      "confidence": "high"
+    },
+    {
+      "name": "m55_ota_code_offset",
+      "value": "0x10000",
+      "bytes": 65536,
+      "region": "flash",
+      "evidence": "banner `OTA_CODE_OFFSET=0x10000`",
+      "file_offset": "0x67535D",
+      "confidence": "high"
+    },
+    {
+      "name": "sensor_hub_flash_size",
+      "value": "0x100000",
+      "bytes": 1048576,
+      "region": "flash",
+      "evidence": "sensor_hub banner `FLASH_SIZE=0x100000` with `FLASH_BASE=0x34000000` / `KERNEL=RTX5` (subsys image, not a fourth SoC)",
+      "file_offset": "0x14A749",
+      "confidence": "high",
+      "notes": "CHIP_SUBSYS banner @ 0x14A663"
+    },
+    {
+      "name": "sensor_hub_flash_base",
+      "value": "0x34000000",
+      "bytes": null,
+      "region": "flash",
+      "evidence": "sensor_hub banner `FLASH_BASE=0x34000000` + `FLASH_NC_BASE=0x30000000`",
+      "file_offset": "0x14A71A",
+      "confidence": "high"
+    },
+    {
+      "name": "bth_factory_nv_start",
+      "value": "0x303FF000",
+      "bytes": null,
+      "region": "flash",
+      "evidence": "BTH banner `__factory_start=0x303FF000` on best1600_watch_bth.bin",
+      "file_offset": "0x1475AF",
+      "confidence": "high"
+    },
+    {
+      "name": "bth_flash_size",
+      "value": "0x400000",
+      "bytes": 4194304,
+      "region": "flash",
+      "evidence": "BTH banner `FLASH_SIZE=0x400000` (4 MiB) `FLASH_BASE=0x34000000`",
+      "file_offset": "0x14760E",
+      "confidence": "high"
+    },
+    {
+      "name": "jbd_framebuffer_bytes",
+      "value": "0x25800",
+      "bytes": 153600,
+      "region": "framebuffer",
+      "evidence": "Thumb `mov.w r2, #0x25800` @ VA 0x2C4985A2 (FUN_2c498538 full-frame path) + JBD reconstruction `JBD_FB_BYTES`; 640\u00d7480 4-bit packed = 153600",
+      "file_offset": "0x4985A2",
+      "confidence": "high"
+    },
+    {
+      "name": "lvgl_oom_buffer_message",
+      "value": "present",
+      "bytes": null,
+      "region": "lvgl",
+      "evidence": "string in `../../thirdparty/star_air_lvgl/src/misc/lv_mem.c` cluster \u2014 temporary buffer OOM, not a baked LV_MEM_SIZE literal",
+      "file_offset": "0x41CE98",
+      "confidence": "high"
+    },
+    {
+      "name": "LV_MEM_BUF_MAX_NUM",
+      "value": "16",
+      "bytes": 16,
+      "region": "lvgl",
+      "evidence": "`lv_mem_buf_get` @ 0x2C62BF1C loops with `cmp r3, #0x10` / `cmp r5, #0x10`; OOM strings mention LV_MEM_BUF_MAX_NUM",
+      "file_offset": "0x62BF5C",
+      "confidence": "high"
+    },
+    {
+      "name": "LV_MEM_SIZE",
+      "value": null,
+      "bytes": null,
+      "region": "lvgl",
+      "evidence": "OOM text names LV_MEM_SIZE but `lv_mem_alloc` @ 0x2C62BE88 only forwards to custom allocator FUN_2c47266c (heap id 4) \u2014 static pool size not in image",
+      "file_offset": "0x41CE98",
+      "confidence": "unrecovered",
+      "notes": "LV_MEM_CUSTOM path; do not invent a pool size from the OOM string alone."
+    },
+    {
+      "name": "lv_mem_source_path",
+      "value": "star_air_lvgl/src/misc/lv_mem.c",
+      "bytes": null,
+      "region": "lvgl",
+      "evidence": "source path string beside OOM / LV_MEM_BUF messages",
+      "file_offset": "0x41CE48",
+      "confidence": "high"
+    },
+    {
+      "name": "freertos_heap_impl",
+      "value": "heap_4",
+      "bytes": null,
+      "region": "heap",
+      "evidence": "`heap_4.c` path + `pvPortMalloc` / `vPortFree` assert names (no heap_5 string)",
+      "file_offset": "0x12D5F8",
+      "confidence": "high"
+    },
+    {
+      "name": "configTOTAL_HEAP_SIZE",
+      "value": null,
+      "bytes": null,
+      "region": "heap",
+      "evidence": "no `configTOTAL_HEAP_SIZE` / `ucHeap` banner; TRACE-interned asserts block sized recovery (same honesty as leaf-1.1.1)",
+      "file_offset": "",
+      "confidence": "unrecovered"
+    },
+    {
+      "name": "bes_multi_heap",
+      "value": "present",
+      "bytes": null,
+      "region": "heap",
+      "evidence": "MCPP `multi_heap.c` / `heap_api.c` + `multi_heap_*_impl` + `Heap start %p end %p`",
+      "file_offset": "0xAFA28",
+      "confidence": "high"
+    },
+    {
+      "name": "utils_multi_heap",
+      "value": "present",
+      "bytes": null,
+      "region": "heap",
+      "evidence": "`utils/heap/multi_heap.c` + `multi_heap_register_impl` + syspool (`syspool_init: %p,0x%x`)",
+      "file_offset": "0x14744B",
+      "confidence": "high"
+    },
+    {
+      "name": "custom_heap_max_single_alloc",
+      "value": "0x106a000",
+      "bytes": 17211392,
+      "region": "heap",
+      "evidence": "FUN_2c47245c (lv/custom malloc path) `cmp` against literal 0x106A000 before alloc; oversized \u2192 log @ line 0x119",
+      "file_offset": "0x4724F0",
+      "confidence": "medium",
+      "notes": "Ceiling on one allocation, not proof of total heap/PSRAM size."
+    },
+    {
+      "name": "med_heap_block_max_num",
+      "value": null,
+      "bytes": null,
+      "region": "heap",
+      "evidence": "string `g_block_index(%d) >= MED_HEAP_BLOCK_MAX_NUM` in med_heap / heap_api.c \u2014 numeric N not bound (no VA xref)",
+      "file_offset": "0xAFE5E",
+      "confidence": "unrecovered"
+    },
+    {
+      "name": "utest_ram_sram_psram",
+      "value": "present",
+      "bytes": null,
+      "region": "psram",
+      "evidence": "factory `utest_ram` family exercises `sram|psram` (stab/rw/bitflip/memset/memcpy)",
+      "file_offset": "0x42975A",
+      "confidence": "high"
+    },
+    {
+      "name": "PSRAM_SIZE",
+      "value": null,
+      "bytes": null,
+      "region": "psram",
+      "evidence": "`show memory map` prints `PSRAM_BASE`/`PSRAM_SIZE` at runtime; no static `PSRAM_SIZE=0x...` banner in either image",
+      "file_offset": "0x42861E",
+      "confidence": "unrecovered"
+    },
+    {
+      "name": "memory_map_sram_regions",
+      "value": "M55_ITCM/DTCM/SYS + HIFI4_* + BTH_RAM + SENS_RAM",
+      "bytes": null,
+      "region": "sram",
+      "evidence": "eshell/BTH `show memory map` format strings list per-core SRAM regions (sizes filled at runtime)",
+      "file_offset": "0x428410",
+      "confidence": "high"
+    },
+    {
+      "name": "hifi4_itcm_size",
+      "value": "0x40000",
+      "bytes": 262144,
+      "region": "sram",
+      "evidence": "embedded DSP banner `HIFI4_ITCM_SIZE=0x00040000` (+ DTCM same)",
+      "file_offset": "0x133437",
+      "confidence": "high"
+    },
+    {
+      "name": "hifi4_dtcm_size",
+      "value": "0x40000",
+      "bytes": 262144,
+      "region": "sram",
+      "evidence": "embedded DSP banner `HIFI4_DTCM_SIZE=0x00040000`",
+      "file_offset": "0x13346D",
+      "confidence": "high"
+    },
+    {
+      "name": "mpu_armv8m_source",
+      "value": "platform/cmsis/mpu_armv8m.c",
+      "bytes": null,
+      "region": "mpu",
+      "evidence": "source path present in M55 and BTH images",
+      "file_offset": "0x425CC",
+      "confidence": "high"
+    },
+    {
+      "name": "mpu_cfg_source",
+      "value": "platform/cmsis/mpu_cfg.c",
+      "bytes": null,
+      "region": "mpu",
+      "evidence": "source path + `Warning, MPU is not setup correctly: %d` (M55 @ same cluster, BTH @ 0x110954)",
+      "file_offset": "0x426BC",
+      "confidence": "high"
+    },
+    {
+      "name": "mpu_setup_warning",
+      "value": "present",
+      "bytes": null,
+      "region": "mpu",
+      "evidence": "runtime warning string \u2014 MPU config can fail closed; region table not statically dumped",
+      "file_offset": "0x426DC",
+      "confidence": "high"
+    },
+    {
+      "name": "TrustZone_ascii",
+      "value": "absent",
+      "bytes": null,
+      "region": "mpu",
+      "evidence": "`TrustZone` ASCII absent in platform_tester.bin and best1600_watch_bth.bin; `SecureFault` pretty-printer present (not signed-OTA / TZ proof)",
+      "file_offset": "",
+      "confidence": "high",
+      "notes": "Aligns with STAR_AIR_FULL_WRITEUP TrustZone honesty."
+    },
+    {
+      "name": "stack_overflow_usagefault",
+      "value": "present",
+      "bytes": null,
+      "region": "sram",
+      "evidence": "fault pretty-printer `(Stack overflow UsageFault)` + FreeRTOS `task %s stack overflow`",
+      "file_offset": "0x151B6",
+      "confidence": "high"
+    },
+    {
+      "name": "freertos_stack_overflow_hook",
+      "value": "present",
+      "bytes": null,
+      "region": "heap",
+      "evidence": "`task %s stack overflow` (configCHECK_FOR_STACK_OVERFLOW path)",
+      "file_offset": "0x12C08A",
+      "confidence": "high"
+    }
+  ]
+}

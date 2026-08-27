@@ -1,0 +1,119 @@
+{
+  "leaf": "1.3.1",
+  "subsystem": "launcher_ui",
+  "firmware": "platform_tester.bin 1.0.12.83",
+  "xip_base": "0x2c000000",
+  "rodata_alias": "0x3c000000",
+  "sources": [
+    "Reverse/firmware/export/1.0.12.83/strings/m55_ascii.txt",
+    "Reverse/firmware/export/1.0.12.83/ui/page_sources.txt",
+    "Reverse/firmware/export/1.0.12.83/strings/categorized/source_files.txt",
+    "Reverse/firmware/export/1.0.12.83/functions/m55/decomp/2c5046ba_launcher_theme_init.c"
+  ],
+  "cite_outside_owns": [
+    "Reverse/firmware/analysis/hud_map/patch_catalog.json",
+    "Reverse/firmware/analysis/hud_map/layout_tables.json",
+    "Reverse/firmware/analysis/hud_map/intern_map.json"
+  ],
+  "note": "Most [Launcher]* / Domain TRACE method names have zero abs/MOVW/MOVT xrefs (BES TRACE-hash). Entries marked evidence=string are stable rodata anchors (file_off = va - 0x2c000000). Entries marked evidence=code are Ghidra function entries from functions.csv / decomp.",
+  "functions": [
+    {
+      "va": "0x2c5046ba",
+      "name": "launcher_theme_init",
+      "role": "LVGL theme bootstrap for launcher chrome (allocates style packs; calls theme_style_radius12_*)",
+      "evidence": "code",
+      "decomp": "functions/m55/decomp/2c5046ba_launcher_theme_init.c"
+    },
+    {
+      "va": "0x2c508910",
+      "name": "FUN_2c508910",
+      "role": "Dock/standby 1x1 tile geometry: lv_obj_set_size(w=140) at 0x2c50893c — shared Dockview/StandBy child sizing",
+      "evidence": "code",
+      "cite": "hud_map/patch_catalog.json sites[0]; layout_tables.json notes"
+    },
+    {
+      "va": "0x2c190db4",
+      "name": "LauncherProvider::startAppByPageName",
+      "role": "Primary page-stack push: startAppByPageName(pageName) via _pageManager; fails if sleep / null manager / null pageName",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c190d60",
+      "name": "LauncherProvider::realStartApp",
+      "role": "Inner launch after checkLaunch; gated on system sleep + _pageManager",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c191094",
+      "name": "LauncherProvider::backHome",
+      "role": "Pop / return to Pages/Launcher; no-op when launcher already on top",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c19744c",
+      "name": "DockviewV2::init",
+      "role": "Dock icon strip init (flex root, app seq store, indicators)",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c196c00",
+      "name": "DockviewV2::onClick",
+      "role": "Dock icon tap → launch mapped pageName/pkg; blocked while scrolling or change-seq",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c196dc0",
+      "name": "DockviewV2::createFlexRootView",
+      "role": "Build LVGL flex root for dock icon row",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c19827c",
+      "name": "LauncherViewController::Create",
+      "role": "Owns StandByView ↔ DockviewV2 switchView and PIP icon overlays",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c1982e0",
+      "name": "LauncherViewController::switchView",
+      "role": "Toggle isShowDock / isAnim; hides launcher when Assistant shows",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c191f88",
+      "name": "Launcher::onViewLoad",
+      "role": "Pages/Launcher lifecycle entry (with onViewDidLoad / Appear / Disappear siblings)",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c18c2d0",
+      "name": "SplashView.cpp",
+      "role": "Navigation page splash / boot-into-navi view source anchor",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c1804e4",
+      "name": "Domain.cpp",
+      "role": "Assistant NLU Domain base class source path (__FILE__)",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c17dfb4",
+      "name": "NavigationDomain",
+      "role": "Assistant domain that starts Navigation page / connect data on POI select",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c165b98",
+      "name": "Pages/Launcher",
+      "role": "PageManager registry name for home / dock host",
+      "evidence": "string"
+    },
+    {
+      "va": "0x2c5056b4",
+      "name": "theme_style_radius12_a",
+      "role": "Theme style pack used by launcher_theme_init (radius-12 family)",
+      "evidence": "code"
+    }
+  ]
+}

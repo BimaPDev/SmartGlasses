@@ -1,0 +1,30 @@
+{
+  "dplus_dminus_wired": true,
+  "user_gadget_stack": false,
+  "primary_path": "rom_download_window",
+  "leaves": [
+    "stack.json",
+    "rom_download.json",
+    "en_usb.json",
+    "board_routing.json",
+    "host_protocol.json"
+  ],
+  "summary": {
+    "stack": "1.0.12.83 M55/BTH have no USB gadget/PHY driver. Residue is charger VBUS, TRACE DRVUSB, fac_cmd en_usb.",
+    "rom_download": "BES2700BP boot ROM supports UART-or-USB downloading on USB_DP J17 / USB_DN H17. Catch the window at reset; VID/PID unknown. User image never enumerates after boot.",
+    "en_usb": "Handler unrecovered; not LVGL 0x2C5AAB48. Classification charger_vbus. Cannot enable USB R/W.",
+    "board_routing": "Operator-wired D+/D− through a 3240-marked mux (guess USB3740B; top-mark not in the Microchip datasheet) beside SC7288 to BES2700BP-W. Mux OE_N/S can still Hi-Z or park the pair on a charger tap.",
+    "host_protocol": "Companion HID is for Vu/View VID 0x2A45 PID 0x2050, not Star Air. AOA is ICCOA CarLink. Star Air cannot satisfy host USB."
+  },
+  "cannot": [
+    "en_usb on this user image",
+    "ADB / MSC / CDC gadget from 1.0.12.83",
+    "Companion VuGlassesHidManager without enumerating 0x2A45:0x2050"
+  ],
+  "can": [
+    "Catch BES boot-ROM USB download if the mux presents D+/D− to the PHY during RESET/PWRON",
+    "UART eshell md/mw/xmodem for factory read/write on the running image",
+    "Probe 3240 S/OE_N if ROM never appears — mux may be the remaining hardware gate"
+  ],
+  "next_bench_action": "Leave Type-C plugged. Start a USB watch on the same Mac port/cable first. Then pulse RESET (or power-cycle) 3–4 times and look for ANY new device — not MediaTek 0x0E8D, VID unknown. If still empty, treat the 3240 mux OE_N/S as the remaining gate (Hi-Z or charger tap) rather than missing D+/D−. Parallel: UART eshell on the BES2700BP board is the running-firmware read/write path; en_usb will not create a gadget."
+}

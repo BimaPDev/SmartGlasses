@@ -1,0 +1,39 @@
+{
+  "classes": [
+    {
+      "name": "VuGlassesHidManager",
+      "path": "Reverse/jadx-intl-2.40.51/sources/com/upuphone/xr/sapp/vu/utils/VuGlassesHidManager.java",
+      "role": "Host HID opener for Vu/View glasses: waits for UsbDevice attach, requests permission, starts Glasses HID service (IGlassesHid / GlassesManager), then openUsb. Companion glasses USB path is USB HID, not AOA."
+    },
+    {
+      "name": "UsbStarryManager",
+      "path": "Reverse/jadx-intl-2.40.51/sources/com/upuphone/starrynet/core/usb/UsbStarryManager.java",
+      "role": "StarryNet USB accessory manager: registers USB_ACCESSORY_* broadcasts and opens android.hardware.usb.UsbAccessory via UsbAccessoryManager.connect (AOA PFD), not glasses HID."
+    },
+    {
+      "name": "UsbStarryNetDiscoverer",
+      "path": "Reverse/jadx-intl-2.40.51/sources/com/upuphone/starrynet/strategy/discovery/UsbStarryNetDiscoverer.java",
+      "role": "Discovers AOA accessories only if manufacturer==ICCOA and model==CarLink; parses AOA preamble as car IDs. Not a glasses protocol."
+    },
+    {
+      "name": "UsbAccessoryManager",
+      "path": "Reverse/jadx-intl-2.40.51/sources/com/upuphone/starrynet/core/usb/manager/UsbAccessoryManager.java",
+      "role": "UsbManager.getAccessoryList / openAccessory wrapper used by UsbStarryManager."
+    },
+    {
+      "name": "UsbNative",
+      "path": "Reverse/jadx-intl-2.40.51/sources/com/ucar/connect/aoa/UsbNative.java",
+      "role": "ucar AOA bulk IN/OUT via libusbio; car-link path, not MYVU glasses HID."
+    },
+    {
+      "name": "UsbPermissionHelper",
+      "path": "Reverse/jadx-intl-2.40.51/sources/com/upuphone/xr/sapp/vu/utils/UsbPermissionHelper.java",
+      "role": "UsbManager.requestPermission for View-glass UsbDevice VID/PID used by the HID path."
+    }
+  ],
+  "intended_role": "hid",
+  "star_air_can_satisfy": false,
+  "why_not": "If a glass enumerated, the companion would speak USB HID (VuGlassesHidManager + IGlassesHid) to VID 10821 (0x2A45) / PID 8272 (0x2050) View/Vu devices. Star Air (XGA010C) user firmware has no gadget/HID/AOA stack, USB-C does not enumerate (PROTOCOL.md / INVESTIGATION.md: charge path, BLE-only), and VuGlassesHelper.f() would reject any other VID/PID. StarryNet USB is ICCOA CarLink AOA, not glasses. Enabling USB R/W without enumerating that HID gadget cannot satisfy the host.",
+  "other_skus": "HID USB is for Vu/View display glasses (package vu, ViewGlasses*, StarV View / XGG010C), not Star Air / XGA010C. StarryNet USB accessory is ICCOA CarLink cars. Star Air host protocol in this repo is BLE.",
+  "conclusion": "Enabling USB R/W on Star Air is NOT the companion HID/AOA path unless firmware enumerates a USB gadget the host can open. The intl companion speaks USB HID to View glasses (VID 0x2A45 / PID 0x2050) via VuGlassesHidManager; AOA is CarLink-only. This XGA010C user image has no gadget stack and never enumerates, so host HID/AOA cannot start. BLE remains the Star Air channel."
+}

@@ -1,0 +1,51 @@
+{
+  "gadget_present": false,
+  "m55": {
+    "size": 6771708,
+    "notes": "platform_tester.bin (BEST1600 M55 app). Raw indexOf: en_usb\\0 at 0x1605e8, enable usb\\0 at 0x1605f0 (fac_cmd name/help pair, packed with neighboring cmds). First DRVUSB at 0x1468c4 (duplicate at 0x14c220); both sit in a BES TRACE-module table between DRVSEC and AUDFLG. First vbus usb_enable at 0x42afe inside sc7288_charger.c log '[CHG] vbus usb_enable:%d disable_reason:0x%x' (full C-string at 0x42af8). Absent as ASCII and UTF-16LE/BE: analog_usb, usbphy, usb_phy, CDC_ACM, dwc2, dwc, UsbDevice, gadget, TinyUSB, usb_open, hal_cmu_usb, USB_DP, USB_DN, CHIP_HAS_USB, usb_serial, hal_usb. 11 tusb hits are launcher_statusbar_* (first 0x16c51c), not TinyUSB. VID 0xBE57/0x2b0e/0x0a12 do not appear as ASCII or UTF-16; no USB device descriptor (bLength=18, bDescriptorType=1) carries those VIDs. Remaining usb bytes are charger/VBUS/power_supply telemetry, not a gadget stack."
+  },
+  "bth": {
+    "size": 1341116,
+    "notes": "best1600_watch_bth.bin (BTH). Sole USB-token C-string is TRACE tag DRVUSB at 0xe6630 in the same DRVANA/DRVCODEC/DRVBT/DRVFLS/DRVSEC/DRVUSB/AUDFLG module table as M55. No en_usb, enable usb, vbus, Vbus, hal_usb, analog_usb, usbphy, usb_phy, CDC_ACM, dwc2, UsbDevice, gadget, TinyUSB, tusb, usb_open, hal_cmu_usb, USB_DP, USB_DN, CHIP_HAS_USB, usb_serial. PMU strings 'Charger plug out.' at 0x1326e0 and 'Charger plug in.' at 0x1326fc are charger events, not USB protocol. No ASCII/UTF-16 VID 0xBE57/0x2b0e/0x0a12 and no matching device descriptor."
+  },
+  "needles": [
+    { "name": "en_usb", "present": true, "file_off": "0x1605e8" },
+    { "name": "enable usb", "present": true, "file_off": "0x1605f0" },
+    { "name": "vbus usb_enable", "present": true, "file_off": "0x42afe" },
+    { "name": "DRVUSB", "present": true, "file_off": "0x1468c4" },
+    { "name": "hal_usb", "present": false },
+    { "name": "analog_usb", "present": false },
+    { "name": "usbphy", "present": false },
+    { "name": "usb_phy", "present": false },
+    { "name": "CDC_ACM", "present": false },
+    { "name": "dwc2", "present": false },
+    { "name": "UsbDevice", "present": false },
+    { "name": "gadget", "present": false },
+    { "name": "TinyUSB", "present": false },
+    { "name": "usb_open", "present": false },
+    { "name": "hal_cmu_usb", "present": false },
+    { "name": "USB_DP", "present": false },
+    { "name": "USB_DN", "present": false },
+    { "name": "CHIP_HAS_USB", "present": false },
+    { "name": "usb_serial", "present": false }
+  ],
+  "vid_pid_candidates": [],
+  "extra_usb_strings": [
+    { "image": "m55", "file_off": "0x39354", "text": "on usb plug in/out event" },
+    { "image": "m55", "file_off": "0x42af8", "text": "[CHG] vbus usb_enable:%d disable_reason:0x%x" },
+    { "image": "m55", "file_off": "0x42b28", "text": "[CHG] vbus disable_reason:0x%x" },
+    { "image": "m55", "file_off": "0x42b48", "text": "[CHG] Vbus %s charger %s, disable_reason:0x%x" },
+    { "image": "m55", "file_off": "0x42db4", "text": "[CHG] chg:%d, chg:[%d, %d],usb:[%d]" },
+    { "image": "m55", "file_off": "0x42efc", "text": "[CHG] usb current:%d. ret:%d" },
+    { "image": "m55", "file_off": "0x42f1c", "text": "[CHG] usb voltage:%d. ret:%d" },
+    { "image": "m55", "file_off": "0x4327c", "text": "cw_update chg=%d v=%d c=%d cap=%d(h:%d l:%d) t=%d(cw:%d) bes_t=%d board=%d usb=%d v1=%d v5=%d v6=%d." },
+    { "image": "m55", "file_off": "0x14c220", "text": "DRVUSB" },
+    { "image": "m55", "file_off": "0x14ccf4", "text": "[PWRS] update_temp init bes:%d usb:%d board:%d volt_1:%d volt_6:%d!" },
+    { "image": "m55", "file_off": "0x14cdc0", "text": "[PWRS] chg=%d cap=%d v=%d c=%d bat_t=%d board_t=%d usb_t=%d cyc_cnt=%d soh=%d." },
+    { "image": "m55", "file_off": "0x14ce84", "text": "[PWRS] power_supply usb burn on, usb temp:%d, board temp:%d!" },
+    { "image": "m55", "file_off": "0x14cec4", "text": "[PWRS] power_supply usb burn off, usb temp:%d, board temp:%d!" },
+    { "image": "m55", "file_off": "0x14d0cc", "text": "[PWRS] bes_t=%d board=%d usb=%d v1=%d v5=%d v6=%d" },
+    { "image": "bth", "file_off": "0xe6630", "text": "DRVUSB" }
+  ],
+  "conclusion": "Wired Type-C D+/D− cannot enumerate from these 1.0.12.83 images: M55 6771708 B and BTH 1341116 B have no gadget/PHY driver (no hal_usb, analog_usb, usbphy, usb_phy, CDC_ACM, dwc2, UsbDevice, gadget, TinyUSB, usb_open, hal_cmu_usb, USB_DP, USB_DN, CHIP_HAS_USB, usb_serial; tusb hits are launcher_statusbar). Residue is SC7288 charger VBUS telemetry, power_supply USB temperature, TRACE tag DRVUSB, and fac_cmd en_usb/enable usb. That factory name cannot bring up a USB protocol stack that was never linked, so this firmware will not CDC/MSC/HID-enumerate even with D+/D− connected."
+}

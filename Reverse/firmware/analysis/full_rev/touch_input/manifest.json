@@ -1,0 +1,77 @@
+{
+  "firmware": "1.0.12.83",
+  "xip_base": "0x2C000000",
+  "cluster": "0x2C49B000-0x2C4C2000",
+  "functions": [
+    {
+      "va": "0x2c4c1688",
+      "name": "stk5115_board_init",
+      "role": "Top-level STK5115 bring-up: reg table, probe retries, post-init; TRACE line 0x20D"
+    },
+    {
+      "va": "0x2c49bc4c",
+      "name": "stk_reg_table_init",
+      "role": "I2C register initialization write stream (0x10..0x1C immediates)"
+    },
+    {
+      "va": "0x2c49da14",
+      "name": "stk501xx_init_client",
+      "role": "Probe loop with delays; sets device ready after PID 0xA0 OK"
+    },
+    {
+      "va": "0x2c49d6ac",
+      "name": "stk_probe_pid",
+      "role": "Read reg0 expect 0xA0; validate IRQ/flag regs during Start Initial stk501xx"
+    },
+    {
+      "va": "0x2c49c6a0",
+      "name": "stk_i2c_read8",
+      "role": "STK501XX_REG_READ — 1-byte I2C read via hal_i2c_read"
+    },
+    {
+      "va": "0x2c49c9e8",
+      "name": "stk_i2c_read16",
+      "role": "2-byte I2C read (raw/CADC @ 0xA4) with retry compare"
+    },
+    {
+      "va": "0x2c49b2c0",
+      "name": "stk_i2c_write8",
+      "role": "STK501XX_REG_WRITE — {reg,val} with 3 retries"
+    },
+    {
+      "va": "0x2c49c0cc",
+      "name": "stk_set_attr",
+      "role": "Attribute/enable/sensitivity mux including wear gate 0x1B"
+    },
+    {
+      "va": "0x2c49de50",
+      "name": "stk_get_attr",
+      "role": "Read prox/phase/raw attrs (regs 0xA4, 0xAB)"
+    },
+    {
+      "va": "0x2c4c1044",
+      "name": "stk_wear_thresh_sm",
+      "role": "Wear/proximity threshold FSM; TRACE near/far transitions"
+    },
+    {
+      "va": "0x2c4c16fe",
+      "name": "stk_attr_dispatch",
+      "role": "Higher cmd mux (sensitivity pack 0x3D, timer mode 0x3E)"
+    },
+    {
+      "va": "0x2c49b970",
+      "name": "stk_alg_work",
+      "role": "Magnitude bands → gesture/strength class for TWS_EventGesture path"
+    },
+    {
+      "va": "0x2c4bd450",
+      "name": "hal_i2c_read",
+      "role": "Shared HAL I2C read used by STK501XX_REG_READ*"
+    },
+    {
+      "va": "0x2c49e3b0",
+      "name": "tp_reg_read32_be",
+      "role": "BE32 register read helper in TP neighborhood (postmortem TP/stk51158 note)"
+    }
+  ]
+}

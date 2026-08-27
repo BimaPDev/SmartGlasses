@@ -1,0 +1,60 @@
+openjdk version "21.0.12.1" 2026-08-18
+OpenJDK Runtime Environment Homebrew (build 21.0.12.1)
+OpenJDK 64-Bit Server VM Homebrew (build 21.0.12.1, mixed mode)
+INFO  Using log config file: jar:file:/opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /Users/bimap/Library/ghidra/ghidra_12.1.3_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /Users/bimap/Library/ghidra/ghidra_12.1.3_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (612 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (1480 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/8051/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/PDB/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/BSim/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/BytePatterns/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/DATA/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Base/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/FunctionID/ghidra_scripts
+    /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_proj/star_air3 (HeadlessAnalyzer)  
+INFO  Opening project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_proj/star_air3 (HeadlessProject)  
+INFO  REPORT: Processing project file: /platform_tester.bin (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DockCircle.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/ghidra_scripts/DockCircle.java (HeadlessAnalyzer)  
+INFO  DockCircle.java> funcs=4993 (GhidraScript)  
+INFO  DockCircle.java> STR createNormalWidget @2c1997a4 (GhidraScript)  
+INFO  DockCircle.java> [createNormalWidget] users: 0 (GhidraScript)  
+INFO  DockCircle.java> STR createTextWidget @2c1997ec (GhidraScript)  
+INFO  DockCircle.java> [createTextWidget] users: 0 (GhidraScript)  
+INFO  DockCircle.java> STR customTimeAndBatteryWidget @2c199860 (GhidraScript)  
+INFO  DockCircle.java> [customTimeAndBatteryWidget] users: 0 (GhidraScript)  
+INFO  DockCircle.java> STR createWeather1x2Widget @2c1998b8 (GhidraScript)  
+INFO  DockCircle.java> [createWeather1x2Widget] users: 0 (GhidraScript)  
+INFO  DockCircle.java> STR StandByWidget.cpp @2c1994e9 (GhidraScript)  
+INFO  DockCircle.java> [StandByWidget.cpp] users: 0 (GhidraScript)  
+INFO  DockCircle.java> STR aiBall @2c199790 (GhidraScript)  
+INFO  DockCircle.java> [aiBall] users: 0 (GhidraScript)  
+INFO  DockCircle.java> STR weather_1x1 @2c199798 (GhidraScript)  
+INFO  DockCircle.java> [weather_1x1] users: 0 (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /platform_tester.bin (HeadlessAnalyzer)  

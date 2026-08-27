@@ -1,0 +1,245 @@
+{
+  "integration_leaf": "leaf-2.1",
+  "firmware_version": "1.0.12.83",
+  "generated": "2026-08-27",
+  "master_map": "Reverse/firmware/analysis/rtos/RTOS_MAP.md",
+  "kernels": {
+    "m55": {
+      "kernel": "FreeRTOS",
+      "version": "10.4.1",
+      "core": "Cortex-M55",
+      "image": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+      "load_base": "0x2c000000",
+      "size_bytes": 6771708
+    },
+    "bth": {
+      "kernel": "RTX5",
+      "version": "5.5.1",
+      "core": "Cortex-M33",
+      "image": "Reverse/firmware/x_1.0.12.83/best1600_watch_bth.bin",
+      "load_base": "0x14000000",
+      "size_bytes": 1341116
+    },
+    "sensor_hub": {
+      "kernel": "RTX5",
+      "version": "5.5.1",
+      "core": "Cortex-M33 (sensor hub subsys)",
+      "image": "Reverse/firmware/analysis/rtos/sensor_hub/sensor_hub.bin",
+      "parent_image": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+      "carve_offset": "0x134070",
+      "carve_size": "0x100000",
+      "flash_base": "0x34000000",
+      "size_bytes": 1048576
+    },
+    "hifi4": {
+      "kernel": "FreeRTOS",
+      "version": "10.4.1",
+      "core": "HiFi4 DSP (Xtensa)",
+      "note": "Evidence strings in M55 blob only; no separate carve"
+    }
+  },
+  "aggregate_counts": {
+    "static_thread_names": 82,
+    "m55_threads": 60,
+    "bth_threads": 16,
+    "sensor_hub_threads": 6,
+    "m55_ipc_objects": 133,
+    "sensor_hub_rtos_objects": 14,
+    "introspection_commands": 8,
+    "tcb_fields_documented": 33,
+    "leaf_analyses": 5
+  },
+  "artifacts": [
+    {
+      "id": "master_map",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/RTOS_MAP.md",
+      "leaf": "leaf-2.1",
+      "entry_count": null,
+      "kernel": null,
+      "description": "Integrated cross-core RTOS master map"
+    },
+    {
+      "id": "manifest",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/manifest.json",
+      "leaf": "leaf-2.1",
+      "entry_count": 20,
+      "kernel": null,
+      "description": "Machine index of all RTOS analysis artifacts"
+    },
+    {
+      "id": "m55_threads_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/m55/THREADS.md",
+      "leaf": "leaf-1.1.1",
+      "entry_count": 60,
+      "kernel": "FreeRTOS 10.4.1",
+      "description": "M55 FreeRTOS thread inventory by subsystem"
+    },
+    {
+      "id": "m55_threads_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/m55/thread_inventory.json",
+      "leaf": "leaf-1.1.1",
+      "entry_count": 60,
+      "kernel": "FreeRTOS 10.4.1",
+      "description": "Machine-readable M55 thread inventory"
+    },
+    {
+      "id": "m55_extract_threads",
+      "type": "script",
+      "path": "Reverse/firmware/analysis/rtos/m55/extract_threads.py",
+      "leaf": "leaf-1.1.1",
+      "entry_count": null,
+      "kernel": null,
+      "description": "Regenerate M55 thread inventory from platform_tester.bin"
+    },
+    {
+      "id": "m55_ipc_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/m55/IPC_OBJECTS.md",
+      "leaf": "leaf-1.1.2",
+      "entry_count": 133,
+      "kernel": "FreeRTOS 10.4.1",
+      "description": "M55 CMSIS-RTOS2 IPC object inventory with flow diagrams"
+    },
+    {
+      "id": "m55_ipc_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/m55/ipc_inventory.json",
+      "leaf": "leaf-1.1.2",
+      "entry_count": 133,
+      "kernel": "FreeRTOS 10.4.1",
+      "description": "Machine-readable M55 IPC inventory"
+    },
+    {
+      "id": "m55_extract_ipc",
+      "type": "script",
+      "path": "Reverse/firmware/analysis/rtos/m55/extract_ipc.py",
+      "leaf": "leaf-1.1.2",
+      "entry_count": null,
+      "kernel": null,
+      "description": "Regenerate M55 IPC inventory from platform_tester.bin"
+    },
+    {
+      "id": "bth_rtx5_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/bth/RTX5_MAP.md",
+      "leaf": "leaf-1.2.1",
+      "entry_count": 16,
+      "kernel": "RTX5 5.5.1",
+      "description": "BTH M33 RTX5 thread map and INTERSYS IPC"
+    },
+    {
+      "id": "bth_rtx5_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/bth/rtx5_inventory.json",
+      "leaf": "leaf-1.2.1",
+      "entry_count": 16,
+      "kernel": "RTX5 5.5.1",
+      "description": "Machine-readable BTH RTX5 inventory"
+    },
+    {
+      "id": "bth_extract",
+      "type": "script",
+      "path": "Reverse/firmware/analysis/rtos/bth/extract_bth_rtos.py",
+      "leaf": "leaf-1.2.1",
+      "entry_count": null,
+      "kernel": null,
+      "description": "Regenerate BTH RTX5 inventory from best1600_watch_bth.bin"
+    },
+    {
+      "id": "sensor_hub_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/sensor_hub/SENSOR_HUB_RTOS.md",
+      "leaf": "leaf-1.2.2",
+      "entry_count": 6,
+      "kernel": "RTX5 5.5.1",
+      "description": "Sensor hub carve summary, threads, M55 IPC channels"
+    },
+    {
+      "id": "sensor_hub_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/sensor_hub/sensor_hub_inventory.json",
+      "leaf": "leaf-1.2.2",
+      "entry_count": 11,
+      "kernel": "RTX5 5.5.1",
+      "description": "Machine-readable hub inventory (6 threads + 5 modules; 14 rtos_objects separate)",
+      "subcounts": {
+        "threads": 6,
+        "modules": 5,
+        "rtos_objects": 14,
+        "ipc_channels": 2
+      }
+    },
+    {
+      "id": "sensor_hub_bin",
+      "type": "binary",
+      "path": "Reverse/firmware/analysis/rtos/sensor_hub/sensor_hub.bin",
+      "leaf": "leaf-1.2.2",
+      "entry_count": null,
+      "kernel": "RTX5 5.5.1",
+      "description": "Carved sensor hub sub-image (1 MiB @ parent 0x134070)"
+    },
+    {
+      "id": "sensor_hub_extract",
+      "type": "script",
+      "path": "Reverse/firmware/analysis/rtos/sensor_hub/extract_sensor_hub.py",
+      "leaf": "leaf-1.2.2",
+      "entry_count": null,
+      "kernel": null,
+      "description": "Carve and inventory sensor hub from platform_tester.bin"
+    },
+    {
+      "id": "introspection_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/introspection/INTROSPECTION.md",
+      "leaf": "leaf-1.3.1",
+      "entry_count": 8,
+      "kernel": "FreeRTOS 10.4.1 + RTX5 5.5.1",
+      "description": "eshell introspection commands and RTX5 TCB layout (33 fields)"
+    },
+    {
+      "id": "introspection_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/introspection/introspection.json",
+      "leaf": "leaf-1.3.1",
+      "entry_count": 8,
+      "kernel": "FreeRTOS 10.4.1 + RTX5 5.5.1",
+      "description": "Machine-readable introspection command catalog",
+      "subcounts": {
+        "commands": 8,
+        "tcb_fields_documented": 33,
+        "rtx_state_names": 15
+      }
+    },
+    {
+      "id": "introspection_extract",
+      "type": "script",
+      "path": "Reverse/firmware/analysis/rtos/introspection/extract_introspection.py",
+      "leaf": "leaf-1.3.1",
+      "entry_count": null,
+      "kernel": null,
+      "description": "Regenerate introspection catalog from M55 and BTH binaries"
+    },
+    {
+      "id": "verify_leaf",
+      "type": "script",
+      "path": "Reverse/firmware/analysis/rtos/scripts/verify-leaf.mjs",
+      "leaf": "leaf-2.1",
+      "entry_count": null,
+      "kernel": null,
+      "description": "Per-leaf verification gate runner"
+    },
+    {
+      "id": "verify_root",
+      "type": "script",
+      "path": "Reverse/firmware/analysis/rtos/scripts/verify-root.mjs",
+      "leaf": "leaf-2.1",
+      "entry_count": null,
+      "kernel": null,
+      "description": "Root integration verification (--map checks RTOS_MAP.md sections)"
+    }
+  ]
+}

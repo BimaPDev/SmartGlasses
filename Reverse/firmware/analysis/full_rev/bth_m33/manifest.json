@@ -1,0 +1,82 @@
+{
+  "leaf": "1.3.2",
+  "image": "x_1.0.12.83/best1600_watch_bth.bin",
+  "load_base": "0x14000000",
+  "processor": "ARM:LE:32:v8-m",
+  "image_size": "0x1476bc",
+  "ghidra_funcs": 3101,
+  "functions": [
+    {
+      "va": "0x1402a6e8",
+      "name": "bes_trace",
+      "role": "BES hashed TRACE(level, hash, …); explains 0 xrefs on app_* strings",
+      "ghidra": "FUN_1402a6e8"
+    },
+    {
+      "va": "0x14041f98",
+      "name": "bth_event_id_switch_candidate",
+      "role": "Dense small-ID state switch + TRACE hash 0x5A8 (not proven factory key)",
+      "ghidra": "FUN_14041f98"
+    },
+    {
+      "va": "0x140e5378",
+      "name": "bes_timer_start_veneer",
+      "role": "10-byte bx-ip timer veneer; HFP 3000/5000 ms false-positive target",
+      "ghidra": "FUN_140e5378"
+    },
+    {
+      "va": "0x14132494",
+      "name": "app_factorymode_enter",
+      "role": "Factory mode entry symbol string (.rodata; Thumb entry unbound)",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x141379a8",
+      "name": "app_poweron_key_init",
+      "role": "Power-on key init symbol string (.rodata; Thumb entry unbound)",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x140e63b0",
+      "name": "hal_key_boot_handler",
+      "role": "Boot key HAL symbol string; long-press 500/3000/5000 names nearby",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x1411203c",
+      "name": "app_ble_gatt_dflt_handler",
+      "role": "GATT default event handler name stub",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x14111d64",
+      "name": "app_ancc_init_info",
+      "role": "ANCC notification info-table init name; ANCS UUIDs at 0x1411be04/0x1411bf40",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x140e7748",
+      "name": "pmu_charger_irq_handler",
+      "role": "Best1600 PMU charger IRQ handler name (pmu_best1600.c @ 0x140e7688)",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x141316d8",
+      "name": "send_bth_to_m55_msg",
+      "role": "BTH→M55 INTERSYS helper name; factory path should TX FACTORY_TEST_MODE",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x14135f84",
+      "name": "ancs_bth_intersys_receive_handler",
+      "role": "ANCS notification bridge BTH M33 ↔ M55",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x1411be04",
+      "name": "ancs_service_uuid_le",
+      "role": "Apple ANCS service UUID blob (7905F431-…-122D00D0, little-endian)",
+      "kind": "rodata_blob"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "bin": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "va_base": "0x2C000000",
+  "sources": {
+    "intern_map": "Reverse/firmware/analysis/hud_map/intern_map.json",
+    "lvgl_xrefs": "Reverse/firmware/analysis/hud_map/lvgl_xrefs.json",
+    "time_widget": "Reverse/firmware/analysis/hud_map/time_widget.json",
+    "layout_tables": "Reverse/firmware/analysis/hud_map/layout_tables.json"
+  },
+  "intern_site_count": 2013,
+  "lvgl_wrapper_names": [
+    "lv_obj_set_size",
+    "lv_obj_set_pos",
+    "lv_obj_set_style_text_font",
+    "lv_obj_set_style_radius",
+    "lv_style_set_width",
+    "lv_style_set_height",
+    "lv_obj_set_x",
+    "lv_obj_set_y",
+    "lv_obj_set_width",
+    "lv_obj_set_height",
+    "lv_obj_align",
+    "lv_obj_set_align",
+    "transform_zoom",
+    "lv_obj_set_style_transform_zoom",
+    "lv_obj_set_style_transform_angle",
+    "lv_obj_set_style_prop_0x32",
+    "lv_obj_set_local_style_prop"
+  ],
+  "clock_digit_pin": "abandoned",
+  "clock_digit_note": "Hunt complete; no unique size/font/zoom/pos site. FUN_2c4a62bc walks RAM table 0x3C43C8B4 for 0x330 bytes (8-byte ldrh id + ptr); flash at file 0x43C8B4 is not that image. createSpecWidgets 0x2c49344c indexes RAM ctor table 0x3C43B9E0 as 16-byte records written by FUN_2c493338. Widget names weekday/aiBall/weather_1x1/steps live at 0x199774+ with zero 2C/3C ptrs; there is no standalone time\\0 (BLE name is phone-side TIME_ORDER=1). intern 0x864/0x880/0x7f0/0x804 have no movw/addw loads in 0x480000-0x520000. OTA faces are runtime lv_font_mgr_get_font (FONT_CN_16/20/24); no flash lv_font_t ptrs to glyph_dsc 0x31dbc4/0x2e2dc8/0x1e610c. Entire bin has 0 movw rX,#0x100. Strongest remaining doubts: (1) customTime ctor is only reached via RAM intern/reloc so the digit size immediate is not a flash movw; (2) 5x scale is likely zoom on a RAM font handle, but zoom 256 is never a literal; (3) HH:MM snprintf format is not pool-relative and has no pointer xrefs, so the label_fmt site is also not in-file.",
+  "sites": [
+    {
+      "purpose": "1x1 dock tile size (width 140, lv_obj_set_size)",
+      "file_off": "0x50893c",
+      "stock_hex": "8c21",
+      "patch_hex": "8c21",
+      "len_equal": true,
+      "va": "0x2c50893c",
+      "bl": "0x2c508940",
+      "helper": "0x2c607048",
+      "note": "shared by five dock children; does not scale HH:MM glyphs"
+    }
+  ]
+}

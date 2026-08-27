@@ -1,0 +1,209 @@
+2026-08-27 02:10:30 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-08-27 02:10:30 INFO  (LoggingInitialization) Using log file: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/rtos/lvgl/disasm/import.log  
+2026-08-27 02:10:31 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-08-27 02:10:31 INFO  (Preferences) Loading user preferences: /Users/bimap/Library/ghidra/ghidra_12.1.3_PUBLIC/preferences  
+2026-08-27 02:10:31 INFO  (ClassSearcher) Searching for classes...  
+2026-08-27 02:10:31 INFO  (ClassSearcher) Class search complete (617 ms)  
+2026-08-27 02:10:31 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-08-27 02:10:31 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-08-27 02:10:31 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-08-27 02:10:31 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-08-27 02:10:32 INFO  (AnalyzeHeadless) Headless startup complete (2129 ms)  
+2026-08-27 02:10:32 INFO  (ClassSearcher) Class searcher loaded 211 extension points (114 false positives)  
+2026-08-27 02:10:32 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/8051/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/PDB/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/BSim/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/BytePatterns/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Processors/DATA/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Base/ghidra_scripts
+    /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/FunctionID/ghidra_scripts  
+2026-08-27 02:10:32 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-08-27 02:10:32 INFO  (HeadlessAnalyzer) Creating project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/rtos/lvgl/disasm/proj/lvgl33  
+2026-08-27 02:10:32 INFO  (DefaultProject) Creating project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/rtos/lvgl/disasm/proj/lvgl33  
+2026-08-27 02:10:32 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2026-08-27 02:10:32 INFO  (HeadlessAnalyzer)      project: /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/rtos/lvgl/disasm/proj/lvgl33  
+2026-08-27 02:10:32 INFO  (HeadlessAnalyzer) IMPORTING: file:///Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin  
+2026-08-27 02:10:32 INFO  (ProgramLoader) Successfully applied "-loader-baseAddr" to "Base Address" (old: "null", new: "0x2C000000")  
+2026-08-27 02:10:32 INFO  (ProgramLoader) Using Loader: Raw Binary  
+2026-08-27 02:10:32 INFO  (ProgramLoader) Using Language/Compiler: ARM:LE:32:v8-m:default  
+2026-08-27 02:10:32 INFO  (ProgramLoader) Using Library Search Path: [., /System/Library/dyld/dyld_shared_cache_arm64e, /System/Library/dyld/dyld_shared_cache_x86_64, /System/Library/dyld/dyld_shared_cache_x86_64h, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_x86_64, /System/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_x86_64h, /Users/bimap/Library/Java/Extensions, /Library/Java/Extensions, /Network/Library/Java/Extensions, /System/Library/Java/Extensions, /usr/lib/java]  
+2026-08-27 02:10:33 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2026-08-27 02:10:33 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin  
+2026-08-27 02:10:33 ERROR (PngDataType) Invalid PNG data at 2c41c1cc  
+2026-08-27 02:10:34 ERROR (SleighInstructionPrototype) Pcode error at 2c01cf56: Cannot invoke "ghidra.program.model.address.AddressSpace.truncateOffset(long)" because "vn.space" is null  
+2026-08-27 02:10:34 ERROR (SleighInstructionPrototype) Pcode error at 2c01cf5e: Cannot invoke "ghidra.program.model.address.AddressSpace.truncateOffset(long)" because "vn.space" is null  
+2026-08-27 02:10:38 ERROR (CreateFunctionCmd) Failed to create function at 2c57c1bc since its body contains referring thunk at 2c57c464  
+2026-08-27 02:10:38 ERROR (CreateFunctionCmd) Failed to create function at 2c5b63dc since its body contains referring thunk at 2c5b64e8  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f3ca: Could not follow disassembly flow into non-existing memory at 0064f3ca  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f250: Could not follow disassembly flow into non-existing memory at 0064f250  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f304: Could not follow disassembly flow into non-existing memory at 0064f304  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f402: Could not follow disassembly flow into non-existing memory at 0064f402  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f3c2: Could not follow disassembly flow into non-existing memory at 0064f3c2  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f3e0: Could not follow disassembly flow into non-existing memory at 0064f3e0  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f2d4: Could not follow disassembly flow into non-existing memory at 0064f2d4  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c143178, pcode error at 0064f2c0: Could not follow disassembly flow into non-existing memory at 0064f2c0  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a9b4: Could not follow disassembly flow into non-existing memory at 2c67a9b4  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a978: Could not follow disassembly flow into non-existing memory at 2c67a978  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a89c: Could not follow disassembly flow into non-existing memory at 2c67a89c  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa5e: Could not follow disassembly flow into non-existing memory at 2c67aa5e  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a9ca: Could not follow disassembly flow into non-existing memory at 2c67a9ca  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67a9d8: Could not follow disassembly flow into non-existing memory at 2c67a9d8  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa20: Could not follow disassembly flow into non-existing memory at 2c67aa20  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa4a: Could not follow disassembly flow into non-existing memory at 2c67aa4a  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa72: Could not follow disassembly flow into non-existing memory at 2c67aa72  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66a838, pcode error at 2c67aa12: Could not follow disassembly flow into non-existing memory at 2c67aa12  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e912: Could not follow disassembly flow into non-existing memory at 2c67e912  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e8ac: Could not follow disassembly flow into non-existing memory at 2c67e8ac  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e350: Could not follow disassembly flow into non-existing memory at 2c67e350  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e890: Could not follow disassembly flow into non-existing memory at 2c67e890  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e0c8: Could not follow disassembly flow into non-existing memory at 2c67e0c8  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7de: Could not follow disassembly flow into non-existing memory at 2c67e7de  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7c6: Could not follow disassembly flow into non-existing memory at 2c67e7c6  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e6c0: Could not follow disassembly flow into non-existing memory at 2c67e6c0  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e346: Could not follow disassembly flow into non-existing memory at 2c67e346  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e660: Could not follow disassembly flow into non-existing memory at 2c67e660  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e650: Could not follow disassembly flow into non-existing memory at 2c67e650  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e646: Could not follow disassembly flow into non-existing memory at 2c67e646  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e61c: Could not follow disassembly flow into non-existing memory at 2c67e61c  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e60e: Could not follow disassembly flow into non-existing memory at 2c67e60e  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e63e: Could not follow disassembly flow into non-existing memory at 2c67e63e  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e2c0: Could not follow disassembly flow into non-existing memory at 2c67e2c0  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e494: Could not follow disassembly flow into non-existing memory at 2c67e494  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e3e0: Could not follow disassembly flow into non-existing memory at 2c67e3e0  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e31a: Could not follow disassembly flow into non-existing memory at 2c67e31a  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e254: Could not follow disassembly flow into non-existing memory at 2c67e254  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e98a: Could not follow disassembly flow into non-existing memory at 2c67e98a  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e8c8: Could not follow disassembly flow into non-existing memory at 2c67e8c8  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e35a: Could not follow disassembly flow into non-existing memory at 2c67e35a  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e89c: Could not follow disassembly flow into non-existing memory at 2c67e89c  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e82c: Could not follow disassembly flow into non-existing memory at 2c67e82c  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7f8: Could not follow disassembly flow into non-existing memory at 2c67e7f8  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7d0: Could not follow disassembly flow into non-existing memory at 2c67e7d0  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e7c2: Could not follow disassembly flow into non-existing memory at 2c67e7c2  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e6ac: Could not follow disassembly flow into non-existing memory at 2c67e6ac  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e64c: Could not follow disassembly flow into non-existing memory at 2c67e64c  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e530: Could not follow disassembly flow into non-existing memory at 2c67e530  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e450: Could not follow disassembly flow into non-existing memory at 2c67e450  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e406: Could not follow disassembly flow into non-existing memory at 2c67e406  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e364: Could not follow disassembly flow into non-existing memory at 2c67e364  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e2ec: Could not follow disassembly flow into non-existing memory at 2c67e2ec  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e292: Could not follow disassembly flow into non-existing memory at 2c67e292  
+2026-08-27 02:10:50 WARN  (DecompileCallback) Decompiling 2c66e064, pcode error at 2c67e9dc: Could not follow disassembly flow into non-existing memory at 2c67e9dc  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c6815f6: Could not follow disassembly flow into non-existing memory at 2c6815f6  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c68151c: Could not follow disassembly flow into non-existing memory at 2c68151c  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c681640: Could not follow disassembly flow into non-existing memory at 2c681640  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c681676: Could not follow disassembly flow into non-existing memory at 2c681676  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c6815ee: Could not follow disassembly flow into non-existing memory at 2c6815ee  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c68164c: Could not follow disassembly flow into non-existing memory at 2c68164c  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c68167a: Could not follow disassembly flow into non-existing memory at 2c68167a  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c681644: Could not follow disassembly flow into non-existing memory at 2c681644  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c6815ce: Could not follow disassembly flow into non-existing memory at 2c6815ce  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c68166a: Could not follow disassembly flow into non-existing memory at 2c68166a  
+2026-08-27 02:10:51 WARN  (DecompileCallback) Decompiling 2c67142c, pcode error at 2c681654: Could not follow disassembly flow into non-existing memory at 2c681654  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c3f4: Could not follow disassembly flow into non-existing memory at 2c67c3f4  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c386: Could not follow disassembly flow into non-existing memory at 2c67c386  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67be1e: Could not follow disassembly flow into non-existing memory at 2c67be1e  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c368: Could not follow disassembly flow into non-existing memory at 2c67c368  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bba4: Could not follow disassembly flow into non-existing memory at 2c67bba4  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c2b0: Could not follow disassembly flow into non-existing memory at 2c67c2b0  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c296: Could not follow disassembly flow into non-existing memory at 2c67c296  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c192: Could not follow disassembly flow into non-existing memory at 2c67c192  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67be16: Could not follow disassembly flow into non-existing memory at 2c67be16  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c12e: Could not follow disassembly flow into non-existing memory at 2c67c12e  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c11e: Could not follow disassembly flow into non-existing memory at 2c67c11e  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c114: Could not follow disassembly flow into non-existing memory at 2c67c114  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c0ea: Could not follow disassembly flow into non-existing memory at 2c67c0ea  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c0dc: Could not follow disassembly flow into non-existing memory at 2c67c0dc  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c10c: Could not follow disassembly flow into non-existing memory at 2c67c10c  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bd96: Could not follow disassembly flow into non-existing memory at 2c67bd96  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bf68: Could not follow disassembly flow into non-existing memory at 2c67bf68  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bea8: Could not follow disassembly flow into non-existing memory at 2c67bea8  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bdec: Could not follow disassembly flow into non-existing memory at 2c67bdec  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bd2c: Could not follow disassembly flow into non-existing memory at 2c67bd2c  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c46c: Could not follow disassembly flow into non-existing memory at 2c67c46c  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c3a2: Could not follow disassembly flow into non-existing memory at 2c67c3a2  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67be26: Could not follow disassembly flow into non-existing memory at 2c67be26  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c376: Could not follow disassembly flow into non-existing memory at 2c67c376  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c2da: Could not follow disassembly flow into non-existing memory at 2c67c2da  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c2ca: Could not follow disassembly flow into non-existing memory at 2c67c2ca  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c2a2: Could not follow disassembly flow into non-existing memory at 2c67c2a2  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c292: Could not follow disassembly flow into non-existing memory at 2c67c292  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c180: Could not follow disassembly flow into non-existing memory at 2c67c180  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c11a: Could not follow disassembly flow into non-existing memory at 2c67c11a  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c004: Could not follow disassembly flow into non-existing memory at 2c67c004  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bf16: Could not follow disassembly flow into non-existing memory at 2c67bf16  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67becc: Could not follow disassembly flow into non-existing memory at 2c67becc  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67be2e: Could not follow disassembly flow into non-existing memory at 2c67be2e  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bdc0: Could not follow disassembly flow into non-existing memory at 2c67bdc0  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67bd68: Could not follow disassembly flow into non-existing memory at 2c67bd68  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66bb40, pcode error at 2c67c4be: Could not follow disassembly flow into non-existing memory at 2c67c4be  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a78e: Could not follow disassembly flow into non-existing memory at 2c67a78e  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a614: Could not follow disassembly flow into non-existing memory at 2c67a614  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a6c8: Could not follow disassembly flow into non-existing memory at 2c67a6c8  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a7c6: Could not follow disassembly flow into non-existing memory at 2c67a7c6  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a786: Could not follow disassembly flow into non-existing memory at 2c67a786  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a7a4: Could not follow disassembly flow into non-existing memory at 2c67a7a4  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a698: Could not follow disassembly flow into non-existing memory at 2c67a698  
+2026-08-27 02:10:52 WARN  (DecompileCallback) Decompiling 2c66a5ec, pcode error at 2c67a684: Could not follow disassembly flow into non-existing memory at 2c67a684  
+2026-08-27 02:10:56 ERROR (SleighInstructionPrototype) Pcode error at 2c01cf56: null  
+2026-08-27 02:10:56 WARN  (DecompileCallback) Decompiling 2c4fd520, pcode error at 2c4fd546: Unable to resolve constructor at 2c4fd546  
+2026-08-27 02:11:02 ERROR (SleighInstructionPrototype) Pcode error at 2c01cf56: null  
+2026-08-27 02:11:02 ERROR (SleighInstructionPrototype) Pcode error at 2c01cf5e: null  
+2026-08-27 02:11:12 DEBUG (FidAnalyzer) No FID Libraries apply for language ARM:LE:32:v8-m  
+2026-08-27 02:11:12 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/bimap-ghidra/packed-db-cache  
+2026-08-27 02:11:12 DEBUG (PackedDatabaseCache) Using cached packed database: /opt/homebrew/Cellar/ghidra/12.1.3/libexec/Ghidra/Features/Base/data/typeinfo/generic/generic_clib.gdt  
+2026-08-27 02:11:13 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib  
+2026-08-27 02:11:35 ERROR (SleighInstructionPrototype) Pcode error at 2c01cf56: null  
+2026-08-27 02:11:35 ERROR (SleighInstructionPrototype) Pcode error at 2c01cf5e: null  
+2026-08-27 02:11:36 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ARM Constant Reference Analyzer            6.279 secs
+    ARM Symbol                                 0.001 secs
+    ASCII Strings                              0.550 secs
+    Apply Data Archives                        0.317 secs
+    Call-Fixup Installer                       0.038 secs
+    Create Address Tables                      0.131 secs
+    Create Address Tables - One Time           1.542 secs
+    Create Function                            0.811 secs
+    Data Reference                             0.775 secs
+    Decompiler Switch Analysis                29.491 secs
+    Demangler GNU                              0.008 secs
+    Disassemble                                5.484 secs
+    Disassemble Entry Points                   0.001 secs
+    Embedded Media                             0.038 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.054 secs
+    Function Start Pre Search                  0.057 secs
+    Function Start Search                      0.211 secs
+    Function Start Search After Code           0.343 secs
+    Function Start Search After Data           0.045 secs
+    Function Start Search delayed - One Time   0.027 secs
+    Non-Returning Functions - Discovered       9.193 secs
+    Reference                                  1.265 secs
+    Shared Return Calls                        0.246 secs
+    Stack                                      5.086 secs
+    Subroutine References                      0.995 secs
+    Subroutine References - One Time           0.000 secs
+-----------------------------------------------------
+     Total Time   62 secs
+-----------------------------------------------------
+  
+2026-08-27 02:11:36 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/platform_tester.bin  
+2026-08-27 02:11:36 INFO  (LocalFileSystem) /platform_tester.bin: file created (bimap)  
+2026-08-27 02:11:36 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /platform_tester.bin (lvgl33:/platform_tester.bin)  
+2026-08-27 02:11:36 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  

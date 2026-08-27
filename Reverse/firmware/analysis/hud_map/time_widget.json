@@ -1,0 +1,33 @@
+{
+  "unique": false,
+  "evidence_kind": "bl_ctor",
+  "file_off": "0x4938c6",
+  "va": "0x2c4938c6",
+  "stock_hex": "0120",
+  "why_clock_digits": "This movs r0,#1 is the BLE/Java TIME_ORDER=1 argument into FUN_2c492880 (tbh case id=1 at 0x2c492b8e), not dock-tile radius/outline. It selects the time slot only; it does not set HH:MM digit size, font, zoom, or position, so it is not an OTA pin.",
+  "rejected_false_positives": [
+    {"file_off": "0x505768", "reason": "theme radius12; flashed; dock stayed circular"},
+    {"file_off": "0x509B9E", "reason": "theme radius12; flashed; dock stayed circular"},
+    {"file_off": "0x50C85C", "reason": "theme radius12; flashed; dock stayed circular"},
+    {"file_off": "0x61d980", "reason": "LV_RADIUS_CIRCLE / movw r1,#0x7FFF before set_style_radius in FUN_2c61d868; flashed; no HUD change"},
+    {"file_off": "0x505758", "reason": "outline_width 1→0; v3 on device; grey rings remained"},
+    {"file_off": "0x509B8E", "reason": "outline_width 1→0; v3 on device; grey rings remained"},
+    {"file_off": "0x50C838", "reason": "outline_width 1→0; v3 on device; grey rings remained"},
+    {"file_off": "0x5fa480", "reason": "movw #0xc84 is unicode range, not createDefaultWidgets"},
+    {"file_off": "0x499714", "reason": "movw #0x898 is charset classifier, not time ctor"},
+    {"file_off": "0x199860", "reason": "intern 0x864 customTimeAndBatteryWidget has 0 movw and 0 Ghidra/pointer xrefs"},
+    {"file_off": "0x4a05cc", "reason": "FUN_2c4a05cc movs r1,#0x28 is a syscall, not pixel size"},
+    {"file_off": "0x466f88", "reason": "candidate lv_font_t using 0x2c639aa5 is NOT a font"},
+    {"file_off": "0x4a728e", "reason": "movw r1,#0x78c weekday is TRACE line to 0x2c673d88 on FUN_2c4a62bc fail path, not weekday ctor"},
+    {"file_off": "0x4a732a", "reason": "movw r1,#0x7bc createNormal fail is TRACE r1, not intern load of the widget name"},
+    {"file_off": "0x4a70be", "reason": "movw r1,#0x5a6 battery lightning is TRACE id in a copied intern-id walk, not digit chrome"},
+    {"file_off": "0x4c3ba8", "reason": "movw r1,#0x883 collides with customTime-fail intern suffix; this site is TRACE in a 0x3C125xxx file, not StandByWidget"},
+    {"file_off": "0x4fd49a", "reason": "movw r1,#0x805 stored via strh into a config record; not createTextWidget ctor"},
+    {"file_off": "0x4fd78e", "reason": "BL lv_obj_set_style width/height; nearby format is 2d:%02d:%02d.%03d debug overlay, not HUD HH:MM"},
+    {"file_off": "0x620c7e", "reason": "sole BL to set_style_text_font 0x2c62c770 is LVGL core (0x66666667 div), not launcher clock"},
+    {"file_off": "0x61f480", "reason": "sole BL to transform_zoom wrapper 0x2c62c710 (prop 0x22) is LVGL core, no #0x100"},
+    {"file_off": "0x17c818", "reason": "%02d:%02d sits before intern pool next to assistant_alarm_*; no 2C/3C pointer xrefs"}
+  ],
+  "constructor_va": "0x2c492880",
+  "notes": "Hunt complete; no unique size/font/zoom/pos site. FUN_2c4a62bc walks RAM table 0x3C43C8B4 for 0x330 bytes (8-byte ldrh id + ptr); flash at file 0x43C8B4 is not that image. createSpecWidgets 0x2c49344c indexes RAM ctor table 0x3C43B9E0 as 16-byte records written by FUN_2c493338. Widget names weekday/aiBall/weather_1x1/steps live at 0x199774+ with zero 2C/3C ptrs; there is no standalone time\\0 (BLE name is phone-side TIME_ORDER=1). intern 0x864/0x880/0x7f0/0x804 have no movw/addw loads in 0x480000-0x520000. OTA faces are runtime lv_font_mgr_get_font (FONT_CN_16/20/24); no flash lv_font_t ptrs to glyph_dsc 0x31dbc4/0x2e2dc8/0x1e610c. Entire bin has 0 movw rX,#0x100. Strongest remaining doubts: (1) customTime ctor is only reached via RAM intern/reloc so the digit size immediate is not a flash movw; (2) 5x scale is likely zoom on a RAM font handle, but zoom 256 is never a literal; (3) HH:MM snprintf format is not pool-relative and has no pointer xrefs, so the label_fmt site is also not in-file."
+}

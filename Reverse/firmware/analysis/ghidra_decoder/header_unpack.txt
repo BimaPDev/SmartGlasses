@@ -1,0 +1,58 @@
+Functions with UBFX header-field extraction (lsb 21 or 10, width 11):
+
+=== FUN_2c01a1a4 @ 2c01a1a4 ===
+   2c01b2da  ubfx r1,r8,#0x15,#0xb
+
+=== <none> ===
+   2c5193f0  ubfx r2,r2,#0xa,#0xb
+   2c519446  ubfx r2,r2,#0xa,#0xb
+   2c61a3ce  ubfx r1,r1,#0xa,#0xb
+
+=== FUN_2c60b908 @ 2c60b908 ===
+   2c60ba5e  ubfx r3,r1,#0xa,#0xb
+   2c60ba88  ubfx r12,r1,#0xa,#0xb
+   2c60badc  ubfx r12,r1,#0xa,#0xb
+
+=== FUN_2c611d2c @ 2c611d2c ===
+   2c611d6c  ubfx r3,r3,#0xa,#0xb
+   2c611d9e  ubfx r3,r3,#0xa,#0xb
+   2c611dc0  ubfx r0,r0,#0xa,#0xb
+   2c611dea  ubfx r3,r3,#0xa,#0xb
+   2c611dfe  ubfx r0,r0,#0xa,#0xb
+
+=== FUN_2c611e18 @ 2c611e18 ===
+   2c611e4a  ubfx r1,r1,#0xa,#0xb
+   2c611e6a  ubfx r3,r3,#0xa,#0xb
+   2c611e9e  ubfx r2,r2,#0xa,#0xb
+   2c611ed2  ubfx r2,r2,#0xa,#0xb
+   2c611f08  ubfx r3,r3,#0xa,#0xb
+   2c611f3e  ubfx r2,r2,#0xa,#0xb
+
+=== FUN_2c612110 @ 2c612110 ===
+   2c612140  ubfx r3,r3,#0xa,#0xb
+
+=== FUN_2c612468 @ 2c612468 ===
+   2c6124da  ubfx r1,r1,#0xa,#0xb
+   2c61259c  ubfx r2,r3,#0xa,#0xb
+   2c6125a6  ubfx r11,r3,#0xa,#0xb
+   2c612638  ubfx r3,r3,#0xa,#0xb
+   2c61265e  ubfx r3,r3,#0xa,#0xb
+   2c612684  ubfx r3,r3,#0xa,#0xb
+   2c6126a4  ubfx r3,r3,#0xa,#0xb
+   2c612744  ubfx r3,r3,#0xa,#0xb
+   2c61276c  ubfx r1,r3,#0xa,#0xb
+   2c612788  ubfx r3,r3,#0xa,#0xb
+
+=== FUN_2c63140c @ 2c63140c ===
+   2c631452  ubfx r2,r2,#0xa,#0xb
+   2c6314cc  ubfx r2,r2,#0xa,#0xb
+
+=== FUN_2c639688 @ 2c639688 ===
+   2c6396a6  ubfx r3,r3,#0xa,#0xb
+   2c6396d0  ubfx r3,r3,#0xa,#0xb
+
+=== FUN_2c639778 @ 2c639778 ===
+   2c6397a8  ubfx r2,r5,#0xa,#0xb
+   2c6397d2  ubfx r3,r5,#0xa,#0xb
+   2c639800  ubfx r3,r3,#0xa,#0xb
+   2c63982c  ubfx r3,r3,#0xa,#0xb

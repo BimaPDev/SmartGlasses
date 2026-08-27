@@ -1,0 +1,19 @@
+{
+  "name_file_off": "0x1605e8",
+  "help_file_off": "0x1605f0",
+  "handler_status": "unrecovered",
+  "handler_va": null,
+  "rejected_misattributed_va": "0x2C5AAB48",
+  "classification": "charger_vbus",
+  "evidence": [
+    "name/help at file 0x1605e8/0x1605f0 in platform_tester.bin (indexOf(b\"en_usb\\0\") == 0x1605e8); packed fac_cmd names are name\\0help\\0 from set_sn@0x15FDBC through get_board_id@0x1606B0.",
+    "No static bind: zero 32-bit pointers to 0x2C/0x3C/0x28/bare 0x1605e8 or 0x1605f0; zero MOVW/MOVT pairs constructing those VAs or 0x05E8/0xFDBC immediates; PIC-literal scan 0; only packed-name abs hit is set_sn@0x5AA10C (LVGL intern, not a table).",
+    "BES nc_cmd/eshell table hunt: no 8/12-byte {name_ptr, help_ptr, Thumb handler} records for fac_cmd names; no consecutive Thumb-pointer array of ~73–78 entries whose destinations are function prologues (the only len=78 run @ file 0x430B5C / VA 0x2C430B5C is a protocol jump table, 2/78 prologues, clustered in 0x2C488xxx).",
+    "Core eshell cmds (xmodem@0x427B80, mw@0x42884C, 'eshell cmd is not exist.'@0x2A898) likewise have zero name pointers — fac_cmd and app_eshell share a pointerless TU; dispatch is positional blob-walk plus a parallel handler array that is not in this image as a recoverable .rodata table.",
+    "Rejected 0x2C5AAB48: FUN_2C5AAB48 TRACEs intern slices 0x3C1605F4 'le usb', 0x3C1605E0 'age.', 0x3C16021C 'w_pic' (line 0x1ce) then tail-calls LVGL flag/invalidate 0x2C606A28 — not an en_usb handler.",
+    "Packed-blob neighbors of en_usb are switch_page / exit_mmi / lcd_id (MMI). Thematic factory list still has close_eshell then en_usb, with charger_* as the next USB-related family; a distinct charger_enable ('set charger enable') already exists.",
+    "Only firmware usb_enable is charger VBUS: '[CHG] vbus usb_enable:%d disable_reason:0x%x\\n' @ file 0x42AF8 in sc7288_charger.c (also charge_enabled / vbus disable_reason). No xrefs to that string or to sc7288_charger.c. BTH image has no en_usb/usb_enable.",
+    "No USB device stack in this M55 image: no hal_usb, usbphy, CDC_ACM, dwc/gadget/TinyUSB; DRVUSB is a TRACE module tag next to DRVBT/AUDFLG, not a compiled PHY."
+  ],
+  "conclusion": "en_usb cannot enable USB read/write on a wired PHY. Its fac_cmd handler is not statically recoverable (positional packed-blob dispatch; parallel nc_cmd/eshell handler array not present as a pointer table; 0x2C5AAB48 is LVGL TRACE). The image has no USB gadget/PHY, and the only usb_enable semantics are SC7288 charger VBUS logging — a VBUS gate, not enumeration."
+}

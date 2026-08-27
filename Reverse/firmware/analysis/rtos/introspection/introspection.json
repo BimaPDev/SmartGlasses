@@ -1,0 +1,1395 @@
+{
+  "firmware_version": "1.0.12.83",
+  "images": {
+    "m55": "firmware/x_1.0.12.83/platform_tester.bin",
+    "bth": "firmware/x_1.0.12.83/best1600_watch_bth.bin"
+  },
+  "entries": [
+    {
+      "command": "show_threads_uasges",
+      "image": "both",
+      "source_path": "../../apps/app_eshell/system/ps.c",
+      "help": "show all threads usage",
+      "handler_guess": "ps_show_threads_usage_start",
+      "dump_function": "rtx_show_all_threads_usage",
+      "format_fields": [
+        "name",
+        "cpu_percent",
+        "min_free_stack"
+      ],
+      "notes": "Typo preserved in firmware (`uasges`). Starts periodic CPU/stack usage reporting via cpu_usage_timer."
+    },
+    {
+      "command": "close_threads_uasges",
+      "image": "both",
+      "source_path": "../../apps/app_eshell/system/ps.c",
+      "help": null,
+      "handler_guess": "ps_show_threads_usage_stop",
+      "dump_function": "rtx_show_all_threads_usage",
+      "format_fields": [
+        "thread_index",
+        "summary"
+      ],
+      "notes": "Stops periodic usage timer started by show_threads_uasges."
+    },
+    {
+      "command": "show_threads_usage_once",
+      "image": "both",
+      "source_path": "../../apps/app_eshell/system/ps.c",
+      "help": "show all threads usage",
+      "handler_guess": "ps_show_threads_usage_once",
+      "dump_function": "rtx_show_all_threads_usage",
+      "format_fields": [
+        "name",
+        "cpu_percent",
+        "min_free_stack"
+      ],
+      "notes": "One-shot thread CPU/stack summary without starting cpu_usage_timer."
+    },
+    {
+      "command": "show_threads_usage",
+      "image": "both",
+      "source_path": "../../apps/app_eshell/system/ps.c",
+      "help": null,
+      "handler_guess": "ps_show_threads_usage",
+      "dump_function": "rtx_show_all_threads_usage",
+      "format_fields": [
+        "name",
+        "cpu_percent",
+        "min_free_stack"
+      ],
+      "notes": "Alias/variant of periodic usage dump; shares help text with show_threads_usage_once."
+    },
+    {
+      "command": "close_threads_usage",
+      "image": "both",
+      "source_path": "../../apps/app_eshell/system/ps.c",
+      "help": "close threads usage",
+      "handler_guess": "ps_close_threads_usage",
+      "dump_function": "rtx_show_all_threads_usage",
+      "format_fields": [
+        "thread_index",
+        "summary"
+      ],
+      "notes": "Stops periodic usage reporting."
+    },
+    {
+      "command": "dump_all_threads",
+      "image": "both",
+      "source_path": "../../apps/app_eshell/system/ps.c",
+      "help": "dump threads stack",
+      "handler_guess": "ps_dump_all_threads",
+      "dump_function": "rtx_show_all_threads_usage",
+      "format_fields": [
+        "index",
+        "thread",
+        "name",
+        "prio",
+        "state",
+        "thread_addr",
+        "thread_next",
+        "thread_prev",
+        "delay_next",
+        "delay_prev",
+        "thread_join",
+        "flags_options",
+        "wait_flags",
+        "thread_flags",
+        "stack_mem",
+        "stack_size",
+        "sp",
+        "min_stack_free",
+        "swap_in_time_ticks",
+        "swap_in_time_ms",
+        "swap_out_time_ticks",
+        "swap_out_time_ms",
+        "runtime_ticks",
+        "runtime_ms",
+        "frame",
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R12",
+        "LR",
+        "PC",
+        "XPSR"
+      ],
+      "notes": "Full RTX thread walk: TCB fields, stack watermarks, optional register frame, memory pool stats, timer stats."
+    },
+    {
+      "command": "ps",
+      "image": "both",
+      "source_path": "../../apps/app_eshell/system/ps.c",
+      "help": "show status of threads",
+      "handler_guess": "ps_cmd",
+      "dump_function": "rtx_show_all_threads_usage",
+      "format_fields": [
+        "thread_index",
+        "summary"
+      ],
+      "notes": "Top-level ps command; help string documents thread status surface."
+    },
+    {
+      "command": "rtx_show_all_threads_usage",
+      "image": "both",
+      "source_path": "../../rtos/rtx5/rtx_thread_dump.c",
+      "help": null,
+      "handler_guess": "rtx_show_all_threads_usage",
+      "dump_function": "rtx_show_all_threads_usage",
+      "format_fields": [
+        "index",
+        "thread",
+        "name",
+        "prio",
+        "state",
+        "thread_addr",
+        "thread_next",
+        "thread_prev",
+        "delay_next",
+        "delay_prev",
+        "thread_join",
+        "flags_options",
+        "wait_flags",
+        "thread_flags",
+        "stack_mem",
+        "stack_size",
+        "sp",
+        "min_stack_free",
+        "swap_in_time_ticks",
+        "swap_in_time_ms",
+        "swap_out_time_ticks",
+        "swap_out_time_ms",
+        "runtime_ticks",
+        "runtime_ms",
+        "frame",
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R12",
+        "LR",
+        "PC",
+        "XPSR",
+        "memory_common_stats",
+        "memory_stack_stats",
+        "memory_mp_data_stats",
+        "memory_mq_data_stats",
+        "timer_name",
+        "timer_callback",
+        "timer_state",
+        "timer_type",
+        "timer_tick",
+        "timer_load"
+      ],
+      "notes": "Core RTX5 introspection routine; invoked by ps.c dump/usage commands. Also prints RTX memory pools and software timers."
+    }
+  ],
+  "rtx_state_names": [
+    "BAD",
+    "INACTIVE",
+    "RUNNING",
+    "TERMINAT",
+    "WAIT_DLY",
+    "WAIT_JOIN",
+    "WAIT_FLAG",
+    "WAIT_SEM",
+    "WAIT_MEM",
+    "WAIT_MUT",
+    "READY",
+    "WAIT_EVE",
+    "WAIT_MGET",
+    "WAIT_MPUT",
+    "NULL"
+  ],
+  "ps_usage_state_names": [
+    "Error",
+    "Inactive",
+    "Running",
+    "Blocked",
+    "Terminated"
+  ],
+  "tcb_fields_documented": [
+    "index",
+    "thread",
+    "name",
+    "prio",
+    "state",
+    "thread_addr",
+    "thread_next",
+    "thread_prev",
+    "delay_next",
+    "delay_prev",
+    "thread_join",
+    "flags_options",
+    "wait_flags",
+    "thread_flags",
+    "stack_mem",
+    "stack_size",
+    "sp",
+    "min_stack_free",
+    "swap_in_time_ticks",
+    "swap_in_time_ms",
+    "swap_out_time_ticks",
+    "swap_out_time_ms",
+    "runtime_ticks",
+    "runtime_ms",
+    "frame",
+    "R0",
+    "R1",
+    "R2",
+    "R3",
+    "R12",
+    "LR",
+    "PC",
+    "XPSR"
+  ],
+  "ps_command_blobs": {
+    "m55": [
+      {
+        "offset": "0x427e54",
+        "text": "../../apps/app_eshell/system/ps.c"
+      },
+      {
+        "offset": "0x427e78",
+        "text": "show_threads_uasges"
+      },
+      {
+        "offset": "0x427e8c",
+        "text": "close_threads_uasges"
+      },
+      {
+        "offset": "0x427ea4",
+        "text": "Blocked"
+      },
+      {
+        "offset": "0x427eac",
+        "text": "Terminated"
+      },
+      {
+        "offset": "0x427eb8",
+        "text": "show_threads_usage_once"
+      },
+      {
+        "offset": "0x427ed0",
+        "text": "show all threads usage"
+      },
+      {
+        "offset": "0x427ee8",
+        "text": "close_threads_usage"
+      },
+      {
+        "offset": "0x427efc",
+        "text": "close threads usage"
+      },
+      {
+        "offset": "0x427f10",
+        "text": "show_threads_usage"
+      },
+      {
+        "offset": "0x427f24",
+        "text": "cpu_usage_timer"
+      },
+      {
+        "offset": "0x427f34",
+        "text": "dump_all_threads"
+      },
+      {
+        "offset": "0x427f48",
+        "text": "dump threads stack"
+      },
+      {
+        "offset": "0x427f5c",
+        "text": "show status of threads"
+      }
+    ],
+    "bth": [
+      {
+        "offset": "0x140f24",
+        "text": "../../apps/app_eshell/system/ps.c"
+      },
+      {
+        "offset": "0x140f48",
+        "text": "show_threads_uasges"
+      },
+      {
+        "offset": "0x140f5c",
+        "text": "close_threads_uasges"
+      },
+      {
+        "offset": "0x140f74",
+        "text": "Error"
+      },
+      {
+        "offset": "0x140f7c",
+        "text": "Inactive"
+      },
+      {
+        "offset": "0x140f88",
+        "text": "Running"
+      },
+      {
+        "offset": "0x140f90",
+        "text": "Blocked"
+      },
+      {
+        "offset": "0x140f98",
+        "text": "Terminated"
+      },
+      {
+        "offset": "0x140fa4",
+        "text": "show_threads_usage_once"
+      },
+      {
+        "offset": "0x140fbc",
+        "text": "show all threads usage"
+      },
+      {
+        "offset": "0x140fd4",
+        "text": "close_threads_usage"
+      },
+      {
+        "offset": "0x140fe8",
+        "text": "close threads usage"
+      },
+      {
+        "offset": "0x140ffc",
+        "text": "show_threads_usage"
+      },
+      {
+        "offset": "0x141010",
+        "text": "cpu_usage_timer"
+      },
+      {
+        "offset": "0x141020",
+        "text": "dump_all_threads"
+      },
+      {
+        "offset": "0x141034",
+        "text": "dump threads stack"
+      },
+      {
+        "offset": "0x141048",
+        "text": "ps"
+      },
+      {
+        "offset": "0x14104c",
+        "text": "show status of threads"
+      }
+    ]
+  },
+  "rtx_thread_dump_source_offsets": {
+    "m55": [
+      "0x149aa4",
+      "0x426f18"
+    ],
+    "bth": [
+      "0xaacc"
+    ]
+  },
+  "freertos_introspection_strings": {
+    "m55": [
+      "smf_thread_print",
+      "hifi4 freertos run!\r\n",
+      "../../test/test_freertos.c",
+      "../../rtos/freertos/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c",
+      "FreeRTOS V10.4.1",
+      "../../rtos/freertos/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os1.c",
+      "../../rtos/freertos/Source/event_groups.c",
+      "../../rtos/freertos/Source/stream_buffer.c",
+      "../../rtos/freertos/Source/timers.c",
+      "../../rtos/freertos/Source/tasks.c",
+      "../../rtos/freertos/Source/queue.c",
+      "../../rtos/freertos/Source/portable/MemMang/heap_4.c",
+      "../../rtos/freertos/Source/portable/XCC/Xtensa/port.c",
+      "../../rtos/freertos/Source/portable/XCC/Xtensa/portclib.c"
+    ],
+    "bth": []
+  },
+  "string_hits": {
+    "m55": [
+      {
+        "offset": "0x14d68",
+        "text": ", ThreadMode"
+      },
+      {
+        "offset": "0x28704",
+        "text": "create ota checker thread failed!"
+      },
+      {
+        "offset": "0x325e8",
+        "text": "%s Failed to Create starrynet rx thread"
+      },
+      {
+        "offset": "0x32610",
+        "text": "%s Failed to Create starrynet tx thread"
+      },
+      {
+        "offset": "0x327fc",
+        "text": "starrynet_tx_msg_thread"
+      },
+      {
+        "offset": "0x32814",
+        "text": "starrynet_rx_msg_thread"
+      },
+      {
+        "offset": "0x32874",
+        "text": "tx_thread_handle_event"
+      },
+      {
+        "offset": "0x3288c",
+        "text": "rx_thread_handle_event"
+      },
+      {
+        "offset": "0x328cc",
+        "text": "xr_starrynet_thread_start"
+      },
+      {
+        "offset": "0x36cac",
+        "text": "cpu_usage"
+      },
+      {
+        "offset": "0x38050",
+        "text": "create asl test thread fail!"
+      },
+      {
+        "offset": "0x38070",
+        "text": "aslt_thread"
+      },
+      {
+        "offset": "0x39340",
+        "text": "xrbm thread running"
+      },
+      {
+        "offset": "0x39370",
+        "text": "exit xrbm thread!"
+      },
+      {
+        "offset": "0x39384",
+        "text": "xrbm thread exit right now"
+      },
+      {
+        "offset": "0x393ec",
+        "text": "xrbm thread init mailbox"
+      },
+      {
+        "offset": "0x39408",
+        "text": "start xrbm thread"
+      },
+      {
+        "offset": "0x3941c",
+        "text": "create xrbm thread fail!"
+      },
+      {
+        "offset": "0x39650",
+        "text": "xrbm_thread"
+      },
+      {
+        "offset": "0x3d2b0",
+        "text": "main_thread_tid=%x"
+      },
+      {
+        "offset": "0x3d684",
+        "text": "xjsd-audio:[%s] msg thread create failed!"
+      },
+      {
+        "offset": "0x3d6b0",
+        "text": "xjsd-audio:[%s] msg thread create succeed!"
+      },
+      {
+        "offset": "0x3d6dc",
+        "text": "xjxr_audio_msg_handler_thread"
+      },
+      {
+        "offset": "0x3e224",
+        "text": "local_decode_thread"
+      },
+      {
+        "offset": "0x424b0",
+        "text": "jbd_thread"
+      },
+      {
+        "offset": "0x43bc0",
+        "text": "touch_job_thread"
+      },
+      {
+        "offset": "0x43be0",
+        "text": "sar_thread_51158"
+      },
+      {
+        "offset": "0x442b4",
+        "text": "stk51155 4pad irq thread failed\n"
+      },
+      {
+        "offset": "0x442d8",
+        "text": "sar_thread_51155_4pad"
+      },
+      {
+        "offset": "0x44f7c",
+        "text": "sar_thread_51155"
+      },
+      {
+        "offset": "0x45d9c",
+        "text": "sar_thread"
+      },
+      {
+        "offset": "0xb02cd",
+        "text": "mcpp_srv_thread"
+      },
+      {
+        "offset": "0xb04ad",
+        "text": "mcpp_srv_single_thread_core_cap_open"
+      },
+      {
+        "offset": "0xb0641",
+        "text": "mcpp_srv_single_thread_core_play_open"
+      },
+      {
+        "offset": "0xb0706",
+        "text": "mcpp_srv_single_thread_core_cap_close"
+      },
+      {
+        "offset": "0xb072c",
+        "text": "mcpp_srv_single_thread_core_play_close"
+      },
+      {
+        "offset": "0xb108b",
+        "text": "m55_dsp_rx_thread_run"
+      },
+      {
+        "offset": "0xb10d7",
+        "text": "m55_dsp_tx_thread_run"
+      },
+      {
+        "offset": "0xb134f",
+        "text": "bth_dsp_rx_thread_run"
+      },
+      {
+        "offset": "0xb1365",
+        "text": "bth_dsp_tx_thread_run"
+      },
+      {
+        "offset": "0xc5ec2",
+        "text": "../../services/multimedia/audio/smf/porting/hifi4/thread.cpp"
+      },
+      {
+        "offset": "0xc5f23",
+        "text": "!_thread_id"
+      },
+      {
+        "offset": "0xc5f55",
+        "text": "smf_thread_print"
+      },
+      {
+        "offset": "0x12b98b",
+        "text": "hifi4 freertos run!\r\n"
+      },
+      {
+        "offset": "0x12ba49",
+        "text": "../../test/test_freertos.c"
+      },
+      {
+        "offset": "0x12be5d",
+        "text": "../../rtos/freertos/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c"
+      },
+      {
+        "offset": "0x12becc",
+        "text": "FreeRTOS V10.4.1"
+      },
+      {
+        "offset": "0x12bedd",
+        "text": "osGetThreadIntId"
+      },
+      {
+        "offset": "0x12befa",
+        "text": "osThreadSetPriority"
+      },
+      {
+        "offset": "0x12bf0e",
+        "text": "osThreadGetPriority"
+      },
+      {
+        "offset": "0x12bf22",
+        "text": "osThreadYield"
+      },
+      {
+        "offset": "0x12bf30",
+        "text": "osThreadSuspend"
+      },
+      {
+        "offset": "0x12bf40",
+        "text": "osThreadResume"
+      },
+      {
+        "offset": "0x12c0a1",
+        "text": "../../rtos/freertos/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os1.c"
+      },
+      {
+        "offset": "0x12c1bd",
+        "text": "../../rtos/freertos/Source/event_groups.c"
+      },
+      {
+        "offset": "0x12c412",
+        "text": "../../rtos/freertos/Source/stream_buffer.c"
+      },
+      {
+        "offset": "0x12c862",
+        "text": "../../rtos/freertos/Source/timers.c"
+      },
+      {
+        "offset": "0x12ca7e",
+        "text": "../../rtos/freertos/Source/tasks.c"
+      },
+      {
+        "offset": "0x12ced0",
+        "text": "pxTCB == pxCurrentTCB"
+      },
+      {
+        "offset": "0x12cf1f",
+        "text": "pxTCB != pxCurrentTCB"
+      },
+      {
+        "offset": "0x12d06c",
+        "text": "../../rtos/freertos/Source/queue.c"
+      },
+      {
+        "offset": "0x12d5f8",
+        "text": "../../rtos/freertos/Source/portable/MemMang/heap_4.c"
+      },
+      {
+        "offset": "0x12d790",
+        "text": "../../rtos/freertos/Source/portable/XCC/Xtensa/port.c"
+      },
+      {
+        "offset": "0x12d801",
+        "text": "../../rtos/freertos/Source/portable/XCC/Xtensa/portclib.c"
+      },
+      {
+        "offset": "0x14691c",
+        "text": "APPTHREAD"
+      },
+      {
+        "offset": "0x14727c",
+        "text": "core_bridge_tx_thread"
+      },
+      {
+        "offset": "0x147294",
+        "text": "core_bridge_rx_thread"
+      },
+      {
+        "offset": "0x1479c4",
+        "text": "[SAR]: sar thread init failed"
+      },
+      {
+        "offset": "0x148950",
+        "text": "[SAR5]: stk501xx common thread init failed"
+      },
+      {
+        "offset": "0x14897c",
+        "text": "[SAR5]: stk501xx cust thread init failed"
+      },
+      {
+        "offset": "0x148be4",
+        "text": "stk501xx_cust_thread"
+      },
+      {
+        "offset": "0x148c18",
+        "text": "stk501xx_thread"
+      },
+      {
+        "offset": "0x1494f0",
+        "text": "--- Thread name=%s cpu=%%%d min-free-stack=%d\r\n"
+      },
+      {
+        "offset": "0x149520",
+        "text": "--- Thread BAD\r\n"
+      },
+      {
+        "offset": "0x149534",
+        "text": "--- Thread NONE\r\n"
+      },
+      {
+        "offset": "0x1495e0",
+        "text": "--- Thread  %d "
+      },
+      {
+        "offset": "0x1495f8",
+        "text": " thread=0x%x, prio=%u state=%-9s thread_addr=0x%08X"
+      },
+      {
+        "offset": "0x14962c",
+        "text": "--- Thread  %d thread=0x%x name=%s\n"
+      },
+      {
+        "offset": "0x149650",
+        "text": "    prio=%u state=%-9s thread_addr=0x%08X\n"
+      },
+      {
+        "offset": "0x14967c",
+        "text": "    thread_next=0x%08X thread_prev=0x%08X delay_next=0x%08X delay_prev=0x%08X"
+      },
+      {
+        "offset": "0x1496cc",
+        "text": "    thread_next=0x%08X thread_prev=0x%08X\n"
+      },
+      {
+        "offset": "0x149724",
+        "text": "    thread_join=0x%08X flags_options=%u wait_flags=%u thread_flags=%u"
+      },
+      {
+        "offset": "0x14976c",
+        "text": "    thread_join=0x%08X flags_options=%u\n"
+      },
+      {
+        "offset": "0x149798",
+        "text": "    wait_flags=%u thread_flags=%u\n"
+      },
+      {
+        "offset": "0x1497bc",
+        "text": "    stack_mem=0x%08X stack_size=%u sp:0x%04x min_stack_free=%u"
+      },
+      {
+        "offset": "0x1497fc",
+        "text": "    stack_mem=0x%08X stack_size=%u\n"
+      },
+      {
+        "offset": "0x149820",
+        "text": "    sp:0x%04x min_stack_free=%u\n"
+      },
+      {
+        "offset": "0x149844",
+        "text": "    swap_in_time=%u(ticks)/%u(ms) swap_out_time=%u(ticks)/%u(ms)"
+      },
+      {
+        "offset": "0x149888",
+        "text": "    swap_in_time=%u(ticks)/%u(ms)\n"
+      },
+      {
+        "offset": "0x14993c",
+        "text": "thread still runing, now %u(ticks)/%u(ms)"
+      },
+      {
+        "offset": "0x149968",
+        "text": "    after last switch thread still runing, now %u(ticks)/%u(ms)\n"
+      },
+      {
+        "offset": "0x149a94",
+        "text": "--- Thread NONE"
+      },
+      {
+        "offset": "0x149aa4",
+        "text": "../../rtos/rtx5/rtx_thread_dump.c"
+      },
+      {
+        "offset": "0x149ac8",
+        "text": "rtx_show_all_threads_usage"
+      },
+      {
+        "offset": "0x149ae4",
+        "text": "Thread List:\r\n"
+      },
+      {
+        "offset": "0x149af4",
+        "text": "--- Memory common Stats:\n"
+      },
+      {
+        "offset": "0x149b30",
+        "text": "--- Memory stack Stats:\n"
+      },
+      {
+        "offset": "0x149c14",
+        "text": "--- Timers Stats:\n"
+      },
+      {
+        "offset": "0x149cd4",
+        "text": "Thread List:"
+      },
+      {
+        "offset": "0x149d4c",
+        "text": "../../rtos/rtx5/rtx_evr.c"
+      },
+      {
+        "offset": "0x149d68",
+        "text": "EvrRtxThreadError, thread name:%s, status:%d"
+      },
+      {
+        "offset": "0x14ce10",
+        "text": "[PWRS] Power supply changed thread start"
+      },
+      {
+        "offset": "0x14ce3c",
+        "text": "[PWRS] Power supply changed thread, 0x%x, ret:0x%x, pwrs_flags:0x%x!"
+      },
+      {
+        "offset": "0x14e2cc",
+        "text": "af_thread:WARNING:freq %d, id=%d stream=%d lost %u signals"
+      },
+      {
+        "offset": "0x14e308",
+        "text": "af_thread: Failed to get valid dma addr for id=%d stream=%d: 0x%08x"
+      },
+      {
+        "offset": "0x14e34c",
+        "text": "af_thread:WARNING:freq %d, id=%d stream=%d hdlr intvl ERROR: %u us (expecting %u)"
+      },
+      {
+        "offset": "0x14e3a0",
+        "text": "af_thread:WARNING:freq %d, id=%d stream=%d hdlr ran too long (pp_cnt=%u)"
+      },
+      {
+        "offset": "0x14e47c",
+        "text": "af_thread"
+      },
+      {
+        "offset": "0x160808",
+        "text": "osThreadNew fail"
+      },
+      {
+        "offset": "0x1630f0",
+        "text": "m55_dsp_tx_thread"
+      },
+      {
+        "offset": "0x163270",
+        "text": "bth_dsp_tx_thread"
+      },
+      {
+        "offset": "0x1633c8",
+        "text": "../../apps/app_rpc/rpc_rx_thread.c"
+      },
+      {
+        "offset": "0x163418",
+        "text": "creatte rx thread fail!"
+      },
+      {
+        "offset": "0x163430",
+        "text": "rpc_rx_thread"
+      },
+      {
+        "offset": "0x163440",
+        "text": "rpc_rx_thread_init"
+      },
+      {
+        "offset": "0x163d60",
+        "text": "../../apps/bth_if/bt_if_client/bth_if_thread_client.c"
+      },
+      {
+        "offset": "0x163e84",
+        "text": "create _bth_if_thread_client_comm_semap_init fail!"
+      },
+      {
+        "offset": "0x163ed4",
+        "text": "[%s] Can not create thread. status: %d"
+      },
+      {
+        "offset": "0x163efc",
+        "text": "[%s] Can not create thread"
+      },
+      {
+        "offset": "0x163f70",
+        "text": "app_bth_if_thread_client_result_register"
+      },
+      {
+        "offset": "0x163f9c",
+        "text": "bth_if_thread_client_ctrl"
+      },
+      {
+        "offset": "0x164000",
+        "text": "_bth_if_thread_client_rpc_recv_handler"
+      },
+      {
+        "offset": "0x1640a4",
+        "text": "bth_if_client_thread"
+      },
+      {
+        "offset": "0x164a34",
+        "text": "a2dp_sink_player_thread"
+      },
+      {
+        "offset": "0x180bcc",
+        "text": "logCurrentThreadName"
+      },
+      {
+        "offset": "0x180be4",
+        "text": "[%s] Current thread name: %s"
+      },
+      {
+        "offset": "0x18e934",
+        "text": "smartlife_notification_threads_icon"
+      },
+      {
+        "offset": "0x41ca74",
+        "text": "assert_lvgl_ui_thread"
+      },
+      {
+        "offset": "0x41d7b4",
+        "text": "../../thirdparty/star_air_lvgl/src/porting/lv_async_handler_thread.c"
+      },
+      {
+        "offset": "0x41d7fc",
+        "text": "lvgl_async_handler_thread, waiting signal.."
+      },
+      {
+        "offset": "0x41d828",
+        "text": "Enter lvgl_async_handler_thread!"
+      },
+      {
+        "offset": "0x41d8cc",
+        "text": "Repeated create async handler thread. ignore it"
+      },
+      {
+        "offset": "0x41d8fc",
+        "text": "Create async handler thread fail"
+      },
+      {
+        "offset": "0x41d9c8",
+        "text": "lvgl_task_handler_thread running..."
+      },
+      {
+        "offset": "0x41da00",
+        "text": "Init async handler thread failed!"
+      },
+      {
+        "offset": "0x41da38",
+        "text": "lvgl_task_handler_thread stopped"
+      },
+      {
+        "offset": "0x4275fc",
+        "text": "eshell_thread..."
+      },
+      {
+        "offset": "0x427794",
+        "text": "  debug_i2c init, creat re-open eshell thread\r\n"
+      },
+      {
+        "offset": "0x4277f4",
+        "text": "  debug_i2c exit, exit re-open eshell thread\r\n"
+      },
+      {
+        "offset": "0x427840",
+        "text": "restart_eshell_thread"
+      },
+      {
+        "offset": "0x427df8",
+        "text": "\r\nThread %d:\r\n"
+      },
+      {
+        "offset": "0x427e08",
+        "text": "\r\n\r\nCurrent Thread:\r\n"
+      },
+      {
+        "offset": "0x427e54",
+        "text": "../../apps/app_eshell/system/ps.c"
+      },
+      {
+        "offset": "0x427e78",
+        "text": "show_threads_uasges"
+      },
+      {
+        "offset": "0x427e8c",
+        "text": "close_threads_uasges"
+      },
+      {
+        "offset": "0x427eb8",
+        "text": "show_threads_usage_once"
+      },
+      {
+        "offset": "0x427ed0",
+        "text": "show all threads usage"
+      },
+      {
+        "offset": "0x427ee8",
+        "text": "close_threads_usage"
+      },
+      {
+        "offset": "0x427efc",
+        "text": "close threads usage"
+      },
+      {
+        "offset": "0x427f10",
+        "text": "show_threads_usage"
+      },
+      {
+        "offset": "0x427f24",
+        "text": "cpu_usage_timer"
+      },
+      {
+        "offset": "0x427f34",
+        "text": "dump_all_threads"
+      },
+      {
+        "offset": "0x427f48",
+        "text": "dump threads stack"
+      },
+      {
+        "offset": "0x427f5c",
+        "text": "show status of threads"
+      },
+      {
+        "offset": "0x429ca8",
+        "text": "eshell_rpc_rx_thread"
+      },
+      {
+        "offset": "0x430dec",
+        "text": "Thread List:\n"
+      }
+    ],
+    "bth": [
+      {
+        "offset": "0xa510",
+        "text": "--- Thread name=%s cpu=%%%d min-free-stack=%d\r\n"
+      },
+      {
+        "offset": "0xa540",
+        "text": "--- Thread BAD\r\n"
+      },
+      {
+        "offset": "0xa554",
+        "text": "--- Thread NONE\r\n"
+      },
+      {
+        "offset": "0xa608",
+        "text": "--- Thread  %d "
+      },
+      {
+        "offset": "0xa620",
+        "text": " thread=0x%x, prio=%u state=%-9s thread_addr=0x%08X"
+      },
+      {
+        "offset": "0xa654",
+        "text": "--- Thread  %d thread=0x%x name=%s\n"
+      },
+      {
+        "offset": "0xa678",
+        "text": "    prio=%u state=%-9s thread_addr=0x%08X\n"
+      },
+      {
+        "offset": "0xa6a4",
+        "text": "    thread_next=0x%08X thread_prev=0x%08X delay_next=0x%08X delay_prev=0x%08X"
+      },
+      {
+        "offset": "0xa6f4",
+        "text": "    thread_next=0x%08X thread_prev=0x%08X\n"
+      },
+      {
+        "offset": "0xa74c",
+        "text": "    thread_join=0x%08X flags_options=%u wait_flags=%u thread_flags=%u"
+      },
+      {
+        "offset": "0xa794",
+        "text": "    thread_join=0x%08X flags_options=%u\n"
+      },
+      {
+        "offset": "0xa7c0",
+        "text": "    wait_flags=%u thread_flags=%u\n"
+      },
+      {
+        "offset": "0xa7e4",
+        "text": "    stack_mem=0x%08X stack_size=%u sp:0x%04x min_stack_free=%u"
+      },
+      {
+        "offset": "0xa824",
+        "text": "    stack_mem=0x%08X stack_size=%u\n"
+      },
+      {
+        "offset": "0xa848",
+        "text": "    sp:0x%04x min_stack_free=%u\n"
+      },
+      {
+        "offset": "0xa86c",
+        "text": "    swap_in_time=%u(ticks)/%u(ms) swap_out_time=%u(ticks)/%u(ms)"
+      },
+      {
+        "offset": "0xa8b0",
+        "text": "    swap_in_time=%u(ticks)/%u(ms)\n"
+      },
+      {
+        "offset": "0xa964",
+        "text": "thread still runing, now %u(ticks)/%u(ms)"
+      },
+      {
+        "offset": "0xa990",
+        "text": "    after last switch thread still runing, now %u(ticks)/%u(ms)\n"
+      },
+      {
+        "offset": "0xaabc",
+        "text": "--- Thread NONE"
+      },
+      {
+        "offset": "0xaacc",
+        "text": "../../rtos/rtx5/rtx_thread_dump.c"
+      },
+      {
+        "offset": "0xaaf0",
+        "text": "rtx_show_all_threads_usage"
+      },
+      {
+        "offset": "0xab0c",
+        "text": "Thread List:\r\n"
+      },
+      {
+        "offset": "0xab1c",
+        "text": "--- Memory common Stats:\n"
+      },
+      {
+        "offset": "0xab58",
+        "text": "--- Memory stack Stats:\n"
+      },
+      {
+        "offset": "0xac3c",
+        "text": "--- Timers Stats:\n"
+      },
+      {
+        "offset": "0xacfc",
+        "text": "Thread List:"
+      },
+      {
+        "offset": "0xad74",
+        "text": "../../rtos/rtx5/rtx_evr.c"
+      },
+      {
+        "offset": "0xad90",
+        "text": "EvrRtxThreadError, thread name:%s, status:%d"
+      },
+      {
+        "offset": "0xe6688",
+        "text": "APPTHREAD"
+      },
+      {
+        "offset": "0xe6c7c",
+        "text": ", ThreadMode"
+      },
+      {
+        "offset": "0x11623c",
+        "text": "app_bt_cmd_thread"
+      },
+      {
+        "offset": "0x116288",
+        "text": "Failed to Create app_bt_cmd_thread\n"
+      },
+      {
+        "offset": "0x116834",
+        "text": "[BT_FUNC] src_thread:0x%08x call request_id=%x->:%s"
+      },
+      {
+        "offset": "0x116ad4",
+        "text": "BT_Thread_Defer_Func_req"
+      },
+      {
+        "offset": "0x11a7a0",
+        "text": "BesbtThread: %p\n"
+      },
+      {
+        "offset": "0x11a9b4",
+        "text": "[%s] create xjxr_audio_event_thread fail"
+      },
+      {
+        "offset": "0x11a9e0",
+        "text": "xjsd-audio:create xjxr_audio_event_thread ok!"
+      },
+      {
+        "offset": "0x11aa80",
+        "text": "xjsd-audio:[%s] msg thread create failed!"
+      },
+      {
+        "offset": "0x11aaac",
+        "text": "xjsd-audio:[%s] msg thread create succeed!"
+      },
+      {
+        "offset": "0x11aad8",
+        "text": "xjxr_audio_msg_handler_thread"
+      },
+      {
+        "offset": "0x11ab5c",
+        "text": "xjxr_audio_event_thread"
+      },
+      {
+        "offset": "0x11ef5c",
+        "text": "hci_rx_thread: osSignalWait fail %d"
+      },
+      {
+        "offset": "0x11efb4",
+        "text": "hci_rx_thread"
+      },
+      {
+        "offset": "0x11f25c",
+        "text": "Failed to Create hci_rx_thread"
+      },
+      {
+        "offset": "0x12cb28",
+        "text": "af_thread:WARNING:freq %d, id=%d stream=%d lost %u signals"
+      },
+      {
+        "offset": "0x12cb64",
+        "text": "af_thread: Failed to get valid dma addr for id=%d stream=%d: 0x%08x"
+      },
+      {
+        "offset": "0x12cba8",
+        "text": "af_thread:WARNING:freq %d, id=%d stream=%d hdlr intvl ERROR: %u us (expecting %u)"
+      },
+      {
+        "offset": "0x12cbfc",
+        "text": "af_thread:WARNING:freq %d, id=%d stream=%d hdlr ran too long (pp_cnt=%u)"
+      },
+      {
+        "offset": "0x12cccc",
+        "text": "af_thread"
+      },
+      {
+        "offset": "0x1300a0",
+        "text": "request_thread:%s"
+      },
+      {
+        "offset": "0x1300b4",
+        "text": "hold_thread:%s"
+      },
+      {
+        "offset": "0x1300c4",
+        "text": "request thread=%s"
+      },
+      {
+        "offset": "0x1300d8",
+        "text": "hold thread=%s"
+      },
+      {
+        "offset": "0x130b08",
+        "text": "../../apps/bth_if/bt_if_server/bth_if_thread_server.c"
+      },
+      {
+        "offset": "0x130d44",
+        "text": "bth_if_thread_server_init"
+      },
+      {
+        "offset": "0x130dc8",
+        "text": "bth_if_thread"
+      },
+      {
+        "offset": "0x130dd8",
+        "text": "bth_if_thread_server_register"
+      },
+      {
+        "offset": "0x130e14",
+        "text": "app_bth_if_thread_mailbox"
+      },
+      {
+        "offset": "0x1311a0",
+        "text": "create ota thread fail!"
+      },
+      {
+        "offset": "0x1311f8",
+        "text": "ota_thread"
+      },
+      {
+        "offset": "0x131744",
+        "text": "../../apps/app_rpc/rpc_rx_thread.c"
+      },
+      {
+        "offset": "0x131794",
+        "text": "creatte rx thread fail!"
+      },
+      {
+        "offset": "0x1317ac",
+        "text": "rpc_rx_thread"
+      },
+      {
+        "offset": "0x1317bc",
+        "text": "rpc_rx_thread_init"
+      },
+      {
+        "offset": "0x131ac8",
+        "text": "bth_dsp_tx_thread"
+      },
+      {
+        "offset": "0x137fa8",
+        "text": "../../apps/common/app_thread.c"
+      },
+      {
+        "offset": "0x13803c",
+        "text": "Failed to Create app_thread\n"
+      },
+      {
+        "offset": "0x13805c",
+        "text": "app_thread"
+      },
+      {
+        "offset": "0x1402fc",
+        "text": "intersys_tx_thread_id %p\n"
+      },
+      {
+        "offset": "0x140a3c",
+        "text": "eshell_thread..."
+      },
+      {
+        "offset": "0x140ae8",
+        "text": "  debug_i2c init, creat re-open eshell thread\r\n"
+      },
+      {
+        "offset": "0x140b48",
+        "text": "  debug_i2c exit, exit re-open eshell thread\r\n"
+      },
+      {
+        "offset": "0x140b94",
+        "text": "restart_eshell_thread"
+      },
+      {
+        "offset": "0x140ec8",
+        "text": "\r\nThread %d:\r\n"
+      },
+      {
+        "offset": "0x140ed8",
+        "text": "\r\n\r\nCurrent Thread:\r\n"
+      },
+      {
+        "offset": "0x140f24",
+        "text": "../../apps/app_eshell/system/ps.c"
+      },
+      {
+        "offset": "0x140f48",
+        "text": "show_threads_uasges"
+      },
+      {
+        "offset": "0x140f5c",
+        "text": "close_threads_uasges"
+      },
+      {
+        "offset": "0x140fa4",
+        "text": "show_threads_usage_once"
+      },
+      {
+        "offset": "0x140fbc",
+        "text": "show all threads usage"
+      },
+      {
+        "offset": "0x140fd4",
+        "text": "close_threads_usage"
+      },
+      {
+        "offset": "0x140fe8",
+        "text": "close threads usage"
+      },
+      {
+        "offset": "0x140ffc",
+        "text": "show_threads_usage"
+      },
+      {
+        "offset": "0x141010",
+        "text": "cpu_usage_timer"
+      },
+      {
+        "offset": "0x141020",
+        "text": "dump_all_threads"
+      },
+      {
+        "offset": "0x141034",
+        "text": "dump threads stack"
+      },
+      {
+        "offset": "0x14104c",
+        "text": "show status of threads"
+      },
+      {
+        "offset": "0x141adc",
+        "text": "eshell_rpc_rx_thread"
+      }
+    ]
+  }
+}

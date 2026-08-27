@@ -1,0 +1,209 @@
+{
+  "integration_leaf": "leaf-2.1",
+  "scope": "rtos-limits",
+  "firmware_version": "1.0.12.83",
+  "generated": "2026-08-27",
+  "master_map": "Reverse/firmware/analysis/rtos/limits/CONSTRAINTS_MAP.md",
+  "prior_rtos_map": "Reverse/firmware/analysis/rtos/RTOS_MAP.md",
+  "aggregate_counts": {
+    "total_constraint_entries": 275,
+    "freertos_config": 25,
+    "stacks_priorities": 60,
+    "timing_watchdog": 102,
+    "memory_mpu": 33,
+    "bth_hub_limits": 19,
+    "app_protocol": 36,
+    "leaf_analyses": 6,
+    "freertos_unrecovered": 8,
+    "stacks_unrecovered_named": 27,
+    "memory_unrecovered": 4,
+    "bth_hub_unrecovered_catalogued": 2
+  },
+  "section_checklist": [
+    "FreeRTOS config",
+    "Stack and priority",
+    "Timing and watchdog",
+    "Memory and MPU",
+    "BTH and Sensor Hub",
+    "Application and protocol",
+    "Hard limits summary"
+  ],
+  "artifacts": [
+    {
+      "id": "constraints_map",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/limits/CONSTRAINTS_MAP.md",
+      "leaf": "leaf-2.1",
+      "entry_count": null,
+      "description": "Integrated RTOS constraints and hard-limits map"
+    },
+    {
+      "id": "manifest",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/limits/manifest.json",
+      "leaf": "leaf-2.1",
+      "entry_count": 22,
+      "description": "Machine index of all rtos-limits artifacts"
+    },
+    {
+      "id": "freertos_config_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/limits/freertos_config/FREERTOS_CONFIG.md",
+      "leaf": "leaf-1.1.1",
+      "entry_count": 25,
+      "description": "FreeRTOS / CMSIS-RTOS2 compile-time config and unrecovered numerics"
+    },
+    {
+      "id": "freertos_config_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/limits/freertos_config/freertos_config.json",
+      "leaf": "leaf-1.1.1",
+      "entry_count": 25,
+      "description": "Machine inventory of FreeRTOS config entries"
+    },
+    {
+      "id": "freertos_config_extractor",
+      "type": "python",
+      "path": "Reverse/firmware/analysis/rtos/limits/freertos_config/extract_freertos_config.py",
+      "leaf": "leaf-1.1.1",
+      "entry_count": null,
+      "description": "Regenerate freertos_config.json"
+    },
+    {
+      "id": "stacks_priorities_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/limits/stacks_priorities/STACKS_PRIORITIES.md",
+      "leaf": "leaf-1.1.2",
+      "entry_count": 60,
+      "description": "Per-thread stack sizes and CMSIS priorities"
+    },
+    {
+      "id": "stacks_priorities_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/limits/stacks_priorities/stacks_priorities.json",
+      "leaf": "leaf-1.1.2",
+      "entry_count": 60,
+      "description": "Machine inventory of stacks and priorities"
+    },
+    {
+      "id": "stacks_priorities_extractor",
+      "type": "python",
+      "path": "Reverse/firmware/analysis/rtos/limits/stacks_priorities/extract_stacks_priorities.py",
+      "leaf": "leaf-1.1.2",
+      "entry_count": null,
+      "description": "Regenerate stacks_priorities.json"
+    },
+    {
+      "id": "timing_watchdog_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/limits/timing_watchdog/TIMING_WATCHDOG.md",
+      "leaf": "leaf-1.2.1",
+      "entry_count": 102,
+      "description": "Watchdog, timeout, delay, and timer catalog"
+    },
+    {
+      "id": "timing_inventory_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/limits/timing_watchdog/timing_inventory.json",
+      "leaf": "leaf-1.2.1",
+      "entry_count": 102,
+      "description": "Machine inventory of timing constraints"
+    },
+    {
+      "id": "timing_extractor",
+      "type": "python",
+      "path": "Reverse/firmware/analysis/rtos/limits/timing_watchdog/extract_timing.py",
+      "leaf": "leaf-1.2.1",
+      "entry_count": null,
+      "description": "Regenerate timing_inventory.json"
+    },
+    {
+      "id": "memory_mpu_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/limits/memory_mpu/MEMORY_MPU.md",
+      "leaf": "leaf-1.2.2",
+      "entry_count": 33,
+      "description": "Heap, flash, PSRAM, framebuffer, and MPU constraints"
+    },
+    {
+      "id": "memory_limits_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/limits/memory_mpu/memory_limits.json",
+      "leaf": "leaf-1.2.2",
+      "entry_count": 33,
+      "description": "Machine inventory of memory/MPU limits"
+    },
+    {
+      "id": "memory_extractor",
+      "type": "python",
+      "path": "Reverse/firmware/analysis/rtos/limits/memory_mpu/extract_memory.py",
+      "leaf": "leaf-1.2.2",
+      "entry_count": null,
+      "description": "Regenerate memory_limits.json"
+    },
+    {
+      "id": "bth_hub_limits_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/limits/bth_hub_limits/BTH_HUB_LIMITS.md",
+      "leaf": "leaf-1.3.1",
+      "entry_count": 19,
+      "description": "BTH and sensor-hub RTX5 resource / flow-control limits"
+    },
+    {
+      "id": "bth_hub_limits_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/limits/bth_hub_limits/bth_hub_limits.json",
+      "leaf": "leaf-1.3.1",
+      "entry_count": 19,
+      "description": "Machine inventory of BTH/hub limits"
+    },
+    {
+      "id": "bth_hub_extractor",
+      "type": "python",
+      "path": "Reverse/firmware/analysis/rtos/limits/bth_hub_limits/extract_bth_hub_limits.py",
+      "leaf": "leaf-1.3.1",
+      "entry_count": null,
+      "description": "Regenerate bth_hub_limits.json"
+    },
+    {
+      "id": "app_protocol_md",
+      "type": "markdown",
+      "path": "Reverse/firmware/analysis/rtos/limits/app_protocol/APP_PROTOCOL_LIMITS.md",
+      "leaf": "leaf-1.3.2",
+      "entry_count": 36,
+      "description": "Application and protocol hard/soft limits"
+    },
+    {
+      "id": "app_protocol_json",
+      "type": "json",
+      "path": "Reverse/firmware/analysis/rtos/limits/app_protocol/app_protocol_limits.json",
+      "leaf": "leaf-1.3.2",
+      "entry_count": 36,
+      "description": "Machine inventory of app/protocol limits"
+    },
+    {
+      "id": "app_protocol_extractor",
+      "type": "python",
+      "path": "Reverse/firmware/analysis/rtos/limits/app_protocol/extract_app_limits.py",
+      "leaf": "leaf-1.3.2",
+      "entry_count": null,
+      "description": "Regenerate app_protocol_limits.json"
+    },
+    {
+      "id": "verify_leaf",
+      "type": "javascript",
+      "path": "Reverse/firmware/analysis/rtos/limits/scripts/verify-leaf.mjs",
+      "leaf": null,
+      "entry_count": null,
+      "description": "Per-leaf JSON/MD gate verifier"
+    },
+    {
+      "id": "verify_root",
+      "type": "javascript",
+      "path": "Reverse/firmware/analysis/rtos/limits/scripts/verify-root.mjs",
+      "leaf": "leaf-2.1",
+      "entry_count": null,
+      "description": "CONSTRAINTS_MAP.md section-heading verifier"
+    }
+  ]
+}

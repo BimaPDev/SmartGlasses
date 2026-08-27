@@ -1,0 +1,188 @@
+{
+  "firmware_bth": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/x_1.0.12.83/best1600_watch_bth.bin",
+  "firmware_sensor_hub": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/rtos/sensor_hub/sensor_hub.bin",
+  "bth_load_base": "0x14000000",
+  "sensor_hub_flash_base": "0x34000000",
+  "sensor_hub_carve_parent_offset": "0x134070",
+  "counts": {
+    "total": 19,
+    "bth": 9,
+    "sensor_hub": 4,
+    "both": 6
+  },
+  "entries": [
+    {
+      "name": "rtx5_version",
+      "core": "both",
+      "value": "V5.5.1",
+      "evidence": "BTH banner 'P RTX V5.5.1' @0xadd4; hub 'RTX V5.5.1' @0x15d3c in carve",
+      "file_offset": "bth:0xadd4; hub:0x15d3c",
+      "confidence": "high",
+      "va": "bth:0x1400add4"
+    },
+    {
+      "name": "chip_subsys_banner",
+      "core": "both",
+      "value": "bth | sensor_hub",
+      "evidence": "BTH 'CHIP_SUBSYS=bth\nKERNEL=RTX5\nSW_VER=Flyme XR 1.0.12.83.20241231_Air_FR\nXJXR_DEVICE_MODEL=Star Air\nXJXR_BUILD_TYPE=user\nXJXR_DVT_TYPE=dvt2\nXJXR_IS_MONKEY=No\nXJXR_COUNTRY_TYPE=cn\nNV_REC_DEV_VER=2\n__userd' @0x147497; hub 'CHIP_SUBSYS=sensor_hub\nKERNEL=RTX5\nSW_VER=Flyme XR 1.0.12.83.20241231_Air_FR\nXJXR_DEVICE_MODEL=Star Air\nXJXR_BUILD_TYPE=user\nXJXR_DVT_TYPE=dvt2\nXJXR_IS_MONKEY=No\nXJXR_COUNTRY_TYPE=cn\nFLASH_BASE=0x3400' @0x165f3",
+      "file_offset": "bth:0x147497; hub:0x165f3",
+      "confidence": "high"
+    },
+    {
+      "name": "kernel_define",
+      "core": "both",
+      "value": "KERNEL=RTX5",
+      "evidence": "BTH @0x1474a7; hub @0x1660a",
+      "file_offset": "bth:0x1474a7; hub:0x1660a",
+      "confidence": "high"
+    },
+    {
+      "name": "bth_flash_size",
+      "core": "bth",
+      "value": "0x400000 (4 MiB)",
+      "evidence": "FLASH_SIZE=0x400000\nOTA_CODE_OFFSET=0x10000\nOTA_REMAP_OFFSET=0x400000/2-0x10000\nBUILD_DATE=Dec 31 2024 14:02:34\nREV_INFO=422729f-dirty:best1600_watch_bth\n",
+      "file_offset": "0x14760e",
+      "confidence": "high",
+      "flash_base": "0x34000000"
+    },
+    {
+      "name": "sensor_hub_flash_size",
+      "core": "sensor_hub",
+      "value": "0x100000 (1 MiB)",
+      "evidence": "FLASH_SIZE=0x100000\nBUILD_DATE=Dec 31 2024 14:02:32\nREV_INFO=422729f-dirty:sensor_hub\n; carve size matches FLASH_SIZE; parent carve @0x134070, FLASH_BASE=0x34000000",
+      "file_offset": "0x166d9",
+      "confidence": "high",
+      "flash_base": "0x34000000",
+      "carve_parent_offset": "0x134070"
+    },
+    {
+      "name": "bth_named_thread_count_hint",
+      "core": "bth",
+      "value": "16",
+      "evidence": "Static named RTOS thread literals in BTH image (16): app_thread, app_bt_cmd_thread, hci_rx_thread, bth_if_thread, APPTHREAD, BesbtThread, af_thread, xjxr_audio_event_thread, xjxr_audio_msg_handler_thread, bth_dsp_tx_thread, ota_thread, rpc_rx_thread, eshell_rpc_rx_thread, eshell_thread..., restart_eshell_thread, intersys_tx_thread_id. Compile-time OS_THREAD_NUM not recovered as a literal; this is a lower-bound concurrency footprint.",
+      "file_offset": "0x13805c;0x11623c;0x11efb4;0x130dc8;...",
+      "confidence": "medium"
+    },
+    {
+      "name": "sensor_hub_named_thread_count_hint",
+      "core": "sensor_hub",
+      "value": "6",
+      "evidence": "Hub-specific thread name strings in carve (6): sensor_main, core_bridge_tx_thread, core_bridge_rx_thread, sar_thread, stk501xx_thread, stk501xx_cust_thread",
+      "file_offset": "0x13438;0x1320c;0x13224;0x139ec;0x14ba8;0x14b74",
+      "confidence": "high"
+    },
+    {
+      "name": "rtx5_thread_dump_stack_fields",
+      "core": "both",
+      "value": "stack_mem, stack_size, sp(0x%04x), min_stack_free",
+      "evidence": "Format via rtx_show_all_threads_usage / rtx_thread_dump.c; BTH @0xa7e4, hub @0x1574c",
+      "file_offset": "bth:0xa7e4; hub:0x1574c",
+      "confidence": "high",
+      "format": "    stack_mem=0x%08X stack_size=%u sp:0x%04x min_stack_free=%u"
+    },
+    {
+      "name": "intersys_rx_flowctrl",
+      "core": "bth",
+      "value": "rx_flowctrl checked against expected at OPEN",
+      "evidence": "INTERSYS-OPEN: rx_flowctrl=%d (should be %d)",
+      "file_offset": "0xe5fcc",
+      "confidence": "high",
+      "related": [
+        "RMT_IPC-OPEN: rx_flowctrl=%d (should be %d)"
+      ]
+    },
+    {
+      "name": "intersys_invalid_msg_type",
+      "core": "bth",
+      "value": "typed INTERSYS msgs; invalid type rejected on RX/TX",
+      "evidence": "INTERSYS-RX: Invalid msg type: %d; INTERSYS-TX: Invalid msg type: %d. Concrete byte max payload size not present as a string literal (UNRECOVERED); type enum is the hard protocol bound.",
+      "file_offset": "rx:0xe5f64; tx:0xe5fa8",
+      "confidence": "high"
+    },
+    {
+      "name": "rmt_ipc_tx_too_fast",
+      "core": "both",
+      "value": "TX too fast backpressure (-1)",
+      "evidence": "BTH '[%s] error -1, TX too fast' @0xe5f30; hub identical string @0x12b28 (hal_rmt_ipc flow control)",
+      "file_offset": "bth:0xe5f30; hub:0x12b28",
+      "confidence": "high"
+    },
+    {
+      "name": "osif_thread_gate_serialization",
+      "core": "bth",
+      "value": "request_thread / hold_thread mutual exclusion gate",
+      "evidence": "osif_rtx.c @0x13005c; 'request_thread:%s' @0x1300a0, 'hold_thread:%s' @0x1300b4; also 'request thread=%s' / 'hold thread=%s'. Late thread bring-up is serialized through this OSIF gate (concurrency constraint, not a numeric thread cap).",
+      "file_offset": "0x1300a0;0x1300b4",
+      "confidence": "high",
+      "source": "../../services/osif/osif_rtx.c"
+    },
+    {
+      "name": "hci_rx_osSignalWait_fail",
+      "core": "bth",
+      "value": "soft limit: HCI RX signal wait can fail (logged)",
+      "evidence": "hci_rx_thread: osSignalWait fail %d",
+      "file_offset": "0x11ef5c",
+      "confidence": "high"
+    },
+    {
+      "name": "af_thread_signal_loss_warning",
+      "core": "bth",
+      "value": "soft limit: audioflinger can drop signals under load",
+      "evidence": "af_thread:WARNING:freq %d, id=%d stream=%d lost %u signals",
+      "file_offset": "0x12cb28",
+      "confidence": "high",
+      "note": "Identical string also appears in hub carve @0x1a25c (shared pack rodata; not hub-local audio path)."
+    },
+    {
+      "name": "eshell_cmd_lost_backpressure",
+      "core": "bth",
+      "value": "CMD LOST / OUTPUT LOST ring overflow",
+      "evidence": "[APP-ESHELL]ESHELL CMD LOST!!!; [APP-ESHELL]ESHELL OUTPUT LOST!!!",
+      "file_offset": "cmd:0x141a84; out:0x141aa4",
+      "confidence": "high"
+    },
+    {
+      "name": "bth_pmu_wdt",
+      "core": "bth",
+      "value": "PMU WDT present (reboot path + IRQ + ping timer)",
+      "evidence": "'Error: pmu wdt reboot failed!\n' @0xe76e5; 'pmu_wdt_irq_handle' @0x137f80; 'wdt_ping_timer' @0x137f5c; source ../../apps/common/app_watchdog.c",
+      "file_offset": "0xe76e5;0x137f80",
+      "confidence": "high"
+    },
+    {
+      "name": "sensor_hub_watchdog",
+      "core": "sensor_hub",
+      "value": "app_watchdog + pmu_wdt_irq + SAR sensing WDT",
+      "evidence": "'[SAR5]: sar sensing wdt trigger\n' @0x149f0; pmu_wdt_irq_handle @0x2f6d0; wdt_ping_timer @0x2f6ac; ../../apps/common/app_watchdog.c",
+      "file_offset": "0x149f0;0x2f6d0",
+      "confidence": "high",
+      "note": "Hub lacks BTH-specific 'Error: pmu wdt reboot failed!' string."
+    },
+    {
+      "name": "sensor_hub_rmt_ipc_rx_flowctrl",
+      "core": "sensor_hub",
+      "value": "rx_flowctrl checked at RMT_IPC OPEN",
+      "evidence": "RMT_IPC-OPEN: rx_flowctrl=%d (should be %d)",
+      "file_offset": "0x12a84",
+      "confidence": "high"
+    },
+    {
+      "name": "rtx5_memory_pool_stats_surfaces",
+      "core": "both",
+      "value": "common/stack/mp_data/mq_data Stats via dump_all_threads",
+      "evidence": "BTH '--- Memory common Stats:\n' @0xab1c; hub has matching Memory * Stats strings near rtx_show_all_threads_usage",
+      "file_offset": "bth:0xab1c",
+      "confidence": "medium"
+    }
+  ],
+  "unrecovered": [
+    {
+      "name": "OS_THREAD_NUM / compile-time RTX max threads",
+      "note": "No OS_THREAD_NUM / max_threads literal; use named-thread lower bound."
+    },
+    {
+      "name": "INTERSYS max payload bytes",
+      "note": "Only type-validity + rx_flowctrl strings; numeric size UNRECOVERED."
+    }
+  ]
+}

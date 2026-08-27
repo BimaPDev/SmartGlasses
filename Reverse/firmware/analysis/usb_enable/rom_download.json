@@ -1,0 +1,37 @@
+{
+  "rom_supports_usb_download": true,
+  "silicon_usb_pins": ["USB_DP J17", "USB_DN H17"],
+  "ldo": ["LDO_USB", "VUSB K17", "Avdd1p8_USB L17"],
+  "entry_methods": [
+    {
+      "method": "Catch the 96 KB boot ROM USB-download window on an already-wired Type-C port: leave D+/D− connected to USB_DP J17 / USB_DN H17 (LDO_USB / VUSB K17 / Avdd1p8_USB L17 up), start a Mac USB watch for any new device first (VID unknown), then re-enter ROM by pulsing RESET D2 high or PWRON_L C1 (low / high pulse, min 10 ms) so ROM can enumerate as a USB 2.0 HS / Type-C-compliant device before a valid flash image jumps to the user app. Datasheet documents UART-or-USB downloading; it does not name a BOOT-strap GPIO, timeout, or VID/PID.",
+      "source": "https://www.scribd.com/document/1016269692/BES2700BP-Datasheet-v1-2"
+    },
+    {
+      "method": "Public BES programmer workflow on a wired USB port: arm the host watcher, then power-cycle the DUT (off then on) while the cable stays plugged so the boot ROM download path is re-entered; dld_main docs say click Start then turn the device off and on again. Same window as RESET/PWRON_L; does not keep ROM after a valid user image has already booted.",
+      "source": "https://www.programmersought.com/article/38777227314/"
+    },
+    {
+      "method": "Documented sibling of the same boot ROM downloader if USB does not appear: UART download on GPIO_P0_0 UART1_RXD / GPIO_P0_1 UART1_TXD or LED3 T3 (one-wire UART). This is not a USB enumeration path; factory R/W on the running user image is also UART eshell, not MSC.",
+      "source": "https://www.scribd.com/document/1016269692/BES2700BP-Datasheet-v1-2"
+    }
+  ],
+  "known_vid_pid": {
+    "vid": null,
+    "pid": null,
+    "source": "BES2700BP Datasheet v1.2 USB / pin chapters list USB_DP J17, USB_DN H17, LDO_USB, VUSB, Avdd1p8_USB and UART-or-USB downloading, but no vendor/product ID. Official usb.ids (2026-06-26) has no Bestechnic/BE57 ROM-download pair. Do not treat MediaTek 0x0E8D (TEARDOWN.md BROM watch) as this SoC.",
+    "confidence": "unknown"
+  },
+  "user_image_enumerates_after_boot": false,
+  "sources": [
+    "https://www.bestechnic.com/Uploads/keditor/file/20241011/20241011105324_42192.pdf",
+    "https://www.scribd.com/document/1016269692/BES2700BP-Datasheet-v1-2",
+    "https://www.programmersought.com/article/38777227314/",
+    "Reverse/FIRMWARE_FINDINGS.md",
+    "Reverse/firmware/analysis/ghidra_en_usb_hunt.md",
+    "Reverse/firmware/export/1.0.12.83/strings/bth_ascii.txt",
+    "TEARDOWN.md",
+    "INVESTIGATION.md"
+  ],
+  "conclusion": "On a wired Type-C port, catch ROM USB by leaving the cable plugged and pulsing RESET D2 (high) or PWRON_L C1 while the Mac already watches for any new USB device (VID unknown — not MediaTek 0x0E8D) so the 96 KB boot ROM can enumerate on USB_DP J17 / USB_DN H17 before flash takes over; public silicon docs give UART-or-USB downloading and LDO_USB/VUSB/Avdd1p8_USB but no VID/PID and no BOOT GPIO. After that window the 1.0.12.83 user image never enumerates (no hal_usb/gadget stack; factory R/W is UART eshell md/mw/xmodem), and ENGINEER_MODE key-hold is MMI in the running app, not ROM USB."
+}

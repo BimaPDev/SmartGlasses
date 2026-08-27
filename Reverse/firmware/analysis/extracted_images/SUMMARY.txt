@@ -1,0 +1,22 @@
+slots_scanned=1692925
+cf9_descriptors=377
+unique_payloads=377
+extracted=131
+rejected_fp=246
+truecolor_extracted=0
+top15_iconlike:
+  0x354580 176x128 score=1.156 coh=0.798 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/176x128_354580.png
+  0x394c40 280x280 score=1.101 coh=0.856 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/280x280_394c40.png
+  0x352280 112x112 score=0.670 coh=0.839 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/112x112_352280.png
+  0x3508c0 40x40 score=0.646 coh=0.691 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/40x40_3508c0.png
+  0x3b4f40 120x120 score=0.626 coh=0.872 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/120x120_3b4f40.png
+  0x342a00 32x44 score=0.577 coh=0.761 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/32x44_342a00.png
+  0x36d040 146x146 score=0.543 coh=0.781 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/146x146_36d040.png
+  0x3fb980 32x32 score=0.526 coh=0.791 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/32x32_3fb980.png
+  0x350240 56x56 score=0.525 coh=0.849 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/56x56_350240.png
+  0x364bc0 112x112 score=0.500 coh=0.814 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/112x112_364bc0.png
+  0x362380 112x112 score=0.495 coh=0.775 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/112x112_362380.png
+  0x343700 32x44 score=0.437 coh=0.715 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/32x44_343700.png
+  0x386e40 40x40 score=0.421 coh=0.823 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/40x40_386e40.png
+  0x3f8300 84x84 score=0.412 coh=0.680 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/84x84_3f8300.png
+  0x3fa880 32x32 score=0.372 coh=0.655 /Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/analysis/extracted_images/32x32_3fa880.png

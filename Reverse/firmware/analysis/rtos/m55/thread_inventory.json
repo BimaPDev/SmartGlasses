@@ -1,0 +1,502 @@
+{
+  "kernel": "FreeRTOS 10.4.1",
+  "image": "platform_tester.bin",
+  "xip_base": "0x2c000000",
+  "cmsis_os2_path_offset": "0x12be5d",
+  "freertos_version_offset": "0x12becc",
+  "cmsis_anchors": {
+    "../../rtos/freertos/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c": "0x12be5d",
+    "FreeRTOS V10.4.1": "0x12becc",
+    "osDelay": "0x12bf4f",
+    "osMessageQueueGet": "0x12c047",
+    "osMessageQueuePut": "0x12c035",
+    "osMutexAcquire": "0x12bfd1",
+    "osMutexRelease": "0x12bfe0",
+    "osSemaphoreAcquire": "0x4166c",
+    "osSemaphoreRelease": "0x12c010",
+    "osThreadNew": "0x160808"
+  },
+  "entry_count": 60,
+  "entries": [
+    {
+      "name": "[%s] Can not create thread",
+      "subsystem": "ble",
+      "file_offset": 1457916,
+      "source_path": "../../apps/bth_if/bt_if_client/bth_if_thread_client.c",
+      "entry_va": null,
+      "notes": "string@0x163efc kind=log"
+    },
+    {
+      "name": "[PWRS] Power supply changed thread start",
+      "subsystem": "power",
+      "file_offset": 1363472,
+      "source_path": "../../utils/hwtimer_list/hwtimer_list.c",
+      "entry_va": null,
+      "notes": "string@0x14ce10 kind=rtos_name"
+    },
+    {
+      "name": "a2dp_sink_player_thread",
+      "subsystem": "audio",
+      "file_offset": 1460788,
+      "source_path": "../../services/mcpp/app_mcpp.c",
+      "entry_va": null,
+      "notes": "string@0x164a34 kind=symbol"
+    },
+    {
+      "name": "af_thread",
+      "subsystem": "audio",
+      "file_offset": 1369212,
+      "source_path": "../../services/audioflinger/af_stream_sw_gain.c",
+      "entry_va": "0x2c14d89e",
+      "notes": "string@0x14e47c kind=symbol; known_map"
+    },
+    {
+      "name": "app_bth_if_thread_client_result_register",
+      "subsystem": "ble",
+      "file_offset": 1458032,
+      "source_path": "../../apps/bth_if/bt_if_client/bth_hfp_client.c",
+      "entry_va": null,
+      "notes": "string@0x163f70 kind=rtos_name; string@0x163fb8 kind=rtos_name"
+    },
+    {
+      "name": "asl_test",
+      "subsystem": "shell",
+      "file_offset": 229456,
+      "source_path": "../../tests/besair_platform/../../xjxr_after_sale_log/asl_core/after_sale_log.cpp",
+      "entry_va": null,
+      "notes": "string@0x38050 kind=log; raw='create asl test thread fail!'"
+    },
+    {
+      "name": "aslt_thread",
+      "subsystem": "shell",
+      "file_offset": 229488,
+      "source_path": "../../tests/besair_platform/../../xjxr_after_sale_log/asl_core/after_sale_log.cpp",
+      "entry_va": "0x2c306efa",
+      "notes": "string@0x38070 kind=symbol; literal_pool@0x3070C8->0x2c306efa"
+    },
+    {
+      "name": "assert_lvgl_ui_thread",
+      "subsystem": "display",
+      "file_offset": 4311668,
+      "source_path": "../../thirdparty/star_air_lvgl/src/font/lv_font_loader.c",
+      "entry_va": null,
+      "notes": "string@0x41ca74 kind=symbol"
+    },
+    {
+      "name": "async_handler",
+      "subsystem": "display",
+      "file_offset": 4315340,
+      "source_path": "../../thirdparty/star_air_lvgl/src/porting/lv_app.c",
+      "entry_va": null,
+      "notes": "string@0x41d8cc kind=log; raw='Repeated create async handler thread. ignore it'; string@0x41d8fc kind=log; raw='Create async handler thread fail'"
+    },
+    {
+      "name": "bth_dsp_rx_thread",
+      "subsystem": "ble",
+      "file_offset": 725839,
+      "source_path": "../../services/corebridge/rpc_bth_dsp.c",
+      "entry_va": null,
+      "notes": "string@0xb134f kind=rtos_name; manual_seed; raw='bth_dsp_rx_thread_run'"
+    },
+    {
+      "name": "bth_dsp_rx_thread_run",
+      "subsystem": "ble",
+      "file_offset": 725839,
+      "source_path": "../../services/corebridge/rpc_bth_dsp.c",
+      "entry_va": null,
+      "notes": "string@0xb134f kind=rtos_name"
+    },
+    {
+      "name": "bth_dsp_tx_thread",
+      "subsystem": "ble",
+      "file_offset": 1454704,
+      "source_path": "../../apps/app_rpc/rpc_bth_dsp/rpc_bth_dsp.c",
+      "entry_va": null,
+      "notes": "string@0x163270 kind=symbol"
+    },
+    {
+      "name": "bth_dsp_tx_thread_run",
+      "subsystem": "ble",
+      "file_offset": 725861,
+      "source_path": "../../services/corebridge/rpc_bth_dsp.c",
+      "entry_va": null,
+      "notes": "string@0xb1365 kind=rtos_name"
+    },
+    {
+      "name": "bth_if_client_thread",
+      "subsystem": "ble",
+      "file_offset": 1458340,
+      "source_path": "../../apps/bth_if/bt_if_client/bth_hfp_client.c",
+      "entry_va": null,
+      "notes": "string@0x1640a4 kind=symbol"
+    },
+    {
+      "name": "bth_if_thread_client_ctrl",
+      "subsystem": "ble",
+      "file_offset": 1458076,
+      "source_path": "../../apps/bth_if/bt_if_client/bth_hfp_client.c",
+      "entry_va": null,
+      "notes": "string@0x163f9c kind=rtos_name"
+    },
+    {
+      "name": "core_bridge_rx_thread",
+      "subsystem": "ble",
+      "file_offset": 1340052,
+      "source_path": "../../tests/sensor_hub/../../utils/heap/multi_heap.c",
+      "entry_va": null,
+      "notes": "string@0x147294 kind=symbol; string@0x162eb0 kind=symbol"
+    },
+    {
+      "name": "core_bridge_tx_thread",
+      "subsystem": "ble",
+      "file_offset": 1340028,
+      "source_path": "../../tests/sensor_hub/../../utils/heap/multi_heap.c",
+      "entry_va": null,
+      "notes": "string@0x14727c kind=symbol; string@0x162e98 kind=symbol"
+    },
+    {
+      "name": "eshell_rpc_rx_thread",
+      "subsystem": "ble",
+      "file_offset": 4365480,
+      "source_path": "../../apps/app_eshell/unittest/ram.c",
+      "entry_va": null,
+      "notes": "string@0x429ca8 kind=symbol"
+    },
+    {
+      "name": "eshell_thread",
+      "subsystem": "shell",
+      "file_offset": 4355580,
+      "source_path": "../../utils/eshell/eshell_platform.c",
+      "entry_va": null,
+      "notes": "string@0x4275fc kind=rtos_name; manual_seed; raw='eshell_thread...'"
+    },
+    {
+      "name": "fac_cmd_trd",
+      "subsystem": "factory",
+      "file_offset": 1441200,
+      "source_path": "../../factory/fac_cmd/fac_cmd_mmi.c",
+      "entry_va": null,
+      "notes": "string@0x15fdb0 kind=symbol"
+    },
+    {
+      "name": "hal_i2c_sm_done_task",
+      "subsystem": "other",
+      "file_offset": 1337136,
+      "source_path": "../../tests/sensor_hub/../../apps/sensorhub/xjxr_mcu_sensor_communicate.cpp",
+      "entry_va": null,
+      "notes": "string@0x146730 kind=rtos_name; manual_seed"
+    },
+    {
+      "name": "hal_i2c_sm_next_task",
+      "subsystem": "other",
+      "file_offset": 1337112,
+      "source_path": "../../tests/sensor_hub/../../apps/sensorhub/xjxr_mcu_sensor_communicate.cpp",
+      "entry_va": null,
+      "notes": "string@0x146718 kind=rtos_name; manual_seed"
+    },
+    {
+      "name": "jbd4010_display",
+      "subsystem": "display",
+      "file_offset": 271632,
+      "source_path": "../../tests/besair_platform/../../platform/drivers/graphic/lcd/panel_driver.c",
+      "entry_va": "0x2c499270",
+      "notes": "string@0x42510 kind=rtos_name; manual_seed; known_map"
+    },
+    {
+      "name": "jbd_thread",
+      "subsystem": "display",
+      "file_offset": 271536,
+      "source_path": "../../tests/besair_platform/../../platform/drivers/graphic/lcd/panel_driver.c",
+      "entry_va": null,
+      "notes": "string@0x424b0 kind=symbol"
+    },
+    {
+      "name": "local_decode_thread",
+      "subsystem": "audio",
+      "file_offset": 254500,
+      "source_path": "../../tests/besair_platform/../../xjxr_audio/m55/xjxr_audio_local_player.cpp",
+      "entry_va": null,
+      "notes": "string@0x3e224 kind=symbol"
+    },
+    {
+      "name": "lvgl_async",
+      "subsystem": "display",
+      "file_offset": 4315132,
+      "source_path": "../../thirdparty/star_air_lvgl/src/porting/lv_async_handler_thread.c",
+      "entry_va": null,
+      "notes": "string@0x41d7fc kind=rtos_name; manual_seed; raw='lvgl_async_handler_thread, waiting signal..'"
+    },
+    {
+      "name": "lvgl_task_handler_thread",
+      "subsystem": "display",
+      "file_offset": 4315592,
+      "source_path": "../../thirdparty/star_air_lvgl/src/porting/lv_app.c",
+      "entry_va": null,
+      "notes": "string@0x41d9c8 kind=rtos_name; manual_seed; raw='lvgl_task_handler_thread running...'"
+    },
+    {
+      "name": "m55_dsp_rx_thread_run",
+      "subsystem": "dsp",
+      "file_offset": 725131,
+      "source_path": "../../services/corebridge/rpc_m55_dsp.c",
+      "entry_va": null,
+      "notes": "string@0xb108b kind=rtos_name"
+    },
+    {
+      "name": "m55_dsp_tx_thread",
+      "subsystem": "ble",
+      "file_offset": 1454320,
+      "source_path": "../../apps/app_rpc/rpc_bth_dsp/rpc_bth_dsp.c",
+      "entry_va": null,
+      "notes": "string@0x1630f0 kind=symbol"
+    },
+    {
+      "name": "m55_dsp_tx_thread_run",
+      "subsystem": "dsp",
+      "file_offset": 725207,
+      "source_path": "../../services/corebridge/rpc_m55_dsp.c",
+      "entry_va": null,
+      "notes": "string@0xb10d7 kind=rtos_name"
+    },
+    {
+      "name": "mcpp_srv_single_thread_core_cap_close",
+      "subsystem": "audio",
+      "file_offset": 722694,
+      "source_path": "../../services/mcpp/mcpp_cmd.c",
+      "entry_va": null,
+      "notes": "string@0xb0706 kind=rtos_name"
+    },
+    {
+      "name": "mcpp_srv_single_thread_core_cap_open",
+      "subsystem": "audio",
+      "file_offset": 722093,
+      "source_path": "../../services/mcpp/mcpp_cmd.c",
+      "entry_va": null,
+      "notes": "string@0xb04ad kind=rtos_name"
+    },
+    {
+      "name": "mcpp_srv_single_thread_core_play_close",
+      "subsystem": "audio",
+      "file_offset": 722732,
+      "source_path": "../../services/mcpp/mcpp_cmd.c",
+      "entry_va": null,
+      "notes": "string@0xb072c kind=rtos_name"
+    },
+    {
+      "name": "mcpp_srv_single_thread_core_play_open",
+      "subsystem": "audio",
+      "file_offset": 722497,
+      "source_path": "../../services/mcpp/mcpp_cmd.c",
+      "entry_va": null,
+      "notes": "string@0xb0641 kind=rtos_name"
+    },
+    {
+      "name": "mcpp_srv_thread",
+      "subsystem": "audio",
+      "file_offset": 721613,
+      "source_path": "../../services/mcpp/mcpp_core_hifi.c",
+      "entry_va": null,
+      "notes": "string@0xb02cd kind=symbol"
+    },
+    {
+      "name": "ota_checker",
+      "subsystem": "other",
+      "file_offset": 165636,
+      "source_path": "../../tests/besair_platform/../../xjxr_test/xmonkey/xmonkey.c",
+      "entry_va": null,
+      "notes": "string@0x28704 kind=log; raw='create ota checker thread failed!'"
+    },
+    {
+      "name": "restart_eshell_thread",
+      "subsystem": "shell",
+      "file_offset": 4356160,
+      "source_path": "../../utils/eshell/eshell_platform.c",
+      "entry_va": null,
+      "notes": "string@0x427840 kind=symbol"
+    },
+    {
+      "name": "rpc_rx_thread",
+      "subsystem": "ble",
+      "file_offset": 1455152,
+      "source_path": "../../apps/app_rpc/rpc_rx_thread.c",
+      "entry_va": null,
+      "notes": "string@0x163430 kind=symbol"
+    },
+    {
+      "name": "rpc_rx_thread_init",
+      "subsystem": "ble",
+      "file_offset": 1455168,
+      "source_path": "../../apps/app_rpc/rpc_rx_thread.c",
+      "entry_va": null,
+      "notes": "string@0x163440 kind=rtos_name"
+    },
+    {
+      "name": "rx_thread_handle_event",
+      "subsystem": "ble",
+      "file_offset": 206988,
+      "source_path": "../../tests/besair_platform/../../xjxr_starrynet/core/payload/message/channel_state_machine.c",
+      "entry_va": null,
+      "notes": "string@0x3288c kind=rtos_name"
+    },
+    {
+      "name": "sar_thread",
+      "subsystem": "sensors",
+      "file_offset": 286108,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/../../platform/drivers/sensor/sar/stk5115.c",
+      "entry_va": "0x2c527b00",
+      "notes": "string@0x45d9c kind=symbol; string@0x147a5c kind=symbol; literal_pool@0x527EB8->0x2c527b00"
+    },
+    {
+      "name": "sar_thread_51155",
+      "subsystem": "sensors",
+      "file_offset": 282492,
+      "source_path": null,
+      "entry_va": null,
+      "notes": "string@0x44f7c kind=rtos_name"
+    },
+    {
+      "name": "sar_thread_51155_4pad",
+      "subsystem": "sensors",
+      "file_offset": 279256,
+      "source_path": null,
+      "entry_va": null,
+      "notes": "string@0x442d8 kind=rtos_name"
+    },
+    {
+      "name": "sar_thread_51158",
+      "subsystem": "display",
+      "file_offset": 277472,
+      "source_path": "../../tests/besair_platform/../../platform/drivers/graphic/lcd/panel_driver.c",
+      "entry_va": null,
+      "notes": "string@0x43be0 kind=rtos_name"
+    },
+    {
+      "name": "starrynet_rx_msg_thread",
+      "subsystem": "ble",
+      "file_offset": 206868,
+      "source_path": "../../tests/besair_platform/../../xjxr_starrynet/core/payload/message/channel_state_machine.c",
+      "entry_va": null,
+      "notes": "string@0x32814 kind=symbol"
+    },
+    {
+      "name": "starrynet_rx_thread",
+      "subsystem": "ble",
+      "file_offset": 206312,
+      "source_path": "../../tests/besair_platform/../../xjxr_starrynet/core/payload/message/message_manager.c",
+      "entry_va": null,
+      "notes": "string@0x325e8 kind=log; raw='%s Failed to Create starrynet rx thread'"
+    },
+    {
+      "name": "starrynet_tx_msg_thread",
+      "subsystem": "ble",
+      "file_offset": 206844,
+      "source_path": "../../tests/besair_platform/../../xjxr_starrynet/core/payload/message/channel_state_machine.c",
+      "entry_va": null,
+      "notes": "string@0x327fc kind=symbol"
+    },
+    {
+      "name": "starrynet_tx_thread",
+      "subsystem": "ble",
+      "file_offset": 206352,
+      "source_path": "../../tests/besair_platform/../../xjxr_starrynet/core/payload/message/message_manager.c",
+      "entry_va": null,
+      "notes": "string@0x32610 kind=log; raw='%s Failed to Create starrynet tx thread'"
+    },
+    {
+      "name": "stk501xx_cust_thread",
+      "subsystem": "sensors",
+      "file_offset": 1346532,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/wear_detection_s.cpp",
+      "entry_va": null,
+      "notes": "string@0x148be4 kind=symbol"
+    },
+    {
+      "name": "stk501xx_thread",
+      "subsystem": "sensors",
+      "file_offset": 1346584,
+      "source_path": "../../tests/sensor_hub/core/../../../xjxr_sensor_mgr/sensor_hub/wear_detection_s.cpp",
+      "entry_va": null,
+      "notes": "string@0x148c18 kind=symbol"
+    },
+    {
+      "name": "stk_touch_trd",
+      "subsystem": "touch",
+      "file_offset": 286680,
+      "source_path": null,
+      "entry_va": null,
+      "notes": "string@0x45fd8 kind=symbol"
+    },
+    {
+      "name": "stk_touch_trd_51155",
+      "subsystem": "touch",
+      "file_offset": 282900,
+      "source_path": null,
+      "entry_va": null,
+      "notes": "string@0x45114 kind=rtos_name; manual_seed"
+    },
+    {
+      "name": "touch_job_thread",
+      "subsystem": "display",
+      "file_offset": 277440,
+      "source_path": "../../tests/besair_platform/../../platform/drivers/graphic/lcd/panel_driver.c",
+      "entry_va": null,
+      "notes": "string@0x43bc0 kind=symbol"
+    },
+    {
+      "name": "touch_trd",
+      "subsystem": "display",
+      "file_offset": 277460,
+      "source_path": "../../tests/besair_platform/../../platform/drivers/graphic/lcd/panel_driver.c",
+      "entry_va": null,
+      "notes": "string@0x43bd4 kind=symbol"
+    },
+    {
+      "name": "tx_thread_handle_event",
+      "subsystem": "ble",
+      "file_offset": 206964,
+      "source_path": "../../tests/besair_platform/../../xjxr_starrynet/core/payload/message/channel_state_machine.c",
+      "entry_va": null,
+      "notes": "string@0x32874 kind=rtos_name"
+    },
+    {
+      "name": "xjxr_audio_msg_handler_thread",
+      "subsystem": "audio",
+      "file_offset": 251612,
+      "source_path": "../../tests/besair_platform/app_kws.cpp",
+      "entry_va": null,
+      "notes": "string@0x3d6dc kind=symbol"
+    },
+    {
+      "name": "xr_starrynet_thread_start",
+      "subsystem": "ble",
+      "file_offset": 207052,
+      "source_path": "../../tests/besair_platform/../../xjxr_starrynet/core/payload/message/channel_state_machine.c",
+      "entry_va": null,
+      "notes": "string@0x328cc kind=rtos_name"
+    },
+    {
+      "name": "xr_trace_task",
+      "subsystem": "ble",
+      "file_offset": 225096,
+      "source_path": "../../tests/besair_platform/../../xjxr_starrynet/trace/xr_trace.c",
+      "entry_va": null,
+      "notes": "string@0x36f48 kind=rtos_name; manual_seed"
+    },
+    {
+      "name": "xrbm",
+      "subsystem": "power",
+      "file_offset": 234504,
+      "source_path": "../../tests/besair_platform/../../xjxr_sensor_mgr/m55/battery_mgr.cpp",
+      "entry_va": "0x2c463fdd",
+      "notes": "string@0x39408 kind=log; raw='start xrbm thread'; literal_pool@0x46429B->0x2c463fdd; string@0x3941c kind=log; raw='create xrbm thread fail!'"
+    },
+    {
+      "name": "xrbm_thread",
+      "subsystem": "power",
+      "file_offset": 235088,
+      "source_path": "../../tests/besair_platform/../../xjxr_sensor_mgr/m55/wear_detection.cpp",
+      "entry_va": "0x2c489d94",
+      "notes": "string@0x39650 kind=symbol; known_map"
+    }
+  ]
+}

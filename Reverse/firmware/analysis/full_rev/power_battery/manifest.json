@@ -1,0 +1,117 @@
+{
+  "leaf": "1.1.4",
+  "image": "x_1.0.12.83/platform_tester.bin",
+  "load_base": "0x2C000000",
+  "rodata_alias": "0x3C000000",
+  "prior_art": "Reverse/firmware/analysis/BATT_CIRCLE_POSTMORTEM.md",
+  "functions": [
+    {
+      "va": "0x2C48A2C4",
+      "name": "battery_soc_get",
+      "role": "HUD SOC getter; ldrh from SRAM 0x3C408A6E (u16 0–100)",
+      "ghidra": "FUN_2c48a2c4",
+      "evidence": "Capstone 3-insn leaf; litpool 0x2C48A2CC; BATT_CIRCLE_POSTMORTEM §3"
+    },
+    {
+      "va": "0x2C48A2B8",
+      "name": "battery_charging_flag_get",
+      "role": "Charging/USB-plug flag; ldrb from 0x3D62A481",
+      "ghidra": "FUN_2c48a2b8",
+      "evidence": "Sibling leaf to SOC getter; callers in sleep/power paths"
+    },
+    {
+      "va": "0x2C5D68D8",
+      "name": "battery_soc_get_thunk",
+      "role": "Thumb veneer BL → battery_soc_get for widget/UI sites",
+      "ghidra": "FUN_2c5d68d8",
+      "evidence": "customTimeAndBatteryWidget ctor BL @ 0x2C5D9426"
+    },
+    {
+      "va": "0x2C489BD0",
+      "name": "battery_mgr_poll_level_voltage",
+      "role": "Clamp FG capacity 0–100; strh SOC cache; notify; update voltage listeners",
+      "ghidra": "FUN_2c489bd0",
+      "evidence": "Capstone strh r4,[r6] @ 0x2C489C08 after TRACE; bl 0x2C489B5C; litpool 0x3C408A6E"
+    },
+    {
+      "va": "0x2C489B5C",
+      "name": "battery_mgr_notify_level_listeners",
+      "role": "Walk event-listener list after SOC change",
+      "ghidra": "FUN_2c489b5c",
+      "evidence": "bl from 0x2C489C0A immediately after SOC strh"
+    },
+    {
+      "va": "0x2C49D134",
+      "name": "cw221x_get_capacity_percent",
+      "role": "cw221X capacity; requires FG ready (+0x48==1) else returns 0x14",
+      "ghidra": "FUN_2c49d134",
+      "evidence": "FG object 0x3C43BB10; source path cw221X-fuel-gauge.c"
+    },
+    {
+      "va": "0x2C49D108",
+      "name": "cw221x_get_voltage_mv",
+      "role": "cw221X battery voltage (mV) with refresh fallback",
+      "ghidra": "FUN_2c49d108",
+      "evidence": "Called from battery_mgr_poll; [SFG] voltage strings"
+    },
+    {
+      "va": "0x2C49D6AC",
+      "name": "cw221x_probe",
+      "role": "Fuel-gauge probe; chip id reg0 must be 0xA0",
+      "ghidra": "FUN_2c49d6ac",
+      "evidence": "decomp compare local_49 != 0xa0 → TRACE"
+    },
+    {
+      "va": "0x2C48A2D0",
+      "name": "register_xr_battery_event_listener",
+      "role": "battery_mgr listener list insert (charging/level callbacks)",
+      "ghidra": "FUN_2c48a2d0",
+      "evidence": "string register_xr_battery_event_listener; called from 0x2C642C66"
+    },
+    {
+      "va": "0x2C48A0C0",
+      "name": "register_xr_battery_voltage_monitor",
+      "role": "battery_mgr voltage-monitor registration",
+      "ghidra": "FUN_2c48a0c0",
+      "evidence": "string register_xr_battery_voltage_monitor"
+    },
+    {
+      "va": "0x2C642C66",
+      "name": "lv_power_manager_register_battery_hooks",
+      "role": "lv_power_manager.c registers BM hooks + 5s temp/voltage timer",
+      "ghidra": "FUN_2c642c66",
+      "evidence": "bl 0x2C48A0C0 + 0x2C48A2D0 + lv_timer_create 5000"
+    },
+    {
+      "va": "0x2C5CFE2C",
+      "name": "battery_icon_src_for_soc",
+      "role": "SOC→battery icon band picker for HUD img",
+      "ghidra": "FUN_2c5cfe2c",
+      "evidence": "Threshold ladder 0x59/0x4f/…; used after SOC getter in widget ctor"
+    },
+    {
+      "va": "0x2C0392AC",
+      "name": "battery_mgr_cpp_path",
+      "role": "RODATA source path string for battery_mgr.cpp",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x2C043048",
+      "name": "cw221X_fuel_gauge_c_path",
+      "role": "RODATA source path string for cw221X-fuel-gauge.c",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x2C0429D0",
+      "name": "sc7288_charger_c_path",
+      "role": "RODATA source path string for sc7288_charger.c",
+      "kind": "rodata_label"
+    },
+    {
+      "va": "0x3C408A6E",
+      "name": "sram_soc_u16",
+      "role": "Runtime cached battery percent (u16)",
+      "kind": "sram_label"
+    }
+  ]
+}
