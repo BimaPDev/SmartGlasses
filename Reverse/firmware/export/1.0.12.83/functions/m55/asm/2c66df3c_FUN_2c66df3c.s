@@ -1,0 +1,19 @@
+; FUN_2c66df3c @ 0x2c66df3c size=38
+  push {r4,r5,r6,r7,lr}
+  ldr r4,[0x2c66df64]
+  sub sp,#0x14
+  mov r5,r0
+  mov r6,r3
+  ldr.w r7,[r4,#0xe0]
+  cbnz r1,0x2c66df50
+  mov r2,r1
+  add r1,sp,#0x4
+  blx r7
+  adds r3,r0,#0x1
+  itttt eq
+  mov.eq r3,#0x0
+  str.eq r3,[r6,#0x0]
+  mov.eq r3,#0x8a
+  str.eq r3,[r5,#0x0]
+  add sp,#0x14
+  pop {r4,r5,r6,r7,pc}

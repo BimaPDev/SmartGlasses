@@ -1,0 +1,25 @@
+; FUN_2c62a290 @ 0x2c62a290 size=58
+  push {r4,lr}
+  mov r4,r0
+  movs r1,#0x50
+  bl 0x2c62c3b0
+  ldr r2,[0x2c62a2cc]
+  ldr r0,[r4,#0x10]
+  movw r3,#0x4108
+  ldr r1,[0x2c62a2d0]
+  ands r2,r0
+  mov.w r0,#0xff00ff00
+  str r1,[r4,#0x0]
+  mov.w r1,#0xffffffff
+  orrs r3,r2
+  str r0,[r4,#0x38]
+  ldr r2,[0x2c62a2d4]
+  ldr r0,[0x2c62a2d8]
+  str r1,[r4,#0x4]
+  movs r1,#0x0
+  str r3,[r4,#0x10]
+  movs r3,#0x58
+  str r0,[r4,#0x40]
+  str r1,[r4,#0x8]
+  strd r2,r3,[r4,#0x44]
+  pop {r4,pc}

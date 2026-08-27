@@ -1,0 +1,23 @@
+; FUN_2c53c700 @ 0x2c53c700 size=58
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  ldr r0,[r0,#0x8]
+  movs r4,#0x0
+  bl 0x2c607df0
+  ldr r0,[r5,#0x8]
+  bl 0x2c6041fc
+  cmp r0,r4
+  mov r1,r4
+  add.w r4,r4,#0x1
+  bls 0x2c53c72e
+  ldr r0,[r5,#0x8]
+  bl 0x2c6041dc
+  movs r1,#0x1
+  cmp r0,#0x0
+  beq 0x2c53c70c
+  bl 0x2c606abc
+  b 0x2c53c70c
+  ldr r0,[r5,#0x8]
+  movs r1,#0x1
+  pop.w {r3,r4,r5,lr}
+  b.w 0x2c606abc

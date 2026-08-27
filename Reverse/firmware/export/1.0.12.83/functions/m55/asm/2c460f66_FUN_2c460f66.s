@@ -1,0 +1,19 @@
+; FUN_2c460f66 @ 0x2c460f66 size=36
+  push {r1,r3,r4,r6,lr}
+  adds r6,#0xac
+  ldr r0,[0x2c46103c]
+  push {r0,r2,r3,r4,r5,lr}
+  cmp r1,#0x79
+  movs r2,#0x9e
+  adds r5,#0x4e
+  str r5,[r6,#0x68]
+  bne 0x2c460fcc
+  ldr r6,[r6,r2]
+  cbz r7,0x2c460fee
+  ldr r3,[r2,r0]
+  lsls r7,r2,#0x8
+  strb r6,[r2,#0xb]
+  lsrs r5,r7,#0x16
+  pop {r1,r2,r3,r4,r6,pc}
+  cmp r5,#0x5e
+  lsls r0,r3,#0x9

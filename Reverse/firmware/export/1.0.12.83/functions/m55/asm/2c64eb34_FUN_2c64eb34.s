@@ -1,0 +1,19 @@
+; FUN_2c64eb34 @ 0x2c64eb34 size=38
+  lsls r3,r1,#0x1e
+  bpl 0x2c64eb52
+  ldrd r3,r2,[r0,#0x0]
+  subs r2,r2,r3
+  cmp r2,#0x2
+  bls 0x2c64eb56
+  ldr r2,[0x2c64eb5c]
+  ldrh r1,[r2,#0x0]
+  ldrb r2,[r2,#0x2]
+  strh r1,[r3,#0x0]
+  strb r2,[r3,#0x2]
+  ldr r3,[r0,#0x0]
+  adds r3,#0x3
+  str r3,[r0,#0x0]
+  movs r0,#0x1
+  bx lr
+  movs r0,#0x0
+  bx lr

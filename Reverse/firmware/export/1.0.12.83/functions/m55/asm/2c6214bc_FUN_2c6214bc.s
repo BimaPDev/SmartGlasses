@@ -1,0 +1,24 @@
+; FUN_2c6214bc @ 0x2c6214bc size=72
+  cmp r2,#0x1
+  push {lr}
+  beq 0x2c6214fe
+  cmp r2,#0x2
+  ite eq
+  mov.eq.w lr,#0x3
+  mov.ne.w lr,#0x1
+  mov.w r12,#0xffffffff
+  tst.w lr,r1
+  lsl.w r12,r12,r2
+  bic.w r3,r3,r12
+  bic.w r12,lr,r1
+  mul r12,r2,r12
+  mul r2,r1,r2
+  lsl.w r3,r3,r12
+  lsr.w r2,r2,#0x3
+  itt ne
+  ldrb.ne r1,[r0,r2]
+  orr.ne r3,r1
+  strb r3,[r0,r2]
+  pop.w pc
+  mov.w lr,#0x7
+  b 0x2c6214ce

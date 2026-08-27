@@ -1,0 +1,24 @@
+; FUN_2c44ab10 @ 0x2c44ab10 size=46
+  cmp r6,#0x5e
+  ldr r7,[r2,r3]
+  ldrh r1,[r3,#0x4]
+  subs r7,#0xfa
+  push {r1,r2,r4,r5,r6,r7,lr}
+  bls 0x2c44abae
+  adds r0,r6,#0x1
+  str r4,[sp,#0x34]
+  lsrs r6,r1,#0xf
+  str r5,[r1,#0x78]
+  ldrh r6,[r3,#0x2a]
+  rev r4,r4
+  b 0x2c44a964
+  stmia r5!,{r1,r2,r3}
+  movs r2,#0xa9
+  asrs r2,r2,#0x12
+  adr r7,[0x2c44ae00]
+  cmp r2,#0xaf
+  ldr r5,[r6,#0x7c]
+  add r5,sp,#0xf8
+  bkpt 0x5f
+  str r6,[sp,#0x228]
+  asrs r6,r6,#0x19

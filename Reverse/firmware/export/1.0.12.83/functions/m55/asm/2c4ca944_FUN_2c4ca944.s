@@ -1,0 +1,22 @@
+; FUN_2c4ca944 @ 0x2c4ca944 size=50
+  push {r4,r5,r6,lr}
+  mov r4,r2
+  mov r6,r0
+  mov r5,r3
+  movs r2,#0x0
+  movs r3,#0xf
+  bl 0x2c674758
+  mov r1,r6
+  mov r0,r4
+  bl 0x2c674128
+  mov r3,r5
+  mov r0,r4
+  movs r2,#0xf
+  movs r1,#0x0
+  pop.w {r4,r5,r6,lr}
+  b.w 0x2c6744c8
+  push {r0}
+  ldr r0,[0x2c6744d4]
+  mov r12,r0
+  pop {r0}
+  bx r12

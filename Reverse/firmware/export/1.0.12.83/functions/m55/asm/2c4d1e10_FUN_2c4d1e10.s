@@ -1,0 +1,35 @@
+; FUN_2c4d1e10 @ 0x2c4d1e10 size=78
+  ldrb r3,[r0,#0x10]
+  mov r2,r0
+  cbnz r3,0x2c4d1e32
+  push {r4}
+  ldrh r3,[r0,#0xc]
+  ldrb r4,[r0,#0x2]
+  subs r3,#0x7
+  lsls r0,r3,#0x3
+  cbz r4,0x2c4d1e3c
+  cbnz r1,0x2c4d1e2c
+  cmp r0,#0x0
+  ble 0x2c4d1e2c
+  ldrb r3,[r2,#0x11]
+  subs r0,r0,r3
+  pop.w r4
+  bx lr
+  ldrb r3,[r0,#0x2]
+  cbz r3,0x2c4d1e40
+  mov.w r0,#0xffffffff
+  bx lr
+  subs r0,#0x10
+  b 0x2c4d1e22
+  cmp r1,#0x3
+  bhi 0x2c4d1e36
+  add.w r3,r0,r1, lsl #0x1
+  ldrh.w r3,[r3,#0x5e]
+  lsls r3,r3,#0x3
+  sub.w r0,r3,#0x10
+  cbnz r1,0x2c4d1e5c
+  cmp r0,#0x0
+  ble 0x2c4d1e5c
+  ldrb r3,[r2,#0x11]
+  subs r0,r0,r3
+  bx lr

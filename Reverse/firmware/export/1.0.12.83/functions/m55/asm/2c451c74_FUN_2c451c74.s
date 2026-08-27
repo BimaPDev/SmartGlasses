@@ -1,0 +1,26 @@
+; FUN_2c451c74 @ 0x2c451c74 size=50
+  str r4,[r1,#0x14]
+  str r6,[r6,#0x34]
+  adds r0,#0x36
+  adds r1,#0x2e
+  cmp r6,#0x37
+  adds r0,#0x31
+  movs r0,r6
+  beq 0x2c451c26
+  adds r4,#0xac
+  ldrh r0,[r5,#0x26]
+  subs r1,r4,r7
+  mov r4,r0
+  ldmia r3,{r0,r2,r3,r7}
+  strb r5,[r3,#0xd]
+  ldmia r7,{r0,r4,r5,r6,r7}
+  ldrb r7,[r6,#0x16]
+  add r5,sp,#0x144
+  push {r0,r1,r2,r4,r5,r6,lr}
+  ldrb r5,[r5,#0xf]
+  cmp r6,#0x5e
+  rev16 r5,r7
+  stmia r3!,{r4,r5,r7}
+  blt 0x2c451c9a
+  strh r4,[r4,#0x36]
+  b 0x2c451c12

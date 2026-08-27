@@ -1,0 +1,24 @@
+; FUN_2c603cbc @ 0x2c603cbc size=62
+  push {r4,lr}
+  ldrh r3,[r0,#0x22]
+  tst r3,#0x1f8
+  ubfx lr,r3,#0x3,#0x6
+  beq 0x2c603cec
+  ldr r3,[r0,#0xc]
+  movs r0,#0x0
+  ldrb.w r12,[r3,#0x7]
+  adds r0,#0x1
+  tst r12,#0x1
+  beq 0x2c603ce4
+  ldr r4,[r3,#0x4]
+  ubfx r12,r4,#0x0,#0x18
+  cmp r12,r2
+  beq 0x2c603cf0
+  cmp r0,lr
+  add.w r3,r3,#0x8
+  bne 0x2c603cce
+  movs r0,#0x0
+  pop {r4,pc}
+  ldr r0,[r3,#0x0]
+  pop.w {r4,lr}
+  b.w 0x2c62af34

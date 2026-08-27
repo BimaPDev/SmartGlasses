@@ -1,0 +1,41 @@
+; FUN_2c6737fc @ 0x2c6737fc size=98
+  cbz r0,0x2c67385c
+  push {r4,lr}
+  ldr r2,[r0,#0x4]
+  mov r4,r0
+  cbz r2,0x2c67384e
+  ldr r1,[0x2c673860]
+  ldr r0,[0x2c673864]
+  bl 0x2c6741e8
+  ldrb r3,[r4,#0x1]
+  cmp r3,#0x2
+  bls 0x2c67382a
+  ldrb r3,[r4,#0x3]
+  cmp r3,#0x1
+  bls 0x2c67383e
+  ldr r1,[0x2c673868]
+  ldr r0,[0x2c67386c]
+  ldrd r2,r3,[r4,#0x10]
+  pop.w {r4,lr}
+  b.w 0x2c6741e8
+  ldr r2,[0x2c673870]
+  ldr r1,[0x2c673874]
+  ldr.w r2,[r2,r3,lsl #0x2]
+  ldr r0,[0x2c673864]
+  bl 0x2c6741e8
+  ldrb r3,[r4,#0x3]
+  cmp r3,#0x1
+  bhi 0x2c67381a
+  ldr r2,[0x2c673878]
+  ldr r1,[0x2c67387c]
+  ldr.w r2,[r2,r3,lsl #0x2]
+  ldr r0,[0x2c673864]
+  bl 0x2c6741e8
+  b 0x2c67381a
+  ldr r3,[r0,#0x18]
+  mov r2,r0
+  ldr r1,[0x2c673880]
+  ldr r0,[0x2c67386c]
+  bl 0x2c6741e8
+  b 0x2c67380e
+  bx lr

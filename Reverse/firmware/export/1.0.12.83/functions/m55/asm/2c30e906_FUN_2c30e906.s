@@ -1,0 +1,19 @@
+; FUN_2c30e906 @ 0x2c30e906 size=40
+  push {r0,r3,r6,lr}
+  stmia r4!,{r2,r5,r6}
+  ldrsb r5,[r2,r2]
+  ldr r2,[0x2c30eb60]
+  str r1,[r2,#0x0]
+  lsls r0,r0,#0x4
+  lsls r3,r0,#0x8
+  stmia r0,{r0,r1,r2,r3,r4,r5,r6,r7}
+  lsls r0,r0,#0x14
+  asrs r2,r5,#0xf
+  strb r6,[r4,#0xa]
+  cdp2 p0,0x8,cr8,cr9,cr0,0x0
+  bl 0x2ce0de48
+  ldr r3,[0x2c30ea54]
+  movs r0,#0xdf
+  strh r0,[r6,#0x8]
+  lsls r0,r0,#0x2
+  strh r1,[r0,#0x14]

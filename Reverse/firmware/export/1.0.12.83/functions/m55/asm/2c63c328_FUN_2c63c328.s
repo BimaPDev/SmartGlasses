@@ -1,0 +1,21 @@
+; FUN_2c63c328 @ 0x2c63c328 size=60
+  push {r4,lr}
+  bl 0x2c62be40
+  bl 0x2c63c034
+  cbnz r0,0x2c63c33e
+  bl 0x2c48a2b8
+  mov r4,r0
+  cbz r0,0x2c63c356
+  pop {r4,pc}
+  movs r1,#0x0
+  movw r0,#0xbbf
+  bl 0x2c620fa4
+  bl 0x2c5e10f0
+  bl 0x2c48a2b8
+  mov r4,r0
+  cmp r0,#0x0
+  bne 0x2c63c33c
+  bl 0x2c63b92c
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x2c49666c

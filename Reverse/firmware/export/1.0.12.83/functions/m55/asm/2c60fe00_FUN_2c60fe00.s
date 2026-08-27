@@ -1,0 +1,82 @@
+; FUN_2c60fe00 @ 0x2c60fe00 size=228
+  push {r4,r5,lr}
+  ldr r4,[r0,#0x1c]
+  ldrb.w r12,[sp,#0x10]
+  cbz r4,0x2c60fe56
+  ldrsh.w r4,[r0,#0x28]
+  ldrsh.w r12,[r0,#0x2a]
+  subs r1,r1,r4
+  ldr r4,[r0,#0x18]
+  sub.w r12,r2,r12
+  cmp.w r4,#0x100
+  beq 0x2c60fe90
+  ldr r2,[r0,#0x14]
+  ldr r5,[r0,#0x10]
+  mul r2,r1,r2
+  mls r2,r5,r12,r2
+  mul r2,r4,r2
+  ldr r4,[r0,#0x20]
+  add.w r2,r4,r2, asr #0xa
+  str r2,[r3,#0x0]
+  ldr r4,[r0,#0x18]
+  ldr r2,[r0,#0x24]
+  ldrd r5,r3,[r0,#0x10]
+  mul r3,r3,r12
+  mla r1,r5,r1,r3
+  ldr r3,[sp,#0xc]
+  mul r1,r4,r1
+  add.w r1,r2,r1, asr #0xa
+  str r1,[r3,#0x0]
+  pop {r4,r5,pc}
+  ldr r4,[r0,#0x18]
+  cmp.w r4,#0x100
+  beq 0x2c60febc
+  ldrsh.w lr,[r0,#0x28]
+  cmp.w r12,#0x1
+  sub.w r1,r1,lr
+  ldrsh.w lr,[r0,#0x2a]
+  sub.w r2,r2,lr
+  beq 0x2c60fed0
+  cmp.w r12,#0x2
+  beq 0x2c60fec8
+  ldr r5,[r0,#0x20]
+  mla r1,r1,r4,r5
+  str r1,[r3,#0x0]
+  ldr r3,[r0,#0x24]
+  ldr r1,[r0,#0x18]
+  mla r2,r1,r2,r3
+  ldr r3,[sp,#0xc]
+  str r2,[r3,#0x0]
+  pop {r4,r5,pc}
+  ldr r2,[r0,#0x14]
+  ldr r4,[r0,#0x10]
+  mul r2,r1,r2
+  mls r2,r4,r12,r2
+  ldr r4,[r0,#0x20]
+  add.w r2,r4,r2, asr #0x2
+  str r2,[r3,#0x0]
+  ldr r3,[r0,#0x24]
+  ldrd r4,r2,[r0,#0x10]
+  mul r2,r2,r12
+  mla r1,r4,r1,r2
+  add.w r1,r3,r1, asr #0x2
+  ldr r3,[sp,#0xc]
+  str r1,[r3,#0x0]
+  pop {r4,r5,pc}
+  lsls r1,r1,#0x8
+  lsls r2,r2,#0x8
+  str r1,[r3,#0x0]
+  ldr r3,[sp,#0xc]
+  str r2,[r3,#0x0]
+  pop {r4,r5,pc}
+  ldr r4,[r0,#0x20]
+  add.w r1,r4,r1, lsl #0x8
+  b 0x2c60fe80
+  ldr r5,[r0,#0x20]
+  mla r1,r1,r4,r5
+  str r1,[r3,#0x0]
+  ldr r3,[r0,#0x24]
+  add.w r2,r3,r2, lsl #0x8
+  ldr r3,[sp,#0xc]
+  str r2,[r3,#0x0]
+  pop {r4,r5,pc}

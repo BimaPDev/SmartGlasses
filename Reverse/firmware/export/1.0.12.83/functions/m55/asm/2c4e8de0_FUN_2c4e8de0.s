@@ -1,0 +1,25 @@
+; FUN_2c4e8de0 @ 0x2c4e8de0 size=54
+  push {r4,lr}
+  mov r4,r1
+  sub sp,#0x8
+  ldr r0,[r1,#0x0]
+  bl 0x2c4efeec
+  mov r3,r0
+  ldr r0,[r4,#0x4]
+  mov r4,r3
+  bl 0x2c4efeec
+  str r0,[sp,#0x4]
+  bl 0x2c4eab7c
+  mov r3,r0
+  ldr r1,[sp,#0x4]
+  uxtb r0,r4
+  ldr r3,[r3,#0x40]
+  blx r3
+  ldr r2,[0x2c4e8e18]
+  ldr r3,[0x2c4e8e1c]
+  cmp r0,#0x0
+  ite ne
+  mov.ne r0,r2
+  mov.eq r0,r3
+  add sp,#0x8
+  pop {r4,pc}

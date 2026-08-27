@@ -1,0 +1,32 @@
+; FUN_2c440d80 @ 0x2c440d80 size=66
+  push {r1,r2,r4,r5,r6,lr}
+  strh r1,[r0,#0x12]
+  ldr r2,[sp,#0x264]
+  asrs r4,r3,#0xf
+  asrs r1,r1,#0x18
+  bmi 0x2c440e62
+  adds r1,r3,r7
+  bics r0,r10,#0xd7000
+  lsls r6,r7,#0x1c
+  adds r3,#0x8e
+  adds r3,#0x53
+  lsls r0,r1,#0xb
+  adr r1,[0x2c440f6c]
+  subs r4,#0x1
+  str r6,[r0,#0x68]
+  lsrs r0,r1,#0x13
+  stmia r0,{r0,r2,r3}
+  b 0x2c441156
+  ldrh r7,[r6,r5]
+  asrs r4,r0,#0x2
+  pkhbt.w r12,r9,r8, lsl #0x19
+  stmia r4,{r0,r1,r2,r4,r5,r7}
+  b 0x2c440ef0
+  ble 0x2c441074
+  ldrsh r6,[r7,r3]
+  str r1,[sp,#0x2b0]
+  subs r4,#0x7b
+  ldrb r4,[r7,#0x11]
+  ldrb r4,[r7,#0x9]
+  adr r1,[0x2c4412fc]
+  str r1,[r3,#0x50]

@@ -1,0 +1,37 @@
+; FUN_2c447656 @ 0x2c447656 size=76
+  push {r1,r2,r5,r6,r7,lr}
+  add r0,sp,#0x2a8
+  add r2,sp,#0x248
+  subs r5,#0xf0
+  subs r1,r0,#0x5
+  strb r4,[r1,r7]
+  push {r1,r2,r3,r4,r5,r6,r7}
+  strh r2,[r0,#0x2]
+  movs r6,#0x48
+  ldr r5,[r1,#0x34]
+  strh r4,[r2,#0x28]
+  str r0,[r0,#0x70]
+  add r4,sp,#0x3b4
+  str r5,[r6,#0x8]
+  asrs r3,r2,#0xa
+  asrs r2,r6,#0x9
+  bcs 0x2c4476d0
+  ble 0x2c4476e2
+  add r6,sp,#0x104
+  str r6,[sp,#0xe4]
+  ldr r6,[r4,#0x4]
+  bcs 0x2c4477c6
+  str r3,[sp,#0x250]
+  movs r1,#0xd4
+  mov sp,sp
+  ldr r5,[sp,#0x260]
+  subs r2,r4,#0x6
+  strb r0,[r7,#0x8]
+  asrs r7,r3,#0x6
+  rsbs r0,r9,pc, lsr #0x17
+  cdp2 p4,0x9,cr1,cr0,cr13,0x7
+  lsrs r4,r7,#0x1a
+  adr r7,[0x2c447778]
+  asrs r3,r6
+  ldr r0,[0x2c447a8c]
+  ldr r6,[0x2c447a80]

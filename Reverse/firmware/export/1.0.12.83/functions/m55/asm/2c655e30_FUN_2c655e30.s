@@ -1,0 +1,31 @@
+; FUN_2c655e30 @ 0x2c655e30 size=72
+  push {r4,r5,r6,r7,lr}
+  sub sp,#0x3c
+  mov r6,r1
+  mov r5,r2
+  mov r7,r3
+  ldr r1,[sp,#0x58]
+  add r4,sp,#0x8
+  ldr r2,[sp,#0x5c]
+  add r3,sp,#0x10
+  mov r0,r4
+  add.w r2,r1,r2, lsl #0x2
+  str r3,[sp,#0x8]
+  bl 0x2c654a10
+  ldr r3,[sp,#0x54]
+  mov r2,r7
+  mov r1,r6
+  add r0,sp,#0x20
+  str r3,[sp,#0x0]
+  str r4,[sp,#0x4]
+  ldr r3,[sp,#0x50]
+  bl 0x2c65659a
+  add r1,sp,#0x20
+  mov r0,r5
+  bl 0x2c655cb8
+  add r0,sp,#0x20
+  bl 0x2c6648a4
+  mov r0,r4
+  bl 0x2c6648a4
+  add sp,#0x3c
+  pop {r4,r5,r6,r7,pc}

@@ -1,0 +1,19 @@
+; FUN_2c2b629e @ 0x2c2b629e size=36
+  push {r0,r1,r2,r3,r4,r6,lr}
+  eors r5,r2
+  movs r0,r0
+  lsls r3,r5,#0x2
+  movs r0,r0
+  str r0,[sp,#0x38]
+  movs r0,r0
+  movs r0,r0
+  lsls r3,r5,#0x2
+  movs r0,r0
+  str r0,[sp,#0x38]
+  movs r0,r0
+  movs r0,r0
+  lsls r3,r5,#0x2
+  movs r0,r0
+  str r0,[sp,#0x38]
+  movs r0,r0
+  ldmia r7!,{}

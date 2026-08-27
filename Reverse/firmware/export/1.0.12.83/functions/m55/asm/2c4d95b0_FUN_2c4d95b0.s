@@ -1,0 +1,39 @@
+; FUN_2c4d95b0 @ 0x2c4d95b0 size=82
+  push {r4,r5,r6,r7}
+  ldr r4,[r0,#0x8]
+  ldr r3,[sp,#0x14]
+  ldr r5,[r1,#0x0]
+  ldr r7,[r2,#0x0]
+  cbz r4,0x2c4d95de
+  ldrd r3,r6,[r0,#0xc]
+  subs r4,r6,r5
+  add.w r3,r3,r4, asr #0x1
+  sub.w r4,r7,r4, asr #0x1
+  cmp r3,#0x0
+  ble 0x2c4d95d6
+  cmp r4,#0x0
+  ble 0x2c4d95ee
+  cmp r5,r6
+  bge 0x2c4d95ee
+  str r6,[r1,#0x0]
+  str r4,[r2,#0x0]
+  pop {r4,r5,r6,r7}
+  bx lr
+  str r3,[r0,#0x8]
+  subs r3,r3,r5
+  str r4,[r0,#0x14]
+  asrs r3,r3,#0x1
+  ldr r4,[sp,#0x10]
+  str r5,[r0,#0x10]
+  str r4,[r0,#0x4]
+  str r3,[r0,#0xc]
+  str r3,[r0,#0xc]
+  mov r4,r7
+  mov r6,r5
+  ldr r3,[sp,#0x10]
+  str r5,[r0,#0x10]
+  str r3,[r0,#0x4]
+  str r6,[r1,#0x0]
+  str r4,[r2,#0x0]
+  pop {r4,r5,r6,r7}
+  bx lr

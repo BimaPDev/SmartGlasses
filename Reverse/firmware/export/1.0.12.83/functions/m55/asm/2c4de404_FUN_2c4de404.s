@@ -1,0 +1,19 @@
+; FUN_2c4de404 @ 0x2c4de404 size=50
+  push {r4,lr}
+  mov r4,r0
+  bl 0x2c4dfbbc
+  movs r3,#0x0
+  mov.w r1,#0x2000
+  add.w r0,r4,#0x10
+  str r3,[r4,#0x3c]
+  strd r3,r3,[r4,#0x34]
+  ldr r3,[0x2c4de438]
+  add.w r2,r3,#0x8
+  str r2,[r4,#0x0]
+  add.w r2,r3,#0x2c
+  adds r3,#0x38
+  str r2,[r4,#0x20]
+  str r3,[r4,#0x30]
+  bl 0x2c4df4e6
+  mov r0,r4
+  pop {r4,pc}

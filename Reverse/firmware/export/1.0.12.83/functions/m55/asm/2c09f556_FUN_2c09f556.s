@@ -1,0 +1,19 @@
+; FUN_2c09f556 @ 0x2c09f556 size=42
+  push {r0,r3,r4,r5,lr}
+  ands r5,sp,#0x22002200
+  tst r0,r0
+  asrs r0,r4,#0xe
+  bvc 0x2c09f5e0
+  blx 0x2cae1d00
+  lsls r0,r5,#0x8
+  lsls r5,r5,#0xe
+  movs r5,#0x2e
+  ldr r0,[0x2c09f680]
+  ldmia r7,{r1,r4,r5,r6,r7}
+  cmp r0,#0xcb
+  add r5,sp,#0x8
+  cmp r6,#0x3
+  add r5,r4
+  ldrb r0,[r1,r1]
+  adr r5,[0x2c09f990]
+  b.w 0x2b719b6e

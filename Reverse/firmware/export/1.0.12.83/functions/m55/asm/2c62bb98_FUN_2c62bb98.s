@@ -1,0 +1,19 @@
+; FUN_2c62bb98 @ 0x2c62bb98 size=46
+  push {r4,r5,r6,r7,r8,lr}
+  ldr.w r8,[0x2c62bbc8]
+  mov r6,r1
+  mov r4,r3
+  mov r1,r3
+  ldr.w r3,[r8,#0x0]
+  mov r7,r0
+  mov r5,r2
+  blx r3
+  str r0,[r6,#0x0]
+  cbz r0,0x2c62bbc0
+  ldr r0,[r4,#0x0]
+  movs r1,#0x0
+  ldr.w r3,[r8,#0x0]
+  add r0,r7
+  blx r3
+  str r0,[r5,#0x0]
+  pop.w {r4,r5,r6,r7,r8,pc}

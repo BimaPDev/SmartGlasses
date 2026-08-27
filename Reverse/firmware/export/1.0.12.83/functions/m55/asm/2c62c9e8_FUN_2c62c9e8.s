@@ -1,0 +1,19 @@
+; FUN_2c62c9e8 @ 0x2c62c9e8 size=40
+  cbz r0,0x2c62ca0e
+  push {r4,r5,r6,lr}
+  ldr r5,[r0,#0x4]
+  mov r6,r0
+  cbz r5,0x2c62ca0c
+  ldr r3,[r6,#0x0]
+  mov r4,r5
+  mov r0,r6
+  mov r1,r5
+  add r3,r5
+  ldr r5,[r3,#0x4]
+  bl 0x2c62c998
+  mov r0,r4
+  bl 0x2c62bea8
+  cmp r5,#0x0
+  bne 0x2c62c9f2
+  pop {r4,r5,r6,pc}
+  bx lr

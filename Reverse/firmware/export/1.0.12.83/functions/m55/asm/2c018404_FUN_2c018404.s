@@ -1,0 +1,21 @@
+; FUN_2c018404 @ 0x2c018404 size=56
+  push {r4,lr}
+  mrs r3,primask
+  ands r4,r3,#0x1
+  bne 0x2c01841a
+  mov r2,pc
+  ldr r3,[0x2c01843c]
+  strd r2,lr,[r3,#0x0]
+  cpsid i
+  mrs r0,control
+  ands r0,r0,#0x2
+  beq 0x2c018436
+  bl 0x2c018048
+  cbnz r4,0x2c018434
+  ldr r3,[0x2c01843c]
+  mov.w r2,#0xffffffff
+  str r2,[r3,#0x0]
+  cpsie i
+  pop {r4,pc}
+  bl 0x2c018070
+  b 0x2c018428

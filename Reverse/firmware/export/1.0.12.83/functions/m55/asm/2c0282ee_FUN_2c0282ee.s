@@ -1,0 +1,27 @@
+; FUN_2c0282ee @ 0x2c0282ee size=68
+  push {r0,r1,r2,r3,r6,r7,lr}
+  lsls r0,r1,#0x10
+  bls 0x2c028368
+  ldmia r0!,{r1,r5,r6}
+  asrs r0,r0,#0x1b
+  bl 0x2c5b8632
+  lsls r0,r0,#0xc
+  blx 0x2c09ead8
+  subs r7,r2,#0x5
+  b 0x2c0288e2
+  movs r2,#0xea
+  subs r5,#0x76
+  adc r4,r9,#0x2b002b
+  subs r0,r5,r1
+  lsls r3,r3,#0x1f
+  cmp r6,#0xdb
+  asrs r4,r6,#0x19
+  bhi 0x2c028466
+  blx 0x2c434fa8
+  lsrs r3,r4,#0x12
+  stcl p4,cr11,[r10,#0x3ac]!
+  strex r3,r3,[r7,#0x304]
+  bics r0,r11,#0xee0
+  stmia r5,{r1,r2,r5,r7}
+  ldcl p3,cr1,[r12],{0x88}
+  adds r5,#0x45

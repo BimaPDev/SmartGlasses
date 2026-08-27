@@ -1,0 +1,26 @@
+; FUN_2c25b9fe @ 0x2c25b9fe size=50
+  push {r0,r1,r2,r3,r4,r6,lr}
+  movs r0,#0x55
+  lsls r1,r0,#0x14
+  lsls r1,r6,#0x3
+  movs r0,r0
+  str r0,[sp,#0x3c]
+  movs r0,r0
+  lsls r0,r0,#0x14
+  lsls r1,r6,#0x3
+  movs r0,r0
+  str r0,[sp,#0x3c]
+  movs r0,r0
+  lsls r0,r0,#0x14
+  lsls r1,r6,#0x3
+  movs r0,r0
+  str r0,[sp,#0x3c]
+  movs r0,r0
+  lsls r0,r0,#0x14
+  lsls r1,r6,#0x3
+  movs r0,r0
+  str r0,[sp,#0x3c]
+  movs r0,r0
+  lsls r0,r0,#0x14
+  lsls r1,r6,#0x7
+  str r6,[r4,#0x64]

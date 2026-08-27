@@ -1,0 +1,20 @@
+; FUN_2c0f5f02 @ 0x2c0f5f02 size=44
+  asrs r6,r6
+  addw sp,r0,#0x842
+  movs r2,#0x41
+  ldr r6,[0x2c0f5f0c]
+  lsls r2,r0,#0x1
+  adds r2,r4,#0x1
+  subs r1,#0xe0
+  adds r4,r0,#0x6
+  lsls r0,r6,#0x3
+  clz r12,lr
+  b 0x2c0f5ec6
+  lsrs r4,r4,#0x11
+  b 0x2c0f5efe
+  stmia r2!,{r0,r5,r6,r7}
+  asrs r0,r4,#0x12
+  push {r0,r2,r5,lr}
+  movs r5,#0xff
+  vabd.u8 d8,d7,d21
+  b 0x2c0f5b0c

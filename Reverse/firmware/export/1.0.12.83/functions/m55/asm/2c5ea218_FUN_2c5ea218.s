@@ -1,0 +1,19 @@
+; FUN_2c5ea218 @ 0x2c5ea218 size=44
+  push {r4,lr}
+  mov r4,r1
+  ldr r3,[0x2c5ea244]
+  movs r1,#0x0
+  movs r0,#0x1
+  mov r2,r4
+  strb r4,[r3,#0x10]
+  bl 0x2c5e70b0
+  bl 0x2c5e7538
+  cmp r4,#0x1
+  beq 0x2c5ea23a
+  bl 0x2c5e6900
+  movs r0,#0x1
+  pop {r4,pc}
+  mov r0,r4
+  bl 0x2c5e6abc
+  movs r0,#0x1
+  pop {r4,pc}

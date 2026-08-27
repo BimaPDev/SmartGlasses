@@ -1,0 +1,20 @@
+; FUN_2c51d234 @ 0x2c51d234 size=44
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  sub sp,#0x8
+  mov r0,r1
+  bl 0x2c602618
+  ldr r3,[r5,#0x8]
+  mov r4,r0
+  ldr r2,[r3,#0x0]
+  mov r0,r3
+  ldr r3,[r2,#0x18]
+  blx r3
+  sub.w r3,r4,#0xce
+  cmp r3,#0x15
+  bhi 0x2c51d26e
+  tbb [pc,r3]
+  movs r4,#0x0
+  mov r0,r4
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

@@ -1,0 +1,19 @@
+; FUN_2c5af778 @ 0x2c5af778 size=40
+  push {r4,lr}
+  str r1,[r0,#0x8]
+  sub sp,#0x10
+  mov r4,r0
+  bl 0x2c5fd09c
+  movs r3,#0x1a
+  ldr r1,[0x2c5af7a0]
+  str r0,[r4,#0xc]
+  ldr r2,[0x2c5af7a4]
+  str r3,[sp,#0x8]
+  str r1,[sp,#0x4]
+  ldr r3,[0x2c5af7a8]
+  ldr r1,[0x2c5af7ac]
+  str r4,[sp,#0x0]
+  bl 0x2c5fd0c0
+  strb r0,[r4,#0x10]
+  add sp,#0x10
+  pop {r4,pc}

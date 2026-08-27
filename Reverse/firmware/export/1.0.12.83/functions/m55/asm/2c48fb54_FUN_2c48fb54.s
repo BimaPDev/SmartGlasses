@@ -1,0 +1,66 @@
+; FUN_2c48fb54 @ 0x2c48fb54 size=170
+  push {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  ldr r3,[0x2c48fc00]
+  sub sp,#0x1c
+  movs r4,#0x0
+  ldr.w r10,[0x2c48fc0c]
+  ldr r7,[0x2c48fc04]
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x14]
+  mov.w r3,#0x0
+  ldr.w r11,[0x2c48fc10]
+  ldr.w r9,[0x2c48fc14]
+  ldr.w r8,[0x2c48fc18]
+  mov.w r5,#0xffffffff
+  mov r2,r5
+  movs r1,#0x0
+  add r0,sp,#0x8
+  bl 0x2c644134
+  ldr r3,[sp,#0x8]
+  cmp r3,#0x8
+  beq 0x2c48fbaa
+  cmp r4,#0x14
+  bls 0x2c48fbc8
+  cmp r4,#0x15
+  bne 0x2c48fb7c
+  mov r3,r9
+  mov r2,r8
+  mov.w r1,#0x100
+  movs r0,#0x4
+  movs r4,#0x16
+  strd r11,r10,[sp,#0x0]
+  bl 0x2c673d88
+  ldr r6,[sp,#0xc]
+  lsls r2,r6,#0x1e
+  bpl 0x2c48fbb6
+  cbz r4,0x2c48fbda
+  cmp r4,#0x14
+  bls 0x2c48fbee
+  lsls r3,r6,#0x1d
+  bpl 0x2c48fb90
+  movs r3,#0x0
+  movs r0,#0x2
+  mov r2,r3
+  mov r1,r3
+  bl 0x2c493560
+  b 0x2c48fb90
+  ldr.w r0,[r7,r4,lsl #0x3]
+  bl 0x2c490afc
+  add.w r3,r7,r4, lsl #0x3
+  adds r4,#0x1
+  ldr r5,[r3,#0x4]
+  b 0x2c48fb90
+  ldr r0,[0x2c48fc08]
+  mov r3,r9
+  mov r2,r8
+  movs r1,#0xed
+  str r0,[sp,#0x0]
+  movs r0,#0x4
+  str.w r10,[sp,#0x4]
+  bl 0x2c673d88
+  ldr.w r0,[r7,r4,lsl #0x3]
+  bl 0x2c490afc
+  add.w r3,r7,r4, lsl #0x3
+  adds r4,#0x1
+  ldr r5,[r3,#0x4]
+  b 0x2c48fbb6

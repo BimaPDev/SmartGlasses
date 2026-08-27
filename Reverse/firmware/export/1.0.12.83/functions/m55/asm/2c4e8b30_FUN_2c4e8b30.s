@@ -1,0 +1,19 @@
+; FUN_2c4e8b30 @ 0x2c4e8b30 size=50
+  push {r4,lr}
+  ldr r0,[r1,#0x0]
+  bl 0x2c4efeec
+  mov r4,r0
+  bl 0x2c4e9354
+  ldr.w r3,[r0,#0x88]
+  sub.w r4,r4,#0x1
+  clz r4,r4
+  lsrs r4,r4,#0x5
+  mov r0,r4
+  blx r3
+  bl 0x2c4e9354
+  mov r3,r0
+  mov r0,r4
+  ldr.w r3,[r3,#0x90]
+  blx r3
+  ldr r0,[0x2c4e8b64]
+  pop {r4,pc}

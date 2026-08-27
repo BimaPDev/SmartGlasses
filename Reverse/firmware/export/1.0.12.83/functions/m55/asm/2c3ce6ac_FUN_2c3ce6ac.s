@@ -1,0 +1,19 @@
+; FUN_2c3ce6ac @ 0x2c3ce6ac size=36
+  push {r0,r3,lr}
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0

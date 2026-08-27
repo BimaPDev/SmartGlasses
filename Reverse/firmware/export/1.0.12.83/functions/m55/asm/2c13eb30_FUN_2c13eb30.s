@@ -1,0 +1,20 @@
+; FUN_2c13eb30 @ 0x2c13eb30 size=58
+  push {r0,lr}
+  bl 0x2c1414b4
+  pop.w {r0,lr}
+  b.w 0x2c13eb3e
+  ldr r3,[0x2c13eb88]
+  ldm.w r3,{r1,r2}
+  cmp r1,r2
+  it eq
+  bx.eq lr
+  mrs r0,psp
+  stmdb r0!,{r4,r5,r6,r7,r8,r9,r10,r11}
+  tst lr,#0x10
+  it eq
+  vstmdb.eq r0!,{s16,s17,s18,s19,s20,s21,s22,s23,s24,s25,s26,s27,s28,s29,s30,s31}
+  str r0,[r1,#0x38]
+  strb.w lr,[r1,#0x22]
+  str r2,[r3,#0x0]
+  ldr r0,[r2,#0x30]
+  ldrb.w r1,[r2,#0x22]

@@ -1,0 +1,20 @@
+; FUN_2c646854 @ 0x2c646854 size=50
+  mrs r3,ipsr
+  cbnz r3,0x2c646860
+  mrs r3,primask
+  cbz r3,0x2c646876
+  ldr r3,[0x2c646888]
+  push {lr}
+  sub sp,#0xc
+  ldr r0,[r3,#0x14]
+  str r0,[sp,#0x4]
+  bl 0x2c643a58
+  ldr r0,[sp,#0x4]
+  add sp,#0xc
+  pop.w pc
+  mrs r3,basepri
+  cmp r3,#0x0
+  bne 0x2c646860
+  ldr.w r12,[0x2c64688c]
+  svc 0x0
+  bx lr

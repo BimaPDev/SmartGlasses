@@ -1,0 +1,27 @@
+; FUN_2c48d300 @ 0x2c48d300 size=74
+  movs r1,#0x0
+  subs r2,r0,#0x1
+  add.w r12,r0,#0x3
+  push {r4,lr}
+  ldrb.w r3,[r2,#0x1]!
+  sub.w r0,r3,#0x30
+  sub.w r4,r3,#0x41
+  uxtb.w lr,r0
+  add r0,r1
+  cmp.w lr,#0x9
+  bls 0x2c48d336
+  sub.w r0,r3,#0x57
+  cmp r4,#0x5
+  sub.w lr,r3,#0x61
+  sub.w r3,r3,#0x37
+  add r0,r1
+  bhi 0x2c48d340
+  adds r0,r3,r1
+  cmp r12,r2
+  lsl.w r1,r0,#0x4
+  bne 0x2c48d30a
+  pop {r4,pc}
+  cmp.w lr,#0x5
+  bls 0x2c48d336
+  movs r0,#0x0
+  pop {r4,pc}

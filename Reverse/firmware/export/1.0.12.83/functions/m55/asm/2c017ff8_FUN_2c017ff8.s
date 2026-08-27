@@ -1,0 +1,19 @@
+; FUN_2c017ff8 @ 0x2c017ff8 size=44
+  push {r4,r5,r6,lr}
+  ldr r4,[0x2c018024]
+  mov r6,r0
+  ldr r5,[r4,#0x4]
+  bl 0x2c0153e4
+  ldr r2,[0x2c018028]
+  lsrs r3,r0,#0x5
+  ldr r1,[0x2c01802c]
+  umull r2,r3,r2,r3
+  lsrs r3,r3,#0x7
+  mul r2,r6,r3
+  umull r3,r2,r1,r2
+  lsrs r2,r2,#0xd
+  ldr r3,[r4,#0x4]
+  subs r3,r5,r3
+  cmp r2,r3
+  bhi 0x2c01801a
+  pop {r4,r5,r6,pc}

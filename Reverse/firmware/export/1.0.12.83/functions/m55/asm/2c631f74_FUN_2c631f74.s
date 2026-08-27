@@ -1,0 +1,20 @@
+; FUN_2c631f74 @ 0x2c631f74 size=54
+  push {lr}
+  mov r0,r1
+  sub sp,#0xc
+  mov.w r1,#0x400
+  str r0,[sp,#0x4]
+  bl 0x2c606abc
+  ldr r0,[sp,#0x4]
+  movs r1,#0x4
+  bl 0x2c606abc
+  ldr r0,[sp,#0x4]
+  mov.w r1,#0x20000
+  bl 0x2c606a28
+  ldr r0,[sp,#0x4]
+  movs r1,#0x1
+  bl 0x2c606a28
+  ldr r0,[sp,#0x4]
+  add sp,#0xc
+  pop.w lr
+  b.w 0x2c637344

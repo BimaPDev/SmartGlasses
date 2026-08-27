@@ -1,0 +1,26 @@
+; FUN_2c540f88 @ 0x2c540f88 size=62
+  push {r3,r4,r5,lr}
+  mov r5,r1
+  bl 0x2c48e3b8
+  mov r4,r0
+  cbz r0,0x2c540fc0
+  movs r3,#0x0
+  adds r2,r5,#0x4
+  ldr r1,[0x2c540fc8]
+  bl 0x2c55700c
+  mov r3,r0
+  cbnz r0,0x2c540fc0
+  add.w r2,r5,#0x1c
+  ldr r1,[0x2c540fcc]
+  mov r0,r4
+  bl 0x2c55700c
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  rsbs r5,r0
+  mov r0,r4
+  bl 0x2c48dea0
+  mov r0,r5
+  pop {r3,r4,r5,pc}
+  mov.w r5,#0xffffffff
+  b 0x2c540fb6

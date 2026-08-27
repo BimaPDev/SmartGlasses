@@ -1,0 +1,20 @@
+; FUN_2c645794 @ 0x2c645794 size=50
+  mrs r3,ipsr
+  cbnz r3,0x2c6457a0
+  mrs r3,primask
+  cbz r3,0x2c6457b6
+  ldr r3,[0x2c6457c8]
+  push {lr}
+  ldr r0,[r3,#0x4]
+  sub sp,#0xc
+  str r0,[sp,#0x4]
+  bl 0x2c643a10
+  ldr r0,[sp,#0x4]
+  add sp,#0xc
+  pop.w pc
+  mrs r3,basepri
+  cmp r3,#0x0
+  bne 0x2c6457a0
+  ldr.w r12,[0x2c6457cc]
+  svc 0x0
+  bx lr

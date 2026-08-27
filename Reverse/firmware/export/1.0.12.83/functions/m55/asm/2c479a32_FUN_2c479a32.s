@@ -1,0 +1,25 @@
+; FUN_2c479a32 @ 0x2c479a32 size=70
+  push {r3,lr}
+  sub.w r3,r0,#0xd000
+  ldrh.w r1,[r0,#0x634]
+  addw r0,r0,#0x433
+  ldrsb.w r3,[r3,#0x1b8]
+  cmp r3,#0x11
+  beq 0x2c479a50
+  pop.w {r3,lr}
+  b.w 0x2c47ab98
+  bl 0x2c478604
+  cbnz r0,0x2c479a62
+  ldr r3,[0x2c479a7c]
+  ldrh r0,[r3,#0x0]
+  pop.w {r3,lr}
+  b.w 0x2c477330
+  ldr r2,[0x2c479a7c]
+  ldrh r3,[r2,#0x0]
+  cmp r0,r3
+  it ge
+  mov.ge r0,r3
+  uxth r0,r0
+  strh r0,[r2,#0x0]
+  pop.w {r3,lr}
+  b.w 0x2c477330

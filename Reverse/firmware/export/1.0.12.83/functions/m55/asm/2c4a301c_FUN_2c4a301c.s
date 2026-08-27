@@ -1,0 +1,21 @@
+; FUN_2c4a301c @ 0x2c4a301c size=60
+  ldr r3,[0x2c4a3058]
+  movs r0,#0x0
+  push {r4,lr}
+  ldr r2,[r3,#0x0]
+  mov.w lr,#0x1
+  add.w r4,r2,#0x1c
+  ldrb r3,[r2,#0x3]
+  adds r2,#0x7
+  ldrb.w r12,[r2,#-0x3]
+  lsl.w r3,lr,r3
+  ldrb.w r1,[r2,#-0x2]
+  lsl.w r12,lr,r12
+  cmp r4,r2
+  lsl.w r1,lr,r1
+  orr.w r3,r3,r12
+  orr.w r0,r0,r3
+  orr.w r0,r0,r1
+  uxtb r0,r0
+  bne 0x2c4a302c
+  pop {r4,pc}

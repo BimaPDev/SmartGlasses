@@ -1,0 +1,19 @@
+; FUN_2c5ff5cc @ 0x2c5ff5cc size=44
+  cbz r0,0x2c5ff5f2
+  ldr r3,[r0,#0x0]
+  ldrb r3,[r3,#0x0]
+  and r3,r3,#0xfd
+  cmp r3,#0x1
+  beq 0x2c5ff5e4
+  movw r3,#0xffff
+  strh r3,[r1,#0x0]
+  strh r3,[r1,#0x2]
+  bx lr
+  ldrsh.w r3,[r0,#0x8]
+  strh r3,[r1,#0x0]
+  ldrsh.w r3,[r0,#0xa]
+  strh r3,[r1,#0x2]
+  bx lr
+  strh r0,[r1,#0x0]
+  strh r0,[r1,#0x2]
+  bx lr

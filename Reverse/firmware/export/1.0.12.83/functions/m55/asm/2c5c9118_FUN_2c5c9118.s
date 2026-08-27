@@ -1,0 +1,6 @@
+; FUN_2c5c9118 @ 0x2c5c9118 size=16
+  push {r3,lr}
+  bl 0x2c5d78f0
+  ldr r1,[0x2c5c9128]
+  pop.w {r3,lr}
+  b.w 0x2c5d7a44

@@ -1,0 +1,19 @@
+; FUN_2c516734 @ 0x2c516734 size=50
+  push {r4,lr}
+  ldr r4,[r0,#0x0]
+  ldrb.w r3,[r4,#0x5c]
+  cbnz r3,0x2c516740
+  pop {r4,pc}
+  mov r0,r4
+  bl 0x2c516704
+  ldrb.w r3,[r4,#0x5d]
+  cbnz r3,0x2c516754
+  movs r3,#0x0
+  strb.w r3,[r4,#0x5c]
+  pop {r4,pc}
+  ldrb.w r1,[r4,#0x5e]
+  ldr r0,[r4,#0x58]
+  bl 0x2c5155a4
+  movs r3,#0x0
+  strb.w r3,[r4,#0x5d]
+  b 0x2c51674c

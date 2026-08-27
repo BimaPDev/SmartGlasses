@@ -1,0 +1,19 @@
+; FUN_2c4f4998 @ 0x2c4f4998 size=38
+  ldr r3,[r0,#0x28]
+  cbz r3,0x2c4f49ae
+  cmp r1,r3
+  bne 0x2c4f49a6
+  b 0x2c4f49b2
+  cmp r1,r3
+  beq 0x2c4f49b6
+  mov r2,r3
+  ldr r3,[r3,#0x0]
+  cmp r3,#0x0
+  bne 0x2c4f49a2
+  movs r0,#0x0
+  bx lr
+  add.w r2,r0,#0x28
+  ldr r3,[r3,#0x0]
+  movs r0,#0x0
+  str r3,[r2,#0x0]
+  bx lr

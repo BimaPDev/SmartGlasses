@@ -1,0 +1,22 @@
+; FUN_2c62e148 @ 0x2c62e148 size=46
+  push {r4,lr}
+  mov r4,r0
+  bl 0x2c66c4ec
+  cbz r0,0x2c62e172
+  adds r2,r0,#0x1
+  add r2,r4
+  b 0x2c62e164
+  cmp r3,#0x2f
+  beq 0x2c62e172
+  cmp r3,#0x5c
+  beq 0x2c62e172
+  subs r0,#0x1
+  beq 0x2c62e172
+  ldrsb.w r3,[r2,#-0x1]!
+  cmp r3,#0x2e
+  bne 0x2c62e158
+  adds r3,r0,#0x1
+  adds r0,r4,r3
+  pop {r4,pc}
+  ldr r0,[0x2c62e178]
+  pop {r4,pc}

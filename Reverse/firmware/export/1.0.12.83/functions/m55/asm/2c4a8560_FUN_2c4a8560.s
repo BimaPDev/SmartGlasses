@@ -1,0 +1,25 @@
+; FUN_2c4a8560 @ 0x2c4a8560 size=54
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  ldr r5,[r0,#0x1c]
+  sub sp,#0x18
+  ldrb r0,[r0,#0xd]
+  mov r6,r1
+  blx r5
+  subs r5,r0,#0x0
+  blt 0x2c4a8578
+  mov r0,r5
+  add sp,#0x18
+  pop {r4,r5,r6,pc}
+  ldrb r3,[r4,#0xd]
+  ldrb r2,[r4,#0xc]
+  ldr r1,[0x2c4a859c]
+  ldr r0,[0x2c4a85a0]
+  strd r2,r1,[sp,#0x4]
+  strd r3,r6,[sp,#0xc]
+  str r0,[sp,#0x0]
+  movs r1,#0x29
+  ldr r3,[0x2c4a85a4]
+  movs r0,#0x4
+  ldr r2,[0x2c4a85a8]
+  bl 0x2c673d88

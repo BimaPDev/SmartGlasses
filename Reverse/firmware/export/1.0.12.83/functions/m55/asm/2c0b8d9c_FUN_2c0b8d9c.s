@@ -1,0 +1,21 @@
+; FUN_2c0b8d9c @ 0x2c0b8d9c size=40
+  push {r3,r6,r7,lr}
+  subs r6,#0xd1
+  stmia r6,{r0,r1,r2,r5,r6,r7}
+  subs r7,#0x18
+  bvc 0x2c0b8dde
+  subs r7,#0x7b
+  add r5,r7
+  subs r7,#0x97
+  strh r0,[r3,#0xe]
+  subs r7,#0xaf
+  ldr r5,[0x2c0b91a8]
+  subs r7,#0xc0
+  lsrs r2,r2,#0x1d
+  subs r7,#0xe1
+  adds r0,#0x40
+  ands r1,r0
+  strh r5,[r7,r2]
+  ands r0,r3
+  b 0x2c0b8956
+  subs r7,#0xb3

@@ -1,0 +1,21 @@
+; FUN_2c5041cc @ 0x2c5041cc size=42
+  push {r4,lr}
+  ldr r4,[r0,#0x0]
+  ldr r0,[r4,#0x0]
+  cbz r0,0x2c5041e6
+  ldr r3,[r0,#0x0]
+  ldr r1,[0x2c5041f8]
+  ldr r2,[r3,#0xc]
+  cmp r2,r1
+  bne 0x2c5041ee
+  ldr r3,[r3,#0x14]
+  ldr r2,[0x2c5041fc]
+  cmp r3,r2
+  bne 0x2c5041e8
+  pop {r4,pc}
+  pop.w {r4,lr}
+  bx r3
+  blx r2
+  ldr r0,[r4,#0x0]
+  ldr r3,[r0,#0x0]
+  b 0x2c5041de

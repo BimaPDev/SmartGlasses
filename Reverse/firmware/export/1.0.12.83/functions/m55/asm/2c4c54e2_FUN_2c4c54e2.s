@@ -1,0 +1,26 @@
+; FUN_2c4c54e2 @ 0x2c4c54e2 size=70
+  push {r4,r5,r6,lr}
+  vpush {d8}
+  ldrsb r4,[r3,r1]
+  sub sp,#0x18
+  subs r4,#0x1
+  cmp r4,#0x3
+  bhi 0x2c4c5530
+  vldr.32 s15,[pc,#0x84]
+  vmov.f32 s16,s0
+  ldr r6,[0x2c4c557c]
+  vmul.f32 s15,s0,s15
+  ldr r5,[0x2c4c5580]
+  ldr r3,[0x2c4c5584]
+  ldr r2,[0x2c4c5588]
+  vcvt.s32.f32 s15,s15
+  str r1,[sp,#0xc]
+  str r0,[sp,#0x8]
+  mov.w r1,#0x29c
+  movs r0,#0x4
+  vstr.32 s15,[sp,#0x10]
+  strd r5,r6,[sp,#0x0]
+  bl 0x2c673d88
+  add sp,#0x18
+  vpop {d8}
+  pop {r4,r5,r6,pc}

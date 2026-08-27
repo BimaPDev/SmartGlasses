@@ -1,0 +1,20 @@
+; FUN_2c4dd5fa @ 0x2c4dd5fa size=38
+  adds r3,r1,#0x1
+  beq 0x2c4dd618
+  cmp r1,#0xf
+  bhi 0x2c4dd61c
+  movs r3,#0x1
+  ldr r2,[r0,#0x38]
+  lsls r3,r1
+  tst r3,r2
+  bne 0x2c4dd61c
+  ldr r0,[r0,#0x28]
+  cmp r1,r0
+  ite hi
+  mov.hi r0,#0x0
+  mov.ls r0,#0x1
+  bx lr
+  movs r0,#0x1
+  bx lr
+  movs r0,#0x0
+  bx lr

@@ -1,0 +1,21 @@
+; FUN_2c4682dc @ 0x2c4682dc size=40
+  push {r2,r4,lr}
+  subs r4,#0x3d
+  asrs r6,r0,#0x1
+  movs r0,r0
+  push {r3,r4,r5,lr}
+  subs r4,#0x3d
+  asrs r7,r0,#0x1
+  movs r0,r0
+  push {r4,r5,r6,lr}
+  subs r4,#0x3d
+  asrs r0,r1,#0x1
+  movs r0,r0
+  push {r3,r5,r7,lr}
+  subs r4,#0x3d
+  asrs r1,r1,#0x1
+  movs r0,r0
+  push {r2,r3,r5,r6,r7,lr}
+  subs r4,#0x3d
+  asrs r0,r2,#0x1
+  movs r0,r0

@@ -1,0 +1,20 @@
+; FUN_2c44ab24 @ 0x2c44ab24 size=40
+  push {r2,r3,r4,r5,r7,lr}
+  asrs r6,r4,#0x8
+  blx 0x2cd2a5a8
+  movs r2,#0xe3
+  b 0x2c44acca
+  ldrh r0,[r7,#0x8]
+  strh r0,[r6,#0x24]
+  adds r2,#0x70
+  asrs r1,r1,#0x8
+  cmp r2,#0x79
+  strb r3,[r6,#0x4]
+  cmp r5,#0xf4
+  ldmia r5!,{r0,r1,r3,r6,r7}
+  ldr r0,[0x2c44adb8]
+  bcc 0x2c44adb8
+  adr r2,[0x2c44ae40]
+  strh r7,[r5,#0x32]
+  pop {r0,r3,r5,r6,r7}
+  bvc 0x2c44adb8

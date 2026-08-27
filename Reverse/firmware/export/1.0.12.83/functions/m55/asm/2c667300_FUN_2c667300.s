@@ -1,0 +1,21 @@
+; FUN_2c667300 @ 0x2c667300 size=66
+  push {r3,lr}
+  vpush {d8,d9}
+  vmov.f64 d8,d1
+  vmov.f64 d9,d0
+  bl 0x2c667690
+  vcmpe.f64 d8,#0
+  vmrs apsr,fpscr
+  bne 0x2c667326
+  vcmpe.f64 d9,d8
+  vmrs apsr,fpscr
+  bvc 0x2c66732c
+  vpop {d8,d9}
+  pop {r3,pc}
+  bl 0x2c6685e0
+  movs r3,#0x21
+  vldr.64 d7,[pc,#0x14]
+  vpop {d8,d9}
+  vdiv.f64 d0,d7,d7
+  str r3,[r0,#0x0]
+  pop {r3,pc}

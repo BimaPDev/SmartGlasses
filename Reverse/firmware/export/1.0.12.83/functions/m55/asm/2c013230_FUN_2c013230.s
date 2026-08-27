@@ -1,0 +1,25 @@
+; FUN_2c013230 @ 0x2c013230 size=66
+  push {lr}
+  mrs r3,basepri
+  cmp r3,#0x40
+  beq 0x2c013242
+  mov r1,pc
+  ldr r2,[0x2c013274]
+  strd r1,lr,[r2,#0x0]
+  movs r2,#0x40
+  msr basepri,r2
+  ldr r1,[0x2c013278]
+  ldr r2,[r1,#0x0]
+  cbz r0,0x2c01326c
+  orr r2,r2,#0x20000
+  str r2,[r1,#0x0]
+  cbnz r3,0x2c01325e
+  ldr r2,[0x2c013274]
+  mov.w r1,#0xffffffff
+  str r1,[r2,#0x0]
+  msr basepri,r3
+  movs r0,#0x0
+  pop.w lr
+  b.w 0x2c00f854
+  bic r2,r2,#0x20000
+  b 0x2c013252

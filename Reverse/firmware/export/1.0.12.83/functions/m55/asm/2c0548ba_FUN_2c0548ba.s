@@ -1,0 +1,26 @@
+; FUN_2c0548ba @ 0x2c0548ba size=54
+  push {r0,r3,r5,lr}
+  ldmia r2!,{r0,r7}
+  b 0x2c054ac0
+  lsrs r2,r2,#0xc
+  bhi 0x2c054924
+  subs r4,#0xe5
+  lsrs r0,r0,#0x10
+  adds r2,r0,#0x4
+  lsls r5,r1,#0x1
+  lsls r4,r1,#0x8
+  ands r2,sp,#0xf200f2
+  ldrsb r4,[r0,r0]
+  adds r7,r7,#0x1
+  asrs r6,r5,#0xa
+  lsls r1,r0,#0x8
+  b 0x2c054966
+  b 0x2c054ca4
+  movs r0,r1
+  str r6,[r5,#0x48]
+  lsrs r0,r4,#0xc
+  b 0x2c054cda
+  mrc2 p2,0x5,r5,cr3,cr0,0x2
+  ldrh r1,[r2,r3]
+  str r4,[r2,#0x24]
+  b 0x2c0548f0

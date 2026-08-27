@@ -1,0 +1,20 @@
+; FUN_2c3967d6 @ 0x2c3967d6 size=38
+  push {lr}
+  lsls r2,r7,#0x1
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0

@@ -1,0 +1,30 @@
+; FUN_2c4ad834 @ 0x2c4ad834 size=72
+  cmp r0,#0x7f
+  bhi 0x2c4ad8bc
+  tbb [pc,r0]
+  movs r0,#0x0
+  bx lr
+  ands r0,r1,#0x1f
+  it ne
+  mov.ne r0,#0x1
+  bx lr
+  ands r0,r1,#0xf
+  it ne
+  mov.ne r0,#0x1
+  bx lr
+  ands r0,r1,#0x3f
+  it ne
+  mov.ne r0,#0x1
+  bx lr
+  ldr r0,[0x2c4ad8fc]
+  ldr r3,[0x2c4ad900]
+  mul r0,r1,r0
+  cmp.w r3,r0, ror #0x4
+  ite cc
+  mov.cc r0,#0x1
+  mov.cs r0,#0x0
+  bx lr
+  ands r0,r1,#0x7
+  it ne
+  mov.ne r0,#0x1
+  bx lr

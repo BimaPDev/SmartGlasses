@@ -1,0 +1,21 @@
+; FUN_2c11a1f8 @ 0x2c11a1f8 size=42
+  push {r1,r2,r3,r5,r6,lr}
+  adds r5,#0x5
+  ldmia r3!,{r1,r2,r6,r7}
+  ldr r2,[r4,#0x34]
+  ldrsh r0,[r0,r0]
+  strh r1,[r5,#0x18]
+  strh r6,[r2,#0x8]
+  ldrh r6,[r6,#0x34]
+  asrs r0,r1,#0xc
+  asrs r3,r2,#0x8
+  str r2,[sp,#0x320]
+  lsls r3,r5,#0x5
+  str r6,[r1,#0x18]
+  subs r2,#0xd
+  ldc2 p1,cr5,[r9,#-0xf8]
+  subs r3,#0x8b
+  ldmia r0,{r0,r3,r4}
+  stmia r6!,{r0,r1,r2,r3,r7}
+  lsls r1,r0,#0x19
+  lsls r2,r1,#0x7

@@ -1,0 +1,22 @@
+; FUN_2c5d665e @ 0x2c5d665e size=50
+  push {r3,lr}
+  beq 0x2c5d6688
+  cbz r0,0x2c5d668c
+  cmp r0,#0x5
+  ite ne
+  mov.ne r0,#0x1
+  mov.eq r0,#0x3
+  uxtb r1,r1
+  bl 0x2c63fc88
+  cbnz r0,0x2c5d6676
+  pop {r3,pc}
+  bl 0x2c63bb94
+  cmp r0,#0x0
+  beq 0x2c5d6674
+  movs r0,#0x1
+  pop.w {r3,lr}
+  b.w 0x2c63b8cc
+  movs r0,#0x1
+  b 0x2c5d666c
+  movs r0,#0x2
+  b 0x2c5d666c

@@ -1,0 +1,19 @@
+; FUN_2c59aa20 @ 0x2c59aa20 size=46
+  push {r4,r5,lr}
+  mov r12,r0
+  mov.w lr,#0x1
+  sub sp,#0x14
+  adds r0,#0x3c
+  mov r5,r2
+  mov r4,r3
+  strb.w lr,[r12,#0x9c]
+  movs r1,#0x20
+  str r0,[sp,#0xc]
+  bl 0x2c62c3b0
+  ldr r2,[0x2c59aa50]
+  movs r1,#0x1f
+  ldr r0,[sp,#0xc]
+  strd r5,r4,[sp,#0x0]
+  bl 0x2c62dbd4
+  add sp,#0x14
+  pop {r4,r5,pc}

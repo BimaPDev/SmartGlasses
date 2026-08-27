@@ -1,0 +1,27 @@
+; FUN_2c51a324 @ 0x2c51a324 size=68
+  push {r4,lr}
+  ldr r4,[r0,#0xc]
+  bl 0x2c602410
+  ldr r3,[0x2c51a34c]
+  cmp r0,r3
+  beq 0x2c51a334
+  pop {r4,pc}
+  movs r1,#0x2
+  ldr r0,[r4,#0x20]
+  bl 0x2c606bb4
+  cmp r0,#0x0
+  beq 0x2c51a332
+  bl 0x2c5210a8
+  pop.w {r4,lr}
+  b.w 0x2c5218fc
+  push {r4,r5,r6,lr}
+  ldr r1,[0x2c521980]
+  sub sp,#0x8
+  ldr r5,[0x2c521984]
+  mov r4,r0
+  movw r2,#0x1b1
+  movs r0,#0x4
+  mov r3,r5
+  strd r1,r5,[sp,#0x0]
+  ldr r1,[0x2c521988]
+  bl 0x2c62c82c

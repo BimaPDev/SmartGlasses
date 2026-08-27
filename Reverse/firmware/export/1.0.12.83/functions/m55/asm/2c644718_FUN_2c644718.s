@@ -1,0 +1,19 @@
+; FUN_2c644718 @ 0x2c644718 size=40
+  push {r3,lr}
+  mov r3,r0
+  cbz r0,0x2c644724
+  ldrb r2,[r0,#0x0]
+  cmp r2,#0xf2
+  beq 0x2c644730
+  mov r0,r3
+  movs r1,#0x0
+  bl 0x2c643af8
+  movs r0,#0x0
+  pop {r3,pc}
+  ldrb r2,[r0,#0x1]
+  cmp r2,#0x2
+  bne 0x2c644724
+  movs r1,#0x1
+  bl 0x2c643af8
+  movs r0,#0x1
+  pop {r3,pc}

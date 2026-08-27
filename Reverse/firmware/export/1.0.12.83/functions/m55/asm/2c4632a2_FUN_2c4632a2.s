@@ -1,0 +1,20 @@
+; FUN_2c4632a2 @ 0x2c4632a2 size=38
+  lsrs r4,r5,#0x1a
+  strb r4,[r5,#0x15]
+  ldr r7,[sp,#0x2c8]
+  str r0,[sp,#0x2a4]
+  strh r2,[r6,r1]
+  str r4,[sp,#0x340]
+  ldrb r7,[r5,r0]
+  stmia r3,{r3}
+  b 0x2c463138
+  b 0x2c4639ba
+  push {r4,r6,r7,lr}
+  ldr r5,[r4,#0x60]
+  adds r4,r5,r2
+  ldmia r6!,{r2,r4,r5,r7}
+  str r0,[sp,#0x22c]
+  cbnz r6,0x2c4632e2
+  bhi 0x2c4631ea
+  bkpt 0x30
+  b 0x2c46344c

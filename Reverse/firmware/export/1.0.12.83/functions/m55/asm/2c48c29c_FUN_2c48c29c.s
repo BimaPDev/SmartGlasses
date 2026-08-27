@@ -1,0 +1,26 @@
+; FUN_2c48c29c @ 0x2c48c29c size=64
+  push {r4,lr}
+  sub sp,#0x18
+  add r3,sp,#0x18
+  stmdb r3,{r0,r1,r2}
+  ldrb.w r3,[sp,#0xc]
+  cmp r3,#0x1
+  beq 0x2c48c2b2
+  add sp,#0x18
+  pop {r4,pc}
+  ldrh.w r2,[sp,#0x14]
+  cmp r2,#0x6
+  bne 0x2c48c2ae
+  ldr r1,[0x2c48c30c]
+  ldr r0,[sp,#0x10]
+  bl 0x2c66960c
+  cmp r0,#0x0
+  bne 0x2c48c2ae
+  ldr r0,[0x2c48c310]
+  movw r1,#0x26a
+  ldr r4,[0x2c48c314]
+  ldr r3,[0x2c48c318]
+  ldr r2,[0x2c48c31c]
+  strd r0,r4,[sp,#0x0]
+  movs r0,#0x4
+  bl 0x2c673d88

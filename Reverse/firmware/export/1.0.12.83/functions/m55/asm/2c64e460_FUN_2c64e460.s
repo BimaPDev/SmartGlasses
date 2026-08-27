@@ -1,0 +1,24 @@
+; FUN_2c64e460 @ 0x2c64e460 size=46
+  ldrb r3,[r0,#0x0]
+  cbnz r3,0x2c64e472
+  ldr r3,[r0,#0x4]
+  ldr r3,[r3,#0x4]
+  cmp r3,r0
+  bne 0x2c64e472
+  ldr r3,[r3,#0xc]
+  mov r0,r3
+  bx lr
+  ldr r2,[r0,#0x8]
+  cbz r2,0x2c64e480
+  mov r3,r2
+  ldr r2,[r2,#0xc]
+  cmp r2,#0x0
+  bne 0x2c64e476
+  b 0x2c64e46e
+  ldr r3,[r0,#0x4]
+  ldr r2,[r3,#0x8]
+  cmp r2,r0
+  bne 0x2c64e46e
+  mov r0,r3
+  ldr r3,[r3,#0x4]
+  b 0x2c64e482

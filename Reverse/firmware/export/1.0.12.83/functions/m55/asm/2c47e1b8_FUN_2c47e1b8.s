@@ -1,0 +1,27 @@
+; FUN_2c47e1b8 @ 0x2c47e1b8 size=52
+  push {r3,r5,r6,r7,lr}
+  subs r4,#0x0
+  sxtb r0,r0
+  subs r4,#0x0
+  sxtb r4,r6
+  subs r4,#0x0
+  cbz r4,0x2c47e1e8
+  subs r4,#0x0
+  lsls r0,r7,#0x1
+  subs r4,#0x0
+  uxth r0,r3
+  subs r4,#0x0
+  uxth r4,r4
+  subs r4,#0x0
+  uxth r4,r6
+  subs r4,#0x0
+  uxtb r0,r1
+  subs r4,#0x0
+  ldrh r0,[r6,#0x0]
+  subs r5,#0x62
+  ldrb r4,[r2,r3]
+  subs r4,#0x15
+  ldrh r1,[r6,#0x0]
+  subs r5,#0x62
+  ldrh r4,[r4,#0x2]
+  subs r5,#0x62

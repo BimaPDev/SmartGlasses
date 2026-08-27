@@ -1,0 +1,24 @@
+; FUN_2c45279c @ 0x2c45279c size=48
+  push {r3,r5,r6,lr}
+  lsrs r6,r3,#0x17
+  ldrh r4,[r4,r4]
+  cbnz r2,0x2c4527ce
+  adr r2,[0x2c452a3c]
+  strh r1,[r6,#0x14]
+  strb r4,[r7,r6]
+  ldrsb r5,[r5,r1]
+  lsrs r5,r6,#0xd
+  strb r6,[r7,#0xc]
+  ldmia r7!,{r0,r1,r3,r5,r6}
+  ldmia r5,{r1,r2,r5,r7}
+  ldrh r5,[r1,#0x2a]
+  lsls r3,r1,#0x9
+  movs r5,#0x6c
+  vrshr.s64 d4,d16,#0x7
+  lsls r3,r4
+  asrs r4,r0,#0x10
+  lsrs r0,r0,#0x1a
+  ldrsb r4,[r0,r0]
+  cmp r5,#0x26
+  strh r1,[r5,#0x38]
+  strh r1,[r0,#0xa]

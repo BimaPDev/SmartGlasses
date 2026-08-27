@@ -1,0 +1,19 @@
+; FUN_2c4011e6 @ 0x2c4011e6 size=38
+  pop {r0,r1,r2,r3,r5,r6,r7}
+  b 0x2c4006b0
+  b 0x2c400d70
+  pop {r0,r2,r5,r6,r7}
+  ldr r5,[0x2c401228]
+  ldrsb r1,[r3,r1]
+  ldrd r8,sp,[r5,#-0x21c]
+  str r6,[sp,#0x398]
+  b 0x2c400b92
+  hlt 0x3a
+  itt al
+  b.al 0x2c400e56
+  add.al r7,sp,#0x204
+  adr r4,[0x2c4014ac]
+  b 0x2c401022
+  push {r2,r4,r7,lr}
+  strh r1,[r5,#0x3e]
+  b 0x2c40110c

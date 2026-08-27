@@ -1,0 +1,24 @@
+; FUN_2c668d28 @ 0x2c668d28 size=58
+  push {r4,r5,r6,r7,r8,lr}
+  mov r7,r1
+  add.w r4,r0,#0x48
+  movs r6,#0x0
+  ldrd r8,r5,[r4,#0x4]
+  subs.w r8,r8,#0x1
+  bpl 0x2c668d4a
+  ldr r4,[r4,#0x0]
+  cmp r4,#0x0
+  bne 0x2c668d34
+  mov r0,r6
+  pop.w {r4,r5,r6,r7,r8,pc}
+  ldrh r3,[r5,#0xc]
+  cmp r3,#0x1
+  bls 0x2c668d5e
+  ldrsh.w r3,[r5,#0xe]
+  adds r3,#0x1
+  beq 0x2c668d5e
+  mov r0,r5
+  blx r7
+  orrs r6,r0
+  adds r5,#0x68
+  b 0x2c668d38

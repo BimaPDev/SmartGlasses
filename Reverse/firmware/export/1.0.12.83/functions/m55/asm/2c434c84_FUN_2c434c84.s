@@ -1,0 +1,26 @@
+; FUN_2c434c84 @ 0x2c434c84 size=50
+  push {r0,r2,r3,r4,r6,lr}
+  ldrh r7,[r3,#0x1e]
+  cmp r2,#0x39
+  adds r3,#0xe4
+  adds r7,#0xb7
+  adr r4,[0x2c434db8]
+  adds r1,r3,r7
+  bvs 0x2c434c54
+  ldmia r7,{r1,r2,r3,r5,r7}
+  eors r7,r6
+  strb r0,[r6,#0x19]
+  mvns r6,r2
+  subs r0,#0xd8
+  str r4,[sp,#0x14c]
+  stmia r4,{r0,r3,r4,r5,r6,r7}
+  movs r3,#0x23
+  bhi 0x2c434d86
+  adds r0,#0x2c
+  pop {r1,r3,r5,r7}
+  strb r3,[r5,#0x17]
+  adds r3,r4,#0x0
+  movs r6,#0x3a
+  strh r0,[r0,#0xe]
+  ldrh r7,[r7,#0xc]
+  strb r6,[r2,#0x1]

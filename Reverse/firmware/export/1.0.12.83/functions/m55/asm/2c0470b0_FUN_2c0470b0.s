@@ -1,0 +1,26 @@
+; FUN_2c0470b0 @ 0x2c0470b0 size=52
+  push {r0,r1,r2,r4,r6,r7,lr}
+  beq 0x2c0470b0
+  asrs r0,r5,#0x10
+  cbz r0,0x2c0470fa
+  ldr r3,[0x2c04715c]
+  cmp r7,#0x2
+  ldcl p12,cr4,[r7],{0xff}
+  stmia r5,{r4,r5,r6,r7}
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0

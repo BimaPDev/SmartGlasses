@@ -1,0 +1,19 @@
+; FUN_2c5003a8 @ 0x2c5003a8 size=54
+  push {r4,lr}
+  mov r4,r0
+  ldrsb.w r1,[r0,#0x4]
+  ldr r0,[r0,#0x0]
+  bl 0x2c5fd428
+  ldr r0,[0x2c5003e0]
+  bl 0x2c63b584
+  bl 0x2c5d78f0
+  ldr r1,[0x2c5003e4]
+  bl 0x2c5d7a44
+  ldr.w r0,[r4,#0xa0]
+  movs r1,#0x1
+  bl 0x2c50032c
+  ldr.w r0,[r4,#0xa4]
+  movs r1,#0x0
+  bl 0x2c50032c
+  mov r0,r4
+  pop {r4,pc}

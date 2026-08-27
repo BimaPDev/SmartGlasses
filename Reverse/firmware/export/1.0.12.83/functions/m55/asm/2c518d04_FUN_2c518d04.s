@@ -1,0 +1,24 @@
+; FUN_2c518d04 @ 0x2c518d04 size=66
+  push {r4,lr}
+  ldrb.w r3,[r1,#0x5c]
+  mov r4,r1
+  and r3,r3,#0x7
+  subs r3,#0x1
+  cmp r3,#0x1
+  bls 0x2c518d22
+  mov r0,r4
+  ldr r1,[0x2c518d48]
+  pop.w {r4,lr}
+  b.w 0x2c62e838
+  ldr r0,[r1,#0x58]
+  bl 0x2c62bea8
+  ldrb.w r3,[r4,#0x5c]
+  movs r1,#0x3
+  movs r2,#0x0
+  mov r0,r4
+  bfi r3,r1,#0x0,#0x3
+  str r2,[r4,#0x58]
+  ldr r1,[0x2c518d48]
+  strb.w r3,[r4,#0x5c]
+  pop.w {r4,lr}
+  b.w 0x2c62e838

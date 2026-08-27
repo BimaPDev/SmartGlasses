@@ -1,0 +1,27 @@
+; FUN_2c6393b8 @ 0x2c6393b8 size=62
+  ldr r3,[r0,#0x28]
+  cmp r3,r1
+  beq 0x2c6393e0
+  ldrb.w r3,[r0,#0x64]
+  and r3,r3,#0x3
+  cmp r3,#0x2
+  ldr r3,[r0,#0x24]
+  it ne
+  str.ne r1,[r0,#0x30]
+  cmp r3,r2
+  strd r1,r2,[r0,#0x28]
+  bgt 0x2c6393e8
+  cmp r1,r3
+  it gt
+  str.gt r1,[r0,#0x24]
+  b.w 0x2c607df0
+  ldr r3,[r0,#0x2c]
+  cmp r3,r2
+  bne 0x2c6393be
+  bx lr
+  mov r3,r2
+  str r2,[r0,#0x24]
+  cmp r1,r3
+  it gt
+  str.gt r1,[r0,#0x24]
+  b.w 0x2c607df0

@@ -1,0 +1,24 @@
+; FUN_2c0673a8 @ 0x2c0673a8 size=50
+  push {r1,r2,r3,r5,lr}
+  tst r1,r0
+  ldmia r1!,{r2,r3,r4}
+  lsls r6,r7,#0x15
+  pop {r0,r1}
+  stc2 p7,cr3,[r2,#-0x2f8]!
+  ldrh r2,[r0,r0]
+  ldc2 p8,cr11,[r9,#-0x294]
+  ldrb r6,[r0,#0x18]
+  lsls r4,r6,#0x4
+  subs r0,r1,r4
+  ldrb r1,[r1,#0x1b]
+  adds r7,r6,r0
+  asrs r1,r5,#0xc
+  strb r2,[r7,#0x13]
+  ittet eq
+  ldmia.eq r3!,{r0,r2,r5}
+  ldr.eq r6,[sp,#0x18]
+  asr.ne r1,r0
+  strh.eq r4,[r1,r1]
+  ldmia r6,{r2,r3,r6,r7}
+  asrs r1,r1,#0x14
+  movs r3,#0xf7

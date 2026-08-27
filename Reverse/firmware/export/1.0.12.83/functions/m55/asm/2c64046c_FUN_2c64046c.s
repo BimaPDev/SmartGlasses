@@ -1,0 +1,36 @@
+; FUN_2c64046c @ 0x2c64046c size=74
+  ldr r3,[r0,#0x0]
+  cmp r3,#0x1
+  beq 0x2c64047c
+  cmp r3,#0x2
+  ldr r0,[0x2c6404b8]
+  it ne
+  mov.ne r0,#0x0
+  bx lr
+  ldr r1,[r0,#0x4]
+  ldr r2,[r0,#0xc]
+  cmp r1,r2
+  beq 0x2c6404ae
+  push {r4}
+  ldrb r4,[r0,#0x10]
+  ldr r3,[r0,#0x8]
+  cbnz r4,0x2c6404aa
+  cmp r1,r2
+  bge 0x2c6404b2
+  subs r3,r3,r1
+  ldr r1,[0x2c6404bc]
+  ldr r0,[0x2c6404c0]
+  adds r3,#0x1
+  it mi
+  add.mi r3,#0x1
+  cmp.w r2,r3, asr #0x1
+  it cc
+  mov.cc r0,r1
+  pop.w r4
+  bx lr
+  ldr r0,[0x2c6404c4]
+  b 0x2c6404a4
+  ldr r0,[0x2c6404c4]
+  bx lr
+  ldr r0,[0x2c6404c0]
+  b 0x2c6404a4

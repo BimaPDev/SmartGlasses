@@ -1,0 +1,22 @@
+; FUN_2c0f0c98 @ 0x2c0f0c98 size=44
+  push {r0,r4,r5,lr}
+  subs r5,#0xa5
+  stmia r2,{r0,r1,r2,r5}
+  subs r5,#0xa6
+  lsrs r1,r4,#0xb
+  subs r5,#0xa8
+  ldrh r2,[r3,#0x36]
+  subs r5,#0xa9
+  ldr r6,[0x2c0f0cf4]
+  subs r5,#0xab
+  ldr r1,[0x2c0f0ce8]
+  subs r5,#0xad
+  ldrb r2,[r1,#0x1d]
+  subs r5,#0xaf
+  bics sp,sp,#0xb1b1b1b1
+  ldr r4,[sp,#0x1bc]
+  subs r5,#0xb4
+  strh r4,[r2,#0x16]
+  subs r5,#0xb7
+  adr r4,[0x2c0f0e9c]
+  subs r5,#0xba

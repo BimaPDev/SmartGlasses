@@ -1,0 +1,19 @@
+; FUN_2c512d04 @ 0x2c512d04 size=42
+  push {r4,r5,lr}
+  ldr r5,[0x2c512e04]
+  sub sp,#0xc
+  ldr r2,[0x2c512e08]
+  mov r4,r0
+  ldr r1,[0x2c512e0c]
+  str r5,[sp,#0x0]
+  ldrb.w r12,[r0,#0x0]
+  ldr r3,[0x2c512e10]
+  cmp.w r12,#0x0
+  ite eq
+  mov.eq r0,r2
+  mov.ne r0,r1
+  movs r2,#0x4b
+  ldr r1,[0x2c512e14]
+  str r0,[sp,#0x4]
+  movs r0,#0x4
+  bl 0x2c62c82c

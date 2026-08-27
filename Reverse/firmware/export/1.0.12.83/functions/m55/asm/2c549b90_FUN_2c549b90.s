@@ -1,0 +1,26 @@
+; FUN_2c549b90 @ 0x2c549b90 size=62
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  bl 0x2c48e738
+  mov r4,r0
+  ldr r1,[0x2c549bd0]
+  ldr r2,[r5,#0x4]
+  bl 0x2c48e5b4
+  ldr r2,[r5,#0x1c]
+  ldr r1,[0x2c549bd4]
+  mov r0,r4
+  bl 0x2c48e5b4
+  ldr r2,[r5,#0x34]
+  ldr r1,[0x2c549bd8]
+  mov r0,r4
+  bl 0x2c48e5b4
+  ldr r2,[r5,#0x4c]
+  ldr r1,[0x2c549bdc]
+  mov r0,r4
+  bl 0x2c48e5b4
+  ldr r2,[r5,#0x64]
+  ldr r1,[0x2c549be0]
+  mov r0,r4
+  bl 0x2c48e5b4
+  mov r0,r4
+  pop {r3,r4,r5,pc}

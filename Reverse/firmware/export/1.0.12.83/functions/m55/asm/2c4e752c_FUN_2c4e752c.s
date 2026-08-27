@@ -1,0 +1,19 @@
+; FUN_2c4e752c @ 0x2c4e752c size=40
+  push {r3,r4,r5,lr}
+  ldr r5,[r1,#0x0]
+  mov r0,r5
+  bl 0x2c66c4ec
+  mov r4,r0
+  bl 0x2c4eab7c
+  mov r3,r0
+  uxtb r1,r4
+  mov r0,r5
+  ldr r3,[r3,#0x0]
+  blx r3
+  ldr r2,[0x2c4e7554]
+  ldr r3,[0x2c4e7558]
+  cmp r0,#0x0
+  ite ne
+  mov.ne r0,r2
+  mov.eq r0,r3
+  pop {r3,r4,r5,pc}

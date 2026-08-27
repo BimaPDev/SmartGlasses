@@ -1,0 +1,21 @@
+; FUN_2c5f1424 @ 0x2c5f1424 size=40
+  cbz r1,0x2c5f1448
+  cmp r3,r2
+  push {r3,r4,r5,r6,r7,lr}
+  mov r5,r2
+  ite lt
+  mov.lt r2,#0x0
+  mov.ge r2,#0x1
+  cbnz r2,0x2c5f1444
+  ldrb r7,[r1,r5]
+  mov r4,r1
+  mov r6,r0
+  strb r2,[r1,r5]
+  adds r0,r1,r3
+  blx r6
+  strb r7,[r4,r5]
+  pop {r3,r4,r5,r6,r7,pc}
+  movs r0,#0x0
+  pop {r3,r4,r5,r6,r7,pc}
+  movs r0,#0x0
+  bx lr

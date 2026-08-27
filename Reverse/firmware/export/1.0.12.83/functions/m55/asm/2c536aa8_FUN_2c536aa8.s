@@ -1,0 +1,27 @@
+; FUN_2c536aa8 @ 0x2c536aa8 size=66
+  push {r4,r5,lr}
+  mov r4,r0
+  sub sp,#0xc
+  mov r5,r1
+  adds r0,#0xcc
+  bl 0x2c530d48
+  movs r2,#0x1
+  mov r1,r0
+  mov r0,r4
+  bl 0x2c536824
+  mov r0,r5
+  bl 0x2c52b2a8
+  ldr r3,[0x2c536aec]
+  ldrb r3,[r3,#0x0]
+  cbz r3,0x2c536ad0
+  add sp,#0xc
+  pop {r4,r5,pc}
+  ldr r0,[0x2c536af0]
+  mov r2,r3
+  movs r1,#0x85
+  strd r0,r3,[sp,#0x0]
+  movs r0,#0x6
+  bl 0x2c5dc53c
+  add sp,#0xc
+  pop.w {r4,r5,lr}
+  b.w 0x2c5dc5e0

@@ -1,0 +1,22 @@
+; FUN_2c664e40 @ 0x2c664e40 size=50
+  push {r0,r1,r2,r3,r4,r5,r6,lr}
+  movs r4,#0x0
+  movs r3,#0x10
+  mov r5,r2
+  ldr r2,[r2,#0x0]
+  strd r3,r4,[sp,#0x8]
+  ldr r3,[r0,#0x0]
+  strd r4,r4,[sp,#0x0]
+  ldr r6,[r3,#0x18]
+  mov r3,sp
+  blx r6
+  ldrb.w r3,[sp,#0x4]
+  and r3,r3,#0x6
+  cmp r3,#0x6
+  ittet eq
+  ldr.eq r3,[sp,#0x0]
+  mov.eq r0,#0x1
+  mov.ne r0,r4
+  str.eq r3,[r5,#0x0]
+  add sp,#0x10
+  pop {r4,r5,r6,pc}

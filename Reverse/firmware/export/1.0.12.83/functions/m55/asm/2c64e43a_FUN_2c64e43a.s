@@ -1,0 +1,20 @@
+; FUN_2c64e43a @ 0x2c64e43a size=38
+  ldr r3,[r0,#0xc]
+  cbz r3,0x2c64e448
+  mov r0,r3
+  ldr r3,[r3,#0x8]
+  cmp r3,#0x0
+  bne 0x2c64e43e
+  bx lr
+  ldr r3,[r0,#0x4]
+  ldr r2,[r3,#0xc]
+  cmp r2,r0
+  bne 0x2c64e456
+  mov r0,r3
+  ldr r3,[r3,#0x4]
+  b 0x2c64e44a
+  ldr r2,[r0,#0xc]
+  cmp r3,r2
+  it ne
+  mov.ne r0,r3
+  bx lr

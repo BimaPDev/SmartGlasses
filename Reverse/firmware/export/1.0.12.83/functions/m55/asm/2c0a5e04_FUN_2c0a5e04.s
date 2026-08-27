@@ -1,0 +1,26 @@
+; FUN_2c0a5e04 @ 0x2c0a5e04 size=52
+  push {r0,r1,r3,r4,lr}
+  stmia r2!,{r1,r5}
+  cmp r0,#0xf4
+  cmp r2,#0x2
+  adr r5,[0x2c0a609c]
+  lsls r0,r4,#0x1d
+  str r2,[r4,#0x38]
+  asrs r4,r5,#0x18
+  asrs r2,r3,#0x1a
+  movs r4,#0xb2
+  strh r3,[r2,#0x8]
+  sbcs r8,r1,#0xe0
+  cmp r6,#0x0
+  lsls r3,r0,#0x3
+  asrs r5,r5,#0x18
+  ldr r6,[0x2c0a61a8]
+  lsls r4,r5,#0x2
+  lsrs r6,r3,#0x10
+  lsrs r0,r4,#0x1b
+  lsls r2,r2,#0x8
+  lsls r0,r2,#0x4
+  bkpt 0xbb
+  lsls r0,r3,#0x13
+  lsrs r2,r7,#0x1f
+  stmia r1!,{r0,r2,r3,r4,r5,r6,r7}

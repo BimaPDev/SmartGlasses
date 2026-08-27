@@ -1,0 +1,26 @@
+; FUN_2c5e4128 @ 0x2c5e4128 size=54
+  cmp r0,#0x2
+  beq 0x2c5e4164
+  cmp r0,#0x3
+  beq 0x2c5e4170
+  cmp r0,#0x1
+  beq 0x2c5e416a
+  ldr r3,[0x2c5e4178]
+  movs r2,#0x47
+  ldr r1,[0x2c5e417c]
+  push {r4,lr}
+  ldr r4,[0x2c5e4180]
+  sub sp,#0x8
+  strd r4,r0,[sp,#0x0]
+  movs r0,#0x3
+  ldr r4,[0x2c5e4184]
+  bl 0x2c62c82c
+  ldr r3,[0x2c5e418c]
+  ldr r0,[r3,#0x4]
+  bx lr
+  ldr r3,[0x2c5e418c]
+  ldr r0,[r3,#0x0]
+  bx lr
+  ldr r3,[0x2c5e418c]
+  ldr r0,[r3,#0x8]
+  bx lr

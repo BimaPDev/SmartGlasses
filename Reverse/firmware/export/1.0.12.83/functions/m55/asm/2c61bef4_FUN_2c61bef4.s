@@ -1,0 +1,20 @@
+; FUN_2c61bef4 @ 0x2c61bef4 size=48
+  push {r4,lr}
+  ldr r0,[0x2c61bf24]
+  mov r4,r1
+  bl 0x2c602110
+  cmp r0,#0x1
+  beq 0x2c61bf04
+  pop {r4,pc}
+  mov r0,r4
+  bl 0x2c602408
+  mov r3,r0
+  mov r0,r4
+  mov r4,r3
+  bl 0x2c602400
+  cmp r4,#0x29
+  bne 0x2c61bf02
+  movs r2,#0x0
+  ldrh r1,[r0,#0x2a]
+  pop.w {r4,lr}
+  b.w 0x2c61be3c

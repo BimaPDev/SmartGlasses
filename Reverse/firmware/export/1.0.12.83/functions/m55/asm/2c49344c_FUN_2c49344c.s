@@ -1,0 +1,66 @@
+; FUN_2c49344c @ 0x2c49344c size=172
+  push {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  add.w r11,r0,#0xffffffff
+  sub sp,#0x1c
+  uxtb.w r11,r11
+  cmp.w r11,#0x8
+  bls 0x2c49346c
+  mov.w r8,#0x0
+  mov r0,r8
+  add sp,#0x1c
+  pop.w {r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  ldr.w r9,[0x2c493558]
+  mov r4,r0
+  mov r5,r1
+  mov r6,r2
+  ldr.w r0,[r9,#0x0]
+  mov r7,r3
+  cbz r0,0x2c493486
+  movw r1,#0xbb8
+  bl 0x2c644044
+  ldr.w r10,[0x2c49355c]
+  lsls r3,r4,#0x4
+  add.w r2,r10,r4, lsl #0x4
+  str r3,[sp,#0x10]
+  ldrb r3,[r2,#0x1]
+  and r8,r3,#0xff
+  cmp r3,#0x0
+  bne 0x2c493514
+  ldr r3,[r2,#0x4]
+  cbz r3,0x2c4934de
+  mov r2,r6
+  mov r1,r5
+  mov r0,r4
+  blx r3
+  ldr r3,[0x2c493540]
+  str r0,[sp,#0x14]
+  movs r1,#0xf5
+  ldr.w r11,[r3,r11,lsl #0x2]
+  ldr r3,[0x2c493544]
+  str r0,[sp,#0x4]
+  movs r0,#0x4
+  str r3,[sp,#0x0]
+  ldr r2,[0x2c493548]
+  ldr r3,[0x2c49354c]
+  str.w r11,[sp,#0x8]
+  bl 0x2c673d88
+  ldr r3,[0x2c493540]
+  ldr.w r11,[r3,r11,lsl #0x2]
+  ldr r3,[0x2c493550]
+  movs r1,#0xfb
+  ldr r2,[0x2c493548]
+  movs r0,#0x4
+  str r3,[sp,#0x0]
+  str.w r11,[sp,#0x4]
+  ldr r3,[0x2c49354c]
+  bl 0x2c673d88
+  ldr r3,[0x2c493540]
+  movs r1,#0xef
+  ldr r2,[0x2c493548]
+  movs r0,#0x4
+  ldr.w r3,[r3,r11,lsl #0x2]
+  str r3,[sp,#0x4]
+  ldr r3,[0x2c493554]
+  str r3,[sp,#0x0]
+  ldr r3,[0x2c49354c]
+  bl 0x2c673d88

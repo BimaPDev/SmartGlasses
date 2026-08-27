@@ -1,0 +1,26 @@
+; FUN_2c556e34 @ 0x2c556e34 size=64
+  push {r3,r4,r5,r6,r7,lr}
+  mov r7,r2
+  mov r6,r3
+  bl 0x2c48e42c
+  cbz r0,0x2c556e4a
+  mov r4,r0
+  bl 0x2c48e82c
+  mov r5,r0
+  cbz r0,0x2c556e5a
+  cbz r6,0x2c556e6e
+  movs r2,#0x0
+  ldr r3,[0x2c556e74]
+  movs r5,#0x0
+  strd r2,r3,[r7,#0x0]
+  mov r0,r5
+  pop {r3,r4,r5,r6,r7,pc}
+  mov r0,r4
+  bl 0x2c48e83c
+  cbz r0,0x2c556e6e
+  mov r0,r5
+  ldrd r2,r3,[r4,#0x18]
+  strd r2,r3,[r7,#0x0]
+  pop {r3,r4,r5,r6,r7,pc}
+  mov.w r5,#0xffffffff
+  b 0x2c556e56

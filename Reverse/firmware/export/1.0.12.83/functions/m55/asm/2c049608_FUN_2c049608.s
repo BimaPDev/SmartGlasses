@@ -1,0 +1,25 @@
+; FUN_2c049608 @ 0x2c049608 size=52
+  strb r0,[r0,#0x0]
+  movs r0,r4
+  movs r0,#0x3e
+  movs r0,r4
+  movs r6,r7
+  movs r0,r4
+  adr r0,[0x2c049680]
+  movs r0,r4
+  stc2l p0,cr0,[r8,#-0x1e0]
+  ldmia r0,{r0,r1,r2,r5,r6,r7}
+  movs r3,r4
+  movs r2,r5
+  movs r7,#0xd9
+  b.w 0x2c8fddd4
+  push {r1,r6,lr}
+  lsls r4,r3,#0x7
+  adds r5,#0x46
+  lsls r0,r4,#0x3
+  lsrs r0,r4,#0x15
+  ldrh r4,[r3,r4]
+  blt 0x2c04957c
+  lsls r1,r2,#0x15
+  str r3,[sp,#0x108]
+  bge 0x2c0495c4

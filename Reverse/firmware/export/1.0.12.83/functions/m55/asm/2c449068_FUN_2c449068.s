@@ -1,0 +1,21 @@
+; FUN_2c449068 @ 0x2c449068 size=42
+  str r1,[r4,#0x4]
+  str r2,[sp,#0xc]
+  ldmdb r10,{r0,r2,r6,r7,r8,r9,r12,lr}
+  subs r0,#0xf9
+  ldrh r1,[r0,#0x32]
+  adr r4,[0x2c448f00]
+  str r0,[sp,#0x3bc]
+  lsrs r5,r7,#0x2
+  adr r2,[0x2c448e68]
+  cmp r5,#0xe
+  asrs r2,r1,#0x3
+  ldmia r4!,{r2,r3,r6,r7}
+  ldrb r6,[r1,#0x2]
+  strb r6,[r2,r7]
+  adr r1,[0x2c448fac]
+  subs r5,#0x15
+  b 0x2c448b8e
+  push {r0,r1,r2,r3,r6,r7,lr}
+  add r0,sp,#0x1a4
+  b 0x2c448e10

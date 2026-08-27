@@ -1,0 +1,25 @@
+; FUN_2c4f71d8 @ 0x2c4f71d8 size=62
+  push {r4,lr}
+  sub sp,#0x10
+  mrs r3,primask
+  cbnz r3,0x2c4f71e8
+  mrs r4,basepri
+  cbz r4,0x2c4f7210
+  bl 0x2c4b6c80
+  ldr r2,[0x2c4f7218]
+  ldr r0,[0x2c4f721c]
+  ldr r3,[0x2c4f7220]
+  ldrd r4,r1,[r2,#0x0]
+  ldr r2,[0x2c4f7224]
+  str r0,[sp,#0x0]
+  movs r0,#0x4
+  str r1,[sp,#0x8]
+  movs r1,#0x51
+  str r4,[sp,#0x4]
+  bl 0x2c673d88
+  ldr r1,[0x2c4f7228]
+  ldr r0,[0x2c4f722c]
+  bl 0x2c673ca8
+  bl 0x2c4b6c80
+  mov r2,r4
+  b 0x2c4f7208

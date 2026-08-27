@@ -1,0 +1,20 @@
+; FUN_2c446e4a @ 0x2c446e4a size=38
+  b 0x2c446fe8
+  iteee al
+  ldrb.al r0,[r6,r0]
+  push {r0,r1,r2,r3,r5,r7,lr}
+  svc 0x36
+  ldr r6,[r5,#0x10]
+  bne 0x2c446eb0
+  beq 0x2c446eb0
+  ldr r6,[r1,#0x40]
+  lsrs r5,r2,#0x17
+  ldr r7,[sp,#0x4c]
+  b 0x2c446ad0
+  ldr r7,[0x2c4472a0]
+  ldrsh r2,[r7,r7]
+  udf #0xfb
+  adds r4,#0xe8
+  subs r4,#0x28
+  ldr r6,[sp,#0x22c]
+  b 0x2c446d68

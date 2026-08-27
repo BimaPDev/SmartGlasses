@@ -1,0 +1,23 @@
+; FUN_2c0b2b4c @ 0x2c0b2b4c size=44
+  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  subs r7,#0x7f
+  add r3,sp,#0x3fc
+  subs r7,#0x7f
+  ldr r7,[sp,#0x3fc]
+  subs r7,#0x7f
+  str r1,[sp,#0x3fc]
+  subs r7,#0x7f
+  strh r7,[r7,#0x1e]
+  subs r7,#0x7f
+  strb r7,[r7,#0xf]
+  subs r7,#0x7f
+  str r7,[r7,#0x3c]
+  subs r7,#0x7f
+  str r7,[r7,r7]
+  subs r7,#0x7f
+  subs r5,#0xfe
+  subs r7,#0x7f
+  movs r7,#0xfe
+  subs r7,#0x7f
+  lsrs r6,r7,#0x1f
+  subs r7,#0x7f

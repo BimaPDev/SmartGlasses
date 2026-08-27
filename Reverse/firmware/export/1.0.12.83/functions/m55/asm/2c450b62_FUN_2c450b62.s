@@ -1,0 +1,25 @@
+; FUN_2c450b62 @ 0x2c450b62 size=48
+  push {r0,r5,r7,lr}
+  lsls r5,r6,#0xe
+  movs r1,#0xc3
+  lsls r6,r1,#0x9
+  cmp r1,#0x4f
+  str r3,[sp,#0x230]
+  str r2,[r3,r4]
+  asrs r1,r2,#0xb
+  subs r5,#0xc0
+  lsls r6,r4,#0x19
+  stmia r4,{r0,r3,r4,r6}
+  str r1,[sp,#0x1b0]
+  ldrh r7,[r5,#0xc]
+  adds r2,#0x35
+  str r4,[r3,#0x20]
+  ldr r1,[sp,#0x35c]
+  subs r0,#0x4c
+  strh r7,[r1,#0xe]
+  movs r6,#0x6f
+  ldr r7,[sp,#0x268]
+  subs r4,#0x4c
+  ldmia r0!,{r3,r4}
+  b 0x2c450f56
+  ldrsh r7,[r6,r3]

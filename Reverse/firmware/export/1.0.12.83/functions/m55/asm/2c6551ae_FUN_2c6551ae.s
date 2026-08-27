@@ -1,0 +1,20 @@
+; FUN_2c6551ae @ 0x2c6551ae size=44
+  push {r4,lr}
+  sub sp,#0x18
+  mov r4,r1
+  mov r1,r2
+  add r2,sp,#0x8
+  mov r0,sp
+  str r2,[sp,#0x0]
+  adds r2,r1,r3
+  bl 0x2c654a58
+  ldr r2,[sp,#0x20]
+  mov r1,sp
+  mov r0,r4
+  bl 0x2c65273c
+  mov r4,r0
+  mov r0,sp
+  bl 0x2c65e94c
+  mov r0,r4
+  add sp,#0x18
+  pop {r4,pc}

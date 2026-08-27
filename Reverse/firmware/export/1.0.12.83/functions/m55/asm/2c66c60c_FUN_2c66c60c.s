@@ -1,0 +1,19 @@
+; FUN_2c66c60c @ 0x2c66c60c size=52
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  mov r5,r1
+  mov r6,r2
+  vmov d0,r4,r5
+  bl 0x2c670dd0
+  cbz r6,0x2c66c63e
+  ubfx r3,r5,#0x14,#0xb
+  rsb.w r3,r3,#0x6b
+  cmp r3,#0x0
+  ble 0x2c66c63e
+  lsls r3,r3,#0x14
+  movs r0,#0x0
+  add.w r1,r3,#0x3fc00000
+  add.w r1,r1,#0x300000
+  vmov d7,r0,r1
+  vmul.f64 d0,d0,d7
+  pop {r4,r5,r6,pc}

@@ -1,0 +1,42 @@
+; FUN_2c46e820 @ 0x2c46e820 size=112
+  push {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  ldr r0,[0x2c46eafc]
+  sub sp,#0x1b4
+  ldr r1,[0x2c46eb00]
+  movs r3,#0x0
+  ldr r0,[r0,#0x0]
+  str r0,[sp,#0x1ac]
+  mov.w r0,#0x0
+  movs r2,#0xc4
+  str r3,[sp,#0xe4]
+  ldmia r1,{r0,r1}
+  str r0,[sp,#0xdc]
+  add r0,sp,#0xe8
+  strh.w r1,[sp,#0xe0]
+  mov r1,r3
+  bl 0x2c674268
+  add r3,sp,#0x1b0
+  add.w r1,sp,#0xe3
+  addw lr,sp,#0x1ab
+  rsb.w r12,r3,#0xcd
+  ldr r0,[0x2c46eb04]
+  add.w r2,r12,r1
+  umull r4,r3,r0,r2
+  lsrs r3,r3,#0x4
+  add.w r3,r3,r3, lsl #0x2
+  sub.w r3,r2,r3, lsl #0x2
+  strb.w r3,[r1,#0x1]!
+  cmp lr,r1
+  bne 0x2c46e858
+  ldr r3,[0x2c46eb08]
+  movs r6,#0x0
+  ldr r4,[0x2c46eb0c]
+  add.w r8,sp,#0x7c
+  movs r7,#0xc8
+  ldr r2,[0x2c46eb10]
+  movs r1,#0x81
+  movs r0,#0x4
+  str r6,[sp,#0x7c]
+  strd r3,r4,[sp,#0x0]
+  ldr r3,[0x2c46eb14]
+  bl 0x2c673d88

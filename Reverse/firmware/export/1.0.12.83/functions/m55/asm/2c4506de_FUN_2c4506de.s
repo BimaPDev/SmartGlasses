@@ -1,0 +1,26 @@
+; FUN_2c4506de @ 0x2c4506de size=52
+  eors r0,r2
+  ldrsh r7,[r3,r4]
+  lsls r4,r7,#0x7
+  adds r6,#0xe
+  ldrh r4,[r5,#0x28]
+  cmp r4,#0x4d
+  orrs r7,r1
+  adr r2,[0x2c4506dc]
+  strh r0,[r5,#0x22]
+  movs r7,#0x3a
+  blx 0x2c5486c8
+  adds r7,#0x8e
+  push {r0,r1,r2,r3,r6,r7,lr}
+  asrs r7,r4,#0x17
+  push {r0,r1,r3,r4,r6,lr}
+  bvc 0x2c4506c4
+  ble 0x2c450700
+  cmp r2,#0xe5
+  cmp r5,#0x5b
+  adr r7,[0x2c4509a4]
+  adds r4,#0x69
+  movs r5,#0xcc
+  b 0x2c450ed6
+  asrs r5,r1,#0x14
+  add r5,sp,#0x214

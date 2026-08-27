@@ -1,0 +1,24 @@
+; FUN_2c5127f8 @ 0x2c5127f8 size=66
+  push {r4,lr}
+  vpush {d8}
+  vmov s16,r0
+  bl 0x2c48e738
+  mov r4,r0
+  ldr r1,[0x2c512848]
+  vldr.64 d0,[pc,#0x34]
+  bl 0x2c48e518
+  vcvt.f64.u32 d0,s16
+  ldr r1,[0x2c51284c]
+  mov r0,r4
+  bl 0x2c48e518
+  ldr r1,[0x2c512850]
+  ldr r2,[0x2c512854]
+  mov r0,r4
+  bl 0x2c48e5b4
+  ldr r2,[0x2c512854]
+  ldr r1,[0x2c512858]
+  mov r0,r4
+  bl 0x2c48e5b4
+  mov r0,r4
+  vpop {d8}
+  pop {r4,pc}

@@ -1,0 +1,21 @@
+; FUN_2c0a7a82 @ 0x2c0a7a82 size=42
+  push {r1,r2,r3,r4,r5,lr}
+  mvns r6,r0
+  ldc p2,cr0,[r12,#0x2b4]
+  adds r5,r4,r7
+  ldr r7,[0x2c0a7a90]
+  uxth r2,r5
+  subs r3,r0,r0
+  asrs r0,r0,#0x20
+  lsrs r1,r0,#0x8
+  lsls r3,r1,#0x2
+  str r2,[sp,#0xf8]
+  asrs r1,r0,#0x8
+  b 0x2c0a7ad2
+  mov r8,r12
+  movs r4,r1
+  lsls r1,r6,#0x4
+  cmn r6,r7
+  asrs r0,r4,#0xe
+  str r3,[sp,#0x2b8]
+  lsrs r4,r0,#0x1

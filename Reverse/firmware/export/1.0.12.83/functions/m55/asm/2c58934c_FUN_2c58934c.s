@@ -1,0 +1,18 @@
+; FUN_2c58934c @ 0x2c58934c size=62
+  push {r3,lr}
+  bl 0x2c5a2398
+  bl 0x2c5a2410
+  bl 0x2c5a3544
+  bl 0x2c5a2398
+  bl 0x2c5a25f4
+  cbz r0,0x2c58937c
+  bl 0x2c5a2398
+  bl 0x2c5a25f4
+  bl 0x2c5aab48
+  bl 0x2c5a2398
+  bl 0x2c5a25f4
+  bl 0x2c5aab14
+  bl 0x2c5a2398
+  movs r1,#0x1
+  pop.w {r3,lr}
+  b.w 0x2c5a27d0

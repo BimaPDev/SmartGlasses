@@ -1,0 +1,19 @@
+; FUN_2c497ea8 @ 0x2c497ea8 size=42
+  push {r4,r5,lr}
+  ldr r4,[0x2c497ed8]
+  sub sp,#0xc
+  ldr r4,[r4,#0x0]
+  cbnz r4,0x2c497ebe
+  uxtb r1,r1
+  bl 0x2c497684
+  mov r0,r4
+  add sp,#0xc
+  pop {r4,r5,pc}
+  mov r5,r0
+  ldr r0,[0x2c497edc]
+  ldr r3,[0x2c497ee0]
+  movs r1,#0x40
+  ldr r2,[0x2c497ee4]
+  strd r0,r5,[sp,#0x0]
+  movs r0,#0x4
+  bl 0x2c673d88

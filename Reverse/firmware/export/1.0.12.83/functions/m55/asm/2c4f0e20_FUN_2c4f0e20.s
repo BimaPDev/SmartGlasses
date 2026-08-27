@@ -1,0 +1,34 @@
+; FUN_2c4f0e20 @ 0x2c4f0e20 size=88
+  push {r4,lr}
+  ldr r4,[r0,#0x0]
+  eor.w r12,r4,r1
+  tst.w r12,r3
+  beq 0x2c4f0e58
+  sbfx r3,r4,#0x0,#0xa
+  adds r3,#0x1
+  beq 0x2c4f0e58
+  ldr r3,[0x2c4f0e80]
+  ands r2,r1
+  and.w r12,r4,r3
+  ldr r3,[0x2c4f0e84]
+  orr.w r3,r12,r3
+  cmp r2,r3
+  beq 0x2c4f0e58
+  lsrs r3,r1,#0x14
+  and r2,r3,#0x700
+  cmp.w r2,#0x400
+  beq 0x2c4f0e5c
+  movs r0,#0x0
+  pop {r4,pc}
+  movs r0,#0x1
+  pop {r4,pc}
+  ubfx r2,r4,#0xa,#0xa
+  ubfx r1,r1,#0xa,#0xa
+  cmp r2,r1
+  bcc 0x2c4f0e54
+  sxtb r3,r3
+  mov lr,r0
+  movs r0,#0x0
+  add.w r3,r4,r3, lsl #0xa
+  str.w r3,[lr,#0x0]
+  pop {r4,pc}

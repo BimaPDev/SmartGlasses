@@ -1,0 +1,40 @@
+; FUN_2c6037b0 @ 0x2c6037b0 size=96
+  push {r3,r4,r5,r6,r7,lr}
+  ldrh r3,[r1,#0x22]
+  mov r4,r0
+  mov r6,r1
+  tst r3,#0x1f8
+  ubfx r0,r3,#0x3,#0x6
+  beq 0x2c6037de
+  cbz r4,0x2c6037d8
+  ldr r1,[r1,#0xc]
+  movs r3,#0x0
+  b 0x2c6037ce
+  cmp r3,r0
+  beq 0x2c6037de
+  ldr.w r2,[r1,r3,lsl #0x3]
+  adds r3,#0x1
+  cmp r2,r4
+  bne 0x2c6037ca
+  ldr r3,[0x2c603810]
+  ldrb r3,[r3,#0x0]
+  cbnz r3,0x2c603800
+  mov r0,r6
+  bl 0x2c6041fc
+  mov r7,r0
+  cbz r0,0x2c6037fe
+  movs r5,#0x0
+  ldr r3,[r6,#0x8]
+  mov r0,r4
+  ldr r3,[r3,#0x0]
+  ldr.w r1,[r3,r5,lsl #0x2]
+  adds r5,#0x1
+  bl 0x2c6037b0
+  cmp r7,r5
+  bne 0x2c6037ea
+  pop {r3,r4,r5,r6,r7,pc}
+  movw r2,#0xffff
+  mov.w r1,#0xf0000
+  mov r0,r6
+  bl 0x2c603540
+  b 0x2c6037de

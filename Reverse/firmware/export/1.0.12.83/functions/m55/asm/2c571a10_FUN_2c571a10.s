@@ -1,0 +1,23 @@
+; FUN_2c571a10 @ 0x2c571a10 size=50
+  push {r4,r5,r6,lr}
+  ldrd r4,r5,[r0,#0x10]
+  ldr r3,[0x2c571a44]
+  mov r6,r0
+  cmp r4,r5
+  str r3,[r0,#0x0]
+  beq 0x2c571a34
+  ldr.w r3,[r4],#0x4
+  mov r0,r3
+  cbz r3,0x2c571a2e
+  ldr r3,[r3,#0x0]
+  ldr r3,[r3,#0x8]
+  blx r3
+  cmp r5,r4
+  bne 0x2c571a20
+  ldr r5,[r6,#0x10]
+  cbz r5,0x2c571a3e
+  mov r1,r5
+  movs r0,#0x0
+  bl 0x2c472680
+  mov r0,r6
+  pop {r4,r5,r6,pc}

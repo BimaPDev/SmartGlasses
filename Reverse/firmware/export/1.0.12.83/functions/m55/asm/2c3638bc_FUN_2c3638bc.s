@@ -1,0 +1,20 @@
+; FUN_2c3638bc @ 0x2c3638bc size=38
+  push {lr}
+  subs r4,#0x33
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0

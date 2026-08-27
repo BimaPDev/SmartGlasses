@@ -1,0 +1,20 @@
+; FUN_2c646b44 @ 0x2c646b44 size=54
+  push {r4,lr}
+  mov r4,r0
+  bl 0x2c643aa8
+  mrs r3,ipsr
+  cbnz r3,0x2c646b58
+  mrs r3,primask
+  cbz r3,0x2c646b68
+  mvn r1,#0x5
+  movs r0,#0x0
+  bl 0x2c643a9c
+  mvn r0,#0x5
+  pop {r4,pc}
+  mrs r3,basepri
+  cmp r3,#0x0
+  bne 0x2c646b58
+  mov r0,r4
+  ldr.w r12,[0x2c646b7c]
+  svc 0x0
+  pop {r4,pc}

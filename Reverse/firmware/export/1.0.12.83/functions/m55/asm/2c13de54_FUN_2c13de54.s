@@ -1,0 +1,23 @@
+; FUN_2c13de54 @ 0x2c13de54 size=52
+  push {r3,lr}
+  movs r3,#0x1
+  ldr r1,[0x2c13de88]
+  ldr r2,[0x2c13de8c]
+  strb r3,[r1,#0x0]
+  str r3,[r2,#0x4]
+  cbnz r0,0x2c13de7a
+  ldr r2,[0x2c13de90]
+  strb r3,[r2,#0x1a]
+  ldr r3,[0x2c13de94]
+  ldr r0,[r3,#0x0]
+  bl 0x2c13e5b0
+  bl 0x2c13dd1c
+  pop.w {r3,lr}
+  b.w 0x2c13dd7c
+  cmp r0,#0x1
+  ite eq
+  mov.eq r2,#0x2
+  mov.ne r2,#0x3
+  ldr r3,[0x2c13de90]
+  strb r2,[r3,#0x1a]
+  b 0x2c13de66

@@ -1,0 +1,25 @@
+; FUN_2c455efa @ 0x2c455efa size=52
+  push {r0,r6,r7,lr}
+  ldrsb r1,[r4,r4]
+  str r0,[sp,#0x1c0]
+  lsls r0,r1,#0x18
+  ldmia r5!,{r4,r6}
+  adds r5,r3,#0x2
+  strb r2,[r5,#0x4]
+  lsls r3,r1,#0xf
+  add r7,sp,#0x14c
+  ldr r0,[r4,r1]
+  adds r1,r5,r4
+  stmia r0!,{r1,r4,r5,r6,r7}
+  add r2,sp,#0xac
+  cbz r3,0x2c455f20
+  cmp r5,#0xce
+  adr r4,[0x2c45613c]
+  strh r1,[r5,#0x6]
+  b.w 0x2c4eb17c
+  lsls r7,r3,#0x3
+  strh r6,[r1,r7]
+  rsb.w r12,r0,#0xcc
+  ldrb r5,[r7,#0xa]
+  cmp r7,r2
+  b 0x2c455af0

@@ -1,0 +1,19 @@
+; FUN_2c66c540 @ 0x2c66c540 size=40
+  push {r4,lr}
+  cbz r2,0x2c66c564
+  mov r3,r0
+  subs r1,#0x1
+  adds r4,r0,r2
+  ldrb.w r0,[r3],#0x1
+  ldrb.w r2,[r1,#0x1]!
+  cmp r0,r2
+  bne 0x2c66c55a
+  cmp r3,r4
+  bne 0x2c66c55e
+  subs r0,r0,r2
+  pop {r4,pc}
+  cmp r0,#0x0
+  bne 0x2c66c54a
+  b 0x2c66c55a
+  mov r0,r2
+  b 0x2c66c55c

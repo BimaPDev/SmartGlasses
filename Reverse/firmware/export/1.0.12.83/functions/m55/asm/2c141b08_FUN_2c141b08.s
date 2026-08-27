@@ -1,0 +1,27 @@
+; FUN_2c141b08 @ 0x2c141b08 size=64
+  push {r4,lr}
+  mov r4,r0
+  mrs r3,ipsr
+  cbnz r3,0x2c141b18
+  mrs r3,primask
+  cbz r3,0x2c141b2c
+  cbz r4,0x2c141b20
+  ldrb r3,[r4,#0x0]
+  cmp r3,#0xf6
+  beq 0x2c141b3c
+  mov r0,r4
+  movs r1,#0x0
+  bl 0x2c13eee8
+  movs r0,#0x0
+  pop {r4,pc}
+  mrs r3,basepri
+  cmp r3,#0x0
+  bne 0x2c141b18
+  ldr.w r12,[0x2c141b48]
+  svc 0x0
+  pop {r4,pc}
+  mov r0,r4
+  ldrh r1,[r4,#0xc]
+  bl 0x2c13eee8
+  ldrh r0,[r4,#0xc]
+  pop {r4,pc}

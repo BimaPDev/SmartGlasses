@@ -1,0 +1,25 @@
+; FUN_2c27986c @ 0x2c27986c size=50
+  push {r0,r2,r3,r4,r6,lr}
+  movs r0,r6
+  movs r0,r0
+  beq 0x2c279892
+  add sp,#0x28
+  strh r4,[r1,#0x0]
+  movs r0,r0
+  str r0,[sp,#0x18]
+  b.w 0x2c787894
+  stmia r5!,{r1,r3}
+  push {r0,r2,r3,r4,r6,lr}
+  movs r0,r6
+  lsrs r5,r5,#0x2
+  lsrs r2,r6,#0x1f
+  add sp,#0x1a8
+  strh r4,[r1,#0x0]
+  lsls r0,r0,#0x4
+  ldrsh r7,[r6,r7]
+  lsls r0,r6,#0x15
+  add sp,#0x68
+  strh r4,[r1,#0x0]
+  lsrs r0,r0,#0x4
+  subs r1,#0xf1
+  movs r0,r0

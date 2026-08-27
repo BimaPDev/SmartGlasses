@@ -1,0 +1,23 @@
+; FUN_2c62a508 @ 0x2c62a508 size=46
+  subs r1,#0x5
+  cmp r1,#0x9
+  bhi 0x2c62a51c
+  tbb [pc,r1]
+  movs r3,#0x0
+  str r3,[r0,#0x1c]
+  bx lr
+  ldr r3,[0x2c62a540]
+  str r3,[r0,#0x1c]
+  bx lr
+  ldr r3,[0x2c62a544]
+  str r3,[r0,#0x1c]
+  bx lr
+  ldr r3,[0x2c62a548]
+  str r3,[r0,#0x1c]
+  bx lr
+  ldr r3,[0x2c62a54c]
+  str r3,[r0,#0x1c]
+  bx lr
+  ldr r3,[0x2c62a550]
+  str r3,[r0,#0x1c]
+  bx lr

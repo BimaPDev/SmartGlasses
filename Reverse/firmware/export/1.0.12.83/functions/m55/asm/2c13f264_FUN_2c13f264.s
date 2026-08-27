@@ -1,0 +1,19 @@
+; FUN_2c13f264 @ 0x2c13f264 size=50
+  push {r4,lr}
+  mov r4,r0
+  bl 0x2c13ee9c
+  mrs r3,ipsr
+  cbnz r3,0x2c13f27e
+  mrs r3,primask
+  cbnz r3,0x2c13f27e
+  mrs r3,basepri
+  cbz r3,0x2c13f28c
+  mvn r1,#0x5
+  movs r0,#0x0
+  bl 0x2c13ee98
+  movs r0,#0x0
+  pop {r4,pc}
+  mov r0,r4
+  ldr.w r12,[0x2c13f298]
+  svc 0x0
+  pop {r4,pc}

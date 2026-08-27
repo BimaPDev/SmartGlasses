@@ -1,0 +1,22 @@
+; FUN_2c1380b8 @ 0x2c1380b8 size=54
+  push {r4,r5,r6,r7,lr}
+  movs r4,#0x0
+  movs r6,#0x1
+  sub sp,#0x14
+  strd r4,r4,[sp,#0x8]
+  strd r4,r6,[sp,#0x0]
+  mov r5,r0
+  mov r4,r1
+  ldrh.w r7,[sp,#0x2c]
+  bl 0x2c137ca4
+  cbnz r0,0x2c1380ea
+  str r0,[sp,#0xc]
+  str r0,[sp,#0x0]
+  mov r3,r7
+  mov r1,r4
+  mov r0,r5
+  strd r6,r6,[sp,#0x4]
+  ldr r2,[sp,#0x28]
+  bl 0x2c137e9c
+  add sp,#0x14
+  pop {r4,r5,r6,r7,pc}

@@ -1,0 +1,19 @@
+; FUN_2c4030bc @ 0x2c4030bc size=36
+  strh r4,[r7,#0x4]
+  str r0,[sp,#0x394]
+  ldrh r6,[r4,#0x36]
+  b 0x2c401aa4
+  uxth r7,r6
+  pop {r0,r2,r5,r6,r7}
+  b 0x2c401f54
+  ldrh r5,[r4,#0x2e]
+  b 0x2c40224c
+  ldr r4,[sp,#0x2ec]
+  pop {r0,r2,r5,r6,r7}
+  b 0x2c40271c
+  push {r1,r2,r5,r6,r7,lr}
+  cmp r6,#0x81
+  cmp r6,#0x2e
+  movs r0,r0
+  add r5,sp,#0x398
+  b 0x2c402c10

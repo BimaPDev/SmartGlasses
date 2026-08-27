@@ -1,0 +1,24 @@
+; FUN_2c4c9eb8 @ 0x2c4c9eb8 size=66
+  ldrh r3,[r1,#0x2]
+  cbz r3,0x2c4c9ef8
+  mov r3,r1
+  mov.w r12,#0x0
+  ldr r2,[r3,#0x14]
+  adds r0,#0x14
+  adds r3,#0x18
+  add.w r12,r12,#0x1
+  rsbs r2,r2
+  str.w r2,[r0,#-0x14]
+  ldr r2,[r3,#0x0]
+  rsbs r2,r2
+  str.w r2,[r0,#-0x10]
+  ldr.w r2,[r3,#-0x14]
+  str.w r2,[r0,#-0x4]
+  ldr.w r2,[r3,#-0x10]
+  str.w r2,[r0,#-0xc]
+  ldr.w r2,[r3,#-0xc]
+  str.w r2,[r0,#-0x8]
+  ldrh r2,[r1,#0x2]
+  cmp r12,r2
+  blt 0x2c4c9ec2
+  bx lr

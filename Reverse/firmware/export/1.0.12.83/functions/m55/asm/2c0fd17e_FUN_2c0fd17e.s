@@ -1,0 +1,25 @@
+; FUN_2c0fd17e @ 0x2c0fd17e size=54
+  ldr r7,[r7,#0x44]
+  stmia r7,{r2,r6,r7}
+  subs r1,#0x83
+  asrs r7,r3,#0x14
+  asrs r0,r6,#0x19
+  adr r3,[0x2c0fccd8]
+  stmia r0!,{r2,r4,r5,r6}
+  ldrb r7,[r0,#0x1f]
+  asrs r1,r6,#0x13
+  ldrd lr,r2,[r2,#-0xd0]
+  lsls r1,r5,#0x13
+  ldrd r1,r2,[r2,#0x90]!
+  strh r1,[r5,#0x36]
+  movs r5,r4
+  adds r6,r7,r4
+  adds r0,#0xa
+  vld3.8 {d22[0x0],d23[0x0],d24[0x0]},[r4]
+  cmp r0,#0xaa
+  asrs r1,r4,#0xb
+  add r4,sp,#0x110
+  strb r5,[r7,#0x12]
+  udf #0x9
+  push {r0,r3,r4,r6,lr}
+  b 0x2c0fcbce

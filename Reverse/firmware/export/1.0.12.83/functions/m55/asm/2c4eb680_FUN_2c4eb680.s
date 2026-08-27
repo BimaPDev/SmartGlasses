@@ -1,0 +1,22 @@
+; FUN_2c4eb680 @ 0x2c4eb680 size=52
+  push {r4,lr}
+  ldr r4,[0x2c4eb6b4]
+  ldr r0,[r4,#0x0]
+  cbz r0,0x2c4eb6b2
+  ldr r1,[0x2c4eb6b8]
+  bl 0x2c60251c
+  ldr r1,[0x2c4eb6bc]
+  ldr r0,[r4,#0x0]
+  bl 0x2c60251c
+  movs r1,#0x2
+  ldr r0,[r4,#0x0]
+  bl 0x2c606abc
+  movs r1,#0x4
+  ldr r0,[r4,#0x0]
+  bl 0x2c606abc
+  movs r1,#0x2e
+  ldr r0,[r4,#0x0]
+  bl 0x2c606b80
+  movs r3,#0x0
+  str r3,[r4,#0x0]
+  pop {r4,pc}

@@ -1,0 +1,19 @@
+; FUN_2c470914 @ 0x2c470914 size=44
+  push {r4,lr}
+  ldr r4,[0x2c470940]
+  movs r0,#0x0
+  bl 0x2c471770
+  ldrb r3,[r4,#0x0]
+  cbnz r3,0x2c470928
+  movs r3,#0x1
+  strb r3,[r4,#0x0]
+  pop {r4,pc}
+  bl 0x2c478b68
+  cmp r0,#0x0
+  beq 0x2c470926
+  ldr.w r3,[r0,#0xf8]
+  blx r3
+  bl 0x2c674368
+  movs r3,#0x0
+  strb r3,[r4,#0x0]
+  pop {r4,pc}

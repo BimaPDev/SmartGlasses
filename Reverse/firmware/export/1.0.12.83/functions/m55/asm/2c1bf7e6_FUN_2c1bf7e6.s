@@ -1,0 +1,24 @@
+; FUN_2c1bf7e6 @ 0x2c1bf7e6 size=50
+  push {r0,r1,lr}
+  subs r7,r7,r3
+  str r0,[r2,#0x4]
+  adcs r0,r5
+  movs r1,#0x83
+  lsrs r6,r0,#0x10
+  adds r4,r0,r2
+  asrs r2,r4,#0x1c
+  lsrs r6,r7,#0x3
+  lsls r0,r0,#0x1
+  movs r1,r4
+  strh r0,[r0,#0x20]
+  lsls r0,r0,#0x8
+  vhadd.u16 d0,d15,d8
+  movs r0,#0x0
+  movs r0,r0
+  str r0,[r0,#0x0]
+  lsls r0,r0,#0x4
+  lsls r0,r0,#0x1e
+  vshr.u32 d18,d0,#0x1
+  ands r4,r0
+  asrs r0,r0,#0x3
+  movs r6,r0

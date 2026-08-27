@@ -1,0 +1,21 @@
+; FUN_2c0173cc @ 0x2c0173cc size=46
+  push {r3,lr}
+  bhi 0x2c0173f2
+  ldr r3,[0x2c0173fc]
+  movs r1,#0x2c
+  mla r3,r1,r0,r3
+  ldrb r0,[r3,#0x4]
+  cbz r0,0x2c0173f2
+  ldr r3,[r3,#0x24]
+  cbz r3,0x2c0173f0
+  movs r0,#0x0
+  ldr r3,[r3,#0x1c]
+  adds r0,#0x1
+  cmp r3,#0x0
+  bne 0x2c0173e2
+  clz r0,r0
+  lsrs r0,r0,#0x5
+  pop {r3,pc}
+  ldr r1,[0x2c017400]
+  ldr r0,[0x2c017404]
+  bl 0x2c00dfac

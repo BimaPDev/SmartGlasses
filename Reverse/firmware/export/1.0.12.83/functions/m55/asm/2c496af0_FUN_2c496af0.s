@@ -1,0 +1,20 @@
+; FUN_2c496af0 @ 0x2c496af0 size=56
+  push {r4,lr}
+  bl 0x2c4be79c
+  subs r4,r0,#0x0
+  it ne
+  mov.ne r4,#0x1
+  bl 0x2c673f28
+  cbz r0,0x2c496b06
+  orr r4,r4,#0x2
+  bl 0x2c4bf1b0
+  cbz r0,0x2c496b10
+  orr r4,r4,#0x4
+  bl 0x2c673a38
+  cbz r0,0x2c496b1a
+  orr r4,r4,#0x8
+  bl 0x2c673cd8
+  cbz r0,0x2c496b24
+  orr r4,r4,#0x10
+  mov r0,r4
+  pop {r4,pc}

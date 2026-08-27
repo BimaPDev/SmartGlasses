@@ -1,0 +1,21 @@
+; FUN_2c55f2a8 @ 0x2c55f2a8 size=52
+  push {r4,lr}
+  ldrsh.w r2,[r0,#0x1e]
+  sub sp,#0x8
+  mov r4,r0
+  ldr r0,[r0,#0x20]
+  subs r2,#0x1
+  mla r1,r3,r2,r1
+  subs r1,#0x1
+  bl 0x2c6041dc
+  movs r3,#0x0
+  mov r1,r0
+  movs r2,#0x9
+  ldr r0,[r4,#0x24]
+  str r3,[sp,#0x0]
+  bl 0x2c608808
+  movs r1,#0x1
+  ldr r0,[r4,#0x24]
+  add sp,#0x8
+  pop.w {r4,lr}
+  b.w 0x2c606abc

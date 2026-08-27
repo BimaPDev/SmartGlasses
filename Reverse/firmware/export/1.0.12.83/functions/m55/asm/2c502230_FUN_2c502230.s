@@ -1,0 +1,23 @@
+; FUN_2c502230 @ 0x2c502230 size=64
+  push {r4,lr}
+  ldr.w r2,[r0,#0x16c]
+  mov r4,r0
+  ldr r3,[0x2c502270]
+  ldr.w r2,[r2,#0xa0]
+  ldr r0,[r0,#0x2c]
+  ldr r1,[r2,#0x4]
+  umull r3,r1,r3,r1
+  lsrs r1,r1,#0x5
+  bl 0x2c62be58
+  ldr.w r3,[r4,#0x16c]
+  movs r2,#0x0
+  movs r0,#0x0
+  str.w r2,[r4,#0x170]
+  mov r1,r2
+  ldr.w r3,[r3,#0xa0]
+  str r0,[r3,#0x8]
+  ldr r0,[r4,#0x10]
+  bl 0x2c639338
+  ldr r0,[r4,#0x2c]
+  pop.w {r4,lr}
+  b.w 0x2c62be74

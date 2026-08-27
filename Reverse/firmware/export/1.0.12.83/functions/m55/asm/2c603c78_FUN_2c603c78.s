@@ -1,0 +1,24 @@
+; FUN_2c603c78 @ 0x2c603c78 size=68
+  push {r4,r5,lr}
+  ldrh.w r12,[r0,#0x22]
+  tst r12,#0x1f8
+  ubfx r4,r12,#0x3,#0x6
+  beq 0x2c603cae
+  ldr r0,[r0,#0xc]
+  mov.w r12,#0x0
+  ldrb.w lr,[r0,#0x7]
+  add.w r12,r12,#0x1
+  tst lr,#0x1
+  beq 0x2c603ca6
+  ldr r5,[r0,#0x4]
+  ubfx lr,r5,#0x0,#0x18
+  cmp lr,r3
+  beq 0x2c603cb2
+  cmp r12,r4
+  add.w r0,r0,#0x8
+  bne 0x2c603c8e
+  movs r0,#0x0
+  pop {r4,r5,pc}
+  ldr r0,[r0,#0x0]
+  pop.w {r4,r5,lr}
+  b.w 0x2c62b108

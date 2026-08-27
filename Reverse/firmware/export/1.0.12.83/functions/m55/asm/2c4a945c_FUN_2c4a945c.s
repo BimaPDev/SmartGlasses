@@ -1,0 +1,19 @@
+; FUN_2c4a945c @ 0x2c4a945c size=42
+  push {r4,lr}
+  mov r4,r3
+  sub sp,#0x10
+  movs r3,#0x1
+  mov r12,r1
+  str r2,[sp,#0x0]
+  mov r1,r0
+  add.w r2,sp,#0xf
+  mov r0,r3
+  str r4,[sp,#0x4]
+  strb.w r12,[sp,#0xf]
+  bl 0x2c4bd450
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  rsbs r0,r0
+  add sp,#0x10
+  pop {r4,pc}

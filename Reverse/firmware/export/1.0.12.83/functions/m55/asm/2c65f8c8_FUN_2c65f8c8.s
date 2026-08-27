@@ -1,0 +1,17 @@
+; FUN_2c65f8c8 @ 0x2c65f8c8 size=32
+  ldr r3,[r0,#0x8]
+  ldr r2,[r3,#0x48]
+  str r2,[r1,#0x0]
+  ldr r2,[r3,#0x4c]
+  str r2,[r1,#0x4]
+  ldr r2,[r3,#0x50]
+  str r2,[r1,#0x8]
+  ldr r2,[r3,#0x54]
+  str r2,[r1,#0xc]
+  ldr r2,[r3,#0x58]
+  str r2,[r1,#0x10]
+  ldr r2,[r3,#0x5c]
+  str r2,[r1,#0x14]
+  ldr r3,[r3,#0x60]
+  str r3,[r1,#0x18]
+  bx lr

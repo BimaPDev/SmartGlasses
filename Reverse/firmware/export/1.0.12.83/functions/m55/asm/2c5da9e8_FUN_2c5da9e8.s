@@ -1,0 +1,23 @@
+; FUN_2c5da9e8 @ 0x2c5da9e8 size=60
+  ldrb.w r0,[r0,#0x4c]
+  bx lr
+  push {r4,lr}
+  bl 0x2c525874
+  bl 0x2c5259c0
+  mov r4,r0
+  cbz r0,0x2c5da9fe
+  bl 0x2c526780
+  cbz r0,0x2c5daa00
+  movs r0,#0x1
+  pop {r4,pc}
+  mov r0,r4
+  bl 0x2c52674c
+  cmp r0,#0x0
+  bne 0x2c5da9fc
+  mov r0,r4
+  bl 0x2c526cbc
+  cmp r0,#0x0
+  bne 0x2c5da9fc
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x2c526cb4

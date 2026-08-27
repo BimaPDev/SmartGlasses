@@ -1,0 +1,27 @@
+; FUN_2c4bed94 @ 0x2c4bed94 size=64
+  push {lr}
+  mov r1,r0
+  sub sp,#0x24
+  ldr r0,[0x2c4bedd4]
+  movs r3,#0x1
+  movs r2,#0x0
+  ldr r0,[r0,#0x0]
+  str r0,[sp,#0x1c]
+  mov.w r0,#0x0
+  add r0,sp,#0xc
+  str r1,[sp,#0x4]
+  bl 0x2c4be910
+  cbnz r0,0x2c4bedbc
+  mov r3,r0
+  ldr r1,[sp,#0x4]
+  add r0,sp,#0xc
+  bl 0x2c4bea78
+  ldr r3,[0x2c4bedd4]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x1c]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x2c4bedd0
+  add sp,#0x24
+  pop.w pc
+  bl 0x2c674828

@@ -1,0 +1,19 @@
+; FUN_2c22df82 @ 0x2c22df82 size=38
+  push {r0,r2,r6,lr}
+  lsls r4,r0,#0x1
+  lsrs r6,r2,#0x18
+  lsls r0,r0,#0xa
+  str r0,[sp,#0x2bc]
+  svc 0x4
+  lsls r2,r2,#0x2
+  lsrs r0,r0,#0x18
+  itttt hi
+  strb.hi r2,[r4,#0x1a]
+  lsl.hi r0,r0,#0x10
+  strb.hi r7,[r1,#0x3]
+  lsr.hi r0,r0,#0x18
+  str r0,[r0,r6]
+  and r1,r9,#0x244000
+  movs r0,#0x5
+  lsrs r0,r0,#0x18
+  lsls r0,r0,#0x6

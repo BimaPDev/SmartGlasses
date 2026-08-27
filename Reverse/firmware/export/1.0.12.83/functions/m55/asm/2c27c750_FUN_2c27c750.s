@@ -1,0 +1,20 @@
+; FUN_2c27c750 @ 0x2c27c750 size=42
+  push {r4,r5,r6,r7,lr}
+  str r6,[r0,#0x0]
+  lsls r0,r0,#0x14
+  lsls r0,r6,#0x2
+  push {r2}
+  blx 0x2c86c768
+  lsrs r0,r0,#0xc
+  lsls r0,r6,#0x2
+  adr r4,[0x2c27c77c]
+  sub sp,#0x1d4
+  add.w pc,r0,#0x80000
+  lsls r0,r0,#0x1
+  strb r1,[r1,#0x10]
+  str r1,[r7,r3]
+  strh r0,[r0,#0x20]
+  ldr r4,[sp,#0x0]
+  movs r0,r0
+  adds r5,#0xd
+  lsrs r0,r6,#0x1b

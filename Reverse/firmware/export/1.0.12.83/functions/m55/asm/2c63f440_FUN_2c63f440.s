@@ -1,0 +1,21 @@
+; FUN_2c63f440 @ 0x2c63f440 size=50
+  push {r4,r5,r6,r7,lr}
+  ldr r3,[0x2c63f6a4]
+  sub sp,#0x4c
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x44]
+  mov.w r3,#0x0
+  ldr r3,[r0,#0x4]
+  subs r3,#0xa
+  cmp r3,#0x3
+  bhi 0x2c63f470
+  tbb [pc,r3]
+  ldr r3,[0x2c63f6a4]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x44]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne.w 0x2c63f5b2
+  add sp,#0x4c
+  pop {r4,r5,r6,r7,pc}
+  bl 0x2c674828

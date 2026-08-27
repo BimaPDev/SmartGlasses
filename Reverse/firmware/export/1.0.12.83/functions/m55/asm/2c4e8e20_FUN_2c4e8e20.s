@@ -1,0 +1,21 @@
+; FUN_2c4e8e20 @ 0x2c4e8e20 size=46
+  push {r4,lr}
+  sub sp,#0x8
+  ldr r0,[r1,#0x0]
+  bl 0x2c4efeec
+  mov r4,r0
+  bl 0x2c4eab7c
+  mov r3,r0
+  uxtb r0,r4
+  ldr r3,[r3,#0x44]
+  blx r3
+  str r0,[sp,#0x4]
+  bl 0x2c4e9354
+  mov r3,r0
+  ldr r1,[sp,#0x4]
+  ldr r3,[r3,#0x58]
+  ldr r0,[0x2c4e8e50]
+  blx r3
+  ldr r0,[0x2c4e8e54]
+  add sp,#0x8
+  pop {r4,pc}

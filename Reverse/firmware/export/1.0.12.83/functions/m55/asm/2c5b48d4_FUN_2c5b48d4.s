@@ -1,0 +1,21 @@
+; FUN_2c5b48d4 @ 0x2c5b48d4 size=52
+  push {r4,r5,lr}
+  mov r4,r1
+  sub sp,#0xc
+  ldr r1,[r1,#0x0]
+  mov r5,r2
+  bl 0x2c48e424
+  bl 0x2c48de20
+  vcmpe.f64 d0,d0
+  vmrs apsr,fpscr
+  bvs 0x2c5b48f4
+  add sp,#0xc
+  pop {r4,r5,pc}
+  ldr r0,[r4,#0x0]
+  movs r2,#0x30
+  ldr r1,[0x2c5b4914]
+  ldr r3,[0x2c5b4918]
+  strd r1,r0,[sp,#0x0]
+  ldr r1,[0x2c5b491c]
+  movs r0,#0x4
+  bl 0x2c62c82c

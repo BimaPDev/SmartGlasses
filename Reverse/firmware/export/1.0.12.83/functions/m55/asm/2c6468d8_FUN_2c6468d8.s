@@ -1,0 +1,21 @@
+; FUN_2c6468d8 @ 0x2c6468d8 size=50
+  push {r4,lr}
+  mrs r3,ipsr
+  cbnz r3,0x2c6468e6
+  mrs r3,primask
+  cbz r3,0x2c6468f8
+  ldr r3,[0x2c64690c]
+  ldr r4,[r3,#0x14]
+  mov r0,r4
+  bl 0x2c643a58
+  cbz r4,0x2c6468f4
+  ldr r4,[r4,#0x4]
+  mov r0,r4
+  pop {r4,pc}
+  mrs r3,basepri
+  cmp r3,#0x0
+  bne 0x2c6468e6
+  ldr.w r12,[0x2c646910]
+  svc 0x0
+  mov r4,r0
+  b 0x2c6468f0

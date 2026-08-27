@@ -1,0 +1,21 @@
+; FUN_2c62b068 @ 0x2c62b068 size=50
+  subs r0,#0x3
+  cmp r0,#0x69
+  bhi 0x2c62b0e0
+  tbb [pc,r0]
+  movs r0,#0xff
+  bx lr
+  movs r0,#0x0
+  bx lr
+  mov.w r0,#0xff000000
+  bx lr
+  movw r0,#0x1fff
+  bx lr
+  movs r0,#0xf
+  bx lr
+  ldr r0,[0x2c62b104]
+  bx lr
+  mov.w r0,#0x100
+  bx lr
+  mov.w r0,#0xffffffff
+  bx lr

@@ -1,0 +1,15 @@
+; FUN_2c15e6c4 @ 0x2c15e6c4 size=28
+  push {r0,r1,r5,r6,r7,lr}
+  cmp r4,#0x4e
+  adds r2,#0x59
+  cmp r4,#0x4f
+  movs r7,#0xfd
+  cmp r4,#0x4f
+  cbnz r7,0x2c15e6dc
+  cmp r4,#0x4e
+  asrs r5,r5,#0x5
+  cmp r4,#0x4f
+  cmp r4,#0x85
+  cmp r4,#0x4f
+  asrs r5,r6,#0x1
+  cmp r4,#0x4f

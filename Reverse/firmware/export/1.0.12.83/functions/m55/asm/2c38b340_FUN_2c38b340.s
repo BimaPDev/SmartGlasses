@@ -1,0 +1,20 @@
+; FUN_2c38b340 @ 0x2c38b340 size=38
+  push {r2,r3,r6,r7,lr}
+  lsls r0,r6,#0x2
+  movs r0,r0
+  add sp,#0x14
+  movs r0,r0
+  ldr r3,[0x2c38b34c]
+  lsls r4,r6,#0x2
+  movs r0,r0
+  ands r3,r1
+  movs r0,r0
+  lsrs r0,r0,#0xc
+  ldmia r4,{r0,r1,r3,r4,r5}
+  ldmia r4!,{r2,r3,r6,r7}
+  ldmia r4!,{r2,r3,r6,r7}
+  ldmia r4!,{r2,r3,r6,r7}
+  adr r3,[0x2c38b66c]
+  movs r0,r0
+  movs r0,r0
+  lsrs r0,r0,#0x1c

@@ -1,0 +1,34 @@
+; FUN_2c47f79e @ 0x2c47f79e size=84
+  push {r4,r5,r6,r7,lr}
+  asrs r4,r3,#0x2
+  sbfx r3,r3,#0x2,#0x8
+  cmp r3,#0x0
+  ble 0x2c47f7be
+  subs r4,#0x1
+  subs r3,r0,#0x4
+  movs r5,#0x0
+  uxtb r4,r4
+  add.w r4,r0,r4, lsl #0x2
+  str.w r5,[r3,#0x4]!
+  cmp r4,r3
+  bne 0x2c47f7b6
+  cmp r2,#0x0
+  ble 0x2c47f7f0
+  movs r3,#0x0
+  subs r5,r2,#0x1
+  mov r12,r3
+  sub.w r12,r5,r12
+  ldrb r4,[r1,r3]
+  adds r3,#0x1
+  and lr,r12,#0x3
+  bic r6,r12,#0x3
+  sxtb r3,r3
+  lsl.w lr,lr,#0x3
+  ldr r7,[r0,r6]
+  cmp r3,r2
+  mov r12,r3
+  lsl.w r4,r4,lr
+  orr.w r4,r4,r7
+  str r4,[r0,r6]
+  blt 0x2c47f7c8
+  pop {r4,r5,r6,r7,pc}

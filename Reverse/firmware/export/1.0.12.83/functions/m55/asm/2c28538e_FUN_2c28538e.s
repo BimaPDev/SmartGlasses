@@ -1,0 +1,25 @@
+; FUN_2c28538e @ 0x2c28538e size=50
+  push {r1,r2,r3,r4,r6,lr}
+  stmia r5!,{r0,r2,r3,r4,r6}
+  bpl 0x2c28544c
+  adcs pc,r10,#0xd00000
+  cmp r2,#0x0
+  movs r0,r2
+  movs r0,r0
+  lsls r4,r4,#0x2
+  movs r0,r0
+  subs r0,r0,#0x0
+  lsls r0,r4,#0x2
+  lsls r0,r0,#0x1c
+  lsls r3,r6,#0x3
+  movs r0,r0
+  lsls r0,r0,#0x14
+  lsls r4,r6,#0x3
+  subs r0,r0,#0x4
+  lsls r0,r0,#0x2
+  movs r0,r0
+  movs r0,r0
+  lsls r0,r1,#0x3
+  ldrh r0,[r0,#0x20]
+  movs r0,r0
+  lsrs r0,r0,#0x8

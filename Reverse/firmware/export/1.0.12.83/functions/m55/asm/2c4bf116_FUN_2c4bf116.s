@@ -1,0 +1,29 @@
+; FUN_2c4bf116 @ 0x2c4bf116 size=74
+  push {r4,lr}
+  lsr.w lr,r0,#0x4
+  bhi 0x2c4bf158
+  ands r4,r0,#0x8
+  and r1,r0,#0xf
+  bne 0x2c4bf14e
+  ldr r3,[0x2c4bf160]
+  mov.w r12,#0x1
+  ldr.w r3,[r3,lr,lsl #0x2]
+  ldr r2,[r3,#0x0]
+  lsl.w r3,r12,r1
+  ands r3,r2
+  uxtb r3,r3
+  cbnz r3,0x2c4bf144
+  mov r4,r12
+  mov r0,r4
+  pop {r4,pc}
+  mov r0,lr
+  bl 0x2c4be854
+  mov r0,r4
+  pop {r4,pc}
+  mov r2,r1
+  ldr r0,[0x2c4bf164]
+  mov r1,lr
+  bl 0x2c673ca8
+  mov r1,lr
+  ldr r0,[0x2c4bf168]
+  bl 0x2c673ca8

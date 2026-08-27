@@ -1,0 +1,19 @@
+; FUN_2c558840 @ 0x2c558840 size=42
+  push {r4,r5,r6,lr}
+  ldr r4,[r0,#0x0]
+  cmp r4,r0
+  beq 0x2c55886c
+  mov r6,r0
+  mov r5,r4
+  movs r0,#0x0
+  ldr r4,[r4,#0x0]
+  mov r3,r5
+  ldr.w r1,[r3,#0x8]!
+  adds r3,#0x8
+  cmp r1,r3
+  beq 0x2c558860
+  bl 0x2c472680
+  mov r1,r5
+  movs r0,#0x0
+  bl 0x2c472680
+  pop {r4,r5,r6,pc}

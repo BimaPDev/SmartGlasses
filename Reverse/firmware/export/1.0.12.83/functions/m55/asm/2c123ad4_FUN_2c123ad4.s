@@ -1,0 +1,20 @@
+; FUN_2c123ad4 @ 0x2c123ad4 size=42
+  push {lr}
+  bl 0x2bb929e8
+  ldmia r3!,{r1,r4,r6,r7}
+  adr r6,[0x2c123d90]
+  asrs r0,r1,#0x1e
+  adds r7,r1,r0
+  lsrs r0,r4,#0x20
+  movs r0,#0xa
+  vmlal.u16 q12,d0,d1
+  str r7,[sp,#0x0]
+  lsls r3,r2,#0xa
+  rsbs r6,r2
+  strh r6,[r7,#0x6]
+  movs r1,#0x88
+  lsls r6,r2,#0x8
+  ldr r0,[sp,#0x3f0]
+  ldrh r4,[r0,#0x10]
+  ldrh r1,[r1,#0x4]
+  stmia r6!,{r3}

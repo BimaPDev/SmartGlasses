@@ -1,0 +1,21 @@
+; FUN_2c44cc28 @ 0x2c44cc28 size=40
+  push {r2,r5,r6,lr}
+  ldr r5,[sp,#0x268]
+  subs r4,#0xfa
+  ldr r0,[0x2c44cc9c]
+  cbnz r5,0x2c44cc60
+  b 0x2c44cc8e
+  add r4,sp,#0x80
+  subs r2,#0xb9
+  asrs r0,r3
+  str r2,[sp,#0x1c8]
+  asrs r7,r1,#0x10
+  stmia r2!,{r1,r5}
+  strh r1,[r2,#0x2e]
+  sxth r5,r5
+  ldmia r2!,{r0,r1,r4,r5,r6}
+  push {r0,r3,r5,r6,lr}
+  ldr r4,[0x2c44d00c]
+  add r10,sp
+  lsrs r0,r2,#0x11
+  lsls r4,r4,#0x13

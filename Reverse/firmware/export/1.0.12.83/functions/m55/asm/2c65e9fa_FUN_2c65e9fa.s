@@ -1,0 +1,25 @@
+; FUN_2c65e9fa @ 0x2c65e9fa size=52
+  cmp r1,#0xf
+  push {r0,r1,r2,r4,r5,lr}
+  mov r4,r0
+  mov r5,r2
+  str r1,[sp,#0x4]
+  bls 0x2c65ea14
+  movs r2,#0x0
+  add r1,sp,#0x4
+  bl 0x2c65e908
+  ldr r3,[sp,#0x4]
+  str r0,[r4,#0x0]
+  str r3,[r4,#0x8]
+  ldr r1,[sp,#0x4]
+  cbz r1,0x2c65ea20
+  mov r2,r5
+  ldr r0,[r4,#0x0]
+  bl 0x2c65e9d8
+  ldr r3,[sp,#0x4]
+  movs r1,#0x0
+  ldr r2,[r4,#0x0]
+  str r3,[r4,#0x4]
+  strb r1,[r2,r3]
+  add sp,#0xc
+  pop {r4,r5,pc}

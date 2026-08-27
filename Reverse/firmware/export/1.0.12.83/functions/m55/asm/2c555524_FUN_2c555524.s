@@ -1,0 +1,24 @@
+; FUN_2c555524 @ 0x2c555524 size=64
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  bl 0x2c48e738
+  ldr r1,[0x2c555564]
+  mov r4,r0
+  vldr.32 s15,[r5,#0x4]
+  vcvt.f64.s32 d0,s15
+  bl 0x2c48e518
+  vldr.32 s15,[r5,#0x20]
+  ldr r1,[0x2c555568]
+  mov r0,r4
+  vcvt.f64.s32 d0,s15
+  bl 0x2c48e518
+  ldr r2,[r5,#0x8]
+  ldr r1,[0x2c55556c]
+  mov r0,r4
+  bl 0x2c48e5b4
+  ldr r2,[r5,#0x24]
+  ldr r1,[0x2c555570]
+  mov r0,r4
+  bl 0x2c48e5b4
+  mov r0,r4
+  pop {r3,r4,r5,pc}

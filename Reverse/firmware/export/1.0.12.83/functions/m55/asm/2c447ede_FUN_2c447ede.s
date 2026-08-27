@@ -1,0 +1,36 @@
+; FUN_2c447ede @ 0x2c447ede size=72
+  push {r3,r6,r7,lr}
+  asrs r6,r3
+  subs r1,r6,r0
+  str r2,[r4,#0x24]
+  ldrb r3,[r2,#0xb]
+  asrs r1,r1,#0x12
+  ldrh r0,[r7,#0x1c]
+  ldrb r7,[r0,#0x8]
+  movs r1,#0x2b
+  add sp,#0x1e0
+  ldr r1,[sp,#0x2c8]
+  movs r2,#0x11
+  adds r6,#0xc5
+  str r4,[r1,#0x20]
+  subs r0,r1,#0x1
+  strb r7,[r4,#0x12]
+  ldrsh r2,[r4,r2]
+  strb r5,[r4,#0x3]
+  cmp r5,#0xa9
+  movs r6,r2
+  movs r0,r0
+  asrs r3,r4,#0x9
+  str r5,[sp,#0x2cc]
+  ldmia r0!,{r1,r6,r7}
+  str r1,[r6,#0xc]
+  adr r3,[0x2c447f14]
+  asrs r4,r3,#0x8
+  ldmia r1!,{r0}
+  ldr r3,[sp,#0x90]
+  subs r6,r7,r2
+  strb r1,[r4,#0x5]
+  add r0,sp,#0x74
+  ldrh r0,[r1,#0xa]
+  strb r4,[r4,#0x0]
+  orr.w r7,r6,r11, ror #0x1a

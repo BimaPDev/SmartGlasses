@@ -1,0 +1,27 @@
+; FUN_2c47bc30 @ 0x2c47bc30 size=70
+  ldr r3,[0x2c47bc80]
+  push {r4,lr}
+  strb r0,[r3,#0x0]
+  cmp r0,#0x9
+  bhi 0x2c47bc66
+  tbb [pc,r0]
+  ldr r4,[0x2c47bc84]
+  ldr r0,[r4,#0x0]
+  cbz r0,0x2c47bc68
+  movw r1,#0x1388
+  pop.w {r4,lr}
+  b.w 0x2c6448b4
+  ldr r4,[0x2c47bc84]
+  ldr r0,[r4,#0x0]
+  bl 0x2c644958
+  movs r3,#0x0
+  str r3,[r4,#0x0]
+  pop {r4,pc}
+  mov r1,r0
+  mov r2,r0
+  ldr r0,[0x2c47bc88]
+  bl 0x2c64418c
+  movw r1,#0x1388
+  str r0,[r4,#0x0]
+  pop.w {r4,lr}
+  b.w 0x2c6448b4

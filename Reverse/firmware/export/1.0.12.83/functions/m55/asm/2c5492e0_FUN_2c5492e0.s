@@ -1,0 +1,19 @@
+; FUN_2c5492e0 @ 0x2c5492e0 size=48
+  cbz r0,0x2c549300
+  push {r4,lr}
+  mov r4,r1
+  bl 0x2c48e3b8
+  mov r1,r4
+  mov r4,r0
+  bl 0x2c549280
+  cmp r0,#0x0
+  mov r0,r4
+  blt 0x2c549306
+  bl 0x2c48dea0
+  movs r0,#0x0
+  pop {r4,pc}
+  mov.w r0,#0xffffffff
+  bx lr
+  bl 0x2c48dea0
+  mov.w r0,#0xffffffff
+  pop {r4,pc}

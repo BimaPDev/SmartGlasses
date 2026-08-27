@@ -1,0 +1,27 @@
+; FUN_2c510a30 @ 0x2c510a30 size=68
+  push {r3,r4,r5,lr}
+  add.w r4,r0,#0x24
+  mov r5,r0
+  mov r0,r4
+  bl 0x2c62ca10
+  cbz r0,0x2c510a64
+  mov r1,r0
+  add.w r3,r1,#0x2000
+  mov r0,r4
+  ldr.w r3,[r3,#0xc44]
+  cbz r3,0x2c510a5a
+  ldrsb.w r2,[r3,#0x90]
+  cbnz r2,0x2c510a70
+  ldrsb.w r3,[r3,#0x124]
+  cbnz r3,0x2c510a70
+  bl 0x2c62ca20
+  mov r1,r0
+  cmp r0,#0x0
+  bne 0x2c510a42
+  ldrb.w r0,[r5,#0x146]
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  pop {r3,r4,r5,pc}
+  movs r0,#0x1
+  pop {r3,r4,r5,pc}

@@ -1,0 +1,20 @@
+; FUN_2c61319c @ 0x2c61319c size=48
+  ldrh r3,[r2,#0x6]
+  push {r4,lr}
+  adds r3,#0x1
+  ldrh.w lr,[r2,#0x2]
+  sub.w r3,r3,lr
+  sxth r3,r3
+  cmp r3,#0x0
+  ble 0x2c6131ca
+  ldrh r3,[r2,#0x4]
+  ldrh.w r12,[r2,#0x0]
+  adds r3,#0x1
+  sub.w r3,r3,r12
+  sxth r3,r3
+  cmp r3,#0x0
+  ble 0x2c6131ca
+  ldr r3,[r0,#0xc]
+  pop.w {r4,lr}
+  bx r3
+  pop {r4,pc}

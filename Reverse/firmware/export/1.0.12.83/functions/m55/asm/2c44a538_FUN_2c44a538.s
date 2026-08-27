@@ -1,0 +1,22 @@
+; FUN_2c44a538 @ 0x2c44a538 size=46
+  ldrsb r0,[r0,r1]
+  ldc2l p2,cr2,[pc],#-0x4
+  add r7,sp,#0x3d4
+  adr r0,[0x2c44a880]
+  ldr r0,[r0,r3]
+  ldrb r7,[r4,#0x18]
+  blx 0x2cd82394
+  pop {r1,r2,r3,r5,r7}
+  push {r2,r3,r4,r5,lr}
+  strb r2,[r4,#0x6]
+  movs r6,#0x1f
+  ldmia r3!,{r1,r5,r7}
+  lsrs r0,r0,#0x11
+  sbcs r0,r3
+  bhi 0x2c44a4d0
+  lsls r5,r3,#0x1e
+  ldrh r0,[r6,#0x18]
+  ldmia r4!,{r0,r5,r6,r7}
+  blt 0x2c44a4d0
+  ldr r0,[sp,#0x298]
+  udf #0xa8

@@ -1,0 +1,19 @@
+; FUN_2c141c18 @ 0x2c141c18 size=46
+  push {r3,r4,r5,lr}
+  ldr r3,[r0,#0x8]
+  cbz r3,0x2c141c44
+  mov r4,r0
+  adds r0,#0xc
+  bl 0x2c141bd0
+  mov r5,r0
+  cbz r0,0x2c141c44
+  mov r0,r4
+  bl 0x2c14089c
+  mov r1,r5
+  movs r2,#0x0
+  bl 0x2c140ec8
+  mov r1,r5
+  mov r0,r4
+  pop.w {r3,r4,r5,lr}
+  b.w 0x2c13ef04
+  pop {r3,r4,r5,pc}

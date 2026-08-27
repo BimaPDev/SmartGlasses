@@ -1,0 +1,27 @@
+; FUN_2c46f204 @ 0x2c46f204 size=68
+  push {lr}
+  ldr r3,[0x2c46f248]
+  sub sp,#0x14
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0xc]
+  mov.w r3,#0x0
+  bl 0x2c478b68
+  cbz r0,0x2c46f230
+  ldr r3,[0x2c46f24c]
+  ldr r2,[r0,#0x74]
+  ldm.w r3,{r0,r1}
+  lsrs r3,r1,#0x10
+  str r0,[sp,#0x4]
+  strh.w r1,[sp,#0x8]
+  add r0,sp,#0x4
+  strb.w r3,[sp,#0xa]
+  blx r2
+  ldr r3,[0x2c46f248]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0xc]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x2c46f244
+  add sp,#0x14
+  pop.w pc
+  bl 0x2c674828

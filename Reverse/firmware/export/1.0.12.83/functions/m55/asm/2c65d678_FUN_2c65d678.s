@@ -1,0 +1,23 @@
+; FUN_2c65d678 @ 0x2c65d678 size=54
+  push {r4,r5,r6,lr}
+  sub sp,#0x20
+  mov r4,r0
+  mov r6,r1
+  add r5,sp,#0x18
+  stm r5,{r2,r3}
+  ldr r3,[sp,#0x40]
+  str r3,[sp,#0x10]
+  ldr r3,[sp,#0x3c]
+  str r3,[sp,#0xc]
+  ldr r3,[sp,#0x38]
+  str r3,[sp,#0x8]
+  add r3,sp,#0x30
+  ldm.w r3,{r0,r1}
+  stm sp,{r0,r1}
+  mov r0,r4
+  mov r1,r6
+  ldm.w r5,{r2,r3}
+  bl 0x2c65d2ec
+  mov r0,r4
+  add sp,#0x20
+  pop {r4,r5,r6,pc}

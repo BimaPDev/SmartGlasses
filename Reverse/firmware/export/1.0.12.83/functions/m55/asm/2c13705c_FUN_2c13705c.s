@@ -1,0 +1,26 @@
+; FUN_2c13705c @ 0x2c13705c size=64
+  ldr r3,[r0,#0x34]
+  ands r2,r3,#0x4b
+  bne 0x2c137068
+  mov r0,r2
+  bx lr
+  ldr.w r2,[r0,#0x80]
+  ldr r1,[r0,#0x54]
+  lsls r1,r2,#0x16
+  bpl 0x2c13708c
+  ldr r1,[r0,#0x0]
+  orr r1,r1,#0x20
+  str r1,[r0,#0x0]
+  ldr r1,[r0,#0x4]
+  bic r1,r1,#0x800
+  str r1,[r0,#0x4]
+  ldr r1,[r0,#0x4]
+  bic r1,r1,#0x400
+  str r1,[r0,#0x4]
+  ldr r1,[r0,#0x54]
+  tst r3,#0xb
+  it ne
+  orr.ne r2,r2,#0x20000000
+  ldr r3,[r0,#0x40]
+  mov r0,r2
+  bx lr

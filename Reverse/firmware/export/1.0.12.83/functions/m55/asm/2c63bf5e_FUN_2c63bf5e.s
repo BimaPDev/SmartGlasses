@@ -1,0 +1,20 @@
+; FUN_2c63bf5e @ 0x2c63bf5e size=60
+  push {lr}
+  sub sp,#0x2c
+  add.w r12,sp,#0x30
+  add.w lr,sp,#0x40
+  stm r12,{r0,r1,r2,r3}
+  ldm.w lr!,{r0,r1,r2,r3}
+  mov r12,sp
+  stm.w r12!,{r0,r1,r2,r3}
+  ldm.w lr!,{r0,r1,r2,r3}
+  stm.w r12!,{r0,r1,r2,r3}
+  add r3,sp,#0x30
+  ldm.w lr,{r0,r1}
+  stm r12,{r0,r1}
+  ldmia r3,{r0,r1,r2,r3}
+  bl 0x2c63cf4c
+  add sp,#0x2c
+  pop.w lr
+  add sp,#0x10
+  bx lr

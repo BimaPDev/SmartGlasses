@@ -1,0 +1,19 @@
+; FUN_2c459a30 @ 0x2c459a30 size=38
+  push {r1,r3,r4,r6,r7,lr}
+  stmia r7!,{r2,r4,r5}
+  ldr r0,[sp,#0x80]
+  ldrb r7,[r5,#0x15]
+  str r2,[r1,#0x38]
+  str r2,[r7,#0x50]
+  bl 0x2b47e1b2
+  str r7,[sp,#0xb8]
+  lsls r5,r2,#0x14
+  ldr r1,[sp,#0x1e8]
+  ldr r4,[sp,#0x164]
+  adr r1,[0x2c459d48]
+  ldrb r2,[r1,r3]
+  ldrb r7,[r3,r1]
+  ldr r5,[0x2c459cc0]
+  strb r1,[r6,r5]
+  strb r3,[r6,r2]
+  adds r4,#0x71

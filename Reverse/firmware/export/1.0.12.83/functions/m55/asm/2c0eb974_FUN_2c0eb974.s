@@ -1,0 +1,20 @@
+; FUN_2c0eb974 @ 0x2c0eb974 size=40
+  push {r0,r1,r3,r5,r6,r7,lr}
+  bge 0x2c0eb9ea
+  ldrh r4,[r3,r3]
+  ble 0x2c0eb99e
+  asrs r3,r3,#0x14
+  lsrs r6,r3,#0x3
+  add r6,r4
+  strh r5,[r1,#0x3a]
+  movs r5,#0xee
+  strh r1,[r0,#0xf5]!
+  adds r5,#0xfd
+  asrs r0,r2,#0x1f
+  adds r3,#0x65
+  subs r4,#0x1d
+  stmia r5!,{r0,r1,r3}
+  movs r3,#0xf6
+  lsls r4,r1,#0x14
+  movs r4,r0
+  adds r7,r0,#0x4

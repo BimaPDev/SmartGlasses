@@ -1,0 +1,25 @@
+; FUN_2c411dbe @ 0x2c411dbe size=48
+  push {r2,r7,lr}
+  ldr r1,[r4,#0x44]
+  ldr r0,[r6,#0x4]
+  ldmia r6,{r0,r5,r6}
+  str r1,[r6,#0x18]
+  str r5,[r5,#0x14]
+  strb r3,[r4,#0x9]
+  strh r4,[r0,#0xe]
+  ldr r1,[r4,#0x54]
+  ldr r1,[r4,#0x44]
+  b 0x2c4122a4
+  str r4,[r2,#0x28]
+  ldrb r7,[r5,#0x1]
+  b 0x2c412798
+  ldr r4,[r4,#0x14]
+  str r7,[r4,#0x14]
+  ldr r5,[r5,#0x54]
+  ldmia r7!,{r0,r5,r6}
+  str r5,[r3,#0x48]
+  strb r1,[r5,#0xd]
+  ldr r1,[r5,#0x64]
+  ldrh r2,[r4,#0x1e]
+  str r2,[r6,#0x48]
+  strb r1,[r5,#0x19]

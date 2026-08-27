@@ -1,0 +1,20 @@
+; FUN_2c4eb928 @ 0x2c4eb928 size=40
+  push {r4,lr}
+  mov r4,r0
+  sub sp,#0x8
+  cbz r0,0x2c4eb940
+  ldr r3,[r0,#0x14]
+  ldrb r0,[r3,#0x0]
+  cmp r0,#0x1
+  ite ls
+  mov.ls r0,#0x0
+  mov.hi r0,#0x1
+  add sp,#0x8
+  pop {r4,pc}
+  ldr r0,[0x2c4eb954]
+  movs r1,#0x8b
+  ldr r3,[0x2c4eb958]
+  str r0,[sp,#0x0]
+  movs r0,#0x1
+  ldr r2,[0x2c4eb95c]
+  bl 0x2c673d88

@@ -1,0 +1,21 @@
+; FUN_2c6131d8 @ 0x2c6131d8 size=52
+  push {r4,r5,r6,r7,lr}
+  sub sp,#0x24
+  ldr r4,[r0,#0x2c]
+  ldrsh.w r6,[sp,#0x38]
+  ldrsh.w r7,[sp,#0x3c]
+  ldr r5,[sp,#0x40]
+  ldrb.w r12,[sp,#0x44]
+  cbz r4,0x2c613208
+  str.w r12,[sp,#0xc]
+  str r5,[sp,#0x8]
+  strd r6,r7,[sp,#0x0]
+  ldr r6,[sp,#0x4c]
+  str r6,[sp,#0x14]
+  ldr r6,[sp,#0x48]
+  str r6,[sp,#0x10]
+  ldrb.w r5,[r5,#0x39]
+  str r5,[sp,#0x18]
+  blx r4
+  add sp,#0x24
+  pop {r4,r5,r6,r7,pc}

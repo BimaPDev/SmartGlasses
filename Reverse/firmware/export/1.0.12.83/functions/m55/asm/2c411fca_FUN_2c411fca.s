@@ -1,0 +1,26 @@
+; FUN_2c411fca @ 0x2c411fca size=50
+  push {r3,r7,lr}
+  str r2,[r4,#0x54]
+  str r3,[r4,#0x14]
+  strb r5,[r6,#0xd]
+  b 0x2c4124a0
+  str r2,[r3,#0x38]
+  strb r1,[r5,#0x9]
+  ldr r3,[r4,#0x44]
+  str r5,[r4,#0x44]
+  str r4,[r4,#0x14]
+  ldr r3,[r6,#0x4]
+  ldrh r2,[r4,#0x16]
+  str r5,[r3,#0x38]
+  strb r1,[r5,#0x9]
+  b 0x2c412980
+  strb r6,[r5,#0x11]
+  strb r5,[r4,#0x9]
+  b 0x2c412e6e
+  adr r4,[0x2c4131f8]
+  ldr r5,[r4,#0x8]
+  strb r3,[r5,#0xd]
+  str r7,[r6,#0x14]
+  ldr r2,[r6,#0x74]
+  b 0x2c41336a
+  b 0x2c41383c

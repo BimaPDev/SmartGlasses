@@ -1,0 +1,22 @@
+; FUN_2c167df4 @ 0x2c167df4 size=42
+  push {r0,r2,r3,r4,r5,lr}
+  cmp r4,#0x51
+  stmia r0,{r0,r2,r3,r5,r7}
+  cmp r4,#0x51
+  uxth r5,r1
+  cmp r4,#0x51
+  lsrs r1,r7
+  cmp r4,#0x51
+  uxtb r5,r5
+  cmp r4,#0x51
+  asrs r1,r0
+  cmp r4,#0x51
+  asrs r5,r0
+  cmp r4,#0x51
+  uxtb r5,r5
+  cmp r4,#0x51
+  asrs r5,r1
+  cmp r4,#0x51
+  sxtb r1,r5
+  cmp r4,#0x51
+  pop {r0,r2,r4,r6,r7,pc}

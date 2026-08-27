@@ -1,0 +1,20 @@
+; FUN_2c4c0030 @ 0x2c4c0030 size=44
+  cmp r0,#0x17
+  bls 0x2c4c0050
+  mov r2,r0
+  push {r3,lr}
+  sub.w r3,r0,#0x18
+  cmp r3,#0x1f
+  bls 0x2c4c0054
+  sub.w r3,r0,#0x38
+  cmp r3,#0x17
+  bls 0x2c4c0058
+  ldr r1,[0x2c4c005c]
+  ldr r0,[0x2c4c0060]
+  bl 0x2c673ca8
+  movs r0,#0x0
+  bx lr
+  movs r0,#0x1
+  pop {r3,pc}
+  movs r0,#0x2
+  pop {r3,pc}

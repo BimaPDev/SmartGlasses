@@ -1,0 +1,40 @@
+; FUN_2c630d7e @ 0x2c630d7e size=102
+  push {r4,r5,lr}
+  ldrh.w lr,[r0,#0x24]
+  bpl 0x2c630d9e
+  ldr r4,[0x2c630de4]
+  umull r2,r12,r4,lr
+  ldrh r4,[r0,#0x26]
+  sub.w r2,lr,r12
+  add.w r12,r12,r2, lsr #0x1
+  ubfx r12,r12,#0x2,#0x10
+  cmp r12,r3
+  bhi 0x2c630db4
+  cmp r3,lr
+  bcc 0x2c630da8
+  add.w r3,lr,#0xffffffff
+  uxth r3,r3
+  strh r3,[r0,#0x26]
+  strh r3,[r0,#0x28]
+  pop.w {r4,r5,lr}
+  b.w 0x2c630910
+  udiv r2,r4,r12
+  smulbb r2,r2,r12
+  uxth r2,r2
+  subs r4,r4,r2
+  sxth r5,r4
+  uxth r4,r4
+  subs r5,r5,r3
+  cmp r5,#0x0
+  it lt
+  rsb.lt r5,r5
+  cmp.w r5,r12, lsr #0x1
+  bls 0x2c630dde
+  cmp r3,r4
+  ite cc
+  add.cc r3,r12
+  sub.cs.w r3,r3,r12
+  uxth r3,r3
+  add r3,r2
+  uxth r3,r3
+  b 0x2c630d9e

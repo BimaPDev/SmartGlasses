@@ -1,0 +1,19 @@
+; FUN_2c109962 @ 0x2c109962 size=40
+  push {r0,r1,r2,r5,r6,lr}
+  bic r1,r6,#0x250025
+  str r4,[sp,#0x2b8]
+  lsrs r2,r0,#0xc
+  stc2 p1,cr11,[r6,#-0x204]!
+  b 0x2c109abc
+  ldr r6,[r7,r1]
+  lsrs r3,r0,#0xa
+  push {r7}
+  ldr r0,[sp,#0x19c]
+  cmp r6,#0x1a
+  adds r5,r2,r0
+  asrs r3,r1,#0x8
+  cmp r1,#0xe0
+  ldrb r3,[r6,#0x18]
+  lsls r0,r5,#0xa
+  strh r1,[r1,#0x0]
+  str r4,[r6,#0x78]

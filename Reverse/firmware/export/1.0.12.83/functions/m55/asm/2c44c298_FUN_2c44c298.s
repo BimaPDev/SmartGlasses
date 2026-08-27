@@ -1,0 +1,19 @@
+; FUN_2c44c298 @ 0x2c44c298 size=36
+  push {r0,r2,r3,r4,lr}
+  movs r5,#0xe1
+  ldr r6,[r1,#0x3c]
+  strh r6,[r4,#0x6]
+  add r12,r5
+  str r4,[r1,#0x18]
+  ldr r7,[sp,#0x35c]
+  ldrsb r5,[r2,r2]
+  ldr r7,[sp,#0x2e8]
+  ldr r5,[0x2c44c5b0]
+  ldmia r6,{r5,r6,r7}
+  ldrh r4,[r0,r4]
+  bkpt 0xf
+  ldr r7,[r6,r4]
+  adds r4,#0x46
+  ldr r7,[r4,#0x58]
+  movs r3,r6
+  strb r7,[r3,#0x5]

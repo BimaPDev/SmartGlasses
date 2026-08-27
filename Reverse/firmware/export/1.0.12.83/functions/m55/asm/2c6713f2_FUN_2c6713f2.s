@@ -1,0 +1,26 @@
+; FUN_2c6713f2 @ 0x2c6713f2 size=58
+  push {r4,lr}
+  mov r4,r1
+  ldr r1,[r1,#0x34]
+  cbz r1,0x2c671416
+  add.w r3,r4,#0x44
+  cmp r1,r3
+  beq 0x2c671406
+  bl 0x2c669b3c
+  movs r0,#0x0
+  ldr r3,[r4,#0x40]
+  str r0,[r4,#0x34]
+  str r3,[r4,#0x4]
+  cbz r3,0x2c671416
+  ldr r3,[r4,#0x3c]
+  str r3,[r4,#0x0]
+  pop {r4,pc}
+  ldr r3,[r4,#0x10]
+  mov.w r0,#0xffffffff
+  str r3,[r4,#0x0]
+  movs r3,#0x0
+  str r3,[r4,#0x4]
+  ldrh r3,[r4,#0xc]
+  orr r3,r3,#0x20
+  strh r3,[r4,#0xc]
+  b 0x2c671414

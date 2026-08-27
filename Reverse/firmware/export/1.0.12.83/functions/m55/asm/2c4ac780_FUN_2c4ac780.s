@@ -1,0 +1,22 @@
+; FUN_2c4ac780 @ 0x2c4ac780 size=60
+  ldrb.w r3,[r0,#0x305]
+  cbnz r3,0x2c4ac788
+  bx lr
+  adds r3,r1,#0x1
+  mov r12,r0
+  push {r4}
+  beq 0x2c4ac79a
+  cmp r1,#0x1
+  beq 0x2c4ac7b2
+  pop.w r4
+  bx lr
+  ldr.w r4,[r0,#0x340]
+  ldrh.w r3,[r0,#0xf8]
+  ldrh.w r2,[r12,#0xf4]
+  ldrb.w r1,[r12,#0xf0]
+  mov r12,r4
+  pop.w r4
+  bx r12
+  ldr.w r4,[r0,#0x340]
+  ldrh.w r3,[r0,#0xfc]
+  b 0x2c4ac7a2

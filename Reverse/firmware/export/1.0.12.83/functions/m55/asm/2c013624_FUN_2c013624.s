@@ -1,0 +1,24 @@
+; FUN_2c013624 @ 0x2c013624 size=56
+  push {r3,r4,r5,lr}
+  mrs r4,basepri
+  cmp r4,#0x40
+  beq 0x2c013636
+  mov r2,pc
+  ldr r3,[0x2c01365c]
+  strd r2,lr,[r3,#0x0]
+  movs r3,#0x40
+  msr basepri,r3
+  ldr r5,[0x2c013660]
+  ldrb r3,[r5,#0x0]
+  cbz r3,0x2c013646
+  mov r0,r4
+  pop {r3,r4,r5,pc}
+  movs r0,#0x0
+  bl 0x2c013a84
+  cmp r0,#0x0
+  beq 0x2c013646
+  movs r3,#0x1
+  orr r4,r4,#0x80000000
+  strb r3,[r5,#0x0]
+  mov r0,r4
+  pop {r3,r4,r5,pc}

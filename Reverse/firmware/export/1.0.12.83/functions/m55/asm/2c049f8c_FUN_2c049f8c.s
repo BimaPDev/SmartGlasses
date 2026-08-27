@@ -1,0 +1,26 @@
+; FUN_2c049f8c @ 0x2c049f8c size=52
+  push {r0,r1,r2,r4,r6,r7,lr}
+  beq 0x2c049f8c
+  asrs r0,r5,#0x10
+  cbz r0,0x2c049fd6
+  ldr r3,[0x2c04a038]
+  cmp r7,#0x2
+  ldcl p12,cr4,[r7],{0xff}
+  orrs r7,r5
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0

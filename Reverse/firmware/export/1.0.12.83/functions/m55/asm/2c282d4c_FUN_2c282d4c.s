@@ -1,0 +1,27 @@
+; FUN_2c282d4c @ 0x2c282d4c size=52
+  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  lsls r0,r2,#0x1
+  str r7,[r5,r4]
+  ldr r5,[sp,#0x44]
+  asrs r1,r2,#0x4
+  lsls r2,r3,#0x3
+  lsls r0,r0,#0x8
+  asrs r6,r6,#0x7
+  bne 0x2c282d92
+  adds r1,r2,#0x4
+  lsls r0,r4,#0x2
+  cmp r7,#0x0
+  asrs r0,r0,#0x20
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  str r3,[r0,r0]
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  lsls r5,r1,#0x2
+  movs r0,r0

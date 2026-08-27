@@ -1,0 +1,26 @@
+; FUN_2c6672a4 @ 0x2c6672a4 size=84
+  push {r3,lr}
+  vpush {d8,d9}
+  vmov.f64 d8,d0
+  bl 0x2c6673e0
+  vmov.f64 d9,d0
+  vcmpe.f64 d8,d8
+  vmrs apsr,fpscr
+  bvs 0x2c6672d6
+  vmov.f64 d0,d8
+  bl 0x2c666bc0
+  vmov.f64 d7,0x3ff0000000000000
+  vcmpe.f64 d0,d7
+  vmrs apsr,fpscr
+  bgt 0x2c6672e0
+  vmov.f64 d0,d9
+  vpop {d8,d9}
+  pop {r3,pc}
+  bl 0x2c6685e0
+  movs r2,#0x21
+  mov r3,r0
+  ldr r0,[0x2c6672f8]
+  vpop {d8,d9}
+  str r2,[r3,#0x0]
+  pop.w {r3,lr}
+  b.w 0x2c668458

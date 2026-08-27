@@ -1,0 +1,20 @@
+; FUN_2c64ed20 @ 0x2c64ed20 size=48
+  push {r0,r1,r2,r4,r5,lr}
+  strd r0,r1,[sp,#0x0]
+  mov r0,sp
+  ldrb.w r1,[sp,#0x18]
+  mov r4,r2
+  mov r5,r3
+  bl 0x2c64ec84
+  movs r0,#0x0
+  cbz r4,0x2c64ed4a
+  cmp r0,r5
+  add.w r4,r4,#0xffffffff
+  bhi 0x2c64ed4a
+  mov r1,r5
+  mov r0,sp
+  bl 0x2c64e740
+  b 0x2c64ed36
+  ldr r0,[sp,#0x0]
+  add sp,#0xc
+  pop {r4,r5,pc}

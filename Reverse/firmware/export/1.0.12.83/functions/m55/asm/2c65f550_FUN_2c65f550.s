@@ -1,0 +1,25 @@
+; FUN_2c65f550 @ 0x2c65f550 size=62
+  cmp r0,#0xa
+  bhi 0x2c65f564
+  cmp r1,#0x2f
+  bls 0x2c65f588
+  adds r0,#0x30
+  cmp r1,r0
+  bcs 0x2c65f588
+  sub.w r0,r1,#0x30
+  bx lr
+  sub.w r0,r1,#0x30
+  cmp r0,#0x9
+  bls 0x2c65f58c
+  sub.w r3,r1,#0x61
+  cmp r3,#0x5
+  bhi 0x2c65f57a
+  sub.w r0,r1,#0x57
+  bx lr
+  sub.w r3,r1,#0x41
+  cmp r3,#0x5
+  bhi 0x2c65f588
+  sub.w r0,r1,#0x37
+  bx lr
+  mov.w r0,#0xffffffff
+  bx lr

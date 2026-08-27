@@ -1,0 +1,34 @@
+; FUN_2c27a74c @ 0x2c27a74c size=72
+  movs r0,r0
+  ldmia r4!,{r0,r1,r2,r3,r5,r6}
+  ldmia r6,{r0,r2,r3,r4,r5,r6,r7}
+  ldmia r7,{r2,r3,r5,r6,r7}
+  movs r0,r6
+  lsls r0,r0,#0x18
+  lsrs r0,r6,#0x1f
+  add r2,sp,#0x100
+  b.w 0x2d17c76e
+  movs r0,r0
+  strb r7,[r5,#0x1]
+  lsrs r0,r0,#0x14
+  lsls r0,r0,#0x2
+  vshr.u64 q8,q11,#0x31
+  adr r3,[0x2c27a5e4]
+  adcs.w sp,r5,r5, lsr #0x5
+  ldrh r0,[r7,#0x3c]
+  lsls r0,r4,#0x1
+  ldrh r1,[r3,#0x3a]
+  push {r0,r1,r2,r6,r7,lr}
+  lsrs r5,r6,#0x1b
+  lsrs r0,r2,#0xd
+  ldr r7,[0x2c27aa14]
+  bne 0x2c27a7b0
+  lsls r3,r7,#0x11
+  b 0x2c27a344
+  lsls r0,r6,#0x1
+  movs r2,r0
+  movs r0,r0
+  asrs r1,r0,#0x4
+  asrs r1,r2,#0x4
+  movs r0,r0
+  b 0x2c27a3da

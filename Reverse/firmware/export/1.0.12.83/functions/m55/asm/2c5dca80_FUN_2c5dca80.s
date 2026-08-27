@@ -1,0 +1,20 @@
+; FUN_2c5dca80 @ 0x2c5dca80 size=44
+  push {r4,r5,r6,lr}
+  mov r6,r2
+  bl 0x2c5dc828
+  cmp r1,r0
+  mov r5,r1
+  beq 0x2c5dcaa8
+  adds r3,r0,#0x4
+  cmp r1,r3
+  beq 0x2c5dcaa6
+  ldr.w r4,[r3],#0x4
+  ldr r2,[r6,#0x0]
+  cmp r4,r2
+  it ne
+  str.w.ne r4,[r0],#0x4
+  cmp r3,r5
+  bne 0x2c5dca94
+  pop {r4,r5,r6,pc}
+  mov r0,r1
+  pop {r4,r5,r6,pc}

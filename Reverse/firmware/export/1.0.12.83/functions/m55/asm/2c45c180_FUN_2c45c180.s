@@ -1,0 +1,24 @@
+; FUN_2c45c180 @ 0x2c45c180 size=48
+  push {r1,r3,r5,r7,lr}
+  cmp r10,r5
+  ldrh r2,[r4,#0x4]
+  subs r2,#0xd7
+  ldr r4,[r2,#0x2c]
+  str r2,[sp,#0x358]
+  strh r2,[r5,#0x16]
+  str r1,[r2,#0x6c]
+  blt 0x2c45c1c6
+  strb r3,[r0,#0x5]
+  lsrs r1,r3,#0x12
+  mov r6,r2
+  cmp r3,#0xa8
+  add r2,sp,#0x180
+  asrs r4,r2,#0xf
+  str r4,[r1,#0x0]
+  blx 0x2d1c6c78
+  str r0,[sp,#0xb8]
+  asrs r0,r3
+  lsrs r1,r1,#0x1a
+  subs r0,#0xde
+  adds r4,#0x95
+  pop {r4,r6,pc}

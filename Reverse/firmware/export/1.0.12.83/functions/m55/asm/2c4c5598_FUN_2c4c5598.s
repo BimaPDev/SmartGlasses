@@ -1,0 +1,36 @@
+; FUN_2c4c5598 @ 0x2c4c5598 size=98
+  ldr r3,[0x2c4c5574]
+  add.w r3,r3,r0, lsl #0x1
+  push {r4,lr}
+  sub sp,#0x8
+  mov r4,r0
+  mov r0,r2
+  str r1,[sp,#0x4]
+  bl 0x2c4bfdb8
+  ldr r1,[sp,#0x4]
+  cbz r0,0x2c4c55c2
+  cmn r0,#0x62
+  mov r3,r0
+  bge 0x2c4c55d2
+  vldr.32 s0,[pc,#0x40]
+  mov r0,r4
+  add sp,#0x8
+  pop.w {r4,lr}
+  b.w 0x2c4c54dc
+  vmov.f32 s0,0x3f800000
+  mov r0,r4
+  add sp,#0x8
+  pop.w {r4,lr}
+  b.w 0x2c4c54dc
+  cmp r0,#0x32
+  it ge
+  mov.ge r3,#0x32
+  sxtb r3,r3
+  vmov s0,r3
+  vcvt.f32.s32 s0,s0
+  bl 0x2c49ab84
+  ldr r1,[sp,#0x4]
+  mov r0,r4
+  add sp,#0x8
+  pop.w {r4,lr}
+  b.w 0x2c4c54dc

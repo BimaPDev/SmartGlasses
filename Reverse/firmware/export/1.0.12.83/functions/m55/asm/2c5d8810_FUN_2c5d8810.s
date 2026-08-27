@@ -1,0 +1,24 @@
+; FUN_2c5d8810 @ 0x2c5d8810 size=62
+  push {r4,lr}
+  ldrsh.w r2,[r0,#0x40]
+  mov r4,r0
+  ldr r0,[r0,#0x4]
+  mov r1,r2
+  bl 0x2c607048
+  ldrsh.w r1,[r4,#0x40]
+  ldr r0,[r4,#0x4]
+  movs r2,#0x0
+  cmp r1,#0x0
+  it lt
+  add.lt r1,#0x1
+  asrs r1,r1,#0x1
+  bl 0x2c606e68
+  ldr r0,[r4,#0x4]
+  movs r2,#0x0
+  mov.w r1,#0xff00ff00
+  bl 0x2c606d60
+  ldr r0,[r4,#0x4]
+  movs r2,#0x0
+  movs r1,#0x10
+  pop.w {r4,lr}
+  b.w 0x2c606d6c

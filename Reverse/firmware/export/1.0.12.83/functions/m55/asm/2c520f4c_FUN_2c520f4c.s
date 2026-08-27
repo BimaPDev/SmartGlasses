@@ -1,0 +1,24 @@
+; FUN_2c520f4c @ 0x2c520f4c size=52
+  push {r4,lr}
+  sub sp,#0x8
+  bl 0x2c63c57c
+  subs r3,r0,#0x2
+  uxtb r3,r3
+  cmp r3,#0x1
+  ldr r3,[0x2c520f8c]
+  bls 0x2c520f76
+  cbz r0,0x2c520f76
+  ldr r4,[0x2c520f90]
+  movs r2,#0x90
+  ldr r1,[0x2c520f94]
+  movs r0,#0x4
+  str r3,[sp,#0x4]
+  str r4,[sp,#0x0]
+  bl 0x2c62c82c
+  ldr r4,[0x2c520f98]
+  movs r2,#0x8d
+  ldr r1,[0x2c520f94]
+  movs r0,#0x4
+  str r3,[sp,#0x4]
+  str r4,[sp,#0x0]
+  bl 0x2c62c82c

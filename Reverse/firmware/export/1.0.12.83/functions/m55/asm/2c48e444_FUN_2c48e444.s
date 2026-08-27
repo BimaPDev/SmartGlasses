@@ -1,0 +1,24 @@
+; FUN_2c48e444 @ 0x2c48e444 size=48
+  cmp r0,r1
+  it ne
+  cmp.ne r0,#0x0
+  beq 0x2c48e462
+  cbz r1,0x2c48e462
+  ldr r3,[r0,#0x8]
+  cbz r3,0x2c48e466
+  ldr r3,[r3,#0x4]
+  cbz r3,0x2c48e470
+  str r1,[r3,#0x0]
+  str r3,[r1,#0x4]
+  ldr r3,[r0,#0x8]
+  movs r0,#0x1
+  str r1,[r3,#0x4]
+  bx lr
+  movs r0,#0x0
+  bx lr
+  str r1,[r0,#0x8]
+  movs r0,#0x1
+  strd r3,r1,[r1,#0x0]
+  bx lr
+  movs r0,#0x1
+  bx lr

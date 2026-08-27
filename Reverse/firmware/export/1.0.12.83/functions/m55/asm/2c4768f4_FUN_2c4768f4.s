@@ -1,0 +1,26 @@
+; FUN_2c4768f4 @ 0x2c4768f4 size=64
+  push {r3,lr}
+  ldr r2,[r0,#0x0]
+  ldr r3,[0x2c4756f8]
+  ldr r2,[r2,#0x0]
+  cmp r2,r3
+  bne 0x2c4756e8
+  pop.w {r3,lr}
+  b.w 0x2c474654
+  ldr r3,[0x2c4756fc]
+  movw r1,#0x2da
+  ldr r2,[0x2c475700]
+  ldr r0,[0x2c475704]
+  bl 0x2c668484
+  push {r3,lr}
+  ldr r3,[0x2c476914]
+  ldr r2,[r0,#0x0]
+  cmp r2,r3
+  bne 0x2c476906
+  pop.w {r3,lr}
+  b.w 0x2c4756d4
+  ldr r3,[0x2c476918]
+  movs r1,#0x13
+  ldr r2,[0x2c47691c]
+  ldr r0,[0x2c476920]
+  bl 0x2c668484

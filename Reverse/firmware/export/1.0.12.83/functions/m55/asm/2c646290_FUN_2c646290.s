@@ -1,0 +1,20 @@
+; FUN_2c646290 @ 0x2c646290 size=50
+  bx lr
+  push {r4,r5,r6,lr}
+  ldrb.w r2,[r0,#0x23]
+  mov r4,r0
+  ldr r1,[r0,#0x24]
+  bl 0x2c645aac
+  mov r5,r0
+  cbnz r0,0x2c6462a4
+  pop {r4,r5,r6,pc}
+  mov r1,r0
+  movs r2,#0x0
+  mov r0,r4
+  bl 0x2c64621c
+  mov r3,r4
+  mov r2,r5
+  ldrb.w r1,[r4,#0x23]
+  ldr r0,[r4,#0x24]
+  pop.w {r4,r5,r6,lr}
+  b.w 0x2c643ac0

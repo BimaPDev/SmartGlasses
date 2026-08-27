@@ -1,0 +1,27 @@
+; FUN_2c45e7e0 @ 0x2c45e7e0 size=54
+  push {r0,r2,r5,r6,r7,lr}
+  ldrh r1,[r0,#0x30]
+  lsls r0,r6,#0xd
+  lsls r1,r2,#0xb
+  lsrs r6,r6,#0x13
+  lsls r7,r4,#0x17
+  bkpt 0x89
+  movs r6,#0x72
+  add r3,sp,#0x148
+  asrs r2,r1,#0x9
+  add r0,sp,#0xa4
+  lsrs r2,r7,#0xe
+  add r5,sp,#0x108
+  cbz r5,0x2c45e7fe
+  ldr r3,[sp,#0x20]
+  asrs r0,r0,#0x3
+  push {r0,r3,r4,r6}
+  lsls r6,r1,#0x1a
+  str r7,[sp,#0x128]
+  asrs r5,r2,#0x19
+  ldr r3,[sp,#0x2c]
+  vrsra.s32 d21,d2,#0x18
+  ldr r2,[sp,#0xa8]
+  lsls r1,r1,#0xe
+  cmp r7,#0xaa
+  strh r2,[r7,#0x18]

@@ -1,0 +1,23 @@
+; FUN_2c456790 @ 0x2c456790 size=44
+  push {r1,r2,r3,r4,r6,lr}
+  strh r2,[r4,#0x4]
+  cmp r2,#0x0
+  lsls r1,r6,#0x8
+  ldrh r2,[r7,#0xc]
+  add r2,sp,#0x1cc
+  ldr r6,[sp,#0xc8]
+  bvs 0x2c45679a
+  lsls r0,r3,#0x17
+  str r3,[r3,#0x70]
+  lsls r3,r5,#0x10
+  lsrs r1,r4,#0x18
+  rev16 r0,r2
+  str r0,[r6,r5]
+  strb r6,[r6,#0xa]
+  str r2,[r6,r2]
+  bkpt 0x84
+  rev16 r3,r2
+  lsls r0,r6,#0x5
+  strb r6,[r6,#0xa]
+  add r9,r6
+  b 0x2c4561de

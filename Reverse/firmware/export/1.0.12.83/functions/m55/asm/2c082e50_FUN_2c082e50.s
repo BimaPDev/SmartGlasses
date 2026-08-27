@@ -1,0 +1,20 @@
+; FUN_2c082e50 @ 0x2c082e50 size=44
+  push {r0,r4,lr}
+  strh r2,[r0,#0x0]
+  lsls r4,r7,#0xa
+  cmp r3,#0x76
+  movs r2,#0x5f
+  asrs r1,r6,#0xc
+  lsls r7,r7,#0xe
+  it hi
+  strb r2,[r1,#0x1e]
+  mcr2 p3,0x1,lr,cr11,cr2,0x7
+  b 0x2c083650
+  ldrb r5,[r5,#0x7]
+  mcr p8,0x7,r7,cr1,cr1,0x6
+  ldr r0,[r1,r4]
+  cmp r1,#0xe8
+  strh r1,[r2,#0x32]
+  vaddw.u8 q5,q15,d14
+  lsrs r0,r0,#0x6
+  b 0x2c083e12

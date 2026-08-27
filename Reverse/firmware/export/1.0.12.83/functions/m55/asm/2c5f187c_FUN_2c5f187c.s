@@ -1,0 +1,19 @@
+; FUN_2c5f187c @ 0x2c5f187c size=36
+  push {r4,r5,r6,lr}
+  ldr r5,[r1,#0x0]
+  cbz r5,0x2c5f189c
+  mov r4,r1
+  ldr r1,[r1,#0x4]
+  cmp r1,r2
+  blt 0x2c5f189c
+  mov r3,r0
+  adds r0,r5,r2
+  movs r2,#0x0
+  ldrb r6,[r5,r1]
+  strb r2,[r5,r1]
+  blx r3
+  ldr r3,[r4,#0x4]
+  strb r6,[r5,r3]
+  pop {r4,r5,r6,pc}
+  movs r0,#0x0
+  pop {r4,r5,r6,pc}

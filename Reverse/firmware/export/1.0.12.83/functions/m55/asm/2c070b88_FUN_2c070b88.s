@@ -1,0 +1,26 @@
+; FUN_2c070b88 @ 0x2c070b88 size=52
+  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  movs r6,#0x26
+  adr r5,[0x2c070f28]
+  subs r3,#0x55
+  ldr r2,[sp,#0x1b8]
+  lsrs r0,r0,#0x8
+  b 0x2c070be4
+  strb r6,[r1,#0x14]
+  movs r6,r0
+  cbnz r0,0x2c070c2c
+  str r2,[sp,#0x1f0]
+  b 0x2c0711fc
+  subs r7,r1,r4
+  ldrh r5,[r7,#0x36]
+  strh r7,[r2,#0x14]
+  movs r6,#0x9
+  ldmia r6,{r2,r3,r6,r7}
+  lsls r2,r6,#0x5
+  adds r7,r6,r4
+  ldmia r6,{r0,r2,r3,r4,r5,r6,r7}
+  lsls r7,r7,#0x17
+  subs r5,r7,r7
+  mrc p12,0x7,APSR_nzcv,cr13,cr9,0x2
+  adds r3,r5,r4
+  ldmia r7,{r0,r5,r6,r7}

@@ -1,0 +1,24 @@
+; FUN_2c6411e0 @ 0x2c6411e0 size=54
+  push {r4,lr}
+  bl 0x2c6410f0
+  cbz r0,0x2c6411ee
+  ldr r3,[0x2c641218]
+  ldrb r3,[r3,#0x0]
+  cbnz r3,0x2c641200
+  ldr r4,[0x2c64121c]
+  ldr r0,[r4,#0x0]
+  bl 0x2c62be40
+  ldr r0,[r4,#0x0]
+  pop.w {r4,lr}
+  b.w 0x2c62be74
+  ldr r3,[0x2c641220]
+  ldr r4,[r3,#0x0]
+  cmp r4,#0x0
+  beq 0x2c6411ee
+  ldr r3,[r4,#0x0]
+  movs r0,#0x0
+  blx r3
+  ldr r4,[r4,#0x4]
+  cmp r4,#0x0
+  bne 0x2c641208
+  b 0x2c6411ee

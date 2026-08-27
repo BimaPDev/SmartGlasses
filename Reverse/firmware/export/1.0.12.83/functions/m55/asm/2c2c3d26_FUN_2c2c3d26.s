@@ -1,0 +1,26 @@
+; FUN_2c2c3d26 @ 0x2c2c3d26 size=52
+  adr r0,[0x2c2c3bfc]
+  str r0,[sp,#0x30]
+  b 0x2c2c384e
+  lsrs r7,r4,#0x17
+  udf #0xed
+  lsls r1,r1,#0x3
+  lsrs r3,r6,#0x1b
+  lsls r0,r2,#0x15
+  lsls r0,r4,#0x3
+  lsrs r0,r0,#0x14
+  lsrs r0,r0,#0x1e
+  mrc p13,0x1,sp,cr1,cr13,0x6
+  bcc 0x2c2c3840
+  bhi 0x2c2c3888
+  strh r0,[r0,#0x18]
+  adds r0,#0xf8
+  movs r0,r0
+  movs r0,r0
+  strb r6,[r1,#0x0]
+  push {r0,r1,r2,r3,r4,r6,r7,lr}
+  ldrb r0,[r0,r0]
+  strh r6,[r7,#0xe]
+  movs r0,r0
+  lsls r0,r0,#0xc
+  b 0x2c2c3872

@@ -1,0 +1,20 @@
+; FUN_2c5d8be0 @ 0x2c5d8be0 size=40
+  ldr r3,[r0,#0x54]
+  subs r3,#0x1
+  cmp r3,#0x5
+  bhi 0x2c5d8c0a
+  tbb [pc,r3]
+  ldr r0,[0x2c5d8c10]
+  bx lr
+  ldr r0,[0x2c5d8c14]
+  bx lr
+  ldr r0,[0x2c5d8c18]
+  bx lr
+  ldr r0,[0x2c5d8c1c]
+  bx lr
+  ldr r0,[0x2c5d8c20]
+  bx lr
+  ldr r0,[0x2c5d8c24]
+  bx lr
+  ldr r0,[0x2c5d8c28]
+  bx lr

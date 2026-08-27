@@ -1,0 +1,40 @@
+; FUN_2c635f18 @ 0x2c635f18 size=102
+  push {r3,r4,r5,r6,r7,lr}
+  ldrb.w r3,[r0,#0x36]
+  ldrh r2,[r0,#0x30]
+  bfi r3,r1,#0x0,#0x1
+  strb.w r3,[r0,#0x36]
+  cbz r2,0x2c635f7c
+  ldr r2,[r0,#0x2c]
+  mov r5,r0
+  movs r4,#0x0
+  movw r7,#0xffff
+  ldrh r3,[r2,#0x0]
+  and r6,r3,#0x80
+  b 0x2c635f42
+  ldr r2,[r5,#0x2c]
+  ldrh.w r3,[r2,r4,lsl #0x1]
+  bic r3,r3,#0x80
+  cmp r4,r7
+  strh.w r3,[r2,r4,lsl #0x1]
+  ldrh r3,[r5,#0x30]
+  beq 0x2c635f5e
+  cmp r4,r3
+  mov r1,r4
+  mov r0,r5
+  bcs 0x2c635f5e
+  bl 0x2c6352cc
+  ldrh r3,[r5,#0x30]
+  adds r4,#0x1
+  uxth r4,r4
+  cmp r4,r3
+  bcc 0x2c635f3c
+  cbz r6,0x2c635f7c
+  clz r1,r3
+  lsrs r1,r1,#0x5
+  cbz r3,0x2c635f7c
+  mov r0,r5
+  movs r2,#0x80
+  pop.w {r3,r4,r5,r6,r7,lr}
+  b.w 0x2c635698
+  pop {r3,r4,r5,r6,r7,pc}

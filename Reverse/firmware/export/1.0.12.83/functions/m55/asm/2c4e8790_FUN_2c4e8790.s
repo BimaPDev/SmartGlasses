@@ -1,0 +1,24 @@
+; FUN_2c4e8790 @ 0x2c4e8790 size=54
+  push {r4,r5,lr}
+  sub sp,#0xc
+  ldr r0,[r1,#0x0]
+  bl 0x2c4efeec
+  uxtb r4,r0
+  cmp r4,#0x4
+  bhi 0x2c4e87c4
+  ldr r1,[0x2c4e87d4]
+  movs r0,#0x4
+  ldr r5,[0x2c4e87d8]
+  ldr r3,[0x2c4e87dc]
+  ldr r2,[0x2c4e87e0]
+  strb r4,[r5,#0x0]
+  strd r1,r4,[sp,#0x0]
+  movs r1,#0x80
+  bl 0x2c673d88
+  mov r0,r4
+  bl 0x2c4e861c
+  cmp r0,#0x0
+  bne 0x2c4e87a0
+  ldr r0,[0x2c4e87ec]
+  add sp,#0xc
+  pop {r4,r5,pc}

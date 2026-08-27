@@ -1,0 +1,11 @@
+; FUN_2c503c4c @ 0x2c503c4c size=22
+  push {r4,lr}
+  ldr r3,[0x2c503c88]
+  sub sp,#0x8
+  ldr r4,[0x2c503c8c]
+  movs r2,#0x52
+  str r3,[sp,#0x4]
+  movs r0,#0x4
+  ldr r1,[0x2c503c90]
+  str r4,[sp,#0x0]
+  bl 0x2c62c82c

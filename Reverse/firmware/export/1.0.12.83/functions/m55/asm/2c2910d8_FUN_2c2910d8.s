@@ -1,0 +1,22 @@
+; FUN_2c2910d8 @ 0x2c2910d8 size=44
+  push {r0,r1,r2,r3,r4,r6,r7,lr}
+  movs r0,r4
+  lsrs r0,r0,#0x4
+  lsls r1,r6,#0x3
+  asrs r1,r0,#0x20
+  strb r7,[r1,#0x0]
+  movs r0,r0
+  cmp r7,#0x0
+  lsls r0,r4,#0x19
+  movs r0,r0
+  strb r7,[r1,#0x0]
+  movs r0,r0
+  ldmia r3!,{}
+  ldr r0,[r0,#0x70]
+  lsls r0,r0,#0x1
+  strb r7,[r1,#0x0]
+  movs r0,r0
+  bl 0x2c09b3cc
+  movs r0,r0
+  strb r7,[r1,#0x0]
+  movs r0,r0

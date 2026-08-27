@@ -1,0 +1,24 @@
+; FUN_2c51f660 @ 0x2c51f660 size=60
+  push {r3,r4,r5,lr}
+  mov.w r5,#0xff00ff00
+  mov r4,r0
+  movs r2,#0x0
+  mov r1,r5
+  bl 0x2c606dc0
+  mov r0,r4
+  movs r2,#0x0
+  movs r1,#0x4c
+  bl 0x2c606dcc
+  mov r0,r4
+  movs r2,#0x0
+  movs r1,#0x1
+  bl 0x2c606db4
+  mov r1,r5
+  mov r0,r4
+  movs r2,#0x0
+  bl 0x2c606d60
+  movs r2,#0x0
+  mov r0,r4
+  mov r1,r2
+  pop.w {r3,r4,r5,lr}
+  b.w 0x2c606d6c

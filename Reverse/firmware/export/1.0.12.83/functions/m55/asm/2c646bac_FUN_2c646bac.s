@@ -1,0 +1,24 @@
+; FUN_2c646bac @ 0x2c646bac size=62
+  push {r4,r5,r6,lr}
+  mov r6,r0
+  mov r5,r1
+  mov r4,r2
+  bl 0x2c643ab4
+  mrs r3,ipsr
+  cbnz r3,0x2c646bc4
+  mrs r3,primask
+  cbz r3,0x2c646bd4
+  mvn r1,#0x5
+  movs r0,#0x0
+  bl 0x2c643a9c
+  mvn r0,#0x5
+  pop {r4,r5,r6,pc}
+  mrs r3,basepri
+  cmp r3,#0x0
+  bne 0x2c646bc4
+  mov r0,r6
+  mov r1,r5
+  mov r2,r4
+  ldr.w r12,[0x2c646bec]
+  svc 0x0
+  pop {r4,r5,r6,pc}

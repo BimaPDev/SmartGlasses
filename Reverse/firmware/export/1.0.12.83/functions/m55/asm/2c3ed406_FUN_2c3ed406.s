@@ -1,0 +1,23 @@
+; FUN_2c3ed406 @ 0x2c3ed406 size=44
+  push {r0,r1,r3,r4,r5,r7,lr}
+  stmia r3,{r0,r2,r3,r4,r5}
+  adds r3,#0x33
+  str r1,[r1,#0x34]
+  str r7,[r1,#0x38]
+  adds r3,#0x33
+  adds r2,#0x33
+  adds r3,#0x33
+  adds r3,#0x33
+  ldrb r3,[r6,#0x0]
+  ldrh r0,[r1,#0xc]
+  ldrh r3,[r7,#0x6]
+  strb r0,[r1,#0xe]
+  stmia r4,{r0,r2,r3,r4,r5}
+  ldrh r0,[r1,#0x4]
+  stmia r7,{r0,r1,r2,r3,r7}
+  str r7,[r1,#0x38]
+  adds r3,#0x33
+  adds r3,#0x33
+  adds r3,#0x33
+  adds r3,#0x33
+  svc 0x33

@@ -1,0 +1,22 @@
+; FUN_2c13ae96 @ 0x2c13ae96 size=54
+  push {lr}
+  ldr r2,[0x2c13aecc]
+  ldr r1,[0x2c13aed0]
+  ldrb r2,[r2,#0x0]
+  sub sp,#0x14
+  ldr r1,[r1,#0x0]
+  str r1,[sp,#0xc]
+  mov.w r1,#0x0
+  strd r3,r3,[sp,#0x4]
+  cbnz r2,0x2c13aeb4
+  add r0,sp,#0x4
+  bl 0x2c13ae60
+  ldr r3,[0x2c13aed0]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0xc]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x2c13aec8
+  add sp,#0x14
+  pop.w pc
+  bl 0x2c13424c

@@ -1,0 +1,21 @@
+; FUN_2c4c04ac @ 0x2c4c04ac size=54
+  push {lr}
+  mrs r2,basepri
+  cmp r2,#0x40
+  beq 0x2c4c04be
+  mov r1,pc
+  ldr r3,[0x2c4c04e4]
+  strd r1,lr,[r3,#0x0]
+  movs r3,#0x40
+  msr basepri,r3
+  ldr r1,[0x2c4c04e8]
+  ldr r3,[r1,#0x38]
+  orrs r0,r3
+  bic r0,r0,#0xf
+  str r0,[r1,#0x38]
+  cbnz r2,0x2c4c04da
+  ldr r3,[0x2c4c04e4]
+  mov.w r1,#0xffffffff
+  str r1,[r3,#0x0]
+  msr basepri,r2
+  pop.w pc

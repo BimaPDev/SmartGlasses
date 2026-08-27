@@ -1,0 +1,24 @@
+; FUN_2c43712c @ 0x2c43712c size=48
+  push {r0,r2,r4,r7,lr}
+  ldr r4,[r3,#0x7c]
+  ldmia r4!,{r0,r1,r3,r6}
+  blt.w 0x2c5191ac
+  ldr r5,[sp,#0x2d4]
+  add r6,sp,#0x1f4
+  str r6,[r7,#0x7c]
+  ldr r6,[sp,#0x3fc]
+  adr r4,[0x2c437528]
+  movs r0,#0x87
+  strb r4,[r0,#0xc]
+  str r4,[sp,#0x368]
+  strb r0,[r0,#0x19]
+  strb r2,[r6,#0x11]
+  subs r1,#0xe
+  lsls r1,r1,#0x1d
+  asrs r5,r0,#0x9
+  adds r7,#0x7
+  adds r3,#0xa0
+  ldmia r1!,{r4,r5,r6,r7}
+  cmp r7,#0xc0
+  strb r5,[r1,#0x5]
+  lsrs r7,r7,#0x17

@@ -1,0 +1,27 @@
+; FUN_2c142080 @ 0x2c142080 size=64
+  push {r4,lr}
+  mov r4,r0
+  mrs r3,ipsr
+  cbnz r3,0x2c142090
+  mrs r3,primask
+  cbz r3,0x2c1420a4
+  cbz r4,0x2c142098
+  ldrb r3,[r4,#0x0]
+  cmp r3,#0xf7
+  beq 0x2c1420b4
+  mov r0,r4
+  movs r1,#0x0
+  bl 0x2c13ef18
+  movs r0,#0x0
+  pop {r4,pc}
+  mrs r3,basepri
+  cmp r3,#0x0
+  bne 0x2c142090
+  ldr.w r12,[0x2c1420c0]
+  svc 0x0
+  pop {r4,pc}
+  mov r0,r4
+  ldr r1,[r4,#0x14]
+  bl 0x2c13ef18
+  ldr r0,[r4,#0x14]
+  pop {r4,pc}

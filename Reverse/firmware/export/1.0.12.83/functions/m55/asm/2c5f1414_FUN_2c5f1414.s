@@ -1,0 +1,21 @@
+; FUN_2c5f1414 @ 0x2c5f1414 size=56
+  push {r4,lr}
+  mov r1,r0
+  ldr r0,[0x2c5f1188]
+  bl 0x2c5fefc8
+  mov r4,r0
+  bl 0x2c5ff0b8
+  movs r1,#0x0
+  mov r0,r4
+  bl 0x2c627e28
+  movs r3,#0x8
+  mov r0,r4
+  movs r1,#0x1
+  strb.w r3,[r4,#0x25]
+  bl 0x2c606a28
+  mov r0,r4
+  pop {r4,pc}
+  ldrh.w r3,[r0,#0x50]
+  cbnz r3,0x2c5f141e
+  strh.w r1,[r0,#0x50]
+  b.w 0x2c5f115c

@@ -1,0 +1,26 @@
+; FUN_2c434fde @ 0x2c434fde size=54
+  ldrsb r0,[r4,r3]
+  asrs r2,r5,#0x13
+  ldr r0,[r2,r4]
+  add r6,sp,#0x84
+  subs r4,#0x6b
+  subs r4,#0x6d
+  strh r5,[r6,r1]
+  str r6,[r7,#0x34]
+  lsls r4,r0,#0x11
+  stmia r5!,{r0,r1,r7}
+  stmia r0!,{r1,r4,r6}
+  adr r3,[0x2c4352b0]
+  adds r4,#0xaf
+  cmp r1,#0x66
+  strh r5,[r3,#0x20]
+  push {r6,lr}
+  adr r7,[0x2c435100]
+  vmlsl.s32 q10,d27,d10[0x1]
+  ldr r7,[0x2c4350d0]
+  stmia r4,{r0,r2,r3,r4}
+  strb r2,[r3,#0x10]
+  ble 0x2c434f28
+  lsrs r1,r7,#0x13
+  vrsra.u32 d11,d30,#0x1d
+  ldr r1,[sp,#0x35c]

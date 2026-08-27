@@ -1,0 +1,19 @@
+; FUN_2c644958 @ 0x2c644958 size=52
+  push {r4,lr}
+  mov r4,r0
+  bl 0x2c643afc
+  mrs r3,ipsr
+  cbnz r3,0x2c644972
+  mrs r3,primask
+  cbnz r3,0x2c644972
+  mrs r3,basepri
+  cbz r3,0x2c644982
+  mov r0,r4
+  mvn r1,#0x5
+  bl 0x2c643ad8
+  mvn r0,#0x5
+  pop {r4,pc}
+  mov r0,r4
+  ldr.w r12,[0x2c64498c]
+  svc 0x0
+  pop {r4,pc}

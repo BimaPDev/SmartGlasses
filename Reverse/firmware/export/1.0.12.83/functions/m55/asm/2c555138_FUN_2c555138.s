@@ -1,0 +1,20 @@
+; FUN_2c555138 @ 0x2c555138 size=48
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  bl 0x2c48e738
+  ldr r1,[0x2c555168]
+  mov r5,r0
+  ldrb r3,[r4,#0x4]
+  vmov s0,r3
+  vcvt.f64.u32 d0,s0
+  bl 0x2c48e518
+  ldr r3,[r4,#0xc]
+  cbnz r3,0x2c55515a
+  mov r0,r5
+  pop {r3,r4,r5,pc}
+  ldr r2,[r4,#0x8]
+  mov r0,r5
+  ldr r1,[0x2c55516c]
+  bl 0x2c48e5b4
+  mov r0,r5
+  pop {r3,r4,r5,pc}

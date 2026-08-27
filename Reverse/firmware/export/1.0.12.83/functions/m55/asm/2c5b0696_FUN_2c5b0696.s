@@ -1,0 +1,21 @@
+; FUN_2c5b0696 @ 0x2c5b0696 size=52
+  push {r4,r5,r6,lr}
+  lsrs r6,r1,#0x1f
+  mov r4,r1
+  bne 0x2c5b06c6
+  mov r5,r0
+  bl 0x2c6041fc
+  subs r0,#0x1
+  cmp r0,r4
+  blt 0x2c5b06c6
+  mov r1,r4
+  mov r0,r5
+  bl 0x2c6041dc
+  mov r1,r6
+  bl 0x2c6041dc
+  mov r1,r6
+  bl 0x2c6041dc
+  pop.w {r4,r5,r6,lr}
+  b.w 0x2c607e50
+  movs r0,#0x0
+  pop {r4,r5,r6,pc}

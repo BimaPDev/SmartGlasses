@@ -1,0 +1,24 @@
+; FUN_2c49f310 @ 0x2c49f310 size=58
+  push {r4,lr}
+  ldr r4,[0x2c49f3ec]
+  sub sp,#0x8
+  ldr r0,[r4,#0x0]
+  cmp r0,#0x0
+  beq 0x2c49f3b4
+  movs r1,#0x6c
+  ldr r4,[0x2c49f3f0]
+  bl 0x2c4c2cd8
+  movs r1,#0x6c
+  ldr r2,[0x2c49f3f4]
+  ldr r3,[0x2c49f3f8]
+  strd r2,r1,[sp,#0x0]
+  ldr r2,[0x2c49f3fc]
+  movw r1,#0x66e
+  str r0,[r4,#0x0]
+  movs r0,#0x4
+  bl 0x2c673d88
+  mov.w r1,#0x3e8
+  ldr r0,[0x2c49f428]
+  bl 0x2c4c2c50
+  str r0,[r4,#0x0]
+  b 0x2c49f31c

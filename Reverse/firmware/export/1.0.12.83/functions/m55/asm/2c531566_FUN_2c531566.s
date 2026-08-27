@@ -1,0 +1,21 @@
+; FUN_2c531566 @ 0x2c531566 size=50
+  push {r4,r5,r6,lr}
+  mov r5,r1
+  mov r4,r0
+  mov r6,r2
+  cbz r1,0x2c53158c
+  mov r0,r1
+  bl 0x2c66c4ec
+  cmp r0,#0x14
+  mov r2,r0
+  mov r3,r4
+  it cs
+  mov.cs r2,#0x14
+  mov r1,r5
+  strb.w r2,[r3],#0x1
+  mov r0,r3
+  bl 0x2c66c568
+  mov r1,r6
+  mov r0,r4
+  pop.w {r4,r5,r6,lr}
+  b.w 0x2c531520

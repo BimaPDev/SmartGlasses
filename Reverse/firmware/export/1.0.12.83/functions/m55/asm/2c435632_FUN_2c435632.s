@@ -1,0 +1,22 @@
+; FUN_2c435632 @ 0x2c435632 size=46
+  push {r0,r2,r6,r7,lr}
+  strb r1,[r0,r7]
+  adr r1,[0x2c435898]
+  subs r6,#0x9f
+  vaddl.u16 q8,d9,d2
+  movs r1,r0
+  subs r3,r0,#0x0
+  subs r3,r0,#0x0
+  bl 0x2b638980
+  cmp r1,#0xa3
+  b 0x2c435b60
+  cmp r5,#0x68
+  ldmia r3,{r1,r3}
+  lsls r1,r0,#0x1d
+  str r7,[r6,#0x0]
+  adds r2,#0xb
+  lsls r5,r2,#0x3
+  strh r2,[r5,#0x10]
+  ldrb r7,[r0,#0x3]
+  asrs r0,r7,#0x1d
+  adds r2,r2,#0x7

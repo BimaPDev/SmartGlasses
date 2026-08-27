@@ -1,0 +1,21 @@
+; FUN_2c45ef76 @ 0x2c45ef76 size=42
+  push {r0,r1,r2,r3,lr}
+  ldr r1,[0x2c45f114]
+  movs r7,#0xa5
+  adds r6,#0xa9
+  lsls r2,r5,#0x1c
+  bl 0x2b57b8ac
+  adds r2,r7,r6
+  add r0,sp,#0x23c
+  strh r0,[r4,#0x1c]
+  strb r1,[r4,r5]
+  ldr r6,[0x2c45f1f4]
+  str r5,[r0,#0x78]
+  muls r2,r1
+  ldrb r2,[r3,#0x5]
+  str r3,[r5,#0x20]
+  stmia r6,{r1,r2,r3,r6,r7}
+  lsrs r5,r6,#0x18
+  adds r5,#0xbb
+  adds r7,#0x6c
+  adds r0,r2,#0x0

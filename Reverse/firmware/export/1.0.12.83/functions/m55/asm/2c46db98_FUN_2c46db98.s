@@ -1,0 +1,23 @@
+; FUN_2c46db98 @ 0x2c46db98 size=58
+  push {r4,r5,r6,lr}
+  sub sp,#0x10
+  add r3,sp,#0x10
+  stmdb r3,{r0,r1,r2}
+  ldrb.w r4,[sp,#0x4]
+  add.w r3,r4,#0xc
+  uxtb r3,r3
+  cmp r3,#0xa
+  bls 0x2c46dbb4
+  add sp,#0x10
+  pop {r4,r5,r6,pc}
+  mov r5,r1
+  ldrh.w r6,[sp,#0xc]
+  bl 0x2c4969c8
+  cbnz r0,0x2c46dc08
+  subs r4,#0xf9
+  cmp r4,#0x3
+  bhi 0x2c46dbb0
+  tbb [pc,r4]
+  movs r0,#0x1
+  bl 0x2c4967a0
+  b 0x2c46dbc0

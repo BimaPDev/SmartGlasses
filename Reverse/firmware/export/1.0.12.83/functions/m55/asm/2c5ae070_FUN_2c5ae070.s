@@ -1,0 +1,24 @@
+; FUN_2c5ae070 @ 0x2c5ae070 size=66
+  push {r3,lr}
+  mov r0,r1
+  ldr r1,[0x2c5ae0b4]
+  bl 0x2c48e424
+  bl 0x2c48de10
+  ldrb r3,[r0,#0x0]
+  cmp r3,#0x31
+  bne 0x2c5ae098
+  ldrb r2,[r0,#0x1]
+  cbnz r2,0x2c5ae098
+  movw r0,#0x4016
+  bl 0x2c5e33f0
+  pop.w {r3,lr}
+  b.w 0x2c5e4068
+  cmp r3,#0x30
+  bne 0x2c5ae0b0
+  ldrb r3,[r0,#0x1]
+  cbnz r3,0x2c5ae0b0
+  movw r0,#0x4017
+  bl 0x2c5e33f0
+  pop.w {r3,lr}
+  b.w 0x2c5e4068
+  pop {r3,pc}

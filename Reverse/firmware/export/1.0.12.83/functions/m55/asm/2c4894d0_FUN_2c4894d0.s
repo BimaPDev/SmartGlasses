@@ -1,0 +1,21 @@
+; FUN_2c4894d0 @ 0x2c4894d0 size=56
+  push {lr}
+  add.w lr,r0,#0x1
+  ldrb r2,[r1,#0x1]
+  ldrb r0,[r0,#0x1]
+  add.w r12,r1,#0x1
+  cmp r0,r2
+  beq 0x2c4894f0
+  movs r0,#0x1
+  eor r0,r0,#0x1
+  pop.w pc
+  ldrb.w r1,[lr,#0x1]!
+  ldrb.w r2,[r12,#0x1]!
+  cmp r1,r2
+  bne 0x2c4894e2
+  ldrb.w r1,[lr,#0x1]
+  ldrb.w r2,[r12,#0x1]
+  cmp r1,r2
+  bne 0x2c4894e2
+  mov r0,r3
+  b 0x2c4894e4

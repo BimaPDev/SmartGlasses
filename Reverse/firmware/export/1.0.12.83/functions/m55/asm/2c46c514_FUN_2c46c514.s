@@ -1,0 +1,21 @@
+; FUN_2c46c514 @ 0x2c46c514 size=40
+  cbz r0,0x2c46c538
+  push {r4,lr}
+  ldr r3,[r0,#0xc]
+  mov r4,r0
+  subs r3,#0x1
+  str r3,[r0,#0xc]
+  cbz r3,0x2c46c526
+  movs r0,#0x0
+  pop {r4,pc}
+  ldr r3,[r0,#0x20]
+  cbz r3,0x2c46c52e
+  ldr r1,[r0,#0x24]
+  blx r3
+  mov r0,r4
+  ldr r3,[r4,#0x4]
+  blx r3
+  movs r0,#0x1
+  pop {r4,pc}
+  movs r0,#0x0
+  bx lr

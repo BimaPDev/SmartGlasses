@@ -1,0 +1,22 @@
+; FUN_2c469f64 @ 0x2c469f64 size=44
+  push {r2,r3,r4,r5,r7,lr}
+  subs r5,#0x61
+  subs r0,r5,#0x3
+  movs r0,#0x0
+  lsls r4,r7,#0x11
+  subs r4,#0x0
+  lsls r0,r7,#0x1
+  subs r4,#0x0
+  lsls r4,r7,#0x10
+  subs r4,#0x0
+  push {r6,r7,lr}
+  subs r5,#0x61
+  push {r4,lr}
+  ldr r4,[0x2c469fa0]
+  sub sp,#0x8
+  movs r1,#0x24
+  ldr r3,[0x2c469fa4]
+  ldr r2,[0x2c469fa8]
+  movs r0,#0x4
+  str r4,[sp,#0x0]
+  bl 0x2c673d88

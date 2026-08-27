@@ -1,0 +1,21 @@
+; FUN_2c2cdac4 @ 0x2c2cdac4 size=40
+  push {r0,r1,r2,r3,r5,r6,r7,lr}
+  movs r0,r0
+  movs r0,r0
+  lsls r0,r0,#0x4
+  str r2,[sp,#0x3bc]
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  stmia r2,{r0,r2}
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  lsls r0,r0,#0x14
+  strh r7,[r7,#0x6]
+  movs r0,r0
+  movs r0,r0
+  str r0,[sp,#0xe8]
+  ldr r0,[r0,r0]
+  adds r0,#0xfe
+  movs r0,r0

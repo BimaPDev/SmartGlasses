@@ -1,0 +1,21 @@
+; FUN_2c4a07d0 @ 0x2c4a07d0 size=50
+  ldr r3,[0x2c4a07b4]
+  ldr r2,[0x2c4a07b8]
+  push {r4,r5,lr}
+  ldr r4,[0x2c4a0810]
+  sub sp,#0xc
+  ldr r5,[0x2c4a0814]
+  ldr r2,[r4,#0x0]
+  ldr r3,[r5,#0x0]
+  cmp r2,r3
+  bne 0x2c4a07ea
+  add sp,#0xc
+  pop.w {r4,r5,lr}
+  b.w 0x2c4a0734
+  ldr r1,[0x2c4a0818]
+  movs r0,#0x4
+  ldr r3,[0x2c4a081c]
+  strd r1,r2,[sp,#0x0]
+  ldr r2,[0x2c4a0820]
+  movw r1,#0x169
+  bl 0x2c673d88

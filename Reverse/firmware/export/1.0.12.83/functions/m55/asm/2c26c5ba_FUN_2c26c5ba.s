@@ -1,0 +1,20 @@
+; FUN_2c26c5ba @ 0x2c26c5ba size=40
+  push {r0,r1,r2,lr}
+  lsls r0,r0,#0x18
+  ldr r7,[0x2c26c680]
+  ldr r7,[0x2c26c604]
+  lsls r2,r2,#0x3
+  ldr r7,[sp,#0x8]
+  subs r0,r2,#0x6
+  ldrb r0,[r2,#0x19]
+  ldrsh r0,[r0,r4]
+  lsls r3,r3,#0x3
+  lsls r0,r0,#0x8
+  add r5,sp,#0x100
+  bge 0x2c26c5d6
+  ldr r0,[r0,#0x70]
+  eors r7,r1
+  movs r0,r0
+  b 0x2c26cd54
+  cdp2 p0,0xe,cr13,cr15,cr14,0x7
+  pop {r3,pc}

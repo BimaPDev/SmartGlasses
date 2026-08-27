@@ -1,0 +1,22 @@
+; FUN_2c51340c @ 0x2c51340c size=50
+  push {r4,r5,r6,r7,lr}
+  mov r6,r2
+  ldr r2,[r0,#0xc]
+  sub sp,#0x1c
+  mov r4,r0
+  mov r0,r2
+  mov r5,r1
+  mov r7,r3
+  str r2,[sp,#0x14]
+  bl 0x2c66c4ec
+  ldr r3,[sp,#0x30]
+  str r6,[sp,#0x4]
+  ldr r2,[sp,#0x14]
+  strd r7,r3,[sp,#0x8]
+  uxtb r3,r0
+  ldrsb.w r1,[r4,#0x4]
+  ldr r0,[r4,#0x0]
+  str r5,[sp,#0x0]
+  bl 0x2c5fd5fc
+  add sp,#0x1c
+  pop {r4,r5,r6,r7,pc}

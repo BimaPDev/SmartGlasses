@@ -1,0 +1,27 @@
+; FUN_2c4be7f8 @ 0x2c4be7f8 size=66
+  cmp r0,#0x1f
+  bhi 0x2c4be836
+  push {r4,lr}
+  mrs r3,basepri
+  cmp r3,#0x40
+  beq 0x2c4be80e
+  mov r1,pc
+  ldr r2,[0x2c4be83c]
+  strd r1,lr,[r2,#0x0]
+  movs r2,#0x40
+  msr basepri,r2
+  ldr r4,[0x2c4be840]
+  movs r1,#0x1
+  ldr r2,[r4,#0x0]
+  lsl.w r0,r1,r0
+  bic.w r2,r2,r0
+  str r2,[r4,#0x0]
+  cbnz r3,0x2c4be82e
+  ldr r2,[0x2c4be83c]
+  mov.w r1,#0xffffffff
+  str r1,[r2,#0x0]
+  msr basepri,r3
+  movs r0,#0x0
+  pop {r4,pc}
+  movs r0,#0x1
+  bx lr

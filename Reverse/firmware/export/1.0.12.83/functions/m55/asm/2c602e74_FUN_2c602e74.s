@@ -1,0 +1,20 @@
+; FUN_2c602e74 @ 0x2c602e74 size=42
+  push {r4,lr}
+  ldrb r3,[r0,#0x1c]
+  mov r4,r0
+  lsls r3,r3,#0x1f
+  bmi 0x2c602e8e
+  ldr r2,[0x2c602ea0]
+  ldr r1,[0x2c602ea4]
+  bl 0x2c602c38
+  ldr r3,[r4,#0x14]
+  cbz r3,0x2c602e8c
+  cbz r0,0x2c602e94
+  pop {r4,pc}
+  ldr r3,[r0,#0x14]
+  cmp r3,#0x0
+  beq 0x2c602e8c
+  mov r0,r4
+  movs r1,#0x0
+  pop.w {r4,lr}
+  bx r3

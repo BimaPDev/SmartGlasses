@@ -1,0 +1,20 @@
+; FUN_2c5cdbd0 @ 0x2c5cdbd0 size=72
+  cmp r1,#0x6
+  bhi 0x2c5cdc18
+  tbb [pc,r1]
+  movw r0,#0x2006
+  b.w 0x2c5e33f0
+  movw r0,#0x2007
+  b.w 0x2c5e33f0
+  movw r0,#0x2001
+  b.w 0x2c5e33f0
+  movw r0,#0x2002
+  b.w 0x2c5e33f0
+  movw r0,#0x2003
+  b.w 0x2c5e33f0
+  movw r0,#0x2004
+  b.w 0x2c5e33f0
+  movw r0,#0x2005
+  b.w 0x2c5e33f0
+  mov.w r0,#0x2000
+  b.w 0x2c5e33f0

@@ -1,0 +1,25 @@
+; FUN_2c47e53c @ 0x2c47e53c size=60
+  movs r7,#0x1
+  mov.w r10,#0x0
+  movs r2,#0x5
+  mov r0,r6
+  mov r3,r7
+  ldr r1,[sp,#0x88]
+  mov.w r11,#0x4
+  strd r7,r10,[sp,#0x0]
+  bl 0x2c47cf18
+  mov r1,r6
+  movs r0,#0x7
+  bl 0x2c472680
+  push {r3,r5,r6,r7,lr}
+  subs r4,#0x0
+  sxtb r4,r3
+  subs r4,#0x0
+  push {r4,r5}
+  subs r4,#0x0
+  cbz r4,0x2c47e5a0
+  subs r4,#0x0
+  strb r1,[r2,#0x0]
+  ldr r1,[0x2c47e5b4]
+  bl 0x2c6741e8
+  b 0x2c47e47c

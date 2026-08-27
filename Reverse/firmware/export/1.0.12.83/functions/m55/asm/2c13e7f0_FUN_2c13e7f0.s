@@ -1,0 +1,24 @@
+; FUN_2c13e7f0 @ 0x2c13e7f0 size=68
+  subs r3,r0,r1
+  bls 0x2c13e7f8
+  cmp r3,r2
+  bcc 0x2c13e7fa
+  b 0x2c13e8f0
+  add.w r3,r0,r2
+  and r12,r3,#0x3
+  sub.w r3,r3,#0x1
+  sub.w r1,r1,r0
+  cmp r2,#0x3
+  it ls
+  mov.ls r12,r2
+  subs.w r2,r2,r12
+  tbb [pc,r12]
+  mov r3,r0
+  rsb.w r12,r0,#0x0
+  and r12,r12,#0x3
+  sub.w r1,r1,r0
+  cmp r2,#0x3
+  it ls
+  mov.ls r12,r2
+  subs.w r2,r2,r12
+  tbb [pc,r12]

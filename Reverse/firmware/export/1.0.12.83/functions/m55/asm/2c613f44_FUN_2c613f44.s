@@ -1,0 +1,27 @@
+; FUN_2c613f44 @ 0x2c613f44 size=62
+  push {r4,lr}
+  ldrb r3,[r0,#0x4]
+  mov r4,r0
+  cmp r3,#0x2
+  beq 0x2c613f54
+  cmp r3,#0x5
+  beq 0x2c613f68
+  pop {r4,pc}
+  ldr r3,[r0,#0x14]
+  cmp r3,#0x0
+  beq 0x2c613f52
+  ldr r2,[r3,#0x10]
+  cmp r2,#0x0
+  blt 0x2c613f72
+  ldr r2,[r3,#0x14]
+  subs r2,#0x1
+  str r2,[r3,#0x14]
+  pop {r4,pc}
+  ldr r0,[r0,#0x8]
+  pop.w {r4,lr}
+  b.w 0x2c62bea8
+  ldr r0,[r3,#0x4]
+  bl 0x2c62bea8
+  ldr r0,[r4,#0x14]
+  pop.w {r4,lr}
+  b.w 0x2c62bea8

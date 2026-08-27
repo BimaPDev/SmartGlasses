@@ -1,0 +1,25 @@
+; FUN_2c652672 @ 0x2c652672 size=56
+  push {r4,r5,r6,r7,lr}
+  sub sp,#0x24
+  mov r4,r0
+  mov r5,r1
+  add r6,sp,#0x18
+  stm r6,{r2,r3}
+  ldr r2,[sp,#0x48]
+  ldr r3,[r1,#0x0]
+  str r2,[sp,#0x10]
+  ldr r2,[sp,#0x44]
+  str r2,[sp,#0xc]
+  ldr r2,[sp,#0x40]
+  str r2,[sp,#0x8]
+  add r2,sp,#0x38
+  ldm.w r2,{r0,r1}
+  stm sp,{r0,r1}
+  mov r0,r4
+  ldr r7,[r3,#0x14]
+  mov r1,r5
+  ldm.w r6,{r2,r3}
+  blx r7
+  mov r0,r4
+  add sp,#0x24
+  pop {r4,r5,r6,r7,pc}

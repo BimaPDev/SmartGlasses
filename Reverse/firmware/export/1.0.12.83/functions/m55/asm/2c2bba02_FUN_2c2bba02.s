@@ -1,0 +1,20 @@
+; FUN_2c2bba02 @ 0x2c2bba02 size=42
+  push {r0,r3,lr}
+  ldcl p13,cr13,[r0,#-0x37c]
+  ldmia r1!,{r4,r5,r7}
+  lsls r6,r5,#0x1
+  lsrs r6,r2,#0xf
+  ldr r6,[0x2c2bbd10]
+  movs r0,r0
+  ldr r1,[r3,#0x6c]
+  ldrb r0,[r0,#0x14]
+  tst r6,r0
+  movs r2,#0x6e
+  bhi 0x2c2bba5e
+  lsls r6,r5,#0x1
+  subs r7,r7,#0x4
+  movs r0,r0
+  asrs r0,r0,#0xc
+  bics r0,r9,#0x6e
+  movs r0,r0
+  movs r0,r0

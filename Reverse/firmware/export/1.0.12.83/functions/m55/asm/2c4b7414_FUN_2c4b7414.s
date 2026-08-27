@@ -1,0 +1,20 @@
+; FUN_2c4b7414 @ 0x2c4b7414 size=40
+  push {r4,r5,lr}
+  movs r5,#0x0
+  sub sp,#0xc
+  mov r4,r0
+  mov r3,r2
+  str r5,[sp,#0x0]
+  mov r2,r1
+  ldr r0,[0x2c4b743c]
+  mov r1,r4
+  bl 0x2c4c2118
+  ldr r3,[0x2c4b7440]
+  mov r5,r0
+  ldr r3,[r3,#0x0]
+  cbz r3,0x2c4b7436
+  mov r0,r4
+  blx r3
+  mov r0,r5
+  add sp,#0xc
+  pop {r4,r5,pc}

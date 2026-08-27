@@ -1,0 +1,27 @@
+; FUN_2c658492 @ 0x2c658492 size=66
+  push {r3,r4,r5,r6,r7,lr}
+  ldr r3,[sp,#0x18]
+  mov r5,r1
+  mov.w r6,#0xffffffff
+  mov r1,r2
+  mov.w r7,#0xffffffff
+  movs r2,#0x0
+  mov r4,r0
+  strd r6,r7,[r0,#0x0]
+  strd r2,r2,[r0,#0x8]
+  cbz r3,0x2c6584d0
+  cmp r3,#0x1
+  ite eq
+  mov.eq r2,#0x1
+  mov.ne r2,#0x2
+  ldr r0,[r5,#0x20]
+  bl 0x2c668ab4
+  cbnz r0,0x2c6584cc
+  ldr r0,[r5,#0x20]
+  bl 0x2c668c30
+  asrs r3,r0,#0x1f
+  strd r0,r3,[r4,#0x0]
+  mov r0,r4
+  pop {r3,r4,r5,r6,r7,pc}
+  mov r2,r3
+  b 0x2c6584b8

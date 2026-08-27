@@ -1,0 +1,43 @@
+; FUN_2c47f728 @ 0x2c47f728 size=112
+  push {r4,r5,r6,r7,lr}
+  ldrsh.w r6,[r3,#0x2]
+  mov r4,r3
+  mov r5,r1
+  sub sp,#0xc
+  adds.w r3,r6,#0x1f
+  mov r7,r2
+  add.w r2,r4,#0x24
+  mov r1,r0
+  it mi
+  add.mi.w r3,r6,#0x3e
+  mov r0,r5
+  sbfx r3,r3,#0x5,#0x8
+  strd r2,r3,[sp,#0x0]
+  bl 0x2c47f410
+  mov r4,r0
+  ldrd r2,r3,[sp,#0x0]
+  cbnz r0,0x2c47f788
+  cmp.w r6,r3, lsl #0x5
+  bge 0x2c47f77a
+  asrs r1,r6,#0x5
+  and r6,r6,#0x1f
+  ldr.w r0,[r5,r1,lsl #0x2]
+  movs r1,#0x1
+  lsl.w r6,r1,r6
+  tst r6,r0
+  ite ne
+  mov.ne r4,r1
+  mov.eq r4,#0x0
+  mov r1,r5
+  mov r0,r7
+  bl 0x2c47f410
+  mov r0,r4
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}
+  movs r4,#0x1
+  mov r1,r5
+  mov r0,r7
+  bl 0x2c47f410
+  mov r0,r4
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}

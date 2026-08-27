@@ -1,0 +1,55 @@
+; FUN_2c62a0a4 @ 0x2c62a0a4 size=154
+  push {r4,r5,r6,r7,r8,lr}
+  sub sp,#0x10
+  ldr r0,[0x2c62a140]
+  ldrb.w r7,[sp,#0x30]
+  ldr r0,[r0,#0x0]
+  str r0,[sp,#0xc]
+  mov.w r0,#0x0
+  ldrsh.w r6,[sp,#0x28]
+  cmp r7,#0x2
+  ldr r0,[sp,#0x2c]
+  bhi 0x2c62a0d6
+  ldr r3,[0x2c62a140]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0xc]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x2c62a13a
+  add sp,#0x10
+  pop.w {r4,r5,r6,r7,r8,pc}
+  ubfx r12,r2,#0x0,#0xb
+  ldr r2,[sp,#0x0]
+  mov r5,r3
+  ubfx r4,r0,#0x10,#0x8
+  and r3,r2,#0x300
+  ldr r2,[0x2c62a144]
+  add.w r4,r4,r4, lsl #0x1
+  cmp r7,#0xfc
+  orr.w r2,r2,r12, lsl #0xa
+  str r1,[sp,#0x8]
+  orr.w r2,r2,r3
+  ubfx r3,r0,#0x8,#0x8
+  add.w r4,r4,r3, lsl #0x2
+  str r2,[sp,#0x0]
+  uxtab r0,r4,r0,#0x0
+  ubfx r4,r0,#0x3,#0xd
+  bls 0x2c62a11c
+  uxtb r3,r4
+  mov r8,sp
+  mov r2,r6
+  mov r1,r5
+  mov r0,r8
+  bl 0x2c611d2c
+  b 0x2c62a0c2
+  mov r8,sp
+  mov r2,r6
+  mov r1,r5
+  mov r0,r8
+  bl 0x2c611c18
+  rsb.w r2,r7,#0xff
+  smulbb r3,r2,r0
+  mla r4,r7,r4,r3
+  ubfx r3,r4,#0x8,#0x8
+  b 0x2c62a110
+  bl 0x2c674828

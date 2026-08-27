@@ -1,0 +1,47 @@
+; FUN_2c65173c @ 0x2c65173c size=116
+  push {r0,r1,r4,r5,r6,r7,r8,lr}
+  ldr r7,[r0,#0x0]
+  mov r4,r0
+  mov r6,r1
+  ldr r3,[0x2c6517b0]
+  ldr.w r8,[r7,#-0xc]
+  mov r5,r2
+  mov r1,r8
+  bl 0x2c6513b0
+  mov r1,r6
+  mov r0,r4
+  bl 0x2c6513cc
+  cbnz r0,0x2c651766
+  ldr.w r3,[r7,#-0x4]
+  cmp r3,#0x0
+  ble 0x2c65177e
+  mov r0,r4
+  mov r3,r6
+  mov r2,r8
+  movs r1,#0x0
+  str r5,[sp,#0x0]
+  bl 0x2c651718
+  mov r4,r0
+  mov r0,r4
+  add sp,#0x8
+  pop.w {r4,r5,r6,r7,r8,pc}
+  subs r3,r6,r7
+  cmp.w r5,r3, asr #0x2
+  asr.w r2,r3, asr #0x2
+  bhi 0x2c6517a0
+  mov r2,r5
+  mov r1,r6
+  mov r0,r7
+  bl 0x2c6513e8
+  ldr r0,[r4,#0x0]
+  mov r1,r5
+  subs r0,#0xc
+  bl 0x2c6514b0
+  b 0x2c651776
+  cmp r2,#0x0
+  beq 0x2c651794
+  mov r2,r5
+  mov r1,r6
+  mov r0,r7
+  bl 0x2c651400
+  b 0x2c651794

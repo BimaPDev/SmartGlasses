@@ -1,0 +1,27 @@
+; FUN_2c61a67c @ 0x2c61a67c size=68
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  cbz r0,0x2c61a6ba
+  adds r0,#0x30
+  bl 0x2c62c968
+  mov r5,r0
+  adds r0,#0x8
+  bl 0x2c62adfc
+  ldrb r3,[r5,#0x10]
+  ldr r2,[0x2c61a6c0]
+  mov r0,r4
+  orr r3,r3,#0x1
+  str r4,[r5,#0x4]
+  str r2,[r5,#0x0]
+  strb r3,[r5,#0x10]
+  ldrb.w r3,[r4,#0x3c]
+  orr r3,r3,#0x8
+  strb.w r3,[r4,#0x3c]
+  bl 0x2c607df0
+  mov r0,r4
+  bl 0x2c607588
+  mov r0,r5
+  pop {r3,r4,r5,pc}
+  mov r5,r0
+  mov r0,r5
+  pop {r3,r4,r5,pc}

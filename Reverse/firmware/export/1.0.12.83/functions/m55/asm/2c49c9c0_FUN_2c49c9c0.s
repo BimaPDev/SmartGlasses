@@ -1,0 +1,16 @@
+; FUN_2c49c9c0 @ 0x2c49c9c0 size=38
+  push {r3,lr}
+  bl 0x2c49c8c4
+  cmp r0,#0x0
+  blt 0x2c49c9e4
+  movs r0,#0x1e
+  bl 0x2c6444fc
+  movs r1,#0xf0
+  movs r0,#0x8
+  bl 0x2c49c8c4
+  cmp r0,#0x0
+  blt 0x2c49c9e4
+  movs r0,#0xf
+  bl 0x2c6444fc
+  movs r0,#0x0
+  pop {r3,pc}

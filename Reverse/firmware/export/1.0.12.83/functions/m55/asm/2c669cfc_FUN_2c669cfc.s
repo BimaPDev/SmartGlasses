@@ -1,0 +1,21 @@
+; FUN_2c669cfc @ 0x2c669cfc size=46
+  ldr r3,[r2,#0x8]
+  subs r3,#0x1
+  cmp r3,#0x0
+  str r3,[r2,#0x8]
+  push {r4}
+  bge 0x2c669d1a
+  ldr r4,[r2,#0x18]
+  cmp r3,r4
+  blt 0x2c669d12
+  cmp r1,#0xa
+  bne 0x2c669d1a
+  pop.w r4
+  b.w 0x2c66de98
+  ldr r3,[r2,#0x0]
+  adds r0,r3,#0x1
+  str r0,[r2,#0x0]
+  mov r0,r1
+  strb r1,[r3,#0x0]
+  pop.w r4
+  bx lr

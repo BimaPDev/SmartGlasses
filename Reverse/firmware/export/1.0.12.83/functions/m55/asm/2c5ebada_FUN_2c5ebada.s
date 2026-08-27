@@ -1,0 +1,25 @@
+; FUN_2c5ebada @ 0x2c5ebada size=62
+  push {r4,r5,r6,r7,r8,r9,lr}
+  ldr r3,[r3,#0x0]
+  sub sp,#0x1c
+  ldr r4,[r3,#0x54]
+  cbz r4,0x2c5ebb1a
+  movs r5,#0x1
+  ldr.w r8,[0x2c5ebb28]
+  ldr.w r9,[0x2c5ebb2c]
+  ldr r7,[0x2c5ebb24]
+  ldr r0,[r4,#0x48]
+  mov r3,r9
+  movw r2,#0x105
+  mov r1,r7
+  str r0,[sp,#0x14]
+  ldr r0,[r4,#0x44]
+  str r4,[sp,#0xc]
+  str r0,[sp,#0x10]
+  ldr r0,[r4,#0x40]
+  strd r8,r5,[sp,#0x0]
+  str r0,[sp,#0x8]
+  movs r0,#0x3
+  bl 0x2c62c82c
+  add sp,#0x1c
+  pop.w {r4,r5,r6,r7,r8,r9,pc}

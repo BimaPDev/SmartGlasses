@@ -1,0 +1,24 @@
+; FUN_2c00395c @ 0x2c00395c size=70
+  subs r3,r0,r1
+  bls 0x2c003964
+  cmp r3,r2
+  bcc 0x2c003966
+  b 0x2c003a5c
+  add.w r3,r0,r2
+  and r12,r3,#0x3
+  sub.w r3,r3,#0x1
+  sub.w r1,r1,r0
+  cmp r2,#0x3
+  it ls
+  mov.ls r12,r2
+  subs.w r2,r2,r12
+  tbb [pc,r12]
+  push {lr}
+  vpush {d0,d1}
+  mov r3,r0
+  blx 0x2cc05a74
+  ldc p14,cr1,[r1],#0x40
+  stc p14,cr1,[r3],#0x40
+  blx 0x2cc22a80
+  vpop {d0,d1}
+  pop {pc}

@@ -1,0 +1,19 @@
+; FUN_2c463504 @ 0x2c463504 size=42
+  push {r2,r3,r4,r5,lr}
+  lsrs r5,r4,#0x19
+  adr r6,[0x2c463770]
+  bcc 0x2c4635c8
+  strh r2,[r1,#0x1e]
+  lsrs r6,r7,#0x1e
+  cmp r4,#0xaa
+  bl 0x2cc0b442
+  ldr r2,[r2,#0x8]
+  ldrb r1,[r7,#0x3]
+  mrrc p7,0x1,r1,r4,cr1
+  ldrh r0,[r4,#0x8]
+  bkpt 0x45
+  subs r1,#0x33
+  ldrsh r5,[r4,r0]
+  bl 0x2b85e27e
+  ldr r1,[0x2c4637e8]
+  mov r0,r3

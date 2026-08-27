@@ -1,0 +1,21 @@
+; FUN_2c010960 @ 0x2c010960 size=56
+  push {lr}
+  sub sp,#0xc
+  ldr r3,[0x2c010998]
+  movs r0,#0x5e
+  add.w r1,sp,#0x2
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  bl 0x2c008e4c
+  ldr r3,[0x2c010998]
+  ldrh.w r0,[sp,#0x2]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  mov.w r3,#0x0
+  ubfx r0,r0,#0x9,#0x1
+  bne 0x2c010994
+  add sp,#0xc
+  pop.w pc
+  bl 0x2c0084a8

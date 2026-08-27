@@ -1,0 +1,19 @@
+; FUN_2c64cd68 @ 0x2c64cd68 size=48
+  push {r4,lr}
+  mov r4,r0
+  str r1,[r2,#0x0]
+  bne 0x2c64cd94
+  ldr r0,[0x2c64cd9c]
+  bl 0x2c65e3da
+  ldr r0,[0x2c64cda0]
+  bl 0x2c65e3da
+  ldr r0,[0x2c64cda4]
+  bl 0x2c65e3da
+  ldr r0,[0x2c64cda8]
+  bl 0x2c65e412
+  ldr r0,[0x2c64cdac]
+  bl 0x2c65e412
+  ldr r0,[0x2c64cdb0]
+  bl 0x2c65e412
+  mov r0,r4
+  pop {r4,pc}

@@ -1,0 +1,24 @@
+; FUN_2c20aee0 @ 0x2c20aee0 size=56
+  push {r1,r2,r3,r4,r5,r6,r7,lr}
+  movs r0,r0
+  cmp r3,#0x0
+  cbz r6,0x2c20af28
+  movs r0,r0
+  add sp,r11
+  lsls r3,r5,#0x3
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  mrc2 p0,0x2,r0,cr12,cr4,0x5
+  stc2 p15,cr14,[r8,#-0x264]
+  ldr r7,[0x2c20b0c0]
+  lsls r0,r6,#0x2
+  addw r0,r12,#0x1af
+  lsls r0,r0,#0x8
+  ldcl p0,cr0,[r9],#0x0
+  lsls r4,r6,#0x2
+  ands r4,r0
+  movs r0,#0x24
+  movs r0,r0
+  blx 0x2b214fb0
+  movs r0,r0

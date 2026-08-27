@@ -1,0 +1,31 @@
+; FUN_2c50e708 @ 0x2c50e708 size=72
+  push {r4,r5,r6,r7,lr}
+  sub sp,#0xc
+  movs r3,#0x0
+  add r4,sp,#0x8
+  stmdb r4,{r1,r2}
+  mov r4,r0
+  ldr r0,[0x2c50e750]
+  cmp.w r0,r2, lsl #0x2
+  str r3,[r4,#0x8]
+  strd r3,r3,[r4,#0x0]
+  bcc 0x2c50e74a
+  lsls r6,r2,#0x2
+  cbz r6,0x2c50e746
+  mov r0,r6
+  mov r7,r1
+  bl 0x2c64ca5c
+  mov r5,r0
+  mov r1,r7
+  mov r2,r6
+  add r5,r6
+  str r0,[r4,#0x0]
+  str r5,[r4,#0x8]
+  bl 0x2c674668
+  str r5,[r4,#0x4]
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}
+  mov r5,r6
+  b 0x2c50e740
+  ldr r0,[0x2c50e754]
+  bl 0x2c658680

@@ -1,0 +1,19 @@
+; FUN_2c05d21c @ 0x2c05d21c size=44
+  push {r4,r6,lr}
+  cdp p2,0x2,cr5,cr0,cr3,0x6
+  ldr r4,[sp,#0x68]
+  strh r0,[r3,#0xe]
+  ldrd r0,r8,[r11,#-0x380]
+  cmp r6,#0x0
+  asrs r1,r2,#0x4
+  ldrsb r3,[r2,r0]
+  uxtb r0,r3
+  asrs r1,r4,#0x8
+  movs r2,#0x22
+  cdp p3,0x0,cr6,cr2,cr2,0x6
+  ldr r4,[sp,#0x68]
+  strh r0,[r3,#0xe]
+  ldrd r0,r8,[r5,#-0x380]
+  strb r0,[r0,#0x8]
+  asrs r1,r4,#0x4
+  bx r5

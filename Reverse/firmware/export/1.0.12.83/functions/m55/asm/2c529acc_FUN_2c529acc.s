@@ -1,0 +1,19 @@
+; FUN_2c529acc @ 0x2c529acc size=38
+  push {r4,r5,lr}
+  ldr r3,[0x2c529b1c]
+  sub sp,#0x14
+  movs r1,#0x1
+  movs r5,#0x0
+  str r3,[sp,#0x4]
+  mov r4,r0
+  strb r1,[r0,#0x10]
+  ldr r2,[0x2c529b20]
+  ldr r1,[0x2c529b24]
+  strb r5,[r0,#0x18]
+  strh r5,[r0,#0x1a]
+  str r2,[r0,#0x0]
+  movs r2,#0x1e
+  str r1,[sp,#0x0]
+  movs r0,#0x4
+  ldr r1,[0x2c529b28]
+  bl 0x2c62c82c

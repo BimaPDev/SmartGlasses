@@ -1,0 +1,22 @@
+; FUN_2c23c47a @ 0x2c23c47a size=44
+  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  adds r5,#0x0
+  movs r0,r2
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  lsls r0,r0,#0xc
+  lsls r0,r4,#0x1
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  ldrh r0,[r0,#0x38]
+  movs r0,r0
+  ldrb r0,[r0,r0]
+  stmia r5!,{r2,r3,r6,r7}
+  movs r0,r0
+  and r0,r8,#0x0

@@ -1,0 +1,49 @@
+; FUN_2c607f9c @ 0x2c607f9c size=138
+  push {r4,lr}
+  and lr,r1,#0x6000
+  cmp.w lr,#0x2000
+  beq 0x2c607fc0
+  and lr,r2,#0x6000
+  cmp.w lr,#0x2000
+  beq 0x2c607ff2
+  cmp r0,r2
+  it ge
+  mov.ge r0,r2
+  cmp r0,r1
+  it lt
+  mov.lt r0,r1
+  pop {r4,pc}
+  bic r12,r1,#0x6000
+  cmp.w r12,#0x7d0
+  bgt 0x2c607fa8
+  cmp.w r12,#0x3e8
+  ldr r1,[0x2c608028]
+  and lr,r2,#0x6000
+  it gt
+  rsb.gt.w r12,r12,#0x3e8
+  cmp.w lr,#0x2000
+  mul r12,r12,r3
+  smull r4,r1,r1,r12
+  asr.w r12,r12, asr #0x1f
+  rsb r1,r12,r1, asr #0x5
+  sxth r1,r1
+  bne 0x2c607fb2
+  bic r12,r2,#0x6000
+  cmp.w r12,#0x7d0
+  bgt 0x2c607fb2
+  cmp.w r12,#0x3e8
+  ldr r4,[0x2c608028]
+  it gt
+  rsb.gt.w r12,r12,#0x3e8
+  mul r3,r12,r3
+  asrs r2,r3,#0x1f
+  smull r4,r3,r4,r3
+  rsb r3,r2,r3, asr #0x5
+  sxth r2,r3
+  cmp r0,r2
+  it ge
+  mov.ge r0,r2
+  cmp r0,r1
+  it lt
+  mov.lt r0,r1
+  pop {r4,pc}

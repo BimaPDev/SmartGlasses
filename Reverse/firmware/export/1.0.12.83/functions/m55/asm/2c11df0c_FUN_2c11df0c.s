@@ -1,0 +1,23 @@
+; FUN_2c11df0c @ 0x2c11df0c size=44
+  push {r0,r2,r5,r6,lr}
+  lsrs r0,r0,#0x18
+  ldrh r2,[r5,#0x16]
+  movs r2,r0
+  adds r2,#0xbb
+  lsls r2,r5,#0x5
+  ldr r2,[r2,#0x24]
+  ldrb r2,[r0,#0x4]
+  ldrb r2,[r1,#0x5]
+  adds r2,r7,#0x4
+  lsrs r0,r6,#0x13
+  adds r2,r0,#0x4
+  lsls r0,r6,#0x3
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  str r6,[r6,#0x10]
+  udf #0x0

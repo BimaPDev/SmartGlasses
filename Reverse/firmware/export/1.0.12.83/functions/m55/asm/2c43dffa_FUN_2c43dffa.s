@@ -1,0 +1,25 @@
+; FUN_2c43dffa @ 0x2c43dffa size=58
+  lsrs r7,r7,#0x8
+  add r6,sp,#0x30
+  vqadd.s16 d6,d31,d3
+  bic r4,r5,#0x640000
+  subs r6,#0x18
+  movs r6,#0x49
+  lsls r0,r3,#0x11
+  ldrsb.w r7,[r10,#0x456]
+  blx 0x2d30bd9c
+  cmp r4,#0x4a
+  cmp r3,#0x42
+  ldr r5,[r6,#0x0]
+  subs r1,#0x24
+  str.w r1,[r7,#0xf96]
+  push {r1,r2,r3,r6,r7,lr}
+  ittet cc
+  sub.cc r5,#0x36
+  adr.cc r4,[0x2c43e240]
+  ldrb.cs r6,[r6,#0x15]
+  ldmia.cc r5,{r1,r3,r5,r6,r7}
+  str r2,[sp,#0x184]
+  str r1,[sp,#0x68]
+  pop {r1,r3,r4,r5}
+  b 0x2c43d95c

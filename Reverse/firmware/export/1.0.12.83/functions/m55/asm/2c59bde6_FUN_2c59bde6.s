@@ -1,0 +1,19 @@
+; FUN_2c59bde6 @ 0x2c59bde6 size=46
+  push {r4,lr}
+  mov r4,r0
+  sub sp,#0x8
+  mov r0,r1
+  mov r1,r2
+  str r0,[sp,#0x4]
+  bl 0x2c606d9c
+  ldr r0,[sp,#0x4]
+  bl 0x2c637344
+  mov r1,r0
+  mov r0,r4
+  str r1,[r4,#0x4]
+  bl 0x2c59ba28
+  ldr r1,[r4,#0x4]
+  mov r0,r4
+  add sp,#0x8
+  pop.w {r4,lr}
+  b.w 0x2c59bd54

@@ -1,0 +1,20 @@
+; FUN_2c4608b8 @ 0x2c4608b8 size=40
+  str r2,[r5,r5]
+  adds r4,r2,r0
+  ldc p6,cr11,[r10],#-0x394
+  adds r2,#0x7
+  subs r1,r7,#0x2
+  asrs r4,r0,#0x12
+  ldr r4,[sp,#0x28]
+  movs r6,#0x4e
+  push {r0,r1,r3,r4,r6,r7,lr}
+  asrs r7,r1,#0x18
+  b 0x2c460ab0
+  ldr r3,[r2,#0x60]
+  bne 0x2c460b2c
+  lsrs r2,r2,#0x1c
+  stmia r7!,{r0,r1,r2,r4}
+  b 0x2c46116c
+  ldrh r5,[r7,#0x1a]
+  b 0x2c4604ee
+  ldrb r0,[r7,#0x13]

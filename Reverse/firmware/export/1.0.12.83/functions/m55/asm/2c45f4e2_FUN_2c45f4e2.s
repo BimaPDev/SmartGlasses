@@ -1,0 +1,21 @@
+; FUN_2c45f4e2 @ 0x2c45f4e2 size=42
+  push {r1,r6,r7,lr}
+  adds r5,r3,r5
+  ldrh r4,[r0,#0x20]
+  stcl p3,cr11,[r6],#-0x334
+  cmp r3,#0xbe
+  ldr r2,[sp,#0x358]
+  mvns r4,r4
+  ldrh r4,[r6,#0x14]
+  ldr r1,[0x2c45f838]
+  ldr r2,[sp,#0x2e4]
+  add r0,r9
+  ldr r1,[sp,#0x2e8]
+  lsrs r6,r7,#0x11
+  lsrs r6,r1,#0x16
+  ldrsh r5,[r0,r1]
+  asrs r1,r5,#0x3
+  revsh r2,r1
+  ldr r3,[sp,#0x3e4]
+  ldr r0,[r5,#0x68]
+  add r2,sp,#0x2a0

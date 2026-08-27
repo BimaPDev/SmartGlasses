@@ -1,0 +1,21 @@
+; FUN_2c41c5f8 @ 0x2c41c5f8 size=40
+  movs r0,#0x64
+  lsls r0,r0,#0x9
+  movs r0,r0
+  cmp r4,#0xac
+  subs r4,#0x3f
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  lsls r4,r0,#0x4
+  movs r7,#0xd1
+  lsls r0,r0,#0xe
+  movs r0,r0
+  push {r0,r1,r2,r3,r4,lr}
+  lsls r6,r6,#0x1a
+  b 0x2c41bf4a

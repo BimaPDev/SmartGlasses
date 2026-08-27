@@ -1,0 +1,19 @@
+; FUN_2c566974 @ 0x2c566974 size=40
+  push {r3,r4,r5,r6,r7,lr}
+  mov r5,r1
+  mov r6,r0
+  mov r0,r2
+  mov r7,r2
+  bl 0x2c66c4ec
+  cmp r0,r5
+  mov r2,r0
+  mov r4,r0
+  it cs
+  mov.cs r2,r5
+  cbz r2,0x2c566998
+  mov r1,r7
+  mov r0,r6
+  bl 0x2c66960c
+  cbnz r0,0x2c56699a
+  subs r0,r5,r4
+  pop {r3,r4,r5,r6,r7,pc}

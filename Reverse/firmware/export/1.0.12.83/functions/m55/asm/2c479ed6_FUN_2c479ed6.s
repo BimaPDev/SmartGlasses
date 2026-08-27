@@ -1,0 +1,20 @@
+; FUN_2c479ed6 @ 0x2c479ed6 size=42
+  push {r4,r5,r6,lr}
+  ldr r3,[0x2c479f08]
+  movs r4,#0x0
+  cmp r1,#0x1
+  strb r4,[r3,r1]
+  beq 0x2c479ef4
+  cmp r1,#0x2
+  beq 0x2c479ee8
+  pop {r4,r5,r6,pc}
+  ldr r5,[0x2c479f0c]
+  ldr r0,[r5,#0x0]
+  bl 0x2c644958
+  str r4,[r5,#0x0]
+  pop {r4,r5,r6,pc}
+  ldr r5,[0x2c479f10]
+  ldr r0,[r5,#0x0]
+  bl 0x2c644958
+  str r4,[r5,#0x0]
+  pop {r4,r5,r6,pc}

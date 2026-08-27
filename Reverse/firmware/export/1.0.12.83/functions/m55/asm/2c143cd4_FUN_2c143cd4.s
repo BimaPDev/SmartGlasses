@@ -1,0 +1,33 @@
+; FUN_2c143cd4 @ 0x2c143cd4 size=104
+  cmp.w r1,#0x100000
+  bcc 0x2c143af0
+  cmp.w r1,#0x200000
+  bcc 0x2c143ad8
+  lsrs r1,r1,#0x1
+  rrxs r0,r0
+  rrx r12,r12
+  add.w r4,r4,#0x1
+  lsl.w r2,r4,#0x15
+  cmn r2,#0x400000
+  bcs.w 0x2c143c0c
+  cmp.w r12,#0x80000000
+  it eq
+  lsrs.eq.w r12,r0,#0x1
+  adcs r0,r0,#0x0
+  adc.w r1,r1,r4, lsl #0x14
+  orr.w r1,r1,r5
+  pop {r4,r5,pc}
+  lsls.w r12,r12,#0x1
+  adcs r0,r0
+  adc.w r1,r1,r1
+  subs r4,#0x1
+  it cs
+  cmp.cs.w r1,#0x100000
+  bcs 0x2c143ad8
+  orr r1,r5,#0x7f000000
+  orr r1,r1,#0xf00000
+  mov.w r0,#0x0
+  pop {r4,r5,pc}
+  push {r4,r5,lr}
+  mov.w r5,#0x0
+  b 0x2c143cf2

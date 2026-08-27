@@ -1,0 +1,27 @@
+; FUN_2c531abc @ 0x2c531abc size=60
+  push {r4,lr}
+  ldrd r4,r1,[r0,#0x0]
+  sub sp,#0x8
+  ldr r2,[0x2c531af8]
+  mov r0,r4
+  str r1,[sp,#0x4]
+  bl 0x2c53195c
+  cbz r0,0x2c531aee
+  ldr r2,[0x2c531afc]
+  mov r0,r4
+  ldr r1,[sp,#0x4]
+  bl 0x2c53195c
+  cbz r0,0x2c531af2
+  ldr r2,[0x2c531b00]
+  mov r0,r4
+  ldr r1,[sp,#0x4]
+  bl 0x2c53195c
+  cmp r0,#0x0
+  ite ne
+  mov.ne r0,#0xfe
+  mov.eq r0,#0x2
+  add sp,#0x8
+  pop {r4,pc}
+  movs r0,#0x1
+  add sp,#0x8
+  pop {r4,pc}

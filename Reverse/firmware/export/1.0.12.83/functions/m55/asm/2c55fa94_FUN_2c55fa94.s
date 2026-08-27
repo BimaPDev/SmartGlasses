@@ -1,0 +1,27 @@
+; FUN_2c55fa94 @ 0x2c55fa94 size=66
+  push {r4,r5,r6,lr}
+  ite gt
+  mov.gt r6,#0x0
+  mov.le r6,#0x1
+  cbnz r6,0x2c55fad4
+  ldrsh.w r2,[r0,#0x56]
+  mov r4,r0
+  ldr r0,[r0,#0x58]
+  subs r2,#0x1
+  mla r1,r3,r2,r1
+  subs r1,#0x1
+  bl 0x2c6041dc
+  mov r5,r0
+  cbz r0,0x2c55fad4
+  ldr r0,[r4,#0x50]
+  cbz r0,0x2c55fac6
+  mov r2,r6
+  mov.w r1,#0xff000000
+  bl 0x2c606d60
+  str r6,[r4,#0x50]
+  movs r2,#0x0
+  mov.w r1,#0xff00ff00
+  mov r0,r5
+  bl 0x2c606d60
+  str r5,[r4,#0x50]
+  pop {r4,r5,r6,pc}

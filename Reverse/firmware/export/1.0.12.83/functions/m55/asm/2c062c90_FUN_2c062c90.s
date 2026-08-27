@@ -1,0 +1,19 @@
+; FUN_2c062c90 @ 0x2c062c90 size=36
+  push {r0,r1,r2,r3,r4,r6,lr}
+  lsrs r5,r6,#0x13
+  lsls r5,r3,#0x8
+  strh r7,[r5,#0x22]
+  strb r2,[r7,#0x1d]
+  movs r1,r7
+  ldr r2,[0x2c062e10]
+  stmia r5!,{r2}
+  ldmia r6,{r5,r6,r7}
+  asrs r5,r4,#0x14
+  movs r2,#0xbe
+  ldr r6,[sp,#0x3e8]
+  asrs r5,r2,#0xb
+  adr r3,[0x2c062f6c]
+  stmia r0!,{r1,r2,r3,r4,r5,r6}
+  ldrh r1,[r2,r3]
+  asrs r4,r6,#0x17
+  udf #0xe0

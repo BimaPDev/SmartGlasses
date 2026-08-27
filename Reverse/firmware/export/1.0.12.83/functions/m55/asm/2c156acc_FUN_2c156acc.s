@@ -1,0 +1,15 @@
+; FUN_2c156acc @ 0x2c156acc size=28
+  push {r0,r1,r5,r6,r7,lr}
+  cmp r4,#0x4e
+  adds r2,#0x59
+  cmp r4,#0x4f
+  movs r7,#0xfd
+  cmp r4,#0x4f
+  cbnz r7,0x2c156ae4
+  cmp r4,#0x4e
+  asrs r5,r5,#0x5
+  cmp r4,#0x4f
+  cmp r4,#0x85
+  cmp r4,#0x4f
+  asrs r5,r6,#0x1
+  cmp r4,#0x4f

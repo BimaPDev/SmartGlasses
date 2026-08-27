@@ -1,0 +1,21 @@
+; FUN_2c267102 @ 0x2c267102 size=44
+  push {lr}
+  lsls r0,r0,#0x4
+  lsls r0,r6,#0x2
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r2,#0x2
+  movs r2,#0x22
+  movs r2,#0x22
+  movs r2,r4
+  movs r0,r0
+  cdp p14,0xf,cr14,cr15,cr14,0x7
+  mcr p0,0x7,r0,cr14,cr3,0x7
+  lsrs r0,r0,#0x1c
+  lsls r0,r6,#0x1
+  movs r0,r0
+  subs r7,#0x0
+  movs r0,r6

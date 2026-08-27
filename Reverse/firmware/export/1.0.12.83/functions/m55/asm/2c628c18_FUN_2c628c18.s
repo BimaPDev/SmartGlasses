@@ -1,0 +1,23 @@
+; FUN_2c628c18 @ 0x2c628c18 size=62
+  mrs r3,ipsr
+  cbnz r3,0x2c628c44
+  mrs r3,primask
+  cbnz r3,0x2c628c44
+  mrs r3,basepri
+  cbnz r3,0x2c628c44
+  push {r4,lr}
+  mov r4,r0
+  cbz r0,0x2c628c4a
+  bl 0x2c6468d8
+  cbz r0,0x2c628c50
+  mov r1,r4
+  bl 0x2c66b624
+  clz r0,r0
+  lsrs r0,r0,#0x5
+  pop {r4,pc}
+  mov.w r0,#0xffffffff
+  bx lr
+  mvn r0,#0x1
+  pop {r4,pc}
+  mvn r0,#0x2
+  pop {r4,pc}

@@ -1,0 +1,20 @@
+; FUN_2c278806 @ 0x2c278806 size=40
+  push {r0,r2,r3,lr}
+  strb r5,[r2,r5]
+  bge 0x2c2788b8
+  lsrs r0,r0,#0x18
+  lsls r6,r4,#0x3
+  str r0,[sp,#0x34]
+  movs r0,r0
+  ldmia r2!,{}
+  lsls r0,r0,#0xc
+  sub sp,#0x13c
+  push {r0,r2,r3,lr}
+  strb r5,[r2,r5]
+  bge 0x2c2788cc
+  movs r0,r0
+  adr r0,[0x2c278844]
+  movs r0,r0
+  stc2 p13,cr15,[r7,#-0x374]
+  lsls r3,r6,#0x2
+  adds r3,#0x33

@@ -1,0 +1,22 @@
+; FUN_2c20ae04 @ 0x2c20ae04 size=52
+  push {r1,r2,r3,r4,r5,r6,r7,lr}
+  movs r0,r0
+  stmia r0,{r0,r1,r2,r3,r4,r5}
+  str r7,[r7,r2]
+  lsrs r0,r0,#0x20
+  cmp r7,#0xf4
+  lsls r0,r4,#0x2
+  ldmia r4!,{}
+  and r0,r10,#0x0
+  lsls r4,r2,#0x4
+  lsls r0,r0,#0x1
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  mrc2 p0,0x2,r0,cr12,cr4,0x5
+  stc2 p15,cr14,[r8,#-0x264]
+  ldr r7,[0x2c20afec]
+  lsls r0,r6,#0x2
+  addw r0,r12,#0x1af
+  lsls r0,r0,#0x8
+  ldcl p0,cr0,[r9],#0x0

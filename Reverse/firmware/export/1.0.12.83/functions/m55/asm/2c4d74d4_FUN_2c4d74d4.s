@@ -1,0 +1,64 @@
+; FUN_2c4d74d4 @ 0x2c4d74d4 size=196
+  push {r4}
+  ldr r1,[r0,#0x0]
+  ldr r2,[r0,#0xc]
+  ldr r4,[r0,#0x18]
+  subs r1,#0x20
+  add.w r3,r2,#0x20
+  adds r2,#0x1f
+  str r1,[r0,#0x0]
+  subs r1,r4,#0x1
+  cmp r4,r3
+  lsr.w r2,r2,#0x3
+  and.w r1,r1,r3
+  str r1,[r0,#0xc]
+  bcc 0x2c4d7538
+  ldr r0,[r0,#0x10]
+  ands r3,r3,#0x7
+  add.w r1,r0,r2
+  ldrb r4,[r0,r2]
+  ldrb.w r0,[r1,#-0x2]
+  ldrb.w r2,[r1,#-0x3]
+  lsl.w r0,r0,#0x10
+  orr.w r0,r0,r2, lsl #0x18
+  ldrb.w r2,[r1,#-0x1]
+  orr.w r0,r0,r4
+  orr.w r0,r0,r2, lsl #0x8
+  beq 0x2c4d7532
+  rsb.w r2,r3,#0x8
+  ldrb.w r1,[r1,#-0x4]
+  adds r3,#0x18
+  lsrs r0,r2
+  lsl.w r3,r1,r3
+  orrs r0,r3
+  pop.w r4
+  bx lr
+  ldrd r4,r1,[r0,#0x10]
+  subs r0,r2,#0x2
+  sub.w r12,r2,#0x3
+  subs r1,#0x1
+  ands r3,r3,#0x7
+  and.w r0,r0,r1
+  and.w r12,r12,r1
+  ldrb r0,[r4,r0]
+  ldrb.w r12,[r4,r12]
+  lsl.w r0,r0,#0x10
+  orr.w r0,r0,r12, lsl #0x18
+  and.w r12,r2,r1
+  ldrb.w r12,[r4,r12]
+  orr.w r0,r0,r12
+  add.w r12,r2,#0xffffffff
+  and.w r12,r12,r1
+  ldrb.w r12,[r4,r12]
+  orr.w r0,r0,r12, lsl #0x8
+  beq 0x2c4d7532
+  subs r2,#0x4
+  ands r2,r1
+  add.w r1,r3,#0x18
+  rsb.w r3,r3,#0x8
+  lsr.w r3,r0,r3
+  ldrb r0,[r4,r2]
+  pop.w r4
+  lsls r0,r1
+  orrs r0,r3
+  bx lr

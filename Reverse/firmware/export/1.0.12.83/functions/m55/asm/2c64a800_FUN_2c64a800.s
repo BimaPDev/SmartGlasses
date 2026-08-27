@@ -1,0 +1,24 @@
+; FUN_2c64a800 @ 0x2c64a800 size=54
+  push {r3,r4,r5,lr}
+  ldr r4,[0x2c64a838]
+  mov r5,r0
+  ldr r3,[r4,#0x0]
+  adds r3,#0x1
+  str r3,[r4,#0x0]
+  cbnz r2,0x2c64a82e
+  mov r1,r3
+  ldr r0,[0x2c64a83c]
+  bl 0x2c648600
+  ldr r2,[0x2c64a840]
+  ldr r3,[r4,#0x0]
+  ldr r2,[r2,#0x0]
+  cmp r2,r3
+  bne 0x2c64a824
+  movs r3,#0x0
+  str r3,[r4,#0x0]
+  mov r0,r5
+  pop.w {r3,r4,r5,lr}
+  b.w 0x2c4beffc
+  ldr r0,[0x2c64a844]
+  bl 0x2c648600
+  b 0x2c64a816

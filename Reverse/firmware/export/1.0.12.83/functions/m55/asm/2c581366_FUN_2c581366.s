@@ -1,0 +1,20 @@
+; FUN_2c581366 @ 0x2c581366 size=44
+  push {r4,lr}
+  ldr r4,[r0,#0xc]
+  add.w r12,r4,#0xffffffff
+  ldr r4,[r0,#0x10]
+  mla r1,r3,r12,r1
+  ldr r3,[r0,#0x14]
+  subs r3,r3,r4
+  subs r1,#0x1
+  cmp r3,#0x38
+  ite le
+  asr.le r3,r3,#0x2
+  mov.gt r3,#0x10
+  cmp r1,r3
+  bge 0x2c581392
+  bl 0x2c580fb4
+  movs r0,#0x1
+  pop {r4,pc}
+  movs r0,#0x0
+  pop {r4,pc}

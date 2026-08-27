@@ -1,0 +1,20 @@
+; FUN_2c51ee84 @ 0x2c51ee84 size=48
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  ldr r0,[r0,#0x8]
+  ldr r3,[r0,#0x0]
+  ldr r3,[r3,#0x18]
+  blx r3
+  bl 0x2c5ef8d0
+  movs r1,#0x1
+  bl 0x2c5dc51c
+  mov r5,r0
+  ldr r0,[r4,#0xc]
+  mov r1,r5
+  bl 0x2c638730
+  ldr r0,[r4,#0xc]
+  movs r1,#0x1
+  bl 0x2c606abc
+  mov r1,r5
+  movs r0,#0x4
+  bl 0x2c472680

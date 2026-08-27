@@ -1,0 +1,24 @@
+; FUN_2c449a52 @ 0x2c449a52 size=48
+  strb r7,[r6,#0x19]
+  ldr r3,[r3,#0x78]
+  mov lr,sp
+  str r5,[sp,#0x1c4]
+  stmia r1,{r0,r1,r4,r5,r7}
+  udf #0xcc
+  adr r7,[0x2c4495ec]
+  pop {r3,r5,r6,r7}
+  strb r5,[r2,r7]
+  bkpt 0x54
+  bvc 0x2c449598
+  strh r5,[r0,r4]
+  strh r1,[r4,#0x6]
+  ldmia r5,{r0,r1,r2,r3,r5,r6,r7}
+  svc 0x55
+  b.w 0x2b9c7ffc
+  push {r1,r2,r6,r7,lr}
+  ldmia r7!,{r0,r3}
+  strh r2,[r3,r7]
+  strb r3,[r7,#0xa]
+  strb r0,[r6,#0x15]
+  adr r6,[0x2c449b2c]
+  b 0x2c4495c0

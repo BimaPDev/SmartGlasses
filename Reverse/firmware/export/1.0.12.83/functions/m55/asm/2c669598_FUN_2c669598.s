@@ -1,0 +1,21 @@
+; FUN_2c669598 @ 0x2c669598 size=42
+  push {r0,r1,r2,r4,r5,r6,r7,lr}
+  ldr r6,[sp,#0x20]
+  mov r5,r0
+  ldr r4,[0x2c6695c4]
+  ldr.w r7,[r4,#0xe4]
+  mov r4,r2
+  str r6,[sp,#0x0]
+  cbnz r2,0x2c6695b0
+  movs r3,#0x1
+  ldr r2,[0x2c6695c8]
+  mov r1,r4
+  blx r7
+  adds r3,r0,#0x1
+  itttt eq
+  mov.eq r3,#0x0
+  str.eq r3,[r6,#0x0]
+  mov.eq r3,#0x8a
+  str.eq r3,[r5,#0x0]
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}

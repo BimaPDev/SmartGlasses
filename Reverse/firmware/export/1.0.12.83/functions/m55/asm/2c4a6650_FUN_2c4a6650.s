@@ -1,0 +1,20 @@
+; FUN_2c4a6650 @ 0x2c4a6650 size=50
+  push {r4,r5,r6,r7,r8,r9,lr}
+  ldr r4,[0x2c4a6890]
+  movw r1,#0x3d9
+  ldr r0,[0x2c4a6894]
+  ldr r3,[0x2c4a6898]
+  ldr r5,[0x2c4a689c]
+  vpush {d8}
+  sub sp,#0x5c
+  ldr r2,[r4,#0x0]
+  str r3,[sp,#0x0]
+  str r2,[sp,#0xc]
+  ldr r3,[0x2c4a68a0]
+  ldr r2,[0x2c4a68a4]
+  strd r5,r1,[sp,#0x4]
+  ldr r0,[r0,#0x0]
+  str r0,[sp,#0x54]
+  mov.w r0,#0x0
+  movs r0,#0x4
+  bl 0x2c673d88

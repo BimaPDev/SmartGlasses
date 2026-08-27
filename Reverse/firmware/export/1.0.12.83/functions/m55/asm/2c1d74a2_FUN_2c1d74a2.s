@@ -1,0 +1,19 @@
+; FUN_2c1d74a2 @ 0x2c1d74a2 size=38
+  lsls r7,r0,#0x13
+  adds r2,r3,r0
+  b 0x2c1d73c6
+  lsls r3,r3,#0xc
+  ldr r0,[r4,#0x44]
+  strh r5,[r1,#0x8]
+  blx 0x2b5965cc
+  subs r0,r3,r7
+  str r3,[r0,#0x0]
+  lsls r0,r4,#0x1
+  lsls r1,r0,#0xc
+  lsrs r7,r7,#0x17
+  movs r0,#0x81
+  lsls r2,r4,#0x11
+  lsrs r3,r0,#0x12
+  subs r2,r2,#0x4
+  push {r0,r1,r2,r4,r5,r7,lr}
+  b 0x2c1d7380

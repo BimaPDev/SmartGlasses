@@ -1,0 +1,25 @@
+; FUN_2c651802 @ 0x2c651802 size=62
+  push {r0,r1,r2,r4,r5,lr}
+  mov r4,r0
+  ldr r0,[r0,#0x0]
+  ldr.w r2,[r0,#-0x8]
+  cmp r1,r2
+  bne 0x2c651818
+  ldr.w r2,[r0,#-0x4]
+  cmp r2,#0x0
+  ble 0x2c65183c
+  ldr.w r2,[r0,#-0xc]!
+  cmp r1,r2
+  ite cs
+  rsb.cs r2,r2,r1
+  rsb.cc r2,r2,r2
+  add r1,sp,#0x4
+  bl 0x2c6517d0
+  mov r5,r0
+  ldr r0,[r4,#0x0]
+  add r1,sp,#0x4
+  subs r0,#0xc
+  bl 0x2c6515a4
+  str r5,[r4,#0x0]
+  add sp,#0xc
+  pop {r4,r5,pc}

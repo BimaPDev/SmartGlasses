@@ -1,0 +1,29 @@
+; FUN_2c58c310 @ 0x2c58c310 size=68
+  push {r4,r5,r6}
+  ldrd r3,r4,[r0,#0x0]
+  ldr r5,[r1,#0x0]
+  udiv r0,r5,r4
+  mls r0,r4,r0,r5
+  ldr.w r6,[r3,r0,lsl #0x2]
+  cbz r6,0x2c58c344
+  ldr r2,[r6,#0x0]
+  ldr r3,[r2,#0x4]
+  cmp r5,r3
+  beq 0x2c58c34a
+  ldr r1,[r2,#0x0]
+  mov r6,r2
+  cbz r1,0x2c58c344
+  ldr r3,[r1,#0x4]
+  mov r2,r1
+  udiv r1,r3,r4
+  mls r1,r4,r1,r3
+  cmp r0,r1
+  beq 0x2c58c32a
+  movs r0,#0x0
+  pop {r4,r5,r6}
+  bx lr
+  ldr r0,[r6,#0x0]
+  cmp r0,#0x0
+  beq 0x2c58c344
+  pop {r4,r5,r6}
+  bx lr

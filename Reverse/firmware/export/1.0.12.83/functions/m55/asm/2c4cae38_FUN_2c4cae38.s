@@ -1,0 +1,26 @@
+; FUN_2c4cae38 @ 0x2c4cae38 size=70
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  bl 0x2c4cf288
+  mov r4,r0
+  add.w r0,r5,#0x1c4
+  bl 0x2c4d70a4
+  cbz r0,0x2c4cae60
+  cbnz r4,0x2c4cae52
+  mov r0,r4
+  pop {r3,r4,r5,pc}
+  movw r3,#0x200b
+  cmp r4,r3
+  bne 0x2c4cae66
+  movw r0,#0x203
+  pop {r3,r4,r5,pc}
+  movw r0,#0x402
+  pop {r3,r4,r5,pc}
+  sub.w r4,r4,#0x2000
+  movw r3,#0x402
+  movw r0,#0x201
+  uxth r4,r4
+  cmp.w r4,#0x1000
+  it cc
+  mov.cc r0,r3
+  pop {r3,r4,r5,pc}

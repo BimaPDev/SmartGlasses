@@ -1,0 +1,25 @@
+; FUN_2c497e30 @ 0x2c497e30 size=74
+  push {r4,lr}
+  sub sp,#0x20
+  ldr.w r12,[0x2c497ea4]
+  movs r3,#0x4
+  uxtb r1,r1
+  add r2,sp,#0x18
+  mov r4,r0
+  ldr.w r12,[r12,#0x0]
+  str.w r12,[sp,#0x1c]
+  mov.w r12,#0x0
+  bl 0x2c497684
+  ldrb.w r0,[sp,#0x18]
+  ldrb.w r3,[sp,#0x19]
+  ldrb.w r1,[sp,#0x1a]
+  ldrb.w r2,[sp,#0x1b]
+  strd r3,r0,[sp,#0x10]
+  ldr r0,[0x2c497e98]
+  ldr r3,[0x2c497e9c]
+  strd r2,r1,[sp,#0x8]
+  strd r0,r4,[sp,#0x0]
+  ldr r2,[0x2c497ea0]
+  movs r1,#0x37
+  movs r0,#0x4
+  bl 0x2c673d88

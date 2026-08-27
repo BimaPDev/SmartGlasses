@@ -1,0 +1,22 @@
+; FUN_2c64e410 @ 0x2c64e410 size=42
+  ldr r3,[r0,#0x8]
+  ldr r2,[r3,#0xc]
+  push {r4,lr}
+  str r2,[r0,#0x8]
+  cbz r2,0x2c64e41c
+  str r0,[r2,#0x4]
+  ldr r2,[r0,#0x4]
+  str r2,[r3,#0x4]
+  ldr r4,[r1,#0x0]
+  cmp r4,r0
+  bne 0x2c64e42e
+  str r3,[r1,#0x0]
+  str r0,[r3,#0xc]
+  str r3,[r0,#0x4]
+  pop {r4,pc}
+  ldr r1,[r2,#0xc]
+  cmp r1,r0
+  ite eq
+  str.eq r3,[r2,#0xc]
+  str.ne r3,[r2,#0x8]
+  b 0x2c64e428

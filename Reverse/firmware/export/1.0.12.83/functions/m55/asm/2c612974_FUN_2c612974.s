@@ -1,0 +1,19 @@
+; FUN_2c612974 @ 0x2c612974 size=36
+  push {r4,r5,lr}
+  ldr r5,[r0,#0x0]
+  sub sp,#0xc
+  ldr r4,[r5,#0x8]
+  cbz r4,0x2c612992
+  str r3,[sp,#0x0]
+  mov r3,r2
+  mov r2,r1
+  mov r1,r0
+  mov r0,r5
+  ldr r5,[sp,#0x18]
+  str r5,[sp,#0x4]
+  blx r4
+  add sp,#0xc
+  pop {r4,r5,pc}
+  mov r0,r4
+  add sp,#0xc
+  pop {r4,r5,pc}

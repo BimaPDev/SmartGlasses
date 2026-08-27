@@ -1,0 +1,19 @@
+; FUN_2c13f3f0 @ 0x2c13f3f0 size=42
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  bl 0x2c142080
+  mov r4,r0
+  cbz r0,0x2c13f414
+  mov r0,r5
+  movs r1,#0x0
+  bl 0x2c141f9c
+  mov r5,r0
+  cbz r0,0x2c13f410
+  mov r2,r4
+  movs r1,#0x0
+  bl 0x2c13e9dc
+  mov r0,r5
+  pop {r3,r4,r5,pc}
+  mov r5,r0
+  mov r0,r5
+  pop {r3,r4,r5,pc}

@@ -1,0 +1,20 @@
+; FUN_2c664efe @ 0x2c664efe size=42
+  push {r0,r1,r4,r5,r6,lr}
+  mov r5,r0
+  mov r4,r1
+  mov r6,r3
+  str r2,[sp,#0x4]
+  bl 0x2c6650f4
+  cbnz r0,0x2c664f24
+  cmp r6,#0x3
+  bhi 0x2c664f24
+  ldr r3,[r4,#0x0]
+  mov r1,r5
+  ldr r2,[sp,#0x4]
+  mov r0,r4
+  ldr r3,[r3,#0x14]
+  add sp,#0x8
+  pop.w {r4,r5,r6,lr}
+  bx r3
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

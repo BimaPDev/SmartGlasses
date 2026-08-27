@@ -1,0 +1,23 @@
+; FUN_2c3ce8be @ 0x2c3ce8be size=44
+  push {r1,r2,r3,r5,r7,lr}
+  movs r0,r4
+  movs r0,r0
+  ldrb r2,[r0,#0x18]
+  lsls r3,r6,#0x2
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0

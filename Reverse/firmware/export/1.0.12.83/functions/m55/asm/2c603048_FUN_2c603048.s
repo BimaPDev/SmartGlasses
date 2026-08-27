@@ -1,0 +1,25 @@
+; FUN_2c603048 @ 0x2c603048 size=60
+  cbz r0,0x2c603082
+  push {r4,lr}
+  ldrb r2,[r0,#0x1c]
+  ubfx r4,r2,#0x1,#0x1
+  cmp r4,r1
+  beq 0x2c603076
+  bfi r2,r1,#0x1,#0x1
+  ldr r4,[r0,#0xc]
+  strb r2,[r0,#0x1c]
+  cbz r4,0x2c603076
+  ldr r4,[r4,#0x0]
+  cbz r4,0x2c603076
+  bl 0x2c602bd8
+  movs r1,#0xe
+  mov r2,r0
+  mov r0,r4
+  bl 0x2c602340
+  cmp r0,#0x1
+  beq 0x2c603078
+  pop {r4,pc}
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x2c607df0
+  bx lr

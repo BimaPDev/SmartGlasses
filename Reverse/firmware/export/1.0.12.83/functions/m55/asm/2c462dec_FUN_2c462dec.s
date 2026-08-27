@@ -1,0 +1,20 @@
+; FUN_2c462dec @ 0x2c462dec size=42
+  add r0,sp,#0x118
+  adds r4,r3,r7
+  stcl p11,cr14,[r7],#-0x3fc
+  ldrsh r3,[r7,r3]
+  strh r3,[r5,#0x3a]
+  bgt 0x2c462982
+  adr r7,[0x2c462b2c]
+  b.w 0x2bf40842
+  push {r2,r3,r6,r7,lr}
+  cbnz r6,0x2c462e04
+  ldrh r5,[r5,#0x26]
+  b 0x2c4629f2
+  adr r1,[0x2c4631bc]
+  ldr r3,[r7,#0x64]
+  str r3,[sp,#0x2c8]
+  lsls r4,r3,#0xc
+  add r6,sp,#0x29c
+  asrs r4,r7,#0x2
+  str r3,[sp,#0x190]

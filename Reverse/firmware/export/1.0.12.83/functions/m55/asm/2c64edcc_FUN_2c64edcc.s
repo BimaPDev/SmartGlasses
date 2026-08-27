@@ -1,0 +1,22 @@
+; FUN_2c64edcc @ 0x2c64edcc size=48
+  push {r0,r1,r2,r3,r4,r5,r6,lr}
+  strd r2,r3,[sp,#0x8]
+  ldr r3,[sp,#0x24]
+  add r1,sp,#0x10
+  ldr r2,[0x2c64edfc]
+  add r0,sp,#0x8
+  str r3,[sp,#0x10]
+  ldr r3,[sp,#0x28]
+  str r3,[sp,#0x14]
+  movs r3,#0x0
+  str r3,[sp,#0x0]
+  movs r3,#0x1
+  bl 0x2c64ed70
+  ldr r3,[sp,#0x20]
+  ldr r2,[sp,#0x8]
+  str r2,[r3,#0x0]
+  ldr r3,[sp,#0x2c]
+  ldr r2,[sp,#0x10]
+  str r2,[r3,#0x0]
+  add sp,#0x1c
+  pop.w pc

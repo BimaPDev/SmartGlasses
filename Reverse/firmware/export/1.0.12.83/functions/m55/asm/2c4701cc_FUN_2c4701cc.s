@@ -1,0 +1,23 @@
+; FUN_2c4701cc @ 0x2c4701cc size=56
+  push {lr}
+  ldr r1,[0x2c470204]
+  sub sp,#0x14
+  ldr r2,[0x2c470208]
+  mov r3,sp
+  ldr r1,[r1,#0x0]
+  str r1,[sp,#0xc]
+  mov.w r1,#0x0
+  ldmia r2,{r0,r1,r2}
+  stm r3,{r0,r1,r2}
+  mov r1,r3
+  movs r0,#0x3
+  bl 0x2c486974
+  ldr r3,[0x2c470204]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0xc]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x2c470200
+  add sp,#0x14
+  pop.w pc
+  bl 0x2c674828

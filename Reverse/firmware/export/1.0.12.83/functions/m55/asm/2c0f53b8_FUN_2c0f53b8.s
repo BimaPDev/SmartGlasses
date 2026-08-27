@@ -1,0 +1,25 @@
+; FUN_2c0f53b8 @ 0x2c0f53b8 size=54
+  push {r0,r1,r2,r4,lr}
+  str r6,[sp,#0x48]
+  asrs r5,r5,#0x1b
+  lsls r7,r0,#0x1
+  lsls r0,r4,#0x1f
+  cmp r2,#0x0
+  ldrh r2,[r5,#0x30]
+  movs r2,#0xe8
+  lsrs r7,r6,#0x1f
+  ldrsh r0,[r1,r3]
+  str r4,[sp,#0x1dc]
+  lsls r2,r2,#0x1
+  b 0x2c0f58e0
+  lsrs r3,r7,#0x1f
+  stmia r1!,{r5,r6,r7}
+  vsra.u32 d16,d30,#0x1d
+  lsrs r2,r0,#0x8
+  ldc2 p7,cr12,[r9,#-0x94]
+  bkpt 0xff
+  lsls r2,r3,#0xa
+  movs r6,#0xa
+  adr r5,[0x2c0f5cec]
+  vqadd.u32 d31,d11,d13
+  movs r0,r0

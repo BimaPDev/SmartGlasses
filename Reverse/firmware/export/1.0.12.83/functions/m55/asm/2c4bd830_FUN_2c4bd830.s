@@ -1,0 +1,27 @@
+; FUN_2c4bd830 @ 0x2c4bd830 size=56
+  ldr r3,[0x2c4bd860]
+  ldrb r3,[r3,#0x0]
+  cbnz r3,0x2c4bd83c
+  ldr r3,[0x2c4bd864]
+  ldrb r1,[r3,#0x0]
+  cbz r1,0x2c4bd844
+  ldr r3,[0x2c4bd868]
+  ldrb r2,[r3,#0x0]
+  cbz r2,0x2c4bd854
+  bx lr
+  ldr r3,[0x2c4bd868]
+  ldrb r2,[r3,#0x0]
+  cmp r2,#0x0
+  beq 0x2c4bd842
+  movs r0,#0x1
+  strb r1,[r3,#0x0]
+  b.w 0x2c6739b8
+  movs r0,#0x1
+  ldr r1,[0x2c4bd86c]
+  strb r0,[r3,#0x0]
+  b.w 0x2c6739b8
+  push {r0}
+  ldr r0,[0x2c6739c4]
+  mov r12,r0
+  pop {r0}
+  bx r12

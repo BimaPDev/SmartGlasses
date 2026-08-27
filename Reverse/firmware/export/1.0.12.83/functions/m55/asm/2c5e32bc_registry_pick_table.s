@@ -1,0 +1,27 @@
+; registry_pick_table @ 0x2c5e32bc size=60
+  cmp r0,#0x1
+  push {r4,lr}
+  mov r4,r1
+  sub sp,#0x8
+  beq 0x2c5e32d8
+  cmp r0,#0x2
+  bne 0x2c5e32e6
+  bl 0x2c5e3458
+  mov r3,r0
+  ldr r0,[0x2c5e3304]
+  str r3,[r4,#0x0]
+  add sp,#0x8
+  pop {r4,pc}
+  bl 0x2c5e3450
+  mov r3,r0
+  ldr r0,[0x2c5e3308]
+  str r3,[r4,#0x0]
+  add sp,#0x8
+  pop {r4,pc}
+  ldr r1,[0x2c5e330c]
+  movs r2,#0x76
+  ldr r3,[0x2c5e3310]
+  strd r1,r0,[sp,#0x0]
+  ldr r1,[0x2c5e3314]
+  movs r0,#0x3
+  bl 0x2c62c82c

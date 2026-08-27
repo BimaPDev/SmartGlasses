@@ -1,0 +1,36 @@
+; FUN_2c4b754c @ 0x2c4b754c size=106
+  ldr r2,[0x2c4b75ac]
+  movs r3,#0x0
+  push {r4,r5,r6,r7,lr}
+  mov.w r7,#0x100
+  ldr.w r1,[r2,#0xc8]
+  mov r4,r3
+  movs r6,#0x1
+  mov.w r5,#0xc0000
+  lsls r2,r3,#0x1
+  lsl.w r12,r7,r3
+  asr.w lr,r3, asr #0x1
+  adds r3,#0x1
+  lsl.w r2,r5,r2
+  tst.w r12,r0
+  lsl.w lr,r6,lr
+  bic.w r1,r1,r2
+  it ne
+  orr.ne.w r4,r4,lr
+  cmp r3,#0x6
+  orr.w r1,r1,r2
+  bne 0x2c4b7562
+  ldr r2,[0x2c4b75ac]
+  mov r0,r4
+  str.w r1,[r2,#0xc8]
+  ldr.w r3,[r2,#0xc4]
+  bic r3,r3,#0xc
+  orr r3,r3,#0x5
+  str.w r3,[r2,#0xc4]
+  pop.w {r4,r5,r6,r7,lr}
+  b.w 0x2c673b28
+  push {r0}
+  ldr r0,[0x2c673b34]
+  mov r12,r0
+  pop {r0}
+  bx r12

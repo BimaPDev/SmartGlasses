@@ -1,0 +1,25 @@
+; FUN_2c5f6be0 @ 0x2c5f6be0 size=50
+  cmp r1,#0x0
+  ble 0x2c5f6bfe
+  push {r4,lr}
+  ldr r2,[r0,#0xc]
+  mov r4,r0
+  cmp r1,r2
+  it ge
+  mov.ge r1,r2
+  subs r2,r2,r1
+  str r2,[r0,#0xc]
+  cbnz r2,0x2c5f6c00
+  ldr r3,[r4,#0x4]
+  movs r1,#0x0
+  strb r1,[r3,r2]
+  pop {r4,pc}
+  bx lr
+  ldr r0,[r0,#0x4]
+  add r1,r0
+  bl 0x2c673eb8
+  ldr r2,[r4,#0xc]
+  ldr r3,[r4,#0x4]
+  movs r1,#0x0
+  strb r1,[r3,r2]
+  pop {r4,pc}

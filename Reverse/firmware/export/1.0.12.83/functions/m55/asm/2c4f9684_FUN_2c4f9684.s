@@ -1,0 +1,27 @@
+; FUN_2c4f9684 @ 0x2c4f9684 size=60
+  push {r4,lr}
+  ldr r3,[r0,#0x28]
+  mov r4,r0
+  cbnz r3,0x2c4f96ae
+  ldr r1,[r0,#0x4]
+  ldr r3,[r0,#0x18]
+  ldr r2,[r4,#0x14]
+  ldr r0,[r0,#0x24]
+  subs r3,r3,r1
+  subs r2,r2,r1
+  subs r0,#0x1
+  str r2,[r4,#0x14]
+  ands r3,r0
+  ldr r2,[r4,#0x8]
+  str r3,[r4,#0x18]
+  add r2,r1
+  movs r3,#0x0
+  str r2,[r4,#0x8]
+  strd r3,r3,[r4,#0x0]
+  pop {r4,pc}
+  ldr r2,[r0,#0x4]
+  ldr.w r1,[r0],#0x8
+  bl 0x2c4f959c
+  movs r3,#0x0
+  strd r3,r3,[r4,#0x0]
+  pop {r4,pc}

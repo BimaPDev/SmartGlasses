@@ -1,0 +1,19 @@
+; FUN_2c13f3b4 @ 0x2c13f3b4 size=42
+  push {r4,lr}
+  mov r4,r0
+  bl 0x2c141a00
+  adds r2,r0,#0x1
+  blt 0x2c13f3cc
+  cbnz r0,0x2c13f3d8
+  mov r0,r4
+  bl 0x2c141b08
+  adds r0,#0x1
+  pop {r4,pc}
+  adds r3,r0,#0x3
+  ite ge
+  mov.ge r0,#0x0
+  mov.lt r0,#0x1
+  rsbs r0,r0
+  pop {r4,pc}
+  mov.w r0,#0xffffffff
+  pop {r4,pc}

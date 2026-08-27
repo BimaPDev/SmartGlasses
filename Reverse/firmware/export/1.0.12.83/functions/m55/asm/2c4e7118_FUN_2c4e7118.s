@@ -1,0 +1,20 @@
+; FUN_2c4e7118 @ 0x2c4e7118 size=42
+  push {r4,lr}
+  bl 0x2c4e94fc
+  mov r3,r0
+  movs r0,#0x1
+  ldr r3,[r3,#0x4]
+  blx r3
+  mov r4,r0
+  bl 0x2c4e9354
+  mov r3,r0
+  mov r1,r4
+  ldr r0,[0x2c4e7144]
+  ldr r3,[r3,#0x58]
+  blx r3
+  ldr r3,[0x2c4e7148]
+  ldr r0,[0x2c4e714c]
+  cmp r4,#0x0
+  it ne
+  mov.ne r0,r3
+  pop {r4,pc}

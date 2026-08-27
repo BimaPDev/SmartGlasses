@@ -1,0 +1,19 @@
+; FUN_2c4b6bc8 @ 0x2c4b6bc8 size=52
+  push {r4,lr}
+  cbz r0,0x2c4b6be4
+  movs r1,#0x1
+  mov r0,r1
+  bl 0x2c4b6058
+  movs r0,#0x1
+  bl 0x2c674678
+  movs r0,#0x2
+  pop.w {r4,lr}
+  b.w 0x2c4b6170
+  mov r4,r0
+  bl 0x2c4b6170
+  mov r0,r4
+  bl 0x2c674678
+  mov r1,r4
+  movs r0,#0x1
+  pop.w {r4,lr}
+  b.w 0x2c4b6058

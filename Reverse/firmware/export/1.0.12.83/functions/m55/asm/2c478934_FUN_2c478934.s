@@ -1,0 +1,19 @@
+; FUN_2c478934 @ 0x2c478934 size=44
+  push {r4,lr}
+  ldr r3,[0x2c478960]
+  sub sp,#0x8
+  mov r4,r0
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  bl 0x2c483624
+  ldr r3,[0x2c478960]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x2c47895c
+  mov r0,r4
+  add sp,#0x8
+  pop {r4,pc}
+  bl 0x2c674828

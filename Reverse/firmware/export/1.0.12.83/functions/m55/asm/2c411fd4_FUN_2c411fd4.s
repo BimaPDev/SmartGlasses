@@ -1,0 +1,24 @@
+; FUN_2c411fd4 @ 0x2c411fd4 size=48
+  push {r3,r7,lr}
+  str r2,[r4,#0x54]
+  strb r5,[r5,#0x1]
+  ldrb r4,[r6,#0x5]
+  b 0x2c4124cc
+  strb r2,[r6,#0xd]
+  ldr r3,[r4,#0x14]
+  b 0x2c4129b8
+  strb r5,[r5,#0x1]
+  ldrb r4,[r6,#0x5]
+  b 0x2c412eac
+  add r2,sp,#0x218
+  ldr r0,[r5,#0x74]
+  str r0,[r6,#0x64]
+  ldr r5,[sp,#0x3c0]
+  ldr r1,[sp,#0x254]
+  ldr r0,[r5,#0x74]
+  str r2,[r6,#0x24]
+  strb r1,[r4,#0x9]
+  strh r2,[r4,#0x6]
+  ldr r5,[r2,#0x8]
+  str r3,[r6,#0x34]
+  b.w 0x2d085400

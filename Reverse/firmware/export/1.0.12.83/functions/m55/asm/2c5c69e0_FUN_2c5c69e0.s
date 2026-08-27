@@ -1,0 +1,21 @@
+; FUN_2c5c69e0 @ 0x2c5c69e0 size=58
+  push {r4,lr}
+  mov r4,r0
+  ldr r1,[0x2c5c6a1c]
+  movw r0,#0x3ff
+  mov r2,r4
+  bl 0x2c620f0c
+  mov r3,r0
+  mov r2,r4
+  ldr r1,[0x2c5c6a20]
+  str.w r3,[r4,#0x4d0]
+  movw r0,#0x405
+  bl 0x2c620f0c
+  mov r3,r0
+  mov r2,r4
+  ldr r1,[0x2c5c6a24]
+  movw r0,#0x407
+  str.w r3,[r4,#0x4d4]
+  bl 0x2c620f0c
+  str.w r0,[r4,#0x4d8]
+  pop {r4,pc}

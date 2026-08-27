@@ -1,0 +1,22 @@
+; FUN_2c5f1040 @ 0x2c5f1040 size=50
+  push {r4,r5,lr}
+  mov r4,r0
+  sub sp,#0xc
+  mov r5,r1
+  movw r1,#0x2064
+  str r2,[sp,#0x4]
+  bl 0x2c6070bc
+  ldr r3,[sp,#0x4]
+  mov r2,r5
+  ldr r1,[r4,#0x28]
+  mov r0,r4
+  bl 0x2c5f0a5c
+  ldr r3,[r4,#0x28]
+  movw r2,#0x270f
+  adds r3,#0x1
+  cmp r3,r2
+  it gt
+  mov.gt r3,#0x1
+  str r3,[r4,#0x28]
+  add sp,#0xc
+  pop {r4,r5,pc}

@@ -1,0 +1,26 @@
+; FUN_2c4e755c @ 0x2c4e755c size=56
+  push {r3,r4,r5,lr}
+  mov r4,r2
+  mov r5,r3
+  bl 0x2c4eab7c
+  mov r3,r0
+  uxth r1,r5
+  mov r0,r4
+  ldr r3,[r3,#0x4]
+  blx r3
+  mov r5,r0
+  bl 0x2c4e9354
+  mov r3,r0
+  mov r1,r4
+  ldr r0,[0x2c4e7594]
+  ldr r3,[r3,#0x58]
+  blx r3
+  mov r0,r4
+  movs r1,#0x20
+  bl 0x2c4f0008
+  ldr r3,[0x2c4e7598]
+  ldr r0,[0x2c4e759c]
+  cmp r5,#0x0
+  it eq
+  mov.eq r0,r3
+  pop {r3,r4,r5,pc}

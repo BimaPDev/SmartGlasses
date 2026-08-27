@@ -1,0 +1,32 @@
+; FUN_2c0b4fb8 @ 0x2c0b4fb8 size=66
+  lsrs r0,r4,#0x10
+  ands r4,r3
+  stmia r4,{r1,r2,r4,r6,r7}
+  subs r6,#0x8a
+  subs r5,r6,r2
+  subs r6,#0xea
+  strh r4,[r2,#0x6]
+  subs r7,#0x19
+  adds r0,#0x44
+  subs r7,#0x52
+  add r4,sp,#0x20
+  subs r7,#0x70
+  push {r0,r3,r7,lr}
+  ands r0,r5
+  cmp r2,#0x80
+  subs r6,#0x4e
+  push {r0,r4,r5,lr}
+  subs r6,#0x8d
+  subs r3,r7,#0x7
+  subs r6,#0xf0
+  ldrh r5,[r5,#0x32]
+  subs r7,#0x77
+  ldc p15,cr3,[r6],{0xbc}
+  ssat pc,#0x10,r3,asr #0xf
+  ldr r6,[sp,#0x168]
+  subs r7,#0xfb
+  adr r0,[0x2c0b50cc]
+  ands r4,r1
+  stmia r1!,{r0,r2,r3,r4,r5,r6,r7}
+  ands r6,r3
+  b 0x2c0b4c48

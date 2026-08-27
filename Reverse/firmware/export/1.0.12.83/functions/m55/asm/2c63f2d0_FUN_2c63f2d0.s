@@ -1,0 +1,19 @@
+; FUN_2c63f2d0 @ 0x2c63f2d0 size=36
+  push {r5,lr}
+  subs r4,#0x3f
+  add r5,sp,#0x130
+  subs r4,#0x3f
+  add sp,#0x110
+  subs r4,#0x3f
+  push {r2,r3,r5,r6,r7,lr}
+  subs r4,#0x3f
+  add sp,#0x190
+  subs r4,#0x3f
+  push {r2,r3,r4,r6,r7,lr}
+  subs r4,#0x3f
+  ldr r1,[sp,#0x310]
+  subs r5,#0x6a
+  add r7,sp,#0x230
+  subs r4,#0x3f
+  add sp,#0x20
+  subs r4,#0x3f

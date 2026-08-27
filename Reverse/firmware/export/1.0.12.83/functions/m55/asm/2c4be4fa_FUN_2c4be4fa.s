@@ -1,0 +1,23 @@
+; FUN_2c4be4fa @ 0x2c4be4fa size=56
+  push {r3,lr}
+  bhi 0x2c4be52a
+  ldr r3,[0x2c4be534]
+  movs r2,#0x1
+  strb r2,[r3,r0]
+  mrs r3,basepri
+  cmp r3,#0x40
+  beq 0x2c4be514
+  mov r1,pc
+  ldr r2,[0x2c4be538]
+  strd r1,lr,[r2,#0x0]
+  movs r2,#0x40
+  msr basepri,r2
+  cbnz r3,0x2c4be524
+  ldr r2,[0x2c4be538]
+  mov.w r1,#0xffffffff
+  str r1,[r2,#0x0]
+  msr basepri,r3
+  pop {r3,pc}
+  mov r1,r0
+  ldr r0,[0x2c4be53c]
+  bl 0x2c673ca8

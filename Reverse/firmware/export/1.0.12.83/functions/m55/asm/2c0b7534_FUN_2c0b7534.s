@@ -1,0 +1,23 @@
+; FUN_2c0b7534 @ 0x2c0b7534 size=44
+  adds r6,r7,#0x5
+  subs r7,#0x9c
+  rsbs r0,r6
+  subs r7,#0xc1
+  adr r2,[0x2c0b7778]
+  subs r7,#0xd6
+  push {r1,r3,r6,lr}
+  ands r7,r1
+  bvs 0x2c0b74a8
+  ands r1,r5
+  add r7,sp,#0x3fc
+  subs r6,#0x4a
+  subs r0,r6,#0x6
+  subs r6,#0x82
+  rev16 r3,r6
+  subs r6,#0xf4
+  asrs r1,r1,#0x5
+  subs r7,#0x9d
+  adr r1,[0x2c0b7630]
+  subs r7,#0xd0
+  subs r3,#0x25
+  subs r7,#0xe2

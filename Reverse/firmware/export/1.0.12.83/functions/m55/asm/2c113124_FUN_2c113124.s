@@ -1,0 +1,25 @@
+; FUN_2c113124 @ 0x2c113124 size=56
+  asrs r6,r7
+  lsrs r1,r2,#0x2
+  bhi 0x2c112abc
+  str r6,[r7,#0x20]
+  cmp r4,#0xa
+  ldc2 p8,cr0,[r9,#-0xf8]
+  lsls r6,r0,#0x1b
+  ldcl p12,cr9,[r6],{0xae}
+  lsrs r2,r0,#0x10
+  stc2 p8,cr3,[r6,#-0xf8]!
+  ldr r5,[0x2c112ac0]
+  adr r5,[0x2c113238]
+  vabdl.u8 q12,d9,d30
+  movs r3,#0x2
+  b 0x2c112e7a
+  b 0x2c112a88
+  push {r1,r2,r3,r5,lr}
+  ldr r1,[0x2c113368]
+  stmia r2,{r1,r2,r4,r7}
+  movs r2,#0x90
+  cmp r2,#0x82
+  movs r2,#0x28
+  ldr r1,[0x2c1132c8]
+  b 0x2c112e42

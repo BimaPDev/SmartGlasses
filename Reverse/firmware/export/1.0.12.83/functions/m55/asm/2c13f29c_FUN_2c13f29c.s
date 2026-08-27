@@ -1,0 +1,21 @@
+; FUN_2c13f29c @ 0x2c13f29c size=56
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  mov r5,r1
+  bl 0x2c13eea4
+  mrs r3,ipsr
+  cbnz r3,0x2c13f2b8
+  mrs r3,primask
+  cbnz r3,0x2c13f2b8
+  mrs r3,basepri
+  cbz r3,0x2c13f2c8
+  mov r0,r4
+  mvn r1,#0x5
+  bl 0x2c13ee98
+  mvn r0,#0x5
+  pop {r3,r4,r5,pc}
+  mov r0,r4
+  mov r1,r5
+  ldr.w r12,[0x2c13f2d4]
+  svc 0x0
+  pop {r3,r4,r5,pc}

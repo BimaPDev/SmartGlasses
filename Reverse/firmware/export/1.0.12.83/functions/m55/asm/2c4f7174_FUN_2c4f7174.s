@@ -1,0 +1,25 @@
+; FUN_2c4f7174 @ 0x2c4f7174 size=70
+  push {r4,r5,r6,lr}
+  sub sp,#0x20
+  add r3,sp,#0x20
+  stmdb r3,{r0,r1,r2}
+  ldrb.w r4,[sp,#0x14]
+  bl 0x2c4c049c
+  tst r0,#0x600000
+  beq 0x2c4f71aa
+  ldr r6,[0x2c4f71c0]
+  mov.w r1,#0x18e
+  ldr r5,[0x2c4f71c4]
+  ldr r3,[0x2c4f71c8]
+  ldr r2,[0x2c4f71cc]
+  strd r0,r4,[sp,#0x8]
+  strd r5,r6,[sp,#0x0]
+  movs r0,#0x4
+  bl 0x2c673d88
+  ldrh.w r3,[sp,#0x1c]
+  mov r1,r4
+  ldr r2,[sp,#0x18]
+  movs r0,#0x1
+  add sp,#0x20
+  pop.w {r4,r5,r6,lr}
+  b.w 0x2c4f6d14

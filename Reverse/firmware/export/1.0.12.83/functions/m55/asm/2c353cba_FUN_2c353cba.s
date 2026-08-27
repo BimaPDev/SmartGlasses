@@ -1,0 +1,19 @@
+; FUN_2c353cba @ 0x2c353cba size=36
+  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  strb r5,[r2,r5]
+  asrs r3,r2,#0x1
+  movs r0,r0
+  movs r0,r0
+  movs r4,#0x0
+  strb r5,[r2,r5]
+  strb r5,[r2,r5]
+  strb r5,[r2,r5]
+  strh r5,[r2,r1]
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  svc 0x3

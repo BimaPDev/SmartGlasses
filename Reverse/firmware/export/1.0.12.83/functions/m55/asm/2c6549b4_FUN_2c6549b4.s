@@ -1,0 +1,23 @@
+; FUN_2c6549b4 @ 0x2c6549b4 size=54
+  push {r4,lr}
+  sub sp,#0x20
+  mov r4,r0
+  add.w r12,sp,#0x20
+  stmdb r12,{r2,r3}
+  movs r3,#0x0
+  str r3,[sp,#0x10]
+  ldr r3,[sp,#0x30]
+  str r3,[sp,#0xc]
+  ldr r3,[sp,#0x2c]
+  str r3,[sp,#0x8]
+  ldrb.w r3,[sp,#0x28]
+  str r3,[sp,#0x4]
+  ldr r3,[sp,#0x1c]
+  str r3,[sp,#0x0]
+  mov r3,r2
+  ldr r2,[r1,#0x8]
+  mov.w r1,#0x0
+  bl 0x2c650998
+  mov r0,r4
+  add sp,#0x20
+  pop {r4,pc}

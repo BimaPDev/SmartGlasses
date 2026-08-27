@@ -1,0 +1,31 @@
+; FUN_2c670dd0 @ 0x2c670dd0 size=80
+  sub sp,#0x8
+  ldr r1,[0x2c670e20]
+  vstr.64 d0,[sp]
+  ldr r3,[sp,#0x4]
+  ands r1,r3
+  sub.w r1,r1,#0x3400000
+  cmp r1,#0x0
+  ble 0x2c670df0
+  movs r2,#0x0
+  mov r3,r1
+  vmov d0,r2,r3
+  add sp,#0x8
+  bx lr
+  rsbs r1,r1
+  movs r2,#0x0
+  movs r3,#0x0
+  cmp.w r1,#0x1400000
+  asr.w r0,r1, asr #0x14
+  bge 0x2c670e0a
+  mov.w r1,#0x80000
+  asr.w r3,r1,r0
+  b 0x2c670de8
+  sub.w r1,r0,#0x14
+  cmp r1,#0x1e
+  itet le
+  mov.le.w r0,#0x80000000
+  mov.gt r1,#0x1
+  lsr.le.w r1,r0,r1
+  mov r2,r1
+  b 0x2c670de8

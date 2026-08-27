@@ -1,0 +1,95 @@
+; FUN_2c64a21c @ 0x2c64a21c size=232
+  push {r4,lr}
+  ldr r1,[0x2c64a304]
+  sub sp,#0x10
+  ldr r2,[0x2c64a308]
+  mov r4,r0
+  mov r3,sp
+  ldr r1,[r1,#0x0]
+  str r1,[sp,#0xc]
+  mov.w r1,#0x0
+  ldmia r2,{r0,r1,r2}
+  stm r3,{r0,r1,r2}
+  ldrb r3,[r4,#0x2]
+  subs r3,#0x1
+  cmp r3,#0xb
+  bhi 0x2c64a2f4
+  movs r0,#0x1
+  ldrb r3,[r4,#0x4]
+  subs r3,#0x1
+  cmp r3,#0x6
+  bhi 0x2c64a2e8
+  ldrb r3,[r4,#0x2]
+  cmp r3,#0x2
+  beq 0x2c64a29a
+  adds r3,#0x10
+  ldrb r2,[r4,#0x3]
+  add r3,sp
+  ldrsb.w r3,[r3,#-0x11]
+  cmp r2,r3
+  bgt 0x2c64a286
+  cbz r2,0x2c64a286
+  ldrb r3,[r4,#0x5]
+  cmp r3,#0x17
+  bhi 0x2c64a26a
+  ldrb r3,[r4,#0x6]
+  cmp r3,#0x3b
+  bls 0x2c64a292
+  ldr r1,[0x2c64a30c]
+  movs r0,#0x0
+  bl 0x2c648600
+  movs r0,#0x0
+  ldr r3,[0x2c64a304]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0xc]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x2c64a300
+  add sp,#0x10
+  pop {r4,pc}
+  ldr r1,[0x2c64a310]
+  movs r0,#0x0
+  bl 0x2c648600
+  movs r0,#0x0
+  b 0x2c64a25e
+  ldrb r3,[r4,#0x7]
+  cmp r3,#0x3b
+  bls 0x2c64a274
+  b 0x2c64a26a
+  ldrh r2,[r4,#0x0]
+  lsls r1,r2,#0x1e
+  lsl.w r12,r2,#0x2
+  bne 0x2c64a2c8
+  add.w r1,r2,r2, lsl #0x2
+  add.w r1,r2,r1, lsl #0x3
+  sub.w r1,r1,r1, lsl #0xa
+  ubfx lr,r1,#0x2,#0xe
+  orr.w r1,lr,r1, lsl #0xe
+  uxth r1,r1
+  cmp.w r1,#0x290
+  bcc 0x2c64a2c8
+  movs r2,#0x1d
+  strb.w r2,[sp,#0x1]
+  b 0x2c64a24e
+  add r12,r2
+  add.w r2,r2,r12, lsl #0x3
+  sub.w r2,r2,r2, lsl #0xa
+  ubfx r1,r2,#0x4,#0xc
+  orr.w r2,r1,r2, lsl #0xc
+  uxth r2,r2
+  cmp r2,#0xa3
+  bhi 0x2c64a24e
+  movs r2,#0x1d
+  strb.w r2,[sp,#0x1]
+  b 0x2c64a24e
+  ldr r1,[0x2c64a314]
+  movs r0,#0x0
+  bl 0x2c648600
+  movs r0,#0x0
+  b 0x2c64a248
+  ldr r1,[0x2c64a318]
+  movs r0,#0x0
+  bl 0x2c648600
+  movs r0,#0x0
+  b 0x2c64a240
+  bl 0x2c674828

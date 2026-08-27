@@ -1,0 +1,22 @@
+; FUN_2c2eb358 @ 0x2c2eb358 size=46
+  push {r4,r5,r6,lr}
+  movs r3,r0
+  lsls r0,r0,#0x5
+  movs r0,r0
+  movs r2,r2
+  movs r3,r2
+  movs r1,r0
+  vqshlu.u32 d27,d11,#0x1e
+  movs r3,r0
+  lsls r0,r0,#0x5
+  movs r0,r0
+  movs r3,r2
+  movs r1,r2
+  movs r1,r0
+  vqshlu.u64 d27,d29,#0x3f
+  movs r3,r0
+  lsls r0,r0,#0x5
+  movs r0,r0
+  movs r3,r2
+  movs r3,r2
+  movs r1,r0

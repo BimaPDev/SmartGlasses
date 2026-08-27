@@ -1,0 +1,20 @@
+; FUN_2c527fc8 @ 0x2c527fc8 size=44
+  push {r4,r5,r6,lr}
+  ldr r6,[0x2c52809c]
+  sub sp,#0x18
+  mov r5,r1
+  mov r4,r0
+  str r6,[sp,#0x0]
+  movw r2,#0x2c1
+  ldrb r1,[r1,#0x0]
+  ldr r3,[0x2c5280a0]
+  str r1,[sp,#0x10]
+  ldrb.w r1,[r0,#0x37]
+  str r1,[sp,#0xc]
+  ldrh r1,[r5,#0x2]
+  str r1,[sp,#0x8]
+  ldrh r1,[r0,#0x38]
+  movs r0,#0x4
+  str r1,[sp,#0x4]
+  ldr r1,[0x2c5280a4]
+  bl 0x2c62c82c

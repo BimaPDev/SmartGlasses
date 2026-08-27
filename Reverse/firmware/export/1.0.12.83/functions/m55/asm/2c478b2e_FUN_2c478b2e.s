@@ -1,0 +1,24 @@
+; FUN_2c478b2e @ 0x2c478b2e size=56
+  push {r4,r5,r6,lr}
+  mov r4,r1
+  sub sp,#0x8
+  mov r5,r2
+  mov r6,r3
+  beq 0x2c478b4a
+  mov r2,r6
+  mov r1,r5
+  mov r0,r4
+  add sp,#0x8
+  pop.w {r4,r5,r6,lr}
+  b.w 0x2c478a90
+  bl 0x2c47c4c8
+  cmp r0,#0x1
+  mov r3,r0
+  bne 0x2c478b3a
+  mov r1,r5
+  mov r0,r4
+  movs r2,#0x3
+  strd r3,r6,[sp,#0x0]
+  bl 0x2c47cf18
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

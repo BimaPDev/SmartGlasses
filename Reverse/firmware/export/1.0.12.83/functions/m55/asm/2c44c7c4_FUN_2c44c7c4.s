@@ -1,0 +1,19 @@
+; FUN_2c44c7c4 @ 0x2c44c7c4 size=40
+  movw r6,#0xbe07
+  stmia r5!,{r1}
+  ldrh r5,[r4,#0x10]
+  b 0x2c44c1d8
+  push {r0,r1,r3,r4,r5,r6,r7,lr}
+  bmi 0x2c44c748
+  movs r4,#0x48
+  ldrh r4,[r4,#0x0]
+  add r0,sp,#0x90
+  adr r6,[0x2c44c950]
+  bgt 0x2c44c8ac
+  stmia r1!,{r0,r3,r4,r5,r7}
+  subs r1,#0x70
+  ldrh r1,[r7,#0xc]
+  ldrb r7,[r4,#0x1e]
+  vmov.f32 s1,0x3f100000
+  movs r0,#0x57
+  udf #0xd7

@@ -1,0 +1,26 @@
+; FUN_2c44e2ba @ 0x2c44e2ba size=54
+  pop {r1,r2,r7}
+  push {r0,r7,lr}
+  strb r7,[r7,#0xd]
+  strb r0,[r7,r2]
+  lsrs r1,r6,#0x17
+  beq 0x2c44e2c4
+  cmp r5,#0x3e
+  sbcs r5,r3
+  cbnz r4,0x2c44e31e
+  ldc2 p7,cr11,[r10,#-0x330]!
+  ldr r1,[0x2c44e334]
+  ldr r1,[r6,#0x74]
+  svc 0x39
+  subs r7,#0xd2
+  stc p2,cr14,[r10,#-0x3b0]!
+  str r6,[sp,#0x31c]
+  add r4,lr
+  bvc 0x2c44e358
+  hlt 0x39
+  b 0x2c44e0da
+  cpsie aif
+  adr r5,[0x2c44e674]
+  push {r0,r1,r2,r5,r7,lr}
+  adds r5,#0xb5
+  pop {r0,r1,r2,r5,pc}

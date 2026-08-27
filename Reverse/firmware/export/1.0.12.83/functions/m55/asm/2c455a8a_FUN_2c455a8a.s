@@ -1,0 +1,24 @@
+; FUN_2c455a8a @ 0x2c455a8a size=48
+  push {r1,r2,r3,r4,r6,lr}
+  movs r2,#0x66
+  ldr r6,[sp,#0x28c]
+  ldrh r3,[r3,#0x4]
+  blx 0x2cea215c
+  ldmia r0!,{r1,r4,r7}
+  lsrs r6,r3,#0xd
+  str r0,[r2,#0x68]
+  cmp r3,#0x8c
+  ldrb r0,[r6,r0]
+  stmia r4!,{r1,r2,r5,r6}
+  lsls r6,r0,#0x19
+  strh r5,[r4,r4]
+  adr r6,[0x2c455d94]
+  ldrh r0,[r3,#0x6]
+  ldmia r5!,{r1,r2,r6}
+  cmp r6,r2
+  ldrsb r0,[r3,r0]
+  lsrs r7,r4,#0x12
+  strb r0,[r0,#0x11]
+  add r7,sp,#0x360
+  lsrs r2,r2,#0x4
+  add r4,sp,#0x264

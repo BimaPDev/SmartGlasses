@@ -1,0 +1,29 @@
+; FUN_2c141bd0 @ 0x2c141bd0 size=72
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  cbz r0,0x2c141c0e
+  add.w r3,r0,#0x14
+  ldrex r1,[r3,#0x0]
+  cbnz r1,0x2c141be6
+  clrex
+  b 0x2c141bf0
+  ldr r2,[r1,#0x0]
+  strex r0,r2,[r3,#0x0]
+  cbz r0,0x2c141bf0
+  b 0x2c141bda
+  mov r5,r1
+  cbz r1,0x2c141c04
+  adds r3,r4,#0x4
+  ldrex r2,[r3,#0x0]
+  adds r0,r2,#0x1
+  strex r6,r0,[r3,#0x0]
+  cbz r6,0x2c141c04
+  b 0x2c141bf6
+  mov r0,r4
+  bl 0x2c13edac
+  mov r0,r5
+  pop {r4,r5,r6,pc}
+  mov r1,r0
+  bl 0x2c13edac
+  mov r5,r4
+  b 0x2c141c0a

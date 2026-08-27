@@ -1,0 +1,25 @@
+; FUN_2c10b040 @ 0x2c10b040 size=48
+  push {r7,lr}
+  movs r3,#0x42
+  lsrs r3,r1,#0x18
+  asrs r4,r2,#0x1d
+  movs r5,r2
+  str r3,[r7,#0x28]
+  movs r4,r4
+  asrs r7,r6,#0x19
+  ldrsb r2,[r0,r0]
+  lsls r6,r2,#0x2
+  movs r4,#0x6e
+  lsls r3,r0,#0x1f
+  bhi 0x2c10b088
+  str r2,[r5,#0x74]
+  stmia r3,{r0,r3,r5,r6}
+  asrs r6,r5,#0x15
+  lsls r4,r0,#0x1d
+  b 0x2c10b08a
+  strb r0,[r2,#0x11]
+  str r6,[r7,#0x50]
+  str r6,[r0,r6]
+  str r5,[sp,#0x200]
+  lsls r6,r7,#0x19
+  ldrsb r1,[r1,r6]

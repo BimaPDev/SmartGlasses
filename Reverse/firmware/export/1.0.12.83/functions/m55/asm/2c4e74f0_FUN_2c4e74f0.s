@@ -1,0 +1,23 @@
+; FUN_2c4e74f0 @ 0x2c4e74f0 size=48
+  push {r3,r4,r5,lr}
+  mov r4,r2
+  mov r5,r3
+  bl 0x2c4eab7c
+  mov r3,r0
+  uxth r1,r5
+  mov r0,r4
+  ldr r3,[r3,#0xc]
+  blx r3
+  mov r5,r0
+  bl 0x2c4e9354
+  mov r3,r0
+  mov r1,r4
+  ldr r0,[0x2c4e7520]
+  ldr r3,[r3,#0x58]
+  blx r3
+  ldr r3,[0x2c4e7524]
+  ldr r0,[0x2c4e7528]
+  cmp r5,#0x0
+  it eq
+  mov.eq r0,r3
+  pop {r3,r4,r5,pc}

@@ -1,0 +1,27 @@
+; FUN_2c51e028 @ 0x2c51e028 size=70
+  push {r4,lr}
+  mov r4,r0
+  movs r1,#0x1
+  ldr r0,[r0,#0xc]
+  bl 0x2c606a28
+  ldr r0,[r4,#0x10]
+  movs r1,#0x1
+  bl 0x2c606a28
+  ldr r0,[r4,#0x1c]
+  movs r1,#0x1
+  bl 0x2c606a28
+  ldr r0,[r4,#0x20]
+  movs r1,#0x1
+  bl 0x2c606a28
+  movs r1,#0x1
+  ldr r0,[r4,#0x24]
+  bl 0x2c606a28
+  ldr r0,[r4,#0x24]
+  bl 0x2c519810
+  ldr r0,[r4,#0x14]
+  movs r1,#0x1
+  bl 0x2c606a28
+  ldr r0,[r4,#0x28]
+  movs r1,#0x1
+  pop.w {r4,lr}
+  b.w 0x2c606a28

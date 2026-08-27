@@ -1,0 +1,26 @@
+; FUN_2c5c8e08 @ 0x2c5c8e08 size=76
+  push {r3,r4,r5,lr}
+  vpush {d8}
+  vmov s16,r0
+  bl 0x2c48e738
+  mov r4,r0
+  ldr r2,[0x2c5c8e54]
+  ldr r1,[0x2c5c8e58]
+  bl 0x2c48e5b4
+  vcvt.f64.u32 d0,s16
+  ldr r1,[0x2c5c8e5c]
+  mov r0,r4
+  bl 0x2c48e518
+  mov r0,r4
+  bl 0x2c48e3e8
+  mov r5,r0
+  bl 0x2c5d78f0
+  movs r2,#0x1
+  mov r1,r5
+  bl 0x2c5d7cfc
+  mov r0,r5
+  bl 0x2c48e87c
+  mov r0,r4
+  vpop {d8}
+  pop.w {r3,r4,r5,lr}
+  b.w 0x2c48dea0

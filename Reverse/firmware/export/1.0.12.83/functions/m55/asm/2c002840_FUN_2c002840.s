@@ -1,0 +1,21 @@
+; FUN_2c002840 @ 0x2c002840 size=42
+  ldr r2,[0x2c00286c]
+  ldr r1,[0x2c002870]
+  ldr r0,[0x2c002874]
+  push {r4}
+  ldr r4,[0x2c002878]
+  ldr r3,[r2,#0x6c]
+  orrs r1,r3
+  orrs r4,r3
+  orrs r0,r3
+  str r1,[r2,#0x6c]
+  str r4,[r2,#0x6c]
+  ldr r1,[0x2c00287c]
+  str r0,[r2,#0x6c]
+  ldr r0,[0x2c002880]
+  orrs r1,r3
+  orrs r3,r0
+  str r1,[r2,#0x6c]
+  str r3,[r2,#0x6c]
+  pop.w r4
+  bx lr

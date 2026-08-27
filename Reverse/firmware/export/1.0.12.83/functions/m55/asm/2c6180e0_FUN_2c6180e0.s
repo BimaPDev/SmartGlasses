@@ -1,0 +1,24 @@
+; FUN_2c6180e0 @ 0x2c6180e0 size=74
+  push {r4,lr}
+  ldr r3,[0x2c61812c]
+  mov r4,r1
+  movs r2,#0x0
+  ldr r0,[0x2c618130]
+  ldrb.w r12,[r3,#0x0]
+  mov.w r1,#0x10000
+  ldrb.w r3,[r4,#0x3c]
+  str r0,[r4,#0x24]
+  mov r0,r4
+  bic r3,r3,#0x7
+  strb.w r3,[r4,#0x3c]
+  ldrb.w r3,[r4,#0x2c]
+  bfi r3,r12,#0x0,#0x1
+  strd r2,r2,[r4,#0x30]
+  strb.w r3,[r4,#0x2c]
+  bl 0x2c606a28
+  mov r0,r4
+  mov.w r1,#0x300
+  bl 0x2c606abc
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x2c618014

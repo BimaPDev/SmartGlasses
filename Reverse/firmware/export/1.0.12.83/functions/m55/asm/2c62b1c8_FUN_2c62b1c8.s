@@ -1,0 +1,25 @@
+; FUN_2c62b1c8 @ 0x2c62b1c8 size=52
+  movw r3,#0xffff
+  cmp r0,r3
+  beq 0x2c62b1f8
+  cbz r0,0x2c62b1ec
+  cmp r0,#0x6f
+  bls 0x2c62b1ee
+  ldr r3,[0x2c62b1fc]
+  ldr r2,[r3,#0x0]
+  cbz r2,0x2c62b1ea
+  sub.w r3,r0,#0x70
+  ldr r1,[0x2c62b200]
+  uxth r3,r3
+  ldr r1,[r1,#0x0]
+  cmp r3,r1
+  bcc 0x2c62b1f4
+  movs r0,#0x0
+  bx lr
+  ldr r3,[0x2c62b204]
+  ldrb r0,[r3,r0]
+  bx lr
+  ldrb r0,[r2,r3]
+  bx lr
+  movs r0,#0x1f
+  bx lr

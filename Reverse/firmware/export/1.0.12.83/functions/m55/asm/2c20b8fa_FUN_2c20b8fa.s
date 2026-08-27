@@ -1,0 +1,36 @@
+; FUN_2c20b8fa @ 0x2c20b8fa size=76
+  push {r1,r2,r3,r4,r5,r6,r7,lr}
+  movs r0,r0
+  ldrb r0,[r0,#0x1c]
+  add r3,sp,#0x3f0
+  adr r0,[0x2c20bd00]
+  lsls r0,r0,#0x18
+  movs r0,#0xfc
+  subs r0,r0,r0
+  lsls r2,r7,#0x3
+  beq 0x2c20b94e
+  movs r0,r0
+  nop
+  ldr r0,[r0,#0x74]
+  lsls r0,r4,#0x1
+  movs r0,r0
+  adr r0,[0x2c20b9d8]
+  asrs r7,r5,#0x2
+  movs r0,r0
+  lsrs r0,r0,#0x14
+  it al
+  movs r0,r0
+  movs r0,r0
+  and r0,r11,#0xbf
+  movs r0,r0
+  lsrs r0,r0,#0xc
+  add r7,sp,#0x3c0
+  movs r0,r2
+  movs r0,r0
+  b 0x2c20b952
+  vaddl.u32 q0,d27,d16
+  lsls r0,r0,#0xc
+  mcr2 p0,0x5,r0,cr13,cr5,0x5
+  movs r0,r0
+  asrs r1,r2,#0x4
+  movs r1,r2

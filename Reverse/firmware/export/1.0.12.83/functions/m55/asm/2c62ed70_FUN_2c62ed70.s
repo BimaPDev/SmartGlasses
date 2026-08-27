@@ -1,0 +1,76 @@
+; FUN_2c62ed70 @ 0x2c62ed70 size=224
+  rsb r1,r1,r1, lsl #0x8
+  ldr r3,[0x2c62ee58]
+  rsb r2,r2,r2, lsl #0x8
+  uxth r1,r1
+  uxth r2,r2
+  push {r4,lr}
+  umull r4,r1,r3,r1
+  umull r3,r2,r3,r2
+  ubfx r1,r1,#0x5,#0x8
+  ubfx r2,r2,#0x5,#0x8
+  cmp r1,#0x0
+  beq 0x2c62ee1e
+  rsb r0,r0,r0, lsl #0x8
+  ldr r3,[0x2c62ee5c]
+  ldr r4,[0x2c62ee60]
+  rsb.w lr,r1,#0xff
+  lsrs r0,r0,#0x3
+  mul lr,r2,lr
+  umull r3,r0,r3,r0
+  ubfx lr,lr,#0x8,#0x8
+  ubfx r12,r0,#0x2,#0x10
+  umull r3,r12,r4,r12
+  mvn r3,#0x2a
+  ubfx r12,r12,#0x3,#0x8
+  mul r3,r3,r12
+  add.w r3,r3,r0, lsr #0x2
+  add.w r3,r3,r3, lsl #0x1
+  lsls r3,r3,#0x1
+  uxtb r3,r3
+  rsb.w r0,r3,#0xff
+  smulbb r3,r1,r3
+  mul r1,r0,r1
+  asrs r3,r3,#0x8
+  asrs r1,r1,#0x8
+  rsb.w r3,r3,#0xff
+  rsb.w r1,r1,#0xff
+  mul r3,r2,r3
+  mul r1,r2,r1
+  ubfx r3,r3,#0x8,#0x8
+  ubfx r1,r1,#0x8,#0x8
+  cmp.w r12,#0x4
+  bhi 0x2c62ee50
+  tbb [pc,r12]
+  mov r1,r2
+  mov r2,r3
+  movs r0,#0x0
+  bfi r0,lr,#0x0,#0x8
+  bfi r0,r1,#0x8,#0x8
+  bfi r0,r2,#0x10,#0x8
+  orr r0,r0,#0xff000000
+  pop {r4,pc}
+  movs r0,#0x0
+  bfi r0,r2,#0x0,#0x8
+  bfi r0,r2,#0x8,#0x8
+  bfi r0,r2,#0x10,#0x8
+  orr r0,r0,#0xff000000
+  pop {r4,pc}
+  mov r3,r2
+  mov r2,lr
+  mov lr,r1
+  mov r1,r3
+  b 0x2c62ee0a
+  mov r0,r2
+  mov r1,r3
+  mov r2,lr
+  mov lr,r0
+  b 0x2c62ee0a
+  mov r3,r2
+  mov r2,r1
+  mov r1,lr
+  mov lr,r3
+  b 0x2c62ee0a
+  mov r1,lr
+  mov lr,r3
+  b 0x2c62ee0a

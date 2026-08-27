@@ -1,0 +1,25 @@
+; FUN_2c2ad50a @ 0x2c2ad50a size=56
+  push {r1,r2,r3,r4,r6,lr}
+  ldrd r0,r8,[r5,#-0x38c]
+  lsls r0,r6,#0x3
+  ldrh r7,[r0,#0x0]
+  ldrh r2,[r7,#0x6]
+  adds r0,#0x88
+  ldrb r6,[r3,#0x1d]
+  lsls r0,r2,#0x1
+  lsls r0,r0,#0x18
+  ldmia r4,{r0,r2,r3,r4,r5,r6,r7}
+  lsls r7,r0,#0x3
+  mla r0,r12,r0,r0
+  subs r6,#0x0
+  asrs r1,r6,#0x5
+  lsls r7,r2,#0x17
+  ldr r7,[sp,#0x37c]
+  lsls r5,r2,#0x3
+  ldrsb.w r9,[r10],#-0x5
+  vsra.u64 d16,d1,#0xb
+  b 0x2c2ad89a
+  str r6,[r4,#0x64]
+  lsrs r0,r2,#0xc
+  strb r5,[r0,r7]
+  movs r0,r2

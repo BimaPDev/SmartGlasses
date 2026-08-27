@@ -1,0 +1,22 @@
+; FUN_2c66ae30 @ 0x2c66ae30 size=50
+  cmp r3,#0x2
+  push {r4,lr}
+  beq 0x2c66ae4c
+  lsrs r2,r2,#0x2
+  subs r2,#0x1
+  ldr r3,[r0,#0x0]
+  ldr r4,[r1,#0x0]
+  cmp r2,#0x0
+  str.w r4,[r0],#0x4
+  str.w r3,[r1],#0x4
+  bgt 0x2c66ae38
+  pop {r4,pc}
+  add r2,r0
+  ldrb r3,[r0,#0x0]
+  ldrb r4,[r1,#0x0]
+  strb.w r4,[r0],#0x1
+  strb.w r3,[r1],#0x1
+  subs r3,r2,r0
+  cmp r3,#0x0
+  bgt 0x2c66ae4e
+  b 0x2c66ae4a

@@ -1,0 +1,22 @@
+; FUN_2c3318e4 @ 0x2c3318e4 size=46
+  push {r2,lr}
+  movs r1,r0
+  lsls r0,r0,#0x4
+  movs r0,r0
+  movs r5,r1
+  movs r6,r1
+  movs r1,r0
+  vsli.32 d27,d11,#0x1f
+  movs r1,r0
+  lsls r0,r0,#0x4
+  movs r0,r0
+  movs r7,r1
+  movs r6,r1
+  movs r1,r0
+  vsli.32 d27,d22,#0x1f
+  movs r1,r0
+  lsls r0,r0,#0x4
+  movs r0,r0
+  movs r7,r1
+  movs r7,r1
+  movs r1,r0

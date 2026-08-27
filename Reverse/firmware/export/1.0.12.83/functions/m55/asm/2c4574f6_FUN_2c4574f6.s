@@ -1,0 +1,27 @@
+; FUN_2c4574f6 @ 0x2c4574f6 size=52
+  push {r0,r1,r2,r3,lr}
+  asrs r2,r7,#0x1f
+  ldmia r2!,{r4,r6}
+  subs r7,#0xe0
+  b 0x2c4576ea
+  asrs r7,r0,#0x1c
+  adds r6,r3,r4
+  bgt 0x2c457674
+  ldrb r4,[r3,#0x18]
+  asrs r0,r0,#0x1d
+  movs r7,#0xfa
+  subs r7,#0x30
+  b 0x2c457cb4
+  ldrsh r4,[r0,r0]
+  adds r2,#0x56
+  bpl 0x2c457634
+  stmia r7,{r0,r1,r2,r4,r5,r6,r7}
+  lsrs r0,r7,#0xc
+  ldrb r6,[r7,#0x1f]
+  strb r6,[r2,#0xb]
+  cmp r5,#0x6f
+  add r1,sp,#0x36c
+  add r7,sp,#0x1e0
+  ldmia r2!,{r0,r3,r4,r5}
+  ldmia r5!,{r1,r4}
+  ldrh r1,[r3,#0x3e]

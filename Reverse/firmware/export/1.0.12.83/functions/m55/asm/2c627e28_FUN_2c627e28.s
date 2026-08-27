@@ -1,0 +1,19 @@
+; FUN_2c627e28 @ 0x2c627e28 size=44
+  mov r12,r1
+  mov r3,r2
+  movs r1,#0xa
+  mov r2,r12
+  b.w 0x2c603c40
+  push {r4,lr}
+  ldr r4,[0x2c627e48]
+  mov r2,r1
+  movs r3,#0x0
+  ldrh r1,[r4,#0x0]
+  mov r4,r0
+  bl 0x2c603c40
+  ldr r3,[0x2c627e4c]
+  mov r0,r4
+  movs r2,#0x0
+  ldrh r1,[r3,#0x0]
+  pop.w {r4,lr}
+  b.w 0x2c606e80

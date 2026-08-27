@@ -1,0 +1,25 @@
+; FUN_2c517950 @ 0x2c517950 size=66
+  push {r4,r5,r6,lr}
+  sub sp,#0x8
+  mov r6,r1
+  bl 0x2c48e738
+  mov r4,r0
+  vmov.f64 d0,0x401c000000000000
+  ldr r1,[0x2c517994]
+  bl 0x2c48e518
+  mov r0,r4
+  bl 0x2c48e3e8
+  mov r5,r0
+  bl 0x2c66c4ec
+  movs r3,#0x0
+  mov r2,r0
+  mov r1,r5
+  mov r0,r6
+  str r3,[sp,#0x0]
+  bl 0x2c51340c
+  mov r0,r5
+  bl 0x2c48e87c
+  mov r0,r4
+  add sp,#0x8
+  pop.w {r4,r5,r6,lr}
+  b.w 0x2c48dea0

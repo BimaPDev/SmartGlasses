@@ -1,0 +1,27 @@
+; FUN_2c645a62 @ 0x2c645a62 size=70
+  push {r4,lr}
+  ldr r3,[r3,#0x14]
+  cbz r3,0x2c645a98
+  cmp r0,#0x0
+  blt 0x2c645a88
+  adds r3,#0x28
+  ldrex r4,[r3,#0x0]
+  bic.w r2,r4,r0
+  strex r1,r2,[r3,#0x0]
+  cbz r1,0x2c645a7e
+  b 0x2c645a6e
+  mov r0,r4
+  bl 0x2c643aac
+  mov r0,r4
+  pop {r4,pc}
+  mvn r1,#0x3
+  mov r0,r3
+  mov r4,r1
+  bl 0x2c643a9c
+  mov r0,r4
+  pop {r4,pc}
+  mvn r1,#0x7
+  mov r0,r3
+  mov.w r4,#0xffffffff
+  bl 0x2c643a9c
+  b 0x2c645a84

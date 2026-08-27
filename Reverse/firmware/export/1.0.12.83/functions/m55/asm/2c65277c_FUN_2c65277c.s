@@ -1,0 +1,21 @@
+; FUN_2c65277c @ 0x2c65277c size=52
+  push {r0,r1,r2,r4,r5,r6,r7,lr}
+  mov r5,sp
+  mov r4,r0
+  ldr r7,[sp,#0x20]
+  stm r5,{r1,r2}
+  ldrb.w r6,[sp,#0x4]
+  mov r1,r3
+  cbnz r6,0x2c65279e
+  mov r2,r7
+  ldr r0,[sp,#0x0]
+  bl 0x2c65e8dc
+  cmp r7,r0
+  it ne
+  mov.ne r6,#0x1
+  strb.w r6,[sp,#0x4]
+  ldm.w r5,{r0,r1}
+  stm r4,{r0,r1}
+  mov r0,r4
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}

@@ -1,0 +1,24 @@
+; FUN_2c44783e @ 0x2c44783e size=46
+  push {r2,r3,r4,r5,r6,r7,lr}
+  bhi 0x2c447934
+  lsls r0,r0,#0x18
+  svc 0xea
+  strb r3,[r3,#0x12]
+  ldr r1,[r3,#0x4c]
+  asrs r3,r3,#0x11
+  stmia r1,{r0,r1,r6,r7}
+  ldr r2,[0x2c447c14]
+  str r0,[r6,#0x30]
+  adds r5,r0,r1
+  ldrh r1,[r6,#0x3e]
+  add r3,sp,#0x16c
+  ldrb r5,[r2,#0x9]
+  adds r1,#0xff
+  ble 0x2c44783e
+  bhi 0x2c447938
+  ldrh r7,[r3,r6]
+  cmp r6,#0xed
+  ldrh r2,[r4,r7]
+  ldmia r7!,{r0,r1,r3,r4,r5}
+  lsrs r7,r3,#0x10
+  movs r0,r0

@@ -1,0 +1,20 @@
+; FUN_2c53c73c @ 0x2c53c73c size=46
+  push {r4,lr}
+  mov r4,r0
+  ldr r0,[r0,#0x20]
+  sub sp,#0x10
+  cbz r0,0x2c53c766
+  movs r2,#0x1
+  uxtb r1,r1
+  movs r3,#0x4
+  str r2,[sp,#0x0]
+  strd r2,r1,[sp,#0x4]
+  movs r2,#0x3
+  movs r1,#0x0
+  bl 0x2c628b70
+  ldr r0,[r4,#0x20]
+  add sp,#0x10
+  pop.w {r4,lr}
+  b.w 0x2c608c7c
+  add sp,#0x10
+  pop {r4,pc}

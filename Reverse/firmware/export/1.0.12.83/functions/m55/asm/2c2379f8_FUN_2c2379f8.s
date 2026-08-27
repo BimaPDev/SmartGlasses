@@ -1,0 +1,19 @@
+; FUN_2c2379f8 @ 0x2c2379f8 size=36
+  push {lr}
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  str r7,[r3,#0x0]
+  movs r0,r0
+  movs r0,r0
+  movs r0,r0
+  lsls r0,r0,#0x8
+  lsls r5,r6,#0x3
+  movs r0,r0
+  movs r0,r0
+  str r2,[r0,#0x60]
+  ldrh r6,[r4,#0x3a]
+  str r6,[r2,#0x68]
+  str r6,[r4,#0x64]
+  str r6,[r4,r1]

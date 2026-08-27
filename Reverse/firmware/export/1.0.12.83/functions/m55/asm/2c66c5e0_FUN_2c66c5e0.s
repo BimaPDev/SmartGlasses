@@ -1,0 +1,21 @@
+; FUN_2c66c5e0 @ 0x2c66c5e0 size=44
+  ldrb r2,[r1,#0x0]
+  push {r4,r5,r6,lr}
+  cbnz r2,0x2c66c602
+  pop {r4,r5,r6,pc}
+  cmp r2,r3
+  bne 0x2c66c600
+  mov r4,r1
+  mov r5,r0
+  ldrb.w r3,[r4,#0x1]!
+  cmp r3,#0x0
+  beq 0x2c66c5e6
+  ldrb.w r6,[r5,#0x1]!
+  cmp r6,r3
+  beq 0x2c66c5f0
+  adds r0,#0x1
+  ldrb r3,[r0,#0x0]
+  cmp r3,#0x0
+  bne 0x2c66c5e8
+  mov r0,r3
+  b 0x2c66c5e6

@@ -1,0 +1,23 @@
+; FUN_2c258388 @ 0x2c258388 size=46
+  push {r1,r2,r3,r4,r7,lr}
+  b 0x2c258580
+  subs r0,r0,#0x4
+  ldrb r0,[r4,r4]
+  ldr r6,[r5,#0x74]
+  lsls r2,r2,#0x11
+  lsls r0,r4,#0x3
+  subs r0,r0,#0x4
+  ldrb r0,[r4,#0x18]
+  ldmia r7,{r0,r1,r2,r3,r6,r7}
+  stmia r7!,{r0,r2}
+  ldr r0,[sp,#0x39c]
+  bpl 0x2c258508
+  add r0,sp,#0x2d8
+  movs r0,#0x2f
+  adr r7,[0x2c2585a8]
+  strd r5,r6,[r2],#0x304
+  strh r7,[r6,#0x14]
+  movs r0,#0x3f
+  strh r2,[r1,#0x38]
+  cbnz r0,0x2c2585d2
+  ldrb r0,[r4,#0x1f]

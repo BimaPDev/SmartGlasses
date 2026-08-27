@@ -1,0 +1,19 @@
+; FUN_2c645886 @ 0x2c645886 size=44
+  push {r4,lr}
+  cbz r0,0x2c6458a4
+  ldrb r2,[r0,#0x0]
+  cmp r2,#0xf1
+  bne 0x2c6458a4
+  ldrb r2,[r0,#0x1]
+  cmp r2,#0x4
+  beq 0x2c6458a4
+  ldrsb.w r4,[r0,#0x20]
+  mov r1,r4
+  bl 0x2c643a70
+  mov r0,r4
+  pop {r4,pc}
+  mov.w r1,#0xffffffff
+  mov r0,r3
+  mov r4,r1
+  bl 0x2c643a70
+  b 0x2c6458a0

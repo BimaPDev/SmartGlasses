@@ -1,0 +1,19 @@
+; FUN_2c5b56b0 @ 0x2c5b56b0 size=50
+  push {r3,r4,r5,lr}
+  mov r3,r1
+  mov r4,r0
+  mov r5,r2
+  ldr r1,[0x2c5b56e4]
+  mov r2,r3
+  bl 0x2c48e5b4
+  mov r2,r5
+  ldr r1,[0x2c5b56e8]
+  mov r0,r4
+  bl 0x2c48e5b4
+  bl 0x2c5c561c
+  vmov s0,r0
+  ldr r1,[0x2c5b56ec]
+  mov r0,r4
+  vcvt.f64.s32 d0,s0
+  pop.w {r3,r4,r5,lr}
+  b.w 0x2c48e518

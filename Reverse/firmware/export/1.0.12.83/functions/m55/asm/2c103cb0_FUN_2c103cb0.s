@@ -1,0 +1,24 @@
+; FUN_2c103cb0 @ 0x2c103cb0 size=46
+  push {r1,r2,r6,r7,lr}
+  lsls r7,r7,#0x3
+  lsls r5,r4,#0x11
+  ldrb r3,[r3,#0x18]
+  lsrs r1,r4,#0xb
+  lsrs r2,r4,#0x1f
+  cmn r5,r7
+  lsls r5,r4,#0x1c
+  str r7,[sp,#0xf8]
+  subs r4,r1,r4
+  b 0x2c103cf6
+  adds r4,#0xe
+  strb r5,[r0,#0x12]
+  add r3,sp,#0x0
+  ldr r0,[0x2c103f40]
+  ldrsh r1,[r2,r0]
+  str r7,[sp,#0x21c]
+  asrs r6,r0,#0x14
+  subs r5,#0xd4
+  ldr r0,[r6,#0x6c]
+  str r0,[sp,#0x154]
+  strh r0,[r0,#0x4]
+  str r4,[r6,#0x58]

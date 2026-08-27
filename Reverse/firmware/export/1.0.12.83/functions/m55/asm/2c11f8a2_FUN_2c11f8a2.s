@@ -1,0 +1,24 @@
+; FUN_2c11f8a2 @ 0x2c11f8a2 size=48
+  lsls r0,r2,#0x16
+  ldrh r2,[r6,#0x38]
+  lsrs r0,r0,#0x18
+  lsrs r2,r0,#0x1
+  movs r2,#0xb0
+  lsrs r2,r7,#0x1b
+  cmp r4,#0x7b
+  movs r2,#0xb0
+  lsrs r2,r7,#0x1b
+  lsls r6,r7,#0xc
+  movs r2,#0xb2
+  push {r1,r2,r3,r4,lr}
+  asrs r6,r0
+  push {}
+  lsls r6,r1,#0x12
+  ldr r1,[0x2c11f8f8]
+  stc2 p7,cr6,[r4],#-0x7c
+  movs r6,#0x70
+  lsls r3,r6,#0x4
+  ldr r0,[r0,r1]
+  blx r8
+  ldrsh r2,[r7,r0]
+  b 0x2c11f102

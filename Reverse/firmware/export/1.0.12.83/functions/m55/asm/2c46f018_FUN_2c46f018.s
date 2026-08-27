@@ -1,0 +1,23 @@
+; FUN_2c46f018 @ 0x2c46f018 size=66
+  push {lr}
+  subw sp,sp,#0x80c
+  ldr r3,[0x2c46f05c]
+  mov.w r2,#0x800
+  movs r1,#0x5
+  add r0,sp,#0x4
+  ldr r3,[r3,#0x0]
+  str.w r3,[sp,#0x804]
+  mov.w r3,#0x0
+  bl 0x2c674268
+  add r1,sp,#0x4
+  movs r0,#0x0
+  bl 0x2c4713d0
+  ldr r3,[0x2c46f05c]
+  ldr r2,[r3,#0x0]
+  ldr.w r3,[sp,#0x804]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x2c46f056
+  addw sp,sp,#0x80c
+  pop.w pc
+  bl 0x2c674828

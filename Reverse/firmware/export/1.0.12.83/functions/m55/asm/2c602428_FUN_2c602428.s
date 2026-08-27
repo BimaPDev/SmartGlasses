@@ -1,0 +1,20 @@
+; FUN_2c602428 @ 0x2c602428 size=40
+  ldr r3,[0x2c602450]
+  ldr r3,[r3,#0x0]
+  cbnz r3,0x2c60243a
+  b 0x2c60244e
+  ldr r2,[r3,#0x0]
+  cmp r2,r0
+  beq 0x2c602440
+  ldr r3,[r3,#0x14]
+  cbz r3,0x2c60244e
+  ldr r2,[r3,#0x4]
+  cmp r2,r0
+  bne 0x2c602430
+  ldrb r2,[r3,#0x1c]
+  orr r2,r2,#0x1
+  strb r2,[r3,#0x1c]
+  ldr r3,[r3,#0x14]
+  cmp r3,#0x0
+  bne 0x2c60243a
+  bx lr

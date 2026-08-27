@@ -1,0 +1,21 @@
+; FUN_2c20668a @ 0x2c20668a size=42
+  push {r1,r2,r3,r4,r5,r6,r7,lr}
+  movs r0,r0
+  lsls r0,r0,#0xc
+  lsrs r0,r7,#0x13
+  lsls r1,r4,#0x3
+  beq 0x2c2066ae
+  adds r0,#0x8f
+  ldr r7,[0x2c20669c]
+  bic r0,r4,#0x800000
+  movs r0,r0
+  movs r0,r0
+  ldrb r0,[r0,r0]
+  push {r1,r2,r3,r4,r5,r6,r7}
+  lsrs r0,r0,#0x20
+  ldr r1,[sp,#0x3f4]
+  strb r7,[r5,#0x3]
+  add sp,#0x13c
+  lsrs r0,r0,#0x10
+  add r7,sp,#0x3c8
+  movs r0,r2
