@@ -1,0 +1,21 @@
+; FUN_140952ec @ 0x140952ec size=54
+  push {r4,lr}
+  mrs r4,basepri
+  cmp r4,#0x40
+  beq 0x140952fe
+  mov r2,pc
+  ldr r3,[0x14095324]
+  strd r2,lr,[r3,#0x0]
+  movs r3,#0x40
+  msr basepri,r3
+  bl 0x14085c48
+  cbnz r4,0x14095312
+  mov.w r2,#0xffffffff
+  ldr r3,[0x14095324]
+  str r2,[r3,#0x0]
+  msr basepri,r4
+  cbz r0,0x1409531c
+  ldrh r0,[r0,#0x1c]
+  pop {r4,pc}
+  movw r0,#0xffff
+  pop {r4,pc}

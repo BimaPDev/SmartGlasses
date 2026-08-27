@@ -1,0 +1,27 @@
+; FUN_1403cee4 @ 0x1403cee4 size=66
+  movs r0,#0x1
+  b.w 0x1404d19c
+  push {r4,lr}
+  sub sp,#0x10
+  ldr r3,[0x1404d1d8]
+  add r4,sp,#0x4
+  mov r1,r0
+  mov r0,r4
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0xc]
+  mov.w r3,#0x0
+  bl 0x14048a70
+  ldm.w r4,{r1,r2}
+  movs r3,#0x1
+  ldr r0,[0x1404d1dc]
+  bl 0x14048ac8
+  ldr r3,[0x1404d1d8]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0xc]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x1404d1d4
+  movs r0,#0x0
+  add sp,#0x10
+  pop {r4,pc}
+  bl 0x14039adc

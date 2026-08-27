@@ -1,0 +1,24 @@
+; FUN_140bcf34 @ 0x140bcf34 size=64
+  push {r4,r5,r6,lr}
+  ldr r3,[r0,#0x0]
+  mov r4,r0
+  cmp.w r3,#0x1f40
+  mov r5,r1
+  beq 0x140bcf4e
+  pop.w {r4,r5,r6,lr}
+  mov r2,r1
+  adds r0,#0x10
+  b.w 0x140e5188
+  movs r3,#0x3c
+  ldrd r2,r0,[r0,#0x4]
+  bl 0x140bce3c
+  ldr r2,[r4,#0x4]
+  add.w r0,r4,#0x10
+  mov r1,r2
+  bl 0x140e5188
+  mov r2,r5
+  ldr r1,[r4,#0x4]
+  ldr r0,[r4,#0xc]
+  movs r3,#0x78
+  pop.w {r4,r5,r6,lr}
+  b.w 0x140bce3c

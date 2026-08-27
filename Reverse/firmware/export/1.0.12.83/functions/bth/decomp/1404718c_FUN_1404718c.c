@@ -1,0 +1,14 @@
+/* FUN_1404718c @ 0x1404718c */
+
+undefined4 FUN_1404718c(void)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = DAT_140471c8;
+  FUN_1402a6e8(4,0xc2,DAT_140471d0,DAT_140471cc,DAT_140471c4,DAT_140471c8);
+  FUN_14048cd8(10);
+  FUN_1402a6e8(4,0xc4,DAT_140471d0,DAT_140471cc,DAT_140471d4,uVar1);
+  return 0;
+}
+

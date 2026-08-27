@@ -1,0 +1,20 @@
+; FUN_140c16bc @ 0x140c16bc size=48
+  ldr r3,[0x140c16ec]
+  push {r4,lr}
+  str r3,[r0,#0x0]
+  mov r4,r0
+  ldrb.w r3,[r0,#0x124]
+  cbz r3,0x140c16e2
+  ldr r0,[r0,#0x8]
+  cbz r0,0x140c16d2
+  bl 0x140d7e4c
+  ldr r0,[r4,#0x14]
+  cbz r0,0x140c16da
+  bl 0x140d7e4c
+  ldr r0,[r4,#0x1c]
+  cbz r0,0x140c16e2
+  bl 0x140d7e4c
+  mov r0,r4
+  bl 0x140c0288
+  mov r0,r4
+  pop {r4,pc}

@@ -1,0 +1,26 @@
+; FUN_14037fa8 @ 0x14037fa8 size=70
+  cbz r0,0x14037fde
+  ldr r3,[0x14037ff0]
+  sub sp,#0x8
+  ldr.w r2,[r3,#0xc10]
+  lsls r1,r1,#0x19
+  orr r2,r2,#0x20000000
+  str.w r2,[r3,#0xc10]
+  ldr.w r2,[r3,#0xc10]
+  and r1,r1,#0x1e000000
+  str r2,[sp,#0x4]
+  ldr r2,[sp,#0x4]
+  bic r2,r2,#0x1e000000
+  str r2,[sp,#0x4]
+  ldr r2,[sp,#0x4]
+  orrs r1,r2
+  str r1,[sp,#0x4]
+  ldr r2,[sp,#0x4]
+  str.w r2,[r3,#0xc10]
+  add sp,#0x8
+  bx lr
+  ldr r2,[0x14037ff0]
+  ldr.w r3,[r2,#0xc10]
+  bic r3,r3,#0x20000000
+  str.w r3,[r2,#0xc10]
+  bx lr

@@ -1,0 +1,32 @@
+; FUN_14026a60 @ 0x14026a60 size=82
+  cmp r0,#0x1
+  bhi 0x14026aaa
+  ldr r3,[0x14026ab4]
+  ldrsb r2,[r3,r0]
+  cmp r2,#0x0
+  blt 0x14026a88
+  movs r1,#0x1
+  lsrs r3,r2,#0x5
+  lsls r3,r3,#0x2
+  and r2,r2,#0x1f
+  add.w r3,r3,#0xe0000000
+  add.w r3,r3,#0xe100
+  lsl.w r2,r1,r2
+  str.w r2,[r3,#0x180]
+  str r2,[r3,#0x0]
+  ldr r3,[0x14026ab8]
+  add.w r3,r3,r0, lsl #0x4
+  ldr r3,[r3,#0xc]
+  cbz r3,0x14026aae
+  cmp r0,#0x0
+  ite eq
+  mov.eq.w r2,#0x2000
+  mov.ne.w r2,#0x4000
+  mov.w r3,#0x40000000
+  movs r0,#0x0
+  str.w r2,[r3,#0xa0]
+  bx lr
+  movs r0,#0x1
+  bx lr
+  mov r0,r3
+  bx lr

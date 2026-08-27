@@ -1,0 +1,19 @@
+; FUN_14073a28 @ 0x14073a28 size=38
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  mov r4,r1
+  cbz r1,0x14073a42
+  ldr r3,[r5,#0x0]
+  cbz r3,0x14073a3a
+  str r3,[r4,#0x0]
+  str r4,[r5,#0x0]
+  pop {r3,r4,r5,pc}
+  str r4,[r5,#0x4]
+  str r3,[r4,#0x0]
+  str r4,[r5,#0x0]
+  pop {r3,r4,r5,pc}
+  movs r2,#0x94
+  ldr r3,[0x14073a50]
+  ldr r1,[0x14073a54]
+  movs r0,#0x42
+  bl 0x1402a64c

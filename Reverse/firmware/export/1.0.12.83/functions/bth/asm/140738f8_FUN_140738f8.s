@@ -1,0 +1,22 @@
+; FUN_140738f8 @ 0x140738f8 size=66
+  mov r3,r0
+  cbz r0,0x14073936
+  ldrb.w r0,[r0,#0x2d]
+  tst r0,#0x10
+  beq 0x1407391e
+  mov.w r12,#0xa5
+  strb.w r12,[r3,#0x2c]
+  orr r12,r0,#0x10
+  strd r1,r2,[r3,#0xc]
+  movs r0,#0x0
+  strb.w r12,[r3,#0x2d]
+  bx lr
+  tst r0,#0xf
+  bne 0x14073936
+  mov.w r12,#0xa5
+  bic r0,r0,#0xf
+  orr r0,r0,#0x2
+  strb.w r12,[r3,#0x2c]
+  b 0x1407390e
+  movs r0,#0x1
+  bx lr

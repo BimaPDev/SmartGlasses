@@ -1,0 +1,31 @@
+; FUN_14037760 @ 0x14037760 size=78
+  ldr r2,[0x140377b0]
+  sub sp,#0x8
+  ldr.w r3,[r2,#0x250]
+  ldr r1,[0x140377b4]
+  str r3,[sp,#0x0]
+  ldr r3,[sp,#0x0]
+  ldr r0,[r1,#0x0]
+  bic r3,r3,#0x3fc0
+  bic r3,r3,#0x3f
+  str r3,[sp,#0x0]
+  ldr r3,[sp,#0x0]
+  ldr r1,[0x140377b8]
+  orrs r3,r0
+  str r3,[sp,#0x0]
+  ldr r3,[sp,#0x0]
+  str.w r3,[r2,#0x250]
+  ldr.w r3,[r2,#0x250]
+  ldr r1,[r1,#0x0]
+  str r3,[sp,#0x4]
+  ldr r3,[sp,#0x4]
+  bic r3,r3,#0xff00000
+  bic r3,r3,#0xfc000
+  str r3,[sp,#0x4]
+  ldr r3,[sp,#0x4]
+  orr.w r3,r3,r1, lsl #0xe
+  str r3,[sp,#0x4]
+  ldr r3,[sp,#0x4]
+  str.w r3,[r2,#0x250]
+  add sp,#0x8
+  bx lr

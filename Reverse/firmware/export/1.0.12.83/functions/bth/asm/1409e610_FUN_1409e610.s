@@ -1,0 +1,22 @@
+; FUN_1409e610 @ 0x1409e610 size=46
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  ldr r0,[0x1409e640]
+  mov r5,r1
+  ldr r0,[r0,#0x0]
+  mov r6,r2
+  bl 0x1409e7c0
+  cbz r0,0x1409e638
+  ldr r3,[r0,#0x8]
+  cmp r3,r4
+  bne 0x1409e63a
+  ldrb r3,[r0,#0x6]
+  cmp r3,r5
+  bne 0x1409e63a
+  ldrb r3,[r0,#0x10]
+  subs r0,r3,r6
+  clz r0,r0
+  lsrs r0,r0,#0x5
+  pop {r4,r5,r6,pc}
+  movs r0,#0x0
+  pop {r4,r5,r6,pc}

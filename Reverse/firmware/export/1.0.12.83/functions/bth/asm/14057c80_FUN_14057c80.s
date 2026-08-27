@@ -1,0 +1,19 @@
+; FUN_14057c80 @ 0x14057c80 size=52
+  mov r12,r2
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  ldr r3,[0x14057cb4]
+  strb.w r12,[r0,#0x18b]
+  ldr r5,[r3,#0x10]
+  ldrb.w r3,[r0,#0x189]
+  mov r2,r1
+  orr r3,r3,#0x10
+  strb.w r3,[r0,#0x189]
+  ldr r3,[r5,#0x10]
+  ldr r1,[r0,#0xc]
+  ldrb.w r0,[r0,#0x184]
+  blx r3
+  ldrb.w r3,[r4,#0x189]
+  bic r3,r3,#0x10
+  strb.w r3,[r4,#0x189]
+  pop {r3,r4,r5,pc}

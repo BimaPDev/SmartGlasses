@@ -1,0 +1,21 @@
+; FUN_140743d0 @ 0x140743d0 size=58
+  push {r4,lr}
+  sub.w r1,r0,#0xc
+  mrs r4,basepri
+  cmp r4,#0x40
+  beq 0x140743e6
+  mov r2,pc
+  ldr r3,[0x1407440c]
+  strd r2,lr,[r3,#0x0]
+  movs r3,#0x40
+  msr basepri,r3
+  ldr r0,[0x14074410]
+  bl 0x140739f0
+  cbnz r4,0x140743fc
+  mov.w r2,#0xffffffff
+  ldr r3,[0x1407440c]
+  str r2,[r3,#0x0]
+  msr basepri,r4
+  movs r0,#0x3
+  pop.w {r4,lr}
+  b.w 0x14073c58

@@ -1,0 +1,20 @@
+; FUN_140db7a4 @ 0x140db7a4 size=44
+  push {r0,r1,r2,r4,r5,lr}
+  umull r2,r4,r1,r2
+  cbnz r4,0x140db7c0
+  mov r1,r2
+  str r2,[sp,#0x4]
+  bl 0x140db8a8
+  ldr r2,[sp,#0x4]
+  mov r5,r0
+  cbnz r0,0x140db7c8
+  mov r0,r5
+  add sp,#0xc
+  pop {r4,r5,pc}
+  movs r2,#0xc
+  movs r5,#0x0
+  str r2,[r0,#0x0]
+  b 0x140db7ba
+  mov r1,r4
+  bl 0x140e5658
+  b 0x140db7ba

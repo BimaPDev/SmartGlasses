@@ -1,0 +1,21 @@
+; FUN_1409ffe4 @ 0x1409ffe4 size=52
+  push {r3,r4,r5,lr}
+  ldr r5,[0x140a0018]
+  ldr r3,[r5,#0x0]
+  cbz r3,0x140a0012
+  mov r4,r0
+  bl 0x140a047c
+  mov r3,r0
+  mov r1,r4
+  mov r4,r3
+  ldr r0,[r5,#0x0]
+  mov.w r2,#0x15c
+  adds r0,#0x10
+  bl 0x140e5278
+  bl 0x140a0ebc
+  mov r0,r4
+  bl 0x140a04dc
+  movs r0,#0x0
+  pop {r3,r4,r5,pc}
+  mov.w r0,#0xffffffff
+  pop {r3,r4,r5,pc}

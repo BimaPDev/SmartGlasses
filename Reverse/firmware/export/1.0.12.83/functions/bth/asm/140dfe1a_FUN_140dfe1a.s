@@ -1,0 +1,19 @@
+; FUN_140dfe1a @ 0x140dfe1a size=42
+  sub.w r3,r0,#0x30
+  cmp r3,#0x9
+  bhi 0x140dfe28
+  subs r0,#0x20
+  uxtb r0,r0
+  bx lr
+  sub.w r3,r0,#0x61
+  cmp r3,#0x5
+  bhi 0x140dfe34
+  subs r0,#0x47
+  b 0x140dfe24
+  sub.w r3,r0,#0x41
+  cmp r3,#0x5
+  bhi 0x140dfe40
+  subs r0,#0x27
+  b 0x140dfe24
+  movs r0,#0x0
+  bx lr

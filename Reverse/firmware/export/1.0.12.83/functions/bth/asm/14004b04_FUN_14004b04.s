@@ -1,0 +1,31 @@
+; FUN_14004b04 @ 0x14004b04 size=76
+  push {r4}
+  add.w r3,r0,#0x28
+  ldrex r2,[r3,#0x0]
+  cbnz r2,0x14004b16
+  clrex
+  b 0x14004b20
+  subs r1,r2,#0x1
+  strex r4,r1,[r3,#0x0]
+  cbz r4,0x14004b20
+  b 0x14004b0a
+  cbz r2,0x14004b48
+  ldr r0,[r0,#0x2c]
+  cbz r0,0x14004b48
+  movs r1,#0x1
+  b 0x14004b2e
+  ldr r0,[r0,#0x8]
+  cbz r0,0x14004b48
+  adds r2,r0,#0x2
+  ldrexb r3,[r2]
+  strexb r4,r1,[r2]
+  cbz r4,0x14004b3c
+  b 0x14004b30
+  uxtb r3,r3
+  cmp r3,#0x0
+  bne 0x14004b2a
+  pop.w r4
+  bx lr
+  movs r0,#0x0
+  pop.w r4
+  bx lr

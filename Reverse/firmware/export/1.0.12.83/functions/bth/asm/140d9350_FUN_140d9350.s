@@ -1,0 +1,20 @@
+; FUN_140d9350 @ 0x140d9350 size=62
+  push {r3,lr}
+  vpush {d8}
+  vmov.f32 s16,s0
+  bl 0x140d9d6c
+  vcmpe.f32 s16,s16
+  vmrs apsr,fpscr
+  bvs 0x140d9376
+  vldr.32 s17,[pc,#0x24]
+  vcmpe.f32 s16,s17
+  vmrs apsr,fpscr
+  bmi 0x140d937c
+  vpop {d8}
+  pop {r3,pc}
+  bl 0x140da9c8
+  vdiv.f32 s0,s17,s17
+  movs r3,#0x21
+  str r3,[r0,#0x0]
+  vpop {d8}
+  pop {r3,pc}

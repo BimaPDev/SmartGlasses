@@ -1,0 +1,21 @@
+; FUN_140dd456 @ 0x140dd456 size=56
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  mov r5,r1
+  mov r6,r2
+  vmov d0,r4,r5
+  bl 0x140e0cd4
+  vmov r0,r1,d0
+  cbz r6,0x140dd48c
+  ubfx r3,r5,#0x14,#0xb
+  rsb.w r3,r3,#0x6b
+  cmp r3,#0x0
+  ble 0x140dd48c
+  lsls r3,r3,#0x14
+  movs r4,#0x0
+  add.w r5,r3,#0x3fc00000
+  mov r2,r4
+  add.w r5,r5,#0x300000
+  mov r3,r5
+  bl 0x140e3800
+  pop {r4,r5,r6,pc}

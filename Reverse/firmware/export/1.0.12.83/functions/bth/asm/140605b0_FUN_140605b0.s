@@ -1,0 +1,32 @@
+; FUN_140605b0 @ 0x140605b0 size=88
+  push {r3,r4,r5,lr}
+  ldrb r4,[r0,#0xc]
+  bl 0x14074168
+  movs r1,#0x1
+  movs r5,#0x0
+  ldr r3,[0x1405d860]
+  lsls r1,r4
+  ldr.w r2,[r3,#0xa0]
+  add.w r0,r4,#0x1a
+  bic.w r2,r2,r1
+  str.w r5,[r3,r0,lsl #0x2]
+  str.w r2,[r3,#0xa0]
+  pop {r3,r4,r5,pc}
+  push {r3,r4,r5,r6,r7,lr}
+  mov r5,r0
+  ldr r0,[r0,#0x2c]
+  mov r6,r1
+  cbz r0,0x140605be
+  bl 0x14074168
+  cbnz r6,0x140605d6
+  add.w r4,r5,#0x18
+  add.w r7,r5,#0x2c
+  ldr.w r0,[r4],#0x4
+  cbz r0,0x140605d2
+  bl 0x140735a8
+  cmp r4,r7
+  bne 0x140605c8
+  mov r1,r6
+  mov r0,r5
+  pop.w {r3,r4,r5,r6,r7,lr}
+  b.w 0x1405d838

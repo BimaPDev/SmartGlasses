@@ -1,0 +1,21 @@
+; FUN_14028a0c @ 0x14028a0c size=46
+  lsrs r1,r0,#0x4
+  push {r3,lr}
+  bne 0x14028a2e
+  lsls r3,r0,#0x1c
+  and r2,r0,#0xf
+  bmi 0x14028a34
+  movs r0,#0x1
+  ldr r3,[0x14028a3c]
+  lsls r0,r2
+  ldr r3,[r3,#0x1c]
+  ands r0,r3
+  uxtb r0,r0
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  pop {r3,pc}
+  ldr r0,[0x14028a40]
+  bl 0x1402b0f8
+  ldr r0,[0x14028a44]
+  bl 0x1402b0f8

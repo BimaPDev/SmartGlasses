@@ -1,0 +1,27 @@
+; FUN_1400779c @ 0x1400779c size=64
+  push {r4,lr}
+  mov r4,r0
+  mrs r3,ipsr
+  cbnz r3,0x140077ac
+  mrs r3,primask
+  cbz r3,0x140077c0
+  cbz r4,0x140077b4
+  ldrb r3,[r4,#0x0]
+  cmp r3,#0xf7
+  beq 0x140077d0
+  mov r0,r4
+  movs r1,#0x0
+  bl 0x14003d00
+  movs r0,#0x0
+  pop {r4,pc}
+  mrs r3,basepri
+  cmp r3,#0x0
+  bne 0x140077ac
+  ldr.w r12,[0x140077dc]
+  svc 0x0
+  pop {r4,pc}
+  mov r0,r4
+  ldr r1,[r4,#0x14]
+  bl 0x14003d00
+  ldr r0,[r4,#0x14]
+  pop {r4,pc}

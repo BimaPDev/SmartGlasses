@@ -1,0 +1,21 @@
+; FUN_14099b3c @ 0x14099b3c size=60
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  ldr r5,[0x14099b78]
+  vpush {d8}
+  mov.w r1,#0xffffffff
+  ldr r0,[r5,#0x0]
+  vmov.f32 s16,s0
+  bl 0x140e5148
+  cmp r4,#0x2
+  bhi 0x14099b6e
+  vmov.f32 s0,s16
+  bl 0x14030a1c
+  vpop {d8}
+  ldr r0,[r5,#0x0]
+  pop.w {r3,r4,r5,lr}
+  b.w 0x140e52d8
+  mov r2,r4
+  ldr r1,[0x14099b7c]
+  ldr r0,[0x14099b80]
+  bl 0x1402b0f8

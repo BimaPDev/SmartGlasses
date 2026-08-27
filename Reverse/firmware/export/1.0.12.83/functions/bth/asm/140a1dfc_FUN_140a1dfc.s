@@ -1,0 +1,19 @@
+; FUN_140a1dfc @ 0x140a1dfc size=44
+  ldr r1,[0x140a1e28]
+  ldr r2,[0x140a1e2c]
+  ldr r3,[0x140a1e30]
+  ldrb.w r12,[r1,#0x0]
+  ldrb r1,[r2,#0x0]
+  sub.w r2,r3,#0x12c
+  cmp.w r12,#0x1
+  it eq
+  mov.eq r3,r2
+  mov r2,r0
+  cbz r1,0x140a1e22
+  cbz r0,0x140a1e22
+  ldr r3,[r3,#0x0]
+  movs r0,#0x0
+  str r3,[r2,#0x0]
+  bx lr
+  mov.w r0,#0xffffffff
+  bx lr

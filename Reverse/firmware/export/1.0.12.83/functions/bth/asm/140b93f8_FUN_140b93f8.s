@@ -1,0 +1,19 @@
+; FUN_140b93f8 @ 0x140b93f8 size=42
+  push {r4,lr}
+  mov r4,r0
+  cbz r0,0x140b9420
+  subs r3,#0x0
+  it ne
+  mov.ne r3,#0x1
+  mov r0,r1
+  str r3,[r4,#0x8]
+  cbz r1,0x140b9418
+  cbz r2,0x140b9418
+  mov r1,r2
+  strd r0,r2,[r4,#0x0]
+  bl 0x140b9300
+  cbnz r0,0x140b9420
+  movs r3,#0xf
+  ldr r2,[0x140b9424]
+  strd r2,r3,[r4,#0x0]
+  pop {r4,pc}

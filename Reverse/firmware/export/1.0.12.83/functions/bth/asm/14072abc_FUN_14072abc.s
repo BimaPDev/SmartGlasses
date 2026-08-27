@@ -1,0 +1,39 @@
+; FUN_14072abc @ 0x14072abc size=102
+  push {r3,r4,r5,r6,r7,r8,r9,lr}
+  ldr.w r8,[0x14072b34]
+  cmp r0,#0x1
+  mov r4,r0
+  mov r9,lr
+  mov r5,r1
+  add.w r7,r8,r0, lsl #0x3
+  bls 0x14072ade
+  movs r2,#0xdf
+  movs r0,#0x42
+  ldr r3,[0x14072b24]
+  ldr r1,[0x14072b28]
+  bl 0x1402a64c
+  mrs r6,basepri
+  cmp r6,#0x40
+  beq 0x14072aee
+  mov r2,pc
+  ldr r3,[0x14072b2c]
+  strd r2,r9,[r3,#0x0]
+  movs r3,#0x40
+  msr basepri,r3
+  mov r0,r7
+  mov r1,r5
+  bl 0x14073a6c
+  movs r3,#0x0
+  str r3,[r5,#0x0]
+  ldr.w r3,[r8,r4,lsl #0x3]
+  cbz r3,0x14072b18
+  cbnz r6,0x14072b10
+  mov.w r2,#0xffffffff
+  ldr r3,[0x14072b2c]
+  str r2,[r3,#0x0]
+  msr basepri,r6
+  pop.w {r3,r4,r5,r6,r7,r8,r9,pc}
+  ldr r3,[0x14072b30]
+  ldrb r0,[r3,r4]
+  bl 0x14073cd4
+  b 0x14072b06

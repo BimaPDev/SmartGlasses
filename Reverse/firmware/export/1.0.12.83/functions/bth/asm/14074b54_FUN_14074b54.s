@@ -1,0 +1,24 @@
+; FUN_14074b54 @ 0x14074b54 size=50
+  push {r3,lr}
+  ldr r3,[r0,#0x0]
+  cmp r0,r3
+  beq 0x14074b7a
+  cbz r3,0x14074b7a
+  cmp r3,r1
+  beq 0x14074b7e
+  movw r2,#0x3e9
+  ldr r3,[r3,#0x0]
+  b 0x14074b76
+  cbz r3,0x14074b7a
+  cmp r1,r3
+  beq 0x14074b7e
+  subs r2,#0x1
+  ldr r3,[r3,#0x0]
+  beq 0x14074b82
+  cmp r0,r3
+  bne 0x14074b6a
+  movs r0,#0x0
+  pop {r3,pc}
+  movs r0,#0x1
+  pop {r3,pc}
+  bl 0x140749f8

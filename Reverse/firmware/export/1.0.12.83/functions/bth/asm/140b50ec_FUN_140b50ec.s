@@ -1,0 +1,22 @@
+; FUN_140b50ec @ 0x140b50ec size=50
+  push {r4,r5,r6,lr}
+  mov r4,r2
+  mov r6,r0
+  mov r5,r3
+  movs r2,#0x0
+  movs r3,#0xf
+  bl 0x140e5348
+  mov r1,r6
+  mov r0,r4
+  bl 0x140e55f8
+  mov r3,r5
+  mov r0,r4
+  pop.w {r4,r5,r6,lr}
+  movs r2,#0xf
+  movs r1,#0x0
+  b.w 0x140e5a58
+  push {r0}
+  ldr r0,[0x140e5a64]
+  mov r12,r0
+  pop {r0}
+  bx r12

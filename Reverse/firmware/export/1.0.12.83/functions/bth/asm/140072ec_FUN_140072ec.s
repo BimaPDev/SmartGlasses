@@ -1,0 +1,29 @@
+; FUN_140072ec @ 0x140072ec size=72
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  cbz r0,0x1400732a
+  add.w r3,r0,#0x14
+  ldrex r1,[r3,#0x0]
+  cbnz r1,0x14007302
+  clrex
+  b 0x1400730c
+  ldr r2,[r1,#0x0]
+  strex r0,r2,[r3,#0x0]
+  cbz r0,0x1400730c
+  b 0x140072f6
+  mov r5,r1
+  cbz r1,0x14007320
+  adds r3,r4,#0x4
+  ldrex r2,[r3,#0x0]
+  adds r0,r2,#0x1
+  strex r6,r0,[r3,#0x0]
+  cbz r6,0x14007320
+  b 0x14007312
+  mov r0,r4
+  bl 0x14003b54
+  mov r0,r5
+  pop {r4,r5,r6,pc}
+  mov r1,r0
+  bl 0x14003b54
+  mov r5,r4
+  b 0x14007326

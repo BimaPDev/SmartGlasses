@@ -1,0 +1,26 @@
+; FUN_140cc010 @ 0x140cc010 size=64
+  cmp r0,#0xa
+  bhi 0x140cc026
+  cmp r1,#0x2f
+  bls 0x140cc04a
+  adds r0,#0x30
+  uxtb r0,r0
+  cmp r1,r0
+  bcs 0x140cc04a
+  sub.w r0,r1,#0x30
+  bx lr
+  sub.w r3,r1,#0x30
+  cmp r3,#0x9
+  bls 0x140cc020
+  sub.w r3,r1,#0x61
+  cmp r3,#0x5
+  bhi 0x140cc03c
+  sub.w r0,r1,#0x57
+  bx lr
+  sub.w r3,r1,#0x41
+  cmp r3,#0x5
+  bhi 0x140cc04a
+  sub.w r0,r1,#0x37
+  bx lr
+  mov.w r0,#0xffffffff
+  bx lr

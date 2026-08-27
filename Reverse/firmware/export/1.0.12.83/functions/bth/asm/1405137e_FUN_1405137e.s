@@ -1,0 +1,19 @@
+; FUN_1405137e @ 0x1405137e size=46
+  push {r4,lr}
+  mov r4,r0
+  movs r0,#0x0
+  bl 0x1404a1b4
+  ldrb.w r3,[r0,#0xda]
+  movs r0,#0x0
+  subs r3,#0x1
+  it ne
+  mov.ne.w r3,#0xffffffff
+  uxtb r3,r3
+  cmp r3,#0xff
+  beq 0x140513aa
+  bl 0x14050de0
+  mov r0,r4
+  movs r1,#0x1
+  bl 0x14050d50
+  movs r0,#0x1
+  pop {r4,pc}

@@ -1,0 +1,25 @@
+; FUN_1408201c @ 0x1408201c size=62
+  mov r3,r0
+  ldrb r0,[r2,#0x1]
+  and r0,r0,#0xef
+  cmp r0,#0xe0
+  beq 0x1408204e
+  movs r0,#0x0
+  strb.w r0,[r3,#0x39]
+  strb.w r0,[r3,#0x3a]
+  ldrb r0,[r2,#0x2]
+  strb.w r0,[r3,#0x37]
+  ldrh r2,[r2,#0x4]
+  cbz r1,0x14082044
+  ldrh r1,[r3,#0x1c]
+  cmp r2,r1
+  it cs
+  mov.cs r2,r1
+  movs r0,#0x41
+  ldr r1,[0x1408205c]
+  strh r2,[r3,#0x1c]
+  b.w 0x1402a64c
+  ldrb r0,[r2,#0x7]
+  and r0,r0,#0x7
+  strb.w r0,[r3,#0x3b]
+  b 0x14082032

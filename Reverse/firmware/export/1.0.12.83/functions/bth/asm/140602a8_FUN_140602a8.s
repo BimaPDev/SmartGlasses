@@ -1,0 +1,26 @@
+; FUN_140602a8 @ 0x140602a8 size=60
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  mov r6,r1
+  movw r0,#0x2005
+  movs r1,#0x6
+  bl 0x1406db30
+  cbz r0,0x140602e0
+  ldr r4,[0x140602e4]
+  mov r1,r5
+  ldrb.w r5,[r4,#0xac]
+  add.w r12,r4,#0x46
+  adds r4,#0xa6
+  cmp r5,#0x0
+  it eq
+  mov.eq r4,r12
+  ldr r5,[r4,#0x0]
+  mov r2,r6
+  str r5,[r0,#0x0]
+  ldrh r4,[r4,#0x4]
+  strh r4,[r0,#0x4]
+  bl 0x1406da30
+  movs r0,#0x0
+  pop {r4,r5,r6,pc}
+  movs r0,#0x4b
+  pop {r4,r5,r6,pc}

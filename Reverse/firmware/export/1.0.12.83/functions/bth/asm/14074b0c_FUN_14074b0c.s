@@ -1,0 +1,21 @@
+; FUN_14074b0c @ 0x14074b0c size=56
+  push {r4,r5,lr}
+  ldrd r1,r2,[r0,#0x0]
+  mrs r3,basepri
+  cmp r3,#0x40
+  beq 0x14074b22
+  mov r5,pc
+  ldr r4,[0x14074b44]
+  strd r5,lr,[r4,#0x0]
+  mov.w r12,#0x40
+  msr basepri,r12
+  str r2,[r1,#0x4]
+  str r1,[r2,#0x0]
+  cbnz r3,0x14074b38
+  mov.w r1,#0xffffffff
+  ldr r2,[0x14074b44]
+  str r1,[r2,#0x0]
+  msr basepri,r3
+  movs r3,#0x0
+  strd r3,r3,[r0,#0x0]
+  pop {r4,r5,pc}

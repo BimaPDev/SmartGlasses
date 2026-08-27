@@ -1,0 +1,19 @@
+; FUN_140b706c @ 0x140b706c size=50
+  movw r2,#0x2001
+  movs r1,#0x8
+  mov.w r0,#0x2000
+  b.w 0x140b9504
+  mov r2,r0
+  adds r1,#0x4
+  add r1,r2
+  movs r0,#0x1
+  push {r3,lr}
+  bl 0x140b9444
+  mov r2,r0
+  cbz r0,0x140b9526
+  rsb.w r3,r0,#0x4
+  and r3,r3,#0x7
+  adds r3,#0x4
+  add r0,r3
+  str.w r2,[r0,#-0x4]
+  pop {r3,pc}

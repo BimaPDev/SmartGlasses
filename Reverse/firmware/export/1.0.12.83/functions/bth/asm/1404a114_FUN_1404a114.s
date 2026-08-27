@@ -1,0 +1,25 @@
+; FUN_1404a114 @ 0x1404a114 size=58
+  cbnz r0,0x1404a12a
+  ldr r3,[0x1404a150]
+  ldrb r0,[r3,#0x6]
+  cbz r0,0x1404a128
+  ldrb.w r0,[r3,#0xde]
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  bx lr
+  bx lr
+  push {r4,r5,lr}
+  ldr r5,[0x1404a154]
+  ldr r4,[0x1404a158]
+  sub sp,#0x14
+  strd r0,lr,[sp,#0x8]
+  movw r1,#0x5b1
+  strd r4,r5,[sp,#0x0]
+  ldr r3,[0x1404a15c]
+  ldr r2,[0x1404a160]
+  movs r0,#0x4
+  bl 0x1402a6e8
+  movs r0,#0x0
+  add sp,#0x14
+  pop {r4,r5,pc}

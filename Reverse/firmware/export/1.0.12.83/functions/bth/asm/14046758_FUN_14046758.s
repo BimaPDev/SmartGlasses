@@ -1,0 +1,20 @@
+; FUN_14046758 @ 0x14046758 size=50
+  push {lr}
+  ldr r3,[0x1404678c]
+  sub sp,#0x1c
+  add r0,sp,#0x4
+  movs r1,#0x0
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x14]
+  mov.w r3,#0x0
+  bl 0x1403cdd0
+  ldr r3,[0x1404678c]
+  ldrb.w r0,[sp,#0xc]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x14]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x14046786
+  add sp,#0x1c
+  pop.w pc
+  bl 0x14039adc

@@ -1,0 +1,27 @@
+; FUN_14067ccc @ 0x14067ccc size=68
+  push {r4,r5,r6,lr}
+  sub sp,#0x18
+  ldr r4,[sp,#0x30]
+  ldrh.w r5,[sp,#0x28]
+  ldrh.w r6,[sp,#0x2c]
+  cbz r4,0x14067d0a
+  ldrh.w r12,[r4,#0x6]
+  cmp.w r12,#0x6
+  bls 0x14067d0a
+  cmp r3,#0x2
+  ldrh.w r12,[r4,#0x8]
+  bne 0x14067cf4
+  cmp.w r12,#0xb
+  bls 0x14067d0a
+  strd r5,r6,[sp,#0x4]
+  str r4,[sp,#0x10]
+  ldrh r4,[r4,#0x4]
+  str r4,[sp,#0xc]
+  movs r4,#0x0
+  str r4,[sp,#0x0]
+  bl 0x14067bc4
+  add sp,#0x18
+  pop {r4,r5,r6,pc}
+  movs r0,#0x4e
+  add sp,#0x18
+  pop {r4,r5,r6,pc}

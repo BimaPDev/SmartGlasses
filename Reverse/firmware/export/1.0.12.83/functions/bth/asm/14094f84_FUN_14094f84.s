@@ -1,0 +1,26 @@
+; FUN_14094f84 @ 0x14094f84 size=60
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  ldr r6,[0x14094fd4]
+  str r1,[r0,#0x14]
+  sub sp,#0x8
+  bl 0x140755e4
+  mov r1,r5
+  mov r0,r6
+  bl 0x140e5558
+  cbnz r0,0x14094fc0
+  mov r4,r0
+  mov r1,r5
+  mov r0,r6
+  bl 0x140e59c8
+  ldr r3,[r6,#0x0]
+  ldr r2,[0x14094fd8]
+  ldr r0,[r3,#0x0]
+  ldr r1,[0x14094fdc]
+  str r0,[sp,#0x0]
+  movs r0,#0x43
+  bl 0x1402a64c
+  ldr r2,[0x14094fd8]
+  ldr r1,[0x14094fe0]
+  movs r0,#0x41
+  bl 0x1402a64c

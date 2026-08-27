@@ -1,0 +1,115 @@
+; FUN_1402e37c @ 0x1402e37c size=306
+  push {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  ldr r3,[0x1402e4b0]
+  ubfx r8,r0,#0x8,#0x4
+  sub sp,#0xc
+  cmp.w r8,#0x4
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  bhi.w 0x1402e4a4
+  lsr.w r10,r0,#0xc
+  mov r6,lr
+  mov r5,r1
+  mov r9,r10
+  uxtb r4,r0
+  mrs r7,basepri
+  cmp r7,#0x40
+  beq 0x1402e3d2
+  mov r12,pc
+  ldr r0,[0x1402e4b4]
+  ldr r2,[0x1402e4b8]
+  ldrb r1,[r0,#0x0]
+  ldr r3,[0x1402e4bc]
+  strd r12,lr,[r2,#0x0]
+  adds r2,r1,#0x1
+  umull r12,r3,r3,r2
+  lsrs r3,r3,#0x3
+  add.w r3,r3,r3, lsl #0x2
+  sub.w r3,r2,r3, lsl #0x1
+  strb r3,[r0,#0x0]
+  ldr r3,[0x1402e4c0]
+  str.w lr,[r3,r1,lsl #0x2]
+  movs r3,#0x40
+  msr basepri,r3
+  ldr.w r11,[0x1402e4dc]
+  ldrb.w r3,[r11,#0x0]
+  cmp r3,r9
+  beq 0x1402e3f6
+  ldr r2,[0x1402e4c4]
+  ldrb r2,[r2,#0x0]
+  cmp r2,#0x1
+  bls 0x1402e452
+  mov r0,r10
+  bl 0x14027890
+  strb.w r9,[r11,#0x0]
+  cmp.w r8,#0x0
+  bne 0x1402e464
+  orr.w r5,r5,r4, lsl #0x10
+  movs r1,#0x4
+  mov r0,sp
+  lsls r5,r5,#0x2
+  str r5,[sp,#0x0]
+  bl 0x140278c0
+  mov r4,r0
+  cbz r7,0x1402e448
+  ldr r0,[0x1402e4c8]
+  ldr r3,[0x1402e4bc]
+  ldrb r1,[r0,#0x0]
+  adds r2,r1,#0x1
+  umull r5,r3,r3,r2
+  lsrs r3,r3,#0x3
+  add.w r3,r3,r3, lsl #0x2
+  sub.w r3,r2,r3, lsl #0x1
+  strb r3,[r0,#0x0]
+  ldr r3,[0x1402e4cc]
+  str.w r6,[r3,r1,lsl #0x2]
+  msr basepri,r7
+  ldr r3,[0x1402e4b0]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  mov.w r3,#0x0
+  bne 0x1402e4aa
+  mov r0,r4
+  add sp,#0xc
+  pop.w {r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  mov.w r2,#0xffffffff
+  ldr r3,[0x1402e4b8]
+  str r2,[r3,#0x0]
+  b 0x1402e410
+  cmp.w r9,#0x8
+  beq 0x1402e49c
+  cmp r3,#0x8
+  bne 0x1402e3ec
+  ldr r0,[0x1402e4d0]
+  bl 0x140278b8
+  b 0x1402e3ec
+  ldr r3,[0x1402e4d4]
+  movs r1,#0x4
+  ldrh.w r3,[r3,r8,lsl #0x1]
+  mov r0,sp
+  lsls r3,r3,#0x2
+  str r3,[sp,#0x0]
+  bl 0x140278c0
+  orr.w r0,r5,r4, lsl #0x10
+  lsls r0,r0,#0x2
+  movs r1,#0x4
+  str r0,[sp,#0x0]
+  mov r0,sp
+  bl 0x140278c0
+  mov.w r3,#0x28000
+  mov r4,r0
+  movs r1,#0x4
+  mov r0,sp
+  str r3,[sp,#0x0]
+  bl 0x140278c0
+  cmp r7,#0x0
+  bne 0x1402e410
+  b 0x1402e448
+  ldr r0,[0x1402e4d8]
+  bl 0x140278b8
+  b 0x1402e3ec
+  mov.w r4,#0xffffffff
+  b 0x1402e432
+  bl 0x14039adc

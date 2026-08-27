@@ -1,0 +1,26 @@
+; FUN_14085e30 @ 0x14085e30 size=56
+  push {r4,lr}
+  ldr r4,[0x14085e68]
+  ldr r3,[r4,#0x0]
+  cmp r3,r4
+  beq 0x14085e5e
+  movw r1,#0x3ea
+  b 0x14085e4a
+  subs r1,#0x1
+  ldr r3,[r3,#0x0]
+  beq 0x14085e64
+  cmp r3,r4
+  beq 0x14085e5e
+  ldrb.w r2,[r3,#0x4b]
+  subs r2,#0x3
+  cmp r2,#0x1
+  bhi 0x14085e40
+  ldrh r2,[r3,#0x1c]
+  cmp r2,r0
+  bne 0x14085e40
+  mov r0,r3
+  pop {r4,pc}
+  movs r3,#0x0
+  mov r0,r3
+  pop {r4,pc}
+  bl 0x14085398

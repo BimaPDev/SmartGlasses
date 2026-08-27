@@ -1,0 +1,44 @@
+; FUN_14021184 @ 0x14021184 size=100
+  push {r4,r5,r6}
+  ldr r6,[r0,#0x8]
+  ldr r3,[sp,#0x10]
+  ldr r4,[r1,#0x0]
+  ldr r5,[r2,#0x0]
+  cbz r6,0x140211ba
+  ldrd r3,r6,[r0,#0xc]
+  sub.w r12,r6,r4
+  add.w r3,r3,r12, asr #0x1
+  cmp r3,#0x0
+  sub.w r12,r5,r12, asr #0x1
+  ble 0x140211ae
+  cmp.w r12,#0x0
+  ble 0x140211d8
+  cmp r4,r6
+  bge 0x140211d8
+  mov r5,r12
+  mov r4,r6
+  str r4,[r1,#0x0]
+  str r5,[r2,#0x0]
+  pop {r4,r5,r6}
+  bx lr
+  str r3,[r0,#0x8]
+  subs r3,r3,r4
+  asrs r3,r3,#0x1
+  str r6,[r0,#0x14]
+  ldr r6,[sp,#0xc]
+  cmp r3,#0x0
+  str r6,[r0,#0x4]
+  str r4,[r0,#0x10]
+  str r3,[r0,#0xc]
+  ble 0x140211d8
+  mov r12,r5
+  cmp.w r12,#0x0
+  mov r6,r4
+  bgt 0x140211aa
+  strd r3,r4,[r0,#0xc]
+  ldr r3,[sp,#0xc]
+  str r3,[r0,#0x4]
+  str r4,[r1,#0x0]
+  str r5,[r2,#0x0]
+  pop {r4,r5,r6}
+  bx lr

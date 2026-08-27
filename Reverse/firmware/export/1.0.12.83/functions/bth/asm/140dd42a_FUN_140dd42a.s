@@ -1,0 +1,21 @@
+; FUN_140dd42a @ 0x140dd42a size=44
+  ldrb r2,[r1,#0x0]
+  push {r4,r5,r6,lr}
+  cbnz r2,0x140dd44c
+  pop {r4,r5,r6,pc}
+  cmp r2,r3
+  bne 0x140dd44a
+  mov r4,r1
+  mov r5,r0
+  ldrb.w r3,[r4,#0x1]!
+  cmp r3,#0x0
+  beq 0x140dd430
+  ldrb.w r6,[r5,#0x1]!
+  cmp r6,r3
+  beq 0x140dd43a
+  adds r0,#0x1
+  ldrb r3,[r0,#0x0]
+  cmp r3,#0x0
+  bne 0x140dd432
+  mov r0,r3
+  b 0x140dd430

@@ -1,0 +1,26 @@
+; FUN_1409f3bc @ 0x1409f3bc size=78
+  push {r4,r5,r6,r7,r8,lr}
+  mov.w r2,#0x254
+  movs r1,#0x0
+  mov r5,r0
+  bl 0x140e5658
+  bl 0x140e5848
+  mov r7,r0
+  ldr r6,[0x1409f40c]
+  add.w r8,r6,#0x6
+  ldrb.w r4,[r6],#0x1
+  bl 0x140e5848
+  and r3,r0,#0xf
+  lsls r4,r3
+  cmp r6,r8
+  eor.w r7,r7,r4
+  bne 0x1409f3d8
+  mov r0,r7
+  bl 0x140dc044
+  add.w r4,r5,#0x9
+  adds r5,#0x19
+  bl 0x140dc0a0
+  strb.w r0,[r4,#0x1]!
+  cmp r5,r4
+  bne 0x1409f3fa
+  pop.w {r4,r5,r6,r7,r8,pc}

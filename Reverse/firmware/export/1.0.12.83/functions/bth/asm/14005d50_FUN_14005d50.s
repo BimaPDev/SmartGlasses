@@ -1,0 +1,19 @@
+; FUN_14005d50 @ 0x14005d50 size=38
+  cmp r0,#0x3
+  beq 0x14003a18
+  movs r0,#0x0
+  bx lr
+  ldr r3,[0x14005d70]
+  ldr r1,[r3,#0x14]
+  cbz r1,0x14005d6c
+  ldr r3,[r1,#0x30]
+  ldr r2,[r1,#0x38]
+  cmp r3,r2
+  bcs 0x14005d66
+  ldr r2,[0x14005d74]
+  ldr r3,[r3,#0x0]
+  cmp r3,r2
+  beq 0x14005d6c
+  movs r0,#0x1
+  b.w 0x14003a10
+  bx lr

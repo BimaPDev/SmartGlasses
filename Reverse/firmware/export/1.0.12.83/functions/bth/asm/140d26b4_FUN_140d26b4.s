@@ -1,0 +1,19 @@
+; FUN_140d26b4 @ 0x140d26b4 size=42
+  push {r4,r5,r6,lr}
+  sub sp,#0x18
+  mov r5,r0
+  add r4,sp,#0x10
+  stm r4,{r2,r3}
+  ldr r2,[sp,#0x30]
+  ldr r3,[r1,#0x0]
+  str r2,[sp,#0x8]
+  ldr r2,[sp,#0x2c]
+  str r2,[sp,#0x4]
+  ldrb.w r2,[sp,#0x28]
+  str r2,[sp,#0x0]
+  ldr r6,[r3,#0x8]
+  ldm.w r4,{r2,r3}
+  blx r6
+  mov r0,r5
+  add sp,#0x18
+  pop {r4,r5,r6,pc}

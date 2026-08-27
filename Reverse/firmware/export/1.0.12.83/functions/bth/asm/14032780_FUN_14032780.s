@@ -1,0 +1,25 @@
+; FUN_14032780 @ 0x14032780 size=54
+  ldrb r3,[r0,#0x0]
+  cmp r3,#0x1
+  beq 0x1403278a
+  movs r0,#0x0
+  bx lr
+  ldrb r2,[r0,#0x1]
+  cmp r2,#0xab
+  bne 0x14032786
+  ldrb r2,[r0,#0x2]
+  cmp r2,#0xfc
+  bne 0x14032786
+  ldrb r2,[r0,#0x3]
+  cmp r2,#0x3
+  bne 0x14032786
+  push {r4}
+  ldr r2,[0x140327b8]
+  ldrb r1,[r0,#0x6]
+  ldr r4,[0x140327bc]
+  ldrh.w r12,[r0,#0x4]
+  strh r1,[r2,#0x0]
+  mov r0,r3
+  strh.w r12,[r4,#0x0]
+  pop.w r4
+  bx lr

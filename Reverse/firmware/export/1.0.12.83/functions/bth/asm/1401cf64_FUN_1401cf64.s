@@ -1,0 +1,37 @@
+; FUN_1401cf64 @ 0x1401cf64 size=108
+  push {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  ldrb.w r11,[r0,#0x4]
+  cmp.w r11,#0x0
+  beq 0x1401cfcc
+  mov r10,r0
+  mov.w r8,#0x0
+  ldrb r6,[r0,#0x6]
+  add.w r7,r1,#0xa0
+  add.w r9,r0,#0xa0
+  cbz r6,0x1401cfbc
+  mov r5,r9
+  mov r4,r7
+  mov.w lr,#0x0
+  ldrb.w r0,[r10,#0x5]
+  cbz r0,0x1401cfac
+  mov r12,r5
+  mov r1,r4
+  movs r2,#0x0
+  ldr.w r3,[r1,#0x4]!
+  adds r2,#0x1
+  add.w r3,r3,r3, lsr #0x1f
+  asrs r3,r3,#0x1
+  cmp r2,r0
+  str.w r3,[r12,#0x4]!
+  bne 0x1401cf98
+  add.w lr,lr,#0x1
+  cmp lr,r6
+  add.w r4,r4,#0x20
+  add.w r5,r5,#0x20
+  bne 0x1401cf90
+  add.w r8,r8,#0x1
+  cmp r8,r11
+  add.w r7,r7,#0x40
+  add.w r9,r9,#0x40
+  bne 0x1401cf82
+  pop.w {r4,r5,r6,r7,r8,r9,r10,r11,pc}

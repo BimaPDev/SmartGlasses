@@ -1,0 +1,20 @@
+; FUN_140c1eac @ 0x140c1eac size=48
+  push {r0,r1,r2,r4,r5,lr}
+  strd r0,r1,[sp,#0x0]
+  mov r0,sp
+  ldrb.w r1,[sp,#0x18]
+  mov r4,r2
+  mov r5,r3
+  bl 0x140c1e10
+  movs r0,#0x0
+  cbz r4,0x140c1ed6
+  cmp r0,r5
+  add.w r4,r4,#0xffffffff
+  bhi 0x140c1ed6
+  mov r1,r5
+  mov r0,sp
+  bl 0x140c18ce
+  b 0x140c1ec2
+  ldr r0,[sp,#0x0]
+  add sp,#0xc
+  pop {r4,r5,pc}

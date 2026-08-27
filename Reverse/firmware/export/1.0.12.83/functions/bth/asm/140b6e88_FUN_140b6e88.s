@@ -1,0 +1,19 @@
+; FUN_140b6e88 @ 0x140b6e88 size=50
+  push {lr}
+  sub sp,#0xc
+  str r0,[sp,#0x4]
+  cbz r0,0x140b6eb4
+  movs r1,#0x0
+  movs r2,#0x7
+  str r1,[r0,#0x4]
+  strb.w r2,[r0,#0x128]
+  bl 0x140b6800
+  ldr r0,[sp,#0x4]
+  ldr.w r3,[r0,#0x360]
+  cbz r3,0x140b6eae
+  add.w r0,r0,#0x360
+  bl 0x140b707c
+  add r0,sp,#0x4
+  bl 0x140b6fec
+  add sp,#0xc
+  pop.w pc

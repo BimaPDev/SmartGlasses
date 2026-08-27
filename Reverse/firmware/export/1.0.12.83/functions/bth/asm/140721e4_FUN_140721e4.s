@@ -1,0 +1,21 @@
+; FUN_140721e4 @ 0x140721e4 size=68
+  mov r12,r0
+  push {r4,lr}
+  mov.w lr,#0x1
+  add.w r0,r3,#0xf
+  ldr r4,[0x14072228]
+  asrs r0,r0,#0x4
+  strb.w r0,[r12,#0x32]
+  str.w r2,[r12,#0x18]
+  strh.w r3,[r12,#0x30]
+  str.w r1,[r12,#0x1c]
+  strb.w lr,[r12,#0x33]
+  ldmia r4!,{r0,r1,r2,r3}
+  str.w r0,[r12,#0x20]
+  str.w r1,[r12,#0x24]
+  str.w r2,[r12,#0x28]
+  str.w r3,[r12,#0x2c]
+  mov r0,r12
+  pop.w {r4,lr}
+  add.w r1,r12,#0x20
+  b.w 0x14072014

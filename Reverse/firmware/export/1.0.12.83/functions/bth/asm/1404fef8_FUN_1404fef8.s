@@ -1,0 +1,24 @@
+; FUN_1404fef8 @ 0x1404fef8 size=56
+  push {r4,r5,lr}
+  ldr r5,[0x1404ff34]
+  sub sp,#0x14
+  ldrb r0,[r5,#0x0]
+  cbnz r0,0x1404ff06
+  add sp,#0x14
+  pop {r4,r5,pc}
+  movs r4,#0x0
+  ldr r1,[0x1404ff38]
+  ldr r2,[0x1404ff3c]
+  ldr r3,[0x1404ff40]
+  strd r2,r1,[sp,#0x0]
+  strd r4,r4,[sp,#0x8]
+  movw r1,#0x4c4
+  ldr r2,[0x1404ff44]
+  movs r0,#0x4
+  bl 0x1402a6e8
+  movs r0,#0x1
+  strb r4,[r5,#0x0]
+  bl 0x14032d30
+  mov r0,r4
+  add sp,#0x14
+  pop {r4,r5,pc}

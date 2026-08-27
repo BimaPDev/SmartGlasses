@@ -1,0 +1,25 @@
+; FUN_140289c4 @ 0x140289c4 size=60
+  lsrs r1,r0,#0x4
+  push {r4,lr}
+  bne 0x140289fa
+  ands r4,r0,#0x8
+  and r2,r0,#0xf
+  bne 0x140289f4
+  movs r1,#0x1
+  ldr r3,[0x14028a00]
+  ldr r0,[r3,#0x0]
+  lsl.w r3,r1,r2
+  ands r3,r0
+  uxtb r3,r3
+  cbnz r3,0x140289ea
+  mov r4,r1
+  mov r0,r4
+  pop {r4,pc}
+  mov r0,r2
+  bl 0x14028194
+  mov r0,r4
+  pop {r4,pc}
+  ldr r0,[0x14028a04]
+  bl 0x1402b0f8
+  ldr r0,[0x14028a08]
+  bl 0x1402b0f8

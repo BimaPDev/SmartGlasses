@@ -1,0 +1,19 @@
+; FUN_140a7650 @ 0x140a7650 size=46
+  push {r4,lr}
+  ldr r4,[0x140a7680]
+  bl 0x140a764c
+  ldr r1,[r4,#0x0]
+  cbz r1,0x140a7672
+  ldr r1,[0x140a7684]
+  movs r0,#0x2
+  bl 0x140b4be0
+  bl 0x1402fcb4
+  ldr r0,[0x140a7688]
+  bl 0x1402fe38
+  movs r0,#0x0
+  pop {r4,pc}
+  ldr r2,[0x140a768c]
+  ldr r0,[0x140a7690]
+  bl 0x140e52f8
+  str r0,[r4,#0x0]
+  b 0x140a765c

@@ -1,0 +1,19 @@
+; FUN_14032660 @ 0x14032660 size=56
+  push {r3,lr}
+  ldr r3,[0x14032698]
+  ldrb r3,[r3,#0x0]
+  cbz r3,0x1403267c
+  ldr r0,[0x1403269c]
+  movs r1,#0x4
+  bl 0x140313b0
+  pop.w {r3,lr}
+  mov.w r0,#0x15e0
+  b.w 0x140e5398
+  movs r1,#0x4
+  ldr r0,[0x1403269c]
+  bl 0x1403666c
+  mov.w r0,#0x320
+  bl 0x140e5398
+  pop.w {r3,lr}
+  mov.w r0,#0x15e0
+  b.w 0x140e5398

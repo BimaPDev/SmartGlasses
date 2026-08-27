@@ -1,0 +1,20 @@
+; FUN_140c0394 @ 0x140c0394 size=40
+  ldr r2,[0x140c03bc]
+  push {r3,r4,r5,lr}
+  ldr r3,[r1,#0x0]
+  mov r5,r1
+  ldr r1,[r2,#0x0]
+  mov r4,r0
+  ldr r0,[r0,#0x0]
+  cmp r3,r1
+  ittt ne
+  ldr.ne r2,[r3,#0x0]
+  add.ne r2,#0x1
+  str.ne r2,[r3,#0x0]
+  cmp r1,r0
+  beq 0x140c03b4
+  bl 0x140c035a
+  ldr r3,[r5,#0x0]
+  mov r0,r4
+  str r3,[r4,#0x0]
+  pop {r3,r4,r5,pc}

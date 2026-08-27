@@ -1,0 +1,22 @@
+; FUN_140aa124 @ 0x140aa124 size=58
+  push {r4,r5,r6,lr}
+  ldr r4,[0x140aa160]
+  mov.w r1,#0xffffffff
+  mov r5,r0
+  ldr.w r0,[r4,#0xd0]
+  bl 0x140e5148
+  ldrb.w r6,[r4,#0xd8]
+  ldr.w r0,[r4,#0xd0]
+  bl 0x140e52d8
+  cmp r6,#0x2
+  bne 0x140aa150
+  mov r0,r5
+  ldr r3,[r4,#0x78]
+  pop.w {r4,r5,r6,lr}
+  bx r3
+  movs r3,#0x0
+  str r3,[r5,#0x0]
+  str r3,[r5,#0x4]
+  str r3,[r5,#0x8]
+  mov.w r0,#0xffffffff
+  pop {r4,r5,r6,pc}

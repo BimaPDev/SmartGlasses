@@ -1,0 +1,22 @@
+; FUN_1408e430 @ 0x1408e430 size=54
+  cbz r0,0x1408e456
+  push {r3,lr}
+  bl 0x1408a7dc
+  mov r1,r0
+  cbz r0,0x1408e452
+  ldrb.w r3,[r0,#0x96]
+  cbz r3,0x1408e452
+  ldr r3,[r0,#0x8]
+  cbz r3,0x1408e45a
+  ldrb r0,[r3,#0x11]
+  movs r2,#0x0
+  pop.w {r3,lr}
+  b.w 0x1408c5a4
+  movs r0,#0x1
+  pop {r3,pc}
+  movs r0,#0x1
+  bx lr
+  movs r0,#0xff
+  pop.w {r3,lr}
+  movs r2,#0x0
+  b.w 0x1408c5a4

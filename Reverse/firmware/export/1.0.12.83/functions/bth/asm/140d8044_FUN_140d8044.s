@@ -1,0 +1,21 @@
+; FUN_140d8044 @ 0x140d8044 size=44
+  cmp r1,r0
+  push {r3,lr}
+  beq 0x140d8068
+  ldr r0,[r0,#0x4]
+  ldrb r3,[r0,#0x0]
+  cmp r3,#0x2a
+  beq 0x140d806c
+  ldr r1,[r1,#0x4]
+  ldrb r3,[r1,#0x0]
+  cmp r3,#0x2a
+  it eq
+  add.eq r1,#0x1
+  bl 0x140dc518
+  clz r0,r0
+  lsrs r0,r0,#0x5
+  pop {r3,pc}
+  movs r0,#0x1
+  b 0x140d8066
+  movs r0,#0x0
+  b 0x140d8066

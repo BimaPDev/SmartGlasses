@@ -1,0 +1,24 @@
+; FUN_14047084 @ 0x14047084 size=56
+  push {r4,lr}
+  ldr r1,[0x140470bc]
+  ldr r4,[0x140470c0]
+  sub sp,#0x8
+  strd r1,r4,[sp,#0x0]
+  ldr r3,[0x140470c4]
+  ldr r2,[0x140470c8]
+  movs r1,#0x9b
+  movs r0,#0x4
+  bl 0x1402a6e8
+  movs r1,#0x0
+  movs r0,#0x2
+  bl 0x1409a4c0
+  ldr r0,[0x140470cc]
+  movs r1,#0x9d
+  strd r0,r4,[sp,#0x0]
+  ldr r3,[0x140470c4]
+  ldr r2,[0x140470c8]
+  movs r0,#0x4
+  bl 0x1402a6e8
+  movs r0,#0x0
+  add sp,#0x8
+  pop {r4,pc}

@@ -1,0 +1,25 @@
+; FUN_1409bb4c @ 0x1409bb4c size=60
+  push {r4,r5,r6,lr}
+  sub sp,#0x10
+  bl 0x140a2d10
+  mov.w r5,#0x14000
+  mov r4,r0
+  movs r6,#0x0
+  ldr r2,[0x1409bb88]
+  movw r1,#0x81f
+  str r2,[sp,#0x0]
+  movs r0,#0x4
+  strd r5,r6,[sp,#0x4]
+  ldr r3,[0x1409bb8c]
+  ldr r2,[0x1409bb90]
+  str r4,[sp,#0xc]
+  bl 0x1402a6e8
+  cmp r4,r5
+  bcc 0x1409bb7c
+  add sp,#0x10
+  pop {r4,r5,r6,pc}
+  mov r3,r4
+  mov r2,r6
+  mov r1,r5
+  ldr r0,[0x1409bb94]
+  bl 0x1402b0f8

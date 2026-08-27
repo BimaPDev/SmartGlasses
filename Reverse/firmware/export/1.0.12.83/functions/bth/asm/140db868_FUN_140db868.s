@@ -1,0 +1,26 @@
+; FUN_140db868 @ 0x140db868 size=60
+  push {r4,r5,r6,lr}
+  ldr r6,[0x140db8a4]
+  mov r4,r1
+  mov r5,r0
+  ldr r1,[r6,#0x0]
+  cbnz r1,0x140db87a
+  bl 0x140dc29c
+  str r0,[r6,#0x0]
+  mov r1,r4
+  mov r0,r5
+  bl 0x140dc29c
+  adds r3,r0,#0x1
+  beq 0x140db89c
+  adds r4,r0,#0x3
+  bic r4,r4,#0x3
+  cmp r0,r4
+  beq 0x140db8a0
+  subs r1,r4,r0
+  mov r0,r5
+  bl 0x140dc29c
+  adds r0,#0x1
+  bne 0x140db8a0
+  mov.w r4,#0xffffffff
+  mov r0,r4
+  pop {r4,r5,r6,pc}

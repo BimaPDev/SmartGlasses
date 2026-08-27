@@ -1,0 +1,32 @@
+; FUN_140015c8 @ 0x140015c8 size=80
+  push {r4}
+  ldr r4,[0x14001618]
+  ldr r3,[0x1400161c]
+  ldr r0,[r4,#0x4]
+  and.w r3,r3,r2, lsl #0xc
+  bic r0,r0,#0x1fe0000
+  bic r0,r0,#0x1f000
+  orrs r3,r0
+  str r3,[r4,#0x4]
+  ldr r3,[r4,#0xc]
+  tst r3,#0x1f00
+  ubfx r0,r3,#0x8,#0x5
+  beq 0x14001614
+  cbz r2,0x1400160c
+  subs r3,r2,#0x1
+  subs r0,r2,r0
+  b 0x140015f8
+  adds r2,r3,#0x1
+  beq 0x1400160c
+  ldrb.w r2,[r1],#0x1
+  cmp r0,r3
+  strb r2,[r4,#0x8]
+  add.w r3,r3,#0xffffffff
+  bne 0x140015f4
+  pop.w r4
+  bx lr
+  movs r0,#0x0
+  pop.w r4
+  bx lr
+  mov r0,r2
+  b 0x14001606

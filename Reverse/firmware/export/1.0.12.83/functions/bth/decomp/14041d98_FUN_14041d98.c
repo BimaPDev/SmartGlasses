@@ -1,0 +1,91 @@
+/* FUN_14041d98 @ 0x14041d98 */
+
+void FUN_14041d98(void)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  undefined4 *puVar3;
+  undefined4 *puVar4;
+  undefined4 *puVar5;
+  undefined4 uVar6;
+  undefined4 uVar7;
+  int iVar8;
+  undefined4 uVar9;
+  undefined4 uVar10;
+  undefined4 uVar11;
+  undefined4 unaff_r4;
+  undefined4 unaff_lr;
+  
+  iVar8 = FUN_140e5658(DAT_14041e50,0,0x4ac);
+  uVar2 = DAT_14041e54;
+  *(undefined4 *)(iVar8 + 0xc) = 0xffffffff;
+  *(undefined2 *)(iVar8 + 0x10) = 0xffff;
+  FUN_140746c8(0,uVar2);
+  FUN_140747b4(0);
+  FUN_1409f410();
+  FUN_1409f470(iVar8 + 0x429);
+  uVar7 = DAT_14041e7c;
+  uVar6 = DAT_14041e78;
+  uVar2 = DAT_14041e74;
+  FUN_1402a6e8(4,0x49c,DAT_14041e78,DAT_14041e74,DAT_14041e58,DAT_14041e7c);
+  puVar3 = DAT_14041e60;
+  puVar1 = DAT_14041e5c;
+  FUN_1402a9fc(DAT_14041e64,1,0x10,iVar8 + 0x429);
+  uVar9 = puVar1[1];
+  uVar10 = puVar1[2];
+  uVar11 = puVar1[3];
+  *puVar3 = *puVar1;
+  puVar3[1] = uVar9;
+  puVar3[2] = uVar10;
+  puVar3[3] = uVar11;
+  uVar9 = puVar1[5];
+  uVar10 = puVar1[6];
+  uVar11 = puVar1[7];
+  puVar3[4] = puVar1[4];
+  puVar3[5] = uVar9;
+  puVar3[6] = uVar10;
+  puVar3[7] = uVar11;
+  uVar9 = puVar1[9];
+  uVar10 = puVar1[10];
+  uVar11 = puVar1[0xb];
+  puVar3[8] = puVar1[8];
+  puVar3[9] = uVar9;
+  puVar3[10] = uVar10;
+  puVar3[0xb] = uVar11;
+  puVar5 = DAT_14041e6c;
+  puVar4 = DAT_14041e68;
+  uVar9 = puVar1[0xd];
+  uVar10 = puVar1[0xe];
+  uVar11 = puVar1[0xf];
+  puVar3[0xc] = puVar1[0xc];
+  puVar3[0xd] = uVar9;
+  puVar3[0xe] = uVar10;
+  puVar3[0xf] = uVar11;
+  uVar9 = puVar5[1];
+  uVar10 = puVar5[2];
+  uVar11 = puVar5[3];
+  *puVar4 = *puVar5;
+  puVar4[1] = uVar9;
+  puVar4[2] = uVar10;
+  puVar4[3] = uVar11;
+  uVar9 = puVar5[5];
+  uVar10 = puVar5[6];
+  uVar11 = puVar5[7];
+  puVar4[4] = puVar5[4];
+  puVar4[5] = uVar9;
+  puVar4[6] = uVar10;
+  puVar4[7] = uVar11;
+  FUN_14043f3c();
+  FUN_1402a6e8(4,0x4bf,uVar6,uVar2,DAT_14041e70,uVar7);
+  FUN_14041478();
+  FUN_1402a6e8(4,0x50,DAT_1403d424,DAT_1403d420,DAT_1403d41c,DAT_1403d418,unaff_r4,unaff_lr);
+  puVar1 = DAT_1403d428;
+  *DAT_1403d428 = 0;
+  puVar1[1] = 0;
+  puVar1[2] = 0;
+  *(undefined1 *)(puVar1 + 3) = 0;
+  *(undefined1 *)((int)puVar1 + 0xd) = 0xff;
+  return;
+}
+

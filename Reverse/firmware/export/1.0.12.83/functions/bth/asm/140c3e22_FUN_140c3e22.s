@@ -1,0 +1,15 @@
+; FUN_140c3e22 @ 0x140c3e22 size=34
+  mov r3,r1
+  mov r1,r2
+  cmp r3,#0x1
+  push {r4}
+  mov r4,r0
+  bne 0x140c3e36
+  strb r2,[r4,#0x0]
+  pop.w r4
+  bx lr
+  cmp r3,#0x0
+  beq 0x140c3e30
+  mov r2,r3
+  pop.w r4
+  b.w 0x140e5658

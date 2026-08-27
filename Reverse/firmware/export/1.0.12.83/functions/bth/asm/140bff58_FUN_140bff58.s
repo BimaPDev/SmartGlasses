@@ -1,0 +1,21 @@
+; FUN_140bff58 @ 0x140bff58 size=54
+  push {r0,r1,r2,r4,r5,lr}
+  adds r5,r0,#0x4
+  mov r4,r0
+  str r1,[sp,#0x4]
+  mov r0,r5
+  bl 0x140cb9c4
+  movs r3,#0x0
+  ldr r1,[sp,#0x4]
+  mov r0,r5
+  strb.w r3,[r4,#0x7c]
+  strd r3,r3,[r4,#0x74]
+  strd r3,r3,[r4,#0x80]
+  strd r3,r3,[r4,#0x88]
+  ldr r3,[0x140bff90]
+  str r3,[r4,#0x0]
+  adds r3,#0x14
+  str r3,[r4,#0x4]
+  add sp,#0xc
+  pop.w {r4,r5,lr}
+  b.w 0x140cb996

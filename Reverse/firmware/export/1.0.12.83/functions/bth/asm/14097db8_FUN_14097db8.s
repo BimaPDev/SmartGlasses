@@ -1,0 +1,20 @@
+; FUN_14097db8 @ 0x14097db8 size=46
+  push {r3,r4,r5,lr}
+  cbz r0,0x14097ddc
+  mov r4,r0
+  mov r5,r1
+  bl 0x140755e4
+  mov r1,r5
+  mov r0,r4
+  bl 0x14081960
+  mov r4,r0
+  bl 0x1407561c
+  cmp r4,#0x0
+  ite eq
+  mov.eq r0,#0x1
+  mov.ne r0,#0x2
+  pop {r3,r4,r5,pc}
+  movs r2,#0xa1
+  ldr r1,[0x14097de8]
+  ldr r0,[0x14097dec]
+  bl 0x1402b0f8

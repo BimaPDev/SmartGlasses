@@ -1,0 +1,21 @@
+; FUN_140db990 @ 0x140db990 size=46
+  ldr r3,[r2,#0x8]
+  subs r3,#0x1
+  cmp r3,#0x0
+  str r3,[r2,#0x8]
+  push {r4}
+  bge 0x140db9ae
+  ldr r4,[r2,#0x18]
+  cmp r3,r4
+  blt 0x140db9a6
+  cmp r1,#0xa
+  bne 0x140db9ae
+  pop.w r4
+  b.w 0x140de9f4
+  ldr r3,[r2,#0x0]
+  adds r0,r3,#0x1
+  str r0,[r2,#0x0]
+  mov r0,r1
+  strb r1,[r3,#0x0]
+  pop.w r4
+  bx lr

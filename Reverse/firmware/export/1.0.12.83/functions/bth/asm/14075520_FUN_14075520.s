@@ -1,0 +1,22 @@
+; FUN_14075520 @ 0x14075520 size=42
+  ldrh r3,[r0,#0x8]
+  cmp r3,r1
+  bcc 0x14075538
+  ldrh r2,[r0,#0xa]
+  subs r3,r3,r1
+  add r1,r2
+  uxth r1,r1
+  strh r1,[r0,#0xa]
+  adds r1,#0x10
+  strh r3,[r0,#0x8]
+  add r0,r1
+  bx lr
+  movs r2,#0x0
+  ldrh r1,[r0,#0xa]
+  strh r2,[r0,#0x8]
+  add r1,r3
+  uxth r1,r1
+  strh r1,[r0,#0xa]
+  adds r1,#0x10
+  add r0,r1
+  bx lr

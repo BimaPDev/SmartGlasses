@@ -1,0 +1,19 @@
+; FUN_140018f8 @ 0x140018f8 size=44
+  cmp r1,#0x8
+  beq 0x14001920
+  cmp r1,#0x10
+  beq 0x1400191a
+  cmp r1,#0x40
+  ite eq
+  mov.eq.w r1,#0x6000
+  mov.ne.w r1,#0x4000
+  ldr r2,[0x14001924]
+  ldr r3,[r2,#0x38]
+  bic r3,r3,#0x6000
+  orrs r3,r1
+  str r3,[r2,#0x38]
+  bx lr
+  mov.w r1,#0x2000
+  b 0x1400190c
+  movs r1,#0x0
+  b 0x1400190c

@@ -1,0 +1,19 @@
+; FUN_140094d4 @ 0x140094d4 size=46
+  mov r0,r6
+  add sp,#0x24
+  pop.w {r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  ldr r3,[0x14009650]
+  cmp r1,r3
+  bls 0x1400958e
+  movs r0,#0x64
+  movs r3,#0x0
+  umull r0,r1,r1,r0
+  str r2,[sp,#0x1c]
+  bl 0x1400a3a0
+  ldr r2,[sp,#0x1c]
+  uxtb r5,r0
+  movs r5,#0x64
+  mul r5,r1,r5
+  udiv r5,r5,r2
+  uxtb r5,r5
+  b 0x140094ec

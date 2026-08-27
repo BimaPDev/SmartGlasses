@@ -1,0 +1,21 @@
+; FUN_140a509c @ 0x140a509c size=50
+  cmp r0,#0x1
+  beq 0x140a50a2
+  bx lr
+  b.w 0x140a544c
+  push {r3,lr}
+  movs r3,#0x0
+  ldr r2,[0x140a5474]
+  mov r0,r3
+  ldr r1,[0x140a5478]
+  bl 0x1402d20c
+  cbnz r0,0x140a5464
+  bl 0x1402d238
+  cbnz r0,0x140a546c
+  pop {r3,pc}
+  mov r1,r0
+  ldr r0,[0x140a547c]
+  bl 0x1402b0f8
+  mov r1,r0
+  ldr r0,[0x140a5480]
+  bl 0x1402b0f8

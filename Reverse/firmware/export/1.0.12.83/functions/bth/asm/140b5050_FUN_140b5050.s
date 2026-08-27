@@ -1,0 +1,23 @@
+; FUN_140b5050 @ 0x140b5050 size=48
+  push {r3,r4,r5,r6,r7,lr}
+  cbz r0,0x140b5078
+  mov r6,r1
+  cbz r1,0x140b5078
+  ldr r4,[r0,#0x0]
+  mov r7,r2
+  cbz r4,0x140b506e
+  ldrd r5,r0,[r4,#0x0]
+  mov r1,r7
+  blx r6
+  cbnz r0,0x140b5072
+  mov r4,r5
+  cmp r4,#0x0
+  bne 0x140b505e
+  mov r0,r4
+  pop {r3,r4,r5,r6,r7,pc}
+  ldr r4,[r4,#0x4]
+  mov r0,r4
+  pop {r3,r4,r5,r6,r7,pc}
+  ldr r1,[0x140b5080]
+  ldr r0,[0x140b5084]
+  bl 0x1402b0f8

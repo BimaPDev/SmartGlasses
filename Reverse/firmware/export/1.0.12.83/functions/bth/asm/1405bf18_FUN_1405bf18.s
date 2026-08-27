@@ -1,0 +1,20 @@
+; FUN_1405bf18 @ 0x1405bf18 size=60
+  mov.w r12,#0x0
+  push {lr}
+  ldr r3,[0x1405bf54]
+  strb.w r12,[r1,#0x0]
+  lsrs r2,r0,#0x3
+  add.w lr,r3,#0x1
+  ldrb r3,[r2,r3]
+  and r0,r0,#0x7
+  asrs r3,r0
+  and r12,r3,#0x1
+  strb.w r12,[r1,#0x0]
+  ldrb.w r2,[r2,lr]
+  asr.w r0,r2,r0
+  lsls r3,r0,#0x1f
+  itt pl
+  mov.pl r3,r12
+  orr.pl r12,r3,#0x2
+  strb.w r12,[r1,#0x0]
+  pop.w pc

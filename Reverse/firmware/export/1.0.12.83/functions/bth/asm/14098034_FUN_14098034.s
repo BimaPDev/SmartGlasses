@@ -1,0 +1,22 @@
+; FUN_14098034 @ 0x14098034 size=52
+  push {r4,r5,r6,lr}
+  cbz r0,0x1409805c
+  mov r4,r0
+  mov r5,r1
+  mov r6,r2
+  bl 0x140755e4
+  mov r2,r6
+  mov r1,r5
+  mov r0,r4
+  bl 0x14081c0c
+  mov r4,r0
+  bl 0x1407561c
+  cmp r4,#0x0
+  ite eq
+  mov.eq r0,#0x1
+  mov.ne r0,#0x2
+  pop {r4,r5,r6,pc}
+  movw r2,#0x201
+  ldr r1,[0x14098068]
+  ldr r0,[0x1409806c]
+  bl 0x1402b0f8

@@ -1,0 +1,24 @@
+; FUN_1404ca68 @ 0x1404ca68 size=56
+  cmp r0,#0xf
+  beq 0x1404ca78
+  cbnz r0,0x1404ca7c
+  ldr r0,[0x1404caa0]
+  ldrb r3,[r0,#0x6]
+  cbz r3,0x1404ca78
+  b.w 0x14095e18
+  movs r0,#0x0
+  bx lr
+  push {r4,r5,lr}
+  ldr r5,[0x1404caa4]
+  ldr r4,[0x1404caa8]
+  sub sp,#0x14
+  strd r0,lr,[sp,#0x8]
+  movw r1,#0x5b1
+  strd r4,r5,[sp,#0x0]
+  ldr r3,[0x1404caac]
+  ldr r2,[0x1404cab0]
+  movs r0,#0x4
+  bl 0x1402a6e8
+  movs r0,#0x0
+  add sp,#0x14
+  pop {r4,r5,pc}

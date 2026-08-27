@@ -1,0 +1,41 @@
+; FUN_14028194 @ 0x14028194 size=98
+  movs r3,#0x1
+  push {r4}
+  ldr r4,[0x140281f8]
+  lsls r3,r0
+  ldr r1,[r4,#0x4]
+  ldr r2,[r4,#0xc]
+  ands r1,r3
+  ands r2,r3
+  uxtb r1,r1
+  uxtb r2,r2
+  cbnz r1,0x140281de
+  cbz r2,0x140281f0
+  uxtb r3,r3
+  ldr r1,[0x140281f8]
+  str r3,[r1,#0x10]
+  ldr r3,[0x140281fc]
+  ldr.w r4,[r3,r0,lsl #0x2]
+  cbz r4,0x140281f0
+  lsls r3,r0,#0x5
+  add.w r3,r3,#0x40000000
+  add.w r3,r3,#0x130000
+  ldr.w r1,[r3,#0x10c]
+  subs r2,#0x0
+  mov r12,r4
+  it ne
+  mov.ne r2,#0x1
+  ldr.w r3,[r3,#0x108]
+  pop.w r4
+  ubfx r1,r1,#0x0,#0xc
+  bx r12
+  uxtb r3,r3
+  str r3,[r4,#0x8]
+  cmp r2,#0x0
+  bne 0x140281ae
+  ldr r3,[0x140281fc]
+  ldr.w r4,[r3,r0,lsl #0x2]
+  cmp r4,#0x0
+  bne 0x140281ba
+  pop.w r4
+  bx lr

@@ -1,0 +1,19 @@
+; FUN_140dd3b4 @ 0x140dd3b4 size=40
+  push {r4,lr}
+  cbz r2,0x140dd3d8
+  mov r3,r0
+  subs r1,#0x1
+  adds r4,r0,r2
+  ldrb.w r0,[r3],#0x1
+  ldrb.w r2,[r1,#0x1]!
+  cmp r0,r2
+  bne 0x140dd3ce
+  cmp r3,r4
+  bne 0x140dd3d2
+  subs r0,r0,r2
+  pop {r4,pc}
+  cmp r0,#0x0
+  bne 0x140dd3be
+  b 0x140dd3ce
+  mov r0,r2
+  b 0x140dd3d0

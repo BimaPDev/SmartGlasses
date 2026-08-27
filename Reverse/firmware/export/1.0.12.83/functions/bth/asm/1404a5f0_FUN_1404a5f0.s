@@ -1,0 +1,26 @@
+; FUN_1404a5f0 @ 0x1404a5f0 size=72
+  push {r4,r5,r6,lr}
+  ldr r6,[0x1404a638]
+  ldr r5,[0x1404a63c]
+  mov r12,r6
+  ldrb.w r3,[r5,#0xda]
+  sub sp,#0x10
+  str r3,[sp,#0x8]
+  ldrb.w r3,[r5,#0xdb]
+  ldr r4,[0x1404a640]
+  str r3,[sp,#0x4]
+  ldrb.w r3,[r5,#0xd8]
+  str r3,[sp,#0x0]
+  ldmia r4!,{r0,r1,r2,r3}
+  stm.w r12!,{r0,r1,r2,r3}
+  ldm.w r4,{r0,r1,r2,r3}
+  stm.w r12!,{r0,r1,r2}
+  ldrb.w r2,[r5,#0xde]
+  strh.w r3,[r12,#0x0]
+  ldr r1,[0x1404a644]
+  ldrb.w r3,[r5,#0xd9]
+  add.w r0,r6,#0x1d
+  bl 0x140dc3ac
+  mov r0,r6
+  add sp,#0x10
+  pop {r4,r5,r6,pc}

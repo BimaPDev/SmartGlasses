@@ -1,0 +1,19 @@
+; FUN_14089af8 @ 0x14089af8 size=44
+  push {r3,r4,r5,lr}
+  movs r2,#0x0
+  mov r5,r0
+  movs r1,#0x4
+  movw r0,#0xfc0f
+  bl 0x1407772c
+  cbz r0,0x14089b20
+  movs r1,#0x4
+  mov r4,r0
+  bl 0x14075458
+  mov r3,r0
+  mov r0,r4
+  str r5,[r3,#0x0]
+  bl 0x1407780c
+  sxtb r0,r0
+  pop {r3,r4,r5,pc}
+  movs r0,#0x1
+  pop {r3,r4,r5,pc}

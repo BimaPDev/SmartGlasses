@@ -1,0 +1,21 @@
+; FUN_14005af4 @ 0x14005af4 size=48
+  ldr r3,[r0,#0x8]
+  ldrsb.w r12,[r1,#0x20]
+  cbnz r3,0x14005b06
+  b 0x14005b18
+  ldr r2,[r3,#0x8]
+  mov r0,r3
+  cbz r2,0x14005b1a
+  mov r3,r2
+  ldrsb.w r2,[r3,#0x20]
+  cmp r2,r12
+  bge 0x14005afe
+  strd r3,r0,[r1,#0x8]
+  str r1,[r0,#0x8]
+  str r1,[r3,#0xc]
+  bx lr
+  mov r3,r0
+  movs r2,#0x0
+  strd r2,r3,[r1,#0x8]
+  str r1,[r3,#0x8]
+  bx lr

@@ -1,0 +1,24 @@
+; FUN_14029a48 @ 0x14029a48 size=52
+  movs r2,#0x0
+  push {r3,r4,r5,lr}
+  ldr r5,[0x14029a7c]
+  ldr r4,[0x14029a80]
+  ldrb r3,[r5,#0x0]
+  strb r2,[r4,#0x9]
+  subs r3,#0x1
+  cmp r3,#0x1
+  bls 0x14029a5c
+  pop {r3,r4,r5,pc}
+  ldr r3,[0x14029a84]
+  movs r1,#0x1
+  ldrb r0,[r3,#0x0]
+  bl 0x1402c8ec
+  ldrb r3,[r4,#0x9]
+  cmp r3,#0x0
+  bne 0x14029a5a
+  ldrb r3,[r5,#0x0]
+  subs r3,#0x1
+  cmp r3,#0x1
+  bhi 0x14029a5a
+  pop.w {r3,r4,r5,lr}
+  b.w 0x140297f4

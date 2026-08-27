@@ -1,0 +1,25 @@
+; FUN_140543b4 @ 0x140543b4 size=58
+  push {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  mov r8,r1
+  ldr r1,[0x140545a4]
+  sub sp,#0x3c
+  ldr r1,[r1,#0x0]
+  str r1,[sp,#0x34]
+  mov.w r1,#0x0
+  mov r10,r0
+  ldr r1,[0x140545a8]
+  ldr r0,[sp,#0x64]
+  ldr r6,[sp,#0x60]
+  mov r9,r2
+  mov r7,r3
+  str r0,[sp,#0x10]
+  ldmia r1,{r0,r1}
+  strh.w r1,[sp,#0x30]
+  str r0,[sp,#0x2c]
+  bl 0x1405c1f8
+  mov r4,r0
+  ldr r2,[0x140545ac]
+  mov r3,r4
+  movs r0,#0x42
+  ldr r1,[0x140545b0]
+  bl 0x1402a64c

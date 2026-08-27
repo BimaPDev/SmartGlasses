@@ -1,0 +1,21 @@
+; FUN_14032d34 @ 0x14032d34 size=48
+  sub.w r3,r0,#0x80
+  uxth r1,r3
+  cmp r1,#0x3
+  bhi 0x14032d42
+  uxtb r0,r3
+  bx lr
+  mov r2,r0
+  push {r4,lr}
+  ldr r4,[0x14032d64]
+  sub sp,#0x10
+  strd r2,lr,[sp,#0x4]
+  movw r1,#0x75c
+  ldr r3,[0x14032d68]
+  ldr r2,[0x14032d6c]
+  str r4,[sp,#0x0]
+  movs r0,#0x4
+  bl 0x1402a6e8
+  movs r0,#0xff
+  add sp,#0x10
+  pop {r4,pc}

@@ -1,0 +1,20 @@
+; FUN_14075d70 @ 0x14075d70 size=42
+  mov r1,r0
+  cbz r0,0x14075d98
+  ldrb r0,[r0,#0x4]
+  and r0,r0,#0x7
+  cmp r0,#0x2
+  beq 0x14075d82
+  cmp r0,#0x4
+  bne 0x14075d8e
+  ldr r3,[0x14075d9c]
+  ldr r3,[r3,#0x8]
+  cbz r3,0x14075d8e
+  ldrh r2,[r1,#0xc]
+  subs r1,r1,r2
+  bx r3
+  mov r2,r0
+  ldr r1,[0x14075da0]
+  movs r0,#0x41
+  b.w 0x1402a64c
+  bx lr

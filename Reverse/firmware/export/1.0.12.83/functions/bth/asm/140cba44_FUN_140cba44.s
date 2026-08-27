@@ -1,0 +1,21 @@
+; FUN_140cba44 @ 0x140cba44 size=52
+  ldr r3,[0x140cba78]
+  movs r1,#0x0
+  push {r4,lr}
+  mov r4,r0
+  str r3,[r0,#0x0]
+  bl 0x140cba08
+  mov r0,r4
+  bl 0x140cba22
+  ldr r0,[r4,#0x68]
+  add.w r3,r4,#0x24
+  cmp r0,r3
+  beq 0x140cba6c
+  cbz r0,0x140cba68
+  bl 0x140d7e4c
+  movs r3,#0x0
+  str r3,[r4,#0x68]
+  add.w r0,r4,#0x6c
+  bl 0x140c0378
+  mov r0,r4
+  pop {r4,pc}

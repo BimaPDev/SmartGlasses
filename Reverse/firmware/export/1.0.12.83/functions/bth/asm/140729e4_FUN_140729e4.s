@@ -1,0 +1,25 @@
+; FUN_140729e4 @ 0x140729e4 size=62
+  cmp r0,#0x1
+  push {r3,lr}
+  beq 0x14072a00
+  subs r0,#0x2
+  cmp r0,#0x1
+  bhi 0x14072a20
+  ldr r0,[0x14072a24]
+  bl 0x140739b4
+  pop.w {r3,lr}
+  ldr r0,[0x14072a28]
+  b.w 0x140739b4
+  ldr r1,[0x14072a2c]
+  movs r0,#0x2
+  bl 0x14073c1c
+  ldr r1,[0x14072a30]
+  movs r0,#0x4
+  bl 0x14073c1c
+  ldr r1,[0x14072a34]
+  movs r0,#0x6
+  bl 0x14073c1c
+  ldr r0,[0x14072a38]
+  bl 0x140739b4
+  b 0x140729f0
+  pop {r3,pc}

@@ -1,0 +1,19 @@
+; FUN_14004328 @ 0x14004328 size=42
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  bl 0x1400779c
+  mov r4,r0
+  cbz r0,0x1400434c
+  mov r0,r5
+  movs r1,#0x0
+  bl 0x140076b8
+  mov r5,r0
+  cbz r0,0x14004348
+  mov r2,r4
+  movs r1,#0x0
+  bl 0x14000894
+  mov r0,r5
+  pop {r3,r4,r5,pc}
+  mov r5,r0
+  mov r0,r5
+  pop {r3,r4,r5,pc}

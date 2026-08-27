@@ -1,0 +1,17 @@
+; FUN_140cc338 @ 0x140cc338 size=32
+  ldr r3,[r0,#0x8]
+  ldr r2,[r3,#0x2c]
+  str r2,[r1,#0x0]
+  ldr r2,[r3,#0x30]
+  str r2,[r1,#0x4]
+  ldr r2,[r3,#0x34]
+  str r2,[r1,#0x8]
+  ldr r2,[r3,#0x38]
+  str r2,[r1,#0xc]
+  ldr r2,[r3,#0x3c]
+  str r2,[r1,#0x10]
+  ldr r2,[r3,#0x40]
+  str r2,[r1,#0x14]
+  ldr r3,[r3,#0x44]
+  str r3,[r1,#0x18]
+  bx lr

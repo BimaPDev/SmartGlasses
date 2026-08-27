@@ -1,0 +1,20 @@
+; FUN_1402e17c @ 0x1402e17c size=62
+  ldr r3,[0x1402e1bc]
+  ldr r2,[0x1402e1c0]
+  str.w r2,[r3,#0x88]
+  str.w r2,[r3,#0x90]
+  str.w r2,[r3,#0xb0]
+  str.w r2,[r3,#0xe8]
+  str r2,[r3,#0x24]
+  str r2,[r3,#0x2c]
+  str.w r2,[r3,#0x16c]
+  ldr.w r3,[r3,#0x16c]
+  dsb #0xf
+  mov.w r1,#0xca000000
+  movs r2,#0x0
+  ldr r3,[0x1402e1c4]
+  str.w r1,[r3,#0x168]
+  str.w r2,[r3,#0x174]
+  ldr.w r3,[r3,#0x174]
+  dsb #0xf
+  bx lr

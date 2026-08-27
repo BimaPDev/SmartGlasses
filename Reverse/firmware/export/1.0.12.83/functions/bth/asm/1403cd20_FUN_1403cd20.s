@@ -1,0 +1,20 @@
+; FUN_1403cd20 @ 0x1403cd20 size=56
+  subs r0,#0x1
+  cmp r0,#0x6
+  bhi 0x1403cd5c
+  tbb [pc,r0]
+  b.w 0x14051640
+  b.w 0x1404b24c
+  b.w 0x14095748
+  b.w 0x140956f8
+  push {r4,lr}
+  bl 0x14095748
+  mov r4,r0
+  bl 0x140956f8
+  add r0,r4
+  uxtb r0,r0
+  pop {r4,pc}
+  b.w 0x14051668
+  b.w 0x1405162c
+  movs r0,#0x0
+  bx lr

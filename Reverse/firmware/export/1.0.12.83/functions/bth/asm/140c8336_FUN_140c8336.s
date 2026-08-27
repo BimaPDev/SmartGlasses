@@ -1,0 +1,20 @@
+; FUN_140c8336 @ 0x140c8336 size=44
+  push {r4,lr}
+  sub sp,#0x18
+  mov r4,r1
+  mov r1,r2
+  add r2,sp,#0x8
+  mov r0,sp
+  str r2,[sp,#0x0]
+  adds r2,r1,r3
+  bl 0x140c7be0
+  ldr r2,[sp,#0x20]
+  mov r1,sp
+  mov r0,r4
+  bl 0x140c58c0
+  mov r4,r0
+  mov r0,sp
+  bl 0x140d18d4
+  mov r0,r4
+  add sp,#0x18
+  pop {r4,pc}

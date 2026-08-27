@@ -1,0 +1,24 @@
+; FUN_1406fa24 @ 0x1406fa24 size=56
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  mov r4,r2
+  bl 0x140709d0
+  cbz r0,0x1406fa40
+  mov r1,r4
+  mov r0,r5
+  bl 0x1406e2c8
+  cbz r0,0x1406fa40
+  ldrb r3,[r0,#0xc]
+  cmp r3,#0x5
+  beq 0x1406fa42
+  pop {r4,r5,r6,pc}
+  movs r2,#0x1
+  ldrb.w r3,[r0,#0x26]
+  strb r2,[r0,#0x1f]
+  cmp r3,#0x0
+  bne 0x1406fa40
+  mov r1,r4
+  mov r0,r5
+  pop.w {r4,r5,r6,lr}
+  movs r2,#0x4
+  b.w 0x1406e314

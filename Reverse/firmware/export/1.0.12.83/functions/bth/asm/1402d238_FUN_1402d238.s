@@ -1,0 +1,45 @@
+; FUN_1402d238 @ 0x1402d238 size=110
+  ldrb.w r2,[r0,#0x35]
+  cmp r2,r1
+  bls 0x14026344
+  push {r4,lr}
+  ldr r2,[r0,#0x40]
+  mov r3,r0
+  ldrsb r2,[r2,r1]
+  cmp r2,#0x0
+  blt 0x1402632e
+  movs r0,#0x1
+  lsr.w r12,r2,#0x5
+  ldr r4,[0x14026348]
+  and r2,r2,#0x1f
+  lsl.w r2,r0,r2
+  add.w r12,r12,#0x60
+  str.w r2,[r4,r12,lsl #0x2]
+  ldr r2,[r3,#0x40]
+  ldrsb r2,[r2,r1]
+  cmp r2,#0x0
+  blt 0x1402632e
+  and r12,r2,#0x1f
+  lsl.w r0,r0,r12
+  lsrs r2,r2,#0x5
+  str.w r0,[r4,r2,lsl #0x2]
+  movs r0,#0x2c
+  ldr r2,[r3,#0x38]
+  mla r2,r0,r1,r2
+  ldr r0,[r2,#0x1c]
+  cbz r0,0x14026342
+  mov r0,r1
+  ldr r3,[r3,#0x1c]
+  blx r3
+  movs r0,#0x0
+  pop {r4,pc}
+  movs r0,#0x1
+  bx lr
+  ldr r2,[0x1402d24c]
+  ldr r3,[0x1402d250]
+  mov r1,r0
+  cmp r0,#0x1
+  ite ne
+  mov.ne r0,r2
+  mov.eq r0,r3
+  b.w 0x140262ec

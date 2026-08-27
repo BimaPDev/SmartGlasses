@@ -1,0 +1,21 @@
+; FUN_140754f4 @ 0x140754f4 size=44
+  ldrh r3,[r0,#0xa]
+  cmp r1,r3
+  bhi 0x1407550e
+  ldrh r2,[r0,#0x8]
+  subs r3,r3,r1
+  uxth r3,r3
+  add r1,r2
+  add.w r2,r3,#0x10
+  strh r3,[r0,#0xa]
+  strh r1,[r0,#0x8]
+  add r0,r2
+  bx lr
+  movs r1,#0x0
+  movs r2,#0x10
+  ldrh.w r12,[r0,#0x8]
+  strh r1,[r0,#0xa]
+  add r3,r12
+  strh r3,[r0,#0x8]
+  add r0,r2
+  bx lr

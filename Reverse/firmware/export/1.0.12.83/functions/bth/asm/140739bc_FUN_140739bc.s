@@ -1,0 +1,22 @@
+; FUN_140739bc @ 0x140739bc size=50
+  subs r3,#0x1
+  str r1,[r0,#0x0]
+  beq 0x140739e6
+  push {r4,lr}
+  mov.w r12,#0x0
+  mov r4,r1
+  mov lr,r4
+  add.w r12,r12,#0x1
+  add r4,r2
+  cmp r12,r3
+  str.w r4,[lr,#0x0]
+  bne 0x140739ca
+  movs r3,#0x0
+  mla r1,r12,r2,r1
+  str r3,[r1,#0x0]
+  str r1,[r0,#0x4]
+  pop {r4,pc}
+  movs r3,#0x0
+  str r3,[r1,#0x0]
+  str r1,[r0,#0x4]
+  bx lr

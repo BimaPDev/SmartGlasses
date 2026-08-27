@@ -1,0 +1,20 @@
+; FUN_14072878 @ 0x14072878 size=54
+  subs r3,#0x1
+  sxtb r3,r3
+  cmp r3,#0x0
+  blt 0x140728ac
+  push {lr}
+  add.w lr,r3,#0x1
+  add.w r12,r1,lr
+  add r0,lr
+  add.w r1,r2,lr
+  ldrb.w r2,[r12,#-0x1]!
+  ldrb.w lr,[r1,#-0x1]!
+  subs r3,#0x1
+  eor.w r2,r2,lr
+  sxtb r3,r3
+  strb.w r2,[r0,#-0x1]!
+  adds r2,r3,#0x1
+  bne 0x14072890
+  pop.w pc
+  bx lr

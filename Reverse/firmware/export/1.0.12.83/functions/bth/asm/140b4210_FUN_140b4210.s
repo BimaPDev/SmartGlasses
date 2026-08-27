@@ -1,0 +1,31 @@
+; FUN_140b4210 @ 0x140b4210 size=74
+  push {r4,r5,r6,r7,r8,lr}
+  ldr r6,[0x140b425c]
+  movs r4,#0x0
+  mov r3,r6
+  mov r8,r0
+  mov r7,r1
+  ldrsb.w r5,[r3,#0x4]
+  adds r3,#0x18
+  cbz r5,0x140b4232
+  adds r4,#0x1
+  cmp r4,#0x6
+  bne 0x140b421e
+  movs r0,#0x1
+  pop.w {r4,r5,r6,r7,r8,pc}
+  mov r0,r8
+  bl 0x140dd3a4
+  add.w r4,r4,r4, lsl #0x1
+  lsls r4,r4,#0x3
+  mov r2,r0
+  adds r0,r4,#0x4
+  mov r1,r8
+  add r0,r6
+  bl 0x140e5278
+  ldr r3,[r6,#0x0]
+  add r4,r6
+  adds r3,#0x1
+  str r7,[r4,#0x18]
+  mov r0,r5
+  str r3,[r6,#0x0]
+  pop.w {r4,r5,r6,r7,r8,pc}

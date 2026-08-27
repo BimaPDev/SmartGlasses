@@ -1,0 +1,26 @@
+; FUN_14060338 @ 0x14060338 size=56
+  cmp r0,#0x2
+  bhi 0x1406035c
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  movs r4,#0x0
+  uxtb r0,r4
+  bl 0x1405d6bc
+  adds r4,#0x1
+  cbz r0,0x14060354
+  ldrb r3,[r0,#0xd]
+  subs r3,#0x1
+  cmp r3,#0x1
+  bls 0x14060360
+  cmp r4,#0xb
+  bne 0x14060342
+  movs r0,#0x1
+  pop {r3,r4,r5,pc}
+  movs r0,#0x0
+  bx lr
+  ldr r3,[0x14060370]
+  ldrb.w r0,[r3,#0xac]
+  subs r0,r0,r5
+  clz r0,r0
+  lsrs r0,r0,#0x5
+  pop {r3,r4,r5,pc}

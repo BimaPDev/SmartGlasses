@@ -1,0 +1,27 @@
+; FUN_140b6044 @ 0x140b6044 size=60
+  push {r4,r5,r6,lr}
+  add.w r4,r0,#0x1000
+  ldr.w r3,[r4,#0x4d8]
+  sub sp,#0x8
+  cbz r3,0x140b608e
+  ldrb.w r3,[r4,#0x4dc]
+  mov r5,r1
+  cmp r3,r1
+  beq 0x140b608e
+  mov r6,r2
+  ldr r3,[0x140b6094]
+  ldr r2,[0x140b6098]
+  movs r0,#0x43
+  cmp r1,#0x0
+  it ne
+  mov.ne r3,r2
+  ldr r1,[0x140b609c]
+  ldr r2,[0x140b60a0]
+  cmp r6,#0x0
+  it eq
+  mov.eq r6,r1
+  ldr r1,[0x140b60a4]
+  str r6,[sp,#0x0]
+  bl 0x1402a64c
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

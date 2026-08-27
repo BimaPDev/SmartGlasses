@@ -1,0 +1,24 @@
+; FUN_14029f4c @ 0x14029f4c size=52
+  push {r3,r4,r5,lr}
+  ldr r4,[0x14029f80]
+  ldrb r3,[r4,#0x0]
+  subs r3,#0x1
+  cmp r3,#0x1
+  bhi 0x14029f68
+  ldr r5,[0x14029f84]
+  ldrb r0,[r5,#0x0]
+  cmp r0,#0xff
+  bne 0x14029f70
+  ldr r3,[0x14029f88]
+  ldrb r0,[r3,#0x0]
+  bl 0x1402c520
+  movs r3,#0x3
+  movs r0,#0x0
+  strb r3,[r4,#0x0]
+  pop {r3,r4,r5,pc}
+  bl 0x14028694
+  ldrb r0,[r5,#0x0]
+  bl 0x14028888
+  movs r3,#0xff
+  strb r3,[r5,#0x0]
+  b 0x14029f60

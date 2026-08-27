@@ -1,0 +1,24 @@
+; FUN_1405db3c @ 0x1405db3c size=64
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  mov r12,r2
+  mov r6,r1
+  movs r3,#0x18
+  movs r2,#0x4
+  movw r0,#0xd6f
+  uxth r1,r5
+  mov r4,r12
+  bl 0x14074378
+  cbz r0,0x1405db7a
+  mov lr,r0
+  mov r12,r4
+  mov r5,r0
+  strb.w r6,[lr],#0x4
+  ldm.w r12!,{r0,r1,r2,r3}
+  stm.w lr!,{r0,r1,r2,r3}
+  ldr.w r3,[r12,#0x0]
+  mov r0,r5
+  str.w r3,[lr,#0x0]
+  pop.w {r4,r5,r6,lr}
+  b.w 0x140743d0
+  pop {r4,r5,r6,pc}

@@ -1,0 +1,20 @@
+; FUN_140c4f42 @ 0x140c4f42 size=42
+  push {r4,r5,r6,r7,r8,lr}
+  mov r5,r0
+  mov r8,r1
+  mov r6,r3
+  mov r4,r2
+  cmp r4,r6
+  mov r7,r4
+  bcs 0x140c4f66
+  ldr r3,[r5,#0x0]
+  mov r1,r8
+  ldr r2,[r7,#0x0]
+  mov r0,r5
+  ldr r3,[r3,#0x8]
+  adds r4,#0x4
+  blx r3
+  cmp r0,#0x0
+  beq 0x140c4f4e
+  mov r0,r7
+  pop.w {r4,r5,r6,r7,r8,pc}

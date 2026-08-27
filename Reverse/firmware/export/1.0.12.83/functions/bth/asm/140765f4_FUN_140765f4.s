@@ -1,0 +1,25 @@
+; FUN_140765f4 @ 0x140765f4 size=64
+  push {r4,r5,r6,r7,lr}
+  mov r5,r0
+  ldr r4,[0x1407663c]
+  mov.w r1,#0xffffffff
+  ldr r0,[r4,#0x4]
+  sub sp,#0xc
+  mov r6,lr
+  bl 0x140e5148
+  ldrh.w r2,[r4,#0x264]
+  ldrh.w r7,[r4,#0x266]
+  adds r3,r2,r5
+  cmp r3,r7
+  bgt 0x14076626
+  ldr r0,[r4,#0x4]
+  strh.w r3,[r4,#0x264]
+  add sp,#0xc
+  pop.w {r4,r5,r6,r7,lr}
+  b.w 0x140e52d8
+  mov r3,r5
+  movs r0,#0x44
+  ldr r1,[0x14076640]
+  str r6,[sp,#0x4]
+  str r7,[sp,#0x0]
+  bl 0x1402a64c

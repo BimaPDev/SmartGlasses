@@ -1,0 +1,35 @@
+; FUN_140c464c @ 0x140c464c size=84
+  mvn r3,#0xf0000000
+  cmp r0,r3
+  push {r4,lr}
+  mov r4,r0
+  bcc 0x140c465e
+  ldr r0,[0x140c46a0]
+  bl 0x140cb806
+  cmp r0,r1
+  bls 0x140c466a
+  lsls r3,r1,#0x1
+  cmp r0,r3
+  it cc
+  mov.cc r4,r3
+  adds r0,r4,#0x4
+  lsls r0,r0,#0x2
+  add.w r3,r0,#0x10
+  cmp.w r3,#0x1000
+  bls 0x140c4694
+  cmp r4,r1
+  bls 0x140c4694
+  ubfx r3,r3,#0x0,#0xc
+  ldr r0,[0x140c46a4]
+  rsb.w r3,r3,#0x1000
+  add.w r4,r4,r3, lsr #0x2
+  cmp r4,r0
+  it cs
+  mov.cs r4,r0
+  adds r0,r4,#0x4
+  lsls r0,r0,#0x2
+  bl 0x140bff34
+  movs r2,#0x0
+  str r4,[r0,#0x4]
+  str r2,[r0,#0x8]
+  pop {r4,pc}

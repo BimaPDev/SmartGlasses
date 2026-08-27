@@ -1,0 +1,20 @@
+; FUN_14004f74 @ 0x14004f74 size=42
+  push {r4,lr}
+  mov r4,r0
+  cbz r0,0x14004f80
+  ldrb r3,[r0,#0x0]
+  cmp r3,#0xfa
+  beq 0x14004f8c
+  mov r0,r4
+  movs r1,#0x0
+  bl 0x14003d48
+  movs r0,#0x0
+  pop {r4,pc}
+  ldr r3,[r0,#0x28]
+  ldr r1,[r0,#0xc]
+  subs r1,r1,r3
+  bl 0x14003d48
+  ldr r0,[r4,#0xc]
+  ldr r3,[r4,#0x28]
+  subs r0,r0,r3
+  pop {r4,pc}

@@ -1,0 +1,22 @@
+; FUN_14076bf8 @ 0x14076bf8 size=56
+  push {r4,r5,r6,lr}
+  ldr r4,[0x14076c40]
+  mov.w r1,#0xffffffff
+  ldr r0,[r4,#0x4]
+  sub sp,#0x8
+  mov r6,lr
+  bl 0x140e5148
+  ldrh.w r5,[r4,#0x264]
+  cbz r5,0x14076c22
+  ldr r0,[r4,#0x4]
+  subs r5,#0x1
+  strh.w r5,[r4,#0x264]
+  add sp,#0x8
+  pop.w {r4,r5,r6,lr}
+  b.w 0x140e52d8
+  movs r3,#0x1
+  mov r2,r5
+  ldr r1,[0x14076c44]
+  str r6,[sp,#0x0]
+  movs r0,#0x43
+  bl 0x1402a64c

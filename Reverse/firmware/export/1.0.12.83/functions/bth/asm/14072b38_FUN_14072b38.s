@@ -1,0 +1,29 @@
+; FUN_14072b38 @ 0x14072b38 size=66
+  ldr r1,[r0,#0x0]
+  adds r2,r1,#0x1
+  str r2,[r0,#0x0]
+  ldrsb.w r3,[r1,#0x0]
+  ldrb r1,[r1,#0x1]
+  subs r3,#0x30
+  subs r1,#0x30
+  cmp r1,#0x9
+  uxth r3,r3
+  bhi 0x14072b76
+  push {lr}
+  mov lr,r0
+  adds r2,#0x1
+  str.w r2,[lr,#0x0]
+  ldrb r1,[r2,#0x0]
+  add.w r3,r3,r3, lsl #0x2
+  ldrsb.w r12,[r2,#-0x1]
+  lsls r3,r3,#0x1
+  subs r3,#0x30
+  subs r1,#0x30
+  add r3,r12
+  cmp r1,#0x9
+  uxth r3,r3
+  bls 0x14072b52
+  mov r0,r3
+  pop.w pc
+  mov r0,r3
+  bx lr

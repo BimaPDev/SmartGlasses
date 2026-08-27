@@ -1,0 +1,39 @@
+; FUN_14074ff8 @ 0x14074ff8 size=106
+  push {r4,r5,r6,r7,r8,lr}
+  mov r6,r2
+  ldrb r2,[r0,#0x0]
+  sub sp,#0x8
+  subs r4,r2,#0x1
+  uxtb.w r12,r4
+  cmp.w r12,#0x27
+  ldr r7,[sp,#0x20]
+  bhi 0x14075058
+  mov r5,r1
+  ldr r1,[0x14075064]
+  add.w r4,r4,r4, lsl #0x2
+  lsls r2,r4,#0x3
+  add.w r4,r1,r4, lsl #0x3
+  mov r8,r3
+  ldr r3,[r4,#0x20]
+  cmp r3,r0
+  bne 0x1407504a
+  ldrb r3,[r1,r2]
+  cbnz r3,0x14075030
+  add sp,#0x8
+  pop.w {r4,r5,r6,r7,r8,pc}
+  bl 0x140756c0
+  strd r5,r5,[r4,#0xc]
+  strd r7,r7,[r4,#0x4]
+  strd r6,r8,[r4,#0x18]
+  add sp,#0x8
+  pop.w {r4,r5,r6,r7,r8,lr}
+  b.w 0x140756b4
+  mov r2,r0
+  ldr r1,[0x14075068]
+  ldr r0,[0x1407506c]
+  str.w lr,[sp,#0x0]
+  bl 0x1402b0f8
+  mov r3,lr
+  ldr r1,[0x14075068]
+  ldr r0,[0x14075070]
+  bl 0x1402b0f8

@@ -1,0 +1,25 @@
+; FUN_140c53d8 @ 0x140c53d8 size=56
+  push {r3,r4,r5,lr}
+  ldr r3,[r0,#0x4]
+  mov r5,r0
+  cmp r1,r3
+  bls 0x140c53ec
+  mov r2,r1
+  ldr r0,[0x140c5410]
+  ldr r1,[0x140c5414]
+  bl 0x140cb80c
+  cmp.w r2,#0xffffffff
+  bne 0x140c53fc
+  ldr r3,[r0,#0x0]
+  movs r2,#0x0
+  str r1,[r5,#0x4]
+  strb r2,[r3,r1]
+  pop {r3,r4,r5,pc}
+  cmp r2,#0x0
+  beq 0x140c53fa
+  subs r3,r3,r1
+  cmp r2,r3
+  it cs
+  mov.cs r2,r3
+  pop.w {r3,r4,r5,lr}
+  b.w 0x140d1a40

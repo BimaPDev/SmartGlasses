@@ -1,0 +1,40 @@
+; FUN_1407c698 @ 0x1407c698 size=84
+  ldrb r2,[r0,#0xc]
+  mov r12,r0
+  ldr r3,[r0,#0x0]
+  cbz r2,0x1407c6a6
+  ldrb r2,[r0,#0xa]
+  cmp r2,r1
+  beq 0x1407c6e2
+  ldr r2,[r3,#0x68]
+  mov r0,r2
+  cbz r2,0x1407c6ea
+  ldrb r3,[r0,#0x2]
+  cbz r3,0x1407c6b8
+  ldrb r3,[r0,#0x0]
+  cmp.w r1,r3, lsr #0x2
+  beq 0x1407c6d8
+  ldr r0,[r0,#0x14]
+  cmp r0,#0x0
+  bne 0x1407c6ac
+  ldrb.w r12,[r12,#0xb]
+  ldrb r3,[r2,#0x2]
+  cbz r3,0x1407c6ce
+  ldrb r3,[r2,#0x0]
+  cmp.w r12,r3, lsr #0x2
+  beq 0x1407c6da
+  ldr r2,[r2,#0x14]
+  cmp r2,#0x0
+  bne 0x1407c6c2
+  mov r0,r2
+  bx lr
+  bx lr
+  cmp r12,r1
+  it eq
+  mov.eq r0,r2
+  bx lr
+  ldr r2,[r3,#0x6c]
+  ldrb r1,[r2,#0x0]
+  lsrs r1,r1,#0x2
+  b 0x1407c6a6
+  bx lr

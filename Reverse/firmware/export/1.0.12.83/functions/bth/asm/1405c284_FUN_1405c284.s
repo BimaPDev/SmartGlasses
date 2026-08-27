@@ -1,0 +1,19 @@
+; FUN_1405c284 @ 0x1405c284 size=40
+  ldr r3,[0x1405c2ac]
+  ldr r2,[r3,#0x0]
+  cbz r2,0x1405c292
+  ldrh.w r2,[r2,#0x40]
+  cmp r2,r0
+  beq 0x1405c2a8
+  ldr r3,[r3,#0x4]
+  cbz r3,0x1405c2a4
+  ldrh.w r3,[r3,#0x40]
+  cmp r3,r0
+  ite ne
+  mov.ne r0,#0xff
+  mov.eq r0,#0x1
+  bx lr
+  movs r0,#0xff
+  bx lr
+  movs r0,#0x0
+  bx lr

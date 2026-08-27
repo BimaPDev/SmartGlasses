@@ -1,0 +1,41 @@
+; FUN_14047e70 @ 0x14047e70 size=104
+  push {r4,r5,r6,r7,r8,r9,r10,lr}
+  ldr r4,[0x14047ed8]
+  sub sp,#0x10
+  ldr r3,[0x14047edc]
+  ldr r2,[0x14047ee0]
+  str r4,[sp,#0x0]
+  movs r1,#0x74
+  movs r0,#0x4
+  bl 0x1402a6e8
+  ldr r7,[0x14047ee4]
+  ldr r2,[0x14047ee8]
+  ldrb r3,[r7,#0x0]
+  ldrb r4,[r2,#0x0]
+  cmp r3,r4
+  beq 0x14047ed2
+  ldr r5,[0x14047eec]
+  ldr.w r9,[0x14047ef0]
+  ldr.w r10,[0x14047edc]
+  ldr.w r8,[0x14047ee0]
+  add.w r3,r5,r4, lsl #0x2
+  ldrh.w r12,[r3,#0x2]
+  ldrh.w r6,[r5,r4,lsl #0x2]
+  str r4,[sp,#0x4]
+  adds r4,#0x1
+  uxtb r4,r4
+  movs r1,#0x78
+  mov r3,r10
+  mov r2,r8
+  movs r0,#0x4
+  strd r6,r12,[sp,#0x8]
+  str.w r9,[sp,#0x0]
+  bl 0x1402a6e8
+  cmp r4,#0x5
+  it eq
+  mov.eq r4,#0x0
+  ldrb r1,[r7,#0x0]
+  cmp r1,r4
+  bne 0x14047ea0
+  add sp,#0x10
+  pop.w {r4,r5,r6,r7,r8,r9,r10,pc}

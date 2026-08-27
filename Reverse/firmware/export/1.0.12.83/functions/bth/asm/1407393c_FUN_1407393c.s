@@ -1,0 +1,20 @@
+; FUN_1407393c @ 0x1407393c size=42
+  cbz r0,0x1407394e
+  push {r4,lr}
+  cbz r1,0x1407394a
+  mov r3,r0
+  ldrh r0,[r0,#0x4]
+  cmp r0,r2
+  bcs 0x14073952
+  movs r0,#0x1
+  pop {r4,pc}
+  movs r0,#0x1
+  bx lr
+  movs r4,#0xa5
+  ldrh r0,[r3,#0x6]
+  strb.w r4,[r3,#0x2c]
+  adds r0,#0x30
+  add r0,r3
+  bl 0x140732f8
+  movs r0,#0x0
+  pop {r4,pc}

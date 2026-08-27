@@ -1,0 +1,19 @@
+; FUN_140da8c8 @ 0x140da8c8 size=42
+  push {r0,r1,r2,r3,r4,lr}
+  mov r4,r2
+  mov r2,r3
+  ldr r3,[0x140da8f4]
+  mov r5,r0
+  ldr r3,[r3,#0x0]
+  ldr r0,[r3,#0xc]
+  cbz r4,0x140da8ec
+  ldr r3,[0x140da8f8]
+  str r1,[sp,#0x0]
+  ldr r1,[0x140da8fc]
+  strd r3,r4,[sp,#0x4]
+  mov r3,r5
+  bl 0x140dad74
+  bl 0x140da8b8
+  ldr r3,[0x140da900]
+  mov r4,r3
+  b 0x140da8da

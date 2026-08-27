@@ -1,0 +1,19 @@
+; FUN_140b38c4 @ 0x140b38c4 size=48
+  mov r3,r0
+  cmp r0,#0x6
+  ittte ls
+  ldr.ls r2,[0x14029fb4]
+  mov.ls r0,#0x0
+  strb.ls r3,[r2,#0x0]
+  mov.hi r0,#0x1
+  bx lr
+  push {r3,lr}
+  bl 0x1402d72c
+  movs r0,#0x2
+  bl 0x1402b150
+  movw r1,#0x2710
+  mov r0,r1
+  bl 0x14028cc8
+  pop.w {r3,lr}
+  movs r0,#0x5
+  b.w 0x14029fa4

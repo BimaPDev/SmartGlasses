@@ -1,0 +1,22 @@
+; FUN_140779a8 @ 0x140779a8 size=54
+  push {r4,r5,r6,lr}
+  mov r5,r2
+  mov r6,r1
+  movs r2,#0x0
+  mov r1,r5
+  bl 0x1407772c
+  cbz r0,0x140779da
+  mov r4,r0
+  cbz r6,0x140779be
+  cbnz r5,0x140779c8
+  mov r0,r4
+  pop.w {r4,r5,r6,lr}
+  b.w 0x1407780c
+  mov r2,r5
+  mov r1,r6
+  bl 0x14075468
+  mov r0,r4
+  pop.w {r4,r5,r6,lr}
+  b.w 0x1407780c
+  movs r0,#0x1
+  pop {r4,r5,r6,pc}

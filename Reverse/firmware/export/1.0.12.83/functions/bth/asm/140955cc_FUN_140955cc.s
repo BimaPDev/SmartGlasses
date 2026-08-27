@@ -1,0 +1,21 @@
+; FUN_140955cc @ 0x140955cc size=52
+  push {r4,lr}
+  mov r4,r0
+  ldrsb.w r2,[r4,#0x28]
+  ldrb r3,[r4,#0xb]
+  sub sp,#0x20
+  strd r3,r2,[sp,#0x18]
+  ldrb r2,[r4,#0xa]
+  ldrb r3,[r4,#0x9]
+  movs r0,#0x4a
+  strd r3,r2,[sp,#0x10]
+  ldrb r2,[r4,#0x8]
+  ldrb r3,[r4,#0x7]
+  ldr r1,[0x14095614]
+  strd r3,r2,[sp,#0x8]
+  ldrb r2,[r4,#0x3]
+  ldrb r3,[r4,#0x2]
+  strd r3,r2,[sp,#0x0]
+  ldrb r3,[r4,#0x1]
+  ldrb r2,[r4,#0x0]
+  bl 0x1402a64c

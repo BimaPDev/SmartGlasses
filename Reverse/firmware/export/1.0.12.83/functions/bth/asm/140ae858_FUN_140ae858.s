@@ -1,0 +1,23 @@
+; FUN_140ae858 @ 0x140ae858 size=64
+  push {r4,lr}
+  ands r4,r0,#0x3
+  bne 0x140ae88c
+  mov r1,r0
+  strd r0,r0,[r0,#0x8]
+  add.w r2,r0,#0xc4
+  add.w r12,r0,#0x44
+  str.w r4,[r1,#0x10]!
+  str.w r4,[r1,#0x4]!
+  sub.w r3,r2,#0x80
+  str.w r0,[r3,#0x4]!
+  cmp r3,r2
+  bne 0x140ae87a
+  cmp r1,r12
+  add.w r2,r2,#0x80
+  bne 0x140ae872
+  pop {r4,pc}
+  movs r1,#0x4
+  ldr r0,[0x140ae898]
+  bl 0x140dbf70
+  movs r0,#0x0
+  pop {r4,pc}

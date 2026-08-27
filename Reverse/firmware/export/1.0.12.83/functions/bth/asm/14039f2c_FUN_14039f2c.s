@@ -1,0 +1,26 @@
+; FUN_14039f2c @ 0x14039f2c size=64
+  mrs r3,primask
+  lsls r3,r3,#0x1f
+  bmi 0x14039f5a
+  push {r4,r5,lr}
+  mov r3,pc
+  ldr r1,[0x14039f6c]
+  strd r3,lr,[r1,#0x0]
+  cpsid i
+  movs r2,#0x1
+  mov.w r5,#0xffffffff
+  ldr r4,[0x14039f70]
+  lsl.w r0,r2,r0
+  ldr r3,[r4,#0x0]
+  str r5,[r1,#0x0]
+  bic.w r3,r3,r0
+  str r3,[r4,#0x0]
+  cpsie i
+  pop {r4,r5,pc}
+  movs r2,#0x1
+  ldr r1,[0x14039f70]
+  lsl.w r0,r2,r0
+  ldr r3,[r1,#0x0]
+  bic.w r3,r3,r0
+  str r3,[r1,#0x0]
+  bx lr

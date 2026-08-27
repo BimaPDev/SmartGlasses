@@ -1,0 +1,10 @@
+/* FUN_140419cc @ 0x140419cc */
+
+void FUN_140419cc(void)
+
+{
+  FUN_1402a6e8(4,0x14f,DAT_14041a00,DAT_140419fc,DAT_140419f8,DAT_140419f4);
+  FUN_14041acc(DAT_14041a04);
+  return;
+}
+

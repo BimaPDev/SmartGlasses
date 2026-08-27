@@ -1,0 +1,23 @@
+; FUN_140cb9c4 @ 0x140cb9c4 size=62
+  ldr r3,[0x140cba04]
+  add.w r1,r0,#0x24
+  push {r4,lr}
+  str r3,[r0,#0x0]
+  movs r3,#0x0
+  mov r4,r0
+  mov r2,r1
+  strd r3,r3,[r0,#0x4]
+  strd r3,r3,[r0,#0xc]
+  strd r3,r3,[r0,#0x14]
+  strd r3,r3,[r0,#0x1c]
+  adds r0,#0x64
+  strd r3,r3,[r2,#0x0]
+  adds r2,#0x8
+  cmp r0,r2
+  bne 0x140cb9e6
+  movs r3,#0x8
+  add.w r0,r4,#0x6c
+  strd r3,r1,[r4,#0x64]
+  bl 0x140c0d60
+  mov r0,r4
+  pop {r4,pc}

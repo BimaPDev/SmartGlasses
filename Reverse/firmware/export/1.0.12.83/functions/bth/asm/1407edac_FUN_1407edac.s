@@ -1,0 +1,24 @@
+; FUN_1407edac @ 0x1407edac size=58
+  push {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  mov r5,r3
+  mov r7,r2
+  adds r3,#0x1f
+  add.w r2,r5,#0xe
+  cmp r2,r3
+  it lt
+  mov.lt r2,r3
+  sub sp,#0x14
+  mov r4,r0
+  mov r0,r2
+  mov r8,r1
+  mov r9,lr
+  str r2,[sp,#0xc]
+  ldrb.w r10,[sp,#0x38]
+  ldrb.w r11,[sp,#0x3c]
+  bl 0x14075c1c
+  mov r6,r0
+  ldr r2,[sp,#0xc]
+  movs r0,#0x42
+  mov r3,r6
+  ldr r1,[0x1407eec8]
+  bl 0x1402a64c

@@ -1,0 +1,20 @@
+; FUN_14081900 @ 0x14081900 size=54
+  push {r4,lr}
+  mov.w r2,#0x100
+  mov r4,r0
+  sub sp,#0x8
+  movs r1,#0x0
+  bl 0x140e5658
+  movs r0,#0x1
+  add.w r3,r4,#0x14
+  strd r3,r3,[r4,#0x14]
+  strb.w r0,[r4,#0xec]
+  movw r1,#0xbb8
+  str r0,[sp,#0x0]
+  mov r3,r4
+  ldr r2,[0x14081938]
+  add.w r0,r4,#0x24
+  bl 0x14075168
+  movs r0,#0x0
+  add sp,#0x8
+  pop {r4,pc}

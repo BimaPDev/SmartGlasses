@@ -1,0 +1,10 @@
+/* FUN_140a6978 @ 0x140a6978 */
+
+void FUN_140a6978(void)
+
+{
+  FUN_1402a6e8(4,0x3eb,DAT_140a69a8,DAT_140a69a4,DAT_140a699c,DAT_140a69a0);
+  FUN_140a68c0();
+  return;
+}
+
