@@ -1,0 +1,2865 @@
+{
+  "version": "1.0.12.83",
+  "note": "View/Page names are compiled C++ classes, not raster files. GIF payloads are in this OTA bin. Named icons (weather_*, music_*, …) are LittleFS resource keys — same split as audio/*.aac.",
+  "gifs": [
+    {
+      "file": "gifs/gif_00_22x22_off3730b4.gif",
+      "w": 22,
+      "h": 22,
+      "off": "0x3730b4",
+      "size": 3621,
+      "md5": "5410047eb3dc211b30ca74311f01605b",
+      "frames": 16,
+      "likely": "play triangle (music next/play anim)",
+      "lv_img_dsc": {
+        "desc_off": "0x373078",
+        "cf": 3,
+        "data_ptr": "0x3c34acc0",
+        "data_ptr_file": "0x34acc0"
+      }
+    },
+    {
+      "file": "gifs/gif_01_40x40_off3740f4.gif",
+      "w": 40,
+      "h": 40,
+      "off": "0x3740f4",
+      "size": 14489,
+      "md5": "f02375be6a8144c19ef2f6a8d16a118a",
+      "frames": 51,
+      "likely": "loading / progress ring",
+      "lv_img_dsc": {
+        "desc_off": "0x3740bc",
+        "cf": 3,
+        "data_ptr": "0x3c34bd00",
+        "data_ptr_file": "0x34bd00"
+      }
+    },
+    {
+      "file": "gifs/gif_02_56x56_off37f5f4.gif",
+      "w": 56,
+      "h": 56,
+      "off": "0x37f5f4",
+      "size": 28263,
+      "md5": "a9b6a64b84e06c27e6ddee73bc462964",
+      "frames": 51,
+      "likely": "music note in circle (AirMusic / cover)",
+      "lv_img_dsc": {
+        "desc_off": "0x37f5b4",
+        "cf": 3,
+        "data_ptr": "0x3c357200",
+        "data_ptr_file": "0x357200"
+      }
+    },
+    {
+      "file": "gifs/gif_03_22x22_off387ab4.gif",
+      "w": 22,
+      "h": 22,
+      "off": "0x387ab4",
+      "size": 3620,
+      "md5": "cf59f8860b1943be99954f7bb9d89807",
+      "frames": 16,
+      "likely": "pause bars",
+      "lv_img_dsc": {
+        "desc_off": "0x387a94",
+        "cf": 3,
+        "data_ptr": "0x3c35f6c0",
+        "data_ptr_file": "0x35f6c0"
+      }
+    },
+    {
+      "file": "gifs/gif_04_160x40_off3b6774.gif",
+      "w": 160,
+      "h": 40,
+      "off": "0x3b6774",
+      "size": 25979,
+      "md5": "17403c924e8af698b325c5a072081317",
+      "frames": 43,
+      "likely": "glasses + phone (connect / StarryNet guide)",
+      "lv_img_dsc": {
+        "desc_off": "0x3b673c",
+        "cf": 3,
+        "data_ptr": "0x3c38e380",
+        "data_ptr_file": "0x38e380"
+      }
+    },
+    {
+      "file": "gifs/gif_05_40x40_off3c7ab4.gif",
+      "w": 40,
+      "h": 40,
+      "off": "0x3c7ab4",
+      "size": 21833,
+      "md5": "e9d6f1535d9737d7d3d4b5c5446ced5d",
+      "frames": 67,
+      "likely": "target / selected-state ring (starts blank)",
+      "lv_img_dsc": {
+        "desc_off": "0x3c7a74",
+        "cf": 3,
+        "data_ptr": "0x3c39f6c0",
+        "data_ptr_file": "0x39f6c0"
+      }
+    },
+    {
+      "file": "gifs/gif_06_24x24_off3d8e74.gif",
+      "w": 24,
+      "h": 24,
+      "off": "0x3d8e74",
+      "size": 13425,
+      "md5": "be2d172d3ca3c0e8ed5b8800faef222d",
+      "frames": 130,
+      "likely": "diamond reticle / loading_24-class spinner",
+      "lv_img_dsc": {
+        "desc_off": "0x3d8e34",
+        "cf": 3,
+        "data_ptr": "0x3c3b0a80",
+        "data_ptr_file": "0x3b0a80"
+      }
+    },
+    {
+      "file": "gifs/gif_07_178x16_off3e05f4.gif",
+      "w": 178,
+      "h": 16,
+      "off": "0x3e05f4",
+      "size": 13647,
+      "md5": "43824c768bc1196b57e405499b563d5d",
+      "frames": 51,
+      "likely": "voice-assistant waveform (wide)",
+      "lv_img_dsc": {
+        "desc_off": "0x3e05b4",
+        "cf": 3,
+        "data_ptr": "0x3c3b8200",
+        "data_ptr_file": "0x3b8200"
+      }
+    },
+    {
+      "file": "gifs/gif_08_178x16_off3e3e74.gif",
+      "w": 178,
+      "h": 16,
+      "off": "0x3e3e74",
+      "size": 11847,
+      "md5": "d0a0f252b1929c19a3b7a75e729f89e6",
+      "frames": 40,
+      "likely": "voice-assistant waveform (wide, alt)",
+      "lv_img_dsc": {
+        "desc_off": "0x3e3e3c",
+        "cf": 3,
+        "data_ptr": "0x3c3bba80",
+        "data_ptr_file": "0x3bba80"
+      }
+    },
+    {
+      "file": "gifs/gif_09_13x15_off3eb774.gif",
+      "w": 13,
+      "h": 15,
+      "off": "0x3eb774",
+      "size": 1593,
+      "md5": "4cea42e6fbc2fa6281b5737ad9f532f0",
+      "frames": 31,
+      "likely": "ellipsis / page dots (WeChat typing or pager)",
+      "lv_img_dsc": {
+        "desc_off": "0x3eb734",
+        "cf": 3,
+        "data_ptr": "0x3c3c3380",
+        "data_ptr_file": "0x3c3380"
+      }
+    },
+    {
+      "file": "gifs/gif_10_38x20_off3eeaf4.gif",
+      "w": 38,
+      "h": 20,
+      "off": "0x3eeaf4",
+      "size": 8243,
+      "md5": "b93f416c8251b33018092162828e8583",
+      "frames": 45,
+      "likely": "voice-assistant waveform (short)",
+      "lv_img_dsc": {
+        "desc_off": "0x3eeab4",
+        "cf": 3,
+        "data_ptr": "0x3c3c6700",
+        "data_ptr_file": "0x3c6700"
+      }
+    },
+    {
+      "file": "gifs/gif_11_38x20_off3f6234.gif",
+      "w": 38,
+      "h": 20,
+      "off": "0x3f6234",
+      "size": 4363,
+      "md5": "6513132881e4fb712437a03e5a9172f4",
+      "frames": 49,
+      "likely": "voice-assistant waveform (short, alt)",
+      "lv_img_dsc": {
+        "desc_off": "0x3f61f4",
+        "cf": 3,
+        "data_ptr": "0x3c3cde40",
+        "data_ptr_file": "0x3cde40"
+      }
+    }
+  ],
+  "icon_resources": [
+    {
+      "off": "0x3ffe68",
+      "name": "next_playing_normal"
+    },
+    {
+      "off": "0x3ffe7c",
+      "name": "playing_normal"
+    },
+    {
+      "off": "0x3ffe8c",
+      "name": "previous_normal"
+    },
+    {
+      "off": "0x3ffe9c",
+      "name": "puase_normal"
+    },
+    {
+      "off": "0x3ffeac",
+      "name": "next_play_anim"
+    },
+    {
+      "off": "0x3ffebc",
+      "name": "previous_anim"
+    },
+    {
+      "off": "0x3ffecc",
+      "name": "music_play_to_pause_v3"
+    },
+    {
+      "off": "0x3ffee4",
+      "name": "music_puase_to_play_v3"
+    },
+    {
+      "off": "0x3ffefc",
+      "name": "music_pause_v3"
+    },
+    {
+      "off": "0x3fff0c",
+      "name": "music_play_v3"
+    },
+    {
+      "off": "0x3fff1c",
+      "name": "music_cover_v3"
+    },
+    {
+      "off": "0x3fff2c",
+      "name": "music_exit_icon"
+    },
+    {
+      "off": "0x3fff3c",
+      "name": "music_cover_pause_v3"
+    },
+    {
+      "off": "0x3fff54",
+      "name": "music_pause_gray_v3"
+    },
+    {
+      "off": "0x3fff68",
+      "name": "music_pause_normal_v3"
+    },
+    {
+      "off": "0x3fff80",
+      "name": "play_list_bg"
+    },
+    {
+      "off": "0x3fff90",
+      "name": "play_list_bg_focus"
+    },
+    {
+      "off": "0x3fffa4",
+      "name": "audio_play_ctrl_cover"
+    },
+    {
+      "off": "0x3fffbc",
+      "name": "audio_play_center_play_icon"
+    },
+    {
+      "off": "0x3fffd8",
+      "name": "play_center_ai_music_icon"
+    },
+    {
+      "off": "0x3ffff4",
+      "name": "intlmusic_cover"
+    },
+    {
+      "off": "0x400004",
+      "name": "starrynet_air_pro_click"
+    },
+    {
+      "off": "0x40001c",
+      "name": "launcher_dock_weather"
+    },
+    {
+      "off": "0x400034",
+      "name": "weather_cloudy_day_24_24"
+    },
+    {
+      "off": "0x400050",
+      "name": "weather_cloudy_night_24_24"
+    },
+    {
+      "off": "0x40006c",
+      "name": "weather_duststorm_24_24"
+    },
+    {
+      "off": "0x400084",
+      "name": "weather_foggy_24_24"
+    },
+    {
+      "off": "0x400098",
+      "name": "weather_hail_24_24"
+    },
+    {
+      "off": "0x4000ac",
+      "name": "weather_haze_24_24"
+    },
+    {
+      "off": "0x4000c0",
+      "name": "weather_heavy_rain_24_24"
+    },
+    {
+      "off": "0x4000dc",
+      "name": "weather_heavy_snow_24_24"
+    },
+    {
+      "off": "0x4000f8",
+      "name": "weather_light_rain_24_24"
+    },
+    {
+      "off": "0x400114",
+      "name": "weather_light_snow_24_24"
+    },
+    {
+      "off": "0x400130",
+      "name": "weather_moderate_rain_24_24"
+    },
+    {
+      "off": "0x40014c",
+      "name": "weather_moderate_snow_24_24"
+    },
+    {
+      "off": "0x400168",
+      "name": "weather_overcast_24_24"
+    },
+    {
+      "off": "0x400180",
+      "name": "weather_sand_24_24"
+    },
+    {
+      "off": "0x400194",
+      "name": "weather_shower_24_24"
+    },
+    {
+      "off": "0x4001ac",
+      "name": "weather_sleet_24_24"
+    },
+    {
+      "off": "0x4001c0",
+      "name": "weather_sunny_day_24_24"
+    },
+    {
+      "off": "0x4001d8",
+      "name": "weather_sunny_night_24_24"
+    },
+    {
+      "off": "0x4001f4",
+      "name": "weather_sunset_24_24"
+    },
+    {
+      "off": "0x40020c",
+      "name": "weather_thunder_24_24"
+    },
+    {
+      "off": "0x400224",
+      "name": "weather_thundershower_with_hail_24_24"
+    },
+    {
+      "off": "0x40024c",
+      "name": "weather_typhoon_24_24"
+    },
+    {
+      "off": "0x400264",
+      "name": "weather_unknown_24_24"
+    },
+    {
+      "off": "0x40027c",
+      "name": "navigation_24_24"
+    },
+    {
+      "off": "0x400290",
+      "name": "navigation_icon_70"
+    },
+    {
+      "off": "0x4002a4",
+      "name": "navi_img_compass"
+    },
+    {
+      "off": "0x4002b8",
+      "name": "navi_icon_arrow_walk"
+    },
+    {
+      "off": "0x4002d0",
+      "name": "landfront_00"
+    },
+    {
+      "off": "0x4002e0",
+      "name": "landfront_11"
+    },
+    {
+      "off": "0x4002f0",
+      "name": "landfront_22"
+    },
+    {
+      "off": "0x400300",
+      "name": "landfront_33"
+    },
+    {
+      "off": "0x400310",
+      "name": "landfront_44"
+    },
+    {
+      "off": "0x400320",
+      "name": "landfront_55"
+    },
+    {
+      "off": "0x400330",
+      "name": "landfront_66"
+    },
+    {
+      "off": "0x400340",
+      "name": "landfront_77"
+    },
+    {
+      "off": "0x400350",
+      "name": "landfront_88"
+    },
+    {
+      "off": "0x400360",
+      "name": "landfront_99"
+    },
+    {
+      "off": "0x400370",
+      "name": "landfront_aa"
+    },
+    {
+      "off": "0x400380",
+      "name": "landfront_bb"
+    },
+    {
+      "off": "0x400390",
+      "name": "landfront_cc"
+    },
+    {
+      "off": "0x4003a0",
+      "name": "landfront_dd"
+    },
+    {
+      "off": "0x4003b0",
+      "name": "landfront_ee"
+    },
+    {
+      "off": "0x4003c0",
+      "name": "landfront_ff"
+    },
+    {
+      "off": "0x4003d0",
+      "name": "landfront_g3"
+    },
+    {
+      "off": "0x4003e0",
+      "name": "landfront_g5"
+    },
+    {
+      "off": "0x4003f0",
+      "name": "landfront_gg"
+    },
+    {
+      "off": "0x400400",
+      "name": "landfront_h1"
+    },
+    {
+      "off": "0x400410",
+      "name": "landfront_h3"
+    },
+    {
+      "off": "0x400420",
+      "name": "landfront_h5"
+    },
+    {
+      "off": "0x400430",
+      "name": "landfront_hh"
+    },
+    {
+      "off": "0x400440",
+      "name": "landfront_ii"
+    },
+    {
+      "off": "0x400450",
+      "name": "landfront_jj"
+    },
+    {
+      "off": "0x400460",
+      "name": "smartlife_wechat_send_success_icon"
+    },
+    {
+      "off": "0x400484",
+      "name": "smartlife_wechat_send_fail_icon"
+    },
+    {
+      "off": "0x4004a4",
+      "name": "smartlife_wechat_ellipsis_gif"
+    },
+    {
+      "off": "0x4004c4",
+      "name": "smartlife_wechat_group"
+    },
+    {
+      "off": "0x4004dc",
+      "name": "assistant_help_domain_setting_icon"
+    },
+    {
+      "off": "0x400500",
+      "name": "assistant_navi_domain_select_icon_big"
+    },
+    {
+      "off": "0x400528",
+      "name": "answer_dots"
+    },
+    {
+      "off": "0x400534",
+      "name": "cancel_dots"
+    },
+    {
+      "off": "0x400540",
+      "name": "fade_rect"
+    },
+    {
+      "off": "0x40054c",
+      "name": "phone_bg"
+    },
+    {
+      "off": "0x400558",
+      "name": "wechat_video_icon"
+    },
+    {
+      "off": "0x40056c",
+      "name": "battery_100"
+    },
+    {
+      "off": "0x400578",
+      "name": "indicator"
+    },
+    {
+      "off": "0x400584",
+      "name": "loading_24"
+    },
+    {
+      "off": "0x400590",
+      "name": "ca_success"
+    },
+    {
+      "off": "0x40059c",
+      "name": "charging_box"
+    },
+    {
+      "off": "0x4005ac",
+      "name": "dot55"
+    },
+    {
+      "off": "0x4005b4",
+      "name": "disconnect_img"
+    },
+    {
+      "off": "0x4005c4",
+      "name": "unbound_img"
+    },
+    {
+      "off": "0x4005d0",
+      "name": "unbounding_icon"
+    },
+    {
+      "off": "0x4005e0",
+      "name": "ring_connect_icon"
+    },
+    {
+      "off": "0x4005f4",
+      "name": "setting_switch_on"
+    },
+    {
+      "off": "0x400608",
+      "name": "setting_switch_off"
+    }
+  ],
+  "fonts_named": [
+    {
+      "off": "0x3ffdf4",
+      "name": "FONT_CN_32_NORMAL"
+    },
+    {
+      "off": "0x3ffe08",
+      "name": "FONT_EN_32_NORMAL"
+    },
+    {
+      "off": "0x3ffe1c",
+      "name": "FONT_EN_36_BOLD"
+    },
+    {
+      "off": "0x3ffe2c",
+      "name": "FONT_CN_16_NORMAL"
+    },
+    {
+      "off": "0x3ffe40",
+      "name": "FONT_CN_20_NORMAL"
+    },
+    {
+      "off": "0x3ffe54",
+      "name": "FONT_CN_24_NORMAL"
+    }
+  ],
+  "ui_names": {
+    "views": [
+      "AboutView",
+      "BrightView",
+      "CommView",
+      "FontView",
+      "IdleView",
+      "LanguageView",
+      "LaunchFailedView",
+      "LaunchView",
+      "LauncherView",
+      "ModeView",
+      "Model",
+      "SettingView",
+      "StateView",
+      "TS IdleView",
+      "TS LaunchFailedView",
+      "TS LaunchView",
+      "TS StateView",
+      "TS TransView",
+      "TransView",
+      "UnbindDeviceView",
+      "VolView",
+      "WearView",
+      "animView",
+      "attachView",
+      "buttonView",
+      "createAudioPlayCtlrView",
+      "createConnectingView",
+      "createFlexRootView",
+      "createGlassRefreshConnView",
+      "createGuiderTileView",
+      "createIncomingView",
+      "createLoadingView",
+      "createOnCallView",
+      "createPlayListView",
+      "createPowerOffAndRebootView",
+      "createView",
+      "deleAudioPlayCtrlView",
+      "delePowerOffAndRebootView",
+      "displayEmptyNaviView",
+      "generateView",
+      "handlePowerOffView",
+      "hideButtonView",
+      "hideOrShowConnectGuiderView",
+      "hideOrShowConnectingView",
+      "hideOrShowRefreshConnView",
+      "hidePlayListView",
+      "hidePlayMusicMainView",
+      "hidePlayView",
+      "initView",
+      "onCreateView",
+      "rebuildView",
+      "recoverOnCallView",
+      "recoverThreewayIncomingCallView",
+      "recoveryPlayView",
+      "refreshOperateView",
+      "refreshPlayListCountView",
+      "refreshPlayListView",
+      "releaseView",
+      "setNaviPipView",
+      "showButtonView",
+      "showDialView",
+      "showFailView",
+      "showIncomingView",
+      "showLoadingView",
+      "showOnCallView",
+      "showSuccessView",
+      "showThreeWayView",
+      "subModel",
+      "switchView",
+      "transToThreeWayHangupOnCallView",
+      "transToThreeWayOnCallView",
+      "AirMusicView",
+      "ButtonView",
+      "PhonePage",
+      "PowerOffAndRebootView",
+      "TodoDomainView"
+    ],
+    "pages": [
+      "DialYellowPage",
+      "MMIPage",
+      "PhonePage",
+      "StartPage",
+      "SwitchPage",
+      "changePage",
+      "click_VoiceAssistantPage",
+      "currentPage",
+      "handleSwitchPage",
+      "onNextPage",
+      "onPreviousPage",
+      "previousPage",
+      "status_VoiceAssistantPage",
+      "targetPage",
+      "toPage",
+      "totalPage",
+      "turnPage"
+    ],
+    "methods": [],
+    "transitions": [
+      {
+        "from": "ConnectedViewV1",
+        "to": "GuideSearchView",
+        "raw": "ConnectedViewV1 -> GuideSearchView"
+      },
+      {
+        "from": "ConnectedViewV1",
+        "to": "OperationGuideView",
+        "raw": "ConnectedViewV1 -> OperationGuideView"
+      },
+      {
+        "from": "ConnectedViewV1",
+        "to": "RemoveView",
+        "raw": "ConnectedViewV1 -> RemoveView"
+      },
+      {
+        "from": "ConnectedViewV1",
+        "to": "SingleUnboundView",
+        "raw": "ConnectedViewV1 -> SingleUnboundView"
+      },
+      {
+        "from": "ConnectedViewV1",
+        "to": "VersionInfoView",
+        "raw": "ConnectedViewV1 -> VersionInfoView"
+      },
+      {
+        "from": "DeviceListView",
+        "to": "MoreView",
+        "raw": "DeviceListView -> MoreView"
+      },
+      {
+        "from": "GuideSearchView",
+        "to": "SearchFailedView",
+        "raw": "GuideSearchView -> SearchFailedView"
+      },
+      {
+        "from": "RingListView",
+        "to": "ConnectingView",
+        "raw": "RingListView -> ConnectingView"
+      },
+      {
+        "from": "SearchFailedView",
+        "to": "GuideSearchView",
+        "raw": "SearchFailedView -> GuideSearchView"
+      },
+      {
+        "from": "SingleUnboundView",
+        "to": "GuideSearchView",
+        "raw": "SingleUnboundView -> GuideSearchView"
+      },
+      {
+        "from": "UnbindDeviceView",
+        "to": "DeviceListView",
+        "raw": "UnbindDeviceView -> DeviceListView"
+      },
+      {
+        "from": "UnbindDeviceView",
+        "to": "DeviceListView",
+        "raw": "double click, UnbindDeviceView -> DeviceListView"
+      },
+      {
+        "from": "OperationGuideView",
+        "to": "GuideSearchView",
+        "raw": "double clicked, OperationGuideView -> GuideSearchView"
+      },
+      {
+        "from": "RemoveView",
+        "to": "GuideSearchView",
+        "raw": "double clicked, RemoveView -> GuideSearchView"
+      },
+      {
+        "from": "VersionInfoDetailView",
+        "to": "versionInfoView",
+        "raw": "double clicked, VersionInfoDetailView -> versionInfoView"
+      },
+      {
+        "from": "VersionInfoView",
+        "to": "GuideSearchView",
+        "raw": "double clicked, VersionInfoView -> GuideSearchView"
+      },
+      {
+        "from": "UnbindDeviceView",
+        "to": "MoreView",
+        "raw": "long press, UnbindDeviceView -> MoreView"
+      },
+      {
+        "from": "RemoveView",
+        "to": "GuideSearchView",
+        "raw": "ring is null, RemoveView -> GuideSearchView"
+      },
+      {
+        "from": "OperationGuideView",
+        "to": "SingleUnboundView",
+        "raw": "ring is single unbound, OperationGuideView -> SingleUnboundView"
+      },
+      {
+        "from": "VersionInfoView",
+        "to": "SingleUnboundView",
+        "raw": "ring is single unbound, VersionInfoView -> SingleUnboundView"
+      },
+      {
+        "from": "OperationGuideView",
+        "to": "GuideSearchView",
+        "raw": "ring is unbound, OperationGuideView -> GuideSearchView"
+      },
+      {
+        "from": "RemoveView",
+        "to": "GuideSearchView",
+        "raw": "ring is unbound, RemoveView -> GuideSearchView"
+      },
+      {
+        "from": "UnbindDeviceView",
+        "to": "DeviceListView",
+        "raw": "ring is unbound, UnbindDeviceView -> DeviceListView"
+      },
+      {
+        "from": "VersionInfoDetailView",
+        "to": "GuideSearchView",
+        "raw": "ring is unbound, VersionInfoDetailView -> GuideSearchView"
+      },
+      {
+        "from": "VersionInfoView",
+        "to": "GuideSearchView",
+        "raw": "ring is unbound, VersionInfoView -> GuideSearchView"
+      },
+      {
+        "from": "ConnectingView",
+        "to": "GuideSearchView",
+        "raw": "ring unbound, ConnectingView -> GuideSearchView"
+      },
+      {
+        "from": "GuideSearchView",
+        "to": "RingListView",
+        "raw": "scan found rings, GuideSearchView -> RingListView"
+      }
+    ],
+    "logs": [
+      "ARNavi-AddressView",
+      "ARNavi-EndView",
+      "ARNavi-NaviModel",
+      "ARNavi-NaviView",
+      "Pages/MMIPage",
+      "[Launcher]DockviewV2::createFlexRootView",
+      "[MUSIC_LOG][Info] createLoadingView",
+      "[MUSIC_LOG][Info] recoveryPlayView",
+      "[PhonePage][Info] PhoneView::showDialView",
+      "[PhonePage][Info] PhoneView::showIncomingView",
+      "[PhonePage][Info] showIncomingView",
+      "[STARRYNET_LOG][Error] createPowerOffAndRebootView",
+      "[STARRYNET_LOG][Error] delePowwerOffAndRebootView"
+    ]
+  },
+  "modules": {
+    "AirMusic": [
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/AirMusic.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/AirMusicService.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/adapter/AudioAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/adapter/MusicHandler.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/adapter/StarryNetAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/controller/AirMusicController.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/playcenter/AudioPlayCtrlCenterView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/qqmusic/QqMusicMainView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/qqmusic/QqMusicTpEventAnim.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/ui/AirMusicView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/ui/TranslateAnim.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/util/AirMusicLanguageUtil.cpp"
+    ],
+    "Assistant": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/AssistantAppDelegate.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/AssistantService.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/ContinuousDialogueManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/MultipleWheelManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/XJXRAudioAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/XJXRDisplayAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/Hint.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/VoiceAvatarView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/StateContext.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/AppleDeviceMuteState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/IdleState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/ListeningState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/MuteState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/NoNetworkListeningState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/OfflineState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/ProcessingState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/RefusingState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/SilenceRecordingState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/SpeakingState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/WaitingState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/state/impl/WakeupState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/card/CardView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/card/HorizontalListView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/card/ListView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/stks/STKSService.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/Domain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/DomainRuntime.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/NoDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/SystemSetting/SettingUtils.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/SystemSetting/SystemSettingDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/alarm/AlarmDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/alarm/AlarmModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/application/ApplicationDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/fallback/FallbackDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/freechat/FreeChatDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/general/GeneralDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/global/GlobalDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/global/NluErrorDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/global/VspErrorDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/gpt/GPTDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/gpt/GPTDomainControllerV2.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/gpt/GPTDomainViewV2.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/helping/HelpingDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/innerstk/InnerStkDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/navigation/NaviDomainView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/navigation/NaviManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/navigation/NavigationDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/navigation/bean/NavigationPayload.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/schedule/ScheduleDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/schedule/ScheduleDomainView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/stks/STKSDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/todo/TodoDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/todo/TodoDomainView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/translate/TranslateDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/weather/MultipleTimeWeatherView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/weather/WeatherDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/wechat/WechatContactListView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/wechat/WechatDomain.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/wechat/WechatDomainModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/wechat/WechatMsgView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/message/MessageBus.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/protocol/utils/cJSONHelper.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/protocol2/bean/VuiModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/utils/LvObjDeleter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Assistant/utils/StringUtils.cpp"
+    ],
+    "Launcher": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/Launcher.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/LauncherProvider.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/LauncherService.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/message/CommonMessageSender.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/message/LauncherMessageProxy.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/MessageModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/StatusModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/TimeModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/TipsModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/WeatherModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/util/DeviceInfo.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/view/DockviewV2.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/view/LauncherViewController.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/view/StandByView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/widget/StandByWidget.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Launcher/widget/StandByWidgetManager.cpp"
+    ],
+    "MMI": [
+      "../../thirdparty/star_air_lvgl/app/Pages/MMI/MMIPage.cpp"
+    ],
+    "Navigation": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/Navigation.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/NavigationOperator.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/NavigationService.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/model/NaviBrightnessManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/model/NaviModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/model/StarryNetManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/service/NaviMessageService.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/util/NaviHotWordManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/util/NaviJSONHelper.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/util/NaviUtils.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/util/NaviZenModeManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/util/StringUtils.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/AddressView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/EndView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/NaviPipView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/NaviView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/NavigatingScene.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/SplashView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/widget/DriveWayBuilder.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/widget/NaviDriveSpeedView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/widget/NaviMileageAndTimeWidget.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Navigation/widget/NaviNextRoadInfoView.cpp"
+    ],
+    "Ota": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Ota/Ota.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ota/OtaModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ota/OtaMsgModel.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ota/OtaView.cpp"
+    ],
+    "Phone": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/PhonePage.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/adapter/AssistantAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/adapter/PhoneProxyConsumer.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/adapter/audio_adapter.c",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/adapter/powerkey_adpater.c",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/controller/ContactController.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/controller/PhoneControllerTool.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/controller/PhoneSession.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/controller/Session.h",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/controller/WechatSysController.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/controller/phone_controller.c",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/phone_api.c",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/phone_eshell.c",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/utils/JsonToObj.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/CommView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/Item.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/PhoneView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/SIMPanelView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/WechatSysView.cpp"
+    ],
+    "Prompt": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Prompt/Prompt.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Prompt/controller/PromptManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Prompt/ui/PromptView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Prompt/widget/lv_tipview.c"
+    ],
+    "Ring": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/Ring.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/controller/ViewAnimator.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/controller/ViewController.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/service/RingOtaManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/service/RingService.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/ConnectedViewV1.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/ConnectingView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/GuideSearchView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/OperationGuideView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/RemoveView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/RingListView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/SearchFailedView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/SingleUnboundView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/VersionInfoDetailView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/VersionInfoView.cpp"
+    ],
+    "Setting": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/Setting.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/controller/PhoneSetMgr.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/controller/ViewController.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/AboutView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/BrightView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/DeviceListView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/FontView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/LanguageView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/ModeView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/MoreView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/ScreenOffView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/SettingView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/StateView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/UnbindDeviceView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/VolView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/WearView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Setting/util/Animation.cpp"
+    ],
+    "SmartLife": [
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/adapter/SmartLifeAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/manager/AncsManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/manager/MissedCallManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/manager/NormalManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/manager/SceneManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/manager/SmartLifePresenter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/manager/WechatManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/msgcontroller/extra_msg_broadcasting_opt.c",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/msgcontroller/extra_msg_control.c",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/view/BaseView.h",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/view/FlightView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/view/TaxiView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/view/WechatResponseView.cpp"
+    ],
+    "Speech": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Speech/ai_speech_asr_api.c",
+      "../../thirdparty/star_air_lvgl/app/Pages/Speech/ai_speech_tts_api.c"
+    ],
+    "StarryNetApp": [
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/StarryNetApp.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/StarryNetAppService.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/adapter/BatteryAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/adapter/StarryNetAppAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/adapter/TtsAudioAdapter.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/toplayer/PowerOffAndRebootView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/util/BtNameCalUtil.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/view/ConnectGuideViewV2.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/view/StarryNetViewHandler.cpp"
+    ],
+    "Translation": [
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/Translation.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/controller/TransAudioState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/controller/TransConfig.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/controller/TransContext.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/controller/TransManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/controller/TransProxy.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/controller/TransState.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/glass/GAssistantOpenMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/glass/GClickMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/glass/GMuteDialogDismissMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/glass/GPhoneCallingMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/glass/GPhoneIncomingMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/glass/GWechatReplyExitMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/glass/GWechatReplyOpenMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PAppStateMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PLanguageMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PMuteDialogDismissMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PProximalResultMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PRecordStateMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PResultMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PRunMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PStopMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PSubtitleTypeMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PTransSaveSuccessMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/message/phone/PTransStateMsg.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/../controller/../ui/TransView.hpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/../controller/../ui/TransViewManager.hpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/ButtonView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/PrivacyView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/TransView.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/TransViewManager.cpp",
+      "../../thirdparty/star_air_lvgl/app/Pages/Translation/widget/lv_textview.c"
+    ]
+  },
+  "views": [
+    {
+      "name": "AudioPlayCtrlCenterView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/playcenter/AudioPlayCtrlCenterView.cpp",
+      "module": "AirMusic",
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "QqMusicMainView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/qqmusic/QqMusicMainView.cpp",
+      "module": "AirMusic",
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "AirMusicView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/AirMusic/ui/AirMusicView.cpp",
+      "module": "AirMusic",
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "VoiceAvatarView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/avatar/VoiceAvatarView.cpp",
+      "module": "Assistant",
+      "icons": [
+        "assistant_help_domain_setting_icon",
+        "assistant_navi_domain_select_icon_big",
+        "answer_dots",
+        "fade_rect"
+      ]
+    },
+    {
+      "name": "CardView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/card/CardView.cpp",
+      "module": "Assistant",
+      "icons": []
+    },
+    {
+      "name": "HorizontalListView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/card/HorizontalListView.cpp",
+      "module": "Assistant",
+      "icons": []
+    },
+    {
+      "name": "ListView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/app/card/ListView.cpp",
+      "module": "Assistant",
+      "icons": []
+    },
+    {
+      "name": "AlarmModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/alarm/AlarmModel.cpp",
+      "module": "Assistant",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "NaviDomainView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/navigation/NaviDomainView.cpp",
+      "module": "Assistant",
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "ScheduleDomainView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/schedule/ScheduleDomainView.cpp",
+      "module": "Assistant",
+      "icons": []
+    },
+    {
+      "name": "TodoDomainView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/todo/TodoDomainView.cpp",
+      "module": "Assistant",
+      "icons": []
+    },
+    {
+      "name": "MultipleTimeWeatherView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/weather/MultipleTimeWeatherView.cpp",
+      "module": "Assistant",
+      "icons": [
+        "launcher_dock_weather",
+        "weather_cloudy_day_24_24",
+        "weather_cloudy_night_24_24",
+        "weather_duststorm_24_24",
+        "weather_foggy_24_24",
+        "weather_hail_24_24",
+        "weather_haze_24_24",
+        "weather_heavy_rain_24_24",
+        "weather_heavy_snow_24_24",
+        "weather_light_rain_24_24",
+        "weather_light_snow_24_24",
+        "weather_moderate_rain_24_24",
+        "weather_moderate_snow_24_24",
+        "weather_overcast_24_24",
+        "weather_sand_24_24",
+        "weather_shower_24_24",
+        "weather_sleet_24_24",
+        "weather_sunny_day_24_24",
+        "weather_sunny_night_24_24",
+        "weather_sunset_24_24",
+        "weather_thunder_24_24",
+        "weather_thundershower_with_hail_24_24",
+        "weather_typhoon_24_24",
+        "weather_unknown_24_24"
+      ]
+    },
+    {
+      "name": "WechatContactListView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/wechat/WechatContactListView.cpp",
+      "module": "Assistant",
+      "icons": [
+        "smartlife_wechat_send_success_icon",
+        "smartlife_wechat_send_fail_icon",
+        "smartlife_wechat_ellipsis_gif",
+        "smartlife_wechat_group",
+        "wechat_video_icon"
+      ]
+    },
+    {
+      "name": "WechatDomainModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/wechat/WechatDomainModel.cpp",
+      "module": "Assistant",
+      "icons": [
+        "smartlife_wechat_send_success_icon",
+        "smartlife_wechat_send_fail_icon",
+        "smartlife_wechat_ellipsis_gif",
+        "smartlife_wechat_group",
+        "wechat_video_icon",
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "WechatMsgView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/domain/wechat/WechatMsgView.cpp",
+      "module": "Assistant",
+      "icons": [
+        "smartlife_wechat_send_success_icon",
+        "smartlife_wechat_send_fail_icon",
+        "smartlife_wechat_ellipsis_gif",
+        "smartlife_wechat_group",
+        "wechat_video_icon"
+      ]
+    },
+    {
+      "name": "VuiModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Assistant/protocol2/bean/VuiModel.cpp",
+      "module": "Assistant",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "MessageModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/MessageModel.cpp",
+      "module": "Launcher",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "StatusModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/StatusModel.cpp",
+      "module": "Launcher",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "TimeModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/TimeModel.cpp",
+      "module": "Launcher",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "TipsModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/TipsModel.cpp",
+      "module": "Launcher",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "WeatherModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/WeatherModel.cpp",
+      "module": "Launcher",
+      "icons": [
+        "launcher_dock_weather",
+        "weather_cloudy_day_24_24",
+        "weather_cloudy_night_24_24",
+        "weather_duststorm_24_24",
+        "weather_foggy_24_24",
+        "weather_hail_24_24",
+        "weather_haze_24_24",
+        "weather_heavy_rain_24_24",
+        "weather_heavy_snow_24_24",
+        "weather_light_rain_24_24",
+        "weather_light_snow_24_24",
+        "weather_moderate_rain_24_24",
+        "weather_moderate_snow_24_24",
+        "weather_overcast_24_24",
+        "weather_sand_24_24",
+        "weather_shower_24_24",
+        "weather_sleet_24_24",
+        "weather_sunny_day_24_24",
+        "weather_sunny_night_24_24",
+        "weather_sunset_24_24",
+        "weather_thunder_24_24",
+        "weather_thundershower_with_hail_24_24",
+        "weather_typhoon_24_24",
+        "weather_unknown_24_24",
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "StandByView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/view/StandByView.cpp",
+      "module": "Launcher",
+      "icons": []
+    },
+    {
+      "name": "MMIPage",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/MMI/MMIPage.cpp",
+      "module": "MMI",
+      "icons": []
+    },
+    {
+      "name": "NaviModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/model/NaviModel.cpp",
+      "module": "Navigation",
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big",
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "AddressView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/AddressView.cpp",
+      "module": "Navigation",
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "EndView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/EndView.cpp",
+      "module": "Navigation",
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "NaviPipView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/NaviPipView.cpp",
+      "module": "Navigation",
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "NaviView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/NaviView.cpp",
+      "module": "Navigation",
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "SplashView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/SplashView.cpp",
+      "module": "Navigation",
+      "icons": []
+    },
+    {
+      "name": "NaviDriveSpeedView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/widget/NaviDriveSpeedView.cpp",
+      "module": "Navigation",
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "NaviNextRoadInfoView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/widget/NaviNextRoadInfoView.cpp",
+      "module": "Navigation",
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "OtaModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ota/OtaModel.cpp",
+      "module": "Ota",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "OtaMsgModel",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ota/OtaMsgModel.cpp",
+      "module": "Ota",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "OtaView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ota/OtaView.cpp",
+      "module": "Ota",
+      "icons": []
+    },
+    {
+      "name": "PhonePage",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Phone/PhonePage.cpp",
+      "module": "Phone",
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "CommView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/CommView.cpp",
+      "module": "Phone",
+      "icons": []
+    },
+    {
+      "name": "PhoneView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/PhoneView.cpp",
+      "module": "Phone",
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "SIMPanelView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/SIMPanelView.cpp",
+      "module": "Phone",
+      "icons": []
+    },
+    {
+      "name": "WechatSysView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Phone/view/WechatSysView.cpp",
+      "module": "Phone",
+      "icons": [
+        "smartlife_wechat_send_success_icon",
+        "smartlife_wechat_send_fail_icon",
+        "smartlife_wechat_ellipsis_gif",
+        "smartlife_wechat_group",
+        "wechat_video_icon"
+      ]
+    },
+    {
+      "name": "PromptView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Prompt/ui/PromptView.cpp",
+      "module": "Prompt",
+      "icons": []
+    },
+    {
+      "name": "ConnectingView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/ConnectingView.cpp",
+      "module": "Ring",
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "GuideSearchView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/GuideSearchView.cpp",
+      "module": "Ring",
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "OperationGuideView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/OperationGuideView.cpp",
+      "module": "Ring",
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "RemoveView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/RemoveView.cpp",
+      "module": "Ring",
+      "icons": []
+    },
+    {
+      "name": "RingListView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/RingListView.cpp",
+      "module": "Ring",
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "SearchFailedView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/SearchFailedView.cpp",
+      "module": "Ring",
+      "icons": []
+    },
+    {
+      "name": "SingleUnboundView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/SingleUnboundView.cpp",
+      "module": "Ring",
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "VersionInfoDetailView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/VersionInfoDetailView.cpp",
+      "module": "Ring",
+      "icons": []
+    },
+    {
+      "name": "VersionInfoView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Ring/ui/VersionInfoView.cpp",
+      "module": "Ring",
+      "icons": []
+    },
+    {
+      "name": "AboutView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/AboutView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "BrightView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/BrightView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "DeviceListView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/DeviceListView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "FontView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/FontView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "LanguageView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/LanguageView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "ModeView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/ModeView.cpp",
+      "module": "Setting",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "MoreView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/MoreView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "ScreenOffView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/ScreenOffView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "SettingView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/SettingView.cpp",
+      "module": "Setting",
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "StateView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/StateView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "UnbindDeviceView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/UnbindDeviceView.cpp",
+      "module": "Setting",
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "VolView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/VolView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "WearView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/WearView.cpp",
+      "module": "Setting",
+      "icons": []
+    },
+    {
+      "name": "BaseView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/view/BaseView.h",
+      "module": "SmartLife",
+      "icons": []
+    },
+    {
+      "name": "FlightView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/view/FlightView.cpp",
+      "module": "SmartLife",
+      "icons": []
+    },
+    {
+      "name": "TaxiView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/view/TaxiView.cpp",
+      "module": "SmartLife",
+      "icons": []
+    },
+    {
+      "name": "WechatResponseView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/SmartLife/view/WechatResponseView.cpp",
+      "module": "SmartLife",
+      "icons": [
+        "smartlife_wechat_send_success_icon",
+        "smartlife_wechat_send_fail_icon",
+        "smartlife_wechat_ellipsis_gif",
+        "smartlife_wechat_group",
+        "wechat_video_icon"
+      ]
+    },
+    {
+      "name": "PowerOffAndRebootView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/StarryNetApp/toplayer/PowerOffAndRebootView.cpp",
+      "module": "StarryNetApp",
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "TransView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/../controller/../ui/TransView.hpp",
+      "module": "Translation",
+      "icons": []
+    },
+    {
+      "name": "ButtonView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/ButtonView.cpp",
+      "module": "Translation",
+      "icons": []
+    },
+    {
+      "name": "PrivacyView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/PrivacyView.cpp",
+      "module": "Translation",
+      "icons": []
+    },
+    {
+      "name": "TransView",
+      "source": "../../thirdparty/star_air_lvgl/app/Pages/Translation/ui/TransView.cpp",
+      "module": "Translation",
+      "icons": []
+    },
+    {
+      "name": "IdleView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "LaunchFailedView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "LaunchView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "LauncherView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "Model",
+      "source": null,
+      "module": null,
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "TS IdleView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "TS LaunchFailedView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "TS LaunchView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "TS StateView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "TS TransView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "animView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "attachView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "buttonView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "createAudioPlayCtlrView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "createConnectingView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "createFlexRootView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "createGlassRefreshConnView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "createGuiderTileView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "createIncomingView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "createLoadingView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "createOnCallView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "createPlayListView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "createPowerOffAndRebootView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "createView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "deleAudioPlayCtrlView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "delePowerOffAndRebootView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "displayEmptyNaviView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover",
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "generateView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "handlePowerOffView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "battery_100",
+        "charging_box"
+      ]
+    },
+    {
+      "name": "hideButtonView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "hideOrShowConnectGuiderView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "hideOrShowConnectingView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "disconnect_img",
+        "unbound_img",
+        "unbounding_icon",
+        "ring_connect_icon"
+      ]
+    },
+    {
+      "name": "hideOrShowRefreshConnView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "hidePlayListView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "hidePlayMusicMainView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "hidePlayView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "initView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "onCreateView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "rebuildView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "recoverOnCallView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "recoverThreewayIncomingCallView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "recoveryPlayView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "refreshOperateView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "refreshPlayListCountView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "refreshPlayListView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "next_playing_normal",
+        "playing_normal",
+        "previous_normal",
+        "puase_normal",
+        "next_play_anim",
+        "previous_anim",
+        "music_play_to_pause_v3",
+        "music_puase_to_play_v3",
+        "music_pause_v3",
+        "music_play_v3",
+        "music_cover_v3",
+        "music_exit_icon",
+        "music_cover_pause_v3",
+        "music_pause_gray_v3",
+        "music_pause_normal_v3",
+        "play_list_bg",
+        "play_list_bg_focus",
+        "audio_play_ctrl_cover",
+        "audio_play_center_play_icon",
+        "play_center_ai_music_icon",
+        "intlmusic_cover"
+      ]
+    },
+    {
+      "name": "releaseView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "setNaviPipView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "navigation_24_24",
+        "navigation_icon_70",
+        "navi_img_compass",
+        "navi_icon_arrow_walk",
+        "landfront_00",
+        "landfront_11",
+        "landfront_22",
+        "landfront_33",
+        "landfront_44",
+        "landfront_55",
+        "landfront_66",
+        "landfront_77",
+        "landfront_88",
+        "landfront_99",
+        "landfront_aa",
+        "landfront_bb",
+        "landfront_cc",
+        "landfront_dd",
+        "landfront_ee",
+        "landfront_ff",
+        "landfront_g3",
+        "landfront_g5",
+        "landfront_gg",
+        "landfront_h1",
+        "landfront_h3",
+        "landfront_h5",
+        "landfront_hh",
+        "landfront_ii",
+        "landfront_jj",
+        "assistant_navi_domain_select_icon_big"
+      ]
+    },
+    {
+      "name": "showButtonView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "showDialView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "showFailView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "showIncomingView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "showLoadingView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "showOnCallView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "showSuccessView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "showThreeWayView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "subModel",
+      "source": null,
+      "module": null,
+      "icons": [
+        "setting_switch_on",
+        "setting_switch_off"
+      ]
+    },
+    {
+      "name": "switchView",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "transToThreeWayHangupOnCallView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "transToThreeWayOnCallView",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "DialYellowPage",
+      "source": null,
+      "module": null,
+      "icons": [
+        "answer_dots",
+        "cancel_dots",
+        "phone_bg"
+      ]
+    },
+    {
+      "name": "StartPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "SwitchPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "changePage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "click_VoiceAssistantPage",
+      "source": null,
+      "module": null,
+      "icons": [
+        "assistant_help_domain_setting_icon",
+        "assistant_navi_domain_select_icon_big",
+        "answer_dots",
+        "fade_rect"
+      ]
+    },
+    {
+      "name": "currentPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "handleSwitchPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "onNextPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "onPreviousPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "previousPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "status_VoiceAssistantPage",
+      "source": null,
+      "module": null,
+      "icons": [
+        "assistant_help_domain_setting_icon",
+        "assistant_navi_domain_select_icon_big",
+        "answer_dots",
+        "fade_rect"
+      ]
+    },
+    {
+      "name": "targetPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "toPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "totalPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    },
+    {
+      "name": "turnPage",
+      "source": null,
+      "module": null,
+      "icons": []
+    }
+  ],
+  "missing_from_ota": [
+    "Named icons (weather_*/music_*/navi_*/ring_*/…) live on LittleFS, not in the zip",
+    "Full CJK font B:lv_font_air_full_cn_20_bpp1.bin",
+    "Runtime HUD screenshots (ShareAbility)"
+  ]
+}

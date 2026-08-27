@@ -1,0 +1,15 @@
+NOT in the OTA zip (on-device LittleFS / NV / other chips):
+
+- B:lv_font_air_full_cn_20_bpp1.bin  (full CJK font)
+- The 21 audio/*.aac files listed in strings/audio_paths.txt
+  (click, connect, wake-word packs, screenshot, …)
+- user_feed_back.log, LVGL prefs / device-name NV
+- bootloader / panel firmware (boot MYVU mark)
+
+IS in the zip and exported here:
+
+- 19 short AAC streams carved from platform_tester.bin → media/carved/
+  (these are NOT the LittleFS UI pack; they are extra blobs in the HUD image)
+- 12 HUD GIFs, 3 LVGL latin/CJK-subset faces, all strings, all functions
+
+Function decomp: functions/m55 and functions/bth (Ghidra ExportAll).

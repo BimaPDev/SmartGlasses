@@ -1,0 +1,11 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="11" y="19" width="2" height="3" rx="1" fill="#FCD248"/>
+<rect x="11" y="2" width="2" height="3" rx="1" fill="#FCD248"/>
+<rect x="19" y="13" width="2" height="3" rx="1" transform="rotate(-90 19 13)" fill="#FCD248"/>
+<rect x="2" y="13" width="2" height="3" rx="1" transform="rotate(-90 2 13)" fill="#FCD248"/>
+<rect x="16.2422" y="17.6562" width="2" height="3" rx="1" transform="rotate(-45 16.2422 17.6562)" fill="#FCD248"/>
+<rect x="4.22168" y="5.63672" width="2" height="3" rx="1" transform="rotate(-45 4.22168 5.63672)" fill="#FCD248"/>
+<rect x="17.6572" y="7.75781" width="2" height="3" rx="1" transform="rotate(-135 17.6572 7.75781)" fill="#FCD248"/>
+<rect x="5.63574" y="19.7773" width="2" height="3" rx="1" transform="rotate(-135 5.63574 19.7773)" fill="#FCD248"/>
+<circle cx="12" cy="12" r="5" fill="#FCD248"/>
+</svg>

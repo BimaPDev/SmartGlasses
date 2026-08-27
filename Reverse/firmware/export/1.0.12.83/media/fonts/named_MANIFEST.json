@@ -1,0 +1,182 @@
+{
+  "source": "x_1.0.12.83/platform_tester.bin",
+  "from": "export/1.0.12.83/strings/categorized/font_names.txt",
+  "compiled_faces_in_ota": 3,
+  "extracted_named_faces": 5,
+  "unique_bitmaps": 3,
+  "entries": [
+    {
+      "name": "FONT_DUMMY_16",
+      "kind": "compiled_face",
+      "face": "small",
+      "status": "extracted",
+      "string_off": "0x166950",
+      "files": "FONT_DUMMY_16/"
+    },
+    {
+      "name": "FONT_DUMMY_20",
+      "kind": "compiled_face",
+      "face": "medium",
+      "status": "extracted",
+      "string_off": "0x166af0",
+      "files": "FONT_DUMMY_20/"
+    },
+    {
+      "name": "FONT_CN_36_BOLD",
+      "kind": "named_face",
+      "status": "not_in_ota",
+      "string_off": "0x16fc10",
+      "note": "Intern name only. No 36px glyph_dsc table in platform_tester.bin. Not LittleFS path either."
+    },
+    {
+      "name": "FONT_CN_32_NORMAL",
+      "kind": "named_face",
+      "status": "not_in_ota",
+      "string_off": "0x3ffdf4",
+      "note": "Name in font-manager intern table with EN_32/EN_36/CN_16/20/24. No matching glyph blob in OTA."
+    },
+    {
+      "name": "FONT_EN_32_NORMAL",
+      "kind": "named_face",
+      "status": "not_in_ota",
+      "string_off": "0x3ffe08",
+      "note": "Same intern cluster as FONT_CN_32_NORMAL. No latin-only 32px table in OTA (scanner: only 3 faces, 6032 glyphs each)."
+    },
+    {
+      "name": "FONT_EN_36_BOLD",
+      "kind": "named_face",
+      "status": "not_in_ota",
+      "string_off": "0x3ffe1c",
+      "note": "Same intern cluster. No 36px table in OTA."
+    },
+    {
+      "name": "FONT_CN_16_NORMAL",
+      "kind": "compiled_face",
+      "face": "small",
+      "status": "extracted",
+      "string_off": "0x3ffe2c",
+      "files": "FONT_CN_16_NORMAL/",
+      "note": "Same bitmap as FONT_DUMMY_16."
+    },
+    {
+      "name": "FONT_CN_20_NORMAL",
+      "kind": "compiled_face",
+      "face": "medium",
+      "status": "extracted",
+      "string_off": "0x3ffe40",
+      "files": "FONT_CN_20_NORMAL/",
+      "note": "Same bitmap as FONT_DUMMY_20."
+    },
+    {
+      "name": "FONT_CN_24_NORMAL",
+      "kind": "compiled_face",
+      "face": "large",
+      "status": "extracted",
+      "string_off": "0x3ffe54",
+      "files": "FONT_CN_24_NORMAL/",
+      "note": "Same bitmap as intern FONT_DUMMY_24."
+    },
+    {
+      "name": "lv_font_is_all_character_showable",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x41cc28"
+    },
+    {
+      "name": "lv_font_lfs_deinit",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x41d1f8"
+    },
+    {
+      "name": "lv_font_lfs_init",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x41d218"
+    },
+    {
+      "name": "lv_font_do_load_font %d fail",
+      "kind": "trace_format",
+      "status": "not_a_font",
+      "string_off": "0x41d6a0"
+    },
+    {
+      "name": "B:lv_font_air_full_cn_20_bpp1.bin",
+      "kind": "littlefs_file",
+      "status": "not_in_ota",
+      "string_off": "0x426664",
+      "note": "Full CJK face loaded by lv_font_air_mgr_load_all from LittleFS drive B:. Path only in OTA."
+    },
+    {
+      "name": "FONT_20 Already loaded",
+      "kind": "trace",
+      "status": "not_a_font",
+      "string_off": "0x426730"
+    },
+    {
+      "name": "FONT_20 Succ",
+      "kind": "trace",
+      "status": "not_a_font",
+      "string_off": "0x426794"
+    },
+    {
+      "name": "lv_font_do_load_font",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x4267a4"
+    },
+    {
+      "name": "lv_font_load_from_file",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x4267bc"
+    },
+    {
+      "name": "lv_font_free_font_file",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x4267d4"
+    },
+    {
+      "name": "lv_font_on_load_finished",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x4267ec"
+    },
+    {
+      "name": "lv_font_load_prepare",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x426808"
+    },
+    {
+      "name": "lv_font_air_mgr_load_all",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x426820"
+    },
+    {
+      "name": "lv_font_mgr_get_file",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x42683c"
+    },
+    {
+      "name": "lv_font_mgr_get_font",
+      "kind": "function",
+      "status": "not_a_font",
+      "string_off": "0x426854"
+    }
+  ],
+  "also_in_firmware_not_in_list": [
+    {
+      "name": "FONT_DUMMY_24",
+      "kind": "compiled_face",
+      "face": "large",
+      "status": "extracted_as_FONT_CN_24_NORMAL",
+      "string_off": "0x167cba",
+      "note": "Present in firmware strings (next to FontView.cpp) but not in font_names.txt lines 1-25."
+    }
+  ],
+  "glyph_scan": "Only three lv_font_fmt_txt tables with >=80 valid glyphs; all 6032 glyphs. No 32/36 px table."
+}

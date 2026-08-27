@@ -1,0 +1,849 @@
+{
+  "glasses_ota": "pixels for these names are NOT in platform_tester.bin",
+  "pulled_from": "MYVU phone APK (com.upuphone.star.launcher.intl) \u2014 same resource names",
+  "copied": 45,
+  "missing": [
+    "next_playing_normal",
+    "playing_normal",
+    "previous_normal",
+    "puase_normal",
+    "next_play_anim",
+    "previous_anim",
+    "music_play_to_pause_v3",
+    "music_puase_to_play_v3",
+    "music_pause_v3",
+    "music_play_v3",
+    "music_cover_v3",
+    "music_exit_icon",
+    "music_cover_pause_v3",
+    "music_pause_gray_v3",
+    "music_pause_normal_v3",
+    "play_list_bg",
+    "play_list_bg_focus",
+    "audio_play_ctrl_cover",
+    "audio_play_center_play_icon",
+    "play_center_ai_music_icon",
+    "intlmusic_cover",
+    "starrynet_air_pro_click",
+    "launcher_dock_weather",
+    "weather_shower_24_24",
+    "weather_sunset_24_24",
+    "weather_typhoon_24_24",
+    "navigation_24_24",
+    "navigation_icon_70",
+    "navi_img_compass",
+    "navi_icon_arrow_walk",
+    "smartlife_wechat_send_success_icon",
+    "smartlife_wechat_send_fail_icon",
+    "smartlife_wechat_ellipsis_gif",
+    "smartlife_wechat_group",
+    "assistant_help_domain_setting_icon",
+    "assistant_navi_domain_select_icon_big",
+    "answer_dots",
+    "cancel_dots",
+    "fade_rect",
+    "phone_bg",
+    "wechat_video_icon",
+    "battery_100",
+    "indicator",
+    "loading_24",
+    "ca_success",
+    "charging_box",
+    "dot55",
+    "disconnect_img",
+    "unbound_img",
+    "unbounding_icon",
+    "ring_connect_icon",
+    "setting_switch_on",
+    "setting_switch_off"
+  ],
+  "items": [
+    {
+      "name": "next_playing_normal",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (play triangle)",
+      "likely_hud_gif": "gifs/gif_00_22x22_off3730b4.gif"
+    },
+    {
+      "name": "playing_normal",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (play triangle)",
+      "likely_hud_gif": "gifs/gif_00_22x22_off3730b4.gif"
+    },
+    {
+      "name": "previous_normal",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "puase_normal",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (pause bars)",
+      "likely_hud_gif": "gifs/gif_03_22x22_off387ab4.gif"
+    },
+    {
+      "name": "next_play_anim",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (play triangle)",
+      "likely_hud_gif": "gifs/gif_00_22x22_off3730b4.gif"
+    },
+    {
+      "name": "previous_anim",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "music_play_to_pause_v3",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "music_puase_to_play_v3",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "music_pause_v3",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (pause bars)",
+      "likely_hud_gif": "gifs/gif_03_22x22_off387ab4.gif"
+    },
+    {
+      "name": "music_play_v3",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "music_cover_v3",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (note in circle)",
+      "likely_hud_gif": "gifs/gif_02_56x56_off37f5f4.gif"
+    },
+    {
+      "name": "music_exit_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "music_cover_pause_v3",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "music_pause_gray_v3",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "music_pause_normal_v3",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (pause bars)",
+      "likely_hud_gif": "gifs/gif_03_22x22_off387ab4.gif"
+    },
+    {
+      "name": "play_list_bg",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "play_list_bg_focus",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "audio_play_ctrl_cover",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "audio_play_center_play_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "play_center_ai_music_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "intlmusic_cover",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (note in circle)",
+      "likely_hud_gif": "gifs/gif_02_56x56_off37f5f4.gif"
+    },
+    {
+      "name": "starrynet_air_pro_click",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "audio path / TRACE name, not an image",
+      "likely_hud_gif": "audio path / TRACE name, not an image"
+    },
+    {
+      "name": "launcher_dock_weather",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "weather_cloudy_day_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_cloudy_day_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_cloudy_day.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_cloudy_night_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_cloudy_night_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_cloudy_night.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_duststorm_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_duststorm_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_duststorm.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_foggy_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_foggy_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_foggy.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_hail_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_hail_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_hail.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_haze_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_haze_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_haze.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_heavy_rain_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_heavy_rain_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_heavy_rain.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_heavy_snow_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_heavy_snow_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_heacy_snow.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_light_rain_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_light_rain_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_little_rain.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_light_snow_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_light_snow_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_light_snow.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_moderate_rain_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_moderate_rain_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_moderate_rain.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_moderate_snow_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_moderate_snow_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_moderate_snow.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_overcast_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_overcast_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_overcast.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_sand_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_sand_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_sand.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_shower_24_24",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "weather_sleet_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_sleet_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_sleet.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_sunny_day_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_sunny_day_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_sunny_day.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_sunny_night_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_sunny_night_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_sunny_night.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_sunset_24_24",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "weather_thunder_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_thunder_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_thunder.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_thundershower_with_hail_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_thundershower_with_hail_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_thundershower_with_hail.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "weather_typhoon_24_24",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "weather_unknown_24_24",
+      "pulled": true,
+      "files": [
+        "weather_svg/weather_unknown_24_24.svg"
+      ],
+      "source": "MYVU APK:assets/flutter_assets/assets/svgs/icon_weather_unknown.svg",
+      "note": "apk_flutter_svg"
+    },
+    {
+      "name": "navigation_24_24",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "navigation_icon_70",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "navi_img_compass",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "navi_icon_arrow_walk",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "landfront_00",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_00.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_00.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_11",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_11.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_11.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_22",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_22.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_22.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_33",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_33.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_33.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_44",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_44.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_44.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_55",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_55.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_55.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_66",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_66.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_66.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_77",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_77.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_77.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_88",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_88.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_88.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_99",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_99.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_99.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_aa",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_aa.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_aa.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_bb",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_bb.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_bb.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_cc",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_cc.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_cc.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_dd",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_dd.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_dd.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_ee",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_ee.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_ee.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_ff",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_ff.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_ff.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_g3",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_g3.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_g3.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_g5",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_g5.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_g5.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_gg",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_gg.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_gg.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_h1",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_h1.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_h1.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_h3",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_h3.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_h3.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_h5",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_h5.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_h5.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_hh",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_hh.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_hh.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_ii",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_ii.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_ii.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "landfront_jj",
+      "pulled": true,
+      "files": [
+        "navi_landfront/landfront_jj.png"
+      ],
+      "source": "MYVU APK:res/drawable/landfront_jj.png",
+      "note": "apk_drawable"
+    },
+    {
+      "name": "smartlife_wechat_send_success_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "smartlife_wechat_send_fail_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "smartlife_wechat_ellipsis_gif",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (ellipsis dots)",
+      "likely_hud_gif": "gifs/gif_09_13x15_off3eb774.gif"
+    },
+    {
+      "name": "smartlife_wechat_group",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "assistant_help_domain_setting_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "assistant_navi_domain_select_icon_big",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "answer_dots",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "cancel_dots",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "fade_rect",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "phone_bg",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "wechat_video_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "battery_100",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "indicator",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "loading_24",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "glasses HUD GIF already carved (24x24 diamond spinner)",
+      "likely_hud_gif": "gifs/gif_06_24x24_off3d8e74.gif"
+    },
+    {
+      "name": "ca_success",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "charging_box",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "dot55",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "disconnect_img",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "unbound_img",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "unbounding_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "ring_connect_icon",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "setting_switch_on",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    },
+    {
+      "name": "setting_switch_off",
+      "pulled": false,
+      "files": [],
+      "source": null,
+      "note": "not in glasses OTA bin; no same-name asset in phone APK"
+    }
+  ]
+}

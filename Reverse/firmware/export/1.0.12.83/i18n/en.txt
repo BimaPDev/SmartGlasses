@@ -1,0 +1,2677 @@
+0x3fe9fc	@f=<
+0x3feefc	@k=<
+0x3ff3fc	@p=<
+0x3ff8fc	@u=<
+0x3ffdf4	FONT_CN_32_NORMAL
+0x3ffe08	FONT_EN_32_NORMAL
+0x3ffe1c	FONT_EN_36_BOLD
+0x3ffe2c	FONT_CN_16_NORMAL
+0x3ffe40	FONT_CN_20_NORMAL
+0x3ffe54	FONT_CN_24_NORMAL
+0x3ffe68	next_playing_normal
+0x3ffe7c	playing_normal
+0x3ffe8c	previous_normal
+0x3ffe9c	puase_normal
+0x3ffeac	next_play_anim
+0x3ffebc	previous_anim
+0x3ffecc	music_play_to_pause_v3
+0x3ffee4	music_puase_to_play_v3
+0x3ffefc	music_pause_v3
+0x3fff0c	music_play_v3
+0x3fff1c	music_cover_v3
+0x3fff2c	music_exit_icon
+0x3fff3c	music_cover_pause_v3
+0x3fff54	music_pause_gray_v3
+0x3fff68	music_pause_normal_v3
+0x3fff80	play_list_bg
+0x3fff90	play_list_bg_focus
+0x3fffa4	audio_play_ctrl_cover
+0x3fffbc	audio_play_center_play_icon
+0x3fffd8	play_center_ai_music_icon
+0x3ffff4	intlmusic_cover
+0x400004	starrynet_air_pro_click
+0x40001c	launcher_dock_weather
+0x400034	weather_cloudy_day_24_24
+0x400050	weather_cloudy_night_24_24
+0x40006c	weather_duststorm_24_24
+0x400084	weather_foggy_24_24
+0x400098	weather_hail_24_24
+0x4000ac	weather_haze_24_24
+0x4000c0	weather_heavy_rain_24_24
+0x4000dc	weather_heavy_snow_24_24
+0x4000f8	weather_light_rain_24_24
+0x400114	weather_light_snow_24_24
+0x400130	weather_moderate_rain_24_24
+0x40014c	weather_moderate_snow_24_24
+0x400168	weather_overcast_24_24
+0x400180	weather_sand_24_24
+0x400194	weather_shower_24_24
+0x4001ac	weather_sleet_24_24
+0x4001c0	weather_sunny_day_24_24
+0x4001d8	weather_sunny_night_24_24
+0x4001f4	weather_sunset_24_24
+0x40020c	weather_thunder_24_24
+0x400224	weather_thundershower_with_hail_24_24
+0x40024c	weather_typhoon_24_24
+0x400264	weather_unknown_24_24
+0x40027c	navigation_24_24
+0x400290	navigation_icon_70
+0x4002a4	navi_img_compass
+0x4002b8	navi_icon_arrow_walk
+0x4002d0	landfront_00
+0x4002e0	landfront_11
+0x4002f0	landfront_22
+0x400300	landfront_33
+0x400310	landfront_44
+0x400320	landfront_55
+0x400330	landfront_66
+0x400340	landfront_77
+0x400350	landfront_88
+0x400360	landfront_99
+0x400370	landfront_aa
+0x400380	landfront_bb
+0x400390	landfront_cc
+0x4003a0	landfront_dd
+0x4003b0	landfront_ee
+0x4003c0	landfront_ff
+0x4003d0	landfront_g3
+0x4003e0	landfront_g5
+0x4003f0	landfront_gg
+0x400400	landfront_h1
+0x400410	landfront_h3
+0x400420	landfront_h5
+0x400430	landfront_hh
+0x400440	landfront_ii
+0x400450	landfront_jj
+0x400460	smartlife_wechat_send_success_icon
+0x400484	smartlife_wechat_send_fail_icon
+0x4004a4	smartlife_wechat_ellipsis_gif
+0x4004c4	smartlife_wechat_group
+0x4004dc	assistant_help_domain_setting_icon
+0x400500	assistant_navi_domain_select_icon_big
+0x400528	answer_dots
+0x400534	cancel_dots
+0x400540	fade_rect
+0x40054c	phone_bg
+0x400558	wechat_video_icon
+0x40056c	battery_100
+0x400578	indicator
+0x400584	loading_24
+0x400590	ca_success
+0x40059c	charging_box
+0x4005ac	dot55
+0x4005b4	disconnect_img
+0x4005c4	unbound_img
+0x4005d0	unbounding_icon
+0x4005e0	ring_connect_icon
+0x4005f4	setting_switch_on
+0x400608	setting_switch_off
+0x40061c	../../thirdparty/star_air_lvgl/app/Persistence/lv_preference.c
+0x40065c	%s pref use count = %d
+0x400674	%s key = %d, value = %d %d
+0x400690	RETURN FAILED. Comand Error, e.g. [lv_preference_command open_dump/close_dump]
+0x4006e0	open_dump
+0x4006ec	RETURN PASS:: open preference dump
+0x400710	close_dump
+0x40071c	RETURN PASS:: close preference dump
+0x400740	%s pref one size: %u
+0x400758	%s pref total size: %u
+0x400770	%s bad magic_number, preference->magic_number = %d
+0x4007a4	%s key = %d
+0x4007b0	%s lv_preference_clear
+0x4007c8	lv_preference_command
+0x4007e0	lv_preference command
+0x4007f8	lv_preference_clear
+0x40080c	lv_preference_put_inner
+0x400824	lv_preference_dump
+0x400838	lv_preference_init
+0x40084c	../../thirdparty/star_air_lvgl/app/Language/lv_language_factory.c
+0x400890	not support language type:%d
+0x4008b0	get_language_entry_by_type
+0x4008cc	../../thirdparty/star_air_lvgl/app/Language/lv_language.c
+0x400908	not support foreign language, set default language:cn
+0x400940	check your version, can not switch language!
+0x400970	switch_language
+0x400980	init_local_language
+0x403478	[emoji]
+0x403480	Type: 
+0x403488	Translator
+0x403494	QQ Music
+0x4034a0	System hint
+0x4034ac	Prompter
+0x4034b8	Glasses will automatically restart during the factory reset
+0x4034f4	Tap Ok/Double-tap to return
+0x403510	Please connect to mobile first
+0x403530	The update is expected to take 5 minutes, the glasses are unavailable during the update
+0x403588	Tap to update/Double-tap to cancel
+0x4035ac	Not now
+0x4035b4	Service error. Please try again later
+0x4035dc	Ring battery remaining 15%
+0x4035f8	Ring battery remaining 5%
+0x403614	Unconnected
+0x403620	Unpaired
+0x40362c	15% glasses battery remaining
+0x40364c	5% glasses battery remaining
+0x40366c	Battery level for glasses is 100%
+0x403690	Download MYVU App before using it
+0x4036b4	Hold down the ring and swing to adjust position
+0x4036e4	Ring Unpaired
+0x4036f4	Your ring 
+0x403700	 unpaired.If necessary, please repair the glasses
+0x403734	Slide the touchpad to choose
+0x403754	Hold down the ring and move the wrist to choose
+0x403784	Good morning!
+0x403794	Good morning, a new day has begun!
+0x4037b8	Welcome to the new day, wish you full of vitality!
+0x4037ec	May you have a happy start!
+0x403808	Late at night, pay attention to rest
+0x403830	Maintain good sports. Start with good sleep
+0x40385c	A healthy body requires sufficient sleep. Good night
+0x403894	May your sleep be full of sports and peace
+0x4038c0	We have been using it continuously for 1 hour. Please rest carefully
+0x403908	Your eyes are tired. Take a rest
+0x40392c	Long press the power button to use the voice assistant
+0x403964	You can say 'Xiaoxi Xiaoxi', I will be at your service
+0x40399c	Long press the power button for 1 second during a call to hang up
+0x4039e0	Press the power button once during a call to mute the call
+0x403a1c	Save successfully, please go to the mobile phone album view
+0x403a58	Failed to capture screen, please try again
+0x403a84	Glasses firmware update
+0x403a9c	Please update the glasses version to the latest version on the MYVU App
+0x403ae4	App software updates
+0x403afc	Please update MYVU App to the latest version on your phone
+0x403b38	Long press the touchpad to open the application list
+0x403b70	Press the ring once to open the application list
+0x403ba4	App privacy policy
+0x403bb8	Disconnected. Please open MYVU and agree to the App privacy policy again before connecting
+0x403c14	Glasses Privacy Policy
+0x403c2c	Disconnected. Please open MYVU and agree to the Glasses privacy policy again before binding
+0x403c88	Tap Ok
+0x403c90	move the wrist to choose
+0x403cac	move the wrist to adjust position
+0x403cd0	Please open MYVU App and connect to mobile first
+0x403d04	Tutorial
+0x403d10	Transcribe
+0x403d1c	Sports
+0x403d24	Open MYVU App to connect the phone
+0x403d48	Please agree first to the rules for processing personal information on your phone
+0x403d9c	Please agree first to the cross-border personal data transfer on your phone
+0x403de8	The update is expected to take 10 minutes, the glasses are unavailable during the update
+0x403e44	Charge this product until the battery reaches 100%, then charge for an additional hour to ensure accurate battery level display.
+0x403ec8	Demo Mode Open
+0x403ed8	Today
+0x403ee0	Mon.
+0x403ee8	Tue.
+0x403ef0	Wed.
+0x403ef8	Thu.
+0x403f00	Fri.
+0x403f08	Sat.
+0x403f10	Sun.
+0x403f18	No weather information available
+0x403f3c	Failed to update weather
+0x403f58	Exit the app?
+0x403f68	Power off
+0x403f74	:Cancel
+0x403f7c	Please go to your phone to view the full content
+0x403fb4	Verification code
+0x403fc8	Network error. Please check network settings
+0x403ff8	Do Not Disturb mode has been enabled for navigation
+0x40402c	Do Not Disturb mode has been disabled for navigation
+0x404064	Switching to walking navigation
+0x404084	Switching to cycling navigation
+0x4040a4	Switching to driving navigation
+0x4040c4	Switching failed
+0x4040d8	Switching...
+0x4040e8	Navigation broadcast has been opened
+0x404110	Navigation broadcast has been closed
+0x404138	Route refreshed
+0x404148	Failed to refresh
+0x404160	Company
+0x404168	nearby
+0x404170	to set
+0x404178	Please provide your home address
+0x40419c	Please provide your company address
+0x4041c0	The destination can’t be the current location
+0x4041f0	Switched
+0x4041fc	Switching failed. The walking distance is too long
+0x404230	Switching failed. The cycling distance is too long
+0x404264	OK, Navigation end
+0x404278	Please go to the MYVU App to set the home address
+0x4042ac	Please go to the MYVU App to set the work address
+0x4042e0	Press the ring for 1s to voice search address
+0x404310	Press the power button for 1s to voice search address
+0x404348	Tap twice to enter the small window mode
+0x404374	Please do not use AR navigation at night
+0x4043a0	Please turn up the volume
+0x4043bc	remaining on foot
+0x4043d0	remaining by car
+0x4043e4	remaining by riding
+0x4043f8	time required
+0x404408	Tap to open / Double-tap to close
+0x40442c	Tap OK / Double-tap to cancel
+0x40444c	Please exercise caution and comply with local laws and regulations when using this product.
+0x4044a8	Updating
+0x4044b4	Failed to install
+0x4044c8	The update is expected to take 5 minutes.
+Please keep Glasses connected to the phone
+0x404520	System update, restart to take effect
+0x404548	The update is expected to take 10 minutes.
+Please keep Glasses connected to the phone
+0x4045a0	Please connect your phone and try again
+0x4045c8	The line is disconnected
+0x4045e4	Loading
+0x4045ec	Please play music on your phone first
+0x404614	Brilliant sound Crystal clear all around
+0x404640	This language is not supported at this time
+0x40466c	Continue playing after exiting?
+0x40468c	Background play
+0x40469c	Please start the audio on your mobile
+0x4046c4	Server connection failed
+0x4046e0	Please log in to the official QQ Music on your mobile phone
+0x40471c	No playable
+0x404728	Listen as I wish
+0x40473c	Artist
+0x404744	Please download the official QQ Music on your phone and log in
+0x404784	Please go to the mobile QQ Music APP to agree to the relevant agreement!
+0x4047d0	Tap to play/Double-tap to close
+0x4047f0	Play failed, please go to the official qq music play on the mobile
+0x404834	History playback
+0x404848	Favorite playlists
+0x40485c	Guess you like
+0x40486c	More music for you
+0x404880	Log in and play
+0x404890	songs
+0x404898	Tap to pause/Double-tap to close
+0x4048bc	Play failed, please open MYVU App
+0x4048e0	Failed to obtain song information
+0x404904	DND mode enabled
+0x404918	DND mode disabled
+0x40492c	Call and notification reminders are turned on
+0x40495c	Call and notification reminders are blocked
+0x404988	Call reminder turned on
+0x4049a0	Call reminder blocked
+0x4049b8	 Notification reminder turned on 
+0x4049dc	Notification reminder blocked
+0x4049fc	Please reply after the call
+0x404a18	Reply failed. 
+Please reply on your mobile
+0x404a44	Failed. Please use your mobile to reply
+0x404a6c	Failed. Please use your mobile to send
+0x404a94	Sent
+0x404a9c	Tap to reply / Double-tap to cancel
+0x404ac0	Tap to send / Double-tap to cancel
+0x404ae4	Double-tap to cancel
+0x404afc	Smart Reminder
+0x404b0c	Do you need notifications appear on your screen when using your phone?
+0x404b54	Tap to enable / Double-tap to disable
+0x404b7c	Tap to answer / Double-tap to
+hang up
+0x404ba4	Double-tap to hang up
+0x404bbc	Press the power button for
+1 second to hang up
+0x404bec	Press the ring for 1 second to
+hang up
+0x404c14	Tap to callback / Double-tap to cancel
+0x404c3c	Hanging up...
+0x404c4c	Please go to MYVU App and allow permission to make phone calls
+0x404c8c	Please enable relevant permissions on your phone
+0x404cc0	Call failed, please call on your phone
+0x404ce8	Answer failed. Please operate on your phone
+0x404d14	Hang up failed. Please hang up on your mobile
+0x404d44	After the call, the other party can see your phone camera screen.
+0x404d88	On a call
+0x404d94	After answering the call, please go to the phone to hang up
+0x404dd0	Card one
+0x404ddc	Card two
+0x404de8	A new call, please perform action on your phone
+0x404e18	Please perform action on your phone
+0x404e3c	Multi-channel call in progress
+0x404e5c	There is an incoming call, you can say answer or hang up
+0x404e98	Call Translation
+0x404eac	Translate the current call? Conversation translation will be enabled during translation.
+0x404f08	Click to translate / Double-click to cancel
+0x404f34	Contacts
+0x404f40	Card slot
+0x404f4c	Wechat contacts
+0x404f5c	Just a moment, please
+0x404f74	The content was generated by AI and is for reference only
+0x404fb0	Content is generated by Google AI and is for reference only
+0x404fec	Agenda
+0x404ff4	New schedule
+0x405004	Check more on your phone
+0x405020	Tomorrow
+0x40502c	Quick Notes
+0x405038	Make a Record
+0x405048	Navigation error. Please grant MYVU App constant location permission in your phone's settings
+0x4050a8	Open the battery room and remove MYVU Ring
+Then tap the glasses touchpad to search ring
+0x405100	Search ring
+0x40510c	Searching
+0x405118	Tap twice to return
+0x40512c	Ensure the ring is turned on and not paired with other glasses
+0x40516c	Connecting
+0x405178	Failed to connect
+0x40518c	Disconnect
+0x405198	Unpair
+0x4051a0	No ring was found
+Long press the power button for 3 seconds to turn on the ring
+0x4051f0	Got it
+0x4051f8	Unbound. To bind again, please press the
+ring firmly for 10 seconds until the red light flashes
+0x405258	unpaired.
+If necessary, please repair the glasses
+0x40528c	Unpair with
+0x405298	Unpairing
+0x4052a4	Initialising
+0x4052b4	Initialised
+0x4052c0	Please keep the ring still
+0x4052dc	unpaired
+0x4052e8	Unpair failed
+0x4052f8	Please remove the ring and wait for connection
+0x405328	Please ensure the ring is in a flashing green light state
+0x405364	Check the SN code on the inside of the ring, and the last
+four digits are the ring number
+0x4053c0	No ring found
+0x4053d0	Please try the following methods before reconnecting:
+0x405408	Align the charging port of the charging compartment and
+insert the ring, then remove it again
+0x405468	Or long press the ring power button for 10 seconds until
+the red light flashes and release
+0x4054c4	Reconnect
+0x4054d0	Press the ring once to return
+0x4054f0	Long press the touchpad to return
+0x405514	Please keep the
+ring still
+0x405530	Ring firmware update
+0x405548	The update is expected
+to take 2 minutes, the glasses and ring are 
+unavailable during the update
+0x4055ac	Please connect the ring and try again
+0x4055d4	The ring is being updated, please try again later
+0x405608	Please keep the battery of your ring and glasses at least 15%
+0x405648	The ring is being updated, please keep the ring connected to the glasses
+0x405694	No more content
+0x4056a4	Updating...
+0x4056b0	Instructions
+0x4056c0	Instructions for use
+0x4056d8	Touch button
+0x4056e8	Power button
+0x4056f8	Tap：
+0x405700	On/off screen
+0x405710	Tap twice：
+0x405720	Return
+0x405728	Long press：
+0x405738	Back home
+0x405744	Wake up voice assistant
+0x40575c	Long press 3/5 seconds：
+0x405778	Ring on/off
+0x405784	Long press 10 seconds：
+0x4057a0	Unbind
+0x4057a8	Wave：
+0x4057b0	Toggle or selection
+0x4057c4	Currently is up to date 
+0x4057e0	New firmware version found
+0x4057fc	Current version
+0x40580c	 update content
+0x40581c	Ring has been updated to the latest version
+0x405848	Ring update failed
+0x40585c	Ring disconnected, update failed
+0x405880	Hold down and swing
+0x405894	Modes
+0x40589c	Wear Detection
+0x4058ac	Auto Lock
+0x4058b8	Language
+0x4058c4	Unpair Device
+0x4058d4	About
+0x4058dc	Standard
+0x4058e8	Don't disturb
+0x4058f8	Opened
+0x405900	Closed
+0x405908	 devices
+0x405914	30 sec
+0x40591c	1 min
+0x405924	2 min
+0x40592c	15 sec
+0x405934	Device name
+0x405940	Model
+0x405948	Firmware version
+0x40595c	Bluetooth address
+0x405970	Serial number
+0x405980	Factory reset
+0x405990	About to reset, can not be restored
+0x4059b4	MMI mode has been opened
+0x4059d0	Wear detection
+0x4059e0	When turned on, the phone will automatically connect when wearing glasses, and when removed, it will automatically disconnect
+0x405a60	Turn on to block notification reminders
+0x405a88	Media Volume
+0x405a98	Call Volume
+0x405aa4	fifteen seconds
+0x405ab4	thirty seconds
+0x405ac4	one minute
+0x405ad0	two minutes
+0x405adc	More Settings
+0x405aec	Image Stabilization
+0x405b00	Auto Brightness
+0x405b10	Font Size
+0x405b1c	Large Font Preview
+0x405b30	Standard Font Preview
+0x405b48	Standard Font
+0x405b58	Large Font
+0x405b64	Click the touchpad to refresh
+0x405b84	Refreshed
+0x405b90	Connecting...
+0x405ba0	"%s" pairing code, please confirm it on your mobile phone
+0x405bdc	 is successfully connected!
+0x405bf8	Connect failed
+0x405c08	Phone's
+0x405c10	Step 1
+0x405c18	Step 2
+0x405c20	After logging in, click Pairing Glasses and follow the 
+guide to connect
+0x405c6c	Install MYVU App on your phone.
+0x405c8c	Reboot
+0x405c94	Click the wheel to refresh the connection
+0x405cc0	Poor network connection
+0x405cd8	Network error. please check your mobile network
+0x405d08	No sound detected,
+continue translating?
+0x405d34	No sound detected,
+continue transcripting?
+0x405d60	Check the translation history in
+ MYVU
+0x405d88	Mobile translation has exited
+0x405da8	The microphone is occupied, please try again later
+0x405ddc	Please connect your glasses and try again
+0x405e08	Failed to start remote service
+0x405e28	Listening trans
+0x405e38	Tap Continue / Tap twice
+Cancel
+0x405e58	Tap twice Return
+0x405e6c	Translating between Chinese and English…
+0x405e98	Transcripting between Chinese and English…
+0x405ec8	%s-%s translation. Listening...
+0x405ee8	%s transcription. Listening...
+0x405f08	Chinese
+0x405f10	Japanese
+0x405f1c	French
+0x405f24	Korean
+0x405f2c	Russian
+0x405f34	Spanish
+0x405f3c	Vietnamese
+0x405f48	Malay
+0x405f50	Indonesian
+0x405f5c	Thai
+0x405f64	Italian
+0x405f6c	German
+0x405f74	Turkish
+0x405f7c	Conversation trans
+0x405f90	%s %s conversation translation. Listening
+0x405fbc	Chinese-English conversation translation. Listening
+0x405ff0	Conversation translation requires the use of a mobile phone
+0x40602c	Open Translator in MYVU App to start conversation translation
+0x40606c	%s call transcription. Listening
+0x406090	Chinese-English call transcription. Listening
+0x4060c0	%s %s call translation. Listening
+0x4060e4	Chinese-English call translation. Listening
+0x406110	Playing privacy reminder to the other party
+0x40613c	The call translation function is enabled.
+0x406168	The call transcription function is enabled.
+0x406194	The call translation function is enabled. This call will be recorded. Please pay attention to protecting your privacy and start the conversation in a turn-based manner...
+0x406240	The call transcription function is enabled. This call will be recorded. Please pay attention to protecting your privacy and start the conversation in a turn-based manner...
+0x4062f0	The call is ongoing. You can enable conversation translation to translate the
+call content.
+0x40634c	You can adjust the broadcast voice in the Translator module of the MYVU App.
+0x40639c	Currently, Chinese, English, and Japanese are supported for call translation. You can go to the MYVU App to adjust the language.
+0x406420	Keep the MYVU APP running in the foreground.
+0x406450	Currently, Chinese, English, and Japanese are supported for call transcribe. You can go to the MYVU App to adjust the language.
+0x4064d0	Translation delay detected. Recommend turning off meeting Assistant recording
+0x406520	Currently in manual text
+prompt mode
+0x406548	Currently in uniform speed text
+prompt mode
+0x406574	It's already the last paragraph
+0x406594	It's already the first paragraph
+0x4065b8	Switched to manual text
+prompt mode
+0x4065dc	Switched to uniform speed text
+prompt mode
+0x406608	Prompt failed
+0x406618	Flip the scroll wheel to flip up and down pages
+0x406648	Please open the MYVU App text prompter to restart the text prompt
+0x40668c	Select the Flip button and click Flip
+0x4066b4	Microphone occupied, please try again later
+0x4066e0	Replying WeChat，unable to wake up Voice Assistant
+0x406714	The voice print of the wake-up word does not match. Please go to MYVU APP to record it again.
+0x406774	The current temperature is too high,please try again later
+0x4067b0	Detected excessive temperature and will automatically power off
+0x407130	$DDDDDDDDDDDDDDB
+0x40715f	$DDDDDDDDDDDDDDDDB
+0x4071a6	DDDDDDDDDDDDDDDDDDDC
+0x40742e	DDDDDDDDDDDDDDDDDDDD
+0x407477	$DDDDDDDDDDDDDDDDB
+0x4074a8	$DDDDDDDDDDDDDDB
+0x407534	../../thirdparty/star_air_lvgl/app/Notify/toast/lv_toast_style2.c
+0x407578	DOUBLE_LINE style toast title and content must be not null!
+0x4075b4	toast_style2
+0x4075c4	../../thirdparty/star_air_lvgl/app/Notify/toast/lv_toast_style3.c
+0x407608	SINGLE_LINE_ICON toast content and icon must be not null!
+0x407644	toast_style3
+0x407654	../../thirdparty/star_air_lvgl/app/Notify/toast/lv_toast_style1.c
+0x407698	SINGLE_LINE toast content must be not null!
+0x4076c4	toast_style1
+0x4076d4	../../thirdparty/star_air_lvgl/app/Notify/toast/lv_toast.c
+0x407710	error! toast style is %d
+0x40772c	str is null, assign empty characters!
+0x407754	toast style1 show:%s status:%d
+0x407774	toast style2 show:%s status:%d
+0x407794	toast style3 show:%s %s status:%d
+0x4077b8	type %d dont support!
+0x4077d0	free toast msg title
+0x4077e8	free toast msg content
+0x407800	free toast msg
+0x407810	toast style %d not support!
+0x40782c	TOAST_MSG
+0x407838	ready to show toast!
+0x407850	show toast fail! free the msg
+0x407870	lv_toast_show
+0x407880	lv_toast_sendmsg
+0x407894	toast_dismiss_anim_cb
+0x4078ac	free_msg
+0x4078b8	lv_toast_create
+0x4078c8	toast_memcpy_str
+0x407de5	$DDDDDDDDDDDDB
+0x407ef5	$DDDDDDDDDDDDB
+0x407f74	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc.c
+0x407fac	type(%d) not support
+0x407fc4	get misc subtype(%d) component
+0x407fe4	get top obj:%p
+0x407ff4	there is no subtype obj
+0x40800c	set misc type(%d) status:%d
+0x408028	state(%d) do not support
+0x408044	cur obj is null
+0x408054	there is no %s misc widget! top misc widget:%s
+0x408084	there is no %s misc app! top misc app:%s
+0x4080b0	misc_event_send
+0x4080c0	get_misc_top_subtype
+0x4080d8	get_sub_component
+0x4080ec	get_misc_top
+0x4080fc	set_misc_status
+0x40810c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_call.c
+0x408144	type(%d) not support! no header, will be set null!
+0x408178	null call obj!
+0x408188	can not show call! The previous object still exist
+0x4081bc	there have higher priority types!
+0x4081e0	show call!
+0x4081ec	hide call
+0x4081f8	call child node is null!
+0x408214	call_event_handler
+0x408228	redraw_call_border
+0x40823c	get_call_header
+0x40824c	free_call_mem
+0x40825c	delete_call_by_id
+0x408270	delete_call_by_pkgName
+0x408288	delete_all_call
+0x408298	add_internal_call
+0x4082ac	hide_call_root
+0x4082bc	show_call_obj
+0x4082cc	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_command.c
+0x408308	dialog event handle %d
+0x408320	dialog event handle2 %d
+0x408338	app %d event come in
+0x408350	test show dialog2
+0x4083a8	notify_cmd
+0x4083b4	notif_cmd_2
+0x4083c0	test_ show dialog
+0x4084b0	notif_cmd_1
+0x4084bc	test cancel dialog2
+0x4084d0	test cancel dialog
+0x4084e4	test cancel dialog by package name
+0x4085e0	test show message
+0x4085f4	test_show_message pkgName is NULL
+0x408618	test_show_message key is NULL
+0x408638	test_show_message content is NULL
+0x408690	toast style is NULL
+0x4086a4	toast content is NULL
+0x4086bc	show toast:%s
+0x4086cc	toast title is %s
+0x4086e0	toast title is NULL
+0x4086f4	toast content is %s
+0x408708	show icon toast:%s %s
+0x408720	toast style is not support! only 1~5
+0x40877c	test call end
+0x40878c	test widget card end
+0x4087a4	test app card end
+0x4087b8	test voice call end
+0x4087cc	test clean reply
+0x4087e0	test clean call on
+0x4087f4	test clean audio control center
+0x408814	test show call
+0x408824	This is incoming call
+0x40883c	test show widget
+0x408850	create widget node:%p
+0x408868	test show app
+0x408878	create app node:%p
+0x40888c	test show voice call
+0x4088a4	This is incoming voice call
+0x4088c0	reply event:%d
+0x4088d0	test show reply
+0x4088e0	This is reply layout
+0x4088f8	call on event:%d
+0x40890c	test show call on
+0x408920	This is call on layout
+0x408938	call event:%d
+0x408948	not support event:%d
+0x408960	voice call event:%d
+0x408974	test show audio control center
+0x408994	This is audio controller
+0x4089b0	test set max time
+0x4089c4	test set auto on screen
+0x4089dc	test set tts
+0x4089ec	test clean message by key params=%s
+0x408a10	test clean message by pkg params=%s
+0x408a34	test clean all message
+0x408a4c	test clean top message
+0x408a64	test_ set broadcast
+0x408a78	turn screen off!
+0x408a8c	turn screen on!
+0x408a9c	test switch language!
+0x408ab4	Use:"notif sw 1" to try, only support [zh:1][en:2]
+0x408ae8	switch type:%d
+0x408af8	type(%d) subtype(%d) data:%p
+0x408b18	widget type:%d
+0x408b28	widget %d event come in
+0x408b40	no consume event:%d
+0x408b54	audio event:%d
+0x408b64	notif
+0x408b6c	usage: the same with pc demo. try pc demo nc tools first.
+0x408ba8	show_prompt
+0x408bb4	show_dialog
+0x408bc0	clean_dialog
+0x408bd0	show_dialog2
+0x408be0	clean_dialog2
+0x408bf0	clean_d_pkg
+0x408bfc	show_msg
+0x408c08	clean_msg
+0x408c14	show_app
+0x408c20	clean_app
+0x408c2c	show_widget
+0x408c38	clean_widget
+0x408c48	show_call
+0x408c54	clean_call
+0x408c60	show_v_call
+0x408c6c	clean_v_call
+0x408c7c	show_reply
+0x408c88	clean_reply
+0x408c94	show_call_on
+0x408ca4	clean_call_on
+0x408cb4	show_audio
+0x408cc0	clean_audio
+0x408ccc	set_max_time
+0x408cdc	screen_on_state
+0x408cec	open_tts
+0x408cf8	clean_k_msg
+0x408d04	clean_p_msg
+0x408d10	clean_a_msg
+0x408d1c	get_tts
+0x408d24	show_toast
+0x408d34	get_top
+0x408d4c	test_get_top_type
+0x408d60	test_switch_language
+0x408d78	test_set_auto_screen_on
+0x408d90	test_set_max_time
+0x408da4	test_clean_audio
+0x408db8	test_show_audio
+0x408dc8	audio_event_cb
+0x408dd8	test_clean_call_on
+0x408dec	test_show_call_on
+0x408e00	call_on_event_cb
+0x408e14	test_clean_reply
+0x408e28	test_show_reply
+0x408e38	test_screen_on
+0x408e48	reply_event_cb
+0x408e58	test_show_voice_call
+0x408e70	voice_call_event_cb
+0x408e84	test_voice_call_end
+0x408e98	test_clean_app
+0x408ea8	test_show_app
+0x408eb8	app_event_cb
+0x408ec8	test_clean_widget
+0x408edc	test_show_widget
+0x408ef0	widget_event_cb
+0x408f00	test_screen_off
+0x408f10	test_call_end
+0x408f20	test_show_call
+0x408f30	call_event_cb
+0x408f40	test_show_prompt
+0x408f54	test_show_toast
+0x408f64	test_show_message
+0x408f78	msg_handle_event
+0x408f8c	test_cancel_dialog
+0x408fa0	test_cancel_dialog_by_pkg
+0x408fbc	test_cancel_dialog2
+0x408fd0	test_zen_mode
+0x408fe0	test_show_dialog2
+0x408ff4	test_show_dialog
+0x409008	dlg_event_handler2
+0x40901c	dlg_event_handler
+0x409030	test_clean_top_message
+0x409048	test_clean_message_all
+0x409060	test_clean_message_by_pkg
+0x40907c	test_clean_message_by_key
+0x409098	test_open_tts
+0x40920c	can not show! The previous object still exist
+0x40923c	show audio obj
+0x40924c	hide audio obj
+0x40925c	there is no audio obj!
+0x409274	audio_event_handler
+0x409288	redraw_audio_border
+0x40929c	get_audio_header
+0x4092b0	free_audio_mem
+0x4092c0	delete_audio_by_id
+0x4092d4	delete_audio_by_pkgName
+0x4092ec	delete_all_audio
+0x409300	add_internal_audio
+0x409314	hide_audio_root
+0x409324	show_audio_obj
+0x409334	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_control.c
+0x409370	pip have %d focus! focus type:%d
+0x409394	PIP_POS CHANGED TO %d
+0x4093ac	handle vui event!
+0x4093c0	no vui need handle
+0x4093d4	LauncherPosition is not valid, use LV_ALIGN_BOTTOM_LEFT
+0x40940c	STANDBY_POS ACK
+0x40941c	PIP_POS CHANGED
+0x40942c	unfold the component!
+0x409444	no component need show
+0x40945c	notification has disabled!
+0x409478	code=%d, key=%d, focus type:%d
+0x409498	there is no focus type!, cannot do anim!
+0x4094c4	warning! there must be some pip deleted directly! cnt:%d
+0x409500	get focus type:%d
+0x409514	set screen on state is = %lld
+0x409534	save screen on state fail!
+0x409550	clear screen on restore flag!
+0x409570	now screen on!
+0x409580	restore screen on!
+0x409594	off keep screen on!
+0x4095a8	get screen on state is = %lld
+0x4095c8	error! unknown state(%d)
+0x4095e4	type:%d header is null
+0x4095fc	top pip is NULL! type(%d) subtype(%d)
+0x409624	not support this item:%d
+0x409640	close reply window
+0x409654	obj is null, can not remove vui evet!
+0x40967c	pip unregister vui event!
+0x409698	pip register vui event! str1: %s str2:%s
+0x4096c4	pip register vui event! str: %s
+0x4096e4	there have no pip component, return!
+0x40970c	now focus type is %d
+0x409724	may need stop tts
+0x409740	pre_action
+0x40974c	get_top_data
+0x40975c	pip_off_screen_on
+0x409770	pip_restore_screen_on
+0x409788	pip_keep_screen_on
+0x40979c	lv_pip_screen_on
+0x4097b0	lv_pip_clear_restore_policy
+0x4097cc	lv_pip_save_screen_on_state
+0x4097e8	get_pip_focus
+0x4097f8	pip_focus_change
+0x40980c	refresh_pip_focus
+0x409820	register_vui_event
+0x409834	input_event_handler
+0x409848	show_more_components_behind
+0x409864	unfold_components
+0x409878	move_pip_c_obj
+0x409888	get_pip_component
+0x40989c	launcher_show_callback
+0x4098b4	assistant_hide_callback
+0x4098cc	start_app_callback
+0x4098e0	launcher_on_top
+0x4098f0	transferred_launcher_position
+0x409910	vui_event_handler
+0x409924	pip_pos_callback
+0x409938	show_component_behind
+0x409950	unregister_vui_event
+0x409968	close_reply_pip
+0x409978	type_to_ztype
+0x409988	get_top_component_data
+0x4099a0	delete_top_pip
+0x4099b0	pip_always_screen_on
+0x409a28	null voice call obj!
+0x409a40	show voice call
+0x409a50	hide voice call
+0x409a60	voice call child node is null!
+0x409a80	voice_call_event_handler
+0x409a9c	redraw_voice_call_border
+0x409ab8	get_voice_call_header
+0x409ad0	free_voice_call_mem
+0x409ae4	delete_voice_call_by_id
+0x409afc	delete_voice_call_by_pkgName
+0x409b1c	delete_all_voice_call
+0x409b34	add_internal_voice_call
+0x409b4c	hide_voice_call_root
+0x409b64	show_voice_call_obj
+0x409b78	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_dialog_ui.c
+0x409bb8	data source is NULL
+0x409bcc	no dialog!
+0x409bd8	show dialog obj
+0x409be8	dialog dismiss
+0x409bf8	dialog hide, start close anim
+0x409c18	child is NULL
+0x409c28	data is null!
+0x409c38	not consume key event, now dialog state:%d
+0x409c64	ignore single click!
+0x409c7c	ignore double click!
+0x409c94	%d event dialog does not handle
+0x409cb4	exec click! btn:%d
+0x409cc8	can not cancel dialog, dialog is ready to close!
+0x409cfc	there is no %s dialog
+0x409d14	there is no pkg:%s dialog
+0x409d30	cancel_dialog_by_pkgname
+0x409d4c	cancel_dialog
+0x409d5c	flush_dialog
+0x409d6c	close_dialog
+0x409d7c	show_dialog
+0x409d88	layout_dialog_ui
+0x409d9c	exec_dialog_click
+0x409db0	dialog_handle_event
+0x409dc4	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_reply.c
+0x409e00	show reply obj
+0x409e10	hide reply obj
+0x409e20	redraw_reply_border
+0x409e34	get_reply_header
+0x409e48	free_reply_mem
+0x409e58	delete_reply_by_id
+0x409e6c	delete_reply_by_pkgName
+0x409e84	delete_all_reply
+0x409e98	add_internal_reply
+0x409eac	hide_reply_root
+0x409ebc	show_reply_obj
+0x409ecc	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc_widget.c
+0x409f0c	no need to hide separately misc widget! return
+0x409f3c	sub type %d do not support!
+0x409f58	show misc widget!
+0x409f6c	show misc widget %p
+0x409f80	free the misc widget obj: %p
+0x409fa0	close misc widget %p
+0x409fb8	del widget callback %p
+0x409fd0	data is NULL
+0x409fe0	the misc widget key has already exist
+0x40a008	notify_dialog is NULL
+0x40a020	del_widget_callback
+0x40a034	misc_widget_event_handler
+0x40a050	redraw_misc_widget_border
+0x40a06c	free_misc_widget_mem
+0x40a084	delete_misc_widget_by_pkgName
+0x40a0a4	construct_misc_widget_data
+0x40a0c0	hide_misc_widget_root
+0x40a0d8	show_misc_widget_obj
+0x40a0f0	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_api.c
+0x40a128	zen_mode = %d, is_zen_mode = %d
+0x40a148	init pip
+0x40a154	lv_pip_disable called
+0x40a16c	lv_pip_enable called
+0x40a184	device not wear on ,cannot show message!
+0x40a1b0	zen mode not allowed show, type(%d) subtype(%d)
+0x40a1e0	register type:%d cb:%p user_data:%p
+0x40a204	unregister type:%d
+0x40a218	clean all message
+0x40a22c	clean top message
+0x40a240	clean message by pkg
+0x40a258	clean message by id
+0x40a26c	not allowed show
+0x40a280	show component(%d) subtype(%d)
+0x40a2a0	close component(%d) subtype(%d)
+0x40a2c0	cancel dialog
+0x40a2d0	cancel dialog id must be not null!
+0x40a2f4	start switch notify language
+0x40a314	txt is null, can not be set vui event!
+0x40a33c	delete dialog pip by pkg name:%s
+0x40a360	free type:%d s_type:%d data!
+0x40a380	lv_pip_mem_free
+0x40a390	lv_pip_clean_dialog_by_pkgname
+0x40a3b0	lv_pip_clean_message_by_id
+0x40a3cc	lv_pip_clean_message_by_pkgName
+0x40a3ec	lv_pip_clean_top_message
+0x40a408	lv_pip_clean_all_message
+0x40a424	lv_pip_unregister_callback
+0x40a440	lv_pip_register_callback
+0x40a45c	lv_pip_is_allow_show
+0x40a474	lv_pip_enable
+0x40a484	lv_pip_disable
+0x40a494	lv_pip_init
+0x40a4a0	lv_pip_register_vui_event_txt
+0x40a4c0	disturb_mode_callback
+0x40a4d8	lv_pip_switch_language
+0x40a4f0	lv_pip_cancel_dialog
+0x40a508	lv_pip_close_component
+0x40a520	lv_pip_show_component
+0x40a538	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_dialog.c
+0x40a574	hide dialog obj
+0x40a584	notify_dialog malloc fail!
+0x40a5a0	create dialog fail, free the dialog msg!
+0x40a5cc	add_internal_dialog
+0x40a5e0	construct_dialog_data
+0x40a5f8	hide_dialog_root
+0x40a60c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_utils.c
+0x40a648	error! child cnt must <= 2, obj:%p cnt:%d
+0x40a678	str malloc fail!
+0x40a68c	child node:%p cb:%p state:%d
+0x40a6ac	node alloc failed
+0x40a6c0	create_node
+0x40a6cc	dump_notify_node
+0x40a6e0	lv_notify_combine_str
+0x40a6f8	notify_memcpy_str
+0x40a70c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_sound_effects.c
+0x40a750	dl tts done state: %d
+0x40a768	start dialog tts
+0x40a77c	dialog tts type: %d
+0x40a790	set tts state is = %lld
+0x40a7a8	save tts state fail!
+0x40a7c0	get tts state fail!
+0x40a7d4	get tts state is = %lld
+0x40a7ec	play internal sound
+0x40a800	stop speech!
+0x40a810	dl ready to tts! tts content:%s
+0x40a830	lv_pip_dialog_to_speech
+0x40a848	dl_tts_callback
+0x40a858	lv_notify_stop_speech
+0x40a870	play_internal_sound
+0x40a884	lv_pip_get_tts_state
+0x40a89c	lv_pip_save_tts_state
+0x40a8b4	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc_msg_ui.c
+0x40a8f4	show the message %p cnt:%d
+0x40a910	layout message and tts
+0x40a928	obj has already delete
+0x40a940	no msg obj need show, return
+0x40a960	no top message
+0x40a970	tts not done, can not clean
+0x40a98c	message do not layout, delete it directly!
+0x40a9b8	close top message %p
+0x40a9d0	no message!
+0x40a9dc	msg is being displayed!
+0x40a9f4	delete message by package:%s fail
+0x40aa18	delete message by key:%s fail
+0x40aa38	clean_message
+0x40aa48	show_next_message
+0x40aa5c	notify_msg_cb
+0x40aa6c	clean_top_message
+0x40aa80	do_message_anim
+0x40aa90	layout_message
+0x40aaa0	show_message
+0x40aab0	layout_message_ui
+0x40aac4	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_prompt.c
+0x40ab00	hide prompt obj
+0x40ab10	it's not allowed show, content is null!
+0x40ab38	prompt data malloc fail!
+0x40ab54	redraw_prompt_border
+0x40ab6c	get_prompt_header
+0x40ab80	free_prompt_mem
+0x40ab90	delete_prompt_by_id
+0x40aba4	delete_prompt_by_pkgName
+0x40abc0	delete_all_prompt
+0x40abd4	add_internal_prompt
+0x40abe8	construct_prompt_data
+0x40ac00	hide_prompt_root
+0x40ac14	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_call_on.c
+0x40ac50	there have higher priority types or null obj!
+0x40ac80	show call on
+0x40ac90	hide call on
+0x40aca0	call on child node is null!
+0x40acbc	call_on_event_handler
+0x40acd4	redraw_call_on_border
+0x40acec	get_call_on_header
+0x40ad00	free_call_on_mem
+0x40ad14	delete_call_on_by_id
+0x40ad2c	delete_call_on_by_pkgName
+0x40ad48	delete_all_call_on
+0x40ad5c	add_internal_call_on
+0x40ad74	hide_call_on_root
+0x40ad88	show_call_on_obj
+0x40ad9c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc_msg.c
+0x40add8	show msg obj
+0x40ade8	hide msg obj
+0x40adf8	err! content and title both null!
+0x40ae1c	notify_msg malloc fail!
+0x40ae34	Message stacked
+0x40ae44	free the msg obj:%p
+0x40ae58	error! msg data is null, return false
+0x40ae80	now top message is ready to close, return false!
+0x40aeb4	no msg or cannot click
+0x40aecc	already clicked or not yet displayed(%d), return!
+0x40af00	msg_event_handler
+0x40af14	set_msg_status
+0x40af24	free_msg_mem
+0x40af34	add_internal_msg
+0x40af48	construct_misc_msg_data
+0x40af60	hide_msg_root
+0x40af70	show_msg_obj
+0x40af80	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc_app.c
+0x40afbc	no need to hide separately misc app! return
+0x40afe8	show misc app %p
+0x40affc	free the misc app obj: %p
+0x40b018	close misc app %p
+0x40b02c	del app callback %p
+0x40b040	the misc app key has already exist!
+0x40b064	app data malloc fail
+0x40b07c	del_app_callback
+0x40b090	misc_app_event_handler
+0x40b0a8	redraw_misc_app_border
+0x40b0c0	free_misc_app_mem
+0x40b0d4	delete_misc_app_by_pkgName
+0x40b0f0	construct_misc_app_data
+0x40b108	hide_misc_app
+0x40b118	show_misc_app_obj
+0x40b12c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_prompt_ui.c
+0x40b16c	pip prompt show:%s %s status:%d
+0x40b18c	lv_prompt_create
+0x40b1a0	../../thirdparty/star_air_lvgl/app/xjxr_vui/xjxr_vui_matcher_fuzzy.c
+0x40b1e8	Corrupted input, need length:%d, input length:%d
+0x40b21c	**2 Corrupted str:%s
+0x40b234	**1 Corrupted str:%s
+0x40b24c	toUnicode
+0x40b258	xjxr_vui_match_fuzzy_inernal
+0x40b278	to_lowercase
+0x40b288	../../thirdparty/star_air_lvgl/app/xjxr_vui/xjxr_vui_manager.c
+0x40b2c8	txt is null
+0x40b2d4	id: %d, vui: %s obj is null
+0x40b2f0	id %d, vui %s construct failed, obj:%p
+0x40b318	now not support this matcher(%d), use default fuzzy
+0x40b34c	vui %s register failed, obj:%p
+0x40b36c	vui %s registered, obj:%p
+0x40b388	vui un-registered, obj:%p
+0x40b3a4	**%d: id:%d, txt:%s, obj:%p, layer:%p
+0x40b3cc	**VUI control manager: vuiManager:%p, vuiHeader:%p, header:%p, allow_repeat_obj:%d, is_inited:%d, cloud_sync_cb:%p, text0:%d, text_id:%d, obj:%p, layer_obj:%p, next:%p
+0x40b474	vui matched %s, target is %s
+0x40b494	vui matched %d
+0x40b4a4	xjxr_vui_exist_obj
+0x40b4b8	xjxr_vui_register_turnkey_txt
+0x40b4d8	xjxr_vui_register_turnkey
+0x40b4f4	xjxr_vui_construct
+0x40b508	xjxr_vui_register
+0x40b51c	xjxr_vui_call_id
+0x40b530	xjxr_vui_call
+0x40b540	xjxr_vui_dump_manager
+0x40b558	xjxr_vui_dump
+0x40b568	xjxr_vui_deregister_turnkey
+0x40b584	xjxr_vui_register_turnkey_txt_op
+0x40b5a8	../../thirdparty/star_air_lvgl/app/xjxr_zen_mode/lv_zen_page_runtime.c
+0x40b5f0	switch:%d, call:%d, notify:%d
+0x40b610	there is no zen item changed! sys[%d], navi[%d], tp[%d]
+0x40b648	zen_tips
+0x40b654	handle_zen_mask
+0x40b664	../../thirdparty/star_air_lvgl/app/xjxr_zen_mode/lv_zen_mode_manager.c
+0x40b6ac	Set system zen mode: mode=%d, show=%d, reason=%s
+0x40b6e0	Unknown zen mode, set zen mode(%d) failed
+0x40b70c	Set navigation zen mode: mode=%d, show=%d, reason=%s
+0x40b744	Unknown zen mode, set navi zen mode(%d) failed
+0x40b774	Set teleprompter zen mode: mode=%d, show=%d, reason=%s
+0x40b7ac	Register system zen mode changed cb: cb=%p
+0x40b7d8	Unregister system zen mode changed cb: cb=%p
+0x40b808	unregister_zen_mode_changed_cb
+0x40b828	register_zen_mode_changed_cb
+0x40b848	lv_set_tp_zen_mode
+0x40b85c	lv_set_navi_zen_mode
+0x40b874	lv_set_zen_mode_show_ui
+0x40b88c	../../thirdparty/star_air_lvgl/app/RingManager/ring_manager.c
+0x40b8cc	[%s]
+
+0x40b8d4	xjxr_ring_get_bond_device = NULL
+0x40b8f8	[%s] before ring name: %s
+
+0x40b914	[%s] after ring name: %s
+
+0x40b930	[%s] failed pool full
+
+0x40b948	[%s] success session number = %d
+
+0x40b96c	UNKNOWN STATE
+0x40b97c	[%s] raw ring name: %s
+
+0x40b994	[%s] ring manager invalid
+
+0x40b9b0	[%s] real ring name: %s
+
+0x40b9cc	[%s] must in SCAN state current state = %s
+
+0x40b9f8	[%s] state = %d
+
+0x40ba0c	[%s] no selected ring
+
+0x40ba24	[%s] current state = %s
+
+0x40ba40	[%s] ring_msg_pool_push failed
+0x40ba60	[%s] battery_level = %d
+
+0x40ba7c	[%s] ring manager ring == NULL
+
+0x40ba9c	[%s] ring not connected
+
+0x40bab8	[%s] %d
+
+0x40bac4	[%s] ring manager modify name cancelled
+
+0x40baf0	[%s] ring == NULL
+
+0x40bb04	[%s] ring not bound
+
+0x40bb1c	[%s] ring name = %s
+
+0x40bb34	[%s] ring bound state connected
+
+0x40bb58	[%s] ring bound state disconnected
+
+0x40bb7c	[%s] ring bound state connecting
+
+0x40bba0	[%s] ring bound unknown state = %d
+
+0x40bbc4	[%s] ring verson create failed
+
+0x40bbe4	version_name
+0x40bbf4	device_modle_name
+0x40bc08	device_serial_no
+0x40bc1c	[%s] ring update info == NULL
+
+0x40bc3c	[%s] create ota_file failed
+
+0x40bc5c	[%s] create ota_file faled
+
+0x40bc78	[%s] msg invalid session_number = %d
+
+0x40bca0	[%s] register client failed
+
+0x40bcc0	[%s] invalid ring manager client handle
+
+0x40bcec	[%s] ring manager client[%p] unregistered
+
+0x40bd18	[%s] ring manager client[%p] unregister failed, must call ring_manager_reg_client before 
+
+0x40bd74	[%s] failed ring manager not ready
+
+0x40bd98	[%s] failed name == NULL
+
+0x40bdb4	[%s] failed len <= 0
+
+0x40bdcc	[%s] failed len > %d
+
+0x40bde4	[%s] ring = NULL
+
+0x40bdf8	[%s] ring in connecting
+
+0x40be14	[%s] ring in unbinding
+
+0x40be2c	[%s] in progress
+
+0x40be40	[%s] must be in IDLE state current state = %s
+
+0x40be70	[%s] session number = %d
+
+0x40be8c	[%s] must be in SCAN state current state = %s
+
+0x40bebc	[%s] ring already connected
+
+0x40bedc	[%s] ring set connecting failed
+
+0x40bf00	[%s] ring manager must in IDLE state current state = %s
+
+0x40bf3c	[%s] ring already disconnected
+
+0x40bf5c	[%s] ring set disconnecting failed
+
+0x40bf80	[%s] ring already unbound
+
+0x40bf9c	[%s] ring set unbinding falied
+
+0x40bfbc	[%s] ring remove bond failed
+
+0x40bfdc	UNBIND
+0x40bfe4	[%s] failed current state = %s
+
+0x40c004	[%s] ring already bound
+
+0x40c020	IDLE
+0x40c028	SCAN
+0x40c030	DISCONNECT
+0x40c074	ring_manager_ring_select_prev
+0x40c094	ring_manager_set_update_info
+0x40c0b4	ring_manager_modify_name
+0x40c0d0	ring_manager_get_ota_manager
+0x40c0f0	ring_manager_unreg_client
+0x40c10c	ring_manager_reg_client
+0x40c124	ring_manager_handle_msg
+0x40c13c	ring_manager_release
+0x40c154	ring_manager_install_ota_manager
+0x40c178	ring_manager_install_calibrator
+0x40c198	ring_msg_scan_result_cb
+0x40c1b0	ring_manager_ring_can_select_next
+0x40c1d4	ring_scan_result_cb
+0x40c1e8	ring_msg_connect_state_cb
+0x40c204	ring_connect_state_cb
+0x40c21c	ring_msg_bond_state_cb
+0x40c234	ring_bond_state_cb
+0x40c248	ring_msg_battery_state_cb
+0x40c264	ring_battery_state_cb
+0x40c27c	ring_msg_modify_name_cb
+0x40c294	ring_modify_name_cb
+0x40c2a8	ring_msg_ready_cb
+0x40c2bc	ring_manager_ring_select_next
+0x40c2dc	ring_ready_cb
+0x40c2ec	ring_msg_calibrator_cb
+0x40c304	ring_algo_ready_cb
+0x40c318	ring_msg_version_cb
+0x40c32c	ring_version_cb
+0x40c33c	ring_ota_file_create
+0x40c354	ring_msg_ota_load_file_fail_cb
+0x40c374	ring_msg_ota_load_file_success_cb
+0x40c398	ring_ota_file_load_cb
+0x40c3b0	ring_msg_pool_push
+0x40c3c4	ring_manager_remove_bond
+0x40c3e0	ring_msg_update_cb
+0x40c3f4	ring_msg_ota_update_file_success_cb
+0x40c418	ring_msg_ota_update_file_fail_cb
+0x40c43c	ring_ota_result_cb
+0x40c450	ring_manager_init
+0x40c464	ring_manager_disconnect
+0x40c47c	ring_manager_reconnect
+0x40c494	ring_manager_connect
+0x40c4ac	ring_manager_stop_scan
+0x40c4c4	ring_manager_start_scan
+0x40c4dc	../../thirdparty/star_air_lvgl/app/RingManager/ring_calibrator.c
+0x40c520	ca show keep still
+0x40c534	ca show initialising
+0x40c54c	ca->lv_root is not null, hide it
+0x40c570	fade in anim ready, resume ca->lv_timer
+0x40c598	ca fade in anim start
+0x40c5b0	ca or ca->lv_root is null
+0x40c5cc	ca->lv_img is invalid
+0x40c5e4	ca->lv_label_end is invalid
+0x40c600	not full screen, ca->lv_root_bg is invalid
+0x40c62c	try pause ca->lv_timer before we delete ca->lv_root
+0x40c660	ca->lv_root is not null, delete it
+0x40c684	start fade in anim
+0x40c698	start fade out anim
+0x40c6ac	create ring ca
+0x40c6bc	start ring ca
+0x40c6cc	ring ca succeed, pause ca->lv_timer
+0x40c6f0	ring ca succeed, show ca fade out anim
+0x40c718	ring ca failed, pause ca->lv_timer
+0x40c73c	ring ca failed, delete ca->lv_root
+0x40c760	release ring ca, delete ca->lv_root
+0x40c784	release ring ca, delete ca->lv_timer
+0x40c7ac	ring_calibrator_release
+0x40c7c4	ring_calibrator_fail
+0x40c7dc	fade_in_anim_start_cb
+0x40c7f4	fade_in_anim_ready_cb
+0x40c80c	timer_callback
+0x40c81c	ring_calibrator_create
+0x40c834	show_ca_fade_out_anim
+0x40c84c	show_ca_fade_in_anim
+0x40c864	ring_calibrator_success
+0x40c87c	lv_obj_move_foreground
+0x40c894	ring_calibrator_start
+0x40c8ac	fade_out_anim_start_cb
+0x40c8c4	fade_out_anim_exec_cb
+0x40c8dc	fade_out_anim_ready_cb
+0x40c8f4	fade_out_anim_exec_cb_del
+0x40c910	%d.%d.%d.%d
+0x40c91c	../../thirdparty/star_air_lvgl/app/RingManager/ring.c
+0x40c954	[%s]  version=%s
+0x40c968	[%s]  mode_id=%s
+0x40c97c	[%s]  sn=%s
+0x40c988	[%s] create ring update info failed
+0x40c9ac	[%s] create ring update info failed update digest == NULL
+0x40c9e8	[%s] create ring update info failed update journal == NULL
+
+0x40ca24	[%s] create ring update info failed update version == NULL
+
+0x40ca60	[%s] create ring list failed
+0x40ca80	ring_list_create
+0x40ca94	ring_set_update_info
+0x40caac	ring_version_create
+0x40cac0	../../thirdparty/star_air_lvgl/app/RingManager/ring_ota_journal.c
+0x40cb04	result == NORFLASH_API_OK
+0x40cb20	ring_ota_journal_clear
+0x40cb38	ring_ota_journal_write
+0x40cb50	ring_ota_journal_read
+0x40cb68	ring_ota_journal_register_callback
+0x40cb8c	ring_ota_journal_register
+0x40cba8	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_code.c
+0x40cbe8	code:%s
+0x40cbf0	language type:%s
+0x40cc04	why are you set language type again? type:%s
+0x40cc34	lv_md_code_set_language
+0x40cc4c	lv_md_code_set_text
+0x40cc7c	dummy
+0x40cca0	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_ref.c
+0x40cce0	current ref has no text!
+0x40ccfc	block_quote
+0x40cd08	lv_md_ref_set_text
+0x40cd38	(nil)
+0x40cd40	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_hyper_link.c
+0x40cd84	Malloc fail
+0x40cd90	hyper_link
+0x40cd9c	lv_md_hyper_link_set_text
+0x40cdd4	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_list_item.c
+0x40ce18	err!, impossible this part!
+0x40ce34	%d. 
+0x40ce3c	item content:%s, parent:%p, curr:%p
+0x40ce64	unordered list item content:%s, parent:%p,curr:%p
+0x40ce9c	list_item
+0x40cea8	lv_md_add_item_txt
+0x40cebc	lv_md_list_add_item_txt
+0x40ced4	lv_md_handle_unordered_prefix
+0x40cef4	lv_md_handle_ordered_prefix
+0x40cf48	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_para.c
+0x40cf88	lv_md_para_set_text
+0x40cfb8	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_inline_code.c
+0x40d000	inline code:%s
+0x40d010	inline_code
+0x40d01c	lv_md_inline_code_set_text
+0x40d070	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_ducument.c
+0x40d0b4	##cmark feed content!
+0x40d0cc	err! no document obj!
+0x40d0e4	document
+0x40d0f0	lv_md_document_get_width
+0x40d10c	lv_md_document_stream_parser_feed
+0x40d14c	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_table_row.c
+0x40d190	Table support max %d columns. exit
+0x40d1b4	table_row
+0x40d1c0	lv_md_table_row_set_cell_value
+0x40d1fc	head
+0x40d22c	\I?<
+0x40e13c	0123456789ABCDEFabcdef
+0x4151bc	calloc fail
+0x4151c8	Create document fail
+0x4151e0	malloc fail
+0x4151ec	get_flag(b->flags, CMARK_NODE_OPEN)
+0x415210	no language specifier
+0x415228	Tag:%s
+0x415230	Debug: %p finalized, type:%s
+
+0x415250	pos < node_content->size
+0x41526c	parent
+0x415274	##cmark finalize this part
+0x415290	#cmark process line :%d
+0x4152a8	html_block_type >= 1 && html_block_type <= 7
+0x4152d8	parser->current != NULL
+0x4152f0	add_text_to_container
+0x415308	add_child
+0x415314	parse_html_block_prefix
+0x41532c	finalize
+0x415338	S_process_line
+0x415348	cmark_parser_new_with_mem_into_root
+0x41536c	make_block
+0x415378	make_document_lvgl
+0x415390	../../thirdparty/star_air_lvgl/app/cmark/src/lv_md_display.c
+0x4153d0	anim timer do not create!
+0x4153ec	##cmark s_cb start!
+0x415400	##cmark s_cb end!
+0x415414	anim cb node is NULL
+0x41542c	lv_md_anim_cb
+0x41543c	lv_md_set_anim_content
+0x415454	lv_md_start_content_anim
+0x415470	../../thirdparty/star_air_lvgl/app/cmark/src/buffer.c
+0x4154a8	target_size > 0
+0x4154b8	[cmark] cmark_strbuf_grow requests buffer with size > %ld, aborting
+0x4154fc	cmark_strbuf_grow
+0x415510	../../thirdparty/star_air_lvgl/app/cmark/src/cmark.c
+0x415548	[cmark] realloc returned null pointer, aborting
+
+0x41557c	[cmark] calloc returned null pointer, aborting
+
+0x4155ac	xcalloc
+0x4155b4	xrealloc
+0x4155c0	../../thirdparty/star_air_lvgl/app/cmark/src/lv_parser.c
+0x4155fc	cmark_parser_new_lvgl NULL
+0x415618	err! cmark handle is NULL!
+0x415634	Set parser finished flag
+0x415650	lv_stream_parser_finish
+0x415668	lv_stream_parser_create
+0x415680	../../thirdparty/star_air_lvgl/app/cmark/src/inlines.c
+0x4156b8	delim == subj->last_delim
+0x4156d4	##cmark set content
+0x4156e8	----> ADD image, content:%s
+0x415704	----> ADD link, content:%s
+0x415720	TABLE
+0x415728	TABLE ROW
+0x415734	container parent:%p lv_node:%p cell_index:%d start line:%d
+0x415770	%u not a container
+0x415784	----> ADD item, content:%s
+0x4157a8	!(subj->pos < subj->input.len && subj->input.data[subj->pos] == 0)
+0x415a04	remove_delimiter
+0x415a18	process_emphasis
+0x415a2c	lv_set_content
+0x415a3c	peek_char
+0x415a48	<unknown>
+0x415a54	../../thirdparty/star_air_lvgl/app/cmark/src/node.c
+0x415a88	Invalid '%s' in node type %s at %d:%d
+
+0x415ab0	code_block
+0x415abc	html_block
+0x415ac8	custom_block
+0x415ad8	paragraph
+0x415ae4	heading
+0x415aec	thematic_break
+0x415afc	table_cell
+0x415b08	softbreak
+0x415b14	linebreak
+0x415b20	html_inline
+0x415b2c	custom_inline
+0x415b3c	emph
+0x415b44	strong
+0x415b4c	link
+0x415be8	uc >= 0
+0x415bf0	cmark_utf8proc_encode_char
+0x415c0c	μàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþssāăąćĉċčďđēĕėęěĝğġģĥħĩīĭįi̇
+0x415c80	ĳĵķĺļľŀłńņňʼn
+0x415c9a	ŋōŏőœŕŗřśŝşšţťŧũūŭůűųŵŷÿźżžs
+0x415cd2	ɓƃƅɔƈɖɗƌǝəɛƒɠɣɩɨƙɯɲɵơƣƥʀƨʃƭʈưʊʋƴƶʒƹƽǆǆǉǉǌǌǎǐǒǔǖǘǚǜǟǡǣǥǧǩǫǭǯǰ
+0x415d4c	ǳǳǵƕƿǹǻǽǿȁȃȅȇȉȋȍȏȑȓȕȗșțȝȟƞȣȥȧȩȫȭȯȱȳⱥ
+0x416070	вдосттъѣꙋ
+0x4163d2	ὐὒὔὖὑ
+0x41653e	αιάιᾶᾶιᾰ
+0x416560	αιιὴι
+0x41656c	ηιήιῆῆιὲ
+0x41658e	ηιῒΐῖῗῐ
+0x4165b8	ῢΰῤῦῧῠ
+0x4165ec	ωιώιῶῶιὸ
+0x41660e	ωιωk
+0x4167a0	ɑɱɐɒⱳ
+0x416a0a	ɦɜɡɬɪʞʇʝꭓ
+0x416ba0	fffiflffi
+0x416bae	ststմնմեմիվնմխａ
+0x4188c4	../../thirdparty/star_air_lvgl/app/cmark/src/lv_md_animation.c
+0x418904	##cmark ready to start anim!
+0x418924	Some tricking things happen. curr:%p
+0x41894c	obj->parent
+0x418958	ANIM_OPEN
+0x418964	cmark handle:%p destroyed
+0x418980	##cmark all finished cb start!
+0x4189a0	##cmark all finished cb end!
+0x4189c0	malloc fail, root:%p
+0x4189d8	##cmark finish start cb!
+0x4189f4	##cmark finish end cb!
+0x418a0c	lv_md_on_component_animation_finish
+0x418a30	lv_md_obj_get_new_siblings_or_uncles
+0x418a58	lv_md_update_to_next
+0x418a70	lv_md_timer_dealer
+0x418a84	lv_md_timer_on_finished
+0x418a9c	lv_md_timer_cb
+0x418aac	lv_md_do_animation
+0x418ac0	../../thirdparty/star_air_lvgl/app/cmark/src/iterator.c
+0x418af8	mem->calloc fail
+0x418b0c	cmark_iter_next
+0x418b1c	cmark_iter_new
+0x418c2c	../../thirdparty/star_air_lvgl/app/cmark/src/references.c
+0x418c68	map->sorted == NULL
+0x418c7c	sort_references
+0x418c8c	normalize_reference
+0x418ca0	cmark_reference_create
+0x418cb8	message->base.descriptor == &connect_message_neg__descriptor
+0x418cf8	../../thirdparty/star_air_lvgl/app_msg_proxy/connect_message_neg.pb-c.c
+0x418d40	ConnectMessageNeg
+0x418d54	connect_message_neg__free_unpacked
+0x418d78	connect_message_neg__pack
+0x418e10	../../thirdparty/star_air_lvgl/app_msg_proxy/app_msg_proxy.c
+0x418e50	[%s] app_msg_proxy:: acquire msg failed
+0x418e78	[%s] app_msg_proxy:: acquire msg %p
+0x418e9c	[%s] app_msg_proxy:: free msg %p
+0x418ec0	[%s] type = %d resume = true
+0x418ee0	[%s] type = %d resume = false
+0x418f00	[%s] user_data == NULL
+0x418f18	[%s] *rcvr == NULL
+0x418f2c	[%s] app_msg == NULL
+0x418f44	[%s] sndr pgk name = NULL
+
+0x418f60	default.package
+0x418f70	[%s] msg = NULL
+
+0x418f84	[%s] osMessagePut failed
+
+0x418fa0	[%s] state=[%d]
+0x418fb0	launch.app.pakcage
+0x418fc4	app_msg_proxy:: conn_rcv_cb
+0x418fe0	[%s] decode protobuf failed, starry_msg is NULL
+
+0x419014	[%s] starry_msg failed
+
+0x41902c	[%s] senderpkg or receiverpkg is NULL
+
+0x419054	[%s] malloc failed, sndr pgk name is NULL
+
+0x419080	[%s] lv_tlsf_malloc failed sndr pkg name
+
+0x4190ac	[%s] lv_tlsf_malloc failed rcvr pkg name
+
+0x4190d8	[%s] lv_tlsf_malloc failed msg
+
+0x4190f8	[%s] lv_tlsf_malloc failed data
+
+0x41911c	[%s] app_msg_proxy:: conn_msg == NULL
+
+0x419144	[%s] app_msg_proxy:: connect_msg__unpack failed
+
+0x419178	[%s] app_msg_proxy:: starry_msg== NULL
+
+0x4191a0	[%s] app_msg_proxy:: starry_net_message_data__unpack failed
+
+0x4191e0	[%s] app_msg_proxy:: sndr pgk name = NULL
+
+0x41920c	[%s] app_msg_proxy:: lv_tlsf_malloc failed sndr pkg name
+
+0x419248	[%s] app_msg_proxy:: lv_tlsf_malloc failed rcvr pkg name
+
+0x419284	[%s] app_msg_proxy:: lv_tlsf_malloc failed msg
+
+0x4192b4	[%s] app_msg_proxy:: lv_tlsf_malloc failed data
+
+0x4192e8	conn_rcv_cb remote version not match, decode failed!!!
+0x419320	app_msg_proxy:: conn_rcv_cb osMessagePut failed
+
+0x419354	[%s] app_msg_proxy:: app msg pool empty
+
+0x419380	[%s] app msg pool empty
+
+0x41939c	[%s] %p ref_count = %d rcvr_count = %d
+
+0x4193c4	[%s] app_msg_proxy:: conn_snd_rt_cb status = %d
+0x4193f4	[%s] app_msg_proxy:: conn state changed state=[%d]
+0x419428	update_rx_tx_status to state=[%d]
+0x41944c	[%s] app state changed state=[%d]
+0x419470	broadcast.package
+0x419484	current_remote_neg_version = %d
+0x4194a4	neg_state = missing
+0x4194b8	neg_state = negotiating
+0x4194d0	neg_state = negotiated
+0x4194e8	[%s] app conn state = %d
+0x419504	[%s] app rx tx state = %d
+0x419520	[%s] app_msg_proxy handle msg
+0x419540	[%s] %s handle msg begin
+0x41955c	[%s] %s handle msg end
+0x419574	[%s] invalid proxy handle
+0x419590	[%s] %s already registered
+0x4195ac	[%s] allocate rcvr failed
+0x4195c8	[%s] allocate rcvr pkg name failed
+0x4195ec	app_msg_proxy_init proxy = %p
+
+0x41960c	app_msg_proxy:: create message failed
+
+0x419634	app_msg_proxy:: create conn failed
+
+0x419658	[%s] invalid rcvr handle
+0x419674	[%s] invalid rcvr
+0x419688	[%s] rcvr already enabled
+0x4196a4	[%s] rcvr disabled
+0x4196b8	[%s] lv_tlsf_malloc failed starry_msg_v1_buf
+0x4196e8	[%s] lv_tlsf_malloc failed starry_msg_buf
+0x419714	starry_msg_buf_pack_size = %d starry_msg_buf_size = %d
+0x41974c	[%s] lv_tlsf_malloc failed conn_msg_buf
+0x419774	conn_msg_buf_pack_size = %d conn_msg_buf_size = %d
+0x4197a8	[%s] send failed!!!, current neg version %d not match
+0x4197e0	app_msg_proxy_snd_diff_pkg failed, neg version wrong!!!
+0x419818	app_msg_proxy_snd_direct_inner_v1 unsupported audio type = %d
+0x419858	send failed, audio data out of 242 len
+0x419880	unsupported audio type = %d
+0x41989c	app_msg_proxy_snd_direct failed, neg version wrong!!!
+0x4198d4	app_audio_focus_state
+0x4198ec	app_audio_focus_type
+0x419904	app_msg_proxy_snd_diff_pkg_inner_v0
+0x419928	app_msg_proxy_snd_diff_pkg_inner_v1
+0x41994c	audio_focus_cb
+0x41995c	app_msg_proxy_subscribe_audio_focus
+0x419980	app_msg_proxy_unreg_rcvr
+0x41999c	app_msg_proxy_reg_rcvr
+0x4199b4	unref_rcvr
+0x4199c0	ref_rcvr
+0x4199cc	app_msg_proxy_poll_once
+0x4199e4	app_state_rcvr_cb
+0x4199f8	conn_state_cb
+0x419a08	app_msg_proxy_msg_unmarshal
+0x419a24	app_msg_proxy_msg_unmarshal_v1
+0x419a44	app_msg_free
+0x419a54	app_msg_acquire
+0x419a64	app_state_cb
+0x419a74	app_msg_proxy_start_app
+0x419a8c	app_msg_send_inner_v0
+0x419aa4	conn_snd_rt_cb
+0x419ab4	app_msg_send_inner_v1
+0x419acc	app_msg_proxy_snd
+0x419ae0	app_msg_proxy_msgq
+0x419b10	message->base.descriptor == &connect_msg__descriptor
+0x419b48	../../thirdparty/star_air_lvgl/app_msg_proxy/connect_msg_api.pb-c.c
+0x419b8c	MsgType
+0x419b98	COMMON
+0x419ba4	MSG_TYPE__COMMON
+0x419bb8	MSG_TYPE__XR
+0x419bc8	MSG_TYPE__CAR
+0x419bd8	ConnectMsg
+0x419be4	connect_msg__free_unpacked
+0x419c00	connect_msg__pack
+0x419c14	connect_msg__get_packed_size
+0x419db4	../../thirdparty/star_air_lvgl/app_msg_proxy/app_msg_neg.c
+0x419df0	[%s], send neg version %d, packSize = %d
+0x419e1c	toNegotiating send neg %d
+0x419e38	NegState change from MISSING to NEGOTIATING
+0x419e64	remote_neg_version save failed or value is same in sp
+0x419e9c	remote_neg_version = %d, save success,
+0x419ec4	Invalid NegState from %s to %s
+0x419ee4	[%s] remote neg %d, local neg %d
+
+0x419f08	MISSING
+0x419f10	NegState change %s to MISSING
+0x419f30	NegState change NEGOTIATING to NEGOTIATED
+0x419f5c	NEGOTIATED
+0x419f68	read sp success, update remote_neg_version = %d
+0x419f98	[%s] disconnect and delete fallback timer
+0x419fc4	[%s] app_stop and delete fallback timer
+0x419fec	[%s] app status error and delete fallback timer
+0x41a01c	[%s] is third phone
+0x41a030	[%s] is ios phone
+0x41a044	[%s] is meizu phone
+0x41a058	[%s] is unknown phone
+0x41a070	[%s] failed, not negotiated.
+0x41a098	send_fallback_msg innerPackSize %d connectPackSize %d
+0x41a0d0	fallback timer tiger, neg fallback to default
+0x41a100	[%s] fallback to default protocol
+0x41a124	[%s] negotiated, don't need send neg, return
+0x41a154	[%s] retry max time %d, fallback to default protocol
+0x41a18c	[%s] retry send, current time %d
+0x41a1b0	[%s] msg_len <= 0, intercept msg!!!
+0x41a1d4	[%s] appId %d not launcher, intercept msg!!!
+0x41a204	[%s] delete fallback timer
+0x41a220	[%s] first byte is 0x20
+0x41a238	[%s] unpack neg protobuf failed!!!!
+0x41a25c	[%s] support max version %d, remote version %d
+0x41a28c	[%s] found version 1 and mz phone, fallback direct
+0x41a2c0	[%s] remote version %d higher, send neg and wait fallback
+0x41a2fc	[%s] success, use version %d
+0x41a31c	[%s] local version %d higher, fallback to remote version %d
+0x41a358	[%s] receive msg before negotiated, neg_version_fallback
+0x41a394	[%s] receive msg before negotiated, not connect and ignore it
+0x41a3d4	KEY_APP_MSG_NEG_REMOTE_VERSION result %d
+0x41a400	APP_MSG_NEG_FALLBACK_TIMER
+0x41a43c	msg_negotiation_check
+0x41a454	app_msg_send_check
+0x41a468	update_device_status
+0x41a480	notify_neg_version_change
+0x41a49c	neg_msg_callback
+0x41a4b0	send_negotiation_msg
+0x41a4c8	neg_version_fallback
+0x41a4e0	app_msg_neg_fallback_mutex
+0x41a520	message->base.descriptor == &starry_net_message_data_v1__descriptor
+0x41a564	../../thirdparty/star_air_lvgl/app_msg_proxy/starrynet_message_v1.pb-c.c
+0x41a5b0	StarryNetMessageDataV1
+0x41a5c8	starry_net_message_data_v1__free_unpacked
+0x41a5f4	starry_net_message_data_v1__pack
+0x41a618	starry_net_message_data_v1__get_packed_size
+0x41a644	t"?<
+0x41a7a4	message->base.descriptor == &starry_net_message_data__descriptor
+0x41a7e8	../../thirdparty/star_air_lvgl/app_msg_proxy/starry_net_message_data.pb-c.c
+0x41a834	StarryNetMessageData.MessageType
+0x41a858	starry_net_message_data__free_unpacked
+0x41a880	starry_net_message_data__pack
+0x41a8a0	starry_net_message_data__get_packed_size
+0x41aadc	../../thirdparty/star_air_lvgl/src/core/lv_refr.c
+0x41ab10	cannot rotate a full refreshed display!
+0x41ab38	detected modifying dirty areas in render
+0x41ab64	draw_buf_rotate
+0x41ab74	_lv_inv_area
+0x41ab84	../../thirdparty/star_air_lvgl/src/core/lv_event.c
+0x41abb8	damn it! obj->spec_attr->event_dsc_cnt overflowed, filter:%x, obj:%p, event_cb:%p, user_data:%p
+0x41ac18	lv_obj_add_event_cb
+0x41ac2c	../../thirdparty/star_air_lvgl/src/core/lv_indev_xjxr.c
+0x41ac64	default group no focused.
+0x41ac80	LV_KEY_PWR_VOICE_ASSIST Calling: assistant_wakeup.
+0x41acb4	LV_KEY_PWR_VOICE_ASSIST Called: assistant_wakeup
+0x41ace8	Phone Power Key logics
+0x41ad00	bt unicron pressure key event has processed.
+0x41ad30	indev_xjxr_screen_off_tp_proc : %u key is pressed
+0x41ad64	indev_xjxr_screen_off_tp_proc:now is in ota, do nothing.
+0x41ada0	current statu is screen off, do not dispatch tp event.
+0x41add8	launcher_is_on_standby_view.
+0x41adf8	indev_xjxr_only_br_connected_tp_proc : %u key is pressed
+0x41ae34	indev_xjxr_only_br_connected_tp_proc:now is in ota, do nothing.
+0x41ae74	layer4 group has already handled this input event.
+0x41aea8	layer3 group has already handled this input event.
+0x41aedc	layer2 group has already handled this input event.
+0x41af10	bg apps has already handled this input event.
+0x41af40	%u key is released
+0x41af54	indev_xjxr_keypad_app_proc
+0x41af70	indev_xjxr_only_br_connected_tp_proc
+0x41af98	indev_xjxr_screen_off_tp_proc
+0x41afb8	indev_xjxr_keypad_uincron_pressure_proc
+0x41afe0	indev_xjxr_keypad_proc
+0x41aff8	../../thirdparty/star_air_lvgl/src/core/lv_obj_tree.c
+0x41b030	lv_obj_move_to_index
+0x41b048	../../thirdparty/star_air_lvgl/src/core/lv_obj.c
+0x41b07c	lv_init: begin
+
+0x41b08c	lv_init: finished.
+
+0x41b0bc	../../thirdparty/star_air_lvgl/src/core/lv_obj_pos.c
+0x41b0f4	layout_update_core
+0x41b108	../../thirdparty/star_air_lvgl/src/draw/bes/lv_gpu_bes.c
+0x41b144	vglite img decode error, img width=%d, height=%d, decode width=%d, height=%d
+0x41b194	lv_draw_bes_img_decoded
+0x41b1ac	../../thirdparty/star_air_lvgl/src/draw/bes/vglite/lv_draw_vglite_line.c
+0x41b1f8	coordinate or control point length error! path length is %d
+0x41b234	lv_gpu_bes_draw_bezier_line
+0x41b2a4	*** 1 Malloc failed for base_draw.buf, size:%d
+0x41b2d4	*** 2 Malloc failed for base_draw.buf, size:%d
+0x41b304	lv_draw_sw_layer_create
+0x41b474	Cannot use sw draw bezier curve, its a fake!
+0x41b4a4	lv_draw_sw_bezier_line
+0x41b4f4	../../thirdparty/star_air_lvgl/src/draw/lv_img_decoder.c
+0x41b530	img_decoder_built_in_open: out of memory
+0x41b58c	No
+data
+0x41b5fc	%d %s
+0x41b604	January
+0x41b60c	February
+0x41b618	March
+0x41b620	April
+0x41b62c	June
+0x41b634	July
+0x41b63c	August
+0x41b644	September
+0x41b650	October
+0x41b658	November
+0x41b664	December
+0x41b9cc	Enter
+0x41bf6c	../../thirdparty/star_air_lvgl/src/extra/widgets/span/lv_span.c
+0x41bfac	occur an error that span text == NULL
+0x41bfdc	span draw stack overflow, please set LV_SPAN_SNIPPET_STACK_SIZE too larger
+0x41c028	lv_snippet_push
+0x41c038	span_text_check
+0x41c080	l]?<Żb,
+0x41c18c	argb_buffer
+0x41c198	bmp_size
+0x41c1a4	allocate bmp file fail
+0x41c1bc	lv_argb2bmp
+0x41c1d8	PLTE
+0x41c1e0	tEXt
+0x41c1e8	IHDR
+0x41c1f0	tRNS
+0x41c1f8	bKGD
+0x41c200	zTXt
+0x41c208	iTXt
+0x41c210	tIME
+0x41c218	pHYs
+0x41c220	gAMA
+0x41c228	cHRM
+0x41c230	sRGB
+0x41c238	iCCP
+0x41c240	IDAT
+0x41c248	IEND
+0x41c910	../../thirdparty/star_air_lvgl/src/extra/libs/fsdrv/lv_fs_lfs.c
+0x41c950	lv lfs remove(%s) failed: %d
+0x41c970	open file malloc fail!
+0x41c988	open file fail! %s
+0x41c99c	open dir malloc fail!
+0x41c9b4	lv_lfs_file_open
+0x41c9c8	lv_lfs_file_remove
+0x41c9dc	lv_lfs_dir_open
+0x41c9f0	lvgl_ui
+0x41c9f8	curr:%s, id:%d, only permited in:%s
+0x41ca1c	../../thirdparty/star_air_lvgl/src/extra/lv_system.c
+0x41ca54	Asserted at expression: %s (%s)
+0x41ca74	assert_lvgl_ui_thread
+0x41ca8c	kern
+0x41ca94	../../thirdparty/star_air_lvgl/src/font/lv_font_loader.c
+0x41cad0	%s load_header
+0x41cae0	cmap
+0x41cae8	%s,load  glyph_offset
+0x41cb00	glyf
+0x41cb08	%s,before load_glyph
+0x41cb20	%s,middle load_glyph
+0x41cb38	%s,after load_glyph
+0x41cb4c	%s,load_glyph
+0x41cb5c	%s, load_kern
+0x41cb6c	%s load_cmaps
+0x41cb7c	loca
+0x41cb84	load_glyph
+0x41cb90	lvgl_load_font
+0x41cba0	../../thirdparty/star_air_lvgl/src/font/lv_font_utils.c
+0x41cbd8	returned invalid unicode, maybe encode error, i:%d
+0x41cc0c	unicode:%u is not showable
+0x41cc28	lv_font_is_all_character_showable
+0x41cc4c	../../thirdparty/star_air_lvgl/src/misc/lv_style.c
+0x41cc80	Cannot set property of constant style
+0x41cca8	Cannot reset const style
+0x41ccc4	No more custom property IDs available
+0x41ccec	required size has become 0?
+0x41cd08	required_size > 0
+0x41cd1c	Unable to allocate space for custom property lookup table
+0x41cd58	Cannot remove prop from const style
+0x41cd7c	lv_style_set_prop_internal
+0x41cd98	lv_style_remove_prop
+0x41cdb0	lv_style_register_prop
+0x41cdc8	lv_style_reset
+0x41ce48	../../thirdparty/star_air_lvgl/src/misc/lv_mem.c
+0x41ce7c	couldn't allocate memory
+0x41ce98	Out of memory, can't allocate a new buffer (increase your LV_MEM_SIZE/heap size)
+0x41ceec	buf != NULL
+0x41cef8	no more buffers. (increase LV_MEM_BUF_MAX_NUM)
+0x41cf28	No more buffers. Increase LV_MEM_BUF_MAX_NUM.
+0x41cf58	p is not a known buffer
+0x41cf70	lv_mem_buf_release
+0x41cf84	lv_mem_buf_get
+0x41cf94	lv_mem_realloc
+0x41cfa4	%s %s [%s] (+%d) %s: %pV (%s:%d)
+
+0x41cfec	fni-
+0x41d074	init font littlefs
+0x41d088	font lfs first mount error = %d, to format...
+0x41d0b8	font lfs_format error = %d
+0x41d0d4	font lfs mount after format error = %d
+0x41d0fc	font_lfs mount succ
+0x41d110	Can't open file: path is NULL
+0x41d130	Can't open file (%s): driver not ready
+0x41d158	Can't open file (%s): open function not exists
+0x41d188	Can't open file (%s): unknown driver letter
+0x41d1b4	lfs ota check
+0x41d1c4	deinit font littlefs
+0x41d1dc	lfs_unmount font error = %d
+0x41d1f8	lv_font_lfs_deinit
+0x41d20c	lv_fs_open
+0x41d218	lv_font_lfs_init
+0x41d61c	Failed to Create lv_to_async_ipc_mailbox
+0x41d648	msg_src
+0x41d650	%s fail, evt:%d,arg=%s, Q cnt:%d, max:%d
+0x41d67c	msg_body
+0x41d688	Begin loading font %d
+0x41d6a0	lv_font_do_load_font %d fail
+0x41d6c0	%s write time to pmu result %d
+0x41d6e0	%s recv msg [%d] unknow!
+0x41d6fc	lv_to_async_ipc_mailbox_handle_event
+0x41d724	lv_to_async_ipc_mailbox_put
+0x41d740	lv_to_async_ipc_mailbox_init
+0x41d760	lv_to_async_ipc_mailbox
+0x41d79c	lS?<
+0x41d7b4	../../thirdparty/star_air_lvgl/src/porting/lv_async_handler_thread.c
+0x41d7fc	lvgl_async_handler_thread, waiting signal..
+0x41d828	Enter lvgl_async_handler_thread!
+0x41d84c	Create async handler ipc mailbox fail!
+0x41d874	Repeated create async handler semaphore. ignore it
+0x41d8a8	Create async handler semaphore fail
+0x41d8cc	Repeated create async handler thread. ignore it
+0x41d8fc	Create async handler thread fail
+0x41d920	%s signaling
+0x41d930	lvgl_async
+0x41d93c	lvgl_async_handler_signaling
+0x41d994	../../thirdparty/star_air_lvgl/src/porting/lv_app.c
+0x41d9c8	lvgl_task_handler_thread running...
+0x41da00	Init async handler thread failed!
+0x41da38	lvgl_task_handler_thread stopped
+0x41da5c	Create semaphore failed!
+0x41da78	Warning: can not create lvgl os_tick timer
+0x41daa4	lvgl os_tick timer start error
+0x41dac4	stop lvgl
+0x41dad0	lvgl_os_tick_timer
+0x41db30	../../thirdparty/star_air_lvgl/src/porting/lv_port_indev.c
+0x41db6c	UNSUPPORTED XR POWER KEY EVENT
+0x41dba8	pwr_keypad_read
+0x41dbb8	../../thirdparty/star_air_lvgl/src/porting/lv_fps_test.c
+0x41dbf4	xjxr_fps_collect_cmd
+0x41dc2c	enable_single
+0x41dc3c	Lvgl draw can reach max fps: %d, actual fps: %d
+
+0x41dc70	lvgl tick Timeout: tick_elaps: %d
+0x41dc94	xjxr_fps_collect
+0x41dca8	usage: xjxr_fps_collect help
+0x41dcf0	../../thirdparty/star_air_lvgl/src/porting/lv_app_test.c
+0x41dd2c	argb2bmp fail!
+0x41dd3c	cmd error, you may use [malloc 0]/[malloc 1]
+0x41dd6c	now set alloc flag:%d
+0x41dd84	cmd error, you may use [language_switch zh]/[language_switch en] 
+0x41ddc8	language_switch
+0x41ddd8	screencap
+0x41dde4	start_lvgl
+0x41ddf0	close_lvgl
+0x41ddfc	screenshot
+0x41de30	.bmp
+0x41de3c	malloc_size_cmd
+0x41de4c	language_switch_cmd
+0x41de60	screen_cap
+0x41de6c	../../thirdparty/star_air_lvgl/src/porting/lv_port_disp_speedup_bgra8888.c
+0x41deb8	area
+0x41dec0	area->x2 >= area->x1
+0x41ded8	area->y2 >= area->y1
+0x41def0	color_p
+0x41def8	Impossible branch pre:count:0x%x, compound:0x%x
+0x41df28	Impossible branch post:count:0x%x, compound:0x%x
+0x41df5c	Impossible: left_count:%d
+0x41df78	disp_flush_area
+0x41dfdc	Option 1
+Option 2
+Option 3
+Option 4
+Option 5
+0x41e064	Option 1
+Option 2
+Option 3
+0x41e0ac	q"d,
+0x41e0f4	Btn1
+0x41e0fc	Btn2
+0x41e104	Btn3
+0x41e10c	Btn4
+0x41e114	Btn5
+0x41e138	Check box
+0x41e17c	../../thirdparty/star_air_lvgl/src/widgets/lv_label.c
+0x41e1b4	Failed to allocate memory for dot_tmp_ptr
+0x41e1e0	lv_label_set_dot_tmp
+0x41e214	../../thirdparty/star_air_lvgl/src/widgets/lv_bar.c
+0x41e248	bar_max:%d, bar_min:%d, range 0, cannot refr
+0x41e278	draw_indic
+0x41e2a0	../../thirdparty/star_air_lvgl/src/widgets/lv_line.c
+0x41e2d8	input point data error! please check it.
+0x41e304	lv_line_event
+0x41e34c	../../thirdparty/star_air_lvgl/src/xjxr_input/tests/xjxr_input_test.c
+0x41e394	=====xjxr-input:[%s] not support.
+0x41e3b8	xjxr-input-stk-tp:[%s]!
+0x41e3d0	xjxr-input-wear:[%s]!
+0x41e3e8	xjxr-input-set-lingting-value: %s
+0x41e40c	xjxr-input-quick-start:[%s]!
+0x41e42c	xjxr-input-display:[%s] !
+0x41e448	xjxr-input-display: get screen off time = %d.
+0x41e478	xjxr-input-display:[%s]!
+0x41e494	xjxr-input-ring:[%s]!
+0x41e4ac	xjxr-input-ring:[%s] keyevent is {%x, %x, %x}
+0x41e4dc	xjxr-input-tp:[%s]!
+0x41e4f0	xjxr-input-tp:[%s]: get policy = %d.
+0x41e518	xjxr-input-wear:[%s]: get policy = %d.
+0x41e540	xjxr-input-wear: [%s] wear statu is: %d
+0x41e568	display_record_input
+0x41e5bc	xjxr-input-tp:[%s], param : %s!
+0x41e5dc	xjxr-input-tp:[%s]: unknown param.
+0x41e600	xjxr-input-wear:[%s], param : %s!
+0x41e624	xjxr-input-display:[%s]: unknown param.
+0x41e64c	xjxr-input-assistant:[%s], param : %s!
+0x41e674	xjxr-input-assistant:[%s]: unknown param.
+0x41e6a0	xjxr-input-display:[%s], param : %s!
+0x41e6c8	xjxr_input_test
+0x41e6d8	usage: xjxr_input_test help
+0x41e6f4	display_set_screen_off_time
+0x41e710	display_get_screen_off_time
+0x41e72c	display_aquire
+0x41e73c	display_release
+0x41e74c	assistant_input_test
+0x41e764	wear_input_set_policy
+0x41e77c	tp_ctrl_music_set_policy
+0x41e798	quick_start_set_policy
+0x41e7b0	brightness_set_lighting_value
+0x41e7d0	tp_move_left_hold
+0x41e7e4	tp_move_right_hold
+0x41e7f8	tp_move_lrl
+0x41e804	tp_move_rlr
+0x41e810	wear_worn
+0x41e81c	wear_not_worn
+0x41e82c	get_wear_statu
+0x41e83c	wear_input_disable
+0x41e850	wear_input_enable
+0x41e864	wear_input_get_policy
+0x41e87c	tp_ctrl_music_get_policy
+0x41e898	bt_ring_test
+0x41e8a8	stk_tp_move_left
+0x41e8bc	stk_tp_move_right
+0x41e8d0	stk_tp_clicked
+0x41e8e0	stk_tp_dual_clicked
+0x41e8f4	stk_tp_lp
+0x41e900	display_screen_always_on
+0x41e91c	display_screen_on
+0x41e930	display_screen_off
+0x41e944	display_set_restore_policy
+0x41e960	display_restore
+0x41e970	display_clear_restore_policy
+0x41e990	brightness_auto_change_test
+0x41e9ac	brightness_auto_change_disable
+0x41e9cc	brightness_auto_change_enable
+0x41e9ec	disable_battary_forbid_sleep
+0x41ea10	tp_move_left_test
+0x41ea24	tp_move_right_test
+0x41ea38	wear_not_worn_test
+0x41ea4c	get_wear_statu_test
+0x41ea60	wear_input_disable_test
+0x41ea78	wear_input_enable_test
+0x41ea90	wear_input_get_policy_test
+0x41eaac	tp_ctrl_music_get_policy_test
+0x41eacc	bt_ring_test
+0x41eadc	stk_tp_move_left_test
+0x41eaf4	stk_tp_move_right_test
+0x41eb0c	stk_tp_clicked_test
+0x41eb20	tp_clicked_test
+0x41eb30	stk_tp_dual_clicked_test
+0x41eb4c	stk_tp_long_pressed_test
+0x41eb68	display_screen_always_on_test
+0x41eb88	display_screen_on_test
+0x41eba0	display_screen_off_test
+0x41ebb8	display_set_restore_policy_test
+0x41ebd8	display_restore_test
+0x41ebf0	display_clear_restore_policy_test
+0x41ec14	brightness_auto_change_test
+0x41ec30	display_record_input_test
+0x41ec4c	tp_dual_clicked_test
+0x41ec64	display_set_screen_off_time_test
+0x41ec88	display_get_screen_off_time_test
+0x41ecac	display_aquire_test
+0x41ecc0	display_release_test
+0x41ecd8	assistant_input_test
+0x41ecf0	wear_input_set_policy_test
+0x41ed0c	tp_ctrl_music_set_policy_test
+0x41ed2c	quick_start_set_policy_test
+0x41ed48	tp_move_left_hold_test
+0x41ed60	tp_move_right_hold_test
+0x41ed78	tp_move_lrl_test
+0x41ed8c	tp_move_rlr_test
+0x41eda0	tp_long_pressed_test
+0x41edb8	wear_worn_test
+0x41ef60	bt_ring_event_cb: [%x, %x, %x]
+0x41ef80	this event is not a correct bt ring key event.
+0x41efb0	bt ring key single tap is debounced after event single pressure.
+0x41eff4	current is screen off, and this event will be intercepted.
+0x41f030	xjxr_touchpad_unicron_init.
+0x41f04c	../../thirdparty/star_air_lvgl/src/xjxr_input/xjxr_touchpad_51155.c
+0x41f090	stk tp key event is %x
+0x41f0a8	key code is not stk tp key code, give up this tp event.
+0x41f0e0	../../thirdparty/star_air_lvgl/src/xjxr_input/display_ctrl.c
+0x41f120	[FWK-Display_Ctrl] warning, this is a display lock flag is acquired, %u
+0x41f168	[FWK-Display_Ctrl] %s not inited
+0x41f18c	[FWK-Display_Ctrl] %s display listener list is empty.
+0x41f1c4	[FWK-Display_Ctrl] display_notify_timer_handler event is %d
+0x41f200	[FWK-Display_Ctrl] Module : %d clear display restore flag.
+0x41f23c	[FWK-Display_Ctrl] screen off time listeners list is empty.
+0x41f278	[FWK-Display_Ctrl] display_restore_cmd_handle.
+0x41f2a8	[FWK-Display_Ctrl] %s unknown msg.
+0x41f2cc	[FWK-Display_Ctrl] display controller is already init OK
+0x41f308	[FWK-Display_Ctrl] display controller init OK
+0x41f338	[FWK-Display_Ctrl] wrong parameter:
+0x41f35c	[FWK-Display_Ctrl] not inited, self init
+0x41f388	[FWK-Display_Ctrl] %s listener [0x%p] already exist
+0x41f3bc	[FWK-Display_Ctrl] not inited:
+0x41f3dc	[FWK-Display_Ctrl] %s listener [0x%p] not exist
+0x41f40c	[FWK-Display_Ctrl] wrong parameter
+0x41f430	[FWK-Display_Ctrl] input event record type = %d.
+0x41f464	[FWK-Display_Ctrl] return due to display_always_on_flag.
+0x41f4a0	[FWK-Display_Ctrl] input_timer_handler enter
+0x41f4d0	[FWK-Display_Ctrl] display_restore_timer_handler enter
+0x41f508	[FWK-Display_Ctrl] screen on by charing, is_charging = %d
+0x41f544	[FWK-Display_Ctrl] This is a tagert flag, need not acquire again!
+0x41f588	[FWK-Display_Ctrl] This is not a target flag, need not release again!
+0x41f5d0	[FWK-Display_Ctrl] Module : %d turn screen on, and mark a display restore flag
+0x41f620	[FWK-Display_Ctrl] Module : %d restore display if have flag.
+0x41f660	xjxr_display_unregister_screen_off_timer_listener
+0x41f694	xjxr_display_register_screen_off_timer_listener
+0x41f6c4	display_status_change_notify_handle
+0x41f6e8	display_change_notify_handle
+0x41f708	xjxr_unregister_display_notify_listener
+0x41f730	xjxr_register_display_notify_listener
+0x41f758	display_ctrl_mutex
+0x41f77c	../../thirdparty/star_air_lvgl/src/xjxr_input/xjxr_touchpad_51158.c
+0x41f7c0	../../thirdparty/star_air_lvgl/src/xjxr_input/wear_input.c
+0x41f7fc	[FWK-Wear_detect] hwtimer_free error!
+0x41f824	[FWK-Wear_detect] wear state change from : %d -> %d
+0x41f858	[FWK-Wear_detect] is mmi,Ignore wearing events
+0x41f888	[FWK-Wear_detect] idle state : recive event : %d
+0x41f8bc	[FWK-Wear_detect] wearing state : recive event : %d
+0x41f8f0	[FWK-Wear_detect] not_wearing state : recive event : %d
+0x41f928	[FWK-Wear_detect] curr state is not worn, and recv not worn event, do nothing.
+0x41f978	policy change listeners list is empty.
+0x41f9a0	[FWK-Wear_detect] not_wearing_timer_handler enter
+0x41f9d4	[FWK-Wear_detect] not_wearing_timer_handler wear input is disabled.
+0x41fa18	[FWK-Wear_detect] %s begin
+0x41fa34	[FWK-Wear_detect] %s end
+0x41fa50	[FWK-Wear_detect] lost_wearing state : recive event : %d
+0x41fa8c	[FWK-Wear_detect] %s curr power state is power off charging.
+0x41facc	[FWK-Wear_detect] %s curr power state is high temperatur.
+0x41fb08	[FWK-Wear_detect] get battery level: %d
+0x41fb30	[FWK-Wear_detect] xjxr_wear_unknown_timer_handler enter.
+0x41fb6c	mmi test running.
+0x41fb80	xjxr_wear_input_set_policy set WEAR_DETECT_FUNC_ENABLE.
+0x41fbb8	xjxr_wear_input_set_policy set WEAR_DETECT_FUNC_DISABLE.
+0x41fbf4	xjxr_wear_input_get_policy default. ret = %d
+0x41fc24	xjxr_wear_input_get_policy: WEAR_DETECT_FUNC_DISABLE.
+0x41fc5c	xjxr_wear_input_get_policy: WEAR_DETECT_FUNC_ENABLE.
+0x41fc94	[FWK-Wear_detect] xjxr_wearinput_listner : event = %d
+0x41fccc	wear statu:%d,%d,%d,%d,%d,%s
+0x41fcec	mmi test running,ignore event
+0x41fd0c	[FWK-Wear_detect] wear input is disabled, temp disable flag = %d
+0x41fd50	[FWK-Wear_detect] xjxr_wearinput_listner : hwtimer_start.
+0x41fd8c	[FWK-Wear_detect] wear_input init begin
+0x41fdb4	wear input controller is already inited.
+0x41fde0	[FWK-Wear_detect] hwtimer_alloc error!
+0x41fe08	xjxr_wear_input_check_and_reset_policy_after_ota in.
+0x41fe40	glasses is not active, need not reset.
+0x41fe68	glasses is actived before 2025/1/1, need not reset.
+0x41fe9c	wear detect func policy check flag exist, need not reset.
+0x41fed8	set wear detect policy check flag succ.
+0x41ff00	wear detect policy not set, need not reset.
+0x41ff2c	reset wear detect policy disable success.
+0x41ff58	wrong parameter
+0x41ff68	not inited, self init
+0x41ff80	%s listener [0x%p] already exist
+0x41ffa4	%s listener [0x%p] not exist
+0x41ffc4	xjxr_wear_input_unregister_policy_listener
+0x41fff0	xjxr_wear_input_register_policy_listener
+0x42001c	connect_bt
+0x420028	state_wearing_enter
+0x42003c	disconnect_bt
+0x42004c	wear_input_mutex
+0x420060	wear_policy_mutex
+0x4200d4	../../thirdparty/star_air_lvgl/src/xjxr_input/xjxr_quick_start_manager.c
+0x420120	[FWK-Quick-start] set quick start policy: %d end, ret = %d
+0x42015c	quick_start_mutex
+0x420180	../../thirdparty/star_air_lvgl/src/xjxr_input/xjxr_touchpad_51155_4pad.c
+0x4201cc	tp_scan_set enable = %d
+0x4201e4	../../thirdparty/star_air_lvgl/src/xjxr_input/xjxr_input_xr_trace.c
+0x420228	[XR_INPUT_TRACE] %s : %d
+0x420244	{"status":%d,"time":"%s"}
+0x420260	[XR_INPUT_TRACE] %s
+0x420274	{"data":"%d,%d,%d,%d","time":"%s"}
+0x420298	{"app_disconnect_reason":0}
+0x4202b4	{"key_code":"%d","down_or_up":%d,"key_event_sender":%d}
+0x4202ec	{"timeout_value":"%d","time":"%s"}
+0x420310	{"screen_status":"%d","time":"%s"}
+0x420334	xjxr_input_trace_display_status_change
+0x42035c	xjxr_input_trace_key_event
+0x420378	xjxr_input_trace_wear_disconnect_bt
+0x42039c	xjxr_input_trace_wear_data_collect
+0x4203c0	xjxr_input_trace_wear_statu_change
+0x4203e4	../../thirdparty/star_air_lvgl/src/xjxr_input/xjxr_touchpad.c
+0x420424	current state is screen off, and tp ctrl music policy is disable.
+0x420468	current state is not wearing, give up this tp event.
+0x4204a0	input event curr_time - last_time = %d, interval = %d
+0x4204d8	this is a fast double key event, give up this tp event.
+0x420510	xrm malloc error, tp event add failed.
+0x420538	error, tp event add failed.
+0x420554	error, give up this tp event.
+0x420574	xjxr touchpad is already inited.
+0x420598	touchpad init OK
+0x4205ac	xjxr_touchpad_read: get head of g_tp_event_list error.
+0x4205e4	xjxr_touchpad_read: lenght of g_tp_event_list = %d
+0x420618	xjxr_touchpad_read: data->key = %d
+0x42063c	key code is not a assistant key code, give up this tp event.
+0x42068c	xjxr_tp_mutex
+0x420760	6ffffffffffffffffffffffffffffffffffffc
+0x4214aa	6ffffffffffffffffffffffffffffffffffffc
+0x42233c	../../thirdparty/star_air_lvgl/src/vol_brightness/brightness/lv_brightness_manager.c
+0x422394	set brightness = %d
+0x4223a8	lv_hide_brightness_bar
+0x4223c0	notify_brightness_changed: brightness=%d
+0x4223ec	listeners is null
+0x422400	Get brightness from preference failed, use default brightness
+0x422440	Can not show brightness vol ui, parent view is null
+0x422474	lv_register_brightness_changed_listener: changed_cb=%p
+0x4224ac	null stream vol changed cb
+0x4224c8	listeners not initial
+0x4224e0	failed to malloc brightness changed listener item
+0x422514	brightness changed listener has already registered
+0x422548	lv_unregister_brightness_changed_listener: changed_cb=%p
+0x422584	brightness changed listener not registered
+0x4225b0	Create brightness changed listener list failed
+0x4225e0	Invalid brightness percentage
+0x422600	lv_get_brightness
+0x422614	lv_set_brightness_by_navigation
+0x422634	lv_settings_brightness_bar_show
+0x422654	lv_set_brightness_by_assistant
+0x422674	notify_brightness_changed
+0x422690	real_set_brightness
+0x4226a4	lv_set_brightness
+0x4226b8	lv_brightness_manager_init
+0x4226d4	lv_unregister_brightness_changed_listener
+0x422700	lv_register_brightness_changed_listener
+0x422728	lv_hide_brightness_bar
+0x422eb4	../../thirdparty/star_air_lvgl/src/vol_brightness/brightness/ui/lv_brightness_bar.c
+0x422f08	Brightness layout not in forground, not process input event
+0x422f44	transform_ui_style: style=%d
+0x422f64	del_bar_cb: brightness_bar_show=%d, cur_ui_style=%d
+0x422f98	Brightness bar not created, show failed
+0x422fc0	brightness layout already deleted
+0x422fe4	del_brightness_bar: brightness_layout=%p, brightness_bar_show=%d, brightness_vis=%d, animate=%d, animating=%d
+0x423054	lv_del_brightness_bar: animate=%d
+0x423078	hide brightness bar anim already running, not hide again
+0x4230b4	del_brightness_bar
+0x4230c8	lv_obj_move_foreground
+0x4230e0	lv_show_brightness_bar
+0x4230f8	transform_brightness_ui_style
+0x423118	brightness_layout_event_cb
+0x423134	del_bar_cb
+0x423140	../../thirdparty/star_air_lvgl/src/vol_brightness/volume/lv_volume_manager.c
+0x423190	Restore hal set stream vol func
+0x4231b0	notify_stream_vol_changed: stream_type=%d, stream_vol=%d, type_changed=%d
+0x4231fc	Get stream %d vol failed from user
+0x423220	Can not get current vol steram info: type=%d, min=%d, max=%d, cur=%d
+
+0x423268	lv_volume_update_callback vol=%d, type=%d, state=%d
+0x42329c	Unknown stream type %d, adjust by hal audio failed
+0x4232d0	Do not sync this volume because of remote device hearing protection func
+0x42331c	No need to process the state
+0x42333c	Save stream type %d, vol %d failed from user
+0x42336c	bl_connected_cb: %d
+0x423380	Unmute stream %d failed
+0x423398	Initial set stream: %d, volume: %lld failed!
+0x4233c8	Initial set stream: %d, volume: %lld successfully
+0x4233fc	Mute stream %d failed
+0x423414	Audio hal set stream volume failed!
+0x423438	lv_del_vol_bar: immediately=%d
+0x423458	lv_hide_vol_bar: immediately=%d, anim=%d
+0x423484	Unknown stream type %d, mute failed
+0x4234a8	Mute/Unmute stream %d failed: mute=%d, show_ui: %d
+0x4234dc	current stream type=%d, min=%d, max=%d, show_ui=%d
+0x423510	Set new volume: new vol: %d, current col: %d
+0x423540	Adjust stream vol by hal failed!
+0x423564	Create stream vol changed listener list failed
+0x423594	lv_register_stream_vol_changed_listener: changed_cb=%p
+0x4235cc	failed to malloc stream vol changed listener item
+0x423600	stream vol changed listener has already registered
+0x423634	lv_unregister_stream_vol_changed_listener: changed_cb=%p
+0x423670	stream vol changed listener not registered
+0x42369c	Can not get stream volume info from hal, don't show ui
+0x4236d4	Can not show settings vol ui, parent view is null
+0x423708	current stream type=%d, min=%d, max=%d
+0x423730	Remote app set new volume: val: %d, new vol: %d, current col: %d
+0x423774	Mute notification stream successfully for reason: %s
+0x4237ac	Mute stream %d failed for %s
+0x4237cc	Mute stream %d successfully for %s
+0x4237f0	Unmute notification stream successfully for reason: %s
+0x423828	Unmute stream %d failed for %s
+0x423848	Unmute stream %d successfully for %s
+0x423870	Unknown stream type %d
+0x423888	Notification stream muted: %d
+0x4238a8	lv_stream_is_muted
+0x4238bc	lv_stream_vol_unmute
+0x4238d4	initial_stream_vol
+0x4238e8	lv_volume_update_callback
+0x423904	save_stream_val
+0x423914	set_stream_vol
+0x423924	get_stream_val
+0x423934	lv_get_stream_info
+0x423948	notify_stream_vol_changed
+0x423964	lv_adjust_stream_vol_by_hal
+0x423980	enable_hal_set_vol_timer_cb
+0x42399c	bl_connected_cb
+0x4239ac	stream_vol_mute
+0x4239bc	lv_vol_manager_init
+0x4239d0	lv_hide_vol_bar
+0x4239e0	lv_del_vol_bar
+0x4239f0	lv_stream_vol_mute
+0x423a04	lv_adjust_stream_vol_by_remote_app
+0x423a28	lv_adjust_stream_vol
+0x423a40	lv_settings_vol_bar_show
+0x423a5c	lv_vol_bar_show
+0x423a6c	lv_unregister_stream_vol_changed_listener
+0x423a98	lv_register_stream_vol_changed_listener
+0x4244b4	../../thirdparty/star_air_lvgl/src/vol_brightness/volume/ui/lv_vol_bar.c
+0x424500	Vol layout not in forground, not process input event
+0x424538	transform_ui_style: style=%d, vol_root=%p
+0x424564	vol ui root obj is null, can not show the ui
+0x424594	In settings, vol_root is not valid
+0x4245b8	anim end: vol_bar_show=%d
+0x4245d4	del_volume_cb: vol_bar_show=%d, cur_ui_style=%d
+0x424604	Update vol bar: cur vol type=%d, vol=%d
+0x42462c	Update vol bar: prev vol type=%d, vol=%d
+0x424658	There is no vol bar icon, do not show
+0x424680	show vol bar, style=%d
+0x424698	Vol bat not created, show failed
+0x4246bc	vol layout already deleted
+0x4246d8	del vol bar: vol_layout=%p, vol_bar_show=%d, vol_vis=%d, animate=%d, is_hide_vol_bar_animating=%d
+0x42473c	hide vol bar anim already running, not hide again
+0x424770	del_vol_bar
+0x42477c	lv_update_vol_bar
+0x424790	lv_obj_move_foreground
+0x4247a8	lv_show_vol_bar
+0x4247b8	transform_vol_ui_style
+0x4247d0	vol_layout_event_cb
+0x4247e4	del_volume_cb
+0x4247f4	_vol_layout_anim_end_cb
+0x42480c	../../thirdparty/star_air_lvgl/src/vol_brightness/lv_vol_brightness_manager.c
+0x42485c	Ota layer displayed, can't show the top layer widgets
+0x424894	lv_vol_brightness_shown_enabled
+0x4248b4	../../thirdparty/star_air_lvgl/src/key/lv_key_manager.c
+0x4248ec	key_event_cb: key=%d
+
+0x424904	key_event_cb: MMI processed
+0x424920	pwk_multiple_clicked_cb
+0x424938	key_event_cb
+0x424948	dimon cmd1:%s
+
+0x424958	dimon cmd2:%s
+
+0x42496c	../../thirdparty/star_air_lvgl/src/ipc/lv_ipc.c
+0x42499c	Received ams eshell cmd:%s
+0x4249b8	Dealed ams eshell cmd:%s
+0x4249d4	Received notify eshell cmd:%s
+0x4249f4	Dealed notify eshell cmd:%s
+0x424a10	Received font load finished cmd
+0x424a30	Dealed full font load finished cmd
+0x424a54	Received wake up event
+0x424a6c	Received app_msg_proxy neg version change event
+0x424a9c	Received ancs event add
+0x424ab4	Received ancs event detail
+0x424ad0	Received ancs event name
+0x424aec	Received ancs event remove
+0x424b08	load font source finished!
+0x424b24	load font source error, free src data!
+0x424b4c	Received air music play status change event
+0x424b78	Failed to Create lv_ipc_mailbox
+0x424b98	Create lv_ipc timer failed
+0x424bb4	lv_ipc_mailbox_put
+0x424bc8	lv_ipc_mailbox_init
+0x424bdc	lv_ipc_mailbox_handle_event
+0x424bf8	lv_ipc_mailbox
+0x42594c	Fully charged
+0x42595c	Charging
+0x425968	Penuh
+0x425970	Mengecas
+0x425998	ชาร์จเต็มแล้ว
+0x4259c0	กำลังชาร์จ
+0x4259e0	Terisi penuh
+0x4259f0	Pengisian daya
+0x425a00	Vollständig aufgeladen
+0x425a18	Ladung läuft…
+0x425a2c	Entièrement chargé
+0x425a44	Chargement
+0x425a50	Carica completata
+0x425a64	In carica
+0x425a70	Tam şarj oldu
+0x425a80	Şarj oluyor
+0x425a90	../../thirdparty/star_air_lvgl/src/power/ui/lv_power_ui.c
+0x425acc	show_temp_high_ui: show=%d, shutdown=%d
+0x425af4	show_charging_ui: battery_percent=%d
+0x425b1c	Play shutdown animation
+0x425b34	play_shutdown_animation
+0x425b4c	show_charging_ui
+0x425b60	show_temp_high_ui
+0x425c28	../../thirdparty/star_air_lvgl/src/power/test/lv_power_manager_test.c
+0x425c70	xjxr_power_cmd
+0x425cf0	xjxr_power_test
+0x425d00	usage: xjxr_power_test help
+0x425d1c	set_mainboard_temp
+0x425d30	set_battery_temp
+0x425d70	POWER_REBOOT
+0x425d80	POWER_OFF
+0x425d8c	POWER_OFF_CHARING
+0x425da0	POWER_ON_CHARGING
+0x425db4	../../thirdparty/star_air_lvgl/src/power/lv_power_manager.c
+0x425df0	Power state transition from %s to %s because of %s
+0x425e24	do_power_on_charging_state_action
+0x425e48	do_power_on_state_action
+0x425e64	voltage_monitor: voltage_level[%d], battery_level[%d], is_processing[%d]
+0x425eb0	Device is charging, ignore voltage event
+0x425edc	voltage_monitor: voltage[%d] is less than threshold[%d], will shutdown.
+0x425f24	battery is less than threshold[%d], flush data.
+0x425f54	battery_event_listener: charging=%d, level=%d, already_power_on=%d
+0x425f98	battery_event_process: charging=%d, level=%d, already_power_on=%d
+0x425fdc	do_power_off_charging_state_action
+0x426000	do_power_off_state_action
+0x42601c	Shutdown device
+0x42602c	Device will shutdown: animate=%d, already_power_on=%d
+0x426064	do_power_reboot_state_action, reason=%d
+0x42608c	Do Factory Reset Reboot
+0x4260a4	{"time":"%s"}
+0x4260b4	in mmi,ignore
+0x4260c4	mainboard temp: %d, battery temp: %d, cur_temp_state: %d, cur_power_state: %d
+0x426114	In power off charging state, ignore mainboard/battery temp >= 58, will shutdown device
+0x42616c	In power off charging state, ignore mainboard temp > 55
+0x4261a4	In power off charging state, ignore mainboard temp < 55
+0x4261dc	Create power state update lock failed
+0x426204	Start power on
+0x426214	Pre init necessay things for power off ui
+0x426240	Finish power on
+0x426250	directly_reboot=%d, current_power_state=%s
+0x42627c	EVENT_CHARGING_ON
+0x426290	EVENT_CHARGING_OFF
+0x4262a4	EVENT_USER_POWER_ON
+0x4262b8	EVENT_USER_POWER_OFF
+0x4262d0	EVENT_LOW_BATTERY_POWER_OFF
+0x4262ec	EVENT_USER_POWER_REBOOT
+0x426304	EVENT_INVALID
+0x426314	POWER_INVALID
+0x426324	lv_power_reboot
+0x426334	do_pre_necessary_actions
+0x426350	battery_event_process
+0x426368	battery_voltage_monitor
+0x426380	do_power_off_state_action
+0x42639c	temp_monitor_timer_cb
+0x4263b4	shutdown_device
+0x4263c4	power_state_lock_create
+0x4263dc	battery_event_listener
+0x4263f4	voltage_event_process
+0x42640c	do_power_on_state_action
+0x426428	do_power_on_charging_state_action
+0x42644c	do_power_off_charging_state_action
+0x426470	do_power_reboot_state_action
+0x426490	power_state_switch
+0x4264a4	power_state_mutex
+0x426590	xtrace:%s
+0x42659c	%s parse error
+0x4265ac	xtrace
+0x4265b4	../../thirdparty/star_air_lvgl/src/font_manager/lv_font_air_binary.c
+0x4265fc	Pre load font:%s
+0x426610	lv_fs_open fail,filename:%s
+0x42662c	Malloc fail, file:%s
+0x426644	Get font:%d error, bound exceed
+0x426664	B:lv_font_air_full_cn_20_bpp1.bin
+0x426688	Binary font load start!
+0x4266a0	Pre-load %s fail
+0x4266b4	Binary font load requests finished!
+0x4266d8	ff is null. font_type:%d
+0x4266f4	Now free full font resource
+0x426710	font
+0x426718	Error loading font file
+0x426730	FONT_20 Already loaded
+0x426748	Received font_type:%d, not supported
+0x426770	Error loading font %d(%s) from file
+0x426794	FONT_20 Succ
+0x4267a4	lv_font_do_load_font
+0x4267bc	lv_font_load_from_file
+0x4267d4	lv_font_free_font_file
+0x4267ec	lv_font_on_load_finished
+0x426808	lv_font_load_prepare
+0x426820	lv_font_air_mgr_load_all
+0x42683c	lv_font_mgr_get_file
+0x426854	lv_font_mgr_get_font
+0x426910	IdleTask: Failed to register crash dump callback
+0x426944	IdleTask: Failed to alloc sleep timer
+0x4269c8	INACTIVE
+0x4269d4	TERMINAT
+0x4269e0	WAIT_DLY
+0x4269ec	WAIT_JOIN
+0x4269f8	WAIT_FLAG
+0x426a04	WAIT_SEM
+0x426a10	WAIT_MEM
+0x426a1c	WAIT_MUT
+0x426a28	READY
+0x426a30	WAIT_EVE
+0x426a3c	WAIT_MGET
+0x426a48	WAIT_MPUT
+0x426a54	--- Thread  %d 
+0x426a64	name=%s
+0x426a6c	 thread=0x%x, prio=%u state=%-9s thread_addr=0x%08X
+0x426aa0	--- Thread  %d thread=0x%x name=%s
+
+0x426ac4	    prio=%u state=%-9s thread_addr=0x%08X
+
+0x426af0	    thread_next=0x%08X thread_prev=0x%08X delay_next=0x%08X delay_prev=0x%08X
+0x426b40	    thread_next=0x%08X thread_prev=0x%08X
+
+0x426b6c	    delay_next=0x%08X delay_prev=0x%08X
+
+0x426b98	    thread_join=0x%08X flags_options=%u wait_flags=%u thread_flags=%u
+0x426be0	    thread_join=0x%08X flags_options=%u
+
+0x426c0c	    wait_flags=%u thread_flags=%u
+
+0x426c30	    stack_mem=0x%08X stack_size=%u sp:0x%04x min_stack_free=%u
+0x426c70	    stack_mem=0x%08X stack_size=%u
+
+0x426c94	    sp:0x%04x min_stack_free=%u
+
+0x426cb8	    swap_in_time=%u(ticks)/%u(ms) swap_out_time=%u(ticks)/%u(ms)
+0x426cfc	    swap_in_time=%u(ticks)/%u(ms)
+
+0x426d20	    swap_out_time=%u(ticks)/%u(ms)
+
+0x426d44	    after last switch 
+0x426d5c	task runtime %u(ticks)/%u ms
+0x426d7c	    after last switch task runtime %u(ticks)/%u ms
+
+0x426db0	thread still runing, now %u(ticks)/%u(ms)
+0x426ddc	    after last switch thread still runing, now %u(ticks)/%u(ms)
+
+0x426e20	    frame:0x%08X
+0x426e34	    frame:0x%08X
+
+0x426e48	    R0 =0x%08X R1=0x%08X R2=0x%08X R3  =0x%08X
+0x426e78	    R0 =0x%08X R1=0x%08X R2=0x%08X R3  =0x%08X
+
+0x426ea8	    R12=0x%08X LR=0x%08X PC=0x%08X XPSR=0x%08X
+0x426ed8	    R12=0x%08X LR=0x%08X PC=0x%08X XPSR=0x%08X
+
+0x426f08	--- Thread NONE
+0x426f18	../../rtos/rtx5/rtx_thread_dump.c
+0x426f3c	rtx_show_all_threads_usage
+0x426f68	--- Memory common Stats:
+
+0x426f84	--- Memory Size %u, Used %u
+
+0x426fa4	--- Memory stack Stats:
+
+0x426fc0	--- Memory mp_data Stats:
+
+0x426fdc	--- Memory mq_data Stats:
+
+0x426ff8	--- Memory Stats End:
+
+0x427010	    Timer: %s
+0x427020	    Timer %p Callback: %p
+0x42703c	    Timer state: %s
+0x427050	    Timer type %s
+0x427064	    Timer current tick %u, Load %u
+
+0x427088	--- Timers Stats:
+
+0x42709c	--- Timer scan end
+
+0x4270b0	--- Timers is handleing:%d
+0x4270cc	    Handling Timer callback %p
+0x4270ec	Oneshot
+0x4270f4	Periodic
+0x427100	Inactive
+0x42710c	Stopped
+0x427114	systimer
+0x427120	Current List
+0x427130	Thread List:
+0x427140	Current List
+
+0x427150	Next List
+0x42715c	Ready List
+0x427168	Ready List
+
+0x427174	Delay List
+0x427180	Delay List
+
+0x42718c	Wait List
+0x427198	Terminate List
+0x4271a8	../../rtos/rtx5/rtx_evr.c
+0x4271c4	EvrRtxThreadError, thread name:%s, status:%d
+0x427278	echo
+0x427280	switch on/off command echo
+0x42729c	switch on/off debug log output
+0x4272bc	switch on/off cmd
+0x4272d0	crash_trriger
+0x4272e0	crash trriger cmd
+0x4272f4	nand_sim
+0x427300	nand simulation test
+0x427318	crash_trriger_cmd
+0x42732c	eshell cmd of crash(assert) trrigered
+0x427354	../../utils/eshell/eshell.c
+0x427370	eshell_execute:cmds_count=%d
+0x427390	eshell : argc_num=%d, exe_cmd=%s, help_info=%s
+0x4273c0	eshell : str=%s remote_exe=%d
+0x427400	log_cmd
+0x427408	%s:wrong param number,expect=%d,give=%d!
+0x427434	eshell:log_cmd,aciton=%s
+0x427450	debug log on
+0x427460	debug log off
+0x427470	echo:wrong param!
+0x427484	user_enable_cmd
+0x427494	eshell:echo_cmd,aciton=%s
+0x4274b0	cmd on
+0x4274b8	cmd off
+0x4274c0	echo_cmd
+0x4274cc	echo on
+0x4274d4	echo off
+0x4274ec	eshell : get char=%c
+0x4275d4	../../utils/eshell/eshell_platform.c
+0x4275fc	eshell_thread...
+0x427610	eshell_paltform_init open=%d
+0x427630	eshell_platform_sleep
+0x427648	eshell_platform_wakeup
+0x427660	trace_send_mutex
+0x4276ac	pmu reg:0x%04x = 0x%04x
+
+0x427704	pmu write reg:0x%04x=0x%04x done .
+
+0x427824	debug_i2c
+0x427830	debug_i2c help
+0x427840	restart_eshell_thread
+0x427858	pmu_write
+0x427864	pmu write
+0x427870	pmu_read
+0x42787c	pmu read
+0x427888	panic
+0x427890	start panic
+0x4279e0	pmugpioget
+0x4279ec	pmugpioget gpio_num
+0x427a00	pmugpioset
+0x427a0c	pmugpioset gpio_num <0|1>
+0x427a28	gpioget
+0x427a30	gpioget gpio_num
+0x427a44	gpioset
+0x427a4c	gpioset gpio_num <0|1>
+0x427b70	receive data by xmodem
+0x427b88	Now reboot system...
+
+0x427bbc	shutdown system
+0x427c94	pll_autocalib
+0x427ca4	usage: pll_autocalib help
+0x427cdc	sleep %ums
+
+0x427d04	sleep %us
+
+0x427d10	shell_sleep
+0x427d1c	shell sleep
+0x427d28	sleep seconds
+0x427d38	msleep
+0x427d40	sleep miliseconds
+0x427d54	Unkown
+0x427e54	../../apps/app_eshell/system/ps.c
+0x427e78	show_threads_uasges
+0x427e8c	close_threads_uasges
+0x427ea4	Blocked
+0x427eac	Terminated
+0x427eb8	show_threads_usage_once
+0x427ed0	show all threads usage
+0x427ee8	close_threads_usage
+0x427efc	close threads usage
+0x427f10	show_threads_usage
+0x427f24	cpu_usage_timer
+0x427f34	dump_all_threads
+0x427f48	dump threads stack
+0x427f5c	show status of threads
+0x4280d0	%04x 
+0x4280d8	%08x 
+0x42873c	show memory map
+0x42874c	comp32
+0x428754	compare data of two addresses, in 4 bytes
+0x428780	comp16
+0x428788	compare data of two addresses, in 2 bytes
+0x4287b4	comp
+0x4287bc	compare data of two addresses
+0x4287dc	mw32
+0x4287e4	write data to memory or registers in 4 bytes
+0x428814	mw16
+0x42881c	write data to memory or registers in 2 bytes
+0x428850	write data to memory or registers
+0x428874	md32
