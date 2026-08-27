@@ -1,0 +1,56 @@
+{
+  "version": "1.0.7.83",
+  "fonts": [
+    {
+      "name": "small",
+      "bpp": 1,
+      "glyph_count": 4347,
+      "ascii_gid_start": 0,
+      "row_shift": false,
+      "glyph_dsc_off": "0x2db370",
+      "bitmap_off": "0x2c1624",
+      "bitmap_size": 105804,
+      "bitmap_md5": "881daae54deb519e95d45160d3d2ea7c",
+      "latin_cap_height": 18,
+      "max_box": [
+        24,
+        25
+      ],
+      "likely_role": "FONT_DUMMY_16 / FONT_CN_16_NORMAL (~16px)"
+    },
+    {
+      "name": "medium",
+      "bpp": 4,
+      "glyph_count": 4347,
+      "ascii_gid_start": 0,
+      "row_shift": false,
+      "glyph_dsc_off": "0x29ff90",
+      "bitmap_off": "0x1e9bef",
+      "bitmap_size": 746401,
+      "bitmap_md5": "d486bfe77f7a146eaaa3fe3420fcf34d",
+      "latin_cap_height": 22,
+      "max_box": [
+        30,
+        29
+      ],
+      "likely_role": "FONT_DUMMY_20 / FONT_CN_20_NORMAL (bpp4 AA ~20px)"
+    },
+    {
+      "name": "large",
+      "bpp": 1,
+      "glyph_count": 4347,
+      "ascii_gid_start": 0,
+      "row_shift": false,
+      "glyph_dsc_off": "0x1d3f74",
+      "bitmap_off": "0x1994b5",
+      "bitmap_size": 240319,
+      "bitmap_md5": "4f6325b907d83e4cbc11026f0e323bd6",
+      "latin_cap_height": 28,
+      "max_box": [
+        35,
+        35
+      ],
+      "likely_role": "FONT_DUMMY_24 / FONT_CN_24_NORMAL (~24px)"
+    }
+  ]
+}

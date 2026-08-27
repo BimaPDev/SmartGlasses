@@ -1,0 +1,3544 @@
+0x418c4a	4DDDVfffffffffffTDDD
+0x418c93	$DDDDDDDDDDDDDDDDB
+0x418cc4	$DDDDDDDDDDDDDDB
+0x41a290	FONT_CN_32_NORMAL
+0x41a2a4	FONT_EN_32_NORMAL
+0x41a2b8	FONT_EN_36_BOLD
+0x41a2c8	FONT_CN_16_NORMAL
+0x41a2dc	FONT_CN_20_NORMAL
+0x41a2f0	FONT_CN_24_NORMAL
+0x41a304	next_playing_normal
+0x41a318	playing_normal
+0x41a328	previous_normal
+0x41a338	puase_normal
+0x41a348	next_play_anim
+0x41a358	previous_anim
+0x41a368	music_play_to_pause_v3
+0x41a380	music_puase_to_play_v3
+0x41a398	music_pause_v3
+0x41a3a8	music_play_v3
+0x41a3b8	music_cover_v3
+0x41a3c8	music_exit_icon
+0x41a3d8	music_cover_pause_v3
+0x41a3f0	music_pause_gray_v3
+0x41a404	music_pause_normal_v3
+0x41a41c	muisc_cover_pause_gray
+0x41a434	muisc_cover_pause_normal
+0x41a450	muisc_cover_play_normal
+0x41a468	qqmusic_cover
+0x41a478	play_list_love
+0x41a488	collection_icon
+0x41a498	plyed_list_icon
+0x41a4a8	play_list_bg
+0x41a4b8	play_list_bg_focus
+0x41a4cc	audio_play_ctrl_cover
+0x41a4e4	play_center_ai_music_icon
+0x41a500	starrynet_air_pro_click
+0x41a518	launcher_dock_ring
+0x41a52c	launcher_dock_music
+0x41a540	launcher_dock_weather
+0x41a558	weather_cloudy_day_24_24
+0x41a574	weather_cloudy_night_24_24
+0x41a590	weather_duststorm_24_24
+0x41a5a8	weather_foggy_24_24
+0x41a5bc	weather_hail_24_24
+0x41a5d0	weather_haze_24_24
+0x41a5e4	weather_heavy_rain_24_24
+0x41a600	weather_heavy_snow_24_24
+0x41a61c	weather_light_rain_24_24
+0x41a638	weather_light_snow_24_24
+0x41a654	weather_moderate_rain_24_24
+0x41a670	weather_moderate_snow_24_24
+0x41a68c	weather_overcast_24_24
+0x41a6a4	weather_sand_24_24
+0x41a6b8	weather_shower_24_24
+0x41a6d0	weather_sleet_24_24
+0x41a6e4	weather_sunny_day_24_24
+0x41a6fc	weather_sunny_night_24_24
+0x41a718	weather_sunset_24_24
+0x41a730	weather_thunder_24_24
+0x41a748	weather_thundershower_with_hail_24_24
+0x41a770	weather_typhoon_24_24
+0x41a788	weather_unknown_24_24
+0x41a7a0	navigation_24_24
+0x41a7b4	navigation_icon_70
+0x41a7c8	navi_img_compass
+0x41a7dc	navi_icon_arrow_walk
+0x41a7f4	smartlife_notification_calendar_icon
+0x41a81c	smartlife_wechat_send_success_icon
+0x41a840	smartlife_wechat_send_fail_icon
+0x41a860	smartlife_wechat_ellipsis_gif
+0x41a880	smartlife_wechat_group
+0x41a898	assistant_help_domain_setting_icon
+0x41a8bc	assistant_navi_domain_select_icon_big
+0x41a8e4	answer_dots
+0x41a8f0	cancel_dots
+0x41a8fc	fade_rect
+0x41a908	phone_bg
+0x41a914	wechat_video_icon
+0x41a928	battery_100
+0x41a934	indicator
+0x41a940	loading_24
+0x41a94c	ca_success
+0x41a958	charging_box
+0x41a968	dot55
+0x41a970	disconnect_img
+0x41a980	unbound_img
+0x41a98c	unbounding_icon
+0x41a99c	ring_connect_icon
+0x41a9b0	setting_switch_on
+0x41a9c4	setting_switch_off
+0x41a9d8	../../thirdparty/star_air_lvgl/app/Persistence/lv_preference.c
+0x41aa18	%s pref use count = %d
+0x41aa30	%s key = %d, value = %d %d
+0x41aa4c	RETURN FAILED. Comand Error, e.g. [lv_preference_command open_dump/close_dump]
+0x41aa9c	open_dump
+0x41aaa8	RETURN PASS:: open preference dump
+0x41aacc	close_dump
+0x41aad8	RETURN PASS:: close preference dump
+0x41aafc	%s pref one size: %u
+0x41ab14	%s pref total size: %u
+0x41ab2c	%s bad magic_number, preference->magic_number = %d
+0x41ab60	%s key = %d
+0x41ab6c	%s lv_preference_clear
+0x41ab84	lv_preference_command
+0x41ab9c	lv_preference command
+0x41abb4	lv_preference_clear
+0x41abc8	lv_preference_put_inner
+0x41abe0	lv_preference_dump
+0x41abf4	lv_preference_init
+0x41ac08	../../thirdparty/star_air_lvgl/app/Language/lv_language_factory.c
+0x41ac4c	not support language type:%d
+0x41ac6c	get_language_entry_by_type
+0x41ac88	[emoji]
+0x41ac90	Type: 
+0x41ac98	Yüzük
+0x41aca0	Çevirmen
+0x41acac	Navigasyon
+0x41acb8	Müzik
+0x41acc0	Hava durumu
+0x41accc	Ayarlar
+0x41acd4	Sistem uyarısı
+0x41ace8	Teleprompter
+0x41acf8	Fabrika ayarlarına dönerken gözlük otomatik olarak yeniden başlatılacak
+0x41ad48	Onaylamak için tek tıklayın/İptal etmek için çift tıklayın
+0x41ad8c	Lütfen gözlüğü bağlayın ve tekrar deneyin
+0x41adc0	Güncelleme yaklaşık 5 dakika sürecek, güncelleme sırasında gözlük kullanılamaz
+0x41ae1c	Güncellemek için tek tıklayın/İptal etmek için çift tıklayın
+0x41ae64	Hemen güncelle
+0x41ae74	Şimdilik güncelleme yapma
+0x41ae90	Hizmet hatası, lütfen daha sonra tekrar deneyin
+0x41aec4	Yüzüğün şarjı sadece %15 kaldı
+0x41aeec	Yüzüğün şarjı sadece %5 kaldı
+0x41af14	Bağlandı
+0x41af20	Bağlantı kesildi
+0x41af34	Bağlantı kaldırıldı
+0x41af50	Gözlüğün sadece %15 şarjı kaldı
+0x41af78	Gözlüğün sadece %5 şarjı kaldı
+0x41afa0	Gözlüğün şarjı %100 oldu
+0x41afc0	Devam etmek için lütfen MYVU AR App'i telefonunuza indirin
+0x41b000	Yüzüğe basılı tutun ve konumu ayarlamak için hareket ettirin
+0x41b044	Yüzük bağlantısı kaldırıldı
+0x41b068	Yüzüğünüz 
+0x41b07c	 gözlükle olan bağlantısını kaldırdı. Devam etmek için bu gözlüğü yeniden bağlamanız gerekiyor
+0x41b0ec	Seçim yapmak için dokunmatik paneli kaydırın
+0x41b120	Yüzüğe basılı tutarak bileğinizi hareket ettirin ve seçim yapın
+0x41b168	Günaydın!
+0x41b174	Günaydın, yeni bir gün başladı!
+0x41b19c	Yeni bir güne merhaba, enerji dolu olmanız dileğiyle!
+0x41b1d8	Umarım güzel bir başlangıç yaparsın!
+0x41b204	Gece ilerledi, dinlenmeyi unutma
+0x41b228	Sağlıklı bir yaşam için iyi bir uyku şart
+0x41b258	Sağlıklı bir beden için yeterli uyku gerekli, iyi geceler
+0x41b298	İyi uykular dilerim
+0x41b2b0	1 saattir aralıksız kullanıyorsunuz, lütfen dinlenin!
+0x41b2ec	Gözlerin yoruldu, biraz dinlenmeye ne dersin
+0x41b31c	Sesli asistanı kullanmak için güç düğmesine uzun basın
+0x41b35c	Bana "Hey Aicy" diyebilirsin, sana yardımcı olacağım
+0x41b398	Arama sırasında çağrıyı sonlandırmak için güç düğmesini 1 saniye basılı tutun
+0x41b3f4	Aramayı sessize almak için güç düğmesine 1 kez basın
+0x41b430	Başarıyla kaydedildi, lütfen telefondaki albümde kontrol edin
+0x41b474	Kaydetme başarısız oldu, lütfen yeniden ekran görüntüsü alın
+0x41b4bc	Gözlük yazılımı güncellemesi
+0x41b4e0	Lütfen MYVU AR App kullanarak gözlük sürümünü en son sürüme yükseltin
+0x41b530	App yazılım güncellemesi
+0x41b54c	Lütfen MYVU AR App en son sürüme yükseltmek için lütfen cep telefonunuza gidin
+0x41b5a4	Uygulama listesini açmak için dokunmatik panele uzun basın
+0x41b5e4	Uygulama listesini açmak için yüzüğe bir kez basın
+0x41b620	Kapatmak için çift tıklayın
+0x41b640	Uygulama Gizlilik Beyanı
+0x41b65c	Bağlantı kesildi, lütfen MYVU AR'ı açın ve App gizlilik politikasını yeniden kabul ettikten sonra bağlayın
+0x41b6d4	Glasses Privacy Policy
+0x41b6ec	Bağlantı kesildi, lütfen MYVU AR'ı açın ve gözlük gizlilik politikasını yeniden kabul ettikten sonra bağlayın
+0x41b768	Tap Ok
+0x41b770	Seçim yapmak için bileğinizi sallayın
+0x41b79c	Konumu ayarlamak için bileğinizi sallayın
+0x41b7cc	Lütfen MYVU AR App'i açıp bağlandıktan sonra tekrar deneyin
+0x41b810	Tutorial
+0x41b81c	Transcribe
+0x41b828	Lütfen telefonu bağlayın
+0x41b844	Lütfen önce telefonda kişisel veri işleme kurallarını kabul edin
+0x41b88c	Lütfen önce telefon tarafında kişisel veri sınır ötesi aktarımını kabul edin
+0x41b8e4	Güncelleme yaklaşık 10 dakika sürecek, güncelleme sırasında gözlük kullanılamaz
+0x41b940	Doğru pil göstergesi için %100'e kadar şarj edin ve 1 saat daha şarj etmeye devam edin
+0x41b9ac	Bugün
+0x41b9d4	Şu an hava durumu bilgisi yok
+0x41b9f4	Hava durumu verilerini güncellenemedi
+0x41ba1c	Bilinmiyor
+0x41ba28	Exit the app?
+0x41ba38	Kapat
+0x41ba40	:Cancel
+0x41ba48	xx ve diğer kalan içerikler için lütfen telefon uygulamasına bakın
+0x41ba94	Onayla
+0x41ba9c	İptal et
+0x41baa8	Cevap ver
+0x41bab4	Lütfen konuşun
+0x41bac8	doğrulama kodu
+0x41bad8	Mesaj
+0x41bae0	Ağ hatası, lütfen ağ ayarlarını kontrol edin
+0x41bb14	Navigasyon kullanılırken bildirimler kapatıldı
+0x41bb48	Navigasyon kullanılırken bildirimler açıldı
+0x41bb7c	Yürüme navigasyonuna geç
+0x41bb98	Bisiklet navigasyonuna geç
+0x41bbb4	Sürüş navigasyonuna geç
+0x41bbd0	Geçiş başarısız
+0x41bbe8	Geçiş yapılıyor...
+0x41bc00	Navigasyon sesi açıldı
+0x41bc1c	Navigasyon sesi kapatıldı
+0x41bc38	Uygulamadan çıkmak istediğinizden emin misiniz?
+0x41bc6c	Rota yenilendi
+0x41bc7c	Yenileme başarısız oldu
+0x41bcc0	Şimdi
+0x41bcc8	Eve dön
+0x41bcd4	Şirkete git
+0x41bce4	Yakınlarda
+0x41bcf0	Ayarları aç
+0x41bd00	Lütfen ev adresinizi söyleyin
+0x41bd20	Lütfen iş adresinizi söyleyin
+0x41bd44	Navigasyonun hedef noktası, mevcut konumunuz olamaz
+0x41bd7c	Geçiş başarılı
+0x41bd90	Geçiş başarısız oldu, yürüme mesafesi çok uzun
+0x41bdc8	Geçiş başarısız oldu, bisikletle mesafe çok uzun
+0x41be00	Tamam, navigasyon sona erdi.
+0x41be20	Lütfen MYVU AR App'de ev adresinizi ayarlayın
+0x41be50	Lütfen MYVU AR App'de iş adresinizi ayarlayın
+0x41be84	Adresi sesli aramak için yüzüğe 1 saniye basın
+0x41beb8	Adresi sesli aramak için güç düğmesine 1 saniye basılı tutun
+0x41befc	Küçük pencere moduna geçmek için çift tıklayın
+0x41bf34	Lütfen AR navigasyonu gece kullanmayın
+0x41bf60	Lütfen sesi artırın
+0x41bf78	Kalan Yürüme Mesafesi
+0x41bf90	Kalan Sürüş Milleri
+0x41bfa8	Kalan Bisiklet Mili
+0x41bfbc	Gerekli süre
+0x41bfcc	Mevcut zaman
+0x41bfdc	Açmak için tek tıklayın / Kapatmak için çift tıklayın
+0x41c01c	Onaylamak için tek tıklayın / İptal etmek için çift tıklayın
+0x41c0b8	Güncelleniyor
+0x41c0c8	Kurulum başarısız oldu
+0x41c0e4	Güncelleme yaklaşık 5 dakika sürecek,
+lütfen gözlüğü telefonla bağlı tutun
+0x41c13c	System update, restart to take effect
+0x41c164	Güncelleme yaklaşık 10 dakika sürecek,
+lütfen gözlüğü telefonla bağlı tutun
+0x41c1bc	Loading
+0x41c1c4	Lütfen önce telefondan müzik çalmaya başlayın
+0x41c1f8	Brilliant sound Crystal clear all around
+0x41c224	Bu dil şu anda desteklenmiyor
+0x41c244	Continue playing after exiting?
+0x41c264	Background play
+0x41c274	Please start the audio on your mobile
+0x41c29c	Sunucu bağlantısı başarısız
+0x41c2c0	Please log in to the official QQ Music on your mobile phone
+0x41c2fc	Çalınacak içerik yok
+0x41c314	Dinle
+0x41c31c	Sanatçı
+0x41c328	Please download the official QQ Music on your phone and log in
+0x41c368	Please go to the mobile QQ Music APP to agree to the relevant agreement!
+0x41c3b4	Oynatmak için tek tıklayın/Kapatmak için çift tıklayın
+0x41c3f4	Play failed, please go to the official qq music play on the mobile
+0x41c438	History playback
+0x41c44c	Favorite playlists
+0x41c460	Guess you like
+0x41c470	More music for you
+0x41c484	Log in and play
+0x41c494	songs
+0x41c49c	Duraklatmak için tek tıklayın/Kapatmak için çift tıklayın
+0x41c4e0	Play failed, please open MYVU App
+0x41c504	Şarkı bilgisi alınamadı
+0x41c520	Rahatsız etme modu açık
+0x41c53c	Rahatsız etmeyin modu kapalı
+0x41c55c	Arama ve bildirim uyarıları açık
+0x41c584	Arama ve bildirim uyarıları engellendi
+0x41c5b0	Arama uyarıları açık
+0x41c5cc	Arama uyarıları engellendi
+0x41c5ec	Bildirim uyarıları açık
+0x41c608	Bildirim uyarıları engellendi
+0x41c628	Gönder
+0x41c630	Lütfen aramayı bitirdikten sonra yanıtlayın
+0x41c660	Yanıt başarısız oldu, lütfen telefondan yanıtlayın
+0x41c69c	Gönderilemedi, lütfen telefondan yanıtlayın
+0x41c6cc	Gönderilemedi, lütfen telefondan gönderin
+0x41c6fc	Gönderildi
+0x41c708	Yanıtlamak için tek tıklayın / İptal etmek için çift tıklayın
+0x41c750	Göndermek için tek tıklayın / İptal etmek için çift tıklayın
+0x41c798	İptal etmek için çift tıklayın
+0x41c7bc	Akıllı bildirimler
+0x41c7d4	Telefon kilidi açıkken, gözlük telefon bildirimlerini hatırlatsın mı?
+0x41c824	Tek tıkla hatırlat / Çift tıkla hatırlat
+0x41c854	Aramayı cevaplamak için tek tıklayın / Çift tıklayarak çağrıyı sonlandırın
+0x41c8ac	Çift tıklayarak çağrıyı sonlandırın
+0x41c8d8	Aramayı sonlandırmak için güç düğmesine 1 saniye basılı tutun
+0x41c920	Aramayı sonlandırmak için yüzüğü 1 saniye basılı tutun
+0x41c960	Geri aramak için tek tıklayın / İptal etmek için çift tıklayın
+0x41c9a8	Çağrı sonlandırılıyor
+0x41c9c4	Lütfen MYVU AR App'deki arama iznini etkinleştirin
+0x41c9fc	Lütfen telefonda ilgili izinleri açın
+0x41ca28	Arama başarısız oldu, lütfen telefondan arayın
+0x41ca5c	Aramaya cevap verilemedi, lütfen telefondan işlem yapın
+0x41ca98	Çağrı sonlandırılamadı, lütfen telefondan sonlandırın
+0x41cad8	Aramadan sonra karşı taraf telefonun kamera görüntüsünü görebilir
+0x41cb24	Aranıyor
+0x41cb30	Aramayı cevapladıktan sonra, lütfen telefondan sonlandırın
+0x41cb70	Kart 1
+0x41cb78	Kart 2
+0x41cb80	Bilinmeyen numara
+0x41cb94	Bilinmeyen bölge
+0x41cba8	Yeni bir arama var, lütfen telefondan işlem yapın
+0x41cbe0	Lütfen işlemi telefondan yapın
+0x41cc04	Çoklu arama devam ediyor
+0x41cc20	Yeni bir arama var, aramayı cevaplabilirsiniz veya kapatabilirsiniz
+0x41cc88	Call Translation
+0x41cc9c	Translate the current call? Conversation translation will be enabled during translation.
+0x41ccf8	Click to translate / Double-click to cancel
+0x41cd24	kişisi
+0x41cd2c	Kart yuvası
+0x41cd3c	WeChat kişisi
+0x41cd4c	Lütfen bekleyin
+0x41cd60	The content was generated by AI and is for reference only
+0x41cd9c	İçerik Google AI tarafından oluşturulmuştur, sadece referans için kullanın
+0x41cdf0	Takvim
+0x41cdf8	Yeni bir takvim etkinliği oluşturun
+0x41ce20	Daha fazlası için lütfen telefona bakın
+0x41ce4c	Yarın
+0x41ce54	Başla
+0x41ce5c	Bitti
+0x41ce64	Notes
+0x41ce6c	New Note
+0x41ce78	Navigasyon hatası, lütfen telefonunuzda konum izin ayarlarında MYVU AR App'e her zaman izin verin
+0x41cee0	Open the battery room and remove MYVU Ring
+Then tap the glasses touchpad to search ring
+0x41cf38	Search ring
+0x41cf44	Searching
+0x41cf50	Tap twice to return
+0x41cf64	Ensure the ring is turned on and not paired with other glasses
+0x41cfa4	Connecting
+0x41cfb0	Failed to connect
+0x41cfc4	Disconnect
+0x41cfd0	Unpair
+0x41cfd8	No ring was found
+Long press the power button for 3 seconds to turn on the ring
+0x41d028	Got it
+0x41d030	Unbound. To bind again, please press the
+ring firmly for 10 seconds until the red light flashes
+0x41d090	unpaired.
+If necessary, please repair the glasses
+0x41d0c4	ile bağlantıyı kaldırmak istediğinizden emin misiniz?
+0x41d100	Bağlantı kaldırılıyor
+0x41d11c	Initialising
+0x41d12c	Initialised
+0x41d138	Please keep the ring still
+0x41d154	unpaired
+0x41d160	Unpair failed
+0x41d170	Please remove the ring and wait for connection
+0x41d1a0	Please ensure the ring is in a flashing green light state
+0x41d1dc	Check the SN code on the inside of the ring, and the last
+four digits are the ring number
+0x41d238	No ring found
+0x41d248	Please try the following methods before reconnecting:
+0x41d280	Align the charging port of the charging compartment and
+insert the ring, then remove it again
+0x41d2e0	Or long press the ring power button for 10 seconds until
+the red light flashes and release
+0x41d33c	Reconnect
+0x41d348	Geri dönmek için yüzüğe 1 kez basın
+0x41d374	Geri dönmek için dokunmatik yüzeye uzun basın
+0x41d3a8	Please keep the
+ring still
+0x41d3c4	Geri dönmek için çift tıklayın
+0x41d3e8	Ring firmware update
+0x41d400	The update is expected
+to take 2 minutes, the glasses and ring are 
+unavailable during the update
+0x41d464	Tap to update/Double-tap to cancel
+0x41d488	Please connect the ring and try again
+0x41d4b0	The ring is being updated, please try again later
+0x41d4e4	Please keep the battery of your ring and glasses at least 15%
+0x41d524	The ring is being updated, please keep the ring connected to the glasses
+0x41d570	No more content
+0x41d580	Please connect your phone and try again
+0x41d5a8	Updating...
+0x41d5b4	Instructions
+0x41d5c4	Instructions for use
+0x41d5dc	Touch button
+0x41d5ec	Power button
+0x41d5fc	Tap：
+0x41d604	On/off screen
+0x41d614	Tap twice：
+0x41d624	Return
+0x41d62c	Long press：
+0x41d63c	Back home
+0x41d648	Wake up voice assistant
+0x41d660	Long press 3/5 seconds：
+0x41d67c	Ring on/off
+0x41d688	Long press 10 seconds：
+0x41d6a4	Unbind
+0x41d6ac	Wave：
+0x41d6b4	Toggle or selection
+0x41d6c8	Currently is up to date 
+0x41d6e4	New firmware version found
+0x41d700	Current version
+0x41d710	 update content
+0x41d720	Ring has been updated to the latest version
+0x41d74c	Ring update failed
+0x41d760	Ring disconnected, update failed
+0x41d784	Hold down and swing
+0x41d798	Ses seviyesi
+0x41d7a8	Parlaklık
+0x41d7b8	Takma algılama
+0x41d7c8	Ekranı otomatik olarak kapat
+0x41d7e8	Sistem dili
+0x41d7f4	Cihazın bağlantısını kaldır
+0x41d818	Gözlük Hakkında
+0x41d82c	Bağlı değil
+0x41d83c	Bağlantıyı kaldır
+0x41d854	Standart
+0x41d860	Rahatsız etmeyin
+0x41d874	Etkinleştir
+0x41d884	 Cihaz
+0x41d88c	30 sn
+0x41d894	1 dk
+0x41d89c	2 dk
+0x41d8a4	15 sn
+0x41d8ac	Cihaz adı
+0x41d8b8	Ürün Modeli
+0x41d8c8	Ürün yazılımı sürümü
+0x41d8e8	Bluetooth adresi
+0x41d8fc	Seri numarası
+0x41d90c	Fabrika ayarlarına geri dön
+0x41d92c	Fabrika ayarlarına sıfırlanacak, geri döndürülemez
+0x41d968	MMI modu açıldı
+0x41d97c	Etkinleştirildikten sonra, gözlük takıldığında telefona otomatik olarak bağlanır, çıkarıldığında bağlantı otomatik olarak kesilir
+0x41da10	Etkinleştirildikten sonra, bildirim uyarıları engellenecek
+0x41da50	Medya sesi
+0x41da5c	Telefon ses seviyesi
+0x41da74	fifteen seconds
+0x41da84	thirty seconds
+0x41da94	one minute
+0x41daa0	two minutes
+0x41daac	Diğer Ayarlar
+0x41dabc	Image Stabilization
+0x41dad0	Auto Brightness
+0x41dae0	Font Size
+0x41daec	Large Font Preview
+0x41db00	Standard Font Preview
+0x41db18	Standard Font
+0x41db28	Large Font
+0x41db34	Gözlüğün dokunmatik paneline tıklayarak bağlantıyı yenileyin
+0x41db7c	Yenilendi
+0x41db88	Bağlanıyor
+0x41db98	Bağlanıyor...
+0x41dba8	%s'nin eşleştirme kodu, lütfen telefondan onaylayın
+0x41dbe0	 Bağlantı başarılı
+0x41dbf8	Bağlantı başarısız
+0x41dc10	Telefonlar
+0x41dc1c	Adım 1
+0x41dc24	Adım 2
+0x41dc2c	Giriş yaptıktan sonra "Gözlüğü bağla"ya tıklayın ve telefondaki açılır pencere yönlendirmesini takip ederek bağlantıya devam edin
+0x41dcc0	Telefonunuza MYVU AR App yükleyin
+0x41dce4	Yeniden Başlat
+0x41dcf4	Geri dönmek için çift tıklayınv
+0x41dd1c	Click the wheel to refresh the connection
+0x41dd48	Ağ bağlantısı kötü
+0x41dd64	Ağ hatası, lütfen ağı kontrol edin
+0x41dd8c	Ses algılanmadı, çeviriye devam edilsin mi?
+0x41ddbc	Ses algılanmadı, metne dönüştürmeye devam edilsin mi?
+0x41ddf8	Kayıt MYVU AR App'e kaydedildi
+0x41de18	Telefondaki çeviri uygulaması kapandı
+0x41de44	Mikrofon kullanımda, lütfen daha sonra tekrar deneyin
+0x41de7c	Uzaktan hizmet başlatılamadı
+0x41de9c	Simultane çeviri
+0x41deb0	Transkripsiyon
+0x41dec0	Devam etmek için tek tıklayın / İptal etmek için çift tıklayın
+0x41df08	Çince'den Endonezce'ye, dinleniyor
+0x41df2c	Çince-İngilizce transkripsiyon, dinleniyor
+0x41df5c	%s çeviri %s, dinleniyor
+0x41df78	%s transkripsiyon, dinleniyor
+0x41df98	Çince
+0x41dfa0	İngilizce
+0x41dfac	Japonca
+0x41dfb4	Fransızca
+0x41dfc0	Korece
+0x41dfc8	Rusça
+0x41dfd0	İspanyolca
+0x41dfdc	Vietnamca
+0x41dfe8	Malayca
+0x41dff0	Endonezce
+0x41dffc	Tayca
+0x41e004	İtalyanca
+0x41e010	Almanca
+0x41e018	Conversation Translation
+0x41e034	%s%s conversation translation. Listening
+0x41e060	Chinese-English conversation translation. Listening
+0x41e094	Conversation translation requires the use of a mobile phone
+0x41e0d0	Open Translator in MYVU App to start conversation translation
+0x41e110	%s call transcription. Listening
+0x41e134	Chinese-English call transcription. Listening
+0x41e164	%s%s call translation. Listening
+0x41e188	Chinese-English call translation. Listening
+0x41e1b4	Playing privacy reminder to the other party
+0x41e1e0	The call translation function is enabled.
+0x41e20c	The call transcription function is enabled.
+0x41e238	The call translation function is enabled. This call will be recorded. Please pay attention to protecting your privacy and start the conversation in a turn-based manner.
+0x41e2e4	The call transcription function is enabled. This call will be recorded. Please pay attention to protecting your privacy and start the conversation in a turn-based manner.
+0x41e390	The call is ongoing. You can enable conversation translation to translate the call content.
+0x41e3ec	You can adjust the broadcast voice in the Translator module of the MYVU App.
+0x41e43c	Currently, Chinese, English, and Japanese are supported for call translation. You can go to the MYVU App to adjust the language.
+0x41e4c0	Lütfen MYVU AR APP ön masanın önünde çalışmaya devam edin
+0x41e504	Currently, Chinese, English, and Japanese are supported for call transcribe. You can go to the MYVU App to adjust the language.
+0x41e584	Translation delay detected. Recommend turning off meeting Assistant recording
+0x41e5d4	Şu an manuel teleprompter modundasınız
+0x41e600	Şu an sabit hızlı teleprompter modundasınız
+0x41e634	Es ist bereits der letzte Absatz.
+0x41e658	Es ist bereits der erste Absatz.
+0x41e67c	Manuel teleprompter moduna geçildi
+0x41e6a0	Sabit hızlı teleprompter moduna geçildi
+0x41e6cc	Teleprompter başarısız oldu
+0x41e6ec	Yukarı ve aşağı sayfaları dönmek için döndürme tekerleğini döndür
+0x41e73c	Lütfen MYVU AR App'deki teleprompteri açın ve yeniden başlatın
+0x41e780	Yukarı/aşağı sayfa değiştirme düğmesini seçtikten sonra, sayfayı çevirmek için tek tıklayın
+0x41e7ec	Dinleniyor
+0x41e7f8	WeChat yanıtlanıyor, sesli asistanı uyandırılamıyor.
+0x41e834	Start navigation
+0x41e848	Play music
+0x41e854	Call up
+0x41e85c	Send wechat
+0x41e868	Louder
+0x41e870	Light up
+0x41e87c	How's the weather
+0x41e890	Back to homepage
+0x41e8a4	Open the translator
+0x41e8b8	Switch ride navigation
+0x41e8d0	Driving navigation
+0x41e8e4	Exit navigation
+0x41e8f4	Navigate home
+0x41e904	Turn off voice navigation
+0x41e920	Start translation
+0x41e960	Next song
+0x41e96c	Pause music
+0x41e978	Keep the voice down
+0x41e98c	Next
+0x41e994	Exit video
+0x41e9a0	You can say
+0x41e9ac	First
+0x41e9b4	Next page
+0x41e9c0	WeChat açılıyor
+0x41e9d4	Kişiler aranıyor
+0x41e9e8	Durdurmak için yüzüğe tek tıklayın
+0x41ea14	Durdurmak için dokunmatik yüzeye tek tıklayın
+0x41ea48	(Or set your destination in MYVU AR app)
+0x41eab0	Yüksek sıcaklık algılandı, lütfen soğumasını bekleyin ve sonra tekrar kullanın
+0x41eb0c	Yüksek sıcaklık algılandı, cihaz otomatik olarak kapanacak, lütfen soğumasını bekleyin ve sonra tekrar kullanın
+0x41eb88	Translator
+0x41eb94	System hint
+0x41eba0	Prompter
+0x41ebac	Glasses will automatically restart during the factory reset
+0x41ebe8	Tap Ok/Double-tap to return
+0x41ec04	Please connect to mobile first
+0x41ec24	The update is expected to take 5 minutes, the glasses are unavailable during the update
+0x41ec7c	Not now
+0x41ec84	Service error. Please try again later
+0x41ecac	Ring battery remaining 15%
+0x41ecc8	Ring battery remaining 5%
+0x41ece4	Unconnected
+0x41ecf0	Unpaired
+0x41ecfc	15% glasses battery remaining
+0x41ed1c	5% glasses battery remaining
+0x41ed3c	Battery level for glasses is 100%
+0x41ed60	Download MYVU App before using it
+0x41ed84	Hold down the ring and swing to adjust position
+0x41edb4	Ring Unpaired
+0x41edc4	Your ring 
+0x41edd0	 unpaired.If necessary, please repair the glasses
+0x41ee04	Slide the touchpad to choose
+0x41ee24	Hold down the ring and move the wrist to choose
+0x41ee54	Good morning!
+0x41ee64	Good morning, a new day has begun!
+0x41ee88	Welcome to the new day, wish you full of vitality!
+0x41eebc	May you have a happy start!
+0x41eed8	Late at night, pay attention to rest
+0x41ef00	Maintain good health. Start with good sleep
+0x41ef2c	A healthy body requires sufficient sleep. Good night
+0x41ef64	May your sleep be full of health and peace
+0x41ef90	We have been using it continuously for 1 hour. Please rest carefully
+0x41efd8	Your eyes are tired. Take a rest
+0x41effc	Long press the power button to use the voice assistant
+0x41f034	You can say 'Hey Aicy', I will be at your service
+0x41f068	Long press the power button for 1 second during a call to hang up
+0x41f0ac	Press the power button once during a call to mute the call
+0x41f0e8	Save successfully, please go to the mobile phone album view
+0x41f124	Failed to capture screen, please try again
+0x41f150	Glasses firmware update
+0x41f168	Please update the glasses version to the latest version on the MYVU App
+0x41f1b0	App software updates
+0x41f1c8	Please update MYVU AR App to the latest version on your phone
+0x41f208	Long press the touchpad to open the application list
+0x41f240	Press the ring once to open the application list
+0x41f274	App privacy policy
+0x41f288	Disconnected. Please open MYVU AR and agree to the App privacy policy again before connecting
+0x41f2e8	Disconnected. Please open MYVU AR and agree to the Glasses privacy policy again before binding
+0x41f348	move the wrist to choose
+0x41f364	move the wrist to adjust position
+0x41f388	Please open MYVU AR App and connect to mobile first
+0x41f3bc	Please connect the phone
+0x41f3d8	Please agree first to the rules for processing personal information on your phone
+0x41f42c	Please agree first to the cross-border personal data transfer on your phone
+0x41f478	The update is expected to take 10 minutes, the glasses are unavailable during the update
+0x41f544	Today
+0x41f568	No weather information available
+0x41f58c	Failed to update weather
+0x41f5a8	Power off
+0x41f5b4	Please go to your phone to view the full content
+0x41f5ec	Verification code
+0x41f600	Network error. Please check network settings
+0x41f630	Do Not Disturb mode has been enabled for navigation
+0x41f664	Do Not Disturb mode has been disabled for navigation
+0x41f69c	Switching to walking navigation
+0x41f6bc	Switching to cycling navigation
+0x41f6dc	Switching to driving navigation
+0x41f6fc	Switching failed
+0x41f710	Switching...
+0x41f720	Navigation broadcast has been opened
+0x41f748	Navigation broadcast has been closed
+0x41f770	Route refreshed
+0x41f780	Failed to refresh
+0x41f798	Company
+0x41f7a0	nearby
+0x41f7a8	to set
+0x41f7b0	Please provide your home address
+0x41f7d4	Please provide your company address
+0x41f7f8	The destination can’t be the current location
+0x41f828	Switched
+0x41f834	Switching failed. The walking distance is too long
+0x41f868	Switching failed. The cycling distance is too long
+0x41f89c	OK, Navigation end
+0x41f8b0	Please go to the MYVU AR App to set the home address
+0x41f8e8	Please go to the MYVU AR App to set the work address
+0x41f920	Press the ring for 1s to voice search address
+0x41f950	Press the power button for 1s to voice search address
+0x41f988	Tap twice to enter the small window mode
+0x41f9b4	Please do not use AR navigation at night
+0x41f9e0	Please turn up the volume
+0x41f9fc	remaining on foot
+0x41fa10	remaining by car
+0x41fa24	remaining by riding
+0x41fa38	time required
+0x41fa48	Tap to open / Double-tap to close
+0x41fa6c	Tap OK / Double-tap to cancel
+0x41fa8c	Updating
+0x41fa98	Failed to install
+0x41faac	The update is expected to take 5 minutes.
+Please keep Glasses connected to the phone
+0x41fb04	The update is expected to take 10 minutes.
+Please keep Glasses connected to the phone
+0x41fb5c	The line is disconnected
+0x41fb78	Please play music on your phone first
+0x41fba0	This language is not supported at this time
+0x41fbcc	Server connection failed
+0x41fbe8	No playable
+0x41fbf4	Listen as I wish
+0x41fc08	Artist
+0x41fc10	Tap to play/Double-tap to close
+0x41fc30	Tap to pause/Double-tap to close
+0x41fc54	Failed to obtain song information
+0x41fc78	DND mode enabled
+0x41fc8c	DND mode disabled
+0x41fca0	Call and notification reminders are turned on
+0x41fcd0	Call and notification reminders are blocked
+0x41fcfc	Call reminder turned on
+0x41fd14	Call reminder blocked
+0x41fd2c	Notification reminder turned on
+0x41fd4c	Notification reminder blocked
+0x41fd6c	Please reply after the call
+0x41fd88	Reply failed. 
+Please reply on your mobile
+0x41fdb4	Failed. Please use your mobile to reply
+0x41fddc	Failed. Please use your mobile to send
+0x41fe04	Sent
+0x41fe0c	Tap to reply / Double-tap to cancel
+0x41fe30	Tap to send / Double-tap to cancel
+0x41fe54	Double-tap to cancel
+0x41fe6c	Smart Reminder
+0x41fe7c	Do you need notifications appear on your screen when using your phone?
+0x41fec4	Tap to enable / Double-tap to disable
+0x41feec	Tap to answer / Double-tap to
+hang up
+0x41ff14	Double-tap to hang up
+0x41ff2c	Press the power button for
+1 second to hang up
+0x41ff5c	Press the ring for 1 second to
+hang up
+0x41ff84	Tap to callback / Double-tap to cancel
+0x41ffac	Hanging up...
+0x41ffbc	Please go to MYVU App and allow permission to make phone calls
+0x41fffc	Please enable relevant permissions on your phone
+0x420030	Call failed, please call on your phone
+0x420058	Answer failed. Please operate on your phone
+0x420084	Hang up failed. Please hang up on your mobile
+0x4200b4	After the call, the other party can see your phone camera screen.
+0x4200f8	On a call
+0x420104	After answering the call, please go to the phone to hang up
+0x420140	Card one
+0x42014c	Card two
+0x420158	A new call, please perform action on your phone
+0x420188	Please perform action on your phone
+0x4201ac	Multi-channel call in progress
+0x4201cc	There is an incoming call, you can say answer or hang up
+0x420208	Contacts
+0x420214	Card slot
+0x420220	Wechat contacts
+0x420230	Content is generated by Google AI and is for reference only
+0x42026c	Agenda
+0x420274	New schedule
+0x420284	Check more on your phone
+0x4202a0	Tomorrow
+0x4202ac	Navigation error. Please grant MYVU AR App constant location permission in your phone's settings
+0x420310	Unpair with
+0x42031c	Unpairing
+0x420328	Press the ring once to return
+0x420348	Long press the touchpad to return
+0x42036c	Modes
+0x420374	Wear Detection
+0x420384	Auto-Lock
+0x420390	Language
+0x42039c	Unpair Device
+0x4203ac	About
+0x4203b4	Standard
+0x4203c0	Don't disturb
+0x4203d0	Opened
+0x4203d8	Closed
+0x4203e0	 devices
+0x4203ec	30 sec
+0x4203f4	1 min
+0x4203fc	2 min
+0x420404	15 sec
+0x42040c	Device name
+0x420418	Model
+0x420420	Firmware version
+0x420434	Bluetooth address
+0x420448	Serial number
+0x420458	Factory reset
+0x420468	About to reset, can not be restored
+0x42048c	MMI mode has been opened
+0x4204a8	Wear detection
+0x4204b8	When turned on, the phone will automatically connect when wearing glasses, and when removed, it will automatically disconnect
+0x420538	Turn on to block notification reminders
+0x420560	Media Volume
+0x420570	Call Volume
+0x42057c	More Settings
+0x42058c	Click the touchpad to refresh
+0x4205ac	Refreshed
+0x4205b8	Connecting...
+0x4205c8	"%s" pairing code, please confirm it on your mobile phone
+0x420604	 is successfully connected!
+0x420620	Connection failed
+0x420634	Phone's
+0x42063c	Step 1
+0x420644	Step 2
+0x42064c	After logging in, click Pairing Glasses and follow the 
+guide to connect
+0x420698	Install MYVU AR App on your phone.
+0x4206bc	Reboot
+0x4206c4	Poor network connection
+0x4206dc	Network error. please check your mobile network
+0x42070c	No sound detected,
+continue translating?
+0x420738	No sound detected,
+continue transcripting?
+0x420764	Check the translation history in
+ MYVU AR
+0x420790	Mobile translation has exited
+0x4207b0	The microphone is occupied, please try again later
+0x4207e4	Please connect your glasses and try again
+0x420810	Failed to start remote service
+0x420830	Tap Continue / Tap twice
+Cancel
+0x420850	Tap twice Return
+0x420864	Translating between Chinese and English…
+0x420890	Transcripting between Chinese and English…
+0x4208c0	%s-%s translation. Listening...
+0x4208e0	%s transcription. Listening...
+0x420900	Chinese
+0x420908	Japanese
+0x420914	French
+0x42091c	Korean
+0x420924	Russian
+0x42092c	Spanish
+0x420934	Vietnamese
+0x420940	Malay
+0x420948	Indonesian
+0x420954	Thai
+0x42095c	Italian
+0x420964	German
+0x42096c	Turkish
+0x420974	Please keep the MYVU app running foreground
+0x4209a0	Currently in manual text
+prompt mode
+0x4209c8	Currently in uniform speed text
+prompt mode
+0x4209f4	It's already the last paragraph
+0x420a14	It's already the first paragraph
+0x420a38	Switched to manual text
+prompt mode
+0x420a5c	Switched to uniform speed text
+prompt mode
+0x420a88	Prompt failed
+0x420a98	Flip the scroll wheel to flip up and down pages
+0x420ac8	Please open the MYVU AR App text prompter to restart the text prompt
+0x420b10	Select the Flip button and click Flip
+0x420b38	Microphone occupied, please try again later
+0x420b64	Replying WeChat，unable to wake up Voice Assistant
+0x420b98	Opening Wechat
+0x420ba8	Looking for a contact
+0x420bc0	Click the ring to stop
+0x420bd8	Click the touchpad to stop
+0x420bf4	Thur
+0x420bfc	The current temperature is too high,please try again later
+0x420c38	Detected excessive temperature and will automatically power off
+0x420c78	Cincin
+0x420c80	Penerjemah
+0x420c8c	Navigasi
+0x420c98	Musik
+0x420ca0	Cuaca
+0x420ca8	Pengaturan
+0x420cb4	Pengingat sistem
+0x420cc8	Kacamata akan memulai ulang secara otomatis saat reset pabrik
+0x420d08	Ketuk Oke/Ketuk dua kali untuk kembali
+0x420d30	Silakan hubungkan ke ponsel terlebih dahulu
+0x420d5c	Pembaruan diperkirakan memakan waktu 5 menit, kacamata tidak tersedia selama pembaruan
+0x420db4	Ketuk untuk memperbarui/Ketuk dua kali untuk membatalkan
+0x420df0	Memperbaharui
+0x420e00	Tidak sekarang
+0x420e10	Kesalahan layanan. Silakan coba lagi nanti
+0x420e3c	Baterai cincin tersisa 15%
+0x420e58	Baterai cincin tersisa 5%
+0x420e74	Terhubung
+0x420e80	Tidak tersambung
+0x420e94	Lepas pemasangan
+0x420ea8	Baterai kacamata tersisa 15%
+0x420ec8	Baterai kacamata tersisa 5%
+0x420ee4	Level baterai kacamata 100%
+0x420f00	Unduh Aplikasi MYVU sebelum menggunakannya
+0x420f2c	Tekan dan tahan cincin dan ayunkan untuk menyesuaikan posisi
+0x420f6c	Cincin Dilepas Pemasangan
+0x420f88	Cincin 
+0x420f90	 Anda dilepas pemasangan. Jika perlu, silakan perbaiki kacamatanya
+0x420fd4	Geser panel sentuh untuk memilih
+0x420ff8	Tekan dan tahan cincin dan gerakkan pergelangan tangan untuk memilih
+0x421040	Selamat pagi!
+0x421050	Selamat pagi, hari baru telah mulai!
+0x421078	Selamat datang di hari baru, semoga Anda penuh tenaga!
+0x4210b0	Semoga Anda memiliki awal yang menyenangkan!
+0x4210e0	Sudah larut malam, perhatikan istirahat
+0x421108	Jaga kesehatan yang baik. Mulailah dengan tidur yang nyenyak
+0x421148	Tubuh yang sehat memerlukan tidur yang cukup. Selamat malam
+0x421184	Semoga tidur anda penuh kesehatan dan kedamaian
+0x4211b4	Kita telah menggunakannya terus menerus selama 1 jam. Silakan beristirahat
+0x421200	Mata Anda sudah lelah. Beristirahatlah
+0x421228	Tekan lama tombol daya untuk menggunakan asisten suara
+0x421260	Anda bisa mengucapkan "Hey Aicy", saya siap melayani Anda
+0x42129c	Tekan lama tombol daya selama 1 detik selama panggilan untuk mengakhiri panggilan
+0x4212f0	Tekan tombol daya sekali selama panggilan untuk membisukan panggilan
+0x421338	Berhasil disimpan, silakan masuk ke tampilan album ponsel
+0x421374	Gagal mengambil tangkapan layar, silakan coba lagi
+0x4213a8	Pembaruan firmware kacamata
+0x4213c4	Silakan perbarui versi kacamata ke versi terbaru di Aplikasi MYVU AR
+0x42140c	Pembaruan perangkat lunak aplikasi
+0x421430	Silakan perbarui Aplikasi MYVU AR ke versi terbaru pada ponsel Anda
+0x421474	Tekan lama panel sentuh untuk membuka daftar aplikasi
+0x4214ac	Tekan cincin sekali untuk membuka daftar aplikasi
+0x4214e0	Ketuk dua kali untuk kembali
+0x421500	Kebijakan privasi aplikasi
+0x42151c	Terputus. Silakan buka MYVU AR dan setujui lagi kebijakan privasi Aplikasi sebelum menghubungkan
+0x421580	Kebijakan Privasi Kacamata
+0x42159c	Terputus. Silakan buka MYVU AR dan setujui lagi kebijakan privasi Kacamata sebelum mengikat
+0x4215f8	Ketuk Oke
+0x421604	gerakkan pergelangan tangan untuk memilih
+0x421630	gerakkan pergelangan tangan untuk menyesuaikan posisi
+0x421668	Buka Aplikasi MYVU AR dan coba lagi setelah terhubung
+0x4216a0	Menuliskan
+0x4216ac	Silakan hubungkan telepon
+0x4216c8	Harap setujui aturan pemrosesan informasi pribadi di ponsel Anda terlebih dahulu
+0x42171c	Harap setujui transfer data pribadi lintas batas di ponsel Anda terlebih dahulu
+0x42176c	Pembaruan diperkirakan memakan waktu 10 menit, kacamata tidak tersedia selama pembaruan
+0x4217c4	Harap isi daya produk ini hingga 100% dan teruskan selama 1 jam agar memastikan tampilan level baterai yang akurat.
+0x421838	Hari ini
+0x421844	Sen.
+0x42184c	Sel.
+0x421854	Rab.
+0x42185c	Kam.
+0x421864	Jum.
+0x42186c	Sab.
+0x421874	Min.
+0x42187c	Tidak ada informasi cuaca yang tersedia
+0x4218a4	Gagal memperbarui cuaca
+0x4218bc	Tidak diketahui
+0x4218cc	Keluar dari aplikasi?
+0x4218e4	Matikan daya
+0x4218f4	Batalkan
+0x421900	Silakan buka ponsel Anda untuk melihat konten lengkap
+0x421938	konfirmasi
+0x421944	Balas
+0x42194c	katakan
+0x421954	Kode verifikasi
+0x421964	berita
+0x42196c	Kesalahan jaringan. Silakan periksa pengaturan jaringan
+0x4219a4	Mode Jangan Ganggu telah diaktifkan untuk navigasi
+0x4219d8	Mode Jangan Ganggu telah dinonaktifkan untuk navigasi
+0x421a10	Beralih ke navigasi berjalan kaki
+0x421a34	Beralih ke navigasi bersepeda
+0x421a54	Beralih ke navigasi mengemudi
+0x421a74	Peralihan gagal
+0x421a84	Beralih...
+0x421a90	Siaran navigasi telah dibuka
+0x421ab0	Siaran navigasi telah ditutup
+0x421ad4	Rute disegarkan
+0x421ae4	Gagal menyegarkan
+0x421af8	Sekarang
+0x421b04	Rumah
+0x421b0c	Perusahaan
+0x421b18	berdekatan
+0x421b24	untuk mengatur
+0x421b34	Silakan berikan alamat rumah Anda
+0x421b58	Silakan berikan alamat perusahaan Anda
+0x421b80	Tujuan tidak boleh berupa lokasi saat ini
+0x421bac	Diganti
+0x421bb4	Peralihan gagal. Jarak berjalan kaki terlalu jauh
+0x421be8	Peralihan gagal. Jarak bersepeda terlalu jauh
+0x421c18	Oke, Navigasi berakhir
+0x421c30	Silakan buka Aplikasi MYVU AR untuk mengatur alamat rumah
+0x421c6c	Silakan buka Aplikasi MYVU AR untuk mengatur alamat kantor
+0x421ca8	Tekan cincin selama 1 detik untuk mencari alamat dengan suara
+0x421ce8	Tekan tombol daya selama 1 detik untuk mencari alamat dengan suara
+0x421d2c	Ketuk dua kali untuk masuk ke mode jendela kecil
+0x421d60	Mohon jangan gunakan navigasi AR saat malam
+0x421d8c	Silakan naikkan volumenya
+0x421da8	sisa dgn kaki
+0x421db8	sisa dgn mobil
+0x421dc8	sisa bersepeda
+0x421dd8	waktu dibutuhkan
+0x421dec	waktu
+0x421df4	Ketuk untuk membuka / Ketuk dua kali untuk menutup
+0x421e28	Ketuk Oke / Ketuk dua kali untuk membatalkan
+0x421e58	Memperbarui
+0x421e64	Gagal memasang
+0x421e74	Pembaruan diperkirakan memakan waktu 5 menit.
+Silakan pastikan Kacamata tetap terhubung ke ponsel
+0x421ed8	Pembaruan sistem, mulai ulang agar berlaku
+0x421f04	Pembaruan diperkirakan memakan waktu 10 menit.
+Silakan pastikan Kacamata tetap terhubung ke ponsel
+0x421f68	Silakan hubungkan ke ponsel
+0x421f84	Terputus
+0x421f90	Silakan putar musik di ponsel Anda
+0x421fb4	Bahasa ini tidak didukung untuk saat ini
+0x421fe0	Koneksi server gagal
+0x421ff8	Tidak ada yang bisa diputar
+0x422014	Dengar ikut suka
+0x422028	Artis
+0x422030	Klik utk putar/Klik 2x utk tutup
+0x422054	Klik utk jeda/Klik 2x utk tutup
+0x422074	Gagal mendapatkan informasi lagu
+0x422098	Mode DND diaktifkan
+0x4220ac	Mode DND dinonaktifkan
+0x4220c4	Pengingat panggilan dan notifikasi diaktifkan
+0x4220f4	Pengingat panggilan dan notifikasi diblokir
+0x422120	Pengingat panggilan diaktifkan
+0x422140	Pengingat panggilan diblokir
+0x422160	Pengingat notifikasi diaktifkan
+0x422180	Pengingat notifikasi diblokir
+0x4221a0	Kirim
+0x4221a8	Ucapkan
+0x4221b0	Silakan balas setelah panggilan tersebut
+0x4221dc	Gagal membalas.
+Silakan balas pada ponsel Anda
+0x42220c	Gagal. Silakan gunakan ponsel Anda untuk membalas
+0x422240	Gagal. Silakan gunakan ponsel Anda untuk mengirim
+0x422274	Terkirim
+0x422280	Ketuk untuk membalas / Ketuk dua kali untuk membatalkan
+0x4222b8	Ketuk untuk mengirim / Ketuk dua kali untuk membatalkan
+0x4222f0	Pengingat Pintar
+0x422304	Apakah Anda perlu notifikasi untuk muncul di layar saat menggunakan ponsel?
+0x422350	Ketuk untuk mengaktifkan / Ketuk dua kali untuk menonaktifkan
+0x422390	Ketuk untuk menjawab / Ketuk dua kali untuk mengakhiri panggilan
+0x4223d4	Ketuk dua kali untuk mengakhiri panggilan
+0x422400	Tekan tombol daya selama 1 detik untuk mengakhiri panggilan
+0x42243c	Tekan cincin selama 1 detik untuk mengakhiri panggilan
+0x422474	Ketuk untuk memanggil kembali / Ketuk dua kali untuk membatalkan
+0x4224b8	Mengakhiri panggilan...
+0x4224d0	Silakan buka Aplikasi MYVU dan izinkan izin untuk melakukan panggilan telepon
+0x422520	Harap aktifkan izin yang terkait di ponsel Anda
+0x422550	Gagal melakukan panggilan, silakan lakukan panggilan pada ponsel Anda
+0x422598	Gagal menjawab. Silakan operasikan pada ponsel Anda
+0x4225cc	Gagal mengakhiri panggilan. Silakan akhiri panggilan pada ponsel Anda
+0x422614	Setelah panggilan selesai, pihak lain dapat melihat layar kamera ponsel Anda.
+0x422664	Dalam panggilan
+0x422674	Setelah menjawab panggilan, silakan buka telepon untuk mengakhiri panggilan
+0x4226c0	Kartu satu
+0x4226cc	Kartu dua
+0x4226d8	Panggilan baru, silakan ambil tindakan di ponsel Anda
+0x422710	Silakan ambil tindakan di ponsel Anda
+0x422738	Ponsel
+0x422740	Panggilan multi-saluran sedang berlangsung
+0x42276c	Ada panggilan masuk, Anda bisa mengatakan jawab atau akhiri panggilan
+0x4227b4	Kontak
+0x4227bc	Slot kartu
+0x4227c8	Kontak WeChat
+0x4227d8	Silakan tunggu sebentar
+0x4227f0	Konten dibuat oleh Google AI dan hanya untuk referensi
+0x422828	Jadwal baru
+0x422834	Periksa selengkapnya di ponsel Anda
+0x422858	Besok
+0x422860	Mulai
+0x422868	Selesai
+0x422870	Lepas pemasangan dengan
+0x422888	Sedang melepas pemasangan
+0x4228a4	Tekan cincin sekali untuk kembali
+0x4228c8	Tekan lama panel sentuh untuk kembali
+0x4228f0	Operation guide
+0x422900	Ring operation guide
+0x422918	update content
+0x422928	Update immediately
+0x4229a8	Kecerahan
+0x4229b4	Deteksi pakai
+0x4229c4	Auto Kunci
+0x4229d0	Bahasa
+0x4229d8	Putuskan sambungan Perangkat
+0x4229f8	Tentang
+0x422a00	Standar
+0x422a08	Jangan Ganggu
+0x422a18	Dibuka
+0x422a20	Ditutup
+0x422a28	30 detik
+0x422a34	1 menit
+0x422a3c	2 menit
+0x422a44	15 detik
+0x422a50	Nama perangkat
+0x422a60	Versi firmware
+0x422a70	Alamat Bluetooth
+0x422a84	Nomor seri
+0x422a90	Reset pabrik
+0x422aa0	Akan direset, tidak dapat dipulihkan
+0x422ac8	Mode MMI telah dibuka
+0x422ae0	Saat diaktifkan, ponsel akan otomatis terhubung ketika memakai kacamata, dan otomatis terputus ketika dilepas
+0x422b50	Aktifkan untuk memblokir pengingat notifikasi
+0x422b80	Volume Media
+0x422b90	Volume Panggilan
+0x422ba4	Lainnya
+0x422bb0	Klik panel sentuh untuk menyegarkan
+0x422bd4	Disegarkan
+0x422be0	Menyambungkan
+0x422bf0	Menyambungkan...
+0x422c04	"%s" kode pemasangan, silakan konfirmasi di ponsel Anda
+0x422c3c	 berhasil terhubung!
+0x422c54	Gagal menyambung
+0x422c68	Ponsel 
+0x422c70	Langkah 1
+0x422c7c	Langkah 2
+0x422c88	Setelah login, klik Memasangkan Kacamata dan ikuti panduan untuk menghubungkan
+0x422cd8	Pasang Aplikasi MYVU AR di ponsel Anda.
+0x422d00	Boot ulang
+0x422d0c	Klik roda untuk menyegarkan koneksi
+0x422d30	Koneksi jaringan buruk
+0x422d48	Kesalahan jaringan. Silakan periksa jaringan seluler Anda
+0x422d84	Tidak ada suara yang terdeteksi, lanjutkan penerjemahan?
+0x422dc0	Tidak ada suara yang terdeteksi, lanjutkan transkripsi?
+0x422df8	Periksa riwayat terjemahan di MYVU AR
+0x422e20	Telah keluar dari penerjemahan ponsel
+0x422e48	Mikrofon sedang sibuk, silakan coba lagi nanti
+0x422e78	Silakan hubungkan kacamata dan coba lagi
+0x422ea4	Gagal memulai layanan jarak jauh
+0x422ec8	Terjemah
+0x422ed4	Transkripsi
+0x422ee0	Ketuk Lanjutkan / Ketuk dua kali
+Batal
+0x422f08	Ketuk dua kali untuk Kembali
+0x422f28	Menerjemahkan antara bahasa Mandarin dan bahasa Inggris...
+0x422f64	Mentranskripsikan bahasa Mandarin dan bahasa Inggris...
+0x422f9c	Bahasa %s-Bahasa %s, mendengar
+0x422fbc	Transkripsi Bahasa %s, mendengar
+0x422fe0	Mandarin
+0x422fec	Inggris
+0x422ff4	Jepang
+0x422ffc	Prancis
+0x423004	Korea
+0x42300c	Rusia
+0x423014	Spanyol
+0x42301c	Vietnam
+0x423024	Melayu
+0x42302c	Italia
+0x423034	Jerman
+0x42303c	Turki
+0x423364	Silakan terus MYVU AR APP berjalan di meja depan
+0x423398	Saat ini dalam mode pemandu baca teks manual
+0x4233c8	Saat ini dalam mode pemandu baca teks kecepatan seragam
+0x423400	Ini sudah paragraf terakhir
+0x42341c	Ini sudah paragraf pertama
+0x423438	Beralih ke mode pemandu baca teks manual
+0x423464	Beralih ke mode pemandu baca teks kecepatan seragam
+0x423498	Pemandu baca gagal
+0x4234ac	Balik roda scroll untuk balik dan turun halaman
+0x4234dc	Silakan buka prompter teks Aplikasi MYVU AR untuk memulai kembali pemandu baca teks
+0x423530	Pilih tombol Balik dan klik Balik
+0x423554	Mendengarkan
+0x423564	Membalas WeChat, tidak dapat membangunkan Asisten Suara
+0x42359c	Klik cincin untuk berhenti
+0x4235b8	Klik panel sentuh untuk berhenti
+0x4235dc	(Or set the destination on MYVU AR app)
+0x42361c	Jejak suara kata untuk membangunkan tidak cocok. Silakan buka APLIKASI MYVU AR untuk merekamnya lagi.
+0x423684	Suhu saat ini terlalu tinggi, silakan coba lagi nanti
+0x4236bc	Suhu berlebih terdeteksi dan daya akan dimatikan secara otomatis
+0x423700	Übersetzer
+0x42370c	Wetter
+0x423714	Systemhinweis
+0x423724	Beim Zurücksetzen auf die Werkseinstellungen wird die Brille automatisch neu gestartet
+0x42377c	Tippen zum Bestätigen / Doppeltippen zum Abbrechen
+0x4237b0	Bitte verbinden Sie das Gerät zuerst mit dem Handy
+0x4237e4	Das Update wird ungefähr 5 Minuten dauern. Die Brille ist während des Updates nicht verfügbar
+0x423848	Tippen zum Aktualisieren / Doppeltippen zum Abbrechen
+0x423880	Aktualisieren
+0x423890	Nicht jetzt
+0x42389c	Dienstfehler. Bitte versuchen Sie es später erneut
+0x4238d0	Ring hat nur noch 15% Akku
+0x4238ec	Ring hat nur noch 5% Akku
+0x423908	Verbunden
+0x423914	Getrennt
+0x423920	Entbunden
+0x42392c	Brille hat nur noch 15% Akku
+0x42394c	Brille hat nur noch 5% Akku
+0x423968	Brille hat 100% Akku
+0x423980	Bitte laden Sie zuerst die MYVU AR App auf Ihrem Handy herunter, um ihn weiter zu verwenden
+0x4239dc	Halten Sie den Ring gedrückt und winken Sie, um die Position anzupassen
+0x423a28	Der Ring wird entbunden
+0x423a40	Ihr Ring 
+0x423a4c	 wurde von der Brille entbunden. Bitte verbinden Sie ihn erneut mit der Brille, um ihn weiter zu verwenden.
+0x423ab8	Zum auswählen über das Touchpad wischen
+0x423ae4	Halten Sie den Ring gedrückt und winken Sie mit dem Handgelenk, um Optionen auszuwählen
+0x423b40	Guten Morgen!
+0x423b50	Guten Morgen, ein neuer Tag hat begonnen!
+0x423b7c	Voller Energie in den neuen Tag!
+0x423ba0	Ich wünsche Ihnen einen guten Start!
+0x423bc8	Es ist schon spät. Ruhen Sie sich gut aus!
+0x423bf4	Ausreichender Schlaf ist nötig für einen starken Körper.
+0x423c30	Gesundheit erfordert ausreichenden Schlaf. Gute Nacht!
+0x423c68	Ich wünsche Ihnen einen guten Schlafen.
+0x423c94	Sie haben das Gerät 1 Stunde lang kontinuierlich verwendet. Jetzt ist es Zeit für eine Pause!
+0x423cf4	Ihre Augen sind müde. Machen Sie eine Pause!
+0x423d24	Halten Sie den Ein-/Ausschalter gedrückt, um den Sprachassistenten zu verwenden
+0x423d78	Sagen Sie "Hey Aicy", und ich bin für Sie da!
+0x423da8	Halten Sie während eines Anrufs den Ein-/Ausschalter 1 Sekunde lang gedrückt, um aufzulegen
+0x423e08	Drücken Sie während eines Anrufs einmal auf den Ein-/Ausschalter, um den Anruf stummzuschalten
+0x423e6c	Erfolgreich gespeichert. Bitte gehen Sie zum Handy-Album, um es anzusehen
+0x423eb8	Bildschirmaufnahme fehlgeschlagen. Bitte versuchen Sie es erneut
+0x423efc	Brille-Firmware-Update
+0x423f14	Bitte öffnen Sie die MYVU AR App und aktualisieren Sie die Brille auf die neueste Version.
+0x423f70	App-Updates
+0x423f7c	Bitte aktualisieren Sie die MYVU AR App auf die neueste Version auf Ihrem Handy
+0x423fcc	Halten Sie das Touchpad gedrückt, um die App-Liste zu öffnen
+0x42400c	Drücken Sie den Ring einmal, um die App-Liste zu öffnen
+0x424048	Doppeltippe zum Schließen
+0x424064	App-Datenschutzrichtlinien
+0x424080	Getrennt. Bitte öffnen Sie MYVU AR und stimmen Sie erneut der App-Datenschutzerklärung zu, bevor Sie das Gerät wieder verbinden.
+0x424104	Brillen-Datenschutzrichtlinien
+0x424124	Getrennt. Bitte öffnen Sie MYVU AR und stimmen Sie erneut der Brille-Datenschutzerklärung zu, bevor Sie das Gerät wieder verbinden.
+0x4241ac	Tippen zum Bestätigen
+0x4241c4	Zur Auswahl bewegen Sie das Handgelenk
+0x4241ec	Zum Einstellen der Position bewegen Sie das Handgelenk
+0x424224	Bitte öffnen Sie die MYVU AR App und stellen Sie die Verbindung her, bevor Sie es erneut versuchen.
+0x42428c	Umschreiben
+0x424298	Bitte verbinden Sie das Telefon
+0x4242b8	Bitte stimmen Sie zuerst den Regeln zur Verarbeitung Ihrer persönlichen Informationen auf Ihrem Telefon zu
+0x424324	Bitte stimmen Sie zuerst der grenzüberschreitenden Übertragung von persönlichen Daten auf Ihrem Telefon zu
+0x424394	Das Update wird ungefähr 10 Minuten dauern. Die Brille ist während des Updates nicht verfügbar.
+0x4243f8	Laden das Produkt bis 100 % auf, setzt Ladevorgang 1 Stunde fort, damit genaue Anzeige des Batterie-stands zu gewährleisten.
+0x424478	Demo-Modus ist aktiv
+0x424490	Heute
+0x4244b4	Keine Wetterinformationen
+0x4244d0	Aktualisierung der Wetterdaten fehlgeschlagen
+0x424500	Unbekannt
+0x42450c	Beenden Sie die App?
+0x424524	Ausschalten
+0x424530	Bitte sehen Sie den vollständigen Inhalt auf Ihrem Handy an.
+0x424570	Bestätigen
+0x42457c	Zurückkehren
+0x42458c	Antworten
+0x424598	Prüfcode
+0x4245a4	Netzwerkfehler. Bitte überprüfen Sie die Netzwerkeinstellungen.
+0x4245e8	Benachrichtigungen während der Navigation deaktiviert.
+0x424620	Benachrichtigungen während der Navigation aktiviert.
+0x424658	Zur Laufnavigation wechseln
+0x424674	Zur Radnavigation wechseln
+0x424690	Zur Autonavigation wechseln
+0x4246ac	Wechsel fehlgeschlagen
+0x4246c4	Wird gewechselt…
+0x4246d8	Navigationsansage aktiviert
+0x4246f4	Navigationsansage deaktiviert
+0x424714	App beenden?
+0x424724	Route aktualisiert
+0x424738	Aktualisierung fehlgeschlagen
+0x424758	Jetzt
+0x424760	Zuhause
+0x424768	Arbeit
+0x424770	Sie sind in der Nähe
+0x424788	Einstellen
+0x424794	Bitte geben Sie Ihre Wohnadresse an
+0x4247b8	Bitte geben Sie Ihre Arbeitsadresse an
+0x4247e0	Das Ziel kann nicht der aktuelle Standort sein
+0x424810	Gewechselt
+0x42481c	Wechsel fehlgeschlagen. Die Gehstrecke ist zu lang.
+0x424850	Wechsel fehlgeschlagen. Die Fahrradstrecke ist zu lang.
+0x424888	Navigation beendet.
+0x42489c	Bitte geben Sie Ihre Wohnadresse in der MYVU-AR-App an.
+0x4248d4	Bitte geben Sie Ihre Arbeitsadresse in der MYVU-AR-App an.
+0x424910	Halten Sie den Ring 1 Sek. lang gedrückt, um per Sprachbefehl nach einer Adresse zu suchen.
+0x424970	Halten Sie den Ein-/Ausschalter 1 Sek. lang gedrückt, um per Sprachbefehl nach einer Adresse zu suchen.
+0x4249dc	Tippen Sie zweimal, um den Kleinbildmodus zu aktivieren.
+0x424a18	Bitte verwenden Sie die AR-Navigation nicht in der Nacht.
+0x424a54	Bitte stellen Sie die Lautstärke höher.
+0x424a80	Verbleibende Gehstrecke
+0x424a98	Verbleibende Fahrstrecke
+0x424ab4	Verbleibende Radstrecke
+0x424acc	Benötigte Zeit
+0x424adc	Aktuelle Zeit
+0x424aec	Tippen zum Öffnen / Doppeltippen zum Schließen
+0x424b20	Lassen Sie bitte Vorsicht wahren und halten Sie sich an die örtlichen Gesetze und Vorschriften, wenn Sie dieses Produkt verwenden.
+0x424ba4	Aktualisierung
+läuft…
+0x424bc0	Installisierung fehlgeschlagen
+0x424be0	Das Update soll 5 Min. dauern. Bitte stellen Sie sicher,
+dass die Brille mit dem Handy verbunden ist.
+0x424c48	Das Update soll 10 Min. dauern. Bitte stellen Sie sicher,
+dass die Brille mit dem Handy verbunden ist.
+0x424cb0	Bitte verbinden Sie das Gerät zuerst mit Ihrem Handy
+0x424ce8	Die Verbindung wurde unterbrochen
+0x424d0c	Bitte spielen Sie die Musik zuerst auf Ihrem Handy ab
+0x424d44	Bitte stellen Sie die Lautstärke höher
+0x424d70	Diese Sprache wird derzeit nicht unterstützt
+0x424da0	Serververbindung fehlgeschlagen.
+0x424dc4	Kein Inhalt zum Abspielen
+0x424de0	Nach Wunsch hören
+0x424df4	Künstler
+0x424e00	Tippen zum Abspielen/Doppeltippen zum Schließen
+0x424e34	Tippen zum Anhalten/Doppeltippen zum Schließen
+0x424e64	Songinformationen konnten nicht abgerufen werden
+0x424e98	Nicht stören-Modus aktiviert
+0x424eb8	Nicht stören-Modus deaktiviert
+0x424ed8	Anruf- und Benachrichtigungserinnerungen aktiviert
+0x424f0c	Anruf- und Benachrichtigungserinnerungen blockiert
+0x424f40	Anruferinnerung aktiviert
+0x424f5c	Anruferinnerung blockiert
+0x424f78	Benachrichtigungserinnerung aktiviert
+0x424fa0	Benachrichtigungserinnerung blockiert
+0x424fc8	Senden
+0x424fd0	Bitte verbinden Sie das Gerät zuerst mit dem Handy und versuchen Sie es erneut.
+0x425024	Bitte beenden Sie zuerst den Anruf, bevor Sie antworten.
+0x425060	Antworten fehlgeschlagen.
+Bitte antworten Sie über Ihr Handy.
+0x4250a0	Fehlgeschlagen. Bitte antworten Sie über Ihr Handy.
+0x4250d8	Fehlgeschlagen. Bitte senden Sie über Ihr Handy.
+0x42510c	Gesendet
+0x425118	Tippen zum Antworten / Doppeltippen zum Abbrechen
+0x42514c	Tippen zum Senden / Doppeltippen zum Abbrechen
+0x42517c	Intelligente Erinnerung
+0x425194	Möchten Sie, dass Benachrichtigungen auf Ihrem Handy auch auf Ihrer Brille angezeigt werden, während Sie Ihr Handy benutzen?
+0x425214	Tippen zum Aktivieren / Doppeltippen zum Deaktivieren
+0x42524c	Tippen zum Annehmen / Doppeltippen zum Ablegen
+0x42527c	Doppeltippen zum Ablegen
+0x425298	Zum Auflegen den Ein-/Ausschalter 1 Sek. lang gedrückt halten
+0x4252d8	Zum Auflegen den Ring 1 Sek. lang gedrückt halten
+0x42530c	Tippen zum Rückruf / Doppeltippen zum Abbrechen
+0x425340	Auflegen…
+0x42534c	Bitte aktivieren Sie die Anrufberechtigungen in der MYVU AR-App.
+0x425390	Bitte aktivieren Sie die entsprechenden Berechtigungen auf Ihrem Handy.
+0x4253d8	Anruf fehlgeschlagen. Bitte rufen Sie über Ihr Handy an.
+0x425414	Annehmen fehlgeschlagen. Bitte nehmen Sie über Ihr Handy an.
+0x425454	Auflegen fehlgeschlagen. Bitte legen Sie über Ihr Handy auf.
+0x425494	Nach dem Anruf kann die andere Partei die Kamerabilder Ihres Handys sehen.
+0x4254e0	Anruf läuft
+0x4254f0	1. Karte
+0x4254fc	2. Karte
+0x425508	Unbekannte Nummer
+0x42551c	Unbekannter Herkunftsort
+0x425538	Ein neuer Anruf. Bitte verwenden Sie Ihr Handy.
+0x425568	Bitte führen Sie den Vorgang auf Ihrem Handy aus.
+0x42559c	Mehrkanal-Anruf läuft
+0x4255b4	Ein Anruf geht ein. Sie können Annehmen oder Auflegen sagen.
+0x4255f4	Anruf-Übersetzung
+0x425608	Soll der aktuelle Anruf übersetzt werden? Während der Übersetzung wir „Dialog-Übersetzung“ aktiviert.
+0x425678	Klicken zum Übersetzen / Doppel-Klicken zum Abbrechen
+0x4256b0	Kontakte
+0x4256bc	Kartensteckplatz
+0x4256d0	WeChat-Kontakte
+0x4256e0	Bitte warten Sie.
+0x4256f4	Inhalt von Google AI generiert, nur zur Referenz.
+0x425728	Termin
+0x425730	Neuer Termin
+0x425740	Mehr auf Ihrem Handy entdecken
+0x425760	Morgen
+0x425768	Starten
+0x425770	Beenden
+0x425778	Schnelle Notizen
+0x42578c	Erstellen Sie eine Aufzeichnung
+0x4257ac	Navigationsfehler. Bitte wählen Sie in den Standorteinstellungen Ihres Handys Immer erlauben für die MYVU AR App.
+0x425820	Von 
+0x425828	entbunden?
+0x425834	Wird entbunden
+0x425844	Drücken Sie den Ring einmal, um zurückzukehren
+0x425878	Drücken Sie einmal auf den Ring, um zurückzukehren
+0x4258b0	Doppeltippen zum Zurückkehren
+0x4258d0	Lautstärke
+0x4258dc	Helligkeit
+0x4258e8	Modi
+0x4258f0	Tragerkennung
+0x425900	Trag-
+erkennung
+0x425910	Automatische Bildschirmsperre
+0x425930	Sprache
+0x425938	Gerät Entkoppeln
+0x42594c	Über die Brille
+0x425960	Nicht verbunden
+0x425970	Entkoppeln
+0x42597c	Nicht stören
+0x42598c	Aktivieren
+0x425998	 Gerät
+0x4259a0	 Gerät(e)
+0x4259ac	30 Sek
+0x4259b4	1 Min.
+0x4259bc	2 Min.
+0x4259c4	15 Sek.
+0x4259cc	30 Sek.
+0x4259d4	Gerätname
+0x4259e0	Modell
+0x4259e8	Firmware-Version
+0x4259fc	Bluetooth-Adresse
+0x425a10	Seriennummer
+0x425a20	Auf Werkseinstellungen zurücksetzen
+0x425a48	Das Gerät wird auf die Werkseinstellungen zurückgesetzt. Dieser Prozess ist irreversibel.
+0x425aa4	MMI-Modus wurde aktiviert
+0x425ac0	Beim Aktivieren verbindet sich die Brille automatisch mit Ihrem Handy, wenn sie aufgesetzt werden, und trennt sich, wenn sie abgenommen werden.
+0x425b50	Nach der Aktivierung werden alle Benachrichtigungserinnerungen blockiert.
+0x425b9c	Medienlautstärke
+0x425bb0	Medien-
+lautstärke
+0x425bc4	Anruflautstärke
+0x425bd8	Weitere Einstellungen
+0x425bf0	Weitere 
+Ein-
+stellungen
+0x425c0c	Bildstabilisierung
+0x425c20	Automatische Helligkeit
+0x425c38	Schriftgröße
+0x425c48	Große Schriftvorschau
+0x425c60	Standard Schriftvorschau
+0x425c7c	Standard Schriftart
+0x425c90	Große Schriftart
+0x425ca4	Tippen Sie auf das Touchpad, um die Verbindung zu aktualisieren
+0x425ce4	Aktualisiert
+0x425cf4	Verbindung wird hergestellt…
+0x425d14	Verbindung wird hergestellt…...
+0x425d38	Bitte bestätigen Sie den Kopplungscode für "%s" auf Ihrem Handy.
+0x425d7c	 Erfolgreich verbunden!
+0x425d94	Verbindung fehlgeschlagen
+0x425db0	Schritt 1
+0x425dbc	Schritt 2
+0x425dc8	Melden Sie sich an, tippen Sie auf "Brille verbinden" und folgen Sie der Anleitung, um sie zu verbinden.
+0x425e34	Installieren Sie die MYVU AR App auf Ihrem Handy.
+0x425e68	Neustart
+0x425e74	Klicken Sie das Scroll-Rad, um die Verbindung zu aktualisieren
+0x425eb4	Schlechte Netzwerkverbindung
+0x425ed4	Servicefehler. Bitte versuchen Sie es später wieder.
+0x425f0c	Kein Ton erkannt, weiter übersetzen?
+0x425f34	Kein Ton erkannt, weiter transkribieren?
+0x425f60	Wird in der MYVU AR-App gespeichert
+0x425f84	Übersetzer auf dem Handy beendet
+0x425fa8	Das Mikrofon ist belegt. Bitte versuchen Sie es später erneut
+0x425fe8	Bitte verbinden Sie die Brille und versuchen Sie es erneut.
+0x426024	Remotedienst konnte nicht gestartet werden.
+0x426050	Übersetzen
+0x42605c	Transkribieren
+0x42606c	Tippen zum Fortsetzen/Doppeltippen zum Abbrechen
+0x4260a0	Chinesisch<>Englisch Übersetzung. Wird angehört…
+0x4260d8	Chinesische Transkription. Wird angehört…
+0x426108	%s zu %s Übersetzung. Hört zu. Bitte sprechen Sie
+0x42613c	%s Transkription. Hört zu. Bitte sprechen Sie
+0x42616c	Chinesisch
+0x426178	Englisch
+0x426184	Japanisch
+0x426190	Französisch
+0x4261a0	Koreanisch
+0x4261ac	Russisch
+0x4261b8	Spanisch
+0x4261c4	Vietnamesisch
+0x4261d4	Malaiisch
+0x4261e0	Indonesisch
+0x4261ec	Thailändisch
+0x4261fc	Italien
+0x426204	Allemand
+0x426210	Turc
+0x426218	Dialog-Übersetzung
+0x42622c	%s-%s Dialog-Übersetzung. Zuhören...
+0x426254	Chinesisch-Englische Dialog-Übersetzung. Zuhören...
+0x42628c	Die Dialog-Übersetzung erfordert die Verwendung eines Handys
+0x4262cc	Öffnen Sie den Übersetzer in der MYVU App. um die Dialog-Übersetzung zu starten
+0x426320	%s Anruf-Transkription. Zuhören...
+0x426344	Chinesisch-Englische Anruf-Transkription. Zuhören...
+0x42637c	%s-%s Anruf-Übersetzung. Zuhören...
+0x4263a4	Chinesisch-Englische Anruf-Übersetzung. Zuhören...
+0x4263dc	Es wird eine Erinnerung an die Datenschutzerklärung für die andere Partei abgespielt
+0x426434	Die Anruf-Übersetzung wurde aktiviert.
+0x42645c	Die Anruf-Transkription wurde aktiviert.
+0x426488	Die Anruf-Übersetzung wurde aktiviert. Der Anruf wird aufgezeichnet. Bitte achten Sie auf den Schutz Ihrer Privatsphäre und beginnen Sie das Gespräch rundenbasiert.
+0x426530	Die Anruf-Transkription wurde aktiviert. Der Anruf wird aufgezeichnet. Bitte achten Sie auf den Schutz Ihrer Privatsphäre und beginnen Sie das Gespräch rundenbasiert.
+0x4265dc	Der Anruf geht weiter. Sie können die Dialog-Übersetzung aktivieren, um den Inhalt des Anrufes zu übersetzen.
+0x426650	Sie können die Sende-Stimme im Übersetzungs-Modul der MYVU App anpassen.
+0x42669c	Derzeit werden Chinesisch, Englisch und Japanisch für Anruf-Übersetzungen unterstützt. Sie können in der MYVU App die Sprache anpassen.
+0x426728	Bitte halten Sie MYVU AR APP an der Rezeption am Laufen
+0x426760	Derzeit werden Chinesisch, Englisch und Japanisch für Anruf-Transkription unterstützt. Sie können in der MYVU App die Sprache anpassen.
+0x4267ec	Derzeit im Manuellmodus.
+0x426808	Derzeit im Gleichmäßige Geschwindigkeitsmodus.
+0x42683c	In den Manuellmodus gewechselt.
+0x42685c	In den Gleichmäßige Geschwindigkeitsmodus gewechselt.
+0x426894	Prompt fehlgeschlagen
+0x4268ac	Drehen Sie das Scrollrad, um Seiten nach oben und unten zu blättern
+0x4268f4	Bitte öffnen Sie den Teleprompter in der MYVU AR-App, um das Prompt erneut zu starten.
+0x42694c	Zum Umblättern auf die Flip-Taste tippen
+0x426978	Wird angehört…
+0x42698c	Das Mikrofon wird benutzt. Bitte versuchen Sie es später erneut.
+0x4269d0	Beim Antworten auf WeChat kann der Sprachassistent nicht aufgerufen werden.
+0x426a1c	WeChat wird geöffnet…
+0x426a38	Kontakt wird gesucht…
+0x426a50	Zum Stoppen auf den Ring tippen
+0x426a70	Zum Stoppen auf das Touchpad tippen
+0x426a94	Montag
+0x426a9c	Dienstag
+0x426aa8	Mittwoch
+0x426ab4	Donnerstag
+0x426ac0	Freitag
+0x426ac8	Samstag
+0x426ad0	Sonntag
+0x426ad8	Der Stimmabdruck des Aufweck-Wortes passt nicht zusammen. Bitte gehen Sie in die MYVU AR-APP, um es erneut aufzuzeichnen.
+0x426b54	Die aktuelle Temperatur ist zu hoch. Bitte versuchen Sie es später erneut.
+0x426ba0	Übermäßige Temperatur erkannt, das Gerät wird automatisch abgeschaltet.
+0x426bec	My Devices
+0x429300	แหวน
+0x429310	โปรแกรมแปล
+0x429330	การนำทาง
+0x42934c	ดนตรี
+0x42935c	สภาพอากาศ
+0x429378	การตั้งค่า
+0x429398	คำแนะนำของระบบ
+0x4293c4	ตัวบอกบท
+0x4293e0	แว่นตาจะรีสตาร์ตอัตโนมัติระหว่างการล้างคืนค่าโรงงาน
+0x42947c	แตะตกลง/แตะสองครั้งเพื่อย้อนกลับ
+0x4294dc	กรุณาเชื่อมต่อโทรศัพท์มือถือก่อน
+0x429540	คาดว่าจะใช้เวลาอัปเดต 5 นาที แว่นตาจะไม่สามารถใช้งานได้ระหว่างการอัปเดต
+0x429610	แตะเพื่ออัปเดต/แตะสองครั้งเพื่อยกเลิก
+0x429680	ไม่ใช่ตอนนี้
+0x4296a8	ข้อผิดพลาดการบริการ โปรดลองใหม่อีกครั้งในภายหลัง
+0x429738	แหวนเหลือแบตเตอรี่ 15%
+0x429774	แหวนเหลือแบตเตอรี่ 5%
+0x4297b0	เชื่อมต่อแล้ว
+0x4297d8	ตัดการเชื่อมต่อ
+0x429808	ยกเลิกการจับคู่
+0x429838	แบตเตอรี่แว่นตาเหลือ 15%
+0x42987c	แบตเตอรี่แว่นตาเหลือ 5%
+0x4298bc	แบตเตอรี่แว่นตาเต็ม 100%
+0x4298fc	ดาวน์โหลดแอป MYVU AR ก่อนใช้งาน
+0x429948	กดค้างแหวนแล้วแกว่งเพื่อปรับตำแหน่ง
+0x4299b4	ยกเลิกการจับคู่แหวนแล้ว
+0x4299fc	ยกเลิกการจับคู่แหวน 
+0x429a38	 ของคุณแล้ว หากมีความจำเป็น กรุณาจับคู่กับแว่นตาอีกครั้ง
+0x429adc	เลื่อนแผงสัมผัสเพื่อเลือก
+0x429b28	กดค้างแหวนแล้วสะบัดข้อมือเพื่อเลือก
+0x429b94	ดาวน์โหลดแอป MYVU ก่อนใช้
+0x429bd4	อรุณสวัสดิ์!
+0x429bf8	อรุณสวัสดิ์ วันใหม่เริ่มต้นแล้ว!
+0x429c58	ยินดีต้อนรับสู่วันใหม่ ขอให้มีพลังเต็มเปี่ยม!
+0x429cdc	ขอให้คุณเริ่มต้นอย่างมีความสุข!
+0x429d38	ดึกแล้วนะ เตรียมพักผ่อนเถอะ
+0x429d88	การรักษาสุขภาพให้แข็งแรง เริ่มด้วยการนอนที่ดี
+0x429e10	ร่างกายที่แข็งแรงต้องการการนอนหลับอย่างเพียงพอ ราตรีสวัสดิ์
+0x429ec0	ขอให้นอนหลับอย่างสุขภาพดีและสุขสงบ
+0x429f28	เราใช้ต่อเนื่องมา 1 ชั่วโมงแล้ว โปรดหยุดพัก
+0x429fa4	ตาคุณล้าแล้ว พักผ่อนนะ
+0x429fe8	กดค้างปุ่มเปิด/ปิดเพื่อใช้ผู้ช่วยสั่งงานด้วยเสียง
+0x42a07c	คุณสามารถพูดว่า "Hey Aicy" ฉันก็จะพร้อมให้บริการแก่คุณ
+0x42a108	ขณะอยู่ในสายกดค้างปุ่มเปิด/ปิด 1 วินาที เพื่อวางสาย
+0x42a198	ขณะอยู่ในสายกดปุ่มเปิด/ปิดหนึ่งครั้งเพื่อปิดเสียง
+0x42a22c	บันทึกเรียบร้อย กรุณาไปดูที่อัลบั้มในโทรศัพท์มือถือ
+0x42a2c4	จับภาพหน้าจอไม่ได้ กรุณาลองใหม่อีกครั้ง
+0x42a338	อัปเดตเฟิร์มแวร์แว่นตา
+0x42a37c	โปรดอัปเดตแว่นตาให้เป็นเวอร์ชันล่าสุดผ่านแอป MYVU AR
+0x42a40c	อัปเดตซอฟต์แวร์แอป
+0x42a444	โปรดอัปเดตแอป MYVU AR ในโทรศัพท์มือถือของคุณให้เป็นเวอร์ชันล่าสุด
+0x42a4f8	กดค้างแผงสัมผัสเพื่อเปิดรายการแอป
+0x42a55c	กดแหวนหนึ่งครั้งเพื่อเปิดรายการแอป
+0x42a5c4	แตะสองครั้งเพื่อย้อนกลับ
+0x42a610	นโยบายความเป็นส่วนตัวของแอป
+0x42a774	นโยบายความเป็นส่วนตัวของแว่นตา
+0x42a8d8	แตะตกลง
+0x42a8f0	ขยับข้อมือเพื่อเลือก
+0x42a930	ขยับข้อมือเพื่อปรับตำแหน่ง
+0x42a980	โปรดเปิดแอป MYVU AR เพื่อเชื่อมต่อและลองอีกครั้ง
+0x42aa00	บทช่วยสอน
+0x42aa1c	ถอดความ
+0x42aa34	โปรดเชื่อมต่อโทรศัพท์
+0x42aa74	โปรดยอมรับหลักการประมวลผลข้อมูลส่วนบุคคลที่โทรศัพท์ของคุณก่อน
+0x42ab2c	โปรดยอมรับการโอนข้อมูลส่วนบุคคลระหว่างประเทศที่โทรศัพท์ของคุณก่อน
+0x42abf0	คาดว่าจะใช้เวลาอัปเดต 10 นาที แว่นตาจะไม่สามารถใช้งานได้ระหว่างการอัปเดต
+0x42add0	วันนี้
+0x42ae1c	ไม่มีข้อมูลสภาพอากาศ
+0x42ae5c	อัปเดตข้อมูลสภาพอากาศไม่สำเร็จ
+0x42aeb8	ไม่รู้จัก
+0x42aed4	ออกจากแอปหรือไม่?
+0x42af08	ปิดเครื่อง
+0x42af28	โปรดไปที่โทรศัพท์มือถือเพื่อดูเนื้อหาแบบเต็ม
+0x42afb0	การยกเลิก
+0x42afcc	ตอบกลับ
+0x42afe4	เขาพูดว่า
+0x42b000	รหัสยืนยัน
+0x42b020	ข้อความ
+0x42b038	ข้อผิดพลาดทางเครือข่าย โปรดตรวจสอบการตั้งค่าเครือข่าย
+0x42b0d8	เปิดโหมดห้ามรบกวน สำหรับการนำทาง
+0x42b138	ปิดโหมดห้ามรบกวน สำหรับการนำทาง
+0x42b194	เปลี่ยนเป็นการนำทางการเดิน
+0x42b1e4	เปลี่ยนเป็นการนำทางการขี่จักรยาน
+0x42b248	เปลี่ยนเป็นการนำทางการขับรถ
+0x42b29c	เปลี่ยนไม่สำเร็จ
+0x42b2d0	กำลังเปลี่ยน...
+0x42b2f8	เปิดการถ่ายทอดเสียงการนำทางแล้ว
+0x42b358	ปิดการถ่ายทอดเสียงการนำทางแล้ว
+0x42b3b4	ตกลง
+0x42b3c4	คำนวณเส้นทางใหม่แล้ว
+0x42b404	รีเฟรชไม่สำเร็จ
+0x42b434	ตอนนี้
+0x42b448	หน้าหลัก
+0x42b464	บริษัท
+0x42b478	ใกล้
+0x42b488	เพื่อตั้งค่า
+0x42b4b0	โปรดระบุที่อยู่บ้านของคุณ
+0x42b4fc	โปรดระบุที่อยู่บริษัทของคุณ
+0x42b550	จุดหมายปลายทางเป็นตำแหน่งปัจจุบันไม่ได้
+0x42b5c8	เปลี่ยนแล้ว
+0x42b5ec	เปลี่ยนไม่สำเร็จ ระยะทางที่ต้องเดินไกลเกินไป
+0x42b670	เปลี่ยนไม่สำเร็จ ระยะทางขี่จักรยานไกลเกินไป
+0x42b6f0	โอเค จบการนำทาง
+0x42b71c	โปรดไปที่แอป MYVU AR เพื่อตั้งค่าที่อยู่บ้าน
+0x42b790	โปรดไปที่แอป MYVU AR เพื่อตั้งค่าที่อยู่ที่ทำงาน
+0x42b810	กดค้างแหวน 1 วินาที เพื่อค้นหาที่อยู่ด้วยเสียง
+0x42b894	กดค้าปุ่มเปิด/ปิด 1 วินาที เพื่อค้นหาที่อยู่ด้วยเสียง
+0x42b92c	แตะสองครั้งเพื่อเข้าสู่โหมดหน้าต่างเล็ก
+0x42b9a4	กรุณาอย่าใช้การนำทางด้วย AR ในช่วงเวลากลางคืน
+0x42ba24	กรุณาเพิ่มระดับเสียง
+0x42ba64	ระยะเดินที่เหลือ
+0x42ba98	ระยะขับรถที่เหลือ
+0x42bacc	ระยะขี่จักรยานที่เหลือ
+0x42bb10	เวลาที่ต้องการ
+0x42bb3c	เวลา
+0x42bb4c	แตะเพื่อเปิด/แตะสองครั้งเพื่อปิด
+0x42bbac	แตะตกลง/แตะสองครั้งเพื่อยกเลิก
+0x42bc08	กำลังอัปเดต
+0x42bc2c	ไม่สามารถอัปเดต
+0x42bd60	อัปเดตระบบ รีสตาร์ทจึงจะมีผล
+0x42bebc	โปรดเชื่อมต่อกับโทรศัพท์มือถือ
+0x42bf18	ยกเลิกการเชื่อมต่อ
+0x42bf50	กรุณาเปิดเพลงบนโทรศัพท์มือถือของคุณ
+0x42bfbc	ปัจจุบันไม่รองรับภาษานี้
+0x42c008	การเชื่อมต่อเซิร์ฟเวอร์ล้มเหลว
+0x42c064	ไม่พบเนื้อหาที่เล่นได้
+0x42c0a8	ฟังตามใจฉัน
+0x42c0cc	ศิลปิน
+0x42c0e0	แตะเพื่อเล่น/แตะสองครั้งเพื่อปิด
+0x42c140	แตะเพื่อหยุดชั่วคราว/แตะสองครั้งเพื่อปิด
+0x42c1b8	รับข้อมูลเพลงไม่ได้
+0x42c1f4	เปิดโหมด DND
+0x42c214	ปิดโหมด DND
+0x42c230	เปิดแจ้งเตือนการโทรและการแจ้งเตือนแล้ว
+0x42c2a4	ปิดกั้นแจ้งเตือนการโทรและการแจ้งเตือนแล้ว
+0x42c320	เปิดการแจ้งเตือนสายเข้า
+0x42c368	ปิดกั้นการแจ้งเตือนสายเข้า
+0x42c3b8	เปิดการแจ้งเตือน
+0x42c3ec	ปิดกั้นการแจ้งเตือน
+0x42c434	กรุณาพูด
+0x42c450	กรุณาตอบกลับหลังวางสาย
+0x42c494	ตอบกลับไม่ได้
+โปรดตอบกลับด้วยโทรศัพท์มือถือ
+0x42c514	ล้มเหลว โปรดตอบกลับด้วยโทรศัพท์มือถือ
+0x42c584	ล้มเหลว โปรดส่งด้วยโทรศัพท์มือถือ
+0x42c5e8	ส่งแล้ว
+0x42c600	แตะเพื่อตอบกลับ / แตะสองครั้งเพื่อยกเลิก
+0x42c674	แตะเพื่อส่ง / แตะสองครั้งเพื่อยกเลิก
+0x42c6dc	ตัวแจ้งเตือนอัจฉริยะ
+0x42c71c	คุณต้องการให้การแจ้งเตือนแสดงบนหน้าจอขณะใช้โทรศัพท์มือถือหรือไม่?
+0x42c7e0	แตะเพื่อเปิด / แตะสองครั้งเพื่อปิด
+0x42c844	แตะเพื่อรับสาย / แตะสองครั้งเพื่อวางสาย
+0x42c8b4	แตะสองครั้งเพื่อวางสาย
+0x42c8f8	กดค้างปุ่มเปิดปิด 1 วินาที เพื่อวางสาย
+0x42c964	กดค้างแหวน 1 วินาที เพื่อวางสาย
+0x42c9bc	แตะเพื่อโทรกลับ / แตะสองครั้งเพื่อยกเลิก
+0x42ca30	กำลังวางสาย...
+0x42ca58	โปรดไปที่แอป MYVU และเปิดสิทธิการโทรออก
+0x42cac4	โปรดเปิดสิทธิที่เกี่ยวข้องในโทรศัพท์มือถือของคุณ
+0x42cb58	โทรออกไม่ได้ โปรดโทรออกด้วยโทรศัพท์มือถือ
+0x42cbd4	รับสายไม่ได้ โปรดไปดำเนินการที่โทรศัพท์มือถือ
+0x42cc5c	วางสายไม่ได้ โปรดใช้โทรศัพท์มือถือวางสาย
+0x42ccd4	หลังรับสาย อีกฝั่งจะเห็นหน้าจอกล้องในโทรศัพท์มือถือของคุณ
+0x42cd80	อยู่ในสาย
+0x42cd9c	หลังรับสาย โปรดไปวางสายที่โทรศัพท์มือถือ
+0x42ce14	การ์ดหนึ่ง
+0x42ce34	การ์ดสอง
+0x42ce50	มีสายใหม่ โปรดดำเนินการบนโทรศัพท์มือถือของคุณ
+0x42ced8	โปรดดำเนินการด้วยโทรศัพท์มือถือของคุณ
+0x42cf48	โทรศัพท์
+0x42cf64	กำลังโทรหลายช่องทาง
+0x42cfa0	มีสายเรียกเข้า คุณสามารถพูดว่ารับสายหรือวางสาย
+0x42d02c	ผู้ติดต่อ
+0x42d048	ช่องเสียบการ์ด
+0x42d074	ผู้ติดต่อ Wechat
+0x42d098	กรุณารอสักครู่
+0x42d0c4	เนื้อหาสร้างโดย Google AI มีไว้สำหรับอ้างอิงเท่านั้น
+0x42d14c	ระเบียบวาระ
+0x42d170	กำหนดการใหม่
+0x42d198	ดูข้อมูลเพิ่มเติมได้ที่โทรศัพท์มือถือ
+0x42d208	พรุ่งนี้
+0x42d224	เริ่ม
+0x42d23c	นำทางไม่ได้ โปรดเปิดสิทธิตำแหน่งคงที่ให้แอป MYVU AR ที่การตั้งค่าในโทรศัพท์ของคุณ
+0x42d31c	ยกเลิกการจับคู่กับ
+0x42d354	กดแหวนหนึ่งครั้งเพื่อย้อนกลับ
+0x42d3ac	Lกดค้างที่แผงสัมผัสเพื่อย้อนกลับ
+0x42d40c	ระดับเสียง
+0x42d42c	ความสว่าง
+0x42d448	โหมด
+0x42d458	ตรวจการสวม
+0x42d478	ล็อกอัตโนมัติ
+0x42d4a0	ภาษา
+0x42d4b0	เลิกจับคู่อุปกรณ์
+0x42d4e4	เกี่ยวกับ
+0x42d500	มาตรฐาน
+0x42d518	ห้ามรบกวน
+0x42d534	เปิดแล้ว
+0x42d550	ปิดแล้ว
+0x42d568	 อุปกรณ์
+0x42d580	30 วินาที
+0x42d598	1 นาที
+0x42d5a8	2 นาที
+0x42d5b8	15 วินาที
+0x42d5d0	ชื่ออุปกรณ์
+0x42d5f4	โมเดล
+0x42d604	เวอร์ชันเฟิร์มแวร์
+0x42d63c	ที่อยู่บลูทูธ
+0x42d664	หมายเลขซีเรียล
+0x42d690	คืนค่าจากโรงงาน
+0x42d6c0	กำลังจะคืนค่าโรงงาน และจะกู้คืนไม่ได้
+0x42d730	เปิดโหมด MMI แล้ว
+0x42d894	เปิดเพื่อปิดกั้นการแจ้งเตือน
+0x42d8ec	เสียงสื่อ
+0x42d908	เสียงการโทร
+0x42d92c	เพิ่มเติม
+0x42d948	คลิกแผงสัมผัสเพื่อรีเฟรช
+0x42d994	รีเฟรช
+0x42d9a8	กำลังเชื่อมต่อ
+0x42d9d4	กำลังเชื่อมต่อ...
+0x42da04	"%s" รหัสการจับคู่, โปรดยืนยันที่โทรศัพท์มือถือ
+0x42da84	เชื่อมต่อสำเร็จแล้ว!
+0x42dac0	เชื่อมต่อล้มเหลว
+0x42daf4	ขั้นตอนที่ 1
+0x42db18	ขั้นตอนที่ 2
+0x42db3c	หลังจากล็อกอิน คลิกจับคู่แว่นตาแล้วทำตามคำแนะนำ เพื่อเชื่อมต่อ
+0x42dbf4	ติดตั้งแอป MYVU AR ในโทรศัพท์มือถือของคุณ
+0x42dc60	รีบูต
+0x42dc70	คลิกวงล้อเพื่อรีเฟรชการเชื่อมต่อ
+0x42dcd4	การเชื่อมต่อเครือข่ายไม่ดี
+0x42dd24	ไม่พบเครือข่าย โปรดตรวจสอบเครือข่ายของโทรศัพท์มือถือคุณ
+0x42ddc8	ไม่พบเสียง ต้องการแปลต่อหรือไม่?
+0x42de28	ไม่พบเสียง ต้องถอดเสียงต่อหรือไม่?
+0x42de8c	ตรวจสอบประวัติการแปลใน MYVU AR App
+0x42dedc	ออกจาการแปลด้วยโทรศัพท์มือถือแล้ว
+0x42df40	ไมโครโฟนไม่ว่าง โปรดลองอีกครั้งในภายหลัง
+0x42dfb8	โปรดเชื่อมต่ออุปกรณ์และลองอีกครั้ง
+0x42e020	ไม่สามารถเริ่มบริการระยะไกล
+0x42e080	ถอดเสียง
+0x42e09c	แตะ เล่นต่อ/แตะสองครั้งยกเลิก
+0x42e0f0	แตะสองครั้งย้อนกลับ
+0x42e12c	กำลังแปลระหว่างภาษาจีนกับภาษาอังกฤษ...
+0x42e19c	กำลังถอดเสียงระหว่างภาษาจีนกับภาษาอังกฤษ...
+0x42e218	%s-%s กำลังฟัง
+0x42e238	%sภาษาไทย กำลังฟัง
+0x42e26c	ภาษาจีน
+0x42e284	ภาษาอังกฤษ
+0x42e2a4	ภาษาญี่ปุ่น
+0x42e2c8	ภาษาฝรั่งเศส
+0x42e2f0	ภาษาเกาหลีใต้
+0x42e318	ภาษารัสเซีย
+0x42e33c	Sepanyol
+0x42e348	ภาษาเวียดนาม
+0x42e370	ภาษามลายู
+0x42e38c	ภาษาอินโดนีเซีย
+0x42e3bc	ภาษาอิตาลี
+0x42e3dc	เยอรมัน
+0x42e3f4	ตุรกี
+0x42e404	โปรดเก็บ MYVU AR APP ไว้ที่แผนกต้อนรับ
+0x42e460	อยู่ในโหมดบอกบทแบบแมนนวล
+0x42e4ac	อยู่ในโหมดบอกบทด้วยความเร็วคงที่
+0x42e510	ถึงที่ย่อหน้าสุดท้ายแล้ว
+0x42e55c	อยู่ที่ย่อหน้าแรกแล้ว
+0x42e59c	เปลี่ยนเป็นโหมดบอกบทแบบแมนนวล
+0x42e5f4	เปลี่ยนเป็นโหมดบอกบทด้วยความเร็วคงที่
+0x42e664	บอกบทไม่ได้
+0x42e688	สลับลูกกลิ้งเพื่อพลิกหน้าขึ้นและลง
+0x42e6f0	โปรดเปิดตัวบอกบทของแอป MYVU AR เพื่อรีสตาร์ตการบอกบท
+0x42e77c	เลือกปุ่มพลิกหน้าและคลิกพลิกหน้า
+0x42e7e0	กำลังตอบ WeChat ปลุกผู้ช่วยสั่งงานด้วยเสียงไม่ได้
+0x42e864	Turn off navigation broadcast
+0x42e8b4	คลิกแหวนเพื่อหยุด
+0x42e8e8	คลิกแผงสัมผัสเพื่อหยุด
+0x42e92c	ลายพิมพ์เสียงของคำปลุกไม่ตรงกัน กรุณาไปที่แอป MYVU AR เพื่อบันทึกใหม่อีกครั้ง
+0x42ea00	ขณะนี้อุณหภูมิสูงเกินไป โปรดลองอีกครั้งในภายหลัง
+0x42ea90	พบว่าอุณหภูมิที่สูงเกินไป และจะปิดเครื่องโดยอัตโนมัติ
+0x42eb48	ナビゲーション
+0x42eb70	システムヒント
+0x42eb88	プロンプター
+0x42f09c	おはようございます!
+0x42f63c	アプリのプライバシーポリシー
+0x42f6fc	メガネのプライバシーポリシー
+0x42f860	チュートリアル
+0x42fb10	ショートメッセージ
+0x430484	アーティスト
+0x430538	マナーモードをオンにしました
+0x430564	マナーモードをオフにしました
+0x43084c	スマートリマインダー
+0x430c20	カード1
+0x430c2c	カード2
+0x430d44	カードスロット
+0x430dcc	スケジュール
+0x430f54	ボリューム
+0x431020	サイレントオード
+0x4310a4	ファームウェアバージョン
+0x4310cc	Bluetoothアドレス
+0x431164	MMIモードがオンになりました
+0x431374	ステップ1
+0x431384	ステップ2
+0x431434	スマートフォンにMYVU AR
+アプリをインストールしてください.
+0x431c68	You can say "Hey Aicy", I will be at your service
+0x431c9c	Open MYVU AR App to connect the phone
+0x431cc4	Charge this product until the battery reaches 100%, then charge for an additional hour to ensure accurate battery level display.
+0x431d48	Demo Mode Open
+0x431d58	Mon.
+0x431d60	Tue.
+0x431d68	Wed.
+0x431d70	Thu.
+0x431d78	Fri.
+0x431d80	Sat.
+0x431d88	Sun.
+0x431d90	Please exercise caution and comply with local laws and regulations when using this product.
+0x431dec	 Notification reminder turned on 
+0x431e10	Quick Notes
+0x431e1c	Make a Record
+0x431e2c	Auto Lock
+0x431e38	Connect failed
+0x431e48	Listening trans
+0x431e58	Conversation trans
+0x431e6c	%s %s conversation translation. Listening
+0x431e98	%s %s call translation. Listening
+0x431ebc	The call translation function is enabled. This call will be recorded. Please pay attention to protecting your privacy and start the conversation in a turn-based manner...
+0x431f68	The call transcription function is enabled. This call will be recorded. Please pay attention to protecting your privacy and start the conversation in a turn-based manner...
+0x432018	The call is ongoing. You can enable conversation translation to translate the
+call content.
+0x432074	Keep the MYVU APP running in the foreground.
+0x4320a4	The voice print of the wake-up word does not match. Please go to MYVU AR APP to record it again.
+0x432108	Penterjemah
+0x432114	Muzik
+0x43211c	Tetapan
+0x432124	Penggesa
+0x432130	Petunjuk sistem
+0x432140	Cermin mata akan dimulakan semula secara automatik semasa tetapan semula kilang
+0x432190	Ketik Ok/Dwiketik untuk kembali
+0x4321b0	Sila sambung ke telefon bimbit terlebih dahulu
+0x4321e0	Kemas kini dijangka mengambil masa 5 minit, cermin mata tidak tersedia semasa kemas kini
+0x43223c	Ketik untuk mengemas kini/Dwiketik untuk membatalkan
+0x432274	Kemas kini
+0x432280	Bukan sekarang
+0x432290	Ralat perkhidmatan. Sila cuba lagi nanti
+0x4322bc	Baki bateri cincin 15%
+0x4322d4	Baki bateri cincin 5%
+0x4322ec	Tersambung
+0x4322f8	Tidak bersambung
+0x43230c	Dinyahpadan
+0x432318	Baki bateri cermin mata 15%
+0x432334	Baki bateri cermin mata 5%
+0x432350	Tahap bateri untuk cermin mata ialah 100%
+0x43237c	Muat turun Aplikasi MYVU sebelum menggunakannya
+0x4323ac	Tekan dan tahan cincin dan goncangkan untuk menyesuaikan kedudukan
+0x4323f0	Cincin Dinyahpadan
+0x432404	Cincin anda 
+0x432414	 dinyahpadan. Jika perlu, sila padankan semula cermin mata
+0x432450	Seret pad sentuh untuk memilih
+0x432470	Tekan dan tahan cincin dan pergerakkan pergelangan tangan untuk memilih
+0x4324b8	Selamat pagi, hari baharu telah bermula!
+0x4324e4	Selamat datang ke hari baharu, semoga anda penuh dengan tenaga!
+0x432524	Semoga anda memulakan hari dengan gembira!
+0x432550	Tengah malam, berhati-hatilah untuk berehat
+0x43257c	Kekalkan kesihatan yang baik. Mulakan dengan tidur yang baik
+0x4325bc	Badan yang sihat memerlukan tidur yang mencukupi. Selamat malam
+0x4325fc	Semoga tidur anda penuh dengan kesihatan dan keamanan
+0x432634	Kami telah menggunakannya secara berterusan selama 1 jam. Sila berehat
+0x43267c	Mata anda letih. Berehat sebentar
+0x4326a0	Tekan lama butang kuasa untuk menggunakan pembantu suara
+0x4326dc	Anda boleh mengatakan "Hey Aicy", saya akan berkhidmat untuk anda
+0x432720	Tekan lama butang kuasa selama 1 saat semasa panggilan untuk menamatkan panggilan
+0x432774	Tekan butang kuasa sekali semasa panggilan untuk membisukan panggilan
+0x4327bc	Berjaya disimpan, sila pergi ke paparan album telefon bimbit
+0x4327fc	Gagal menangkap skrin, sila cuba lagi
+0x432824	Kemas kini perisian tegar cermin mata
+0x43284c	Sila kemaskini versi cermin mata kepada versi terkini di Aplikasi MYVU
+0x432894	Kemas kini perisian aplikasi
+0x4328b4	Sila kemaskini Aplikasi MYVU AR kepada versi terkini pada telefon anda
+0x4328fc	Tekan lama pad sentuh untuk membuka senarai aplikasi
+0x432934	Tekan cincin sekali untuk membuka senarai aplikasi
+0x432968	Dwiketik untuk menutup
+0x432980	Dasar Privasi Apl
+0x432994	Terputus, sila buka MYVU AR untuk bersetuju semula dengan Dasar Privasi Aplikasi dan mengikat
+0x4329f4	Dasar Privasi Cermin Mata
+0x432a10	Terputus, sila buka MYVU AR untuk bersetuju semula dengan Dasar Privasi Cermin Mata dan mengikat
+0x432a74	Ketik Ok
+0x432a80	pergerakkan pergelangan tangan untuk memilih
+0x432ab0	gerakkan pergelangan tangan untuk melaraskan kedudukan
+0x432ae8	Sila buka Aplikasi MYVU AR untuk meneyambung dan cuba lagi
+0x432b24	Transkripsikan
+0x432b34	Sila hubungkan telefon
+0x432b4c	Sila bersetuju dengan peraturan pemprosesan maklumat peribadi pada telefon bimbit terlebih dahulu
+0x432bb0	Sila bersetuju dengan pemindahan rentas sempadan data peribadi pada telefon bimbit terlebih dahulu
+0x432c14	Kemas kini dijangka mengambil masa 10 minit, cermin mata tidak tersedia semasa kemas kini
+0x432c70	Cas produk ini hingga bateri mencapai 100% dan mengecas selama 1 jam lagi agar memastikan paparan tahap bateri yang tepat.
+0x432cec	Isn.
+0x432cf4	Kha.
+0x432cfc	Ahd.
+0x432d04	Tiada maklumat cuaca tersedia
+0x432d24	Gagal mengemaskini cuaca
+0x432d40	Matikan
+0x432d48	Sila pergi ke telefon anda untuk melihat kandungan penuh
+0x432d84	Membalas
+0x432d90	Cakap
+0x432d98	Kod pengesahan
+0x432da8	Maklumat
+0x432db4	Ralat rangkaian. Sila semak tetapan rangkaian
+0x432de4	Mod Jangan Ganggu telah diaktifkan untuk navigasi
+0x432e18	Mod Jangan Ganggu telah dilumpuhkan untuk navigasi
+0x432e4c	Bertukar kepada navigasi berjalan kaki
+0x432e74	Bertukar kepada navigasi berbasikal
+0x432e98	Bertukar kepada navigasi memandu
+0x432ebc	Pertukaran gagal
+0x432ed0	Menukar...
+0x432edc	Laluan dimuat semula
+0x432ef4	Gagal memuat semula
+0x432f08	Cakap nombor atau destinasi
+0x432f24	Kini
+0x432f2c	Syarikat
+0x432f38	untuk menetapkan
+0x432f4c	Sila berikan alamat rumah anda
+0x432f6c	Sila berikan alamat syarikat anda
+0x432f90	Destinasi tidak boleh menjadi lokasi semasa
+0x432fbc	Ditukar
+0x432fc4	Pertukaran gagal. Jarak berjalan kaki terlalu panjang
+0x432ffc	Pertukaran gagal. Jarak berbasikal terlalu panjang
+0x433030	OK, Navigasi tamat
+0x433044	Sila pergi ke Aplikasi MYVU AR untuk menetapkan alamat rumah
+0x433084	Sila pergi ke Aplikasi MYVU AR untuk menetapkan alamat kerja
+0x4330c4	Tekan cincin selama 1s untuk mencari alamat dengan suara
+0x433100	Tekan butang kuasa untuk 1s untuk mencari alamat dengan suara
+0x433140	Ketik dua kali untuk memasuki mod tetingkap kecil
+0x433174	Jangan gunakan navigasi AR pada waktu malam
+0x4331a0	Sila naikkan kelantangan
+0x4331bc	baki dgn jalan kaki
+0x4331d0	baki dgn kereta
+0x4331e0	baki dgn basikal
+0x4331f4	tempoh
+0x4331fc	masa
+0x433204	Ketik utk buka / Dwiketik utk tutup
+0x433228	Ketik OK / Dwiketik untuk membatalkan
+0x433250	Mengemaskini
+0x433260	Pemasangan gagal
+0x433274	Kemas kini dijangka mengambil masa 5 minit,
+Sila pastikan cermin mata disambungkan ke telefon
+0x4332d4	Kemas kini sistem, mulakan semula untuk berkuat kuasa
+0x43330c	Kemas kini dijangka mengambil masa 10 minit,
+Sila pastikan cermin mata disambungkan ke telefon
+0x43336c	Sila sambung ke telefon bimbit
+0x43338c	Terputus sambungan
+0x4333a0	Sila mainkan muzik pada telefon anda
+0x4333c8	Bahasa ini tidak disokong pada masa ini
+0x4333f0	Sambungan pelayan gagal
+0x433408	Tiada boleh dimainkan
+0x433420	Klik utk buka/Dwiklik utk tutup
+0x433440	Ketik untuk jeda/Dwiketik untuk menutup
+0x433468	Gagal mendapatkan maklumat lagu
+0x433488	Mod Jangan Ganggu dihidupkan
+0x4334a8	Mod Jangan Ganggu dimatikan
+0x4334c4	Peringatan panggilan dan pemberitahuan dihidupkan
+0x4334f8	Peringatan panggilan dan pemberitahuan disekatkan
+0x43352c	Peringatan panggilan dihidupkan
+0x43354c	Peringatan panggilan disekatkan
+0x43356c	Peringatan pemberitahuan dihidupkan
+0x433590	Peringatan pemberitahuan disekatkan
+0x4335b4	Hantar
+0x4335bc	Sila balas selepas panggilan
+0x4335dc	Balasan gagal.
+Sila balas pada telefon bimbit anda
+0x433610	Gagal. Sila gunakan telefon bimbit anda untuk membalas
+0x433648	Gagal. Sila gunakan telefon bimbit anda untuk menghantar
+0x433684	Dihantar
+0x433690	Ketik untuk membalas / Dwiketik untuk membatalkan
+0x4336c4	Ketik untuk menghantar / Dwiketik untuk membatalkan
+0x4336f8	Peringatan Pintar
+0x43370c	Adakah anda mahu pemberitahuan muncul pada skrin anda apabila anda menggunakan telefon anda?
+0x43376c	Ketik untuk mengaktifkan / Dwiketik untuk melumpuhkan
+0x4337a4	Ketik utk jawab / Dwi ketik
+utk tamat
+0x4337cc	Dwi ketik utk tamat
+0x4337e0	Tekan butang kuasa 1s utk
+tamat panggilan
+0x43380c	Tekan cincin 1s utk
+tamat panggilan
+0x433830	Ketik untuk panggil balik / Dwiketik untuk membatalkan
+0x433868	Menamatkan panggilan...
+0x433880	Sila pergi ke Aplikasi MYVU dan benarkan kebenaran untuk membuat panggilan telefon
+0x4338d4	Sila dayakan kebenaran yang berkaitan pada telefon anda
+0x43390c	Panggilan gagal, sila panggil dengan telefon anda
+0x433940	Gagal menjawab. Sila beroperasi pada telefon anda
+0x433974	Gagal menamatkan panggilan. Sila menamatkan panggilan pada telefon bimbit anda
+0x4339c4	Selepas panggilan, pihak lain boleh melihat skrin kamera telefon anda.
+0x433a0c	Selepas menjawab panggilan, sila pergi ke telefon untuk menamatkan panggilan
+0x433a5c	Kad satu
+0x433a68	Kad dua
+0x433a70	Lokasi tidak diketahui
+0x433a88	Panggilan baharu, sila lakukan tindakan pada telefon anda
+0x433ac4	Sila lakukan tindakan pada telefon anda
+0x433aec	Panggilan berbilang saluran sedang berjalan
+0x433b18	Ada panghilan baharu, anda boleh bercakap "Jawab" atau "Tamatkan Panggilan"
+0x433b64	Kenalan
+0x433b6c	Slot kad
+0x433b78	Kenalan WeChat
+0x433b88	Hanya seketika, sila
+0x433ba0	Kandungan ini dicipta oleh AI Google, untuk pencerahan sahaja
+0x433be0	Jadual baharu
+0x433bf0	Semak lebih banyak pada telefon anda
+0x433c18	Esok
+0x433c20	Bermula
+0x433c28	Berakhir
+0x433c34	Ralat navigasi. Sila berikan kebenaran lokasi berterusan kepada Aplikasi MYVU AR dalam tetapan telefon anda
+0x433ca0	Nyahpadan dengan
+0x433cb4	Menyahpadan
+0x433cc0	LTekan lama pad sentuh untuk kembali
+0x433ce8	Ketik dua kali untuk kembali
+0x433d08	Kelantangan
+0x433d14	Pengesan pakai
+0x433d24	Nyahgandingkan Peranti
+0x433d3c	Nyahpadan
+0x433d48	Jangan ganggu
+0x433d58	Bahasa Inggeris
+0x433d68	30 saat
+0x433d70	1 minit
+0x433d78	2 minit
+0x433d80	15 saat
+0x433d88	Nama peranti
+0x433d98	Versi perisian tegar
+0x433db0	Nombor siri
+0x433dbc	Tetap semula
+0x433dcc	Akan menetapkan semula, tidak boleh dipulihkan
+0x433dfc	Mod MMI telah dibuka
+0x433e14	Pengesanan pemakaian
+0x433e2c	Apabila dihidupkan, telefon akan bersambung secara automatik apabila memakai cermin mata, dan apabila ditanggalkan, ia akan diputuskan secara automatik
+0x433ec4	Hidupkan untuk menyekat peringatan pemberitahuan
+0x433ef8	Vol Media
+0x433f04	Vol Panggilan
+0x433f14	Tetapan Lain
+0x433f24	Klik pad sentuh untuk memuat semula
+0x433f48	Dimuat semula
+0x433f58	Menyambung
+0x433f64	Menyambung...
+0x433f74	"%s" kod pemadanan, sila sahkan di telefon
+0x433fa0	 berjaya disambungkan!
+0x433fb8	Sambungan gagal
+0x433fc8	Selepas log masuk, klik Padankan Cermin Mata dan ikuti panduan untuk menyambung
+0x434018	Pasang Aplikasi MYVU AR pada telefon anda.
+0x434044	Mulakan semula
+0x434054	Klik roda untuk menyegarkan sambungan
+0x43407c	Sambungan rangkaian lemah
+0x434098	Ralat rangkaian. Sila semak rangkaian mudah alih anda
+0x4340d0	Tiada bunyi dikesan,
+teruskan penterjemahan?
+0x434100	Tiada bunyi dikesan, 
+teruskan transkripsi?
+0x43412c	Anda boleh pergi ke MYVU AR untuk melihat rekod terjemahan
+0x434168	Terjemahan mudah alih telah keluar
+0x43418c	Mikrofon sedang digunakan, sila cuba lagi kemudian
+0x4341c0	Sila sambungkan cermin mata anda dan cuba lagi
+0x4341f0	Gagal memulakan perkhidmatan jauh
+0x434214	Ketik Teruskan / Ketik dua kali
+Batal
+0x43423c	Ketik dua kali Kembali
+0x434254	Inggeris
+0x434260	Jepun
+0x434268	Perancis
+0x434274	Itali
+0x43427c	Sila pastikan MYVU AR APP berjalan di meja depan
+0x4342b0	Pada masa ini dalam mod gesaan teks manual
+0x4342dc	Pada masa ini dalam mod gesaan teks kelajuan seragam
+0x434314	Sudah perenggan terakhir
+0x434330	Sudah perenggan pertama
+0x434348	Ditukar kepada mod gesaan teks manual
+0x434370	Ditukar kepada mod gesaan teks kelajuan seragam
+0x4343a0	Gesaan gagal
+0x4343b0	Pusingkan roda skrol untuk membelek halaman ke atas dan ke bawah
+0x4343f4	Sila buka penggesa teks Aplikasi MYVU AR untuk memulakan semula gesaan teks
+0x434440	Pilih butang Balik dan klik Balik
+0x434464	Mendengar
+0x434470	Mikrofon telah diduduki, sila cuba sebentar lagi
+0x4344a4	Membalas WeChat, tidak dapat bangunkan pembantu suara
+0x4344dc	Membuka WeChat
+0x4344ec	Mencari kenalan
+0x4344fc	Klik pad sentuh untuk berhenti
+0x434528	Hr Ini
+0x434530	Cetakan suara kata bangkit tidak sepadan. Sila pergi ke APLIKASI MYVU AR untuk merakamkannya semula.
+0x434598	Jika suhu dikesan terlalu tinggi, sila tunggu sehingga ia sejuk sebelum digunakan
+0x4345ec	Jika suhu dikesan terlalu tinggi, ia akan ditutup secara automatik, sila tunggu sehingga ia sejuk sebelum menggunakannya
+0x434668	Anneau
+0x434670	Traducteur
+0x43467c	Météo
+0x434684	Paramètres
+0x434690	Conseil du système
+0x4346a4	Prompteur
+0x4346b0	Les lunettes redémarrent automatiquement lors de la réinitialisation d'usine
+0x434700	Appuyez pour OK / Appuyez doublement pour annuler
+0x434734	Veuillez vous connecter au téléphone portable
+0x434764	La mise à jour devrait prendre 5 minutes, les lunettes sont indisponibles pendant la mise à jour
+0x4347c8	Appuyez pour mettre à jour/Appuyez doublement pour annuler
+0x434804	Mettre à jour
+0x434814	Pas maintenant
+0x434824	Erreur du service. Veuillez réessayer
+0x43484c	Batterie de l'anneau restante 15%
+0x434870	Batterie de l'anneau restante 5%
+0x434894	Connecté
+0x4348a0	Déconnecté
+0x4348b0	Non apparié
+0x4348c0	15% de la batterie de lunettes restante
+0x4348e8	5% de la batterie de lunettes restante
+0x434910	Le niveau de la batterie des lunettes est de 100%
+0x434944	Télécharger MYVU AR App avant de l'utiliser
+0x434974	Maintenez l'anneau enfoncé et basculez pour ajuster la position
+0x4349b8	Anneau non apparié
+0x4349cc	Votre anneau 
+0x4349dc	n'est pas appairé. Si nécessaire, veuillez réparer les lunettes
+0x434a20	Glissez le pavé tactile pour choisir
+0x434a48	Maintenez l'anneau enfoncé et bougez le poignet pour choisir
+0x434a88	Télécharger MYVU App avant de l'utiliser
+0x434ab4	Bonjour!
+0x434ac0	Bonjour, une nouvelle journée commence!
+0x434aec	Bienvenue dans la nouvelle journée, je vous souhaite de faire le plein de vitalité!
+0x434b44	Bonne journée à vous!
+0x434b5c	Tard dans la nuit, veillez à vous reposer
+0x434b88	Maintenez une bonne santé. Commencez par un bon sommeil
+0x434bc4	Un corps en bonne santé nécessite un sommeil suffisant. Bonne nuit
+0x434c0c	Que votre sommeil soit plein de santé et de paix
+0x434c40	Nous l'avons utilisé en continu pendant 1 heure. Veuillez vous reposer avec précaution
+0x434c9c	Vos yeux sont fatigués. Reposez-vous
+0x434cc4	Appuyez longuement sur le bouton d'alimentation pour utiliser l'assistant vocal
+0x434d14	Vous pouvez dire "Hey Aicy", je serai à votre service
+0x434d4c	Appuyez longuement sur le bouton d'alimentation pendant 1 seconde lors d'un appel pour raccrocher
+0x434db0	Appuyez sur le bouton d'alimentation une fois pendant un appel pour mettre l'appel en sourdine
+0x434e10	Sauvegarder avec succès, aller à l'album du téléphone portable
+0x434e54	Échec de la capture d'écran, veuillez réessayer
+0x434e88	Mise à jour du firmware des lunettes
+0x434eb0	Veuillez mettre à jour la version des lunettes avec la dernière version de MYVU AR App
+0x434f0c	Mises à jour du logiciel de l'application
+0x434f38	Veuillez mettre à jour la dernière version de MYVU AR App sur votre téléphone
+0x434f8c	Appuyez longuement sur le pavé tactile pour ouvrir la liste des applications
+0x434fdc	Appuyez sur l'anneau une fois pour ouvrir la liste des applications
+0x435020	Appuyez doublement pour fermer
+0x435040	Politique de confidentialité de l'application
+0x435070	Déconnecté. Veuillez ouvrir MYVU AR et accepter à nouveau la politique de confidentialité de l'application avant de vous connecter
+0x4350f8	Politique de confidentialité des lunettes
+0x435124	Déconnecté. Veuillez ouvrir MYVU AR et accepter à nouveau la politique de confidentialité des lunettes avant de l'activer
+0x4351a4	Appuyez pour OK
+0x4351b4	déplacer le poignet pour choisir
+0x4351d8	déplacer le poignet pour ajuster la position
+0x435208	Veuillez d'abord ouvrir MYVU AR App et vous connecter à votre téléphone portable
+0x43525c	Tutoriel
+0x435268	Transcrire
+0x435274	Veuillez connecter le téléphone
+0x435298	Veuillez d'abord accepter les règles de traitement des données personnelles sur votre téléphone
+0x4352fc	Veuillez d'abord accepter le transfert transfrontalier de données à caractère personnel sur votre téléphone
+0x435370	La mise à jour devrait prendre 10 minutes, les lunettes sont indisponibles pendant la mise à jour
+0x4353d4	Chargez ce produit jusqu'à 100 % de batterie, puis continuer à charger pendant 1 heure  pour assurer un affichage précis.
+0x435454	Mode démo ouvert
+0x435468	Aujourd'hui
+0x435474	Lun.
+0x43547c	Mar.
+0x435484	Mer.
+0x43548c	Jeu.
+0x435494	Ven.
+0x43549c	Sam.
+0x4354a4	Dim.
+0x4354ac	Éteindre
+0x4354b8	Veuillez aller sur votre téléphone pour voir le contenu complet
+0x4354fc	Confirmer
+0x435508	Retour
+0x435510	Répondre
+0x43551c	Dire
+0x435524	Code de vérification
+0x43553c	News
+0x435544	Erreur du réseau. Veuillez vérifier les paramètres du réseau.
+0x435588	Le mode Ne Pas Déranger a été activé pour la navigation
+0x4355c4	Le mode Ne Pas Déranger a été désactivé pour la navigation
+0x435604	Changement de navigation à pied
+0x435628	Changement de navigation à vélo
+0x43564c	Changement de navigation de conduite
+0x435674	Échec du changement
+0x43568c	Changement...
+0x43569c	L'émission de navigation a été ouverte
+0x4356c8	L'émission de navigation a été fermée
+0x4356f4	Quitter l'application ?
+0x43570c	Annuler
+0x435714	Route rafraîchie
+0x435728	Échec du rafraîchissement
+0x435744	Maintenant
+0x435750	Maison
+0x435758	Entreprise
+0x435764	à proximité
+0x435774	pour définir
+0x435784	Veuillez indiquer votre adresse personnelle
+0x4357b0	Veuillez indiquer l'adresse de l'entreprise
+0x4357dc	La destination ne peut pas être le lieu actuel
+0x43580c	Changé
+0x435814	Échec du changement. La distance de marche est trop longue
+0x435850	Échec du changement. La distance à vélo est trop longue
+0x43588c	OK, fin de la navigation.
+0x4358a8	Allez sur l'application MYVU AR pour définir l'adresse personnelle
+0x4358ec	Allez sur l'application MYVU AR pour définir l'adresse de l'entreprise
+0x435934	Appuyer sur l'anneau pendant 1s pour rechercher vocalement l'adresse
+0x43597c	Appuyer sur le bouton d'alimentation pendant 1s pour rechercher vocalement l'adresse
+0x4359d4	Appuyez deux fois pour passer en mode petite fenêtre
+0x435a0c	N'utilisez pas la navigation AR la nuit
+0x435a34	Veuillez monter le volume
+0x435a50	restant à pied
+0x435a60	restant en voiture
+0x435a74	restant à vélo
+0x435a88	temps requis
+0x435a98	temps actuel
+0x435aa8	Appuyez pour ouvrir / Appuyez doublement pour fermer
+0x435ae0	Lors de l'utilisation de ce produit, veuillez faire preuve de prudence et respecter toutes les règles et réglementations locales applicables.
+0x435b70	Mise à jour
+0x435b80	Échec de l'installation
+0x435b9c	La mise à jour devrait prendre 5 minutes.
+Veuillez garder les lunettes connectées au téléphone
+0x435c00	La mise à jour devrait prendre 10 minutes.
+Veuillez garder les lunettes connectées au téléphone
+0x435c64	Veuillez jouer de la musique sur votre téléphone
+0x435c98	Cette langue n'est pas supportée pour le moment
+0x435ccc	Échec de la connexion au serveur
+0x435cf0	Non jouable
+0x435cfc	Écouter comme je le souhaite
+0x435d1c	Artiste
+0x435d24	Appuyez pour jouer/Appuyez doublement pour fermer
+0x435d58	Appuyez pour arrêter/Appuyez doublement pour fermer
+0x435d90	Échec à obtenir l'information sur la chanson
+0x435dc0	Le mode Ne pas déranger a été ouvert
+0x435de8	Le mode Ne pas déranger a été fermé
+0x435e10	Rappels d'appels et de notifications activés
+0x435e40	Rappels d'appels et de notifications bloqués
+0x435e70	Rappel d'appels activé
+0x435e88	Rappel d'appels bloqué
+0x435ea0	Rappel de notification activé
+0x435ec0	 Rappel de notification bloqué 
+0x435ee4	Envoyer
+0x435eec	Veuillez répondre après l'appel
+0x435f10	Réponse échouée.
+Veuillez utiliser votre téléphone portable pour répondre
+0x435f60	Échec. Veuillez utiliser votre téléphone portable pour répondre
+0x435fa4	Échec. Veuillez utiliser votre téléphone portable pour envoyer
+0x435fe8	Envoyé
+0x435ff0	Appuyez pour répondre / Appuyez doublement pour annuler
+0x43602c	Appuyez pour envoyer / Appuyez doublement pour annuler
+0x436064	Rappel intelligent
+0x436078	Avez-vous besoin que des notifications apparaissent sur votre écran lorsque vous utilisez votre téléphone?
+0x4360e8	Appuyez pour activer / Double-cliquez pour désactiver
+0x436120	Appuyez pour répondre / Appuyez deux fois pour raccrocher
+0x43615c	Appuyez sur le bouton d'alimentation pendant 1 seconde pour raccrocher
+0x4361a4	Appuyez sur l'anneau pendant 1 seconde pour raccrocher
+0x4361dc	Appuyez pour rappeler / Appuyez deux fois pour raccrocher
+0x436218	Raccrocher...
+0x436228	Veuillez vous rendre sur MYVU App et autoriser les appels téléphoniques
+0x436274	Veuillez activer les autorisations nécessaires sur votre téléphone
+0x4362bc	Échec de l'appel, veuillez appeler sur votre téléphone
+0x4362f8	Échec de la réponse. Veuillez utiliser votre téléphone
+0x436334	Échec du raccrochage. Veuillez raccrocher sur votre téléphone portable
+0x436380	Après l'appel, l'interlocuteur peut voir l'écran de la caméra de votre téléphone
+0x4363d8	En appel
+0x4363e4	Carte 1
+0x4363ec	Carte deux
+0x4363f8	Numéro inconnu
+0x436408	Inconnu
+0x436410	Un nouvel appel, veuillez effectuer l'action sur votre téléphone
+0x436454	Veuillez effectuer l'action sur votre téléphone
+0x436488	Téléphone
+0x436494	Appel multicanal en cours
+0x4364b0	Il y a un appel entrant, vous pouvez dire répondre ou raccrocher
+0x4364f4	Traduction de l'appel
+0x43650c	Voulez-vous traduire l'appel en cours ? La traduction de la conversation sera activée pendant la traduction.
+0x43657c	Cliquez pour traduire / Double-cliquez pour annuler
+0x4365b0	Emplacement de carte
+0x4365c8	Contacts sur Wechat
+0x4365dc	Un moment, s'il vous plaît
+0x4365f8	Le contenu a été généré par Google AI et n'est fourni qu'à titre indicatif
+0x43664c	Nouveau calendrier
+0x436660	Plus d'informations sur votre téléphone
+0x43668c	Demain
+0x436694	Démarrer
+0x4366a0	Terminer
+0x4366ac	Notes rapides
+0x4366bc	Effectuer un enregistrement
+0x4366d8	Erreur de navigation. Veuillez accorder à MYVU AR App l'autorisation de localisation constante dans les paramètres de votre téléphone
+0x436764	Désassembler avec
+0x436778	Désassembler
+0x436788	Appuyez sur l'anneau une fois pour revenir
+0x4367b4	Appuyez longuement sur le pavé tactile pour revenir
+0x4367ec	Appuyez deux fois sur Retour
+0x43680c	Luminosité
+0x436818	Détection de l'usure
+0x436830	Verrouillage automatique
+0x43684c	Langue
+0x436854	Désassembler l'appareil
+0x436870	À propos
+0x43687c	Ne pas déranger
+0x436890	Ouvert
+0x436898	Fermé
+0x4368a0	 appareils
+0x4368ac	30 secondes
+0x4368b8	1 minute
+0x4368c4	2 minutes
+0x4368d0	15 secondes
+0x4368dc	Nom de l'appareil
+0x4368f0	Modèle
+0x4368f8	Version du firmware
+0x43690c	Adresse Bluetooth
+0x436920	Numéro de série
+0x436934	Réinitialisation d'usine
+0x436950	En cours de réinitialisation, ne peut pas être restauré
+0x43698c	Le mode MMI a été ouvert
+0x4369a8	Une fois allumé, le téléphone se connecte automatiquement lorsque l'on porte des lunettes et se déconnecte automatiquement lorsqu'on les enlève
+0x436a40	Activer pour bloquer les rappels de notification
+0x436a74	Volume de médias
+0x436a88	Volume d'appel
+0x436a98	Plus de paramètres
+0x436aac	Stabilisation de l'image
+0x436ac8	Luminosité automatique
+0x436ae0	Taille de la police
+0x436af4	Aperçu de la grande police
+0x436b10	Aperçu de la police standard
+0x436b30	Police standard
+0x436b40	Grande police
+0x436b50	Appuyez sur le pavé tactile pour rafraîchir
+0x436b80	Rafraîchi
+0x436b8c	Connexion
+0x436b98	Connexion...
+0x436ba8	Code d'appairage "%s", veuillez le confirmer sur votre téléphone portable
+0x436bf4	 connecter le succès
+0x436c0c	Échec de la connexion
+0x436c24	Étape 1
+0x436c30	Étape 2
+0x436c3c	Après la connexion, tapez sur Appairer les lunettes et suivez les instructions pour vous connecter
+0x436ca0	Installez MYVU AR App sur votre téléphone.
+0x436cd0	Redémarrage
+0x436ce0	Appuyez deux fois sur retour
+0x436d00	Cliquez sur la molette de défilement pour rafraîchir la connexion
+0x436d44	Connexion réseau déficiente
+0x436d64	Erreur du réseau. Veuillez vérifier votre réseau mobile
+0x436da0	Pas de son détecté, continuer la traduction ?
+0x436dd0	Pas de son détecté, continuer la transcription ?
+0x436e04	Vérifier l'historique des traductions dans MYVU AR
+0x436e38	La traduction mobile n'existe pas
+0x436e5c	Le microphone est occupé, veuillez réessayer plus tard
+0x436e98	Veuillez connecter les lunettes et réessayer
+0x436ec8	Échec du démarrage du service à distance
+0x436ef4	Traduire
+0x436f00	Transcription
+0x436f10	Appuyez pour continuer/Appuyez doublement pour annuler
+0x436f48	Traduction entre chinois et anglais. Écouter...
+0x436f7c	Transcription du chinois. Écouter...
+0x436fa4	Traduction de %s en %s. Écoute en cours, veuillez parler
+0x436fe0	%s transcription. Écoute en cours, veuillez parler
+0x437014	Chinois
+0x43701c	Anglais
+0x437024	Japonais
+0x437030	Coréen
+0x437038	Russe
+0x437040	Espagnol
+0x43704c	Vietnamien
+0x437058	Malais
+0x437060	Indonésien
+0x43706c	Thaï
+0x437074	Italienisch
+0x437080	Türkisch
+0x43708c	Traduction conv
+0x43709c	Traduction de la conversation %s-%s. Écoute en cours
+0x4370d4	Traduction de la conversation chinois-anglais. Écoute en cours
+0x437114	La traduction de la conversation nécessite l'utilisation d'un téléphone portable
+0x437168	Pour commencer la traduction de la conversation, vous devez ouvrir le traducteur dans l'application MYVU
+0x4371d4	Transcription de l'appel %s. Écoute en cours
+0x437204	Transcription de l'appel chinois-anglais. Écoute en cours
+0x437240	Traduction de l'appel %s-%s. Écoute en cours
+0x437270	Traduction de l'appel chinois-anglais. Écoute en cours
+0x4372a8	Diffusion d'un rappel de confidentialité à l'interlocuteur
+0x4372e8	La fonction de traduction de l'appel est activée.
+0x43731c	La fonction de transcription de l'appel est activée.
+0x437354	La fonction de traduction de l'appel est activée. Cet appel sera enregistré. Veillez à protéger votre vie privée et entamez la conversation au fur et à mesure.
+0x4373fc	La fonction de transcription de l'appel est activée. Cet appel sera enregistré. Veillez à protéger votre vie privée et entamez la conversation au fur et à mesure.
+0x4374a8	L'appel est en cours. Pour traduire le contenu de l'appel, vous pouvez activer la traduction de la conversation.
+0x43751c	Sur l'application MYVU, vous pouvez modifier la voix diffusée dans le module Traducteur.
+0x437578	Pour l'instant, la traduction de l'appel n'est possible que pour le chinois, l'anglais et le japonais. Pour changer de langue, vous pouvez utiliser l'application MYVU.
+0x437620	Veuillez garder MYVU AR APP opérationnel au Front Office
+0x43765c	Pour l'instant, la transcription de l'appel n'est possible que pour le chinois, l'anglais et le japonais. Pour changer de langue, vous pouvez utiliser l'application MYVU.
+0x437708	Actuellement en mode manuel d'indication de texte
+0x43773c	Actuellement en mode d'indication de texte à vitesse uniforme
+0x43777c	C'est déjà le dernier paragraphe
+0x4377a0	C'est déjà le premier paragraphe
+0x4377c4	Changement en mode manuel d'indication de texte
+0x4377f4	Changement en mode d'indication de texte à vitesse uniforme
+0x437834	Échec de l'indication
+0x43784c	Basculer le rouleau pour haut et bas de la page
+0x43787c	Veuillez ouvrir le prompteur de texte de MYVU AR App pour redémarrer l'invite de texte
+0x4378d4	Sélectionnez le bouton Retourner et appuyez sur Retourner
+0x437910	Écouter
+0x43791c	Le microphone est en cours d'utilisation. Veuillez réessayer plus tard.
+0x437968	Répondre à WeChat, impossible de réveiller l'Assistant vocal.
+0x4379ac	Ouverture de Wechat
+0x4379c0	Recherche d'un contact
+0x4379d8	Appuyez sur l'anneau pour arrêter
+0x4379fc	Appuyez sur le pavé tactile pour arrêter
+0x437a28	Merc.
+0x437a30	L'empreinte vocale du mot de réveil ne correspond pas. Veuillez vous rendre sur l'application MYVU AR APP pour l'enregistrer à nouveau.
+0x437abc	La température actuelle est trop élevée, veuillez réessayer plus tard
+0x437b08	La température excessive est détectée et l'appareil s'éteint automatiquement
+0x437b5c	Anello
+0x437b64	Traduttore
+0x437b70	Navigazione
+0x437b7c	Musica
+0x437b84	Meteo
+0x437b8c	Impostazioni
+0x437b9c	Suggerimento di sistema
+0x437bb4	Suggeritore
+0x437bc0	Gli occhiali si riavvieranno automaticamente durante il ripristino di fabbrica
+0x437c10	Tocca OK / Tocca due volte per ritornare
+0x437c3c	Collegati prima al telefono.
+0x437c5c	L'aggiornamento dovrebbe richiedere 5 minuti; gli occhiali non saranno disponibili durante l'aggiornamento.
+0x437cc8	Tocca per aggiornare / Tocca due volte per annullare
+0x437d00	Aggiorna
+0x437d0c	Non ora
+0x437d14	Errore di servizio. Riprova più tardi.
+0x437d3c	Batteria residua dell'anello: 5%
+0x437d60	Connesso
+0x437d6c	Non connesso
+0x437d7c	Disaccoppiato
+0x437d8c	Batteria residua degli occhiali: 15%
+0x437db4	Batteria residua degli occhiali: 5%
+0x437dd8	Livello della batteria degli occhiali: 100%
+0x437e04	Scarica l'app MYVU AR prima dell'utilizzo
+0x437e30	Tieni premuto l'anello e muovi per regolare la posizione
+0x437e6c	Anello disaccoppiato
+0x437e84	Il tuo anello 
+0x437e94	 è stato disaccoppiato. Se necessario, riaccoppia gli occhiali.
+0x437ed8	Scorri sul touchpad per scegliere
+0x437efc	Tieni premuto l'anello e muovi il polso per scegliere
+0x437f34	Scarica l'app MYVU prima dell'utilizzo
+0x437f5c	Buongiorno!
+0x437f68	Buongiorno, è iniziata una nuova giornata!
+0x437f94	Benvenuto in questa nuova giornata, ti auguro tanta vitalità!
+0x437fd4	Ti auguro un buon inizio!
+0x437ff0	A notte tarda, presta attenzione al riposo.
+0x43801c	Mantieniti in salute. Inizia con una buona dormita.
+0x438050	Un corpo sano ha bisogno di dormire a sufficienza. Buonanotte.
+0x438090	Ti auguro un sonno sano e tranquillo
+0x4380b8	L'abbiamo usato ininterrottamente per 1 ora. Cerca di riposare.
+0x4380f8	I tuoi occhi sono stanchi. Riposati.
+0x438120	Tieni premuto il pulsante di accensione per utilizzare l'assistente vocale
+0x43816c	Di' "Hey Aicy" e sarò al tuo servizio
+0x438194	Tieni premuto il pulsante di accensione per 1 secondo durante una chiamata per riattaccare
+0x4381f0	Premi una volta il pulsante di accensione durante una chiamata per silenziare la chiamata
+0x43824c	Salvataggio riuscito. Vai all'album del telefono per visualizzare.
+0x438290	Impossibile catturare lo schermo. Riprova.
+0x4382bc	Aggiornamento del firmware degli occhiali
+0x4382e8	Aggiorna la versione degli occhiali alla versione più recente sull'app MYVU
+0x438338	Aggiornamenti del software dell'app
+0x43835c	Aggiorna l'app MYVU AR alla versione più recente sul tuo telefono
+0x4383a0	Tieni premuto sul touchpad per aprire l'elenco delle applicazioni
+0x4383e4	Premi l'anello una volta per aprire l'elenco delle applicazioni
+0x438424	Tocca due volte per chiudere
+0x438444	Informativa sulla privacy dell'app
+0x438468	Disconnesso. Per favore, apri MYVU AR e accetta di nuovo l'informativa sulla privacy dell'app prima di connetterti.
+0x4384dc	Informativa sulla privacy Glasses
+0x438500	Disconnesso. Per favore, apri MYVU AR e accetta di nuovo l'informativa sulla privacy degli occhiali prima di associare.
+0x438578	Tocca OK
+0x438584	muovi il polso per scegliere
+0x4385a4	muovi il polso per regolare la posizione
+0x4385d0	Apri l'app MYVU AR e connetti prima il telefono
+0x438600	Esercitazione
+0x438610	Trascrivere
+0x43861c	Per favore collega il telefono
+0x43863c	Si prega di accettare prima le regole di elaborare dei dati personali sul tuo telefono
+0x438694	Si prega di accettare prima il trasferimento di dati oltre frontiera sul tuo telefono
+0x4386ec	L'aggiornamento dovrebbe richiedere 10 minuti; gli occhiali non saranno disponibili durante l'aggiornamento.
+0x43875c	Carica il prodotto fino al 100% e poi per un'ora in più per garantire una visualizzazione accurata.
+0x4387c4	Oggi
+0x4387cc	Gio.
+0x4387d4	Dom.
+0x4387dc	Nessuna informazione meteo disponibile
+0x438804	Impossibile aggiornare il meteo
+0x438824	Sconosciuto
+0x438830	Spegni
+0x438838	Vai sul tuo telefono per visualizzare il contenuto completo
+0x438874	conferma
+0x438880	ritorna
+0x438888	Rispondi
+0x438894	Parla
+0x43889c	Codice di verifica
+0x4388b0	news
+0x4388b8	Errore di rete. Controlla le impostazioni di rete.
+0x4388ec	La modalità "Non disturbare" è stata  abilitata per la navigazione
+0x438934	La modalità "Non disturbare" è stata  disattivata per la navigazione
+0x43897c	Passaggio alla navigazione a piedi
+0x4389a0	Passaggio alla navigazione in bici
+0x4389c4	Passaggio alla navigazione in auto
+0x4389e8	Passaggio fallito
+0x4389fc	Passaggio in corso...
+0x438a14	La trasmissione della navigazione è stata aperta
+0x438a48	La trasmissione della navigazione è stata chiusa
+0x438a7c	Uscire dall'app?
+0x438a90	Annulla
+0x438a98	Percorso aggiornato
+0x438aac	Impossibile aggiornare
+0x438ac8	Casa
+0x438ad0	Azienda
+0x438ad8	Nelle vicinanze
+0x438ae8	Vai e imposta
+0x438af8	Fornisci il tuo indirizzo di casa
+0x438b1c	Fornisci l'indirizzo della tua azienda
+0x438b44	La destinazione non può essere la posizione attuale
+0x438b7c	Cambiato
+0x438b88	Passaggio fallito. La distanza a piedi è troppa.
+0x438bbc	Passaggio fallito. La distanza in bici è troppa.
+0x438bf0	Ok, navigazione conclusa.
+0x438c0c	Vai nell'app MYVU AR per impostare l'indirizzo di casa
+0x438c44	Vai nell'app MYVU AR per impostare l'indirizzo del lavoro
+0x438c80	Premi l'anello per 1 secondo per cercare l'indirizzo a voce
+0x438cbc	Premi il pulsante di accensione per 1 secondo per cercare l'indirizzo a voce
+0x438d0c	Tocca due volte per entrare nella modalità finestra piccola
+0x438d4c	Non utilizzare la navigazione AR  di notte
+0x438d78	Alza il volume
+0x438d88	Distanza residua a piedi
+0x438da4	Distanza residua in auto
+0x438dc0	Distanza residua in bici
+0x438ddc	tempo necessario
+0x438df0	tempo
+0x438df8	Tocca per aprire/Tocca due volte per chiudere
+0x438e28	Tocca OK/Tocca due volte per annullare
+0x438e50	Aggiornamento
+in corso
+0x438e68	Impossibile installare
+0x438e80	L'aggiornamento dovrebbe richiedere 5 minuti. 
+Mantieni gli occhiali collegati al telefono.
+0x438edc	Connettiti al telefono
+0x438ef4	Disconnesso
+0x438f00	Riproduci la musica sul tuo telefono
+0x438f28	Questa lingua non è supportata al momento
+0x438f54	Connessione al server fallita
+0x438f74	Nessun contenuto riproducibile
+0x438f94	Ascolta come vuoi
+0x438fa8	Artista
+0x438fb0	Tocca per riprodurre/Tocca due volte per chiudere
+0x438fe4	Tocca per mettere in pausa/Tocca due volte per chiudere
+0x43901c	Impossibile ottenere le informazioni della canzone
+0x439050	Modalità "Non disturbare" abilitata
+0x439078	Modalità "Non disturbare" disattivata
+0x4390a0	I promemoria delle chiamate e delle notifiche sono attivati
+0x4390dc	I promemoria delle chiamate e delle notifiche sono bloccati
+0x439118	Promemoria delle chiamate attivato
+0x43913c	Promemoria delle chiamate bloccato
+0x439160	Promemoria delle notifiche attivato
+0x439184	Promemoria delle notifiche bloccato
+0x4391a8	Invia
+0x4391b0	Collega prima il telefono
+0x4391cc	Rispondi dopo la chiamata
+0x4391e8	Impossibile rispondere. 
+Rispondi dal tuo telefono.
+0x43921c	Invio fallito. Invia dal tuo telefono.
+0x439244	Inviato
+0x43924c	Tocca per rispondere / Tocca due volte per annullare
+0x439284	Tocca per inviare / Tocca due volte per annullare
+0x4392b8	Promemoria intelligente
+0x4392d0	Hai bisogno che le notifiche appaiano sullo schermo quando utilizzi il telefono?
+0x439324	Tocca per abilitare / Tocca due volte per disattivare
+0x43935c	Tocca per rispondere / Tocca due volte per riattaccare
+0x439394	Tocca due volte per riattaccare
+0x4393b4	Premi il pulsante di accensione per 1 secondo per riattaccare
+0x4393f4	Premi l'anello per 1 secondo per riattaccare
+0x439424	Tocca per richiamare / Tocca due volte per riattaccare
+0x43945c	Sta riattaccando...
+0x439470	Vai all'app MYVU e autorizza a effettuare chiamate
+0x4394a4	Abilita le relative autorizzazioni sul tuo telefono
+0x4394d8	Chiamata fallita. Chiama dal tuo telefono.
+0x439504	Impossibile rispondere. Esegui l'operazione dal tuo telefono.
+0x439544	Impossibile riattaccare. Riattacca dal tuo telefono.
+0x43957c	Dopo la chiamata, l'altra persona può vedere lo schermo della fotocamera del tuo telefono.
+0x4395d8	In chiamata
+0x4395e4	Scheda 1
+0x4395f0	Scheda 2
+0x4395fc	Nuova chiamata. Esegui l'azione dal tuo telefono.
+0x439630	Esegui l'azione sul tuo telefono
+0x439654	Telefono
+0x439660	Chiamata multicanale in corso
+0x439680	C'è una chiamata in arrivo. Puoi dire rispondi o riattacca.
+0x4396c0	Contatti
+0x4396cc	Slot scheda
+0x4396d8	Contatti WeChat
+0x4396e8	Attendi un momento
+0x4396fc	Il contenuto è stato generato da Google IA ed è solo un riferimento
+0x439744	Nuova agenda
+0x439754	Controlla di più sul tuo telefono
+0x439778	Domani
+0x439780	Inizia
+0x439788	Termina
+0x439790	Errore di navigazione. Concedi all'app MYVU AR l'autorizzazione continua per la posizione nelle impostazioni del tuo telefono.
+0x439810	Disaccoppia da
+0x439820	Disaccoppiamento in corso
+0x43983c	Premi l'anello una volta per ritornare
+0x439864	Tieni premuto il touchpad per ritornare
+0x43988c	Tocca due volte per ritornare
+0x4398ac	Luminosità
+0x4398b8	Modalità
+0x4398c4	Rilevamento dell'utilizzo
+0x4398e0	Blocco automatico
+0x4398f4	Lingua
+0x4398fc	Disaccoppia dispositivo
+0x439914	Informazioni sugli occhiali
+0x439930	Disaccoppia
+0x43993c	Non disturbare
+0x43994c	Aperto
+0x439954	Chiuso
+0x43995c	 dispositivi
+0x43996c	30 secondi
+0x439978	1 minuto
+0x439984	2 minuti
+0x439990	15 secondi
+0x43999c	Nome del dispositivo
+0x4399b4	Modello
+0x4399bc	Versione del firmware
+0x4399d4	Indirizzo Bluetooth
+0x4399e8	Numero di serie
+0x4399f8	Ripristino di fabbrica
+0x439a10	Ripristino imminente. Impossibile tornare indietro.
+0x439a44	La modalità MMI è stata attivata
+0x439a68	Quando attivato, il telefono si collegherà automaticamente quando indossi gli occhiali e si scollegarà automaticamente quando li togli.
+0x439af4	Attiva per bloccare i promemoria delle notifiche
+0x439b28	Volume dei media
+0x439b3c	Volume di chiamata
+0x439b50	Altre impostazioni
+0x439b64	Clicca sul touchpad per aggiornare
+0x439b88	Aggiornato
+0x439b94	Connessione in corso
+0x439bac	Connessione in corso...
+0x439bc4	Codice di accoppiamento di "%s". Confermalo sul tuo telefono.
+0x439c04	 è connesso!
+0x439c14	Connessione fallita
+0x439c28	Passo 1
+0x439c30	Passo 2
+0x439c38	Dopo aver effettuato l'accesso, clicca su "Accoppia occhiali" e segui la guida per collegarti.
+0x439c98	Installa l'app MYVU AR sul tuo telefono.
+0x439cc4	Riavvia
+0x439ccc	Connessione di rete scarsa
+0x439ce8	Errore di rete. Verifica la rete del tuo telefono.
+0x439d1c	Nessun suono rilevato, continuare con la traduzione?
+0x439d54	Nessun suono rilevato, continuare con la trascrizione?
+0x439d8c	La traduzione con il telefono è stata chiusa
+0x439dbc	Il microfono è occupato. Riprova più tardi.
+0x439dec	Connetti gli occhiali e riprova
+0x439e0c	Impossibile avviare il servizio remoto
+0x439e34	Traduci
+0x439e3c	Trascrivi
+0x439e48	Tocca "Continua"/Tocca due volte "Annulla"
+0x439e74	Traduzione tra cinese e inglese...
+0x439e98	Trascrizione del cinese...
+0x439eb4	Traduzione da %s a %s. Per favore, parla.
+0x439ee0	%s trascrizione. Per favore, parla.
+0x439f04	Cinese
+0x439f0c	Inglese
+0x439f14	Giapponese
+0x439f20	Francese
+0x439f2c	Coreano
+0x439f34	Russo
+0x439f3c	Spagnolo
+0x439f48	Vietnamita
+0x439f54	Malese
+0x439f5c	Indonesiano
+0x439f68	Tailandese
+0x439f74	Tedesco
+0x439f7c	Turco
+0x439f84	Si prega di tenere MYVU AR APP in funzione alla reception
+0x439fc0	Attualmente in modalità suggerimento di testo manuale
+0x439ff8	Attualmente in modalità suggerimento di testo a velocità uniforme
+0x43a03c	È già l'ultimo paragrafo
+0x43a058	È già il primo paragrafo
+0x43a074	Passato alla modalità suggerimento di testo manuale
+0x43a0ac	Passato alla modalità suggerimento di testo a velocità uniforme
+0x43a0f0	Suggerimento fallito
+0x43a108	Ruotare la rotella di scorrimento per capovolgere le pagine su e giù
+0x43a150	Apri il suggeritore di testo dell'app MYVU AR e riavvia il suggerimento di testo
+0x43a1a4	Seleziona il pulsante "Gira" e clicca su "Gira"
+0x43a1d4	In ascolto
+0x43a1e0	Microfono occupato, riprova più tardi
+0x43a208	Risposta su WeChat in corso. Impossibile attivare l'assistente vocale.
+0x43a250	Apertura di WeChat in corso
+0x43a26c	Ricerca di un contatto
+0x43a284	Clicca sull'anello per interrompere
+0x43a2a8	Clicca sul touchpad per interrompere
+0x43a2e8	L'impronta vocale della parola di attivazione non corrisponde. Andare all'APP MYVU AR per registrarlo di nuovo.
+0x43a358	La temperatura attuale è troppo alta. Riprova più tardi.
+0x43a394	Temperatura eccessiva rilevata. Spegnimento automatico.
+0x43ad0c	$DDDDDDDDDDDDDDB
+0x43ad3b	$DDDDDDDDDDDDDDDDB
+0x43ad82	DDDDDDDDDDDDDDDDDDDC
+0x43b00a	DDDDDDDDDDDDDDDDDDDD
+0x43b053	$DDDDDDDDDDDDDDDDB
+0x43b084	$DDDDDDDDDDDDDDB
+0x43b110	../../thirdparty/star_air_lvgl/app/Notify/toast/lv_toast_style2.c
+0x43b154	DOUBLE_LINE style toast title and content must be not null!
+0x43b190	toast_style2
+0x43b1a0	../../thirdparty/star_air_lvgl/app/Notify/toast/lv_toast_style3.c
+0x43b1e4	SINGLE_LINE_ICON toast content and icon must be not null!
+0x43b220	toast_style3
+0x43b230	../../thirdparty/star_air_lvgl/app/Notify/toast/lv_toast_style1.c
+0x43b274	SINGLE_LINE toast content must be not null!
+0x43b2a0	toast_style1
+0x43b2b0	../../thirdparty/star_air_lvgl/app/Notify/toast/lv_toast.c
+0x43b2ec	error! toast style is %d
+0x43b308	str is null, assign empty characters!
+0x43b330	dst alloc failed
+0x43b344	toast style1 show:%s status:%d
+0x43b364	toast style2 show:%s status:%d
+0x43b384	toast style3 show:%s %s status:%d
+0x43b3a8	type %d dont support!
+0x43b3c0	free toast msg title
+0x43b3d8	free toast msg content
+0x43b3f0	free toast msg
+0x43b400	toast style %d not support!
+0x43b41c	TOAST_MSG
+0x43b428	ready to show toast!
+0x43b440	show toast fail! free the msg
+0x43b460	lv_toast_show
+0x43b470	lv_toast_sendmsg
+0x43b484	toast_dismiss_anim_cb
+0x43b49c	free_msg
+0x43b4a8	lv_toast_create
+0x43b4b8	toast_memcpy_str
+0x43ba01	$DDDDDDDDDDDDB
+0x43bb11	$DDDDDDDDDDDDB
+0x43bb90	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc.c
+0x43bbc8	type(%d) not support
+0x43bbe0	get misc subtype(%d) component
+0x43bc00	get top obj:%p
+0x43bc10	there is no subtype obj
+0x43bc28	set misc type(%d) status:%d
+0x43bc44	state(%d) do not support
+0x43bc60	cur obj is null
+0x43bc70	there is no %s misc widget! top misc widget:%s
+0x43bca0	there is no %s misc app! top misc app:%s
+0x43bccc	misc_event_send
+0x43bcdc	get_misc_top_subtype
+0x43bcf4	get_sub_component
+0x43bd08	get_misc_top
+0x43bd18	set_misc_status
+0x43bd28	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_call.c
+0x43bd60	type(%d) not support! no header, will be set null!
+0x43bd94	null call obj!
+0x43bda4	can not show call! The previous object still exist
+0x43bdd8	there have higher priority types!
+0x43bdfc	show call!
+0x43be08	hide call
+0x43be14	call child node is null!
+0x43be30	call_event_handler
+0x43be44	redraw_call_border
+0x43be58	get_call_header
+0x43be68	free_call_mem
+0x43be78	delete_call_by_id
+0x43be8c	delete_call_by_pkgName
+0x43bea4	delete_all_call
+0x43beb4	add_internal_call
+0x43bec8	hide_call_root
+0x43bed8	show_call_obj
+0x43bee8	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_command.c
+0x43bf24	dialog event handle %d
+0x43bf3c	dialog event handle2 %d
+0x43bf54	app %d event come in
+0x43bf6c	test show dialog2
+0x43bfc4	notify_cmd
+0x43bfd0	notif_cmd_2
+0x43bfdc	test_ show dialog
+0x43c0cc	notif_cmd_1
+0x43c0d8	test cancel dialog2
+0x43c0ec	test cancel dialog
+0x43c100	test cancel dialog by package name
+0x43c1fc	test show message
+0x43c210	test_show_message pkgName is NULL
+0x43c234	test_show_message key is NULL
+0x43c254	test_show_message content is NULL
+0x43c2ac	toast style is NULL
+0x43c2c0	toast content is NULL
+0x43c2d8	show toast:%s
+0x43c2e8	toast title is %s
+0x43c2fc	toast title is NULL
+0x43c310	toast content is %s
+0x43c324	show icon toast:%s %s
+0x43c33c	toast style is not support! only 1~5
+0x43c398	test call end
+0x43c3a8	test widget card end
+0x43c3c0	test app card end
+0x43c3d4	test voice call end
+0x43c3e8	test clean reply
+0x43c3fc	test clean call on
+0x43c410	test clean audio control center
+0x43c430	test show call
+0x43c440	This is incoming call
+0x43c458	test show widget
+0x43c46c	create widget node:%p
+0x43c484	test show app
+0x43c494	create app node:%p
+0x43c4a8	test show voice call
+0x43c4c0	This is incoming voice call
+0x43c4dc	reply event:%d
+0x43c4ec	test show reply
+0x43c4fc	This is reply layout
+0x43c514	call on event:%d
+0x43c528	test show call on
+0x43c53c	This is call on layout
+0x43c554	call event:%d
+0x43c564	not support event:%d
+0x43c57c	voice call event:%d
+0x43c590	test show audio control center
+0x43c5b0	This is audio controller
+0x43c5cc	test set max time
+0x43c5e0	test set auto on screen
+0x43c5f8	test set tts
+0x43c608	test clean message by key params=%s
+0x43c62c	test clean message by pkg params=%s
+0x43c650	test clean all message
+0x43c668	test clean top message
+0x43c680	test_ set broadcast
+0x43c694	turn screen off!
+0x43c6a8	turn screen on!
+0x43c6b8	test switch language!
+0x43c6d0	Use:"notif sw 1" to try, only support [zh:1][en:2][ma:3][jp:4][ru:5][es:6][vn:7][fr:8][kr:9][th:10][id:11][mm:12][de:13][tr:14][it:15]
+0x43c758	switch type:%d
+0x43c768	type(%d) subtype(%d) data:%p
+0x43c788	widget type:%d
+0x43c798	widget %d event come in
+0x43c7b0	no consume event:%d
+0x43c7c4	audio event:%d
+0x43c7d4	notif
+0x43c7dc	usage: the same with pc demo. try pc demo nc tools first.
+0x43c818	show_prompt
+0x43c824	show_dialog
+0x43c830	clean_dialog
+0x43c840	show_dialog2
+0x43c850	clean_dialog2
+0x43c860	clean_d_pkg
+0x43c86c	show_msg
+0x43c878	clean_msg
+0x43c884	show_app
+0x43c890	clean_app
+0x43c89c	show_widget
+0x43c8a8	clean_widget
+0x43c8b8	show_call
+0x43c8c4	clean_call
+0x43c8d0	show_v_call
+0x43c8dc	clean_v_call
+0x43c8ec	show_reply
+0x43c8f8	clean_reply
+0x43c904	show_call_on
+0x43c914	clean_call_on
+0x43c924	show_audio
+0x43c930	clean_audio
+0x43c93c	set_max_time
+0x43c94c	screen_on_state
+0x43c95c	open_tts
+0x43c968	clean_k_msg
+0x43c974	clean_p_msg
+0x43c980	clean_a_msg
+0x43c98c	get_tts
+0x43c994	show_toast
+0x43c9a4	get_top
+0x43c9bc	test_get_top_type
+0x43c9d0	test_switch_language
+0x43c9e8	test_set_auto_screen_on
+0x43ca00	test_set_max_time
+0x43ca14	test_clean_audio
+0x43ca28	test_show_audio
+0x43ca38	audio_event_cb
+0x43ca48	test_clean_call_on
+0x43ca5c	test_show_call_on
+0x43ca70	call_on_event_cb
+0x43ca84	test_clean_reply
+0x43ca98	test_show_reply
+0x43caa8	test_screen_on
+0x43cab8	reply_event_cb
+0x43cac8	test_show_voice_call
+0x43cae0	voice_call_event_cb
+0x43caf4	test_voice_call_end
+0x43cb08	test_clean_app
+0x43cb18	test_show_app
+0x43cb28	app_event_cb
+0x43cb38	test_clean_widget
+0x43cb4c	test_show_widget
+0x43cb60	widget_event_cb
+0x43cb70	test_screen_off
+0x43cb80	test_call_end
+0x43cb90	test_show_call
+0x43cba0	call_event_cb
+0x43cbb0	test_show_prompt
+0x43cbc4	test_show_toast
+0x43cbd4	test_show_message
+0x43cbe8	msg_handle_event
+0x43cbfc	test_cancel_dialog
+0x43cc10	test_cancel_dialog_by_pkg
+0x43cc2c	test_cancel_dialog2
+0x43cc40	test_zen_mode
+0x43cc50	test_show_dialog2
+0x43cc64	test_show_dialog
+0x43cc78	dlg_event_handler2
+0x43cc8c	dlg_event_handler
+0x43cca0	test_clean_top_message
+0x43ccb8	test_clean_message_all
+0x43ccd0	test_clean_message_by_pkg
+0x43ccec	test_clean_message_by_key
+0x43cd08	test_open_tts
+0x43ce7c	can not show! The previous object still exist
+0x43ceac	show audio obj
+0x43cebc	hide audio obj
+0x43cecc	there is no audio obj!
+0x43cee4	audio_event_handler
+0x43cef8	redraw_audio_border
+0x43cf0c	get_audio_header
+0x43cf20	free_audio_mem
+0x43cf30	delete_audio_by_id
+0x43cf44	delete_audio_by_pkgName
+0x43cf5c	delete_all_audio
+0x43cf70	add_internal_audio
+0x43cf84	hide_audio_root
+0x43cf94	show_audio_obj
+0x43cfa4	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_control.c
+0x43cfe0	pip have %d focus! focus type:%d
+0x43d004	PIP_POS CHANGED TO %d
+0x43d01c	max callback
+0x43d02c	single message timeout and needs to be cleared
+0x43d05c	handle vui event!
+0x43d070	no vui need handle
+0x43d084	LauncherPosition is not valid, use LV_ALIGN_BOTTOM_LEFT
+0x43d0bc	STANDBY_POS ACK
+0x43d0cc	PIP_POS CHANGED
+0x43d0dc	min callback
+0x43d0ec	obj is hide
+0x43d0f8	unfold the component!
+0x43d110	no component need show
+0x43d128	notification has disabled!
+0x43d144	code=%d, key=%d, focus type:%d
+0x43d164	there is no focus type!, cannot do anim!
+0x43d190	warning! there must be some pip deleted directly! cnt:%d
+0x43d1cc	get focus type:%d
+0x43d1e0	error, data may already delete!
+0x43d200	tts done, msg state:%d, createTime:%lld
+0x43d228	tts state is STATE_ERROR_PRIORITY, not reaching the minimum time!
+0x43d26c	set display time: %d for message
+0x43d290	message obj:%p state:%d
+0x43d2a8	set screen on state is = %lld
+0x43d2c8	save screen on state fail!
+0x43d2e4	clear screen on restore flag!
+0x43d304	now screen on!
+0x43d314	restore screen on!
+0x43d328	off keep screen on!
+0x43d33c	get screen on state is = %lld
+0x43d35c	error! unknown state(%d)
+0x43d378	type:%d header is null
+0x43d390	top pip is NULL! type(%d) subtype(%d)
+0x43d3b8	now screen off, need stop message tts!
+0x43d3e0	no msg obj
+0x43d3ec	not support this item:%d
+0x43d408	close reply window
+0x43d41c	obj is null, can not remove vui evet!
+0x43d444	pip unregister vui event!
+0x43d460	pip register vui event! str1: %s str2:%s
+0x43d48c	pip register vui event! str: %s
+0x43d4ac	there have no pip component, return!
+0x43d4d4	now focus type is %d
+0x43d4ec	may need stop tts
+0x43d508	pre_action
+0x43d514	get_top_data
+0x43d524	pip_off_screen_on
+0x43d538	pip_restore_screen_on
+0x43d550	pip_keep_screen_on
+0x43d564	lv_pip_screen_on
+0x43d578	lv_pip_clear_restore_policy
+0x43d594	lv_pip_save_screen_on_state
+0x43d5b0	message_dismiss_condition
+0x43d5cc	reset_message_timer
+0x43d5e0	tts_done_callback
+0x43d5f4	register_vui_event
+0x43d608	timer_message_ext_callback
+0x43d624	timer_message_min_callback
+0x43d640	timer_message_max_callback
+0x43d65c	get_pip_focus
+0x43d66c	pip_focus_change
+0x43d680	refresh_pip_focus
+0x43d694	input_event_handler
+0x43d6a8	need_stop_tts
+0x43d6b8	show_more_components_behind
+0x43d6d4	unfold_components
+0x43d6e8	vui_event_handler
+0x43d6fc	move_pip_c_obj
+0x43d70c	get_pip_component
+0x43d720	launcher_show_callback
+0x43d738	assistant_hide_callback
+0x43d750	start_app_callback
+0x43d764	launcher_on_top
+0x43d774	transferred_launcher_position
+0x43d794	pip_pos_callback
+0x43d7a8	show_component_behind
+0x43d7c0	unregister_vui_event
+0x43d7d8	close_reply_pip
+0x43d7e8	type_to_ztype
+0x43d7f8	get_top_component_data
+0x43d810	delete_top_pip
+0x43d820	pip_always_screen_on
+0x43d898	null voice call obj!
+0x43d8b0	show voice call
+0x43d8c0	hide voice call
+0x43d8d0	voice call child node is null!
+0x43d8f0	voice_call_event_handler
+0x43d90c	redraw_voice_call_border
+0x43d928	get_voice_call_header
+0x43d940	free_voice_call_mem
+0x43d954	delete_voice_call_by_id
+0x43d96c	delete_voice_call_by_pkgName
+0x43d98c	delete_all_voice_call
+0x43d9a4	add_internal_voice_call
+0x43d9bc	hide_voice_call_root
+0x43d9d4	show_voice_call_obj
+0x43d9e8	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_dialog_ui.c
+0x43da28	data source is NULL
+0x43da3c	no dialog!
+0x43da48	show dialog obj
+0x43da58	dialog dismiss
+0x43da68	dialog hide, start close anim
+0x43da88	child is NULL
+0x43da98	data is null!
+0x43daa8	not consume key event, now dialog state:%d
+0x43dad4	ignore single click!
+0x43daec	ignore double click!
+0x43db04	%d event dialog does not handle
+0x43db24	exec click! btn:%d
+0x43db38	can not cancel dialog, dialog is ready to close!
+0x43db6c	there is no %s dialog
+0x43db84	there is no pkg:%s dialog
+0x43dba0	cancel_dialog_by_pkgname
+0x43dbbc	cancel_dialog
+0x43dbcc	flush_dialog
+0x43dbdc	close_dialog
+0x43dbec	show_dialog
+0x43dbf8	layout_dialog_ui
+0x43dc0c	exec_dialog_click
+0x43dc20	dialog_handle_event
+0x43dc34	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_reply.c
+0x43dc70	show reply obj
+0x43dc80	hide reply obj
+0x43dc90	redraw_reply_border
+0x43dca4	get_reply_header
+0x43dcb8	free_reply_mem
+0x43dcc8	delete_reply_by_id
+0x43dcdc	delete_reply_by_pkgName
+0x43dcf4	delete_all_reply
+0x43dd08	add_internal_reply
+0x43dd1c	hide_reply_root
+0x43dd2c	show_reply_obj
+0x43dd3c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc_widget.c
+0x43dd7c	no need to hide separately misc widget! return
+0x43ddac	sub type %d do not support!
+0x43ddc8	show misc widget!
+0x43dddc	show misc widget %p
+0x43ddf0	free the misc widget obj: %p
+0x43de10	close misc widget %p
+0x43de28	del widget callback %p
+0x43de40	data is NULL
+0x43de50	the misc widget key has already exist
+0x43de78	notify_dialog is NULL
+0x43de90	del_widget_callback
+0x43dea4	misc_widget_event_handler
+0x43dec0	redraw_misc_widget_border
+0x43dedc	free_misc_widget_mem
+0x43def4	delete_misc_widget_by_pkgName
+0x43df14	construct_misc_widget_data
+0x43df30	hide_misc_widget_root
+0x43df48	show_misc_widget_obj
+0x43df60	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_api.c
+0x43df98	zen_mode = %d, is_zen_mode = %d
+0x43dfb8	init pip
+0x43dfc4	lv_pip_disable called
+0x43dfdc	lv_pip_enable called
+0x43dff4	device not wear on ,cannot show message!
+0x43e020	zen mode not allowed show, type(%d) subtype(%d)
+0x43e050	register type:%d cb:%p user_data:%p
+0x43e074	unregister type:%d
+0x43e088	clean all message
+0x43e09c	clean top message
+0x43e0b0	clean message by pkg
+0x43e0c8	clean message by id
+0x43e0dc	not allowed show
+0x43e0f0	show component(%d) subtype(%d)
+0x43e110	close component(%d) subtype(%d)
+0x43e130	cancel dialog
+0x43e140	cancel dialog id must be not null!
+0x43e164	start switch notify language
+0x43e184	txt is null, can not be set vui event!
+0x43e1ac	delete dialog pip by pkg name:%s
+0x43e1d0	lv_pip_clean_dialog_by_pkgname
+0x43e1f0	lv_pip_register_vui_event_txt
+0x43e210	lv_pip_clean_message_by_pkgName
+0x43e230	lv_pip_clean_top_message
+0x43e24c	lv_pip_clean_all_message
+0x43e268	lv_pip_unregister_callback
+0x43e284	lv_pip_register_callback
+0x43e2a0	lv_pip_is_allow_show
+0x43e2b8	lv_pip_enable
+0x43e2c8	lv_pip_disable
+0x43e2d8	lv_pip_init
+0x43e2e4	disturb_mode_callback
+0x43e2fc	lv_pip_switch_language
+0x43e314	lv_pip_cancel_dialog
+0x43e32c	lv_pip_close_component
+0x43e344	lv_pip_show_component
+0x43e35c	lv_pip_clean_message_by_id
+0x43e378	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_sound_effects.c
+0x43e3bc	wrong msg!
+0x43e3c8	tts start
+0x43e3d4	tts type: %d
+0x43e3e4	dl tts done state: %d
+0x43e3fc	start dialog tts
+0x43e410	dialog tts type: %d
+0x43e468	set tts state is = %lld
+0x43e480	save tts state fail!
+0x43e498	get tts state fail!
+0x43e4ac	get tts state is = %lld
+0x43e4c4	play internal sound
+0x43e4d8	stop speech!
+0x43e4e8	reset prev notify msg timestamp!
+0x43e50c	clean prev notify msg!
+0x43e524	[group msg] app_name:%s, group_name:%s, sender_name:%s, content:%s
+0x43e568	No way!, prefix len(%d) is bigger than content len(%d)!
+0x43e5a0	group chat case 1, time interval = %d
+0x43e5c8	group chat case 2, time interval = %d
+0x43e5f0	%s,%s,%s%s%s
+0x43e600	group chat case 3, time interval = %d
+0x43e628	%s%s,%s,%s,%s%s%s
+0x43e63c	[msg] app_name:%s, sender_name:%s, content:%s
+0x43e66c	private chat case 1, timer interval:%d
+0x43e694	private chat case 2, timer interval:%d
+0x43e6bc	private chat case 3, timer interval:%d
+0x43e6e4	%s%s,%s,%s%s%s
+0x43e6f4	[vf msg] app_name:%s, ext_name:%s, number:%s
+0x43e724	ttsText malloc failed
+0x43e73c	%s,%s%s
+0x43e744	ready to tts! msg createTime:%lld, tts content:%s
+0x43e778	something wrong with tts content create! set tts done.
+0x43e7b0	dl ready to tts! tts content:%s
+0x43e7d4	lv_pip_dialog_to_speech
+0x43e7ec	dl_tts_callback
+0x43e7fc	lv_pip_get_tts_state
+0x43e814	lv_pip_save_tts_state
+0x43e82c	lv_notify_clean_prev_msg
+0x43e848	lv_prev_notify_update_timestamp
+0x43e868	lv_notify_stop_speech
+0x43e880	lv_notify_process_private_chat_to_speech
+0x43e8ac	lv_notify_process_group_chat_to_speech
+0x43e8d4	lv_notify_to_speech
+0x43e8e8	tts_callback
+0x43e8f8	play_internal_sound
+0x43e90c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_dialog.c
+0x43e948	hide dialog obj
+0x43e958	notify_dialog malloc fail!
+0x43e974	create dialog fail, free the dialog msg!
+0x43e9a0	add_internal_dialog
+0x43e9b4	construct_dialog_data
+0x43e9cc	hide_dialog_root
+0x43e9e0	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_utils.c
+0x43ea1c	error! child cnt must <= 2, obj:%p cnt:%d
+0x43ea4c	str malloc fail!
+0x43ea60	child node:%p cb:%p state:%d
+0x43ea80	node alloc failed
+0x43ea94	create_node
+0x43eaa0	dump_notify_node
+0x43eab4	lv_notify_combine_str
+0x43eacc	notify_memcpy_str
+0x43eae0	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc_msg_ui.c
+0x43eb20	show the message %p cnt:%d
+0x43eb3c	layout message and tts
+0x43eb54	obj has already delete
+0x43eb6c	no msg obj need show, return
+0x43eb8c	msg content is null
+0x43eba0	msg title is null
+0x43ebb4	clean message %p directly
+0x43ebd0	no top message
+0x43ebe0	tts not done, can not clean
+0x43ebfc	message do not layout, delete it directly!
+0x43ec28	close top message %p
+0x43ec40	no message!
+0x43ec4c	msg is being displayed!
+0x43ec64	delete message by package:%s fail
+0x43ec88	delete message by key:%s fail
+0x43eca8	clean_message
+0x43ecb8	show_next_message
+0x43eccc	layout_message_ui
+0x43ece0	notify_msg_cb
+0x43ecf0	clean_top_message
+0x43ed04	create_message
+0x43ed14	do_message_anim
+0x43ed24	layout_message
+0x43ed34	show_message
+0x43ed44	get_msg_title
+0x43ed54	get_msg_content
+0x43ed64	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_prompt.c
+0x43eda0	hide prompt obj
+0x43edb0	it's not allowed show, content is null!
+0x43edd8	prompt data malloc fail!
+0x43edf4	redraw_prompt_border
+0x43ee0c	get_prompt_header
+0x43ee20	free_prompt_mem
+0x43ee30	delete_prompt_by_id
+0x43ee44	delete_prompt_by_pkgName
+0x43ee60	delete_all_prompt
+0x43ee74	add_internal_prompt
+0x43ee88	construct_prompt_data
+0x43eea0	hide_prompt_root
+0x43eeb4	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_call_on.c
+0x43eef0	there have higher priority types or null obj!
+0x43ef20	show call on
+0x43ef30	hide call on
+0x43ef40	call on child node is null!
+0x43ef5c	call_on_event_handler
+0x43ef74	redraw_call_on_border
+0x43ef8c	get_call_on_header
+0x43efa0	free_call_on_mem
+0x43efb4	delete_call_on_by_id
+0x43efcc	delete_call_on_by_pkgName
+0x43efe8	delete_all_call_on
+0x43effc	add_internal_call_on
+0x43f014	hide_call_on_root
+0x43f028	show_call_on_obj
+0x43f03c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc_app.c
+0x43f078	no need to hide separately misc app! return
+0x43f0a4	show misc app %p
+0x43f0b8	free the misc app obj: %p
+0x43f0d4	close misc app %p
+0x43f0e8	del app callback %p
+0x43f0fc	the misc app key has already exist!
+0x43f120	app data malloc fail
+0x43f138	del_app_callback
+0x43f14c	misc_app_event_handler
+0x43f164	redraw_misc_app_border
+0x43f17c	free_misc_app_mem
+0x43f190	delete_misc_app_by_pkgName
+0x43f1ac	construct_misc_app_data
+0x43f1c4	hide_misc_app
+0x43f1d4	show_misc_app_obj
+0x43f1e8	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_prompt_ui.c
+0x43f228	pip prompt show:%s %s status:%d
+0x43f248	lv_prompt_create
+0x43f25c	../../thirdparty/star_air_lvgl/app/Notify/lv_pip_misc_msg.c
+0x43f298	show msg obj
+0x43f2a8	hide msg obj
+0x43f2b8	err! content and title both null!
+0x43f2dc	notify_msg malloc fail!
+0x43f2f4	Message stacked
+0x43f304	free the msg obj:%p
+0x43f318	error! msg data is null, return false
+0x43f340	now top message is ready to close, return false!
+0x43f374	no msg or cannot click
+0x43f38c	already clicked or not yet displayed(%d), return!
+0x43f3c0	msg_event_handler
+0x43f3d4	set_msg_status
+0x43f3e4	free_msg_mem
+0x43f3f4	add_internal_msg
+0x43f408	construct_misc_msg_data
+0x43f420	hide_msg_root
+0x43f430	show_msg_obj
+0x43f440	../../thirdparty/star_air_lvgl/app/xjxr_vui/xjxr_vui_manager.c
+0x43f480	txt is null
+0x43f48c	id: %d, vui: %s obj is null
+0x43f4a8	id %d, vui %s construct failed, obj:%p
+0x43f4d0	now not support this matcher(%d), use default fuzzy
+0x43f504	vui %s register failed, obj:%p
+0x43f524	vui %s registered, obj:%p
+0x43f540	vui un-registered, obj:%p
+0x43f55c	xjxr_vui_register_turnkey_txt
+0x43f57c	xjxr_vui_register_turnkey
+0x43f598	xjxr_vui_construct
+0x43f5ac	xjxr_vui_register
+0x43f5c0	xjxr_vui_deregister_turnkey
+0x43f5dc	xjxr_vui_register_turnkey_txt_op
+0x43f600	../../thirdparty/star_air_lvgl/app/xjxr_vui/xjxr_vui_matcher_fuzzy.c
+0x43f648	Corrupted input, need length:%d, input length:%d
+0x43f67c	**2 Corrupted str:%s
+0x43f694	**1 Corrupted str:%s
+0x43f6ac	toUnicode
+0x43f6b8	xjxr_vui_match_fuzzy_inernal
+0x43f6d8	to_lowercase
+0x43f6e8	../../thirdparty/star_air_lvgl/app/xjxr_zen_mode/lv_zen_page_runtime.c
+0x43f730	switch:%d, call:%d, notify:%d
+0x43f750	there is no zen item changed! sys[%d], navi[%d], tp[%d]
+0x43f788	zen_tips
+0x43f794	handle_zen_mask
+0x43f7a4	../../thirdparty/star_air_lvgl/app/xjxr_zen_mode/lv_zen_mode_manager.c
+0x43f7ec	Set system zen mode: mode=%d, show=%d, reason=%s
+0x43f820	Unknown zen mode, set zen mode(%d) failed
+0x43f84c	Set navigation zen mode: mode=%d, show=%d, reason=%s
+0x43f884	Unknown zen mode, set navi zen mode(%d) failed
+0x43f8b4	Set teleprompter zen mode: mode=%d, show=%d, reason=%s
+0x43f8ec	Register system zen mode changed cb: cb=%p
+0x43f918	Unregister system zen mode changed cb: cb=%p
+0x43f948	unregister_zen_mode_changed_cb
+0x43f968	register_zen_mode_changed_cb
+0x43f988	lv_set_tp_zen_mode
+0x43f99c	lv_set_navi_zen_mode
+0x43f9b4	lv_set_zen_mode_show_ui
+0x43f9cc	../../thirdparty/star_air_lvgl/app/RingManager/ring_manager.c
+0x43fa0c	[%s]
+
+0x43fa14	xjxr_ring_get_bond_device = NULL
+0x43fa38	[%s] before ring name: %s
+
+0x43fa54	[%s] after ring name: %s
+
+0x43fa70	[%s] failed pool full
+
+0x43fa88	[%s] success session number = %d
+
+0x43faac	UNKNOWN STATE
+0x43fabc	[%s] raw ring name: %s
+
+0x43fad4	[%s] ring manager invalid
+
+0x43faf0	[%s] real ring name: %s
+
+0x43fb0c	[%s] must in SCAN state current state = %s
+
+0x43fb38	[%s] state = %d
+
+0x43fb4c	[%s] no selected ring
+
+0x43fb64	[%s] current state = %s
+
+0x43fb80	[%s] ring_msg_pool_push failed
+0x43fba0	[%s] battery_level = %d
+
+0x43fbbc	[%s] ring manager ring == NULL
+
+0x43fbdc	[%s] ring not connected
+
+0x43fbf8	[%s] %d
+
+0x43fc04	[%s] ring manager modify name cancelled
+
+0x43fc30	[%s] ring == NULL
+
+0x43fc44	[%s] ring not bound
+
+0x43fc5c	[%s] ring name = %s
+
+0x43fc74	[%s] ring bound state connected
+
+0x43fc98	[%s] ring bound state disconnected
+
+0x43fcbc	[%s] ring bound state connecting
+
+0x43fce0	[%s] ring bound unknown state = %d
+
+0x43fd04	[%s] ring verson create failed
+
+0x43fd24	version_name
+0x43fd34	device_modle_name
+0x43fd48	device_serial_no
+0x43fd5c	[%s] ring update info == NULL
+
+0x43fd7c	[%s] create ota_file failed
+
+0x43fd9c	[%s] create ota_file faled
+
+0x43fdb8	[%s] msg invalid session_number = %d
+
+0x43fde0	[%s] register client failed
+
+0x43fe00	[%s] invalid ring manager client handle
+
+0x43fe2c	[%s] ring manager client[%p] unregistered
+
+0x43fe58	[%s] ring manager client[%p] unregister failed, must call ring_manager_reg_client before 
+
+0x43feb4	[%s] failed ring manager not ready
+
+0x43fed8	[%s] failed name == NULL
+
+0x43fef4	[%s] failed len <= 0
+
+0x43ff0c	[%s] failed len > %d
+
+0x43ff24	[%s] ring = NULL
+
+0x43ff38	[%s] ring in connecting
+
+0x43ff54	[%s] ring in unbinding
+
+0x43ff6c	[%s] in progress
+
+0x43ff80	[%s] must be in IDLE state current state = %s
+
+0x43ffb0	[%s] session number = %d
+
+0x43ffcc	[%s] must be in SCAN state current state = %s
+
+0x43fffc	[%s] ring already connected
+
+0x44001c	[%s] ring set connecting failed
+
+0x440040	[%s] ring manager must in IDLE state current state = %s
+
+0x44007c	[%s] ring already disconnected
+
+0x44009c	[%s] ring set disconnecting failed
+
+0x4400c0	[%s] ring already unbound
+
+0x4400dc	[%s] ring set unbinding falied
+
+0x4400fc	[%s] ring remove bond failed
+
+0x44011c	UNBIND
+0x440124	[%s] failed current state = %s
+
+0x440144	[%s] ring already bound
+
+0x440160	SCAN
+0x440168	DISCONNECT
+0x4401ac	ring_manager_ring_select_prev
+0x4401cc	ring_manager_set_update_info
+0x4401ec	ring_manager_modify_name
+0x440208	ring_manager_get_ota_manager
+0x440228	ring_manager_unreg_client
+0x440244	ring_manager_reg_client
+0x44025c	ring_manager_handle_msg
+0x440274	ring_manager_release
+0x44028c	ring_manager_install_ota_manager
+0x4402b0	ring_manager_install_calibrator
+0x4402d0	ring_msg_scan_result_cb
+0x4402e8	ring_manager_ring_can_select_next
+0x44030c	ring_scan_result_cb
+0x440320	ring_msg_connect_state_cb
+0x44033c	ring_connect_state_cb
+0x440354	ring_msg_bond_state_cb
+0x44036c	ring_bond_state_cb
+0x440380	ring_msg_battery_state_cb
+0x44039c	ring_battery_state_cb
+0x4403b4	ring_msg_modify_name_cb
+0x4403cc	ring_modify_name_cb
+0x4403e0	ring_msg_ready_cb
+0x4403f4	ring_manager_ring_select_next
+0x440414	ring_ready_cb
+0x440424	ring_msg_calibrator_cb
+0x44043c	ring_algo_ready_cb
+0x440450	ring_msg_version_cb
+0x440464	ring_version_cb
+0x440474	ring_ota_file_create
+0x44048c	ring_msg_ota_load_file_fail_cb
+0x4404ac	ring_msg_ota_load_file_success_cb
+0x4404d0	ring_ota_file_load_cb
+0x4404e8	ring_msg_pool_push
+0x4404fc	ring_manager_remove_bond
+0x440518	ring_msg_update_cb
+0x44052c	ring_msg_ota_update_file_success_cb
+0x440550	ring_msg_ota_update_file_fail_cb
+0x440574	ring_ota_result_cb
+0x440588	ring_manager_init
+0x44059c	ring_manager_disconnect
+0x4405b4	ring_manager_reconnect
+0x4405cc	ring_manager_connect
+0x4405e4	ring_manager_stop_scan
+0x4405fc	ring_manager_start_scan
+0x440614	../../thirdparty/star_air_lvgl/app/RingManager/ring_calibrator.c
+0x440658	ca show keep still
+0x44066c	ca show initialising
+0x440684	ca->lv_root is not null, hide it
+0x4406a8	fade in anim ready, resume ca->lv_timer
+0x4406d0	ca fade in anim start
+0x4406e8	ca or ca->lv_root is null
+0x440704	ca->lv_img is invalid
+0x44071c	ca->lv_label_end is invalid
+0x440738	not full screen, ca->lv_root_bg is invalid
+0x440764	try pause ca->lv_timer before we delete ca->lv_root
+0x440798	ca->lv_root is not null, delete it
+0x4407bc	start fade in anim
+0x4407d0	start fade out anim
+0x4407e4	create ring ca
+0x4407f4	start ring ca
+0x440804	ring ca succeed, pause ca->lv_timer
+0x440828	ring ca succeed, show ca fade out anim
+0x440850	ring ca failed, pause ca->lv_timer
+0x440874	ring ca failed, delete ca->lv_root
+0x440898	release ring ca, delete ca->lv_root
+0x4408bc	release ring ca, delete ca->lv_timer
+0x4408e4	ring_calibrator_release
+0x4408fc	ring_calibrator_fail
+0x440914	fade_in_anim_start_cb
+0x44092c	fade_in_anim_ready_cb
+0x440944	timer_callback
+0x440954	ring_calibrator_create
+0x44096c	show_ca_fade_out_anim
+0x440984	show_ca_fade_in_anim
+0x44099c	ring_calibrator_success
+0x4409b4	lv_obj_move_foreground
+0x4409cc	ring_calibrator_start
+0x4409e4	fade_out_anim_start_cb
+0x4409fc	fade_out_anim_exec_cb
+0x440a14	fade_out_anim_ready_cb
+0x440a2c	fade_out_anim_exec_cb_del
+0x440a48	%d.%d.%d.%d
+0x440a54	../../thirdparty/star_air_lvgl/app/RingManager/ring.c
+0x440a8c	[%s]  version=%s
+0x440aa0	[%s]  mode_id=%s
+0x440ab4	[%s]  sn=%s
+0x440ac0	[%s] create ring update info failed
+0x440ae4	[%s] create ring update info failed update digest == NULL
+0x440b20	[%s] create ring update info failed update journal == NULL
+
+0x440b5c	[%s] create ring update info failed update version == NULL
+
+0x440b98	[%s] create ring list failed
+0x440bb8	ring_list_create
+0x440bcc	ring_set_update_info
+0x440be4	ring_version_create
+0x440bf8	../../thirdparty/star_air_lvgl/app/RingManager/ring_ota_journal.c
+0x440c3c	result == NORFLASH_API_OK
+0x440c58	ring_ota_journal_clear
+0x440c70	ring_ota_journal_write
+0x440c88	ring_ota_journal_read
+0x440ca0	ring_ota_journal_register_callback
+0x440cc4	ring_ota_journal_register
+0x440ce0	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_code.c
+0x440d20	code:%s
+0x440d28	language type:%s
+0x440d3c	why are you set language type again? type:%s
+0x440d6c	lv_md_code_set_language
+0x440d84	lv_md_code_set_text
+0x440db4	dummy
+0x440dd8	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_ducument.c
+0x440e1c	##cmark feed content!
+0x440e34	err! no document obj!
+0x440e4c	document
+0x440e58	lv_md_document_get_width
+0x440e74	lv_md_document_stream_parser_feed
+0x440eb4	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_ref.c
+0x440ef4	current ref has no text!
+0x440f10	block_quote
+0x440f1c	lv_md_ref_set_text
+0x440f4c	(nil)
+0x440f70	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_hyper_link.c
+0x440fb4	Malloc fail
+0x440fc0	hyper_link
+0x440fcc	lv_md_hyper_link_set_text
+0x441004	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_list_item.c
+0x441048	err!, impossible this part!
+0x441064	%d. 
+0x44106c	item content:%s, parent:%p, curr:%p
+0x441094	unordered list item content:%s, parent:%p,curr:%p
+0x4410cc	list_item
+0x4410d8	lv_md_add_item_txt
+0x4410ec	lv_md_list_add_item_txt
+0x441104	lv_md_handle_unordered_prefix
+0x441124	lv_md_handle_ordered_prefix
+0x44115c	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_para.c
+0x44119c	lv_md_para_set_text
+0x4411cc	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_inline_code.c
+0x441214	inline code:%s
+0x441224	inline_code
+0x441230	lv_md_inline_code_set_text
+0x441284	../../thirdparty/star_air_lvgl/app/cmark/widgets/lv_md_table_row.c
+0x4412c8	Table support max %d columns. exit
+0x4412ec	table_row
+0x4412f8	lv_md_table_row_set_cell_value
+0x441334	head
+0x442274	../../thirdparty/star_air_lvgl/app/cmark/src/blocks.c
+0x4422ac	calloc fail
+0x4422b8	Create document fail
+0x4422d0	get_flag(b->flags, CMARK_NODE_OPEN)
+0x4422f4	no language specifier
+0x44230c	Tag:%s
+0x442314	Debug: %p finalized, type:%s
+
+0x442334	pos < node_content->size
+0x442350	parent
+0x442358	##cmark finalize this part
+0x442374	#cmark process line :%d
+0x44238c	html_block_type >= 1 && html_block_type <= 7
+0x4423bc	parser->current != NULL
+0x4423d4	add_text_to_container
+0x4423ec	add_child
+0x4423f8	parse_html_block_prefix
+0x442410	finalize
+0x44241c	S_process_line
+0x44242c	cmark_parser_new_with_mem_into_root
+0x442450	make_block
+0x44245c	make_document_lvgl
+0x442474	../../thirdparty/star_air_lvgl/app/cmark/src/lv_md_display.c
+0x4424b4	anim timer do not create!
+0x4424d0	##cmark s_cb start!
+0x4424e4	##cmark s_cb end!
+0x4424f8	anim cb node is NULL
+0x442510	lv_md_anim_cb
+0x442520	lv_md_set_anim_content
+0x442538	lv_md_start_content_anim
+0x442554	../../thirdparty/star_air_lvgl/app/cmark/src/buffer.c
+0x44258c	target_size > 0
+0x44259c	[cmark] cmark_strbuf_grow requests buffer with size > %ld, aborting
+0x4425e0	cmark_strbuf_grow
+0x4425f4	../../thirdparty/star_air_lvgl/app/cmark/src/utf8.c
+0x442628	uc >= 0
+0x442630	cmark_utf8proc_encode_char
+0x44264c	μàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþssāăąćĉċčďđēĕėęěĝğġģĥħĩīĭįi̇
+0x4426c0	ĳĵķĺļľŀłńņňʼn
+0x4426da	ŋōŏőœŕŗřśŝşšţťŧũūŭůűųŵŷÿźżžs
+0x442712	ɓƃƅɔƈɖɗƌǝəɛƒɠɣɩɨƙɯɲɵơƣƥʀƨʃƭʈưʊʋƴƶʒƹƽǆǆǉǉǌǌǎǐǒǔǖǘǚǜǟǡǣǥǧǩǫǭǯǰ
+0x44278c	ǳǳǵƕƿǹǻǽǿȁȃȅȇȉȋȍȏȑȓȕȗșțȝȟƞȣȥȧȩȫȭȯȱȳⱥ
+0x442ab0	вдосттъѣꙋ

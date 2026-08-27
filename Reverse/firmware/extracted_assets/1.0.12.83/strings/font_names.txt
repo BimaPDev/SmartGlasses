@@ -1,0 +1,24 @@
+FONT_DUMMY_16
+FONT_DUMMY_20
+FONT_CN_36_BOLD
+FONT_CN_32_NORMAL
+FONT_EN_32_NORMAL
+FONT_EN_36_BOLD
+FONT_CN_16_NORMAL
+FONT_CN_20_NORMAL
+FONT_CN_24_NORMAL
+lv_font_is_all_character_showable
+lv_font_lfs_deinit
+lv_font_lfs_init
+lv_font_do_load_font %d fail
+B:lv_font_air_full_cn_20_bpp1.bin
+FONT_20 Already loaded
+FONT_20 Succ
+lv_font_do_load_font
+lv_font_load_from_file
+lv_font_free_font_file
+lv_font_on_load_finished
+lv_font_load_prepare
+lv_font_air_mgr_load_all
+lv_font_mgr_get_file
+lv_font_mgr_get_font

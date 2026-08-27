@@ -1,0 +1,448 @@
+%s: Unkown protection BP defining! total_size = 0x%x
+PROTECTION NOT SUPPORT AT THIS SIZE! flash id = %d, total size: 0x%x
+Please change the FLASH_SIZE in common.mk                         to 0x%x to enable the OTA feature.
+../../platform/hal/hal_key.c
+%s key_status:[ code_down: %d, code_ready: %d, code_click: %d, event: %d
+%s HAL_KEY_EVENT_DOWN
+%s HAL_KEY_EVENT_FIRST_DOWN
+%s HAL_KEY_EVENT_CONTINUED_DOWN
+%s HAL_KEY_EVENT_UP
+%s HAL_KEY_EVENT_UP_AFTER_LONGPRESS
+%s HAL_KEY_EVENT_LONGPRESS
+%s HAL_KEY_EVENT_LONGLONGPRESS
+%s HAL_KEY_EVENT_CLICK
+%s HAL_KEY_EVENT_DOUBLECLICK
+%s HAL_KEY_EVENT_TRIPLECLICK
+%s HAL_KEY_EVENT_ULTRACLICK
+%s HAL_KEY_EVENT_RAMPAGECLICK
+%s HAL_KEY_EVENT_REPEAT
+%s HAL_KEY_EVENT_LONGPRESS_500_MS
+%s HAL_KEY_EVENT_LONGPRESS_3000_MS
+%s HAL_KEY_EVENT_LONGPRESS_5000_MS
+%s unkown key event
+%s do hal_key_debounce_timer_restart
+*** WARNING:keyDbn: Permanent key press? code_down=0x%X
+Failed to alloc key debounce timer
+hal_key_boot_handler
+dump_key_event
+dump_key_status
+xjxr_hal_key_debounce_handler
+Invalid UART ID: %d
+DMA not supported on UART %d
+DMA not configured on UART %d
+%s: Set RT irq in hal_uart_dma_recv_mask... to avoid data lost
+TX-DMA configured on UART %d
+hal_uart_irq_set_mask
+Error: pmu wdt reboot failed!
+set adv_txpwr_via_advhdl hdl 0x%02x idx %d dbm %d
+btdrv_txpower_calib
+../../platform/drivers/bt/best1600/bt_drv_uart_bridge_intsys.c
+uart_tx dma error: xfer_size=%d
+uart_rx dma error: xfer_size=%d
+uart_rx uart error: xfer_size=%d, status=0x%08x
+Failed to open uart
+lld_adv_adv_data_update_patch
+lld_adv_scan_rsp_data_update_patch
+lld_per_adv_data_update_patch
+Pkt Total Received [%d]
+nosig_tx_test: rx_freq=%d,power_level=%d,lt_addr=%d,edr_enabled=%d
+nosig_rx_test: rx_freq=%d,power_level=%d,lt_addr=%d,edr_enabled=%d
+../../services/ota/ota_basic.cpp
+OTA DATAPATH TO: %s
+OTA PEER ADDR:
+OTA DATAPATH TO: OTA_BASIC_NO_DATAPATH_ENALBED
+[OTA_BASIC_NO_DATAPATH_ENALBED]
+[OTA_BASIC_SPP_DATAPATH_ENABLED]
+[OTA_BASIC_BLE_DATAPATH_ENABLED]
+4ota_opera_flash_cb
+OTA user number exceeds
+../../services/ota/bes_ota/src/ota_config.cpp
+bes ota %s
+_register_bth_bootinfo_user
+../../services/ota/bes_ota/src/bes_ota_api.cpp
+bth_ota_flash_program_handle
+[%s] close watch dog for bth ota.
+bth_ota_flash_read_handle
+init_bth_ota_flash_start_addr
+%s boot_word: 0x%x, StartAddr: 0x%x
+../../services/../bthost/service/ble_app/app_ota/app_ota.c
+app_ota_mtu_exchanged_handler
+../../services/../bthost/service/ble_app/app_gatt/app_gatt.c
+app_ble_gatt_dflt_handler
+app_ble_gatt_cmp_evt_handle
+app_ble_gatt_req_ind_evt_handler
+../../services/../bthost/service/ble_app/ble_uart/app_ble_uart.c
+record_linkKey = 
+record_keyType = 
+start_three_adv
+ble_uart_cmd_init
+stop_all_adv
+start_adv_1
+start_adv_2
+start_adv_3
+stop_adv_1
+stop_adv_2
+stop_adv_3
+update_adv_data_1_to_2
+update_adv_data_1_back_to_1
+update_adv_data_2_back_to_2
+update_adv_data_3_back_to_3
+set_adv_txpwr_to_min
+set_adv_txpwr_to_0
+set_adv_txpwr_to_max
+ble_uart_cmd_callback
+ble_update_adv_data_3_back_to_3
+ble_update_adv_data_2_back_to_2
+ble_update_adv_data_1_back_to_1
+ble_update_adv_data_1_to_2
+ble_stop_adv_3
+ble_start_adv_3
+ble_stop_adv_2
+ble_start_adv_2
+ble_stop_adv_1
+ble_start_adv_1
+ble_stop_all_adv
+ble_start_three_adv
+adv actv index %d
+%s, get loc power conidx:%d, status:%x
+%s, get peer power conidx:%d, status:%x
+%s, power report ctrl conidx:%d, status:%x
+%s GAPM_CREATE_ADV_ACTIVITY status 0x%x
+%s,CT2:%d, tmpLinkKey:
+app_ble_customif_scan_adv_data_event_handler cb 0x%p
+app_ble_customif_adv_started_event_handler
+app_ble_customif_adv_starting_failed_event_handler
+app_ble_customif_adv_stopped_event_handler
+enter the adv_param.type:%d,%d
+adv data exceed
+[ADV_TYPE]:%d
+[ADV_INTERVAL]:%d
+%s adv idx %d
+appm_check_adv_activity_index
+appm_stop_advertising
+appm_update_adv_data
+appm_kick_off_advertising
+reason: in power off mode
+adv disablerBitmap:0x%x
+[ADV] not allowed.
+[WARNING] actv_user %d start adv fail before, cann't start adv now
+[BLE][ADV]adv data exceed
+[BLE][ADV]scan response data exceed
+will change adv type to none-connectable because max ble connection reaches
+no adv user enable
+adv param not changed, do nothing
+[ADV_LEN] %d [DATA]:
+app_ble_set_adv_txpwr_by_actv_user
+app_ble_start_connectable_adv_generic
+app_advertising_starting_failed_handle
+app_advertising_stopped
+app_ble_adv_param_is_different
+app_ble_start_adv
+app_ble_refresh_adv_state_generic
+app_advertising_started
+[USER_OTA]
+4app_ble_param_set_adv_interval
+app_ble_param_get_adv_interval
+%s user %d, ADV ADDR TYPE %d
+app_ble_custom_adv_stop
+app_ble_custom_adv_start
+app_ble_custom_adv_write_data
+app_bt_show_device_linkkey_test
+app_bt_delete_device_linkkey_test
+bt_delete_link_key
+bt_key_click
+bt_key_double_click
+bt_key_long_click
+bt_show_link_key
+ota_mode_enter
+BT_DUT_MODE
+BT_Set_Adv_Mode_Test
+../../services/../bthost/service/bt_app/src/app_keyhandle.cpp
+bt_update_key_event
+unregister down key event=%x
+avrcp_key = HFP_KEY_ANSWER_CALL
+avrcp_key = HFP_KEY_HANGUP_CALL
+avrcp_key = HFP_KEY_REDIAL_LAST_CALL
+avrcp_key = HFP_KEY_CHANGE_TO_PHONE
+avrcp_key = HFP_KEY_ADD_TO_EARPHONE ver:%x
+avrcp_key = HFP_KEY_MUTE
+avrcp_key = HFP_KEY_CLEAR_MUTE
+avrcp_key = HFP_KEY_THREEWAY_HOLD_AND_ANSWER
+avrcp_key = HFP_KEY_THREEWAY_HOLD_SWAP_ANSWER
+avrcp_key = HFP_KEY_THREEWAY_HOLD_REL_INCOMING
+app_bt_a2dp_send_key_request
+%s avrcp_key %d avrcp is not connected
+(d%x) avrcp_key = AVRCP_KEY_STOP %p
+(d%x) avrcp_key = AVRCP_KEY_PLAY %p
+(d%x) avrcp_key = AVRCP_KEY_PAUSE %p
+(d%x) avrcp_key = AVRCP_KEY_FORWARD %p
+(d%x) avrcp_key = AVRCP_KEY_BACKWARD %p
+(d%x) avrcp_key = AVRCP_KEY_VOLUME_UP %p
+(d%x) avrcp_key = AVRCP_KEY_VOLUME_DOWN %p
+!!!a2dp_handleKey curr a2dp device %x last_paused_device %x
+avrcp_key %d the channel is not connected
+current hfcall machine status is HFCALL_MACHINE_CURRENT_INCOMMING!!!!
+current hfcall machine status is HFCALL_MACHINE_CURRENT_3WAY_INCOMMING!!!!
+bt_key_handle_func_click
+bt_key_handle_func_doubleclick
+bt_key_handle_func_longpress
+unregister func key event=%x
+bt_key_handle_up_key
+unregister up key event=%x
+bt_key_handle
+bt_key_handle  undefined key
+delete link key as authen fail
+app_bt_global_handle: delete link key
+app_bt_user_passkey_notify_callback
+%s,passkey notify %x
+app_bt_user_passkey_request_callback
+%s,passkey request
+APP_FAST_BLE_ADV_TIMEOUT_TIMER
+(d%x) ::AVRCP_EVENT_ADV_TX_DONE op:%02x err_code:%d state:%d
+(d%x) ::avrcp_callback_CT AVRCP_EVENT_ADV_RESPONSE role=%d op=%02x status=%d
+avrdp adv rsp wrong
+(d%x) ::avrcp_callback_CT AVRCP_EVENT_ADV_CMD_TIMEOUT role=%d
+APP_HFP_AUDIO_CLOSED_DELAY_RESUME_BLE_ADV_TIMER
+../../services/../bthost/stack/ble_profiles/ota/ota.c
+[OTA]uid %d shdl %d
+[OTA]%s ota_env 0x%x write handle %d shdl %d, token:%d
+ota_gatt_cb_att_set
+_gatt_cmp_evt_handler
+gapc_le_smp_compute_key_sec_prop
+gapm_smp_proc_compute_dhkey_transition
+gapm_smp_proc_get_pub_key_transition
+adv_rand_addr_cmp_handler
+adv terminated owend type: 0x%x
+gapm_adv_proc_start_transition
+gapm_adv_stop_transition
+gapm_hci_le_adv_set_term_evt_handler
+gapm_adv_start
+gapm_adv_proc_start_transition
+gapm_adv_stop_transition
+gapm_hci_le_adv_set_term_evt_handler
+gatt_cli_read_proc_continue
+gatt_srv_event_proc_continue
+gatt_initialize
+gatt_cleanup
+gatt_create
+gatt_db_hash_get
+gatt_db_att_native_val_get
+gatt_cli_write_proc_continue
+gatt_bearer_coc_created_cb
+gatt_bearer_rx_continue
+gatt_bearer_sdu_rx_bg_handler
+gatt_bearer_mtu_set
+gatt_bearer_mtu_get
+gatt_bearer_release
+gatt_bearer_acquire
+gatt_bearer_lid_get
+gatt_bearer_sdu_rx_cb
+gatt_bearer_create
+gatt_bearer_close
+gatt_cli_discover_proc_continue
+gatt_cli_discover_proc_create
+gatt_srv_read_proc_continue
+gatt_srv_read_proc_create
+gatt_cli_event_register
+gatt_cli_event_proc_continue
+gatt_cli_event_proc_create
+gatt_srv_write_exe_proc_continue
+gatt_srv_write_proc_create
+gatt_srv_discover_l2cap_att_find_req_handler
+gatt_proc_write_queue_mutex_set
+gatt_proc_continue
+gatt_proc_check_grant
+gatt_proc_pop
+gatt_proc_push
+gatt_proc_handler_alloc
+gatt_proc_create
+gatt_proc_continue_defer_cb
+gatt_proc_trans_timeout_cb
+acl_tx_fc_inc: bt wrong %d %d total %d ca=%p
+acl_tx_fc_inc: le wrong %d %d total %d ca=%p
+avrcp_send_advanced_command
+Advanced Audio
+[HCI_LINK_KEY_REQ_REPLY]
+[HCI_LINK_KEY_REQ_NEG_REPLY]
+[HCI_HS_STORED_LINK_KEY]
+[HCI_READ_STORED_LINK_KEY]
+[HCI_WRITE_STORED_LINK_KEY]
+[HCI_DELETE_STORED_LINK_KEY]
+[HCC_WRITE_ADV_PARAMETER]
+[HCC_WRITE_ADV_DATA]
+[HCC_WRITE_ADV_ENABLE]
+[HCI_USER_PASSKEY_REQUEST_REPLY]
+[HCI_USER_PASSKEY_REQUEST_NEG_REPLY]
+[HCI_SEND_KEYPRESS_NOTIFY]
+save link key fail
+passkey notify %x
+%s:keytype 0x%x, timer_handle_pairing=0x%x
+link_key_req
+Link key exist
+Link key not exist
+authen req after key missing ! 
+pass_key_req
+passkey input timer already exist,restart it
+passkey input timer new fail
+HCI_EV_LINK_KEY_REQ!
+HCI_EV_LINK_KEY_NOTIFY!
+HCI_EV_USER_PASSKEY_REQUEST!
+BT_HCI_EVT_USER_PASSKEY_NOTIFY!
+HCI_EV_RETURN_LINKKEYS!
+HCI_EV_ENCRYPT_KEY_REFRESH_COMPLETE!
+[BT_ECODE_MISSING_KEY]
+[BT_ECODE_POWER_OFF]
+[BT_ECODE_UNIT_KEY_USED]
+[BT_ECODE_PAIR_UNITKEY_NO_SUPP]
+4btlib_hcicmd_user_passkey_request_neg_reply
+btm_process_user_passkey_notify_evt
+btm_process_user_passkey_req_evt
+btm_process_link_key_notify_evt
+btm_security_user_passkey_notify
+btm_security_user_passkey_req
+btm_security_user_passkey_input_timeout_handler
+btm_security_user_passkey_input_timer_release
+btm_security_link_key_notify
+(d%x) %s: curr request %p/%d total_request_num %d cb %p
+(d%x) %s: invalid total_record_handle %d curr %d
+(d%x) %s: invalid curr_list_size %d + %d total %d
+btif adv report: type %d addr %d %02x:%02x:***:%02x data %d %02x%02x%02x rssi %d
+audio buf size[%d] capture buf size[%d] total available space[%d]
+ota_init_flash: norflash_api register failed,ret = %d.
+../../services/nv_section/factory_section/factory_section.c
+wifi factory magic error:0x%x
+wifi factory version error:%d
+wifi factory crc error.
+factory_section_xtal_fcap_set: erase failed! ret = %d.
+factory_section_xtal_fcap_set: write failed! ret = %d.
+factory_section_set_ble_address
+factory_section_set_bt_address
+factory_section_set_bt_name
+factory_section_open
+factory_callback
+tmpLinkKey:
+silent ota mailbox alloc error
+create ota mailbox fail!
+create ota thread fail!
+ota_thread
+ota_do_read_flash
+ota_mailbox_heap_malloc
+ota_do_write_flash
+handle_ota_read_flash
+handle_ota_write_flash
+ota_mailbox
+ %s bootmode=%d, not send msg(%d).
+../../apps/factory/app_factory_bt.cpp
+app_factorymode_CmgrCallback
+APP factory:LE test end, status=%d, packet_received =%d
+app factory: timeout =%d
+app_factorymode_bt_create_connect
+app_factorymode_bt_InquiryResult_add
+app_factorymode_bt_xtalrangetest
+app_factorymode_bt_signalingtest
+APP factory:BT non-singnalint test end, status=0x%x, packet_received =%d,hec error =%d, crc error=%d
+app_factory_enter_le_rx_test
+APP Factory:LERX test to=%d, remote_tx_nb=%d, rx_channel=%d, phy=%d,mod id=%d
+app_factory_enter_le_tx_test
+APP Factory:LETX test to=%d, tx_channel=%d, data len=%d, payl_type=%d, phy=%d
+app_factory_enter_le_continueous_tx_test
+APP Factory:LETX continueous test, tx_channel=%d, data len=%d, payl_type=%d, phy=%d
+app_factory_enter_le_continueous_rx_test
+APP Factory:LERX continueous test,  rx_channel=%d, phy=%d,mod id=%d
+APP Factory: read LE rx test done=%d, received nb=%d, remote tx nb=%d
+APP Factory: BT rx test done=%d, recv nb=%d, hec nb=%d, crc nb=%d
+APP Factory: rx test success, PER=%d/%d
+APP Factory: rx test fail, rxnb =%d, remote_tx_nb=%d
+APP Factory: BT non-singnaling test 0091
+APP Factory: BT non-singnaling test 0094
+app_factorymode_bt_nosignalingtest
+app_factorymode_bt_xtalcalib_proc
+app_factorymode_bt_xtalcalib
+bt function key
+APP_FACTORY_TIMER
+../../apps/factory/app_factory.cpp
+%s isInFactoryFreqCalibMode=%d
+app_factorymode_status_indication
+app_factorymode_enter
+app_factorymode_key_init
+app_factorymode_test_key_init
+app_factorymode_init mode:%x
+../../apps/factory/app_factory_audio.cpp
+app_factorymode_audioloop work:%d op:%d freq:%d
+app_factorymode_audioloop on
+app_factorymode_audioloop off
+SPEECH MALLOC MEM: total - %d, used - %d, max_used - %d.
+[AUD][DECODER][DEINIT] heap info: total - %d, used - %d, max_used - %d.
+sbc insert seq %d totalsub %d
+[AUD][DECODER][AAC] deinit MEM: total - %d, used - %d, max_used - %d.
+total_size[%u] free_cnt[%u] free_size[%u] free_biggest_size[%u]
+XRM_RING_OTA
+%s ERROR!! bt local name in factory nv is NULL!! retry times =%d
+xjxr_spp_ota_init
+xr_gatt_server_send_message_multi
+xr_gatt_server_send_message_starrynet
+xr_gatt_server_send_message_emergency
+xr_gatt_server_set_desc
+xr_gatt_server_send_message
+xr_gatt_server_send_message_multi
+xr_gatt_server_send_message_starrynet
+xr_gatt_server_send_message_external
+xr_gatt_server_send_message_emergency
+app_add_xr_gatt_server %d
+xr_gatt_server_connect_handler
+xr_gatt_server_disconnect_handler
+xr_gatt_server_mtu_changed
+xr_gatt_server_con_para_update
+app_xr_gatt_server_msg_receviced
+app_xr_gatt_server_send_message_multi
+app_xr_gatt_server_send_message
+app_xr_gatt_server_msg_multi_receviced
+app_xr_gatt_server_send_result_cb
+app_xr_gatt_server_send_multi_result_cb
+app_xr_gatt_server_send_starrynet_result_cb
+app_xr_gatt_server_send_external_result_cb
+app_xr_gatt_server_send_emeragncy_result_cb
+app_xr_gatt_server_send_message_common
+gatt_server disconnected
+gatt_server connected
+_xr_gatt_server_deinit
+_xr_gatt_server_init returns %d start handle is %d
+_xr_gatt_server_init uid %d shdl %d status 0x%x
+start key data
+end key data
+XR_GATT_SERVER_MULTI_READ_VAL
+XR_GATT_SERVER_UNICON_VAL
+xr_gatt_server_gatt_event_sent_cb_handler
+xr_gatt_server_cb_att_event_get
+xr_gatt_server_cb_att_info_get
+%s gatt cli is invalid!
+GATT_SVC_DEVICE_INFO
+GATT_SVC_BATTERY_SERVICE
+GATT_SVC_HID
+GATT_CHAR_REPORT nb_att % d att_type 0x%x 
+%s advlen:%d rsplen:%d adv_type = %d
+xjxr_adapter_bt_adv_stop
+xjxr_adapter_bt_adv_start
+app_poweron_finished
+app_poweron_scan
+app_poweron_normal
+app_bt_key
+app_bt_key_shutdown
+!!!!!ENGINEER_MODE!!!!!
+__ota_upgrade_log_start: %p length: 0x%x
+__factory_start: %p length: 0x%x
+Initiative REBOOT happens!!!
+PWR KEY DITHER!
+app_poweron_key_init
+app_key_init
+power on case:%d
+power on: normal
+power on: both scan
+power on: finished
+kfifo_init : len %d not power of 2!!!!!
+mmi_result_clear
+mmi_result
+XJXR_IS_MONKEY=No
+__factory_start=0x303FF000
+OTA_CODE_OFFSET=0x10000
+OTA_REMAP_OFFSET=0x400000/2-0x10000

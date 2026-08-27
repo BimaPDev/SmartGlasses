@@ -1,0 +1,13 @@
+audio/click.aac
+audio/connectSucc.aac
+audio/disconnect.aac
+audio/msg.aac
+audio/unlock.aac
+audio/screenOff.aac
+audio/AsistDisconnected.aac
+audio/connSucTTS.aac
+audio/wozai441.aac
+audio/ei441.aac
+audio/phone_8k.aac
+audio/phone_16k.aac
+audio/screenshot.aac
