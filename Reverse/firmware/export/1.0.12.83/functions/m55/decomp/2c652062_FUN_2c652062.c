@@ -1,0 +1,12 @@
+/* FUN_2c652062 @ 0x2c652062 */
+
+undefined4 FUN_2c652062(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  undefined4 uStack_c;
+  
+  uStack_c = param_2;
+  func_0x2c65f050(param_1,*(undefined4 *)(param_4 + 8),&uStack_c,param_4,param_1);
+  return param_1;
+}
+

@@ -1,0 +1,15 @@
+/* FUN_2c58be00 @ 0x2c58be00 */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 * FUN_2c58be00(undefined4 *param_1)
+
+{
+  *param_1 = _LAB_2c58be1c;
+  if ((undefined4 *)param_1[1] != param_1 + 3) {
+                    /* WARNING: Subroutine does not return */
+    FUN_2c472680(0);
+  }
+  return param_1;
+}
+

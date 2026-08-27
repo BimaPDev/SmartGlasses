@@ -1,0 +1,85 @@
+/* FUN_2c648a74 @ 0x2c648a74 */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_2c648a74(int param_1,int param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  code *pcVar2;
+  uint uVar3;
+  undefined4 uVar4;
+  uint uVar5;
+  uint uVar6;
+  undefined4 uStack_20;
+  int iStack_1c;
+  
+  iStack_1c = *_LAB_2c648b70;
+  if (param_1 < 3) {
+    uVar4 = _DAT_2c648b7c;
+    if (*_LAB_2c648b70 != iStack_1c) goto LAB_2c648b6c;
+  }
+  else {
+    uVar3 = FUN_2c6684cc(*(undefined4 *)(param_2 + 4),param_2,param_3,0);
+    uVar5 = (uint)((ulonglong)_LAB_2c648b74 * (ulonglong)uVar3 >> 0x23);
+    uVar6 = uVar3 + uVar5 * -10;
+    if (uVar6 < 8) {
+      uVar5 = uVar6 + 0x53 + uVar5 * 8;
+      if (uVar5 < 0x8f) {
+        uVar6 = FUN_2c6684cc(*(undefined4 *)(param_2 + 8));
+        if (uVar6 < 2) {
+          uStack_20 = (undefined1 *)(uint)CONCAT11(1,(char)uVar5);
+          FUN_2c673bc8(&uStack_20,1);
+          FUN_2c4c0248((uint)uStack_20 & 0xff,1,uVar6 & 0xff);
+          uVar4 = FUN_2c648600(_LAB_2c648b78,uVar3,uVar6);
+          if (*_LAB_2c648b70 == iStack_1c) {
+            return uVar4;
+          }
+          goto LAB_2c648b6c;
+        }
+        uVar4 = _LAB_2c648b84;
+        if (*_LAB_2c648b70 != iStack_1c) goto LAB_2c648b6c;
+        goto code_r0x2c648600;
+      }
+      iVar1 = *_LAB_2c648b70;
+      uVar4 = _DAT_2c648b80;
+    }
+    else {
+      iVar1 = *_LAB_2c648b70;
+      uVar4 = _LAB_2c648b88;
+    }
+    if (iVar1 != iStack_1c) {
+LAB_2c648b6c:
+                    /* WARNING: Subroutine does not return */
+      stack_chk_fail();
+    }
+  }
+code_r0x2c648600:
+  iStack_1c = *DAT_2c648674;
+  uStack_20 = &stack0xfffffff4;
+  iVar1 = FUN_2c66de7c(_LAB_2c648678,0x800,uVar4);
+  if (-1 < iVar1) {
+    if (iVar1 < 0x7ff) {
+      if (iVar1 == 0) goto LAB_2c648630;
+    }
+    else {
+      iVar1 = 0x7ff;
+    }
+    if (*DAT_2c64867c == '\0') {
+      pcVar2 = (code *)FUN_2c648328();
+      if (pcVar2 != (code *)0x0) {
+        (*pcVar2)(_LAB_2c648678,iVar1);
+      }
+    }
+    else {
+      FUN_2c673a28(_LAB_2c648678,iVar1);
+    }
+  }
+LAB_2c648630:
+  if (*DAT_2c648674 == iStack_1c) {
+    return 0;
+  }
+                    /* WARNING: Subroutine does not return */
+  stack_chk_fail();
+}
+

@@ -1,0 +1,11 @@
+/* FUN_2c20a292 @ 0x2c20a292 */
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_2c20a292(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+

@@ -1,0 +1,19 @@
+/* FUN_2c4e6974 @ 0x2c4e6974 */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_2c4e6974(undefined4 param_1,undefined4 *param_2)
+
+{
+  int *piVar1;
+  int iVar2;
+  
+  piVar1 = _LAB_2c4e6a40;
+  if (*_LAB_2c4e6a40 == 0) {
+    iVar2 = FUN_2c478b68();
+    *piVar1 = iVar2;
+  }
+                    /* WARNING: Subroutine does not return */
+  TRACE(4,0x38,DAT_2c4e6a50,DAT_2c4e6a4c,DAT_2c4e6a48,DAT_2c4e6a44,*param_2);
+}
+

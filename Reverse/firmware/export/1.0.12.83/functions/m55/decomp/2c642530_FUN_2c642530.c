@@ -1,0 +1,11 @@
+/* FUN_2c642530 @ 0x2c642530 */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_2c642530(void)
+
+{
+                    /* WARNING: Subroutine does not return */
+  FUN_2c62c82c(4,_LAB_2c642550,0xbf,_LAB_2c64254c,_LAB_2c642548);
+}
+

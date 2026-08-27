@@ -1,0 +1,133 @@
+/* FUN_2c413f00 @ 0x2c413f00 */
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_2c413f00(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  ushort uVar1;
+  short sVar2;
+  short sVar3;
+  undefined1 uVar4;
+  undefined1 uVar5;
+  char cVar6;
+  int iVar7;
+  undefined4 uVar8;
+  undefined4 uVar9;
+  int iVar10;
+  int unaff_r4;
+  int iVar11;
+  int unaff_r5;
+  int iVar12;
+  int iVar13;
+  int unaff_r6;
+  undefined1 unaff_r7;
+  int iVar14;
+  
+  *(undefined1 *)(unaff_r5 + 0x11) = unaff_r7;
+  uVar4 = (undefined1)unaff_r5;
+  *(undefined1 *)(unaff_r4 + 0xd) = uVar4;
+  uVar1 = *(ushort *)(unaff_r4 + 0x16);
+  iVar14 = *(int *)(uVar1 + 0x78);
+  iVar11 = *(int *)(unaff_r6 + 0x14);
+  *(int *)(unaff_r5 + 0x54) = unaff_r5;
+  *(undefined4 *)(unaff_r6 + 0x14) = param_4;
+  uVar5 = (undefined1)uVar1;
+  *(undefined1 *)(unaff_r6 + 9) = uVar5;
+  cVar6 = (char)iVar14;
+  *(char *)(unaff_r5 + 0x1d) = cVar6;
+  *(char *)(unaff_r6 + 0x15) = (char)param_4;
+  *(undefined1 *)(iVar11 + 0xd) = uVar5;
+  iVar7 = *(int *)(unaff_r5 + 0x54);
+  *(char *)(param_1 + 0xe) = cVar6;
+  *(int *)(unaff_r6 + 0x24) = unaff_r5;
+  *(undefined1 *)(unaff_r6 + 0x15) = 0x74;
+  iVar10 = *(int *)(iVar11 + 0x74);
+  *(undefined1 *)(iVar11 + 9) = uVar4;
+  uVar1 = *(ushort *)(iVar11 + 0x26);
+  *(undefined1 *)(iVar10 + 0x16) = uVar4;
+  *(uint *)(unaff_r6 + 0x34) = (uint)uVar1;
+  uVar9 = *(undefined4 *)(unaff_r6 + 0x74);
+  *(char *)(iVar10 + 0x11) = cVar6;
+  *(char *)(iVar14 + 1) = (char)iVar7;
+  iVar7 = iVar7 + 0x20;
+  *(undefined1 *)(unaff_r5 + -0x2d) = 0x26;
+  iVar12 = *(int *)(unaff_r5 + 6);
+  *(int *)(iVar10 + 0x24) = iVar14;
+  iVar11 = *(int *)(iVar12 + 0x74);
+  iVar10 = *(int *)(iVar11 + 0x34);
+  *(char *)(iVar10 + 0x11) = cVar6;
+  *(char *)(iVar14 + 1) = (char)iVar7;
+  _Reserved6 = 0x65;
+  uRamfffffffc = (undefined1)uVar9;
+  uRam0000002d = uRamfffffffc;
+  *(char *)(iVar11 + 9) = (char)iVar12 + -0x3c;
+  *(char *)(iVar11 + 0x15) = (char)iVar10;
+  uVar9 = s_make_block_2c41536c._0_4_;
+  iVar12 = *(int *)(iVar11 + 100);
+  iVar13 = iVar12 + -0x21;
+  *(int *)(iVar7 * 2 + 0x44) = iVar7;
+  iVar11 = (int)*(short *)(iVar7 * 2 + iVar13);
+  *(int *)(uVar9 + 0x54) = iVar11;
+  *(undefined1 *)(iVar14 + 0x31) = 0x74;
+  *(char *)(iVar10 + 0x11) = cVar6 + ' ';
+  sVar2 = *(short *)(iVar13 * 2);
+  iVar14 = (int)sVar2;
+  *(char *)(iVar12 + -0x10) = (char)uVar9;
+  uVar8 = *(undefined4 *)(iVar11 + 0x14);
+  *(undefined4 *)(iVar12 + 0x33) = uVar9;
+  iVar7 = uVar9 << 1;
+  *(undefined4 *)(iVar11 + 0x44) = uVar8;
+  sVar3 = *(short *)(iVar11 + iVar13);
+  iVar10 = *(int *)(sVar3 + 4);
+  uVar8 = *(undefined4 *)(iVar12 + 0x23);
+  *(undefined4 *)(uVar9 + 0x14) = 0x74;
+  *(char *)(uVar9 + 0xd) = (char)iVar7;
+  iVar11 = (int)*(short *)(sVar3 * 2 + iVar13);
+  *(undefined1 *)(iVar11 + 0x11) = 0x74;
+  iVar12 = *(int *)(iVar11 + 0x44);
+  *(int *)(iVar10 + 0x24) = iVar14;
+  iVar10 = *(int *)(iVar12 + 0x74);
+  *(char *)(*(int *)(iVar10 + 0x34) + 1) = (char)sVar2;
+  *(int *)(uVar9 + 0x54) = iVar7;
+  iVar13 = *(int *)(iVar10 + 0x14);
+  *(int *)(iVar12 + 0x14) = iVar13;
+  iVar10 = *(int *)(iVar12 + 0x14);
+  *(int *)(iVar14 + 0x54) = iVar7;
+  *(char *)(iVar13 + 9) = (char)(iVar14 << 1);
+  *(int *)(iVar12 + 0x34) = iVar14;
+  uVar4 = (undefined1)iVar12;
+  *(undefined1 *)(iVar10 + 0xd) = uVar4;
+  iVar11 = *(int *)(iVar12 + 0x14);
+  *(int *)(iVar12 + 0x54) = iVar13;
+  uVar5 = (undefined1)uVar8;
+  *(undefined1 *)(iVar11 + 9) = uVar5;
+  iVar10 = (int)*(short *)(iVar12 * 2);
+  *(int *)(iVar13 + 0x14) = iVar14 << 1;
+  *(char *)(iVar13 + 0xd) = (char)iVar7;
+  *(undefined1 *)(iVar11 + 9) = uVar4;
+  uVar9 = *(undefined4 *)(iVar10 + 100);
+  *(undefined1 *)(iVar11 + 0x1d) = uVar4;
+  uVar4 = (undefined1)uVar9;
+  *(undefined1 *)(iVar10 + 0x1d) = uVar4;
+  *(undefined1 *)(iVar12 + 0x11) = uVar5;
+  *(int *)(iVar12 + 0x54) = iVar12;
+  iVar11 = (int)*(short *)(iVar12 * 2);
+  *(undefined1 *)(iVar10 + 9) = uVar4;
+  uVar9 = *(undefined4 *)(iVar11 + 0x74);
+  *(int *)(iVar11 + 0x14) = iVar11;
+  *(int *)(iVar11 + 0x54) = iVar10;
+  *(undefined4 *)(iVar10 + 0x24) = uVar9;
+  iVar10 = *(int *)(iVar11 + 0x74);
+  iVar7 = *(int *)(iVar10 + 0x34);
+  *(int *)(iVar11 + 0x14) = iVar11;
+  *(int *)(iVar11 + 0x54) = iVar7;
+  *(undefined4 *)(iVar7 + 0x44) = uVar9;
+  *(undefined4 *)(iVar11 + 0x34) = uVar9;
+  iVar7 = *(int *)(iVar10 + 100);
+  *(char *)(iVar7 + 0x19) = (char)*(undefined2 *)(iVar13 + iVar7);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+

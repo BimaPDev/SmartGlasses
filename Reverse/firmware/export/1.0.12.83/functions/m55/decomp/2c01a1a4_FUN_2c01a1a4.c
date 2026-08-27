@@ -1,0 +1,718 @@
+/* FUN_2c01a1a4 @ 0x2c01a1a4 */
+
+void FUN_2c01a1a4(int param_1,byte *param_2)
+
+{
+  byte bVar1;
+  byte bVar2;
+  byte bVar3;
+  byte bVar4;
+  ushort uVar5;
+  ushort uVar6;
+  undefined1 auVar7 [16];
+  ushort *puVar8;
+  int iVar9;
+  uint uVar10;
+  byte *pbVar11;
+  int *piVar12;
+  byte *pbVar13;
+  int iVar14;
+  uint uVar15;
+  undefined4 in_cr6;
+  undefined4 in_cr7;
+  undefined1 in_q3 [16];
+  undefined1 auVar16 [16];
+  byte *local_74;
+  int *local_70;
+  ushort *local_6c;
+  int *local_60;
+  uint local_58;
+  
+  coprocessor_load(0xe,in_cr6,param_1 + 0x294);
+  coprocessor_load(0xe,in_cr7,&stack0x000001c8);
+  auVar16._8_8_ = DAT_2c01a444;
+  auVar16._0_8_ = DAT_2c01a43c;
+  auVar16 = VectorAdd(in_q3,auVar16,2);
+  coprocessor_store(0xe,in_cr7,param_1 + 0x264);
+  coprocessor_load(0xe,in_cr6,param_1 + 0x29c);
+  coprocessor_load(0xe,in_cr7,&stack0x000001b8);
+  auVar7._8_8_ = DAT_2c01a444;
+  auVar7._0_8_ = DAT_2c01a43c;
+  VectorAdd(auVar16,auVar7,2);
+  coprocessor_store(0xe,in_cr7,param_1 + 0x274);
+  bVar2 = *(byte *)(param_1 + 4);
+  if ((bVar2 != 0) && (bVar3 = *(byte *)(param_1 + 6), bVar3 != 0)) {
+    local_60 = (int *)(param_1 + 0xa4);
+    local_58 = 0;
+    do {
+      bVar4 = *(byte *)(param_1 + 5);
+      uVar15 = 0;
+      pbVar11 = (byte *)(param_1 + 0x94) + bVar4;
+      local_70 = local_60;
+      local_74 = (byte *)(param_1 + 0x94);
+      local_6c = (ushort *)(param_1 + 100);
+      do {
+        puVar8 = local_6c;
+        piVar12 = local_70;
+        pbVar13 = local_74;
+        if (bVar4 != 0) {
+          do {
+            while( true ) {
+              uVar6 = *puVar8;
+              if (uVar6 == 0) break;
+              uVar5 = *(ushort *)(param_1 + 8);
+              bVar1 = *pbVar13;
+              iVar14 = *(int *)(param_1 * -3 + -0x22c + (int)pbVar13 * 4);
+              iVar9 = bVar1 - 1;
+              *(ushort *)(param_1 + 8) = uVar5 + bVar1;
+              switch(uVar5 & 7) {
+              case 1:
+                switch(iVar9) {
+                case 0:
+                  uVar10 = ((*param_2 & 0x7f) >> 6) * 0x8000 + 0x4000;
+                  break;
+                case 1:
+                  uVar10 = ((*param_2 & 0x7f) >> 5) * 0x8000 + 0x4000;
+                  break;
+                case 2:
+                  uVar10 = ((*param_2 & 0x7f) >> 4) * 0x8000 + 0x4000;
+                  break;
+                case 3:
+                  uVar10 = ((*param_2 & 0x7f) >> 3) * 0x8000 + 0x4000;
+                  break;
+                case 4:
+                  uVar10 = ((*param_2 & 0x7f) >> 2) * 0x8000 + 0x4000;
+                  break;
+                case 5:
+                  uVar10 = ((*param_2 & 0x7f) >> 1) * 0x8000 + 0x4000;
+                  break;
+                case 6:
+                  uVar10 = (*param_2 & 0x7f) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 7:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x7f) << 0x18) >> 0x17) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 8:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x7f) << 0x18) >> 0x16) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 9:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x7f) << 0x18) >> 0x15) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 10:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x7f) << 0x18) >> 0x14) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xb:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x7f) << 0x18) >> 0x13) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xc:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x7f) << 0x18) >> 0x12) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xd:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x7f) << 0x18) >> 0x11) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xe:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x7f) << 0x18) >> 0x10) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xf:
+                  uVar10 = ((param_2[2] & 0xffff80) << 8 | (uint)param_2[1] << 0x10 |
+                           (*param_2 & 0x7f) << 0x18) + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                default:
+                  uVar10 = 0x4000;
+                }
+                break;
+              case 2:
+                switch(iVar9) {
+                case 0:
+                  uVar10 = ((*param_2 & 0x3f) >> 5) * 0x8000 + 0x4000;
+                  break;
+                case 1:
+                  uVar10 = ((*param_2 & 0x3f) >> 4) * 0x8000 + 0x4000;
+                  break;
+                case 2:
+                  uVar10 = ((*param_2 & 0x3f) >> 3) * 0x8000 + 0x4000;
+                  break;
+                case 3:
+                  uVar10 = ((*param_2 & 0x3f) >> 2) * 0x8000 + 0x4000;
+                  break;
+                case 4:
+                  uVar10 = ((*param_2 & 0x3f) >> 1) * 0x8000 + 0x4000;
+                  break;
+                case 5:
+                  uVar10 = (*param_2 & 0x3f) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 6:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x3f) << 0x18) >> 0x17) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 7:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x3f) << 0x18) >> 0x16) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 8:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x3f) << 0x18) >> 0x15) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 9:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x3f) << 0x18) >> 0x14) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 10:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x3f) << 0x18) >> 0x13) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xb:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x3f) << 0x18) >> 0x12) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xc:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x3f) << 0x18) >> 0x11) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xd:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x3f) << 0x18) >> 0x10) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xe:
+                  uVar10 = ((param_2[2] & 0xffff80) << 8 | (uint)param_2[1] << 0x10 |
+                           (*param_2 & 0x3f) << 0x18) + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xf:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 0x3f) << 0x18) >> 0xe) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                default:
+                  uVar10 = 0x4000;
+                }
+                break;
+              case 3:
+                switch(iVar9) {
+                case 0:
+                  uVar10 = ((*param_2 & 0x1f) >> 4) * 0x8000 + 0x4000;
+                  break;
+                case 1:
+                  uVar10 = ((*param_2 & 0x1f) >> 3) * 0x8000 + 0x4000;
+                  break;
+                case 2:
+                  uVar10 = ((*param_2 & 0x1f) >> 2) * 0x8000 + 0x4000;
+                  break;
+                case 3:
+                  uVar10 = ((*param_2 & 0x1f) >> 1) * 0x8000 + 0x4000;
+                  break;
+                case 4:
+                  uVar10 = (*param_2 & 0x1f) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 5:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x1f) << 0x18) >> 0x17) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 6:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x1f) << 0x18) >> 0x16) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 7:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x1f) << 0x18) >> 0x15) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 8:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x1f) << 0x18) >> 0x14) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 9:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x1f) << 0x18) >> 0x13) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 10:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x1f) << 0x18) >> 0x12) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xb:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x1f) << 0x18) >> 0x11) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xc:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0x1f) << 0x18) >> 0x10) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xd:
+                  uVar10 = ((param_2[2] & 0xffff80) << 8 | (uint)param_2[1] << 0x10 |
+                           (*param_2 & 0x1f) << 0x18) + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xe:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 0x1f) << 0x18) >> 0xe) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xf:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 0x1f) << 0x18) >> 0xd) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                default:
+                  uVar10 = 0x4000;
+                }
+                break;
+              case 4:
+                switch(iVar9) {
+                case 0:
+                  uVar10 = ((*param_2 & 0xf) >> 3) * 0x8000 + 0x4000;
+                  break;
+                case 1:
+                  uVar10 = ((*param_2 & 0xf) >> 2) * 0x8000 + 0x4000;
+                  break;
+                case 2:
+                  uVar10 = ((*param_2 & 0xf) >> 1) * 0x8000 + 0x4000;
+                  break;
+                case 3:
+                  uVar10 = (*param_2 & 0xf) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 4:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0xf) << 0x18) >> 0x17) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 5:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0xf) << 0x18) >> 0x16) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 6:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0xf) << 0x18) >> 0x15) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 7:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0xf) << 0x18) >> 0x14) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 8:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0xf) << 0x18) >> 0x13) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 9:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0xf) << 0x18) >> 0x12) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 10:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0xf) << 0x18) >> 0x11) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xb:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 0xf) << 0x18) >> 0x10) * 0x8000
+                           + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xc:
+                  uVar10 = ((param_2[2] & 0xffff80) << 8 | (uint)param_2[1] << 0x10 |
+                           (*param_2 & 0xf) << 0x18) + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xd:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 0xf) << 0x18) >> 0xe) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xe:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 0xf) << 0x18) >> 0xd) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xf:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 0xf) << 0x18) >> 0xc) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                default:
+                  uVar10 = 0x4000;
+                }
+                break;
+              case 5:
+                switch(iVar9) {
+                case 0:
+                  uVar10 = ((*param_2 & 7) >> 2) * 0x8000 + 0x4000;
+                  break;
+                case 1:
+                  uVar10 = ((*param_2 & 7) >> 1) * 0x8000 + 0x4000;
+                  break;
+                case 2:
+                  uVar10 = (*param_2 & 7) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 3:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 7) << 0x18) >> 0x17) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 4:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 7) << 0x18) >> 0x16) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 5:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 7) << 0x18) >> 0x15) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 6:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 7) << 0x18) >> 0x14) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 7:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 7) << 0x18) >> 0x13) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 8:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 7) << 0x18) >> 0x12) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 9:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 7) << 0x18) >> 0x11) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 10:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 7) << 0x18) >> 0x10) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xb:
+                  uVar10 = ((param_2[2] & 0xffff80) << 8 | (uint)param_2[1] << 0x10 |
+                           (*param_2 & 7) << 0x18) + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xc:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 7) << 0x18) >> 0xe) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xd:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 7) << 0x18) >> 0xd) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xe:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 7) << 0x18) >> 0xc) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xf:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 7) << 0x18) >> 0xb) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                default:
+                  uVar10 = 0x4000;
+                }
+                break;
+              case 6:
+                switch(iVar9) {
+                case 0:
+                  uVar10 = ((*param_2 & 3) >> 1) * 0x8000 + 0x4000;
+                  break;
+                case 1:
+                  uVar10 = (*param_2 & 3) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 2:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 3) << 0x18) >> 0x17) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 3:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 3) << 0x18) >> 0x16) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 4:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 3) << 0x18) >> 0x15) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 5:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 3) << 0x18) >> 0x14) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 6:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 3) << 0x18) >> 0x13) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 7:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 3) << 0x18) >> 0x12) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 8:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 3) << 0x18) >> 0x11) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 9:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 3) << 0x18) >> 0x10) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 10:
+                  uVar10 = ((param_2[2] & 0xffff80) << 8 | (uint)param_2[1] << 0x10 |
+                           (*param_2 & 3) << 0x18) + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xb:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 3) << 0x18) >> 0xe) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xc:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 3) << 0x18) >> 0xd) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xd:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 3) << 0x18) >> 0xc) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xe:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 3) << 0x18) >> 0xb) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xf:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 3) << 0x18) >> 10) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                default:
+                  uVar10 = 0x4000;
+                }
+                break;
+              case 7:
+                switch(iVar9) {
+                case 0:
+                  uVar10 = (*param_2 & 1) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 1:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 1) << 0x18) >> 0x17) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 2:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 1) << 0x18) >> 0x16) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 3:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 1) << 0x18) >> 0x15) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 4:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 1) << 0x18) >> 0x14) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 5:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 1) << 0x18) >> 0x13) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 6:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 1) << 0x18) >> 0x12) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 7:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 1) << 0x18) >> 0x11) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 8:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (*param_2 & 1) << 0x18) >> 0x10) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 9:
+                  uVar10 = ((param_2[2] & 0xffff80) << 8 | (uint)param_2[1] << 0x10 |
+                           (*param_2 & 1) << 0x18) + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 10:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 1) << 0x18) >> 0xe) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xb:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 1) << 0x18) >> 0xd) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xc:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 1) << 0x18) >> 0xc) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xd:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 1) << 0x18) >> 0xb) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xe:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 1) << 0x18) >> 10) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                case 0xf:
+                  uVar10 = (((uint)param_2[2] << 8 | (uint)param_2[1] << 0x10 |
+                            (*param_2 & 1) << 0x18) >> 9) * 0x8000 + 0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                default:
+                  uVar10 = 0x4000;
+                }
+                break;
+              default:
+                switch(bVar1) {
+                case 1:
+                  uVar10 = (uint)(*param_2 >> 7) * 0x8000 + 0x4000;
+                  break;
+                case 2:
+                  uVar10 = (uint)(*param_2 >> 6) * 0x8000 + 0x4000;
+                  break;
+                case 3:
+                  uVar10 = (uint)(*param_2 >> 5) * 0x8000 + 0x4000;
+                  break;
+                case 4:
+                  uVar10 = (uint)(*param_2 >> 4) * 0x8000 + 0x4000;
+                  break;
+                case 5:
+                  uVar10 = (uint)(*param_2 >> 3) * 0x8000 + 0x4000;
+                  break;
+                case 6:
+                  uVar10 = (uint)(*param_2 >> 2) * 0x8000 + 0x4000;
+                  break;
+                case 7:
+                  uVar10 = (uint)(*param_2 >> 1) * 0x8000 + 0x4000;
+                  break;
+                case 8:
+                  uVar10 = (uint)*param_2 * 0x8000 + 0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 9:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (uint)*param_2 << 0x18) >> 0x17) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 10:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (uint)*param_2 << 0x18) >> 0x16) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xb:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (uint)*param_2 << 0x18) >> 0x15) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xc:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (uint)*param_2 << 0x18) >> 0x14) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xd:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (uint)*param_2 << 0x18) >> 0x13) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xe:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (uint)*param_2 << 0x18) >> 0x12) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0xf:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (uint)*param_2 << 0x18) >> 0x11) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 1;
+                  break;
+                case 0x10:
+                  uVar10 = (((uint)param_2[1] << 0x10 | (uint)*param_2 << 0x18) >> 0x10) * 0x8000 +
+                           0x4000;
+                  param_2 = param_2 + 2;
+                  break;
+                default:
+                  uVar10 = 0x4000;
+                }
+              }
+              pbVar13 = pbVar13 + 1;
+              *piVar12 = (iVar14 >> 1) * ((uVar10 / uVar6) * 2 + -0x8000);
+              puVar8 = puVar8 + 1;
+              piVar12 = piVar12 + 1;
+              if (pbVar11 == pbVar13) goto LAB_2c01a4e0;
+            }
+            pbVar13 = pbVar13 + 1;
+            *piVar12 = 0;
+            puVar8 = puVar8 + 1;
+            piVar12 = piVar12 + 1;
+          } while (pbVar11 != pbVar13);
+        }
+LAB_2c01a4e0:
+        uVar15 = uVar15 + 1;
+        pbVar11 = pbVar11 + 8;
+        local_6c = local_6c + 8;
+        local_70 = local_70 + 8;
+        local_74 = local_74 + 8;
+      } while (uVar15 != bVar3);
+      local_60 = local_60 + 0x10;
+      local_58 = local_58 + 1;
+    } while (local_58 != bVar2);
+  }
+  return;
+}
+

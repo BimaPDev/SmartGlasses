@@ -1,0 +1,14 @@
+/* FUN_2c542dc4 @ 0x2c542dc4 */
+
+void FUN_2c542dc4(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+{
+  *param_1 = param_3;
+  if (*(int *)(param_4 + 8) != param_4 + 0x10) {
+                    /* WARNING: Subroutine does not return */
+    FUN_2c472680(0);
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_2c472680(0,param_1);
+}
+

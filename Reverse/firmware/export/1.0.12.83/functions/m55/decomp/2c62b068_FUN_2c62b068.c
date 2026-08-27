@@ -1,0 +1,42 @@
+/* FUN_2c62b068 @ 0x2c62b068 */
+
+undefined4 FUN_2c62b068(undefined4 param_1)
+
+{
+  switch(param_1) {
+  case 3:
+  case 6:
+    return 0x1fff;
+  default:
+    return 0;
+  case 0x20:
+    return 0xffffffff;
+  case 0x22:
+  case 0x30:
+  case 0x36:
+  case 0x44:
+  case 0x47:
+  case 0x4d:
+  case 0x52:
+  case 0x55:
+    return 0xff000000;
+  case 0x25:
+  case 0x29:
+  case 0x31:
+  case 0x37:
+  case 0x45:
+  case 0x46:
+  case 0x4e:
+  case 0x53:
+  case 0x56:
+  case 0x60:
+    return 0xff;
+  case 0x33:
+    return 0xf;
+  case 0x57:
+    return DAT_2c62b104;
+  case 0x6c:
+    return 0x100;
+  }
+}
+

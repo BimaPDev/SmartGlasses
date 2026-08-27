@@ -1,0 +1,13 @@
+/* FUN_2c4e4d66 @ 0x2c4e4d66 */
+
+int FUN_2c4e4d66(int *param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar1 = (**(code **)(*param_1 + 0x24))();
+  iVar2 = (**(code **)(*param_1 + 0x20))(param_1);
+  return iVar1 - iVar2;
+}
+

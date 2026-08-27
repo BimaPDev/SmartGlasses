@@ -1,0 +1,33 @@
+/* FUN_2c54f804 @ 0x2c54f804 */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 * FUN_2c54f804(undefined4 *param_1)
+
+{
+  int *piVar1;
+  int *piVar2;
+  int *piVar3;
+  
+  piVar3 = (int *)param_1[8];
+  *param_1 = _LAB_2c54f844;
+  piVar1 = (int *)param_1[7];
+  if ((int *)param_1[7] != piVar3) {
+    do {
+      piVar2 = piVar1 + 0x2f;
+      (**(code **)(*piVar1 + 4))(piVar1);
+      piVar1 = piVar2;
+    } while (piVar3 != piVar2);
+    piVar3 = (int *)param_1[7];
+  }
+  if (piVar3 != (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_2c472680(0,piVar3);
+  }
+  if ((undefined4 *)param_1[1] != param_1 + 3) {
+                    /* WARNING: Subroutine does not return */
+    FUN_2c472680(0);
+  }
+  return param_1;
+}
+

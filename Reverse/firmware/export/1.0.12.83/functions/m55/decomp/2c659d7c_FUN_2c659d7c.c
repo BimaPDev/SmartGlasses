@@ -1,0 +1,54 @@
+/* FUN_2c659d7c @ 0x2c659d7c */
+
+int FUN_2c659d7c(undefined1 *param_1,undefined4 param_2,uint param_3,uint param_4,int param_5,
+                uint param_6,char param_7)
+
+{
+  int extraout_r2;
+  uint uVar1;
+  int iVar2;
+  uint uVar3;
+  undefined1 *puVar4;
+  undefined8 uVar5;
+  
+  uVar5 = CONCAT44(param_4,param_3);
+  puVar4 = param_1;
+  if (param_7 == '\0') {
+    if ((param_6 & 0x4a) == 0x40) {
+      do {
+        uVar1 = param_3 & 7;
+        param_3 = param_3 >> 3 | param_4 << 0x1d;
+        param_4 = param_4 >> 3;
+        puVar4 = puVar4 + -1;
+        *puVar4 = *(undefined1 *)(uVar1 + param_5 + 4);
+      } while (param_3 != 0 || param_4 != 0);
+    }
+    else {
+      if ((param_6 & 0x4000) == 0) {
+        iVar2 = 4;
+      }
+      else {
+        iVar2 = 0x14;
+      }
+      do {
+        uVar1 = param_3 & 0xf;
+        param_3 = param_3 >> 4 | param_4 << 0x1c;
+        param_4 = param_4 >> 4;
+        puVar4 = puVar4 + -1;
+        *puVar4 = *(undefined1 *)(iVar2 + param_5 + uVar1);
+      } while (param_3 != 0 || param_4 != 0);
+    }
+  }
+  else {
+    do {
+      uVar3 = (uint)((ulonglong)uVar5 >> 0x20);
+      uVar1 = (uint)uVar5;
+      FUN_2c672ae8(uVar1,uVar3,10,0);
+      puVar4 = puVar4 + -1;
+      *puVar4 = *(undefined1 *)(extraout_r2 + param_5 + 4);
+      uVar5 = FUN_2c672ae8(uVar1,uVar3,10,0);
+    } while (uVar3 != 0 || uVar3 < (9 < uVar1));
+  }
+  return (int)param_1 - (int)puVar4;
+}
+

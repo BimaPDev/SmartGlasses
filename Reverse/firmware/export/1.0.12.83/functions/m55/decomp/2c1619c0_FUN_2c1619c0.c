@@ -1,0 +1,152 @@
+/* FUN_2c1619c0 @ 0x2c1619c0 */
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_2c1619c0(undefined4 param_1,undefined2 param_2,int param_3,int param_4)
+
+{
+  ushort uVar1;
+  short sVar2;
+  undefined2 uVar3;
+  undefined1 uVar4;
+  undefined1 uVar5;
+  int iVar6;
+  undefined4 uVar7;
+  int iVar8;
+  int unaff_r4;
+  int iVar9;
+  int unaff_r5;
+  uint uVar10;
+  int iVar11;
+  int unaff_r6;
+  undefined4 uVar12;
+  undefined4 uVar13;
+  code *UNRECOVERED_JUMPTABLE;
+  undefined4 uStack00000000;
+  undefined4 uStack00000140;
+  undefined4 uStack00000160;
+  undefined4 uStack000001a0;
+  
+  *(undefined2 *)(unaff_r5 + 0x3e) = param_2;
+  *(int *)(unaff_r4 + 0x40) = unaff_r5;
+  uVar1 = *(ushort *)(unaff_r4 + 0x3e);
+  uVar10 = (uint)uVar1;
+  iVar8 = unaff_r4 + -0x76;
+  uVar4 = (undefined1)uVar1;
+  *(undefined1 *)(uVar10 + 0xd) = uVar4;
+  sVar2 = *(short *)(iVar8 + uVar10);
+  *(undefined1 *)(uVar10 + 0x15) = uVar4;
+  *(int *)(unaff_r6 + 0x54) = iVar8;
+  iVar6 = (int)sVar2 << 1;
+  *(char *)(uVar10 + 0x19) = (char)iVar8;
+  uVar12 = *(undefined4 *)(param_4 + 0x54);
+  *(int *)(unaff_r6 + 0x74) = param_4;
+  *(int *)(unaff_r4 + -0x62) = unaff_r6;
+  *(char *)(unaff_r4 + -0x65) = (char)param_4;
+  *(char *)(uVar10 + 9) = (char)uVar12;
+  *(char *)(uVar10 + 0x19) = (char)iVar8;
+  *(char *)(param_4 + 0x15) = (char)*(undefined4 *)(unaff_r4 + -0x32);
+  *(int *)(unaff_r4 + -0x62) = unaff_r6;
+  *(undefined1 *)(uVar10 + 0xd) = uVar4;
+  sVar2 = *(short *)(iVar8 + uVar10);
+  *(int *)(uVar10 + 0x14) = iVar6;
+  *(int *)(uVar10 + 0x44) = unaff_r6;
+  *(int *)(uVar10 + 0x54) = iVar8;
+  iVar8 = iVar8 * 2;
+  *(char *)(unaff_r6 + 0x15) = (char)iVar6;
+  *(char *)(uVar10 + 0x11) = (char)*(undefined4 *)(uVar10 + 100);
+  *(undefined4 *)(*(int *)(uVar10 + 0x74) + 0x60) = 0x67;
+  iRam000000a1 = uVar10 * 2;
+  iVar6 = *(int *)(uVar10 + 100);
+  *(char *)(uVar10 + 0x11) = (char)iVar6;
+  *(int *)(iVar8 + 100) = (int)sVar2;
+  *(int *)(iRam000000a1 + 0x34) = iVar6;
+  sVar2 = *(short *)(unaff_r6 + uVar10);
+  iVar11 = (int)sVar2;
+  *(undefined1 *)(uVar10 + 0xd) = uVar4;
+  *(ushort *)(iVar6 + uVar10) = uVar1;
+  iVar6 = iRam2c1616ac;
+  *(undefined2 *)(iRam2c1616ac + 0x3a) = 0x3a;
+  *(char *)(iVar6 + 0x3a) = (char)sVar2;
+  *(undefined4 *)(iRam000000a1 + 0x40) = 0x3a;
+  uVar12 = uRam2c1616b0;
+  iVar6 = (int)*(short *)(iVar6 + 0x3a);
+  iVar9 = iVar11 * 2;
+  *(char *)(iVar6 + 9) = (char)iVar8;
+  *(int *)(iVar6 + 0x14) = iVar9;
+  *(int *)(iVar11 + 0x54) = iVar6;
+  uVar7 = *(undefined4 *)(iVar6 + 0x50);
+  *(int *)(iVar11 + 0x74) = iVar8;
+  *(char *)(iVar6 + 4) = (char)uVar7;
+  *(int *)(iVar11 + 0x54) = iVar9;
+  *(int *)(iVar11 + 0x54) = iVar9;
+  *(undefined4 *)(iVar6 + 0x60) = uVar7;
+  iVar6 = iVar11 * 4;
+  *(char *)(iVar9 + 0x19) = (char)iVar6;
+  uVar4 = (undefined1)uVar12;
+  *(undefined1 *)(iVar8 + 1) = uVar4;
+  *(undefined1 *)(iVar9 + 0xd) = uVar4;
+  *(char *)(iVar9 + 0x11) = (char)*(undefined4 *)(iVar9 + 100);
+  *(undefined4 *)(iVar6 + 0x60) = 0x74;
+  uStack00000000 = *(undefined4 *)(iVar6 + 0x14);
+  iVar6 = iVar11 * 4;
+  *(int *)(iVar6 + 1) = iVar11;
+  *(undefined1 *)(iVar6 + -2) = 0x74;
+  *(undefined1 *)(iVar9 + 9) = uVar4;
+  *(char *)(iVar9 + 0x19) = (char)iVar6 + -0x13;
+  uRam00000089 = (undefined1)*(undefined4 *)(iVar6 + 0x31);
+  iVar9 = *(int *)(iVar9 + 0x54);
+  uVar3 = *(undefined2 *)(iVar9 * 2);
+  iVar8 = *(int *)(iVar9 + 0x14);
+  *(undefined1 *)(iVar11 + 0x11) = 0x74;
+  *(int *)(iVar9 + 0x30) = iVar11;
+  *(char *)(iVar9 + 0x19) = (char)iVar8;
+  iVar6 = iRam000000b8;
+  iVar9 = *(int *)(iVar9 + 0x14);
+  uVar4 = (undefined1)uVar3;
+  *(undefined1 *)(iVar9 + 0xd) = uVar4;
+  *(undefined1 *)(iVar9 + 0xd) = uVar4;
+  uVar12 = *(undefined4 *)(iVar8 + 0x60);
+  iVar9 = *(int *)(iVar11 + 0x44);
+  iVar8 = iVar9 * 2;
+  *(int *)(iVar8 + 0x14) = param_3 + -0xdc;
+  *(char *)(iVar8 + 0x10) = (char)uVar12;
+  *(int *)(iVar8 + 0x14) = iVar11;
+  uVar4 = (undefined1)*(undefined4 *)(iVar8 + 0x34);
+  *(undefined1 *)(iVar8 + 0x11) = uVar4;
+  uVar5 = (undefined1)iVar6;
+  *(undefined1 *)(iVar9 + 9) = uVar5;
+  uVar3 = *(undefined2 *)(iVar6 + iVar9);
+  iVar8 = *(int *)(iVar9 + 0x14);
+  *(undefined1 *)(iVar11 + 0x11) = uVar4;
+  iVar6 = *(int *)(iVar11 + 4);
+  *(undefined1 *)(iVar9 + 0x1d) = uVar5;
+  iVar9 = *(int *)(iVar9 + 0x14);
+  uVar13 = *(undefined4 *)(iVar6 + 0x44);
+  *(char *)(iVar9 + 0xd) = (char)uVar3;
+  *(int *)(iVar8 + 0x40) = iVar9;
+  *(char *)(iVar8 + 0xc) = (char)iVar9;
+  *(char *)(iVar8 + 0xc) = (char)iVar9;
+  iVar9 = *(int *)(iVar9 + 0x54);
+  uVar7 = *(undefined4 *)(iVar9 + 100);
+  *(int *)(iVar8 + 0x54) = iVar8;
+  *(int *)(iVar8 + 0x40) = iVar9;
+  uVar12 = *(undefined4 *)(iVar8 + 0x60);
+  *(char *)(iVar9 + 0x11) = (char)uVar13;
+  *(char *)(iVar8 + 0xc) = (char)uVar12;
+  *(char *)(iVar11 + 1) = (char)iVar9;
+  *(char *)(iVar11 + 0x11) = (char)(param_3 + -0xdc) + '\x14';
+  *(char *)(iVar9 + 0x11) = (char)uVar7;
+  *(int *)(*(int *)(iVar8 + 0x54) + 0x44) = iVar9;
+  _DAT_00000078 = 0x6f;
+  uStack00000140 = param_1;
+  uStack00000160 = param_1;
+  uStack000001a0 = param_1;
+                    /* WARNING: Could not recover jumptable at 0x2c1611b8. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*UNRECOVERED_JUMPTABLE)
+            (0x6f,s_set_result_mutex_init_fail_2c161334._0_4_,
+             *(undefined4 *)(*(int *)(iVar9 + 0x74) + 0x14),iVar6,param_3);
+  return;
+}
+
