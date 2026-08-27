@@ -13,12 +13,6 @@ Reverse/tools/venv/
 __pycache__/
 *.pyc
 
-# Firmware analysis dumps (track .bin images only)
-Reverse/firmware/analysis/
-Reverse/firmware/ghidra/
-Reverse/firmware/export/
-Reverse/firmware/extracted_assets/
-
 .swiftpm/
 Packages/
 *.xcodeproj/project.xcworkspace/
