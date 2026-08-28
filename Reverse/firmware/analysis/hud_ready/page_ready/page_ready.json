@@ -1,0 +1,447 @@
+{
+  "leaf": "1.1.4",
+  "bin": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "lvgl_wait_loop_is_idle_hud_ready": false,
+  "lvgl_ui_entry_file_off": "0x62f228",
+  "lvgl_wait_loop": {
+    "entry_file_off": "0x62f228",
+    "entry_prologue_hex": "30b5",
+    "handler_bl_file_off": "0x62f2c2",
+    "handler_bl_hex": "fcf791fc",
+    "handler_target_file_off": "0x62bbe8",
+    "back_edge_file_off": "0x62f2d4",
+    "back_edge_hex": "f5d1",
+    "note": "After init (including creating lvgl_async) the thread pumps handler @ 0x62bbe8 then blocking wait. That pump starts while splash / createDefaultWidgets can still be building LVGL objects. No page-name, bond, or StandByView discriminator lives in this loop."
+  },
+  "encoding": {
+    "string_runtime": "file_off + 0x3bfd7c0c",
+    "code_form": "LDR (literal) T1/T2 of that dword in a Thumb literal pool",
+    "intern_form": "UNRECOVERED",
+    "intern_reason": "hud_map MOVW imm16 + pool 0x198ffc cannot address Launcher.cpp TRACE strings at 0x191xxx (delta is negative). Direct XIP 0x2c000000 dwords are also 0; only the rodata delta hits."
+  },
+  "recovery_counts": {
+    "lifecycle_events": 14,
+    "ldr_literal_recovered": 14,
+    "intern_unrecovered": 14
+  },
+  "pages": [
+    {
+      "name": "Pages/Launcher",
+      "string_file_off": "0x165b98"
+    },
+    {
+      "name": "Pages/StarryNetApp",
+      "string_file_off": "0x165b84"
+    },
+    {
+      "name": "Pages/StartupGuide",
+      "string_file_off": "0x190af8"
+    },
+    {
+      "name": "Pages/Ota",
+      "string_file_off": "0x165c38"
+    },
+    {
+      "name": "Pages/Assistant",
+      "string_file_off": "0x165c6c"
+    }
+  ],
+  "lifecycle": [
+    {
+      "name": "onViewLoad",
+      "string_ascii": "[Launcher]Launcher::onViewLoad",
+      "string_file_off": "0x191f88",
+      "code_file_off": "0x5c7d4e",
+      "fn_file_off": "0x5c7d4c",
+      "vtable_file_off": "0x191fd8",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169b94",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191f88",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1f88",
+          "pool_count": 0
+        }
+      },
+      "note": "Launcher.cpp TRACE at the start of onViewLoad (vtable slot). Body then constructs services/widgets; splash/default widgets can still be building. Not idle HUD. Recovered LDR (literal) T1 @ 0x5c7d4e (pool 0x5c7da4, fn 0x5c7d4c, vtable 0x191fd8). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onViewDidLoad",
+      "string_ascii": "[Launcher]Launcher::onViewDidLoad",
+      "string_file_off": "0x191d48",
+      "code_file_off": "0x5c7a16",
+      "fn_file_off": "0x5c7a14",
+      "vtable_file_off": "0x191fdc",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169954",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191d48",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1d48",
+          "pool_count": 0
+        }
+      },
+      "note": "DidLoad TRACE-only stub after load. Page exists; it has not appeared and StandBy vs dock is undecided. Recovered LDR (literal) T1 @ 0x5c7a16 (pool 0x5c7a3c, fn 0x5c7a14, vtable 0x191fdc). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onViewWillAppear",
+      "string_ascii": "[Launcher]Launcher::onViewWillAppear",
+      "string_file_off": "0x191f24",
+      "code_file_off": "0x5c7c5a",
+      "fn_file_off": "0x5c7c58",
+      "vtable_file_off": "0x191fe0",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169b30",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191f24",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1f24",
+          "pool_count": 0
+        }
+      },
+      "note": "WillAppear TRACE plus a short follow-up; still before DidAppear / switchFinish. Recovered LDR (literal) T1 @ 0x5c7c5a (pool 0x5c7c90, fn 0x5c7c58, vtable 0x191fe0). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onViewDidAppear",
+      "string_ascii": "[Launcher]Launcher::onViewDidAppear",
+      "string_file_off": "0x191cd8",
+      "code_file_off": "0x5c79aa",
+      "fn_file_off": "0x5c79a8",
+      "vtable_file_off": "0x191fe4",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "maybe",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c1698e4",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191cd8",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1cd8",
+          "pool_count": 0
+        }
+      },
+      "note": "DidAppear is a TRACE-only method (push, log line 0x4a, pop). Launcher page has appeared, but this site has no bond check, no Pages/StarryNetApp vs Pages/Launcher discriminator, and no StandByView vs DockviewV2 switch. Idle HUD is not proved. Recovered LDR (literal) T1 @ 0x5c79aa (pool 0x5c79c0, fn 0x5c79a8, vtable 0x191fe4). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onPageSwitchFinish",
+      "string_ascii": "[Launcher]Launcher::onPageSwitchFinish, show launcher.",
+      "string_file_off": "0x191eec",
+      "code_file_off": "0x5c7bd4",
+      "fn_file_off": "0x5c7bb0",
+      "vtable_file_off": "0x192010",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "maybe",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169af8",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191eec",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1eec",
+          "pool_count": 0
+        }
+      },
+      "note": "Bonded branch of onPageSwitchFinish: isLauncherAppOnTop is true and the bond probe returned non-zero, then this TRACE. Closer to home UI than DidAppear, but LauncherViewController::switchView isShowDock still selects DockviewV2 vs StandByView after the page is up. Recovered LDR (literal) T1 @ 0x5c7bd4 (pool 0x5c7c30, fn 0x5c7bb0, vtable 0x192010). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onPageSwitchFinish_not_bond",
+      "string_ascii": "[Launcher]Launcher::onPageSwitchFinish not bond, show starrynet app.",
+      "string_file_off": "0x191ea4",
+      "code_file_off": "0x5c7bfe",
+      "fn_file_off": "0x5c7bb0",
+      "vtable_file_off": "0x192010",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169ab0",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191ea4",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1ea4",
+          "pool_count": 0
+        }
+      },
+      "note": "Unbonded branch of the same onPageSwitchFinish: TRACE then LDR Pages/StarryNetApp and tail-call into startAppByPageName. Pairing / connect-guide UI, not idle HUD. Recovered LDR (literal) T1 @ 0x5c7bfe (pool 0x5c7c3c, fn 0x5c7bb0, vtable 0x192010). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onViewDidDisappear",
+      "string_ascii": "[Launcher]Launcher::onViewDidDisappear",
+      "string_file_off": "0x191cfc",
+      "code_file_off": "0x5c79ce",
+      "fn_file_off": "0x5c79cc",
+      "vtable_file_off": "0x191fec",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169908",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191cfc",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1cfc",
+          "pool_count": 0
+        }
+      },
+      "note": "DidDisappear TRACE-only stub. Launcher is leaving the screen. Recovered LDR (literal) T1 @ 0x5c79ce (pool 0x5c79e4, fn 0x5c79cc, vtable 0x191fec). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onViewWillDisappear",
+      "string_ascii": "[Launcher]Launcher::onViewWillDisappear",
+      "string_file_off": "0x191d6c",
+      "code_file_off": "0x5c7a4a",
+      "fn_file_off": "0x5c7a48",
+      "vtable_file_off": "0x191fe8",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169978",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191d6c",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1d6c",
+          "pool_count": 0
+        }
+      },
+      "note": "WillDisappear TRACE. Teardown path, not ready. Recovered LDR (literal) T1 @ 0x5c7a4a (pool 0x5c7a6c, fn 0x5c7a48, vtable 0x191fe8). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onViewUnload",
+      "string_ascii": "[Launcher]Launcher::onViewUnload",
+      "string_file_off": "0x191d94",
+      "code_file_off": "0x5c7a7a",
+      "fn_file_off": "0x5c7a78",
+      "vtable_file_off": "0x191ff0",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c1699a0",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191d94",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1d94",
+          "pool_count": 0
+        }
+      },
+      "note": "Unload TRACE. Page teardown, not ready. Recovered LDR (literal) T1 @ 0x5c7a7a (pool 0x5c7a9c, fn 0x5c7a78, vtable 0x191ff0). Intern form UNRECOVERED."
+    },
+    {
+      "name": "onViewDidUnload",
+      "string_ascii": "[Launcher]Launcher::onViewDidUnload",
+      "string_file_off": "0x191d24",
+      "code_file_off": "0x5c79f2",
+      "fn_file_off": "0x5c79f0",
+      "vtable_file_off": "0x191ff4",
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169930",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191d24",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1d24",
+          "pool_count": 0
+        }
+      },
+      "note": "DidUnload TRACE-only stub. Page gone. Recovered LDR (literal) T1 @ 0x5c79f2 (pool 0x5c7a08, fn 0x5c79f0, vtable 0x191ff4). Intern form UNRECOVERED."
+    },
+    {
+      "name": "backHome",
+      "string_ascii": "[Launcher]LauncherProvider::backHome enter",
+      "string_file_off": "0x191094",
+      "code_file_off": "0x5c5a60",
+      "fn_file_off": "0x5c5a38",
+      "vtable_file_off": null,
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "maybe",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c168ca0",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191094",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1094",
+          "pool_count": 0
+        }
+      },
+      "note": "LauncherProvider::backHome after isLauncherAppOnTop is false. Navigates toward Pages/Launcher, but OTA/StarryNet skip ('[Launcher]current in ota or starrynetApp, not call backHome') and landing view may still be dock. Recovered LDR (literal) T1 @ 0x5c5a60 (pool 0x5c5ad4, fn 0x5c5a38). Intern form UNRECOVERED."
+    },
+    {
+      "name": "isLauncherAppOnTop",
+      "string_ascii": "isLauncherAppOnTop",
+      "string_file_off": "0x190f60",
+      "code_file_off": "0x5c59fa",
+      "fn_file_off": "0x5c59bc",
+      "vtable_file_off": null,
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c168b6c",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c190f60",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a0f60",
+          "pool_count": 0
+        }
+      },
+      "note": "Query, not a ready event. TRACE tag loaded on empty-stack / null _pageManager error paths. Used *by* onPageSwitchFinish and backHome. Recovered LDR (literal) T1 @ 0x5c59fa (pool 0x5c5a2c, fn 0x5c59bc). Intern form UNRECOVERED."
+    },
+    {
+      "name": "startAppByPageName",
+      "string_ascii": "[Launcher]LauncherProvider::startAppByPageName with pageName %s ",
+      "string_file_off": "0x190db4",
+      "code_file_off": "0x5c56e8",
+      "fn_file_off": "0x5c5664",
+      "vtable_file_off": null,
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c1689c0",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c190db4",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a0db4",
+          "pool_count": 0
+        }
+      },
+      "note": "Stack push of an arbitrary PAGE name (Pages/Launcher, Pages/StarryNetApp, Pages/Ota, Pages/Assistant, Pages/StartupGuide, ...). Navigation, not idle HUD. Recovered LDR (literal) T1 @ 0x5c56e8 (pool 0x5c5854, fn 0x5c5664). Intern form UNRECOVERED."
+    },
+    {
+      "name": "startServices",
+      "string_ascii": "[Launcher]Launcher::startServices start!",
+      "string_file_off": "0x191f5c",
+      "code_file_off": "0x5c7cfa",
+      "fn_file_off": "0x5c7cf8",
+      "vtable_file_off": null,
+      "form": "LDR (literal) T1",
+      "encoding": "rodata_delta",
+      "idle_hud": "no",
+      "intern": "UNRECOVERED",
+      "ptr_scan": {
+        "rodata_delta": {
+          "va": "0x3c169b68",
+          "pool_count": 1
+        },
+        "xip_flat": {
+          "va": "0x2c191f5c",
+          "pool_count": 0
+        },
+        "thumb_runtime": {
+          "va": "0x2c1a1f5c",
+          "pool_count": 0
+        }
+      },
+      "note": "Service bring-up TRACE from onViewLoad. Happens while widgets may still be created. Recovered LDR (literal) T1 @ 0x5c7cfa (pool 0x5c7d40, fn 0x5c7cf8). Intern form UNRECOVERED."
+    }
+  ],
+  "false_positives": [
+    {
+      "signal": "onPageSwitchFinish not bond, show starrynet app",
+      "why_not_idle_hud": "Pages/StarryNetApp pairing / connect-guide, not StandByView"
+    },
+    {
+      "signal": "LauncherViewController::switchView isShowDock=1",
+      "why_not_idle_hud": "DockviewV2 app strip, not the idle StandByView face"
+    },
+    {
+      "signal": "onViewLoad / splash / createDefaultWidgets",
+      "why_not_idle_hud": "widgets still being constructed on the LVGL pump"
+    },
+    {
+      "signal": "lvgl_ui wait loop (handler + blocking wait)",
+      "why_not_idle_hud": "thread event pump; starts after init while splash can still build widgets; no page/bond/view discriminator"
+    }
+  ]
+}

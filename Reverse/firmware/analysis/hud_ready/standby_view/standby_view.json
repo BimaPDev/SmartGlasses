@@ -1,0 +1,325 @@
+{
+  "bin": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "va_xip_rule": "file_off + 0x2C000000",
+  "rodata_runtime_delta": "0x3bfd7c0c",
+  "runtime_thumb_base": "0x2c010000",
+  "functions": [
+    {
+      "name": "StandByView::createHintLabel",
+      "file_off": "0x5d2f40",
+      "va_xip": "0x2c5d2f40",
+      "prologue_hex": "70b50446",
+      "kind": "lifecycle",
+      "role": "builds the standby move-hint label; not idle-HUD-ready",
+      "string_file_off": "0x197744",
+      "ldr_file_off": "0x5d2f58",
+      "trace_rt_va": "0x3c16f350"
+    },
+    {
+      "name": "StandByView::updateHintIndicatorStatus",
+      "file_off": "0x5d31fe",
+      "va_xip": "0x2c5d31fe",
+      "prologue_hex": "30b50d46",
+      "kind": "other",
+      "role": "reads isHide and updates the hint indicator",
+      "string_file_off": "0x19779c",
+      "ldr_file_off": "0x5d3204",
+      "trace_rt_va": "0x3c16f3a8"
+    },
+    {
+      "name": "StandByView::updateTipsViewAlign",
+      "file_off": "0x5d3678",
+      "va_xip": "0x2c5d3678",
+      "prologue_hex": "30b50446",
+      "kind": "other",
+      "role": "realigns the standby tips row",
+      "string_file_off": "0x1977f0",
+      "ldr_file_off": "0x5d3686",
+      "trace_rt_va": "0x3c16f3fc"
+    },
+    {
+      "name": "StandByView::onLauncherEnterCallback",
+      "file_off": "0x5d3bc0",
+      "va_xip": "0x2c5d3bc0",
+      "prologue_hex": "30b50a4d",
+      "kind": "delay",
+      "role": "stock 100 ms delay callback after launcher enter; NOT the idle-HUD-ready signal",
+      "string_file_off": "0x197908",
+      "ldr_file_off": "0x5d3bc2",
+      "trace_rt_va": "0x3c16f514"
+    },
+    {
+      "name": "StandByView::showDisconnectHint",
+      "file_off": "0x5d3e90",
+      "va_xip": "0x2c5d3e90",
+      "prologue_hex": "f0b52a4c",
+      "kind": "other",
+      "role": "disconnect hint on the idle face",
+      "string_file_off": "0x197958",
+      "ldr_file_off": "0x5d3e92",
+      "trace_rt_va": "0x3c16f564"
+    },
+    {
+      "name": "StandByView::onRingEvent",
+      "file_off": "0x5d400c",
+      "va_xip": "0x2c5d400c",
+      "prologue_hex": "30b50c46",
+      "kind": "other",
+      "role": "ring key while standby is showing",
+      "string_file_off": "0x197994",
+      "ldr_file_off": "0x5d4012",
+      "trace_rt_va": "0x3c16f5a0"
+    },
+    {
+      "name": "StandByView::onSwipe",
+      "file_off": "0x5d4250",
+      "va_xip": "0x2c5d4250",
+      "prologue_hex": "70b5244e",
+      "kind": "other",
+      "role": "swipe on standby (typically toward dock)",
+      "string_file_off": "0x1979e0",
+      "ldr_file_off": "0x5d4252",
+      "trace_rt_va": "0x3c16f5ec"
+    },
+    {
+      "name": "StandByView::handleConnectStatusChange",
+      "file_off": "0x5d4394",
+      "va_xip": "0x2c5d4394",
+      "prologue_hex": "30b52e4c",
+      "kind": "other",
+      "role": "BLE/BR connect status while on standby",
+      "string_file_off": "0x197a10",
+      "ldr_file_off": "0x5d4396",
+      "trace_rt_va": "0x3c16f61c"
+    },
+    {
+      "name": "StandByView::changeHideStatus",
+      "file_off": "0x5d45b4",
+      "va_xip": "0x2c5d45b4",
+      "prologue_hex": "f0b5abb0",
+      "kind": "switch",
+      "role": "show/hide standby chrome; switchView calls this with isHide==0 on enter standby",
+      "string_file_off": "0x197a80",
+      "ldr_file_off": "0x5d45b8",
+      "trace_rt_va": "0x3c16f68c"
+    },
+    {
+      "name": "LauncherViewController::Create",
+      "file_off": "0x5d4fc4",
+      "va_xip": "0x2c5d4fc4",
+      "prologue_hex": "70b5444c",
+      "kind": "lifecycle",
+      "role": "constructs Dockview at +8 and StandByView at +0x148; stores current-view ptr +0x258 = standby",
+      "string_file_off": "0x19827c",
+      "ldr_file_off": "0x5d4fc6",
+      "trace_rt_va": "0x3c16fe88"
+    },
+    {
+      "name": "LauncherViewController::release",
+      "file_off": "0x5d511c",
+      "va_xip": "0x2c5d511c",
+      "prologue_hex": "30b5274d",
+      "kind": "lifecycle",
+      "role": "tears down LVC",
+      "string_file_off": "0x1982a8",
+      "ldr_file_off": "0x5d511e",
+      "trace_rt_va": "0x3c16feb4"
+    },
+    {
+      "name": "LauncherViewController::switchView",
+      "file_off": "0x5d51e4",
+      "va_xip": "0x2c5d51e4",
+      "prologue_hex": "2de9f041554c84b0",
+      "kind": "switch",
+      "role": "isShowDock==0 -> standby (strb 0 at +0x260, str &standByView at +0x258); ==1 -> dock",
+      "string_file_off": "0x1982e0",
+      "ldr_file_off": "0x5d51e8",
+      "trace_rt_va": "0x3c16feec"
+    },
+    {
+      "name": "LauncherViewController::onExitRingHoldStatus",
+      "file_off": "0x5d4cd8",
+      "va_xip": "0x2c5d4cd8",
+      "prologue_hex": "30b5174d",
+      "kind": "other",
+      "role": "reads isShowDock byte at +0x260; if set, logs dockView and resumes hide-dock timer",
+      "string_file_off": "0x1981c4",
+      "ldr_file_off": "0x5d4cf6",
+      "trace_rt_va": "0x3c16fdd0"
+    },
+    {
+      "name": "StandByWidgetManager::createDefaultWidgets",
+      "file_off": "0x5db7c4",
+      "va_xip": "0x2c5db7c4",
+      "prologue_hex": "2de9f04f544c89b0",
+      "kind": "lifecycle",
+      "role": "fills the standby widget grid; called from StandByWidgetManager ctor",
+      "string_file_off": "0x199c98",
+      "ldr_file_off": "0x5db7c8",
+      "trace_rt_va": "0x3c1718a4"
+    },
+    {
+      "name": "StandByWidgetManager::createSpecWidgets",
+      "file_off": "0x5db634",
+      "va_xip": "0x2c5db634",
+      "prologue_hex": "2de9f04186b00022",
+      "kind": "lifecycle",
+      "role": "adds step-count/spec widgets when space remains; completion returns to caller",
+      "string_file_off": "0x199bb0",
+      "ldr_file_off": "0x5db704",
+      "trace_rt_va": "0x3c1717bc"
+    },
+    {
+      "name": "StandByWidgetManager::unBondReset",
+      "file_off": "0x5db9a0",
+      "va_xip": "0x2c5db9a0",
+      "prologue_hex": "10b50b4c",
+      "kind": "lifecycle",
+      "role": "unbond path; tails into createDefaultWidgets",
+      "string_file_off": "0x199d54",
+      "ldr_file_off": "0x5db9a2",
+      "trace_rt_va": "0x3c171960"
+    },
+    {
+      "name": "TipsModel::onLauncherEnterCallback",
+      "file_off": "0x5cf3e0",
+      "va_xip": "0x2c5cf3e0",
+      "prologue_hex": "f0b5294d",
+      "kind": "delay",
+      "role": "second stock enter-delay (tips); also not idle-HUD-ready",
+      "string_file_off": "0x196644",
+      "ldr_file_off": "0x5cf3e2",
+      "trace_rt_va": "0x3c16e250"
+    },
+    {
+      "name": "indev_xjxr_keypad_proc",
+      "file_off": "0x6027a0",
+      "va_xip": "0x2c6027a0",
+      "prologue_hex": "70b58b7b",
+      "kind": "other",
+      "role": "indev TRACE when the standby predicate returns true; string is a log, not a SRAM symbol",
+      "string_file_off": "0x41add8",
+      "ldr_file_off": "0x602af0",
+      "trace_rt_va": "0x3c3f29e4"
+    },
+    {
+      "name": "StandByView::registerOnLauncherEnterDelay",
+      "file_off": "0x5d2b0c",
+      "va_xip": "0x2c5d2b0c",
+      "prologue_hex": "10b50846",
+      "kind": "delay",
+      "role": "lv_timer-style create(period=0x64=100) of StandByView::onLauncherEnterCallback; v6's 100 ms guess belongs here, not customTimeAndBatteryWidget",
+      "callback_file_off": "0x5d3bc0",
+      "timer_period_imm": "0x64"
+    },
+    {
+      "name": "LauncherViewController::isOnStandByView",
+      "file_off": "0x5d4f50",
+      "va_xip": "0x2c5d4f50",
+      "prologue_hex": "d0f85822",
+      "kind": "other",
+      "role": "returns 1 iff this+0x258 == &this.standByView (+0x148). Real idle-HUD-showing predicate",
+      "encoding": "ldr.w r2,[r0,#0x258]; cbz; addw r3,r0,#0x148; clz/lsr"
+    },
+    {
+      "name": "StandByWidgetManager::ctor",
+      "file_off": "0x5db938",
+      "va_xip": "0x2c5db938",
+      "prologue_hex": "10b50b46",
+      "kind": "lifecycle",
+      "role": "StandByView init (+0x98) constructs the manager then BL createDefaultWidgets",
+      "calls_createDefaultWidgets": "0x5db7c4"
+    },
+    {
+      "name": "StandByView::Create",
+      "file_off": "0x5d4824",
+      "va_xip": "0x2c5d4824",
+      "prologue_hex": "38b50446",
+      "kind": "lifecycle",
+      "role": "LVGL root + StandByWidgetManager ctor at +0x98 + createHintLabel; called from LVC::Create",
+      "caller": "LauncherViewController::Create"
+    }
+  ],
+  "callbacks": [
+    {
+      "name": "StandByView::onLauncherEnterCallback",
+      "file_off": "0x5d3bc0",
+      "va_xip": "0x2c5d3bc0",
+      "prologue_hex": "30b50a4d",
+      "kind": "delay",
+      "role": "stock 100 ms delay callback after launcher enter; NOT the idle-HUD-ready signal",
+      "string_file_off": "0x197908",
+      "ldr_file_off": "0x5d3bc2",
+      "trace_rt_va": "0x3c16f514"
+    },
+    {
+      "name": "TipsModel::onLauncherEnterCallback",
+      "file_off": "0x5cf3e0",
+      "va_xip": "0x2c5cf3e0",
+      "prologue_hex": "f0b5294d",
+      "kind": "delay",
+      "role": "second stock enter-delay (tips); also not idle-HUD-ready",
+      "string_file_off": "0x196644",
+      "ldr_file_off": "0x5cf3e2",
+      "trace_rt_va": "0x3c16e250"
+    }
+  ],
+  "flags": [
+    {
+      "name": "launcher_is_on_standby_view",
+      "string_file_off": "0x41add8",
+      "setters": [
+        {
+          "name": "LauncherViewController::Create",
+          "file_off": "0x5d4fc4",
+          "va_xip": "0x2c5d4fc4",
+          "store": "str this+0x258, &this+0x148 (StandByView embed)"
+        },
+        {
+          "name": "LauncherViewController::switchView",
+          "file_off": "0x5d51e4",
+          "va_xip": "0x2c5d51e4",
+          "store": "strb isShowDock at this+0x260; str current-view at this+0x258"
+        }
+      ],
+      "readers": [
+        {
+          "name": "LauncherViewController::isOnStandByView",
+          "file_off": "0x5d4f50",
+          "va_xip": "0x2c5d4f50",
+          "load": "this+0x258 == &this+0x148"
+        },
+        {
+          "name": "indev_xjxr_keypad_proc",
+          "file_off": "0x6027a0",
+          "va_xip": "0x2c6027a0",
+          "load": "BL thunk then TRACE launcher_is_on_standby_view. when predicate is true",
+          "ldr_file_off": "0x602af0"
+        },
+        {
+          "name": "LauncherViewController::onExitRingHoldStatus",
+          "file_off": "0x5d4cd8",
+          "load": "ldrb this+0x260 (isShowDock); dock path resumes hide-dock timer"
+        }
+      ],
+      "status": "recovered",
+      "note": "The ASCII is a TRACE log in lv_indev_xjxr.c, not a named SRAM global. Attempted intern: MOVW imm16 + pool 0x198FFC needs id 0x281ddc (encodable=False, movw_sites=0). dword XIP=0 ALIAS_3C=0 file=0; rodata-delta 0x3bfd7c0c hits=1 (pool+LDR recovered). Stored state is LVC instance fields +0x258 (current-view pointer) and +0x260 (isShowDock byte). No standalone SRAM flag address is claimed.",
+      "intern_hunt": {
+        "intern_pool": "0x198ffc",
+        "intern_id": "0x281ddc",
+        "encodable_imm16": false,
+        "movw_sites": 0,
+        "dword_xip": 0,
+        "dword_alias_3c": 0,
+        "dword_rodata_delta": 1,
+        "dword_file": 0
+      },
+      "widget_completion": {
+        "createDefaultWidgets": "0x5db7c4",
+        "createSpecWidgets": "0x5db634",
+        "ctor_calls_createDefaultWidgets": "0x5db938",
+        "unBondReset_tails_to_createDefaultWidgets": true
+      }
+    }
+  ]
+}

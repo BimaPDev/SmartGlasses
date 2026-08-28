@@ -1,0 +1,105 @@
+{
+  "bin": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "va_xip_rule": "file_off + 0x2C000000",
+  "recommended": {
+    "kind": "event",
+    "name": "launcher_is_on_standby_view",
+    "hook_file_off": "0x602af0",
+    "hook_va_xip": "0x2c602af0",
+    "prologue_hex": "2b4940f297122b4b",
+    "containing_fn_file_off": "0x6027a0",
+    "containing_fn_prologue_hex": "70b58b7b",
+    "predicate_consult_file_off": "0x60285c",
+    "predicate_consult_stock_bl_hex": "c5f77ef8",
+    "true_path_bne_file_off": "0x602862",
+    "true_path_bne_hex": "40f04581",
+    "splash_safe": true,
+    "why_not_delay": "This site is the indev TRACE of the StandByView predicate, not a millisecond timer. Stock delay is StandByView::onLauncherEnterCallback at 0x5d3bc0, registered at 0x5d2b0c with movs r1,#0x64 (100) then bl 0x62bdd8. v6 guessed that same 100 ms period inside the widget ctor. The TRACE at 0x602af0 has no period immediate and does not call the timer helper.",
+    "why_splash_safe": "Object-create at 0x602af0 cannot run during boot/splash createDefaultWidgets or customTimeAndBatteryWidget ctor. Unique BL to the containing keypad proc 0x6027a0 is 0x5ffe7e inside lv_indev process 0x5ffb8c (prologue 2de9f04fc46887b0). Unique BL to the ctor is factory case 3 at 0x5d9d6e; unique BL to createDefaultWidgets is StandByWidgetManager ctor 0x5db962. Neither of those functions BL 0x6027a0 or 0x5c795c. LVC::Create stores +0x258 only at 0x5d5036 AFTER StandByView::Create, so the predicate is false for the whole ctor window. The TRACE is reached only on the true path: 0x60285c bl thunk 0x5c795c (stock c5f77ef8) then cmp r0,#0; 0x602862 bne.w 0x602af0 (40f04581). Thunk 0x5c795c (08b5fef77dff) BL singleton 0x5c685c, tail 0x5c6d64 adds #8 and b.w isOnStandByView 0x5d4f50. That is keypad processing after the UI is taking input, not first widget construction. prologue_hex is the TRACE instruction bytes (ldr/movw), not a PUSH prologue.",
+    "predicate": "isOnStandByView / this+0x258 == StandByView",
+    "evidence": [
+      "ASCII launcher_is_on_standby_view. at file 0x41add8; pool 0x602ba0 dword 0x3c3f29e4 = file+0x3bfd7c0c; LDR T1 2b49 at 0x602af0 rt=1; line movw r2,#0x197; file string lv_indev_xjxr.c at 0x41ac2c",
+      "strings_inventory.json flag_launcher_is_on_standby_view code site 0x6027a0 / LDR 0x602af0",
+      "standby_view.json indev_xjxr_keypad_proc 0x6027a0 prologue 70b58b7b; isOnStandByView 0x5d4f50 prologue d0f85822",
+      "splash_vs_idle.json discriminator notes the 0x602af0 indev TRACE is not a ctor-visible boolean",
+      "PAGE_READY.md names launcher_is_on_standby_view. at 0x41add8 and proves onPageSwitchFinish / lvgl wait loop are not idle HUD",
+      "LVC::Create 0x5d4fc4 stores +0x258 at 0x5d5036 (c4f85862) AFTER BL StandByView::Create 0x5d4824; Create does not BL switchView or indev",
+      "createDefaultWidgets 0x5db7c4 BLs 0x5db5e4/0x5db634/TRACE, not 0x6027a0; ctor 0x5d931c getter BL 0x5d9426 stock fdf757fa"
+    ]
+  },
+  "rejected": [
+    {
+      "kind": "delay",
+      "name": "onLauncherEnterCallback",
+      "hook_file_off": "0x5d3bc0",
+      "prologue_hex": "30b50a4d",
+      "why": "stock 100 ms at 0x5d2b0c / 0x5d3bc0: registerOnLauncherEnterDelay 0x5d2b0c does movs r1,#0x64 (6421) then bl 0x62bdd8; callback TRACE is delay exec, not idle-HUD-ready"
+    },
+    {
+      "kind": "delay",
+      "name": "v6 lv_timer 100ms",
+      "hook_file_off": "0x5d2b1e",
+      "why": "v6 started lv_timer_create(100 ms) from inside customTimeAndBatteryWidget ctor; that period is the stock onLauncherEnterCallback registration immediate, not a view discriminator, and still fires during boot createDefaultWidgets"
+    },
+    {
+      "kind": "function",
+      "name": "customTimeAndBatteryWidget ctor",
+      "hook_file_off": "0x5d9426",
+      "stock_bl_hex": "fdf757fa",
+      "why": "boot createDefaultWidgets: unique BL to ctor 0x5d931c is factory case 3 at 0x5d9d6e; getter BL 0x5d9426 stock fdf757fa. SplashView/StartupGuide/PowerOffAndRebootView do not BL the ctor, but first StandByView construction still runs this path while splash/reboot chrome can be up (v5/v6 bootloop)"
+    },
+    {
+      "kind": "function",
+      "name": "isOnStandByView",
+      "hook_file_off": "0x5d4f50",
+      "prologue_hex": "d0f85822",
+      "why": "Real idle-HUD-showing predicate (ldr.w r2,[r0,#0x258]; true iff == &StandByView +0x148) but not a splash-safe object-create site. LVC::Create 0x5d4fc4 stores +0x258 = standby at 0x5d5036 after StandByView::Create / createDefaultWidgets. Polling or hooking the getter itself can observe true as soon as first construction finishes, while splash chrome can still be showing. Documented as the predicate, not the create hook."
+    },
+    {
+      "kind": "function",
+      "name": "LauncherViewController::Create",
+      "hook_file_off": "0x5d4fc4",
+      "prologue_hex": "70b5444c",
+      "why": "First construction path: BL StandByView::Create 0x5d4824 then Dockview then str +0x258. Object-create here is the boot createDefaultWidgets window, not splash-safe."
+    },
+    {
+      "kind": "function",
+      "name": "createDefaultWidgets",
+      "hook_file_off": "0x5db7c4",
+      "prologue_hex": "2de9f04f",
+      "why": "Idle grid builder AND the first StandByView construction at boot. Not splash-safe. Unique BL from StandByWidgetManager ctor 0x5db962."
+    },
+    {
+      "kind": "function",
+      "name": "createSpecWidgets",
+      "hook_file_off": "0x5db634",
+      "why": "1.1.2 labeled createSpecWidgets at 0x5db634 (2de9f041); 1.1.3 labeled a nearby PUSH at 0x5db5e4 (f0b583b0). Both run from createDefaultWidgets at boot. Neither is HUD-ready."
+    },
+    {
+      "kind": "function",
+      "name": "switchView",
+      "hook_file_off": "0x5d51e4",
+      "prologue_hex": "2de9f041",
+      "why": "Writes +0x258 / +0x260 and is splash-safer than Create (Create does not BL 0x5d51e4; ten BLs are later LVC methods 0x5d5422..0x5d5764). First boot idle face is established by Create's store, so first HUD appearance need not pass switchView. isShowDock==1 is Dockview, not idle HUD. Not the recommended create site."
+    },
+    {
+      "kind": "event",
+      "name": "onPageSwitchFinish, show launcher",
+      "hook_file_off": "0x5c7bd4",
+      "why": "Bonded launcher-on-top TRACE inside 0x5c7bb0. Sibling unbonded branch 0x5c7bfe starts StarryNet pairing. Even the bonded branch does not select StandByView vs dock."
+    },
+    {
+      "kind": "event",
+      "name": "onViewDidAppear",
+      "hook_file_off": "0x5c79a8",
+      "prologue_hex": "10b5054c",
+      "why": "TRACE-only stub; appear ≠ idle HUD settled, no bond / StandBy / dock test"
+    },
+    {
+      "kind": "state",
+      "name": "lvgl_ui wait loop",
+      "hook_file_off": "0x62f2c2",
+      "why": "lvgl_wait_loop_is_idle_hud_ready is false; handler+wait pump at 0x62f2c2/0x62f2d4 starts while splash can still build widgets"
+    }
+  ]
+}

@@ -1,0 +1,872 @@
+{
+  "bin": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "xip": "0x2C000000",
+  "rodata_delta": "0x3bfd7c0c",
+  "method": {
+    "dword_xip": "scan LE dword 0x2C000000+file_off (and +1); typically ZERO for these strings",
+    "rodata_delta": "scan LE dword file_off+0x3BFD7C0C, then LDR (literal) to that pool",
+    "intern_movw": "MOVW imm16 = file_off (<0x10000) or file_off-0x198FFC; TRACE intern often has ZERO absolute xrefs \u2014 used only if LDR/dword fail"
+  },
+  "strings": [
+    {
+      "id": "launcher_onViewDidAppear",
+      "ascii": "[Launcher]Launcher::onViewDidAppear",
+      "file_off": "0x191cd8",
+      "va_xip": "0x2c191cd8",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c79a8",
+          "va_xip": "0x2c5c79a8",
+          "note": "LDR (literal) T1 @ 0x5c79aa rt=4 loads pool 0x5c79c0 value 0x3c1698e4; containing-fn prologue 0x5c79a8 bytes 10b5054c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "launcher_onViewDidDisappear",
+      "ascii": "[Launcher]Launcher::onViewDidDisappear",
+      "file_off": "0x191cfc",
+      "va_xip": "0x2c191cfc",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c79cc",
+          "va_xip": "0x2c5c79cc",
+          "note": "LDR (literal) T1 @ 0x5c79ce rt=4 loads pool 0x5c79e4 value 0x3c169908; containing-fn prologue 0x5c79cc bytes 10b5054c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "launcher_onViewWillAppear",
+      "ascii": "[Launcher]Launcher::onViewWillAppear",
+      "file_off": "0x191f24",
+      "va_xip": "0x2c191f24",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c7c58",
+          "va_xip": "0x2c5c7c58",
+          "note": "LDR (literal) T1 @ 0x5c7c5a rt=5 loads pool 0x5c7c90 value 0x3c169b30; containing-fn prologue 0x5c7c58 bytes 30b50d4d"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "launcher_onViewLoad",
+      "ascii": "[Launcher]Launcher::onViewLoad",
+      "file_off": "0x191f88",
+      "va_xip": "0x2c191f88",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c7d4c",
+          "va_xip": "0x2c5c7d4c",
+          "note": "LDR (literal) T1 @ 0x5c7d4e rt=5 loads pool 0x5c7da4 value 0x3c169b94; containing-fn prologue 0x5c7d4c bytes 30b5154d"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "onPageSwitchFinish",
+      "ascii": "onPageSwitchFinish",
+      "file_off": "0x191e90",
+      "va_xip": "0x2c191e90",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c7bb0",
+          "va_xip": "0x2c5c7bb0",
+          "note": "LDR (literal) T1 @ 0x5c7c04 rt=3 loads pool 0x5c7c38 value 0x3c169a9c; containing-fn prologue 0x5c7bb0 bytes 30b583b0"
+        },
+        {
+          "file_off": "0x5dee0c",
+          "va_xip": "0x2c5dee0c",
+          "note": "LDR (literal) T1 @ 0x5dee12 rt=3 loads pool 0x5dee28 value 0x3c169a9c; containing-fn prologue 0x5dee0c bytes 10b5054c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "onPageSwitchFinish_show_launcher",
+      "ascii": "[Launcher]Launcher::onPageSwitchFinish, show launcher.",
+      "file_off": "0x191eec",
+      "va_xip": "0x2c191eec",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c7bb0",
+          "va_xip": "0x2c5c7bb0",
+          "note": "LDR (literal) T1 @ 0x5c7bd4 rt=0 loads pool 0x5c7c30 value 0x3c169af8; containing-fn prologue 0x5c7bb0 bytes 30b583b0"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "onPageSwitchFinish_starrynet",
+      "ascii": "[Launcher]Launcher::onPageSwitchFinish not bond, show starrynet app.",
+      "file_off": "0x191ea4",
+      "va_xip": "0x2c191ea4",
+      "role": "pairing",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c7bb0",
+          "va_xip": "0x2c5c7bb0",
+          "note": "LDR (literal) T1 @ 0x5c7bfe rt=0 loads pool 0x5c7c3c value 0x3c169ab0; containing-fn prologue 0x5c7bb0 bytes 30b583b0"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "wait_starrynet_exit",
+      "ascii": "[Launcher]current app is not launcher, wait for starrynet app exit",
+      "file_off": "0x1915f4",
+      "va_xip": "0x2c1915f4",
+      "role": "pairing",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c6490",
+          "va_xip": "0x2c5c6490",
+          "note": "LDR (literal) T1 @ 0x5c651e rt=0 loads pool 0x5c6580 value 0x3c169200; containing-fn prologue 0x5c6490 bytes 70b582b0"
+        },
+        {
+          "file_off": "0x5c7664",
+          "va_xip": "0x2c5c7664",
+          "note": "LDR (literal) T1 @ 0x5c767e rt=3 loads pool 0x5c76e4 value 0x3c169200; containing-fn prologue 0x5c7664 bytes f0b583b0"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "flag_launcher_is_on_standby_view",
+      "ascii": "launcher_is_on_standby_view.",
+      "file_off": "0x41add8",
+      "va_xip": "0x2c41add8",
+      "role": "flag",
+      "kind": "flag",
+      "code_sites": [
+        {
+          "file_off": "0x6027a0",
+          "va_xip": "0x2c6027a0",
+          "note": "LDR (literal) T1 @ 0x602af0 rt=1 loads pool 0x602ba0 value 0x3c3f29e4; containing-fn prologue 0x6027a0 bytes 70b58b7b"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "standby_onLauncherEnterCallback_delay_exec",
+      "ascii": "[Launcher]StandByView:: onLauncherEnterCallback delay exec",
+      "file_off": "0x197908",
+      "va_xip": "0x2c197908",
+      "role": "delay",
+      "kind": "delay",
+      "code_sites": [
+        {
+          "file_off": "0x5d3bc0",
+          "va_xip": "0x2c5d3bc0",
+          "note": "LDR (literal) T1 @ 0x5d3bc2 rt=5 loads pool 0x5d3bec value 0x3c16f514; containing-fn prologue 0x5d3bc0 bytes 30b50a4d"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "tips_onLauncherEnterCallback_delay_exec",
+      "ascii": "[Launcher]TipsModel:: onLauncherEnterCallback delay exec",
+      "file_off": "0x196644",
+      "va_xip": "0x2c196644",
+      "role": "delay",
+      "kind": "delay",
+      "code_sites": [
+        {
+          "file_off": "0x5cf3e0",
+          "va_xip": "0x2c5cf3e0",
+          "note": "LDR (literal) T1 @ 0x5cf3e2 rt=5 loads pool 0x5cf488 value 0x3c16e250; containing-fn prologue 0x5cf3e0 bytes f0b5294d"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "onLauncherEnterCallback",
+      "ascii": "onLauncherEnterCallback",
+      "file_off": "0x195db0",
+      "va_xip": "0x2c195db0",
+      "role": "delay",
+      "kind": "delay",
+      "code_sites": [
+        {
+          "file_off": "0x5ce3c4",
+          "va_xip": "0x2c5ce3c4",
+          "note": "LDR (literal) T1 @ 0x5ce40a rt=3 loads pool 0x5ce420 value 0x3c16d9bc; containing-fn prologue 0x5ce3c4 bytes 10b50846"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "tips_onLauncherEnterCallback",
+      "ascii": "[Launcher]TipsModel:: onLauncherEnterCallback",
+      "file_off": "0x195dc8",
+      "va_xip": "0x2c195dc8",
+      "role": "delay",
+      "kind": "delay",
+      "code_sites": [
+        {
+          "file_off": "0x5ce3c4",
+          "va_xip": "0x2c5ce3c4",
+          "note": "LDR (literal) T1 @ 0x5ce3d2 rt=0 loads pool 0x5ce41c value 0x3c16d9d4; containing-fn prologue 0x5ce3c4 bytes 10b50846"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "standby_widgets_count",
+      "ascii": "[Launcher]standby widgets count: %d",
+      "file_off": "0x194d30",
+      "va_xip": "0x2c194d30",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5cc56c",
+          "va_xip": "0x2c5cc56c",
+          "note": "LDR (literal) T1 @ 0x5cc5f0 rt=2 loads pool 0x5cc704 value 0x3c16c93c; containing-fn prologue 0x5cc56c bytes 2de9f047"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "switchView_isShowDock",
+      "ascii": "[Launcher]LauncherViewController::switchView isShowDock %d isAnim %d",
+      "file_off": "0x1982e0",
+      "va_xip": "0x2c1982e0",
+      "role": "dock",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5d51e4",
+          "va_xip": "0x2c5d51e4",
+          "note": "LDR (literal) T1 @ 0x5d51e8 rt=4 loads pool 0x5d5340 value 0x3c16feec; containing-fn prologue 0x5d51e4 bytes 2de9f041"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "hide_launcher_assistant",
+      "ascii": "[Launcher]LauncherViewController::switchView assistant show, hide launcher",
+      "file_off": "0x198364",
+      "va_xip": "0x2c198364",
+      "role": "dock",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5d51e4",
+          "va_xip": "0x2c5d51e4",
+          "note": "LDR (literal) T1 @ 0x5d52d4 rt=5 loads pool 0x5d5358 value 0x3c16ff70; containing-fn prologue 0x5d51e4 bytes 2de9f041"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "resume_hide_dock_timer",
+      "ascii": "[Launcher]LauncherViewController current on dockView, resume hide dock timer",
+      "file_off": "0x1981c4",
+      "va_xip": "0x2c1981c4",
+      "role": "dock",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5d4cd8",
+          "va_xip": "0x2c5d4cd8",
+          "note": "LDR (literal) T1 @ 0x5d4cf6 rt=0 loads pool 0x5d4d44 value 0x3c16fdd0; containing-fn prologue 0x5d4cd8 bytes 30b5174d"
+        },
+        {
+          "file_off": "0x5d5360",
+          "va_xip": "0x2c5d5360",
+          "note": "LDR (literal) T1 @ 0x5d5582 rt=1 loads pool 0x5d55cc value 0x3c16fdd0; containing-fn prologue 0x5d5360 bytes 70b590f8"
+        },
+        {
+          "file_off": "0x5d574c",
+          "va_xip": "0x2c5d574c",
+          "note": "LDR (literal) T1 @ 0x5d5772 rt=0 loads pool 0x5d579c value 0x3c16fdd0; containing-fn prologue 0x5d574c bytes 10b50846"
+        },
+        {
+          "file_off": "0x5d57ac",
+          "va_xip": "0x2c5d57ac",
+          "note": "LDR (literal) T1 @ 0x5d5866 rt=1 loads pool 0x5d5898 value 0x3c16fdd0; containing-fn prologue 0x5d57ac bytes 30b583b0"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "standby_changeHideStatus",
+      "ascii": "[Launcher]StandByView::changeHideStatus isHide %d, isAnim %d",
+      "file_off": "0x197a80",
+      "va_xip": "0x2c197a80",
+      "role": "other",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5d45b4",
+          "va_xip": "0x2c5d45b4",
+          "note": "LDR (literal) T1 @ 0x5d45b8 rt=6 loads pool 0x5d47a0 value 0x3c16f68c; containing-fn prologue 0x5d45b4 bytes f0b5abb0"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "createDefaultWidgets",
+      "ascii": "createDefaultWidgets",
+      "file_off": "0x199c80",
+      "va_xip": "0x2c199c80",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5db7c4",
+          "va_xip": "0x2c5db7c4",
+          "note": "LDR.W (literal) T2 @ 0x5db858 rt=11 loads pool 0x5db920 value 0x3c17188c; containing-fn prologue 0x5db7c4 bytes 2de9f04f"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "launcher_createDefaultWidgets",
+      "ascii": "[Launcher]createDefaultWidgets",
+      "file_off": "0x199c98",
+      "va_xip": "0x2c199c98",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5db7c4",
+          "va_xip": "0x2c5db7c4",
+          "note": "LDR (literal) T1 @ 0x5db7c8 rt=4 loads pool 0x5db91c value 0x3c1718a4; containing-fn prologue 0x5db7c4 bytes 2de9f04f"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "createDefaultWidgets_widgetList",
+      "ascii": "[Launcher]createDefaultWidgets widgetList size: %d",
+      "file_off": "0x199cf0",
+      "va_xip": "0x2c199cf0",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5db7c4",
+          "va_xip": "0x2c5db7c4",
+          "note": "LDR (literal) T1 @ 0x5db83c rt=2 loads pool 0x5db930 value 0x3c1718fc; containing-fn prologue 0x5db7c4 bytes 2de9f04f"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "createSpecWidgets",
+      "ascii": "createSpecWidgets",
+      "file_off": "0x199b68",
+      "va_xip": "0x2c199b68",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5db634",
+          "va_xip": "0x2c5db634",
+          "note": "LDR (literal) T1 @ 0x5db71a rt=3 loads pool 0x5db75c value 0x3c171774; containing-fn prologue 0x5db634 bytes 2de9f041"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "StandByView_cpp",
+      "ascii": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/view/StandByView.cpp",
+      "file_off": "0x1976a4",
+      "va_xip": "0x2c1976a4",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5d2f40",
+          "va_xip": "0x2c5d2f40",
+          "note": "LDR (literal) T1 @ 0x5d2f90 rt=1 loads pool 0x5d3030 value 0x3c16f2b0; containing-fn prologue 0x5d2f40 bytes 70b50446"
+        },
+        {
+          "file_off": "0x5d31fe",
+          "va_xip": "0x2c5d31fe",
+          "note": "LDR (literal) T1 @ 0x5d320e rt=1 loads pool 0x5d325c value 0x3c16f2b0; containing-fn prologue 0x5d31fe bytes 30b50d46"
+        },
+        {
+          "file_off": "0x5d3678",
+          "va_xip": "0x2c5d3678",
+          "note": "LDR (literal) T1 @ 0x5d3704 rt=1 loads pool 0x5d3830 value 0x3c16f2b0; containing-fn prologue 0x5d3678 bytes 30b50446"
+        },
+        {
+          "file_off": "0x5d3838",
+          "va_xip": "0x2c5d3838",
+          "note": "LDR (literal) T1 @ 0x5d385e rt=1 loads pool 0x5d38d8 value 0x3c16f2b0; containing-fn prologue 0x5d3838 bytes f0b50846"
+        },
+        {
+          "file_off": "0x5d3b14",
+          "va_xip": "0x2c5d3b14",
+          "note": "LDR (literal) T1 @ 0x5d3b9c rt=1 loads pool 0x5d3bb4 value 0x3c16f2b0; containing-fn prologue 0x5d3b14 bytes f0b589b0"
+        },
+        {
+          "file_off": "0x5d3bc0",
+          "va_xip": "0x2c5d3bc0",
+          "note": "LDR (literal) T1 @ 0x5d3bd0 rt=1 loads pool 0x5d3bf4 value 0x3c16f2b0; containing-fn prologue 0x5d3bc0 bytes 30b50a4d"
+        },
+        {
+          "file_off": "0x5d3e90",
+          "va_xip": "0x2c5d3e90",
+          "note": "LDR (literal) T1 @ 0x5d3ea4 rt=1 loads pool 0x5d3f44 value 0x3c16f2b0; containing-fn prologue 0x5d3e90 bytes f0b52a4c"
+        },
+        {
+          "file_off": "0x5d400c",
+          "va_xip": "0x2c5d400c",
+          "note": "LDR (literal) T1 @ 0x5d4022 rt=1 loads pool 0x5d40b0 value 0x3c16f2b0; containing-fn prologue 0x5d400c bytes 30b50c46"
+        },
+        {
+          "file_off": "0x5d4250",
+          "va_xip": "0x2c5d4250",
+          "note": "LDR (literal) T1 @ 0x5d4264 rt=1 loads pool 0x5d42ec value 0x3c16f2b0; containing-fn prologue 0x5d4250 bytes 70b5244e"
+        },
+        {
+          "file_off": "0x5d4394",
+          "va_xip": "0x2c5d4394",
+          "note": "LDR (literal) T1 @ 0x5d43a8 rt=1 loads pool 0x5d4458 value 0x3c16f2b0; containing-fn prologue 0x5d4394 bytes 30b52e4c"
+        },
+        {
+          "file_off": "0x5d45b4",
+          "va_xip": "0x2c5d45b4",
+          "note": "LDR (literal) T1 @ 0x5d45cc rt=1 loads pool 0x5d47ac value 0x3c16f2b0; containing-fn prologue 0x5d45b4 bytes f0b5abb0"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "StandByWidgetManager_cpp",
+      "ascii": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/widget/StandByWidgetManager.cpp",
+      "file_off": "0x199914",
+      "va_xip": "0x2c199914",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5da6a8",
+          "va_xip": "0x2c5da6a8",
+          "note": "LDR (literal) T1 @ 0x5da6be rt=1 loads pool 0x5da6e4 value 0x3c171520; containing-fn prologue 0x5da6a8 bytes 30b50c4d"
+        },
+        {
+          "file_off": "0x5da8a4",
+          "va_xip": "0x2c5da8a4",
+          "note": "LDR (literal) T1 @ 0x5da8f0 rt=1 loads pool 0x5da908 value 0x3c171520; containing-fn prologue 0x5da8a4 bytes 30b583b0"
+        },
+        {
+          "file_off": "0x5dac08",
+          "va_xip": "0x2c5dac08",
+          "note": "LDR (literal) T1 @ 0x5daca0 rt=1 loads pool 0x5dacc0 value 0x3c171520; containing-fn prologue 0x5dac08 bytes 2de9f041"
+        },
+        {
+          "file_off": "0x5dacc4",
+          "va_xip": "0x2c5dacc4",
+          "note": "LDR (literal) T1 @ 0x5dad00 rt=1 loads pool 0x5dad20 value 0x3c171520; containing-fn prologue 0x5dacc4 bytes 10b50121"
+        },
+        {
+          "file_off": "0x5db5e4",
+          "va_xip": "0x2c5db5e4",
+          "note": "LDR (literal) T1 @ 0x5db60c rt=1 loads pool 0x5db630 value 0x3c171520; containing-fn prologue 0x5db5e4 bytes f0b583b0"
+        },
+        {
+          "file_off": "0x5db634",
+          "va_xip": "0x2c5db634",
+          "note": "LDR (literal) T1 @ 0x5db71e rt=1 loads pool 0x5db760 value 0x3c171520; containing-fn prologue 0x5db634 bytes 2de9f041"
+        },
+        {
+          "file_off": "0x5db774",
+          "va_xip": "0x2c5db774",
+          "note": "LDR (literal) T1 @ 0x5db788 rt=1 loads pool 0x5db7c0 value 0x3c171520; containing-fn prologue 0x5db774 bytes 10b582b0"
+        },
+        {
+          "file_off": "0x5db7c4",
+          "va_xip": "0x2c5db7c4",
+          "note": "LDR.W (literal) T2 @ 0x5db860 rt=9 loads pool 0x5db928 value 0x3c171520; containing-fn prologue 0x5db7c4 bytes 2de9f04f"
+        },
+        {
+          "file_off": "0x5db9a0",
+          "va_xip": "0x2c5db9a0",
+          "note": "LDR (literal) T1 @ 0x5db9ac rt=1 loads pool 0x5db9d8 value 0x3c171520; containing-fn prologue 0x5db9a0 bytes 10b50b4c"
+        },
+        {
+          "file_off": "0x5db9dc",
+          "va_xip": "0x2c5db9dc",
+          "note": "LDR (literal) T1 @ 0x5dbb42 rt=1 loads pool 0x5dbbd4 value 0x3c171520; containing-fn prologue 0x5db9dc bytes 2de9f04f"
+        },
+        {
+          "file_off": "0x5dbbe4",
+          "va_xip": "0x2c5dbbe4",
+          "note": "LDR (literal) T1 @ 0x5dbd66 rt=1 loads pool 0x5dbd90 value 0x3c171520; containing-fn prologue 0x5dbbe4 bytes 2de9f04f"
+        },
+        {
+          "file_off": "0x5dbda8",
+          "va_xip": "0x2c5dbda8",
+          "note": "LDR (literal) T1 @ 0x5dbeb6 rt=1 loads pool 0x5dbec4 value 0x3c171520; containing-fn prologue 0x5dbda8 bytes f0b50546"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "customTimeAndBatteryWidget",
+      "ascii": "customTimeAndBatteryWidget",
+      "file_off": "0x199860",
+      "va_xip": "0x2c199860",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5d9c78",
+          "va_xip": "0x2c5d9c78",
+          "note": "LDR (literal) T1 @ 0x5d9df8 rt=3 loads pool 0x5d9e40 value 0x3c17146c; containing-fn prologue 0x5d9c78 bytes 70b586b0"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "unbond_reset_standby_widgets",
+      "ascii": "[Launcher]unbond, reset standby view widget to default status",
+      "file_off": "0x199d54",
+      "va_xip": "0x2c199d54",
+      "role": "pairing",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5db9a0",
+          "va_xip": "0x2c5db9a0",
+          "note": "LDR (literal) T1 @ 0x5db9a2 rt=4 loads pool 0x5db9d0 value 0x3c171960; containing-fn prologue 0x5db9a0 bytes 10b50b4c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "SplashView_cpp",
+      "ascii": "../../thirdparty/star_air_lvgl/app/Pages/Navigation/view/SplashView.cpp",
+      "file_off": "0x18c2d0",
+      "va_xip": "0x2c18c2d0",
+      "role": "splash",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5b394c",
+          "va_xip": "0x2c5b394c",
+          "note": "LDR (literal) T1 @ 0x5b395c rt=1 loads pool 0x5b39ac value 0x3c163edc; containing-fn prologue 0x5b394c bytes 70b54568"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "Pages_StartupGuide",
+      "ascii": "Pages/StartupGuide",
+      "file_off": "0x190af8",
+      "va_xip": "0x2c190af8",
+      "role": "splash",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5c53a0",
+          "va_xip": "0x2c5c53a0",
+          "note": "LDR (literal) T1 @ 0x5c53ce rt=1 loads pool 0x5c5594 value 0x3c168704; containing-fn prologue 0x5c53a0 bytes 2de9f043"
+        },
+        {
+          "file_off": "0x5c56e4",
+          "va_xip": "0x2c5c56e4",
+          "note": "LDR (literal) T1 @ 0x5c5760 rt=0 loads pool 0x5c5874 value 0x3c168704; containing-fn prologue 0x5c56e4 bytes 2de9f043"
+        },
+        {
+          "file_off": "0x5c80d8",
+          "va_xip": "0x2c5c80d8",
+          "note": "LDR (literal) T1 @ 0x5c810a rt=1 loads pool 0x5c813c value 0x3c168704; containing-fn prologue 0x5c80d8 bytes 10b5fdf7"
+        },
+        {
+          "file_off": "0x63c034",
+          "va_xip": "0x2c63c034",
+          "note": "LDR (literal) T1 @ 0x63c046 rt=1 loads pool 0x63c060 value 0x3c168704; containing-fn prologue 0x63c034 bytes 10b5a5f7"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "StartupGuide",
+      "ascii": "StartupGuide",
+      "file_off": "0x19a15c",
+      "va_xip": "0x2c19a15c",
+      "role": "splash",
+      "kind": "other",
+      "code_sites": [],
+      "xref_kind": "dword_ptr",
+      "xref_note": "rodata-delta dwords at 0x19a1c8 (no Thumb LDR to those pools recovered)"
+    },
+    {
+      "id": "lvgl_boot_completed",
+      "ascii": "boot completed.\r\n",
+      "file_off": "0x41da24",
+      "va_xip": "0x2c41da24",
+      "role": "splash",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x62f228",
+          "va_xip": "0x2c62f228",
+          "note": "LDR (literal) T1 @ 0x62f2a6 rt=2 loads pool 0x62f344 value 0x3c3f5630; containing-fn prologue 0x62f228 bytes 30b53f4c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "welcome_to_lvgl",
+      "ascii": "Welcome to LVGL\r\n",
+      "file_off": "0x41d9ec",
+      "va_xip": "0x2c41d9ec",
+      "role": "splash",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x62f228",
+          "va_xip": "0x2c62f228",
+          "note": "LDR (literal) T1 @ 0x62f238 rt=4 loads pool 0x62f334 value 0x3c3f55f8; containing-fn prologue 0x62f228 bytes 30b53f4c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "launcher_onViewDidLoad",
+      "ascii": "[Launcher]Launcher::onViewDidLoad",
+      "file_off": "0x191d48",
+      "va_xip": "0x2c191d48",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c7a14",
+          "va_xip": "0x2c5c7a14",
+          "note": "LDR (literal) T1 @ 0x5c7a16 rt=4 loads pool 0x5c7a3c value 0x3c169954; containing-fn prologue 0x5c7a14 bytes 10b5094c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "launcher_onViewDidUnload",
+      "ascii": "[Launcher]Launcher::onViewDidUnload",
+      "file_off": "0x191d24",
+      "va_xip": "0x2c191d24",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c79f0",
+          "va_xip": "0x2c5c79f0",
+          "note": "LDR (literal) T1 @ 0x5c79f2 rt=4 loads pool 0x5c7a08 value 0x3c169930; containing-fn prologue 0x5c79f0 bytes 10b5054c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "launcher_onViewWillDisappear",
+      "ascii": "[Launcher]Launcher::onViewWillDisappear",
+      "file_off": "0x191d6c",
+      "va_xip": "0x2c191d6c",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c7a48",
+          "va_xip": "0x2c5c7a48",
+          "note": "LDR (literal) T1 @ 0x5c7a4a rt=1 loads pool 0x5c7a6c value 0x3c169978; containing-fn prologue 0x5c7a48 bytes 10b50849"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "launcher_onViewUnload",
+      "ascii": "[Launcher]Launcher::onViewUnload",
+      "file_off": "0x191d94",
+      "va_xip": "0x2c191d94",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c7a78",
+          "va_xip": "0x2c5c7a78",
+          "note": "LDR (literal) T1 @ 0x5c7a7a rt=4 loads pool 0x5c7a9c value 0x3c1699a0; containing-fn prologue 0x5c7a78 bytes 10b5084c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "flag_isLauncherAppOnTop",
+      "ascii": "isLauncherAppOnTop",
+      "file_off": "0x190f60",
+      "va_xip": "0x2c190f60",
+      "role": "flag",
+      "kind": "flag",
+      "code_sites": [
+        {
+          "file_off": "0x5c59bc",
+          "va_xip": "0x2c5c59bc",
+          "note": "LDR (literal) T1 @ 0x5c5a12 rt=3 loads pool 0x5c5a2c value 0x3c168b6c; containing-fn prologue 0x5c59bc bytes 10b50468"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "tips_isLauncherShow",
+      "ascii": "[Launcher]TipsModel::isConnect=%d, isLauncherShow=%d, isSuperAppInstall=%d, isPipShow=%d, isAssistantShow=%d, isWearOn=%d, isForceUpgradeModeOpen=%d, isShowDock=%d",
+      "file_off": "0x195bac",
+      "va_xip": "0x2c195bac",
+      "role": "flag",
+      "kind": "flag",
+      "code_sites": [
+        {
+          "file_off": "0x5ce0e8",
+          "va_xip": "0x2c5ce0e8",
+          "note": "LDR (literal) T1 @ 0x5ce162 rt=3 loads pool 0x5ce1c4 value 0x3c16d7b8; containing-fn prologue 0x5ce0e8 bytes 2de9f04f"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "tips_wait_back_to_standby",
+      "ascii": "[Launcher]TipsModel:: current show dock, wait for back to standby",
+      "file_off": "0x195df8",
+      "va_xip": "0x2c195df8",
+      "role": "dock",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5ce3c4",
+          "va_xip": "0x2c5ce3c4",
+          "note": "LDR (literal) T1 @ 0x5ce404 rt=4 loads pool 0x5ce42c value 0x3c16da04; containing-fn prologue 0x5ce3c4 bytes 10b50846"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "tips_tts_extra_5s_delay",
+      "ascii": "[Launcher]tts is speaking, add more 5 second to hide tips",
+      "file_off": "0x195e9c",
+      "va_xip": "0x2c195e9c",
+      "role": "delay",
+      "kind": "delay",
+      "code_sites": [
+        {
+          "file_off": "0x5ce54c",
+          "va_xip": "0x2c5ce54c",
+          "note": "LDR (literal) T1 @ 0x5ce582 rt=1 loads pool 0x5ce600 value 0x3c16daa8; containing-fn prologue 0x5ce54c bytes 30b52b4b"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "tips_delay_show_operation",
+      "ascii": "[Launcher]TipsModel::delay show operation Tips since other type is showing",
+      "file_off": "0x196680",
+      "va_xip": "0x2c196680",
+      "role": "delay",
+      "kind": "delay",
+      "code_sites": [
+        {
+          "file_off": "0x5cf3e0",
+          "va_xip": "0x2c5cf3e0",
+          "note": "LDR (literal) T1 @ 0x5cf45c rt=5 loads pool 0x5cf49c value 0x3c16e28c; containing-fn prologue 0x5cf3e0 bytes f0b5294d"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "dock_changeAppPos_isReady",
+      "ascii": "[Launcher]DockviewV2::changeAppPos isReady: %d, isChangeSeq: %d",
+      "file_off": "0x19753c",
+      "va_xip": "0x2c19753c",
+      "role": "dock",
+      "kind": "flag",
+      "code_sites": [
+        {
+          "file_off": "0x5d23a0",
+          "va_xip": "0x2c5d23a0",
+          "note": "LDR (literal) T1 @ 0x5d24e0 rt=5 loads pool 0x5d2644 value 0x3c16f148; containing-fn prologue 0x5d23a0 bytes 2de9f04f"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "in_starrynet_no_connect_toast",
+      "ascii": "[Launcher]current in starrynet app, not show connect toast",
+      "file_off": "0x1924fc",
+      "va_xip": "0x2c1924fc",
+      "role": "pairing",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5c880c",
+          "va_xip": "0x2c5c880c",
+          "note": "LDR (literal) T1 @ 0x5c8922 rt=4 loads pool 0x5c8968 value 0x3c16a108; containing-fn prologue 0x5c880c bytes 70b54b4b"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "StateDidAppearExecute",
+      "ascii": "StateDidAppearExecute",
+      "file_off": "0x19b078",
+      "va_xip": "0x2c19b078",
+      "role": "lifecycle",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5df27e",
+          "va_xip": "0x2c5df27e",
+          "note": "LDR (literal) T1 @ 0x5df346 rt=3 loads pool 0x5df47c value 0x3c172c84; containing-fn prologue 0x5df27e bytes 30b50c46"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "disp_flush_area",
+      "ascii": "disp_flush_area",
+      "file_off": "0x41df78",
+      "va_xip": "0x2c41df78",
+      "role": "other",
+      "kind": "other",
+      "code_sites": [
+        {
+          "file_off": "0x5e04",
+          "va_xip": "0x2c005e04",
+          "note": "LDR (literal) T1 @ 0x601a rt=3 loads pool 0x61b0 value 0x3c3f5b84; containing-fn prologue 0x5e04 bytes 2de9f04f"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    },
+    {
+      "id": "music_onViewDidLoad_turn_on_screen",
+      "ascii": "onViewDidLoad turn on screen",
+      "file_off": "0x184824",
+      "va_xip": "0x2c184824",
+      "role": "splash",
+      "kind": "event",
+      "code_sites": [
+        {
+          "file_off": "0x5a2e8c",
+          "va_xip": "0x2c5a2e8c",
+          "note": "LDR (literal) T1 @ 0x5a2eb0 rt=4 loads pool 0x5a2ed8 value 0x3c15c430; containing-fn prologue 0x5a2e8c bytes 10b50f4c"
+        }
+      ],
+      "xref_kind": "ldr_literal"
+    }
+  ]
+}

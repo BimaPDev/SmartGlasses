@@ -1,0 +1,117 @@
+{
+  "leaf": "1.1.3",
+  "bin": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "ctor_file_off": "0x5d931c",
+  "ctor_prologue_hex": "2de9f0410d4682b0",
+  "ctor_va_xip": "0x2c5d931c",
+  "factory_file_off": "0x5d9c78",
+  "factory_prologue_hex": "70b586b004460276",
+  "getter_bl_file_off": "0x5d9426",
+  "getter_bl_stock_hex": "fdf757fa",
+  "strings": {
+    "customTimeAndBatteryWidget": "0x199860",
+    "StandByView.cpp": "0x1976a4",
+    "StandByWidget.cpp": "0x1994b0",
+    "StandByWidgetManager.cpp": "0x199914",
+    "createDefaultWidgets": "0x199c80",
+    "createSpecWidgets": "0x199b68",
+    "SplashView.cpp": "0x18c2d0",
+    "Pages/StartupGuide": "0x190af8",
+    "PowerOffAndRebootView": "0x16e224",
+    "launcher_is_on_standby_view": "0x41add8"
+  },
+  "intern_0x864_movw_sites": [],
+  "intern_id_customTimeAndBatteryWidget": "0x864",
+  "type3_wrapper_bls": [
+    "0x5db5c0"
+  ],
+  "callers": [
+    {
+      "name": "FUN_2c5d9c78_spec_factory_case_3",
+      "file_off": "0x5d9c78",
+      "prologue_hex": "70b586b004460276",
+      "context": "shared",
+      "note": "Unique BL to ctor @ 0x5d9d6e (case 3). TRACE pool rodata VA 0x3c1710bc = StandByWidget.cpp, 0x3c17146c = customTimeAndBatteryWidget. This factory is the only flash caller of the ctor; splash pages do not BL 0x5d931c. Boot still runs this factory while building StandByView, so the caller does not separate splash-time construction from idle HUD."
+    },
+    {
+      "name": "FUN_2c5d9fe4_factory_wrapper",
+      "file_off": "0x5d9fe4",
+      "prologue_hex": "f0b5204e8db00446",
+      "context": "shared",
+      "note": "Unique BL to factory @ 0x5da032. Allocates 0x5c and forwards kind in r2. Type-3 (time+battery) BLs at 0x5db5c0."
+    },
+    {
+      "name": "FUN_2c5db204_spec_kind_switch",
+      "file_off": "0x5db204",
+      "prologue_hex": "2de9f04fa84ba7b0",
+      "context": "shared",
+      "note": "param_2==1 (switch default when 1..6 and not 2..6) calls the wrapper with factory type 3 and TimeModel events 0x3e9/0x3eb. PUSH.W prologue 2de9f04f; fw_common containing_fn reports 0x5db1c0 because it misses E92D. Shared by createSpecWidgets."
+    },
+    {
+      "name": "createSpecWidgets",
+      "file_off": "0x5db5e4",
+      "prologue_hex": "f0b583b007460d46",
+      "context": "idle",
+      "note": "StandByWidgetManager.cpp TRACE (rodata 0x3c171774). BL sites into this fn: 0x5db72e, 0x5db742, 0x5db882, 0x5db89a, 0x5db8de, 0x5db8f0, 0x5db902, 0x5dba76. Idle-path builder; also runs when createDefaultWidgets first constructs the standby grid at boot."
+    },
+    {
+      "name": "createDefaultWidgets",
+      "file_off": "0x5db7c4",
+      "prologue_hex": "2de9f04f544c89b0",
+      "context": "idle",
+      "note": "StandByWidgetManager.cpp TRACE createDefaultWidgets (string 0x199c80). PUSH.W at 0x5db7c4; direct BL from 0x5db962. Idle HUD widget grid. Same function is the boot construction path for StandByView \u2014 not a splash-vs-idle discriminator by itself."
+    },
+    {
+      "name": "unBondReset_StandByView",
+      "file_off": "0x5db9a0",
+      "prologue_hex": "10b50b4c82b00b4b",
+      "context": "idle",
+      "note": "BL from StandByView method 0x5d2a8c (sites 0x5d2ace). Thumb vtable dword 0x2c5e2a8d at file 0x197bb0, next to StandByView.cpp (0x1976a4). Reconnect/unbond rebuild, not boot splash."
+    },
+    {
+      "name": "SplashView_Navigation",
+      "file_off": "0x5b394c",
+      "prologue_hex": "70b5456882b04db1",
+      "context": "splash",
+      "note": "SplashView.cpp (0x18c2d0) TRACE-recovered. Zero BL into ctor/factory. Navigation-local splash, not the boot/reboot hang from BATT_CIRCLE_POSTMORTEM.md."
+    },
+    {
+      "name": "PowerOffAndRebootView",
+      "file_off": "0x525a58",
+      "prologue_hex": "30b5154d83b00446",
+      "context": "splash",
+      "note": "createPowerOffAndRebootView TRACE at 0x16e224 (StarryNetApp toplayer reboot screen). Nearby BLs at 0x5dc51c/0x5dc53c are UTF-8 helpers, not the spec-widget factory. Zero BL to FUN_2c5d931c."
+    },
+    {
+      "name": "Pages_StartupGuide",
+      "file_off": "0x5c52ec",
+      "prologue_hex": "30b5044683b00d46",
+      "context": "splash",
+      "note": "Pages/StartupGuide (0x190af8) LDR-literal in LauncherProvider startApp path. First-run guide page name; does not construct customTimeAndBatteryWidget."
+    },
+    {
+      "name": "lvgl_ui_boot_completed",
+      "file_off": "0x62f228",
+      "prologue_hex": "30b53f4c83b03f4b",
+      "context": "splash",
+      "note": "Welcome to LVGL (0x41d9ec) and boot completed (0x41da24) TRACE in the lvgl_ui thread. Event pump; page_ready leaf already proved this loop is not idle-HUD-ready. Zero BL to the widget ctor."
+    },
+    {
+      "name": "onLauncherEnterCallback_delay_exec",
+      "file_off": "0x5d3bc0",
+      "prologue_hex": "30b50a4d83b00446",
+      "context": "idle",
+      "note": "StandByView TRACE 0x197908 is a DELAY (stock onLauncherEnterCallback). Recorded so it is not reused as a discriminator. kind must not be delay."
+    }
+  ],
+  "discriminator": {
+    "kind": "caller",
+    "status": "UNRECOVERED",
+    "detail": "Direct ctor caller is uniquely factory case 3 (file 0x5d9d6e) inside StandByWidget.cpp. SplashView / StartupGuide / PowerOffAndRebootView / lvgl_ui boot do not BL the ctor. That does not yield a ctor-visible splash-vs-idle predicate: createDefaultWidgets/createSpecWidgets build the same type-3 widget during LVGL boot while the reboot/splash face is still up (BATT_CIRCLE_POSTMORTEM.md v5/v6). launcher_is_on_standby_view. (file 0x41add8) is a TRACE tag in indev keypad proc at 0x602af0, not a boolean the ctor can load. parent_object, page_name, view_mode, and function were tried; none is true on idle HUD and false on boot StandByView construction without using a millisecond delay. Methods: Thumb BL scan of whole image to ctor 0x5d931c, factory 0x5d9c78, wrapper 0x5d9fe4; Rodata-delta 0x3bfd7c0c LDR-literal TRACE (StandByWidget.cpp vs Phone 3C-alias collision); Thumb vtable scan (file+0x2c010000|1) for StandByView unbond caller; Zero-BL negative control: SplashView.cpp, PowerOffAndRebootView, lvgl_ui, Pages/StartupGuide; launcher_is_on_standby_view. LDR @ 0x602af0 is lv_indev_xjxr.c TRACE, not a ctor getter; parent_object = factory param_2 / FUN_2c5cfd1c(*this); single construction path, no second parent; view_mode switchView isShowDock distinguishes dock vs StandBy, not boot vs idle; intern MOVW 0x864 (customTimeAndBatteryWidget) \u2014 0 sites (time_widget.json intern notes, cited)."
+  },
+  "why_timer_fails": "A timer created inside FUN_2c5d931c cannot tell splash from idle because the ctor is the same function on both: createDefaultWidgets \u2192 createSpecWidgets \u2192 factory case 3 \u2192 customTimeAndBatteryWidget. lv_timer period (v6 100 ms) is not a view discriminator; the tick still runs during boot/splash while StandByView widgets are first built, and may UAF if splash tears down the clock object (user_data) before the callback. There is no page_name, parent class, or standby flag check in the ctor or in a timer started from it. Stock onLauncherEnterCallback delay exec is a delay and must not be reused as the discriminator.",
+  "cited_only": [
+    "Reverse/firmware/analysis/BATT_CIRCLE_POSTMORTEM.md",
+    "Reverse/firmware/analysis/hud_map/time_widget.json"
+  ]
+}
