@@ -1,0 +1,34 @@
+{
+  "variant": "custom",
+  "source_ota": "Reverse/firmware/Halliday/HomeBuddyHallidayCustomOTA.bin",
+  "md5": "2307fa18d3a15a6af343517b9e0184af",
+  "app_bin_md5": "9dc263a12606e06231bbd41fd09bdb18",
+  "app_bin_size": 1662592,
+  "load_hint": "0x10000000",
+  "platform": "build_ver=1.00_2601211113\nplatform_id=ats3089_dev_watch",
+  "partitions": [
+    "ota.xml",
+    "TEMP.bin",
+    "res.bin",
+    "sdfs_k.bin"
+  ],
+  "inner_partitions": [
+    "ota.xml",
+    "app.bin",
+    "sdfs.bin"
+  ],
+  "string_counts": {
+    "ascii": 25549,
+    "source_files.txt": 150,
+    "ble_bluetooth.txt": 1223,
+    "ota.txt": 212,
+    "lvgl_ui.txt": 633,
+    "halliday.txt": 47,
+    "zephyr.txt": 54,
+    "factory.txt": 59,
+    "paths_nand.txt": 49,
+    "audio_display.txt": 362,
+    "power_battery.txt": 83,
+    "sensors_health.txt": 20
+  }
+}

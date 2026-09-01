@@ -1,0 +1,62 @@
+{
+  "leaf": "1.4",
+  "subsystem": "ble_connectivity",
+  "firmware": "HallidayOfficialOTA app.bin (official)",
+  "variant": "official",
+  "app_bin_md5": "32f7cdc25818cdcb853d04702687fc8a",
+  "app_bin_size": 1662592,
+  "xip_base": "0x10000000",
+  "note": "No Ghidra function export for Halliday app.bin yet. Entries are string-anchor VAs (xip_base + file_offset from Reverse/firmware/Halliday/export/official/strings). Symbol names come from adjacent log strings and WEST_TOPDIR paths, not recovered Thumb entry points.",
+  "functions": [
+    {
+      "va": "0x10182817",
+      "name": "bt_manager_init",
+      "role": "Actions bt_manager bring-up; pairs with bt_manager_deinit @ 0x10182827"
+    },
+    {
+      "va": "0x10182867",
+      "name": "Halliday SPP",
+      "role": "Registered SPP service name literal; bt_manager_spp_reg_uuid / sppble_register cluster @ 0x10183621"
+    },
+    {
+      "va": "0x101848c1",
+      "name": "dual_ble_event_handle",
+      "role": "Dual-BLE link state machine; DUAL_BLE_CONECTED_IND / DUAL_BLE_DISCONECTED_IND @ 0x101846a6 / 0x101846e9"
+    },
+    {
+      "va": "0x1015a4b8",
+      "name": "vendor_ble_rx_event_proc",
+      "role": "Halliday xs_app phone BLE command dispatcher (CMD/KEY RX); source xs_vendor_ble_stream.c"
+    },
+    {
+      "va": "0x1014a777",
+      "name": "ancs_parse_data",
+      "role": "iOS ANCS notification attribute parser; ANCS N/DS subscribe strings @ 0x1014a50e–0x1014a640"
+    },
+    {
+      "va": "0x1014b853",
+      "name": "btcall_bt_event_proc",
+      "role": "Classic BT call UI event pump; BT_HFP_CALL_* strings @ 0x1014b6cb–0x1014b79b"
+    },
+    {
+      "va": "0x1018334c",
+      "name": "_bt_manager_hfp_callback",
+      "role": "HFP profile callback into bt_manager; bridges to btmgr_hfp_*_proc helpers"
+    },
+    {
+      "va": "0x1018652e",
+      "name": "bt_hci_core",
+      "role": "Zephyr-style HCI core string cluster; bt_enable / bt_disable / dualble SMP @ hci_core.c path"
+    }
+  ],
+  "source_anchors": [
+    "WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/hci_core.c",
+    "WEST_TOPDIR/framework/bluetooth/bt_manager/bt_manager_sco.c",
+    "WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_service/xs_vendor_ble_stream.c",
+    "WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_ring_service/ble_ring_stream.c"
+  ],
+  "absences_verified_strings_only": [
+    "No StarryNet / xjxr_starrynet symbols in Halliday export",
+    "No recovered Thumb VA for vendor_ble_rx_event_proc body (string anchor only)"
+  ]
+}

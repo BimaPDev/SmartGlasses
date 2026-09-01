@@ -1,0 +1,76 @@
+{
+  "leaf": "1.10",
+  "subsystem": "factory_shell",
+  "firmware": "HallidayOfficialOTA.bin",
+  "inner_binary": "app.bin",
+  "version": "1.00_2601211113",
+  "board_name": "ats3089_dev_watch",
+  "load_base": "0x10000000",
+  "string_va_rule": "0x10000000 + app.bin file_off",
+  "note": "String-anchor VAs only; no Ghidra function export for Halliday app.bin yet. Symbol names from __func__ strings and help text in export/official/strings.",
+  "anchors": [
+    {
+      "va": "0x1014aff4",
+      "name": "application_shell_commands",
+      "evidence": "STRING 'Application shell commands'; parent group for shell_set_config, shell_device_test, shell_set_led, shell_set_vibration @ 0x1014b088–0x1014b0f0"
+    },
+    {
+      "va": "0x1014b088",
+      "name": "shell_set_config",
+      "evidence": "STRING __func__ + help 'set_config' / 'set system config'; logs 'set config %s : %s ok' @ 0x1014af1b and 'unknown parameter' @ 0x1014af32"
+    },
+    {
+      "va": "0x1014b0bb",
+      "name": "shell_device_test",
+      "evidence": "STRING __func__; factory hardware test entry paired with shell_device_info @ 0x1014b0de"
+    },
+    {
+      "va": "0x10159396",
+      "name": "key_power_to_factory_reset_handle",
+      "evidence": "STRING __func__; debug log @ 0x101592b5 with key_event/time_diff/cnt; siblings key_power_press_event @ 0x101594bd, key_power_long_press_event @ 0x10159505"
+    },
+    {
+      "va": "0x1014ed09",
+      "name": "reset_glass_data",
+      "evidence": "STRING __func__; banner '*********reset_glass_data*********' @ 0x1014e38a; IS_RESET_FLAG @ 0x1014e3ca; UI comfirm_reset_glass @ 0x1015c2f8"
+    },
+    {
+      "va": "0x101932b8",
+      "name": "factory_config_label",
+      "evidence": "STRING 'Factory Config'; adjacent 'Factory RW' @ 0x101932f0 and 'User Config' @ 0x10193328 — factory vs user NVRAM partition names"
+    },
+    {
+      "va": "0x1015fd29",
+      "name": "zephyr_shell_core",
+      "evidence": "STRING WEST_TOPDIR/zephyr/subsys/shell/shell.c; UART backend shell_uart.c @ 0x10160288; devicetree label shell.shell_uart @ 0x101602b5"
+    },
+    {
+      "va": "0x1015ee22",
+      "name": "factory_power_down",
+      "evidence": "STRING 'factory power down WKEN_CTL=0x%x'; distinct from system power down @ 0x1015ede4"
+    },
+    {
+      "va": "0x101842a0",
+      "name": "shell_cmd_ble_test",
+      "evidence": "STRING __func__; group 'Bluetooth manager commands' @ 0x1018420e; help ble_test / ble power test @ 0x10184248"
+    },
+    {
+      "va": "0x1014c019",
+      "name": "ota_factory_type_gate",
+      "evidence": "STRING 'ota_type %d, is not factory?'; libota rejects non-factory upgrade type (cross-ref OTA leaf 1.5)"
+    }
+  ],
+  "source_anchors": [
+    "WEST_TOPDIR/zephyr/subsys/shell/shell.c",
+    "WEST_TOPDIR/zephyr/subsys/shell/shell_uart.c",
+    "WEST_TOPDIR/zephyr/subsys/shell/shell_ops.c",
+    "WEST_TOPDIR/zephyr/subsys/shell/shell_utils.c",
+    "WEST_TOPDIR/zephyr/subsys/shell/shell_history.c",
+    "WEST_TOPDIR/zephyr/subsys/shell/shell_dbg.c"
+  ],
+  "string_sources": [
+    "Reverse/firmware/Halliday/export/official/strings/categorized/factory.txt",
+    "Reverse/firmware/Halliday/export/official/strings/categorized/zephyr.txt",
+    "Reverse/firmware/Halliday/export/official/strings/app_ascii.txt"
+  ]
+}

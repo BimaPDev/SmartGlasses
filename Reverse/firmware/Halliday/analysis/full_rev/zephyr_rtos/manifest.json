@@ -1,0 +1,74 @@
+{
+  "leaf": "1.11",
+  "subsystem": "zephyr_rtos",
+  "firmware": "HallidayOfficialOTA app.bin (official)",
+  "variant": "official",
+  "app_bin_md5": "32f7cdc25818cdcb853d04702687fc8a",
+  "app_bin_size": 1662592,
+  "xip_base": "0x10000000",
+  "string_va_rule": "0x10000000 + app.bin file_off",
+  "platform": "ats3089_dev_watch",
+  "version": "1.00_2601211113",
+  "note": "No Ghidra function export for Halliday app.bin yet. Entries are string-anchor VAs from export/official/strings/categorized/zephyr.txt and targeted app_ascii.txt greps (thread, k_thread, work_queue, fatal error, ring_buffer). Symbol names from WEST_TOPDIR paths and kernel log strings, not recovered Thumb entry points.",
+  "anchors": [
+    {
+      "va": "0x101912e8",
+      "name": "zephyr_boot_banner",
+      "evidence": "STRING '*** Booting Zephyr OS build %s %s ***' @ 0x1912e8; paired 'Zephyr version %d.%d.%d' @ 0x15f7b1 → 0x1015f7b1 (kernel version shell command)"
+    },
+    {
+      "va": "0x10190455",
+      "name": "z_fatal_error",
+      "evidence": "STRING '>>> ZEPHYR FATAL ERROR %d: %s on CPU %d' @ 0x190455; SOURCE WEST_TOPDIR/zephyr/kernel/fatal.c @ 0x1904b6; sibling 'Current thread: %p (%s)' @ 0x19049e, reason strings Stack overflow / Kernel panic @ 0x19057d–0x190598"
+    },
+    {
+      "va": "0x10190686",
+      "name": "k_thread_kernel",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/kernel/thread.c @ 0x190686; assert/log cluster: stack overflow @ 0x1906fe, 'Threads may not be created in ISRs' @ 0x1908a3, thread state names prestart/dead/queued @ 0x1906da–0x1906f7"
+    },
+    {
+      "va": "0x10190a8e",
+      "name": "k_work_queue",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/kernel/work.c @ 0x190a8e; sysworkq label @ 0x190a85; K_WORK_QUEUE_STARTED_BIT assert @ 0x190b4d; timing log 'work_q %s %p work %p run %d us!!!' @ 0x190ac6"
+    },
+    {
+      "va": "0x1015fd29",
+      "name": "zephyr_shell_core",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/subsys/shell/shell.c @ 0x15fd29; UART backend shell_uart.c @ 0x160288, shell_dbg.c heap dump @ 0x160c77; kernel subcommands threads/stacks/uptime @ 0x15f9ae–0x15f994"
+    },
+    {
+      "va": "0x1015e8c6",
+      "name": "sys_heap",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/lib/os/heap.c @ 0x15e8c6 + heap.h @ 0x15e891; corruption strings double-free/bounds @ 0x15e8f9–0x15e957; shell_dbg dump heap @ 0x160c57; kheap shell cmd @ 0x16141b"
+    },
+    {
+      "va": "0x1015ebde",
+      "name": "sys_ring_buffer",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/lib/os/ring_buffer.c @ 0x15ebde + ring_buffer.h @ 0x14bdfc; shell_history uses ring_buf_is_empty(history->ring_buf) @ 0x16074e"
+    },
+    {
+      "va": "0x10161800",
+      "name": "zephyr_pm_power",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/subsys/pm/power.c @ 0x161800; pm_early_suspend @ 0x161980, _pm_devices @ 0x161974; device state strings low power/suspended @ 0x161960–0x16196a (cross-ref power_battery leaf 1.9)"
+    },
+    {
+      "va": "0x101905bd",
+      "name": "k_heap",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/kernel/kheap.c @ 0x1905bd; kalloc fail log @ 0x190624; shell kheap [addr] @ 0x161421; shell_dbg _k_heap_list_end assert @ 0x160ca3"
+    }
+  ],
+  "source_anchors": [
+    "WEST_TOPDIR/zephyr/kernel/fatal.c",
+    "WEST_TOPDIR/zephyr/kernel/thread.c",
+    "WEST_TOPDIR/zephyr/kernel/work.c",
+    "WEST_TOPDIR/zephyr/subsys/shell/shell.c",
+    "WEST_TOPDIR/zephyr/lib/os/heap.c",
+    "WEST_TOPDIR/zephyr/lib/os/ring_buffer.c",
+    "WEST_TOPDIR/zephyr/subsys/pm/power.c",
+    "WEST_TOPDIR/zephyr/kernel/kheap.c"
+  ],
+  "string_sources": [
+    "Reverse/firmware/Halliday/export/official/strings/categorized/zephyr.txt",
+    "Reverse/firmware/Halliday/export/official/strings/app_ascii.txt"
+  ]
+}

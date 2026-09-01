@@ -1,0 +1,46 @@
+0x14e2b8	xs_sn_info not exist: %s,len %d
+0x14e2d8	xs_sn_info exist: %s,len %d
+0x14e328	xs_app_init
+0x14e375	>>>>xs_app_init end
+0x14ecd7	xs_get_sn_info
+0x14ece6	xs_set_sn_info
+0x14ecfc	_xs_app_init
+0x14ed1a	_xs_app_init
+0x14ed27	/NAND:C/xs_font.ttf
+0x14f078	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_translate/translate_language_select_view_332.c
+0x150583	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_msg/message_reply_view.c
+0x15148b	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_msg/notify_list_view.c
+0x152a13	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_remind/reminder_list_view_V330.c
+0x152d9e	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_remind/reminder_opration_view.c
+0x154242	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ai/ai_view.c
+0x15454b	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ai/proactiva_ai_view.c
+0x15479d	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_prompter/prompter_list_view.c
+0x156fc7	xs_monkey_init
+0x15718a	xs_ai_unit_test_start
+0x1571fc	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_password/password_view.c
+0x158685	xs_vibration_start not enable
+0x1588e6	xs_vibration_start
+0x158db4	xs_event_handle MSG_BT_EVENT %d
+0x159066	xs_remind_time
+0x1590a2	xs_music_touch_event_handle
+0x1591a0	xs_event_handle
+0x159537	_xs_key_event_handle
+0x1595fe	xs_pcm_play_handle volume:%d
+0x15961b	xs_pcm_play_handle volume:%d, ring_volume:%d, volume_max_level:%d
+0x159795	xs_pcm_play %s,media_mix_pcm_stream_close
+0x1597c0	xs_pcm_play media_mix_pcm_stream_open
+0x1597e7	xs_pcm_play open failed
+0x159800	xs_pcm_play open success
+0x15981a	xs_pcm_play end
+0x15bd00	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_setting/setting_view_v330.c
+0x15bf4a	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_setting/xs_language/language_view.c
+0x15c068	xs_language_res_init app_mem_malloc failed
+0x15c093	xs_language_res_init not found
+0x15c0ec	xs_language_str_load
+0x15c101	xs_language_res_init
+0x15c138	xs_language_res_init
+0x15c1e1	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_setting/xs_screen_time/screen_time_view.c
+0x15caad	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_service/xs_vendor_ble_stream.c
+0x15d876	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_ring_service/ble_ring_stream.c
+0x182856	Halliday Glasses
+0x182867	Halliday SPP

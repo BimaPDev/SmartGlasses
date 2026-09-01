@@ -1,0 +1,362 @@
+0x146458	libdisplay: version %s, release time: %s:%s
+0x146648	WEST_TOPDIR/framework/display/libdisplay/ui_service/view_manager.c
+0x146cc8	WEST_TOPDIR/framework/display/libdisplay/ui_service/input_dispatcher.c
+0x146eb0	malloc freetype font file struct failed
+0x146fa4	freetype font init failed due to unable to malloc ft_font_cache data
+0x146fec	freetype font init failed due to unable to malloc opend_font data
+0x147030	freetype font init failed due to unable to malloc common faces data
+0x147078	freetype font init failed when malloc common shape vertices
+0x1470f0	Error in FT_Init_FreeType: %d
+0x147110	freetype_font_init ok
+0x147140	null font cache
+0x147150	preset font cache size %s, %d
+0x147194	malloc cache failed for %p for font %p size %d, is shape %d 
+0x147220	open cached: font size %d, size obj %p
+0x147248	no available slot for freetype font %s
+0x147288	font cache init failed
+0x1472a0	font attr font size %d, per data size %d, max cached number %d
+0x147334	font size %d, asc %d, dsc %d, lineheight %d, base line %d, height %d
+0x1473d8	null or invalid font info, %p, %p
+0x147458	null font info, %p, %p
+0x1474a8	font %s, size %d, face %p, size %p
+0x1475a0	freetype_font_init
+0x1475cc	_freetype_cache_init
+0x147654	freetype_font_open
+0x147668	freetype_font_get_bitmap
+0x1476b4	freetype_font_load_glyph_shape
+0x1476d4	freetype_font_get_glyph_dsc
+0x147708	font-format
+0x147848	postscript-font-name
+0x14af6f	freetype_font_get_shape_info_size %d
+0x14b3b1	/NAND:C/sans28.font
+0x14b3c5	/NAND:C/sans32.font
+0x14b3d9	/NAND:C/emoji28.font
+0x14b427	check a2dp state
+0x14bc3b	audio_data_play_test_start
+0x14bc56	audio_data_play_test_stop
+0x14bc70	audio_data_play_test_start
+0x14bfbb	audio_manager_asqt_start
+0x14bfd4	audio_manager_asqt_stop
+0x14ed27	/NAND:C/xs_font.ttf
+0x14ed3b	error:font size %d not found
+0x14ed58	ui_font_open
+0x15215d	font not found
+0x1548bb	Setting default font size: %d
+0x1548d9	Using new layout system: font=%d, lines=%d, chars_per_line=%d, capacity=%d
+0x15495d	Font updated: size=%d, display_lines=%d, calculated_height=%d
+0x154a0d	font_height = %d, content_obj_height = %d ,f*h=%d,  %d
+0x154fe6	Failed to calculate layout for font %d
+0x15502c	Dynamic read: font=%d, capacity=%d, read_size=%d, real_size=%d
+0x155170	Page content size unusual: actual=%d, expected_range=[%d, %d], font=%d
+0x1551b7	Page content size normal: actual=%d, font=%d, within expected range
+0x1556c1	Initializing auto-page content for page %d, font %d, file: %s
+0x1556ff	Auto-page using font %d layout: lines=%d, capacity=%d chars
+0x15573b	Failed to get current font layout, using default
+0x155920	Reloading content after font change for file: %s
+0x1559e4	Calculated max_display_lines: %d (available_height=%d, font_height=%d)
+0x155a2b	Auto-page mode: font_height=%d, max_lines=%d, precise_height=%d
+0x155a9f	Font updated and re-centered: size=%d, display_lines=%d
+0x155ad7	Forced LVGL refresh after font change
+0x155ca9	prompter_view_reload_content_after_font_change
+0x15610d	Prompter config initialized with font_size=%d, display_mode=%d
+0x15614c	Invalid font size: %d, using default
+0x156171	Font size updated from %d to %d
+0x156191	Font size %d not found, using default
+0x1561d0	Failed to get font params for size %d
+0x1561f6	Layout calculated for font %d: capacity=%d, lines=%d, width=%d, height=%d
+0x1565ba	Font size unchanged, no reload needed
+0x1565e0	Smart reload: font change from %d to %d for file %s
+0x156638	Failed to save updated bookmark with new font size
+0x15666b	Smart reload completed: only updated font size to %d. Deferring reload to view.
+0x156748	prompter_config_update_font
+0x156764	prompter_get_font_params
+0x1567a0	prompter_content_smart_reload_on_font_change
+0x1575cd	audio_memo_view
+0x157e46	Detected settings update: font %d->%d, speed %d, auto_scroll %d
+0x157edd	Non-font settings changed, reloading configuration
+0x1583a4	a2dp_enable
+0x158dd4	BT A2DP CONNECTION
+0x158de7	bt_connection_event_handle a2dp is enable %d
+0x159697	AUDIO_STREAM_MUSIC
+0x1596ab	AUDIO_STREAM_LOCAL_MUSIC
+0x15a660	prompter ctrl:%d , index:%d ,font_size:%d ,speed:%d
+0x15a695	Settings updated - font: %d->%d, speed: %d, auto_scroll: %d
+0x15a6d1	Smart reload successful for font change
+0x15b760	audio_memo_control state = %d
+0x15b77e	audio_memo_control
+0x15b791	audio_memo_mark
+0x15b7a1	audio_memo_start
+0x15b7b2	audio_memo_stop
+0x15b7c2	audio_memo_pause
+0x15b7d3	audio_memo_start
+0x15b7e4	audio_memo_stop
+0x15b7f4	audio_memo_pause
+0x15b805	audio_memo_mark
+0x15e24c	gl_audio_memo_recording_started
+0x15e26c	gl_audio_memo_tag_added
+0x15e284	gl_audio_memo_recording_paused
+0x15e2a3	gl_audio_memo_recording_completed
+0x15e2c5	gl_audio_memo_recording_interrupted
+0x15e6b4	Audio Memo
+0x164663	audio_in
+0x164686	audio_in->ain_dev
+0x164698	WEST_TOPDIR/zephyr/framework/audio/audioin_hal.c
+0x1646c9	hal_audio_in_init
+0x164768	audio_out
+0x164772	audio_out->aout_dev
+0x164786	WEST_TOPDIR/zephyr/framework/audio/audioout_hal.c
+0x164833	hal_audio_out_init
+0x165ef0	record_audio_recordInput_config %d.
+0x165f14	can not find out audio dev 0x%x
+0x169cae	audio out power resume
+0x169cc5	audio out power suspend
+0x169e87	ACTS-AUDIO OUT initialized
+0x169fb3	Failed to get audio session (type:%d)
+0x16a144	session#%p, audio out stop
+0x16a177	audio_out_session_check
+0x16a18f	audio_out_fifo_request
+0x16a1a6	audio_out_fifo_release
+0x16a1bd	audio_out_enable_i2stx
+0x16a1d4	audio_out_dma_reload
+0x16a1e9	audio_out_dma_separated_enable
+0x16a208	audio_out_dma_prepare
+0x16a21e	acts_audio_out_open
+0x16a232	audio_out_disable_i2stx
+0x16a24a	acts_audio_out_close
+0x16a25f	acts_audio_out_control
+0x16a276	acts_audio_out_start
+0x16a28b	acts_audio_out_write
+0x16a2a0	acts_audio_out_stop
+0x16a2b4	audio_out_pm_check_all_sessions
+0x16a2d4	audio_out_pm_control
+0x16a2e9	audio_out_init
+0x16a54c	ACTS-AUDIO IN initialized
+0x16a5e6	session#%p, audio in stop
+0x16a600	audio_in_session_check
+0x16a617	audio_in_session_bind
+0x16a62d	audio_in_enable_adc
+0x16a641	audio_in_dma_reload
+0x16a655	audio_in_dma_separated_enable
+0x16a673	audio_in_dma_prepare
+0x16a688	acts_audio_in_open
+0x16a69b	audio_in_disable_adc
+0x16a6b0	acts_audio_in_close
+0x16a6c4	acts_audio_in_control
+0x16a6da	acts_audio_in_start
+0x16a6ee	acts_audio_in_stop
+0x16a701	audio_in_init
+0x16a969	 CMUA_A_audio_debug: %08x
+0x16a983	 CMUA_AUDIOPLL0_CTL: %08x
+0x16abfd	Failed to get audio pll APS err=%d
+0x16ac20	Failed to set audio pll APS err=%d
+0x16ade8	audio adc power resume
+0x16adff	audio adc power suspend
+0x16b010	 AUDIOPLL0_CTL: %08x
+0x16b06e	start audio device 0x%x
+0x16b387	audio_adc_pm_control
+0x16b39c	Invalid AUDIO_PLL type %d
+0x16b3b6	use AUDIO_PLL@%d => series:0x%x
+0x16b3eb	Failed to find audio pll setting sr:%d
+0x16b42d	Failed to find audio pll setting sr:%d mclk:%d
+0x16b45c	AUDIO_PLL0 is not enable yet
+0x16b496	AUDIO_PLL0 is not enable
+0x16b56f	Get AUDIO_PLL0 error %d
+0x16b5a0	audio_get_pll_setting
+0x16b5b6	audio_get_pll_setting_i2s
+0x16b5d0	audio_pll_get_usage
+0x16b5e4	audio_pll_get_aps
+0x16b5f6	audio_pll_set_aps
+0x16b608	audio_get_pll_sample_rate_dac
+0x16b626	audio_get_pll_setting_dac
+0x16b640	audio_get_pll_sample_rate
+0x16b65a	audio_get_pll_sample_rate_i2s
+0x16b678	audio_pll_check_config
+0x170b8a	dsc->font == NULL
+0x1714e5	Can't draw sub-pixel rendered letter because LV_USE_FONT_SUBPX == 0 in lv_conf.h
+0x175e7c	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/font/lv_font.c
+0x175eb3	font_p != NULL
+0x175ed2	font != NULL
+0x175edf	lv_font_get_glyph_bitmap
+0x175ef8	lv_font_get_glyph_dsc
+0x175f0e	lv_font_get_glyph_width
+0x175f26	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/font/lv_font_fmt_txt.c
+0x175f65	Compressed fonts is used but LV_USE_FONT_COMPRESSED is not enabled in lv_conf.h
+0x175fb5	lv_font_get_bitmap_fmt_txt
+0x17b3f6	LV_USE_IMGFONT disabled
+0x17deb0	tws_observer %p audio_track %p
+0x17ded0	audio_aps_monitor_init
+0x17dee7	audio_policy_get_record_input_gain stream_type %d
+0x17df19	audio_policy_get_record_input_gain stream_type %d, gain %d , %p
+0x17df5a	audio_policy_get_record_input_gain
+0x17df8f	audio_stream create failed
+0x17dfaa	 audio_stream open failed 
+0x17dfc5	 audio_system_registy_track failed 
+0x17dffa	audio_format : %d
+0x17e00c	audio_mode : %d
+0x17e07f	audio_handle : %p
+0x17e091	audio_stream : %p
+0x17e0c3	audio_stream ptr : %x
+0x17e0d9	 audio_system_unregisty_record failed 
+0x17e110	audio_record volume ---%d
+0x17e12b	_audio_record_request_more_data
+0x17e14b	audio_record_create
+0x17e15f	audio_record_destory
+0x17e174	audio_record_set_volume
+0x17e18c	audio_record_create
+0x17e1b7	qq==>audio_track->stream_type = %d stream_type %d volume %d
+0x17e2cf	audio_system_register_track
+0x17e2eb	audio_system_unregister_track
+0x17e309	audio_system_register_record
+0x17e326	audio_system_unregister_record
+0x17e345	_audio_system_get_volume_config
+0x17e365	audio_system_set_stream_volume
+0x17e384	audio_system_set_microphone_volume
+0x17e3cc	WEST_TOPDIR/framework/audio/audio_track.c
+0x17e430	handle && handle->audio_stream
+0x17e468	audio track malloc failed
+0x17e482	audio track init failed
+0x17e49a	audio_inti stream_type:%d ring_volume:%d volume:%d
+0x17e649	_audio_track_data_mix
+0x17e65f	audio_track_create
+0x17e672	audio_track_destory
+0x17e686	audio_track_stop
+0x17e697	audio_track_write
+0x17e6a9	audio_track_flush
+0x17e6bb	audio_track_set_fade_in
+0x17e6d3	audio_track_set_fade_out
+0x17e6ec	audio_track_set_volume
+0x17e703	audio_track_set_mute
+0x17e718	audio_track_set_fifo_src
+0x17e731	audio_track_set_mix_stream
+0x17e74c	audio_track_create
+0x17e75f	audio_track_destory
+0x17e773	audio_track_start
+0x17e785	audio_track_stop
+0x17e796	audio_track_pause
+0x17e7a8	audio_track_resume
+0x17e7bb	audio_track_write
+0x17e7cd	audio_track_set_fade_in
+0x17e7e5	audio_track_set_fade_out
+0x17e7fe	audio_track_set_waitto_start
+0x17e81b	audio_track_set_volume
+0x17e832	audio_track_set_mute
+0x17e847	audio_track_get_samplerate
+0x17e862	audio_track_get_stream
+0x17e879	audio_track_set_fifo_src
+0x17e892	audio_track_set_mix_stream
+0x17f20c	audio_track_create failed
+0x17f226	audio_track_create subwoofer failed
+0x17f999	audio_record_create failed
+0x182b40	_bt_manager_a2dp_callback
+0x182b5a	bt_manager_a2dp_get_codecid
+0x182b76	bt_manager_a2dp_get_sample_rate
+0x182b96	bt_manager_a2dp_get_max_bitpool
+0x188588	MSG_BTSRV_A2DP_START
+0x188c54	a2dp already %s
+0x188c65	active %d others %p a2dp_active_state %d lock %d
+0x188c97	Not tws_none dev or a2dp not connected
+0x188cbf	active %d dev %p a2dp_active_state %d lock %d
+0x188f0d	 Connected a2dp %d avrcp %d hfp %d spp %d pbap %d hid %d map %d
+0x188f4f	 A2dp active_state %d stream_opened %d codec %d sample %d cp %d
+0x18904a	 trs_mode %d trs %d a2dp_mtu %d codec %d
+0x1890f4	btsrv_rdm_set_a2dp_connected
+0x189111	btsrv_rdm_a2dp_actived_switch_lock
+0x189134	btsrv_rdm_a2dp_actived
+0x18914b	btsrv_rdm_is_a2dp_stream_open
+0x189169	btsrv_rdm_a2dp_set_codec_info
+0x189187	btsrv_rdm_a2dp_get_codec_info
+0x1891a5	btsrv_rdm_a2dp_set_bitpool
+0x1891c0	btsrv_rdm_a2dp_get_bitpool
+0x1891db	btsrv_rdm_get_a2dp_start_time
+0x1891f9	btsrv_rdm_set_a2dp_pending_ahead_start
+0x189220	btsrv_rdm_get_a2dp_pending_ahead_start
+0x189630	btsrv_rdm_trs_a2dp_set_codec_info
+0x189652	btsrv_rdm_trs_a2dp_set_mtu
+0x18966d	btsrv_rdm_trs_a2dp_get_codec_info
+0x1896ed	BAC Phone not do a2dp connect
+0x1898f7	BAC curr:%d%d, hfp:%d%d, a2dp:%d%d, avrcp:%d%d hid:%d%d
+0x1899ec	BAC a2dp connected
+0x189a50	BAC a2dp disconnected
+0x189d48	 a2dp %d, avrcp %d, hfp %d hid %d
+0x18a04d	btsrv_connect_check_trs_a2dp_connected
+0x18a420	a2dp data rate: %d bytes/s
+0x18a44c	A2dp not support type: 0x%x, 0x%x, %d
+0x18a473	bt br-a2dp-register failed
+0x18a49d	a2dp_disconnect
+0x18a4ae	Connect a2dp
+0x18a4bc	Connect a2dp failed
+0x18a504	btsrv a2dp start
+0x18a515	btsrv a2dp stop
+0x18a525	btsrv a2dp disable
+0x18a538	btsrv a2dp enable
+0x18a54a	btsrv a2dp connect
+0x18a55d	btsrv a2dp disconnect
+0x18a573	btsrv a2dp connected
+0x18a588	A2dp connected:%p addr %s
+0x18a5a3	btsrv a2dp disconnected
+0x18a5bb	A2dp disconnected:%p addr %s
+0x18a5d9	trs a2dp media state req %d
+0x18a619	a2dp trigger start
+0x18a653	_btsrv_a2dp_debug_date_rate
+0x18a66f	btsrv_a2dp_pack_date_header
+0x18a68b	_btsrv_a2dp_media_handler_cb
+0x18a6a8	btsrv_a2dp_media_state_req_proc
+0x18a6c8	btsrv_a2dp_seted_codec_proc
+0x18a6e4	_btsrv_a2dp_connected
+0x18a6fa	_btsrv_a2dp_disconnected
+0x18a713	_btsrv_a2dp_check_state
+0x18a72b	btsrv_a2dp_init
+0x18a73b	btsrv_a2dp_disconnect
+0x18a751	btsrv_a2dp_connect
+0x18a764	btsrv_a2dp_halt_aac_endpoint
+0x18a781	btsrv_a2dp_process
+0x18a80b	a2dp already init.
+0x18ab6c	btsrv_a2dp_trs_discover_timer_handler
+0x18ae91	conn %p a2dp switch lock
+0x18aeab	conn %p a2dp switch unlock
+0x18b93d	A2DP registration failed
+0x18b956	A2dp connect conflict
+0x18b9c3	WEST_TOPDIR/framework/bluetooth/bt_stack/libbt_stack/a2dp.c
+0x18ba3b	bt_a2dp
+0x18ba43	a2dp_avdtp_connected_cb
+0x18ba5b	a2dp_avdtp_disconnected_cb
+0x18d310	a2dp media ok
+0x18d337	A2DP_MEDIA_STATE_START
+0x18d362	A2dp suspend
+0x18d37c	A2dp start
+0x18d395	a2dp get media info failed
+0x18d3f3	a2dp:fl%d,fn%d,bp%d,mtu%d
+0x18d481	bitmap_font_cache_init
+0x18d499	font cache heap alloc failed, size %d
+0x18d502	bitmap font cache info dump: total used %d, peak size %d, max size %d
+0x18d59c	bitmap_font_cache_malloc
+0x18d5b5	bitmap_font_cache_dump_info
+0x18d5d1	freetype_font_shape_cache_malloc
+0x18d5f2	bitmap font init failed due to unable to malloc bitmap_cache data
+0x18d635	bitmap font init failed due to unable to malloc opend_font data
+0x18d69b	%d seek font file error %d
+0x18d6de	read font file error
+0x18d6f4	null font cache preset
+0x18d70b	font cache preset malloc failed
+0x18d772	null font info %p
+0x18d785	%d seek font file error
+0x18d79e	null font info, %p
+0x18d7fe	bitmap font info dump:
+0x18d816	font %d, path %s, metric buf %p, data buf %p, cached total %d, cached max %d, cache size now %d, cache size max %d
+0x18d88a	bitmap_font_init
+0x18d89b	bitmap_font_cache_preset
+0x18d8ec	bitmap_font_get_emoji_bitmap
+0x18d909	_font_get_emoji_glyph_dsc
+0x18d923	bitmap_font_get_emoji_glyph_dsc
+0x18d943	bitmap_font_init
+0x18d954	svgfont
+0x18e09a	freetype library init failed
+0x18e0ca	freetype opne font %s faild
+0x18e0e7	dsc->font %p
+0x18e0f5	ftxxx non null font user data %p
+0x18e13d	null font pointer
+0x18e150	invalid font dsc 
+0x18e177	freetype_font_get_glyph_bitmap_cb
+0x18e199	lvgl_freetype_font_init
+0x18e1b1	lvgl_freetype_font_open
+0x18e1c9	lvgl_freetype_font_close

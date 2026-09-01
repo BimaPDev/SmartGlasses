@@ -1,0 +1,73 @@
+{
+  "leaf": "1.9",
+  "subsystem": "power_battery",
+  "firmware": "HallidayOfficialOTA app.bin (official)",
+  "variant": "official",
+  "app_bin_md5": "32f7cdc25818cdcb853d04702687fc8a",
+  "app_bin_size": 1662592,
+  "xip_base": "0x10000000",
+  "string_va_rule": "0x10000000 + app.bin file_off",
+  "platform": "ats3089_dev_watch",
+  "version": "1.00_2601211113",
+  "note": "No Ghidra function export for Halliday app.bin yet. Entries are string-anchor VAs from export/official/strings (power_battery.txt + app_ascii.txt greps). Symbol names from log strings and WEST_TOPDIR paths, not recovered Thumb entry points.",
+  "anchors": [
+    {
+      "va": "0x1016d0a0",
+      "name": "battery_acts_init",
+      "evidence": "STRING __func__ cluster battery_acts_enable/register_notify/set_property @ 0x1016d01e–0x1016d06d; voltage log 'battery real voltage init:%dmv' @ 0x1016ca2b"
+    },
+    {
+      "va": "0x101591b0",
+      "name": "battery_event_handle",
+      "evidence": "STRING __func__; dispatches BAT_CHG_EVENT_* @ 0x10158fb7–0x10159019 and SYS_EVENT_BATTERY_LOW @ 0x10159002"
+    },
+    {
+      "va": "0x1014ddec",
+      "name": "mini_charger_fsm",
+      "evidence": "STRING 'mini charger entry.'; sibling suspend/resume/reboot logs @ 0x1014de01, 0x1014ddad, 0x1014de41; bat_mv reads @ 0x1016cacd"
+    },
+    {
+      "va": "0x1015f466",
+      "name": "sys_wakelock",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/soc/arm/actions/leopard/sys_wakelock.c; assert strings wakelock->ref_cnt @ 0x1015f44b / 0x1015f4a0"
+    },
+    {
+      "va": "0x10161800",
+      "name": "zephyr_pm_power",
+      "evidence": "SOURCE WEST_TOPDIR/zephyr/subsys/pm/power.c; pm_early_suspend @ 0x10161980, _pm_devices @ 0x10161974, PM_STATE assert @ 0x10161825"
+    },
+    {
+      "va": "0x1015f168",
+      "name": "soc_pmu_register_notify",
+      "evidence": "STRING __func__; cluster soc_pmu_get_wakeup_source, soc_pmu_alarm8hz_enable, soc_pmu_get_temperature @ 0x1015f180–0x1015f208; PM_BAK_TIME @ 0x1015ed3e"
+    },
+    {
+      "va": "0x1016d428",
+      "name": "bat_charger_set_before_enter_s4",
+      "evidence": "STRING __func__; pre-S4 sleep charger policy; paired charger_enable_timer_handler @ 0x1016d448 and 'set init charger const current:%d' @ 0x1016d3a3"
+    },
+    {
+      "va": "0x1014dedc",
+      "name": "charger_view",
+      "evidence": "STRING scene name; _charger_load_resource @ 0x1014defd, _charger_view_layout @ 0x1014df14, SCENE_CHARGER_VIEW not found @ 0x1014de94"
+    },
+    {
+      "va": "0x10183365",
+      "name": "bt_manager_hfp_battery_report",
+      "evidence": "STRING __func__; hfp battery Indicator enable @ 0x101831d4; _btsrv_hfp_battery_cb @ 0x1018b247"
+    },
+    {
+      "va": "0x101628cd",
+      "name": "_lcd_panel_pm_control",
+      "evidence": "STRING __func__; panel PM early/late suspend @ 0x10162853–0x1016286b; enter/exit low_power @ 0x1016289a / 0x101628b4"
+    }
+  ],
+  "source_anchors": [
+    "WEST_TOPDIR/zephyr/soc/arm/actions/leopard/sys_wakelock.c",
+    "WEST_TOPDIR/zephyr/subsys/pm/power.c"
+  ],
+  "string_sources": [
+    "Reverse/firmware/Halliday/export/official/strings/categorized/power_battery.txt",
+    "Reverse/firmware/Halliday/export/official/strings/app_ascii.txt"
+  ]
+}

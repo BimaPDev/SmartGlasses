@@ -1,0 +1,2208 @@
+[
+  {
+    "start": 28,
+    "end": 36,
+    "size": 8,
+    "official_hex_preview": "934c79237ba9c832",
+    "custom_hex_preview": "8abfa53784369c1e",
+    "nearby_strings_official": [
+      "ACTHHTCAu",
+      "Ly#{"
+    ],
+    "nearby_strings_custom": [
+      "ACTHHTCAu"
+    ]
+  },
+  {
+    "start": 98402,
+    "end": 98406,
+    "size": 4,
+    "official_hex_preview": "0122ab7f",
+    "custom_hex_preview": "2cf1cdbc",
+    "nearby_strings_official": [
+      "EHEJ2I0C",
+      "p;J;I@",
+      "7J5I7H0C",
+      "0J1I@",
+      "!-H!",
+      "w#J I#H"
+    ],
+    "nearby_strings_custom": [
+      "EHEJ2I0C",
+      "p;J;I@",
+      "7J5I7H0C",
+      "0J1I@",
+      "!-H!",
+      "w#J I#H"
+    ]
+  },
+  {
+    "start": 98466,
+    "end": 98470,
+    "size": 4,
+    "official_hex_preview": "ab7fda07",
+    "custom_hex_preview": "2cf1b8bc",
+    "nearby_strings_official": [
+      "EHEJ2I0C",
+      "p;J;I@",
+      "7J5I7H0C",
+      "0J1I@",
+      "!-H!",
+      "w#J I#H"
+    ],
+    "nearby_strings_custom": [
+      "EHEJ2I0C",
+      "p;J;I@",
+      "7J5I7H0C",
+      "0J1I@",
+      "!-H!",
+      "w#J I#H"
+    ]
+  },
+  {
+    "start": 119988,
+    "end": 119990,
+    "size": 2,
+    "official_hex_preview": "8dee",
+    "custom_hex_preview": "39d4",
+    "nearby_strings_official": [
+      "0 jz",
+      "\"J\"K",
+      ")F`j"
+    ],
+    "nearby_strings_custom": [
+      "0 jz",
+      "\"J\"K",
+      ")F`j"
+    ]
+  },
+  {
+    "start": 122586,
+    "end": 122587,
+    "size": 1,
+    "official_hex_preview": "09",
+    "custom_hex_preview": "08",
+    "nearby_strings_official": [
+      "bKcL6i",
+      "3FaJaI C",
+      "q,5SJ",
+      "g KK",
+      "EK` ",
+      "?Kp ",
+      ";KT ",
+      "6KU ",
+      ",Kb ",
+      "'K_ "
+    ],
+    "nearby_strings_custom": [
+      "bKcL6i",
+      "3FaJaI C",
+      "q,SJ",
+      "g KK",
+      "EK` ",
+      "?Kp ",
+      ";KT ",
+      "6KU ",
+      ",Kb ",
+      "'K_ "
+    ]
+  },
+  {
+    "start": 122596,
+    "end": 122603,
+    "size": 7,
+    "official_hex_preview": "35534a1968415c",
+    "custom_hex_preview": "534a19685c8535",
+    "nearby_strings_official": [
+      "bKcL6i",
+      "3FaJaI C",
+      "q,5SJ",
+      "g KK",
+      "EK` ",
+      "?Kp ",
+      ";KT ",
+      "6KU ",
+      ",Kb ",
+      "'K_ "
+    ],
+    "nearby_strings_custom": [
+      "bKcL6i",
+      "3FaJaI C",
+      "q,SJ",
+      "g KK",
+      "EK` ",
+      "?Kp ",
+      ";KT ",
+      "6KU ",
+      ",Kb ",
+      "'K_ "
+    ]
+  },
+  {
+    "start": 122820,
+    "end": 122828,
+    "size": 8,
+    "official_hex_preview": "254b4e201b689847",
+    "custom_hex_preview": "26f102fd00bf00bf",
+    "nearby_strings_official": [
+      "3FaJaI C",
+      "q,5SJ",
+      "g KK",
+      "EK` ",
+      "?Kp ",
+      ";KT ",
+      "6KU ",
+      ",Kb ",
+      "'K_ ",
+      "%KN "
+    ],
+    "nearby_strings_custom": [
+      "3FaJaI C",
+      "q,SJ",
+      "g KK",
+      "EK` ",
+      "?Kp ",
+      ";KT ",
+      "6KU ",
+      ",Kb ",
+      "'K_ "
+    ]
+  },
+  {
+    "start": 123036,
+    "end": 123037,
+    "size": 1,
+    "official_hex_preview": "0a",
+    "custom_hex_preview": "09",
+    "nearby_strings_official": [
+      ",Kb ",
+      "'K_ ",
+      "%KN ",
+      "2F1F",
+      "B\"1F",
+      "3F2F",
+      "2F9F",
+      "9FHF"
+    ],
+    "nearby_strings_custom": [
+      ",Kb ",
+      "'K_ ",
+      "2F1F",
+      "B\"1F",
+      "3F2F",
+      "2F9F",
+      "9FHF"
+    ]
+  },
+  {
+    "start": 123052,
+    "end": 123053,
+    "size": 1,
+    "official_hex_preview": "09",
+    "custom_hex_preview": "08",
+    "nearby_strings_official": [
+      "'K_ ",
+      "%KN ",
+      "2F1F",
+      "B\"1F",
+      "3F2F",
+      "2F9F",
+      "9FHF"
+    ],
+    "nearby_strings_custom": [
+      "'K_ ",
+      "2F1F",
+      "B\"1F",
+      "3F2F",
+      "2F9F",
+      "9FHF"
+    ]
+  },
+  {
+    "start": 123114,
+    "end": 123115,
+    "size": 1,
+    "official_hex_preview": "0a",
+    "custom_hex_preview": "09",
+    "nearby_strings_official": [
+      "2F1F",
+      "B\"1F",
+      "3F2F",
+      "2F9F",
+      "9FHF",
+      "FHFy"
+    ],
+    "nearby_strings_custom": [
+      "2F1F",
+      "B\"1F",
+      "3F2F",
+      "2F9F",
+      "9FHF",
+      "FHFy"
+    ]
+  },
+  {
+    "start": 123388,
+    "end": 123389,
+    "size": 1,
+    "official_hex_preview": "0a",
+    "custom_hex_preview": "09",
+    "nearby_strings_official": [
+      "2F1F",
+      "B\"1F",
+      "3F2F",
+      "2F9F",
+      "9FHF",
+      "FHFy",
+      "!HFy",
+      "PFdI",
+      "YKYN",
+      "#WJ("
+    ],
+    "nearby_strings_custom": [
+      "2F1F",
+      "B\"1F",
+      "3F2F",
+      "2F9F",
+      "9FHF",
+      "FHFy",
+      "!HFy",
+      "PFdI",
+      "YKYN",
+      "#WJ("
+    ]
+  },
+  {
+    "start": 125122,
+    "end": 125126,
+    "size": 4,
+    "official_hex_preview": "00f059be",
+    "custom_hex_preview": "26f193b8",
+    "nearby_strings_official": [
+      "%K F"
+    ],
+    "nearby_strings_custom": [
+      "%K F"
+    ]
+  },
+  {
+    "start": 134292,
+    "end": 134293,
+    "size": 1,
+    "official_hex_preview": "2f",
+    "custom_hex_preview": "0d",
+    "nearby_strings_official": [
+      " F>I",
+      " F<I",
+      " F9I",
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I"
+    ],
+    "nearby_strings_custom": [
+      " F>I",
+      " F<I",
+      " F9I",
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I"
+    ]
+  },
+  {
+    "start": 134300,
+    "end": 134301,
+    "size": 1,
+    "official_hex_preview": "51",
+    "custom_hex_preview": "41",
+    "nearby_strings_official": [
+      " F<I",
+      " F9I",
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I"
+    ],
+    "nearby_strings_custom": [
+      " F<I",
+      " F9I",
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I"
+    ]
+  },
+  {
+    "start": 134308,
+    "end": 134309,
+    "size": 1,
+    "official_hex_preview": "71",
+    "custom_hex_preview": "61",
+    "nearby_strings_official": [
+      " F<I",
+      " F9I",
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I"
+    ],
+    "nearby_strings_custom": [
+      " F<I",
+      " F9I",
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I"
+    ]
+  },
+  {
+    "start": 134316,
+    "end": 134317,
+    "size": 1,
+    "official_hex_preview": "a8",
+    "custom_hex_preview": "8b",
+    "nearby_strings_official": [
+      " F9I",
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I",
+      " F%I"
+    ],
+    "nearby_strings_custom": [
+      " F9I",
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I",
+      " F%I"
+    ]
+  },
+  {
+    "start": 134324,
+    "end": 134325,
+    "size": 1,
+    "official_hex_preview": "cb",
+    "custom_hex_preview": "c1",
+    "nearby_strings_official": [
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I",
+      " F%I",
+      " F#I"
+    ],
+    "nearby_strings_custom": [
+      " F7I",
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I",
+      " F%I",
+      " F#I"
+    ]
+  },
+  {
+    "start": 134348,
+    "end": 134349,
+    "size": 1,
+    "official_hex_preview": "4a",
+    "custom_hex_preview": "39",
+    "nearby_strings_official": [
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I",
+      " F%I",
+      " F#I",
+      " F!I"
+    ],
+    "nearby_strings_custom": [
+      " F5I",
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I",
+      " F%I",
+      " F#I",
+      " F!I"
+    ]
+  },
+  {
+    "start": 134356,
+    "end": 134358,
+    "size": 2,
+    "official_hex_preview": "6c04",
+    "custom_hex_preview": "9503",
+    "nearby_strings_official": [
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I",
+      " F%I",
+      " F#I",
+      " F!I"
+    ],
+    "nearby_strings_custom": [
+      " F3I",
+      " F0I",
+      " F.I",
+      " F,I",
+      " F*I",
+      " F'I",
+      " F%I",
+      " F#I",
+      " F!I"
+    ]
+  },
+  {
+    "start": 195396,
+    "end": 195397,
+    "size": 1,
+    "official_hex_preview": "03",
+    "custom_hex_preview": "01",
+    "nearby_strings_official": [
+      "@NAK",
+      "*K*L(N",
+      "3x'J'I@",
+      "\"!FXF"
+    ],
+    "nearby_strings_custom": [
+      "@NAK",
+      "*K*L(N",
+      "3x'J'I@",
+      "\"!FXF"
+    ]
+  },
+  {
+    "start": 195442,
+    "end": 195443,
+    "size": 1,
+    "official_hex_preview": "04",
+    "custom_hex_preview": "02",
+    "nearby_strings_official": [
+      "@NAK",
+      "*K*L(N",
+      "3x'J'I@",
+      "\"!FXF",
+      "! Fg"
+    ],
+    "nearby_strings_custom": [
+      "@NAK",
+      "*K*L(N",
+      "3x'J'I@",
+      "\"!FXF",
+      "! Fg"
+    ]
+  },
+  {
+    "start": 196602,
+    "end": 196604,
+    "size": 2,
+    "official_hex_preview": "b631",
+    "custom_hex_preview": "f411",
+    "nearby_strings_official": [
+      "FPFg",
+      "F Fg",
+      "! Fg",
+      "%4D#x"
+    ],
+    "nearby_strings_custom": [
+      "FPFg",
+      "F Fg",
+      "! Fg",
+      "%4D#x"
+    ]
+  },
+  {
+    "start": 201062,
+    "end": 201066,
+    "size": 4,
+    "official_hex_preview": "14230e22",
+    "custom_hex_preview": "13f11ffa",
+    "nearby_strings_official": [
+      "! Ff",
+      "\"d! F"
+    ],
+    "nearby_strings_custom": [
+      "! Ff",
+      "\"d! F"
+    ]
+  },
+  {
+    "start": 201712,
+    "end": 201715,
+    "size": 3,
+    "official_hex_preview": "590603",
+    "custom_hex_preview": "b94514",
+    "nearby_strings_official": [
+      "\"9F0F"
+    ],
+    "nearby_strings_custom": [
+      "\"9F0F"
+    ]
+  },
+  {
+    "start": 250020,
+    "end": 250024,
+    "size": 4,
+    "official_hex_preview": "f4f714f9",
+    "custom_hex_preview": "07f106fc",
+    "nearby_strings_official": [
+      "#\"Fp!",
+      "@jHjKkJ",
+      "8F'`",
+      "ip_I",
+      "QFOJPH",
+      "HMGK",
+      "IJDI@",
+      "CJDI",
+      "PF?I",
+      "=J4IE"
+    ],
+    "nearby_strings_custom": [
+      "#\"Fp!",
+      "@jHjKkJ",
+      "8F'`",
+      "ip_I",
+      "QFOJPH",
+      "HMGK",
+      "IJDI@",
+      "CJDI",
+      "PF?I",
+      "=J4IE"
+    ]
+  },
+  {
+    "start": 250602,
+    "end": 250606,
+    "size": 4,
+    "official_hex_preview": "f4f783f8",
+    "custom_hex_preview": "07f1f2fa",
+    "nearby_strings_official": [
+      "}/8 k}",
+      " F&`"
+    ],
+    "nearby_strings_custom": [
+      "}/8 k}",
+      " F&`"
+    ]
+  },
+  {
+    "start": 250708,
+    "end": 250710,
+    "size": 2,
+    "official_hex_preview": "842d",
+    "custom_hex_preview": "add0",
+    "nearby_strings_official": [
+      "}/8 k}",
+      " F&`",
+      "#\"Fb!"
+    ],
+    "nearby_strings_custom": [
+      "}/8 k}",
+      " F&`",
+      "#\"Fb!"
+    ]
+  },
+  {
+    "start": 261934,
+    "end": 261935,
+    "size": 1,
+    "official_hex_preview": "1b",
+    "custom_hex_preview": "1c",
+    "nearby_strings_official": [
+      "7H8K8J",
+      "@7I@",
+      "-H.K1J",
+      "@-I@",
+      "%H&K+J",
+      "@%I@",
+      "L+F$",
+      "CLDKDJ",
+      "D@I Ce"
+    ],
+    "nearby_strings_custom": [
+      "7H8K8J",
+      "@7I@",
+      "-H.K1J",
+      "@-I@",
+      "%H&K+J",
+      "@%I@",
+      "L+F$",
+      "CLDKDJ",
+      "D@I Ce"
+    ]
+  },
+  {
+    "start": 262095,
+    "end": 262096,
+    "size": 1,
+    "official_hex_preview": "0a",
+    "custom_hex_preview": "1a",
+    "nearby_strings_official": [
+      "@7I@",
+      "-H.K1J",
+      "@-I@",
+      "%H&K+J",
+      "@%I@",
+      "L+F$",
+      "CLDKDJ",
+      "D@I Ce",
+      "4H5J0I Ce"
+    ],
+    "nearby_strings_custom": [
+      "@7I@",
+      "-H.K1J",
+      "@-I@",
+      "%H&K+J",
+      "@%I@",
+      "L+F$",
+      "CLDKDJ",
+      "D@I Ce",
+      "4H5J0I Ce"
+    ]
+  },
+  {
+    "start": 267172,
+    "end": 267176,
+    "size": 4,
+    "official_hex_preview": "07b5104b",
+    "custom_hex_preview": "03f160bb",
+    "nearby_strings_official": [
+      "0Mkj",
+      "K\\k#i",
+      "P#LE",
+      "CFJF"
+    ],
+    "nearby_strings_custom": [
+      "0Mkj",
+      "K\\k#i",
+      "P#LE",
+      "CFJF"
+    ]
+  },
+  {
+    "start": 286532,
+    "end": 286536,
+    "size": 4,
+    "official_hex_preview": "2de9f04f",
+    "custom_hex_preview": "fef0d3bc",
+    "nearby_strings_official": [
+      "I C_",
+      ")F F"
+    ],
+    "nearby_strings_custom": [
+      "I C_",
+      ")F F"
+    ]
+  },
+  {
+    "start": 505260,
+    "end": 505264,
+    "size": 4,
+    "official_hex_preview": "c8220023",
+    "custom_hex_preview": "c9f0b2f8",
+    "nearby_strings_official": [
+      "R11+?",
+      "R1CKS",
+      "3M3J",
+      "-J-I",
+      "hp+F",
+      "<1,F",
+      "I(C*",
+      "I(C*",
+      "I(C*"
+    ],
+    "nearby_strings_custom": [
+      "R11+?",
+      "R1CKS",
+      "3M3J",
+      "-J-I",
+      "hp+F",
+      "<1,F",
+      "I(C*",
+      "I(C*",
+      "I(C*"
+    ]
+  },
+  {
+    "start": 1309172,
+    "end": 1309173,
+    "size": 1,
+    "official_hex_preview": "8a",
+    "custom_hex_preview": "87",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": []
+  },
+  {
+    "start": 1309176,
+    "end": 1309177,
+    "size": 1,
+    "official_hex_preview": "87",
+    "custom_hex_preview": "86",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": []
+  },
+  {
+    "start": 1309180,
+    "end": 1309181,
+    "size": 1,
+    "official_hex_preview": "86",
+    "custom_hex_preview": "85",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": []
+  },
+  {
+    "start": 1309184,
+    "end": 1309185,
+    "size": 1,
+    "official_hex_preview": "85",
+    "custom_hex_preview": "41",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": []
+  },
+  {
+    "start": 1309188,
+    "end": 1309189,
+    "size": 1,
+    "official_hex_preview": "41",
+    "custom_hex_preview": "33",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": []
+  },
+  {
+    "start": 1309192,
+    "end": 1309193,
+    "size": 1,
+    "official_hex_preview": "62",
+    "custom_hex_preview": "89",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": []
+  },
+  {
+    "start": 1309196,
+    "end": 1309197,
+    "size": 1,
+    "official_hex_preview": "33",
+    "custom_hex_preview": "8a",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": []
+  },
+  {
+    "start": 1312756,
+    "end": 1312784,
+    "size": 28,
+    "official_hex_preview": "b07bc3a3518f0fadc00dd0448b45f914c7d9fd2f12e701153b701096",
+    "custom_hex_preview": "518f0fadc00dd0448b45f914c7d9fd2f3b70109623654249b07bc3a3",
+    "nearby_strings_official": [
+      "#eBI"
+    ],
+    "nearby_strings_custom": [
+      "#eBI",
+      "#eBI"
+    ]
+  },
+  {
+    "start": 1328492,
+    "end": 1328518,
+    "size": 26,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "70b50446a66a1eb130460121e0f7b7fbd4f8ac508db128460921",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328519,
+    "end": 1328520,
+    "size": 1,
+    "official_hex_preview": "00",
+    "custom_hex_preview": "22",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328521,
+    "end": 1328526,
+    "size": 5,
+    "official_hex_preview": "0000000000",
+    "custom_hex_preview": "23e1f7adf8",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328527,
+    "end": 1328531,
+    "size": 4,
+    "official_hex_preview": "00000000",
+    "custom_hex_preview": "20c4f880",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328532,
+    "end": 1328534,
+    "size": 2,
+    "official_hex_preview": "0000",
+    "custom_hex_preview": "2046",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328535,
+    "end": 1328543,
+    "size": 8,
+    "official_hex_preview": "0000000000000000",
+    "custom_hex_preview": "f0cbf9a52084f883",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328544,
+    "end": 1328561,
+    "size": 17,
+    "official_hex_preview": "0000000000000000000000000000000000",
+    "custom_hex_preview": "284645f729fb70bd0449096809b1c1f8ac",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328563,
+    "end": 1328570,
+    "size": 7,
+    "official_hex_preview": "00000000000000",
+    "custom_hex_preview": "230b2270477047",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328572,
+    "end": 1328592,
+    "size": 20,
+    "official_hex_preview": "0000000000000000000000000000000000000000",
+    "custom_hex_preview": "e410013810b51878597808439978084370b986b0",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328593,
+    "end": 1328594,
+    "size": 1,
+    "official_hex_preview": "00",
+    "custom_hex_preview": "20",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328595,
+    "end": 1328609,
+    "size": 14,
+    "official_hex_preview": "0000000000000000000000000000",
+    "custom_hex_preview": "90019002900390049089208df802",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*"
+    ]
+  },
+  {
+    "start": 1328610,
+    "end": 1328626,
+    "size": 16,
+    "official_hex_preview": "00000000000000000000000000000000",
+    "custom_hex_preview": "694604485af77ffb06b0bde8104086b0",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*",
+      "L$hD"
+    ]
+  },
+  {
+    "start": 1328627,
+    "end": 1328630,
+    "size": 3,
+    "official_hex_preview": "000000",
+    "custom_hex_preview": "237047",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*",
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328632,
+    "end": 1328646,
+    "size": 14,
+    "official_hex_preview": "0000000000000000000000000000",
+    "custom_hex_preview": "6e6a15104278212a03d0222a03d0",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*",
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328647,
+    "end": 1328652,
+    "size": 5,
+    "official_hex_preview": "0000000000",
+    "custom_hex_preview": "f066b87020",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*",
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328653,
+    "end": 1328664,
+    "size": 11,
+    "official_hex_preview": "0000000000000000000000",
+    "custom_hex_preview": "e06d2010b5034b1b689847",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*",
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328665,
+    "end": 1328674,
+    "size": 9,
+    "official_hex_preview": "000000000000000000",
+    "custom_hex_preview": "f075f9012010bd3416",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*",
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328675,
+    "end": 1328676,
+    "size": 1,
+    "official_hex_preview": "00",
+    "custom_hex_preview": "38",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "\"pGpG",
+      "Bx!*",
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328856,
+    "end": 1328906,
+    "size": 50,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "10b51c4c246844b194f88320a52a04d3a92a02d84278202a01d0012010bd8278",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "Bx!*",
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328907,
+    "end": 1328910,
+    "size": 3,
+    "official_hex_preview": "000000",
+    "custom_hex_preview": "f011f9",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328911,
+    "end": 1328927,
+    "size": 16,
+    "official_hex_preview": "00000000000000000000000000000000",
+    "custom_hex_preview": "f0faf8eee710b50d4c24689cb194f883",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328928,
+    "end": 1328939,
+    "size": 11,
+    "official_hex_preview": "0000000000000000000000",
+    "custom_hex_preview": "a5280fd3a9280dd894f883",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *"
+    ]
+  },
+  {
+    "start": 1328940,
+    "end": 1328951,
+    "size": 11,
+    "official_hex_preview": "0000000000000000000000",
+    "custom_hex_preview": "0130aa2806d3a52084f883",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *",
+      "8Xp; "
+    ]
+  },
+  {
+    "start": 1328952,
+    "end": 1328954,
+    "size": 2,
+    "official_hex_preview": "0000",
+    "custom_hex_preview": "2046",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *",
+      "8Xp; ",
+      "p; Xp"
+    ]
+  },
+  {
+    "start": 1328955,
+    "end": 1328963,
+    "size": 8,
+    "official_hex_preview": "0000000000000000",
+    "custom_hex_preview": "f065f801e084f883",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *",
+      "8Xp; ",
+      "p; Xp"
+    ]
+  },
+  {
+    "start": 1328964,
+    "end": 1328966,
+    "size": 2,
+    "official_hex_preview": "0000",
+    "custom_hex_preview": "c822",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *",
+      "8Xp; ",
+      "p; Xp"
+    ]
+  },
+  {
+    "start": 1328967,
+    "end": 1328970,
+    "size": 3,
+    "official_hex_preview": "000000",
+    "custom_hex_preview": "2310bd",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *",
+      "8Xp; ",
+      "p; Xp"
+    ]
+  },
+  {
+    "start": 1328972,
+    "end": 1328976,
+    "size": 4,
+    "official_hex_preview": "00000000",
+    "custom_hex_preview": "e4100138",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "L$hD",
+      "Bx *",
+      "8Xp; ",
+      "p; Xp"
+    ]
+  },
+  {
+    "start": 1329160,
+    "end": 1329162,
+    "size": 2,
+    "official_hex_preview": "0000",
+    "custom_hex_preview": "10b5",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F"
+    ]
+  },
+  {
+    "start": 1329163,
+    "end": 1329214,
+    "size": 51,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "f18003987820b9587828b9187840b91ce00138987009e0013858703b20987004",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F"
+    ]
+  },
+  {
+    "start": 1329215,
+    "end": 1329242,
+    "size": 27,
+    "official_hex_preview": "000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "920193029304930ff211020392694607485af74afa06b010bd0548",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F"
+    ]
+  },
+  {
+    "start": 1329243,
+    "end": 1329246,
+    "size": 3,
+    "official_hex_preview": "000000",
+    "custom_hex_preview": "6820b1",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F"
+    ]
+  },
+  {
+    "start": 1329247,
+    "end": 1329252,
+    "size": 5,
+    "official_hex_preview": "0000000000",
+    "custom_hex_preview": "f08eb80906",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F"
+    ]
+  },
+  {
+    "start": 1329253,
+    "end": 1329258,
+    "size": 5,
+    "official_hex_preview": "0000000000",
+    "custom_hex_preview": "d563e07047",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F"
+    ]
+  },
+  {
+    "start": 1329260,
+    "end": 1329268,
+    "size": 8,
+    "official_hex_preview": "0000000000000000",
+    "custom_hex_preview": "a0641410e4100138",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F"
+    ]
+  },
+  {
+    "start": 1329332,
+    "end": 1329366,
+    "size": 34,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "f8b5ecf62bfc0446194d2e681eb130462146fff751fefef6d3f82046f8bd10b5",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F",
+      " 8p(FiFS"
+    ]
+  },
+  {
+    "start": 1329367,
+    "end": 1329370,
+    "size": 3,
+    "official_hex_preview": "000000",
+    "custom_hex_preview": "6820b1",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F",
+      " 8p(FiFS"
+    ]
+  },
+  {
+    "start": 1329371,
+    "end": 1329418,
+    "size": 47,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "21c0f88010c0f8ac10fef602faecf684fd10bd052904d302787e2a01d1fff780",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F",
+      " 8p(FiFS"
+    ]
+  },
+  {
+    "start": 1329419,
+    "end": 1329468,
+    "size": 49,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "2447f605620294adf808200394049402a8034b984706b010bde4100138495f04",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "8Xp; ",
+      "p; Xp",
+      "0F!F",
+      " 8p(FiFS"
+    ]
+  },
+  {
+    "start": 1329469,
+    "end": 1329475,
+    "size": 6,
+    "official_hex_preview": "000000000000",
+    "custom_hex_preview": "266f4604eb06",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "0F!F",
+      " 8p(FiFS"
+    ]
+  },
+  {
+    "start": 1329476,
+    "end": 1329479,
+    "size": 3,
+    "official_hex_preview": "000000",
+    "custom_hex_preview": "90f880",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "0F!F",
+      " 8p(FiFS"
+    ]
+  },
+  {
+    "start": 1329480,
+    "end": 1329518,
+    "size": 38,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "0a21b0fbf1f202fb01f3c01a303207f8012b303007f8010b0136032e03d03a20",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "0F!F",
+      " 8p(FiFS"
+    ]
+  },
+  {
+    "start": 1329519,
+    "end": 1329552,
+    "size": 33,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "2038702846694653f70ff803b0f8bd014680310968090201d0fff7d2bfeaf6ba",
+    "nearby_strings_official": [],
+    "nearby_strings_custom": [
+      "0F!F",
+      " 8p(FiFS"
+    ]
+  },
+  {
+    "start": 1329612,
+    "end": 1329622,
+    "size": 10,
+    "official_hex_preview": "00000000000000000000",
+    "custom_hex_preview": "10b5064b4e201b689847",
+    "nearby_strings_official": [
+      "aacd"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd"
+    ]
+  },
+  {
+    "start": 1329623,
+    "end": 1329638,
+    "size": 15,
+    "official_hex_preview": "000000000000000000000000000000",
+    "custom_hex_preview": "2804d00446012003f71bfb204610bd",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd"
+    ]
+  },
+  {
+    "start": 1329639,
+    "end": 1329642,
+    "size": 3,
+    "official_hex_preview": "000000",
+    "custom_hex_preview": "bf3416",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd"
+    ]
+  },
+  {
+    "start": 1329643,
+    "end": 1329662,
+    "size": 19,
+    "official_hex_preview": "00000000000000000000000000000000000000",
+    "custom_hex_preview": "382de90140012003f711fbbde80140daf6bdbd",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd"
+    ]
+  },
+  {
+    "start": 1329664,
+    "end": 1329666,
+    "size": 2,
+    "official_hex_preview": "0000",
+    "custom_hex_preview": "1fb5",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd",
+      "aped"
+    ]
+  },
+  {
+    "start": 1329667,
+    "end": 1329668,
+    "size": 1,
+    "official_hex_preview": "00",
+    "custom_hex_preview": "20",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd",
+      "aped"
+    ]
+  },
+  {
+    "start": 1329669,
+    "end": 1329690,
+    "size": 21,
+    "official_hex_preview": "000000000000000000000000000000000000000000",
+    "custom_hex_preview": "f012f8bde81f400122ab7fdff848c060471fb50120",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd",
+      "aped"
+    ]
+  },
+  {
+    "start": 1329691,
+    "end": 1329712,
+    "size": 21,
+    "official_hex_preview": "000000000000000000000000000000000000000000",
+    "custom_hex_preview": "f007f8bde81f40ab7fda07dff838c0604710b586b0",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd",
+      "aped"
+    ]
+  },
+  {
+    "start": 1329713,
+    "end": 1329717,
+    "size": 4,
+    "official_hex_preview": "00000000",
+    "custom_hex_preview": "248df804",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped",
+      "flad"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd",
+      "aped",
+      "flad"
+    ]
+  },
+  {
+    "start": 1329718,
+    "end": 1329754,
+    "size": 36,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "47f603620294adf8082001aa039204940123adf810308df8124002a8044b9847",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped",
+      "flad"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd",
+      "aped",
+      "flad"
+    ]
+  },
+  {
+    "start": 1329756,
+    "end": 1329772,
+    "size": 16,
+    "official_hex_preview": "00000000000000000000000000000000",
+    "custom_hex_preview": "67800110a7800110fd0605101fb50120",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped",
+      "flad",
+      "mp3d",
+      "wavd"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd",
+      "aped",
+      "flad",
+      "mp3d",
+      "wavd"
+    ]
+  },
+  {
+    "start": 1329773,
+    "end": 1329794,
+    "size": 21,
+    "official_hex_preview": "000000000000000000000000000000000000000000",
+    "custom_hex_preview": "f007f8bde81f4007b50d4bdff834c0604710b586b0",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped",
+      "flad",
+      "mp3d",
+      "wavd",
+      "wmad"
+    ],
+    "nearby_strings_custom": [
+      " 8p(FiFS",
+      "aacd",
+      "aacd",
+      "aped",
+      "flad",
+      "mp3d",
+      "wavd",
+      "wmad"
+    ]
+  },
+  {
+    "start": 1329795,
+    "end": 1329799,
+    "size": 4,
+    "official_hex_preview": "00000000",
+    "custom_hex_preview": "248df804",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped",
+      "flad",
+      "mp3d",
+      "wavd",
+      "wmad"
+    ],
+    "nearby_strings_custom": [
+      "aacd",
+      "aacd",
+      "aped",
+      "flad",
+      "mp3d",
+      "wavd",
+      "wmad"
+    ]
+  },
+  {
+    "start": 1329800,
+    "end": 1329848,
+    "size": 48,
+    "official_hex_preview": "0000000000000000000000000000000000000000000000000000000000000000",
+    "custom_hex_preview": "47f604620294adf8082001aa039204940123adf810308df8124002a8034b9847",
+    "nearby_strings_official": [
+      "aacd",
+      "aacd",
+      "aped",
+      "flad",
+      "mp3d",
+      "wavd",
+      "wmad"
+    ],
+    "nearby_strings_custom": [
+      "aacd",
+      "aacd",
+      "aped",
+      "flad",
+      "mp3d",
+      "wavd",
+      "wmad"
+    ]
+  },
+  {
+    "start": 1365049,
+    "end": 1365107,
+    "size": 58,
+    "official_hex_preview": "574553545f544f504449522f6170706c69636174696f6e2f62745f7761746368",
+    "custom_hex_preview": "486f6d6542756464792d76332020257320253032752f25303275000000000000",
+    "nearby_strings_official": [
+      "_launcher_bt_event_handle",
+      "_launcher_bt_mgr_event_handle",
+      "_launcher_alarm_event_handle",
+      "_launcher_key_event_handle",
+      "launcher_restore_last_player",
+      "launcher_suspend_player",
+      "_launcher_app_loop",
+      "_launcher_app_init",
+      "launcher_suspend_player",
+      "view_id == CLOCK_VIEW"
+    ],
+    "nearby_strings_custom": [
+      "_launcher_bt_event_handle",
+      "_launcher_bt_mgr_event_handle",
+      "_launcher_alarm_event_handle",
+      "_launcher_key_event_handle",
+      "launcher_restore_last_player",
+      "launcher_suspend_player",
+      "_launcher_app_loop",
+      "_launcher_app_init",
+      "launcher_suspend_player",
+      "view_id == CLOCK_VIEW"
+    ]
+  },
+  {
+    "start": 1377041,
+    "end": 1377047,
+    "size": 6,
+    "official_hex_preview": "616d617a6f6e",
+    "custom_hex_preview": "676f6f676c65",
+    "nearby_strings_official": [
+      "com.apple.mobilephone",
+      "com.bytedance.ee.lark",
+      "com.ss.android.lark",
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord"
+    ],
+    "nearby_strings_custom": [
+      "com.apple.mobilephone",
+      "com.bytedance.ee.lark",
+      "com.ss.android.lark",
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord"
+    ]
+  },
+  {
+    "start": 1377048,
+    "end": 1377070,
+    "size": 22,
+    "official_hex_preview": "6d53686f702e616e64726f69642e73686f7070696e67",
+    "custom_hex_preview": "476d61696c0000000000000000000000000000000000",
+    "nearby_strings_official": [
+      "com.apple.mobilephone",
+      "com.bytedance.ee.lark",
+      "com.ss.android.lark",
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord"
+    ],
+    "nearby_strings_custom": [
+      "com.apple.mobilephone",
+      "com.bytedance.ee.lark",
+      "com.ss.android.lark",
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord"
+    ]
+  },
+  {
+    "start": 1377071,
+    "end": 1377088,
+    "size": 17,
+    "official_hex_preview": "636f6d2e616d617a6f6e2e416d617a6f6e",
+    "custom_hex_preview": "0000000000000000000000000000000000",
+    "nearby_strings_official": [
+      "com.bytedance.ee.lark",
+      "com.ss.android.lark",
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage"
+    ],
+    "nearby_strings_custom": [
+      "com.bytedance.ee.lark",
+      "com.ss.android.lark",
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage"
+    ]
+  },
+  {
+    "start": 1377093,
+    "end": 1377105,
+    "size": 12,
+    "official_hex_preview": "656261792e6d6f62696c6500",
+    "custom_hex_preview": "6670697270696c696469732e",
+    "nearby_strings_official": [
+      "com.ss.android.lark",
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit"
+    ],
+    "nearby_strings_custom": [
+      "com.ss.android.lark",
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit"
+    ]
+  },
+  {
+    "start": 1377106,
+    "end": 1377115,
+    "size": 9,
+    "official_hex_preview": "6f6d2e656261792e69",
+    "custom_hex_preview": "6c6561727669657761",
+    "nearby_strings_official": [
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping"
+    ],
+    "nearby_strings_custom": [
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail"
+    ]
+  },
+  {
+    "start": 1377116,
+    "end": 1377120,
+    "size": 4,
+    "official_hex_preview": "686f6e65",
+    "custom_hex_preview": "70000000",
+    "nearby_strings_official": [
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping"
+    ],
+    "nearby_strings_custom": [
+      "com.larksuite.lark",
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail"
+    ]
+  },
+  {
+    "start": 1377125,
+    "end": 1377133,
+    "size": 8,
+    "official_hex_preview": "64642e646f6f7264",
+    "custom_hex_preview": "74706c696e6b2e74",
+    "nearby_strings_official": [
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping",
+      "com.amazon.Amazon"
+    ],
+    "nearby_strings_custom": [
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail",
+      "com.fpirpilidis.clearviewapp"
+    ]
+  },
+  {
+    "start": 1377134,
+    "end": 1377136,
+    "size": 2,
+    "official_hex_preview": "7368",
+    "custom_hex_preview": "706f",
+    "nearby_strings_official": [
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping",
+      "com.amazon.Amazon"
+    ],
+    "nearby_strings_custom": [
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail",
+      "com.fpirpilidis.clearviewapp"
+    ]
+  },
+  {
+    "start": 1377137,
+    "end": 1377162,
+    "size": 25,
+    "official_hex_preview": "646f6f72646173682e446f6f7244617368436f6e73756d6572",
+    "custom_hex_preview": "00000000000000000000000000000000000000000000000000",
+    "nearby_strings_official": [
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping",
+      "com.amazon.Amazon"
+    ],
+    "nearby_strings_custom": [
+      "com.lark.meadowlark2",
+      "com.Slack",
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail",
+      "com.fpirpilidis.clearviewapp"
+    ]
+  },
+  {
+    "start": 1377167,
+    "end": 1377184,
+    "size": 17,
+    "official_hex_preview": "70617970616c2e616e64726f69642e7032",
+    "custom_hex_preview": "766962657200636f6d2e6170706c652e41",
+    "nearby_strings_official": [
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping",
+      "com.amazon.Amazon",
+      "com.ebay.mobile",
+      "com.ebay.iphone"
+    ],
+    "nearby_strings_custom": [
+      "com.tinyspeck.slack",
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail",
+      "com.fpirpilidis.clearviewapp",
+      "com.tplink.tapo",
+      "com.viber"
+    ]
+  },
+  {
+    "start": 1377185,
+    "end": 1377190,
+    "size": 5,
+    "official_hex_preview": "6d6f62696c",
+    "custom_hex_preview": "7053746f72",
+    "nearby_strings_official": [
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping",
+      "com.amazon.Amazon",
+      "com.ebay.mobile",
+      "com.ebay.iphone",
+      "com.dd.doordash"
+    ],
+    "nearby_strings_custom": [
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail",
+      "com.fpirpilidis.clearviewapp",
+      "com.tplink.tapo",
+      "com.viber",
+      "com.apple.AppStoreConnect"
+    ]
+  },
+  {
+    "start": 1377191,
+    "end": 1377216,
+    "size": 25,
+    "official_hex_preview": "00636f6d2e796f7572636f6d70616e792e5050436c69656e74",
+    "custom_hex_preview": "436f6e6e656374000000000000000000000000000000000000",
+    "nearby_strings_official": [
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping",
+      "com.amazon.Amazon",
+      "com.ebay.mobile",
+      "com.ebay.iphone",
+      "com.dd.doordash"
+    ],
+    "nearby_strings_custom": [
+      "com.tinyspeck.chatlyio",
+      "com.discord",
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail",
+      "com.fpirpilidis.clearviewapp",
+      "com.tplink.tapo",
+      "com.viber",
+      "com.apple.AppStoreConnect"
+    ]
+  },
+  {
+    "start": 1377221,
+    "end": 1377249,
+    "size": 28,
+    "official_hex_preview": "76656e6d6f006e65742e6b6f7274696e612e6c6162732e56656e6d6f",
+    "custom_hex_preview": "7869616f6d692e6d69686f6d65000000000000000000000000000000",
+    "nearby_strings_official": [
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.amazon.mShop.android.shopping",
+      "com.amazon.Amazon",
+      "com.ebay.mobile",
+      "com.ebay.iphone",
+      "com.dd.doordash",
+      "doordash.DoorDashConsumer",
+      "com.paypal.android.p2pmobile"
+    ],
+    "nearby_strings_custom": [
+      "com.hammerandchisel.discord",
+      "com.reddit.frontpage",
+      "com.reddit.Reddit",
+      "com.google.Gmail",
+      "com.fpirpilidis.clearviewapp",
+      "com.tplink.tapo",
+      "com.viber",
+      "com.apple.AppStoreConnect",
+      "com.xiaomi.mihome",
+      "com.google.android.calendar"
+    ]
+  },
+  {
+    "start": 1377341,
+    "end": 1377353,
+    "size": 12,
+    "official_hex_preview": "756265726361622e65617473",
+    "custom_hex_preview": "676f6f676c652e4d61707300",
+    "nearby_strings_official": [
+      "com.ebay.mobile",
+      "com.ebay.iphone",
+      "com.dd.doordash",
+      "doordash.DoorDashConsumer",
+      "com.paypal.android.p2pmobile",
+      "com.yourcompany.PPClient",
+      "com.venmo",
+      "net.kortina.labs.Venmo",
+      "com.google.android.calendar",
+      "com.google.calendar"
+    ],
+    "nearby_strings_custom": [
+      "com.fpirpilidis.clearviewapp",
+      "com.tplink.tapo",
+      "com.viber",
+      "com.apple.AppStoreConnect",
+      "com.xiaomi.mihome",
+      "com.google.android.calendar",
+      "com.google.calendar",
+      "com.apple.mobilecal",
+      "com.apple.calendar",
+      "com.google.Maps"
+    ]
+  },
+  {
+    "start": 1377354,
+    "end": 1377374,
+    "size": 20,
+    "official_hex_preview": "636f6d2e756265726361622e5562657245617473",
+    "custom_hex_preview": "0000000000000000000000000000000000000000",
+    "nearby_strings_official": [
+      "com.ebay.iphone",
+      "com.dd.doordash",
+      "doordash.DoorDashConsumer",
+      "com.paypal.android.p2pmobile",
+      "com.yourcompany.PPClient",
+      "com.venmo",
+      "net.kortina.labs.Venmo",
+      "com.google.android.calendar",
+      "com.google.calendar",
+      "com.apple.mobilecal"
+    ],
+    "nearby_strings_custom": [
+      "com.tplink.tapo",
+      "com.viber",
+      "com.apple.AppStoreConnect",
+      "com.xiaomi.mihome",
+      "com.google.android.calendar",
+      "com.google.calendar",
+      "com.apple.mobilecal",
+      "com.apple.calendar",
+      "com.google.Maps",
+      "global_appid"
+    ]
+  },
+  {
+    "start": 1377388,
+    "end": 1377405,
+    "size": 17,
+    "official_hex_preview": "636f6d2e73717561726575702e63617368",
+    "custom_hex_preview": "0000000000000000000000000000000000",
+    "nearby_strings_official": [
+      "doordash.DoorDashConsumer",
+      "com.paypal.android.p2pmobile",
+      "com.yourcompany.PPClient",
+      "com.venmo",
+      "net.kortina.labs.Venmo",
+      "com.google.android.calendar",
+      "com.google.calendar",
+      "com.apple.mobilecal",
+      "com.apple.calendar",
+      "com.ubercab.eats"
+    ],
+    "nearby_strings_custom": [
+      "com.viber",
+      "com.apple.AppStoreConnect",
+      "com.xiaomi.mihome",
+      "com.google.android.calendar",
+      "com.google.calendar",
+      "com.apple.mobilecal",
+      "com.apple.calendar",
+      "com.google.Maps",
+      "global_appid",
+      "Notify_GetType = %d, %s"
+    ]
+  }
+]

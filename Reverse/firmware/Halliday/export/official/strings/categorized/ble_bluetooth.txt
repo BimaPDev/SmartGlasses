@@ -1,0 +1,1224 @@
+0x083b20	sPpPgabi
+0x0ae66d	DHFp
+0x146fa4	freetype font init failed due to unable to malloc ft_font_cache data
+0x146fec	freetype font init failed due to unable to malloc opend_font data
+0x147030	freetype font init failed due to unable to malloc common faces data
+0x147128	no available face slot
+0x147248	no available slot for freetype font %s
+0x14783c	sfnt-table
+0x149e38	ams write busy! %x
+0x149e60	ams gatt_write:%x
+0x149e73	ams gatt_write complete handle:%x %d
+0x149fdc	AMS write ccc err:%d
+0x14a08b	subscribe AMS RC handle 0x%2x, 0x%2x %d
+0x14a0b4	AMS RC Subscribe failed (err %d)
+0x14a0d6	AMS RC subscribe success
+0x14a0f0	AMS RC unsubscribe failed (err %d)
+0x14a114	AMS RC unsubscribe success
+0x14a130	subscribe AMS EU handle 0x%2x, 0x%2x %d
+0x14a159	AMS EU subscribe failed (err %d)
+0x14a17b	AMS EU subscribe success
+0x14a195	AMS EU unsubscribe failed (err %d)
+0x14a1b9	AMS EU unsubscribe success
+0x14a335	ancs write complete: err %u
+0x14a50e	subscribe ANCS N handle 0x%2x, 0x%2x %d
+0x14a537	ANCS N subscribe failed (err %d)
+0x14a559	ANCS N subscribe success
+0x14a573	ANCS N unsubscribe failed (err %d)
+0x14a597	ANCS N unsubscribe success
+0x14a5b3	subscribe ANCS DS handle 0x%2x, 0x%2x %d
+0x14a5dd	ANCS DS subscribe failed (err %d)
+0x14a600	ANCS DS subscribe success
+0x14a61b	ANCS DS unsubscribe failed (err %d)
+0x14a640	ANCS DS unsubscribe success
+0x14a65d	ancs write busy!
+0x14a66e	ancs write pending:%d handle:0x%x
+0x14a777	ancs_parse_data
+0x14a787	ancs_parse_data
+0x14a7a0	ANCS_AMS connnected
+0x14a7b5	ANCS_AMS disconnnected
+0x14a893	BLE_ANCS_EVENT_NOTIFICATION_ATTR_REQ_COMPLETE handle:%d
+0x14a8cc	BLE_AMS_EVENT_WRITE_ENTITY_UPDATE %d
+0x14a8f2	BLE_AMS_EVENT_READ_ENTITY_UPDATE %d
+0x14a917	Service change disconnect ble, need phone or apk connect ble again!
+0x14ab03	 MSG_BT_PAIRING_EVENT: cmd:%d value:%d
+0x14af4c	shell_set_dualble_adv_connected %d
+0x14b072	dualble adv connected
+0x14b0f0	shell_set_dualble_adv_connected
+0x14b137	/NAND:A/bt_watch.res
+0x14b14c	/NAND:A/bt_watch.sty
+0x14b161	/NAND:A/bt_watch.zhC
+0x14b54c	bt_player_start_play
+0x14b561	bt_player_stop_play
+0x14b575	bt_player_pause_play
+0x14b58a	bt_player_bt_event_proc
+0x14b6cb	BTCALL_EVENT: Received BT_HFP_CALL_RING_STATR_EVENT with data: '%s'
+0x14b70f	BTCALL_EVENT: Received BT_HFP_CALL_CONTACT_NAME_UPDATE with name: '%s'
+0x14b756	BT_HFP_CALL_CCWA_EVENT
+0x14b76e	BT_HFP_CALL_INCOMING
+0x14b79b	BT_HFP_CALL_ONGOING
+0x14b839	_bt_call_hfp_disconnected
+0x14b853	btcall_bt_event_proc
+0x14b97a	bt_call_start_play
+0x14b98d	bt_call_stop_play
+0x14ba7c	spp test call back cmd %d state %d
+0x14ba9f	NO SPP data RCV
+0x14baaf	spp_test_stop
+0x14babd	spp_test_backend_callback
+0x14bad7	spp_test_app_init
+0x14bae9	tool_spp_test_main
+0x14c0a8	bt_manager_allow_sco_connect false
+0x14c0cc	unable attach backend
+0x14c0fa	bt_manager_allow_sco_connect true
+0x14c11d	BT_MANAGER_BLE: Disconnecting BLE device
+0x14c16e	spp uuid
+0x14c229	ota_app_init_bluetooth
+0x14c749	lcmusic_bt_event_proc
+0x14d151	WEST_TOPDIR/application/bt_watch/src/launcher/launcher_app.c
+0x14d340	_launcher_bt_event_handle
+0x14d35a	_launcher_bt_mgr_event_handle
+0x14d439	WEST_TOPDIR/application/bt_watch/src/launcher/clock_view.c
+0x14d509	WEST_TOPDIR/application/bt_watch/src/launcher/health/bp_view.c
+0x14d5e8	WEST_TOPDIR/application/bt_watch/src/launcher/health/spo2_view.c
+0x14d771	bt_transmit
+0x14d77d	bt_transmit_sync_vol_to_remote
+0x14d79c	bt_transmit_capture_start_inner
+0x14d7bc	bt_transmit_capture_stop_inner
+0x14d7db	bt_transmit_catpure_pre_start
+0x14d810	bt_device_info[i].name != NULL
+0x14d82f	WEST_TOPDIR/application/bt_watch/src/bt_transmit/bt_transmit_inquiry.c
+0x14d93c	_bt_transmit_append_inquiry_result
+0x14d95f	bt_transmit_inquiry_result
+0x14d97a	bt_transmit_inquiry_restart
+0x14d996	_bt_transmit_add_connected_device
+0x14d9b8	_bt_transmit_append_inquiry_result
+0x14d9db	bt_transmit_inquiry_result
+0x14d9f6	bt_transmit: bt cmd %d
+0x14da2a	bt_transmit_bt_event_proc
+0x14dca0	_sppble_connect_cb
+0x14dcb3	_sppble_get_rx_data
+0x14dcc7	_sppble_put_tx_data
+0x14df3e	ble stream open failed
+0x14e417	/NAND:/SYSTEM/BT_NAME/bt_name.lib
+0x14e439	/NAND:/SYSTEM/BT_NAME
+0x14e596	BT_HCI_ERR_SUCCESS
+0x14e5a9	BT_HCI_ERR_UNKNOWN_CMD
+0x14e5c0	BT_HCI_ERR_UNKNOWN_CONN_ID
+0x14e5db	BT_HCI_ERR_HW_FAILURE
+0x14e5f1	BT_HCI_ERR_PAGE_TIMEOUT
+0x14e609	BT_HCI_ERR_AUTH_FAIL
+0x14e61e	BT_HCI_ERR_PIN_OR_KEY_MISSING
+0x14e63c	BT_HCI_ERR_MEM_CAPACITY_EXCEEDED
+0x14e65d	BT_HCI_ERR_CONN_TIMEOUT
+0x14e675	BT_HCI_ERR_CONN_LIMIT_EXCEEDED
+0x14e694	BT_HCI_ERR_SYNC_CONN_LIMIT_EXCEEDED
+0x14e6b8	BT_HCI_ERR_CONN_ALREADY_EXISTS
+0x14e6d7	BT_HCI_ERR_CMD_DISALLOWED
+0x14e6f1	BT_HCI_ERR_INSUFFICIENT_RESOURCES
+0x14e713	BT_HCI_ERR_INSUFFICIENT_SECURITY
+0x14e734	BT_HCI_ERR_BD_ADDR_UNACCEPTABLE
+0x14e754	BT_HCI_ERR_CONN_ACCEPT_TIMEOUT
+0x14e773	BT_HCI_ERR_UNSUPP_FEATURE_PARAM_VAL
+0x14e797	BT_HCI_ERR_INVALID_PARAM
+0x14e7b0	BT_HCI_ERR_REMOTE_USER_TERM_CONN
+0x14e7d1	BT_HCI_ERR_REMOTE_LOW_RESOURCES
+0x14e7f1	BT_HCI_ERR_REMOTE_POWER_OFF
+0x14e80d	BT_HCI_ERR_LOCALHOST_TERM_CONN
+0x14e82c	BT_HCI_ERR_REPEATED_ATTEMPTS
+0x14e849	BT_HCI_ERR_PAIRING_NOT_ALLOWED
+0x14e868	BT_HCI_ERR_UNKNOWN_LMP_PDU
+0x14e883	BT_HCI_ERR_UNSUPP_REMOTE_FEATURE
+0x14e8a4	BT_HCI_ERR_SCO_OFFSET_REJECTED
+0x14e8c3	BT_HCI_ERR_SCO_INTERVAL_REJECTED
+0x14e8e4	BT_HCI_ERR_SCO_AIR_MODE_REJECTED
+0x14e905	BT_HCI_ERR_INVALID_LL_PARAM
+0x14e921	BT_HCI_ERR_UNSPECIFIED
+0x14e938	BT_HCI_ERR_UNSUPP_LL_PARAM_VAL
+0x14e957	BT_HCI_ERR_ROLE_CHANGE_NOT_ALLOWED
+0x14e97a	BT_HCI_ERR_LL_RESP_TIMEOUT
+0x14e995	BT_HCI_ERR_LL_PROC_COLLISION
+0x14e9b2	BT_HCI_ERR_LMP_PDU_NOT_ALLOWED
+0x14e9d1	BT_HCI_ERR_ENC_MODE_NOT_ACCEPTABLE
+0x14e9f4	BT_HCI_ERR_LINK_KEY_CANNOT_BE_CHANGED
+0x14ea1a	BT_HCI_ERR_REQUESTED_QOS_NOT_SUPPORTED
+0x14ea41	BT_HCI_ERR_INSTANT_PASSED
+0x14ea5b	BT_HCI_ERR_PAIRING_NOT_SUPPORTED
+0x14ea7c	BT_HCI_ERR_DIFF_TRANS_COLLISION
+0x14ea9c	BT_HCI_ERR_QOS_UNACCEPTABLE_PARAM
+0x14eabe	BT_HCI_ERR_QOS_REJECTED
+0x14ead6	BT_HCI_ERR_CHAN_ASSESS_NOT_SUPPORTED
+0x14eafb	BT_HCI_ERR_INSUFF_SECURITY
+0x14eb16	BT_HCI_ERR_PARAM_OUT_OF_MANDATORY_RANGE
+0x14eb3e	BT_HCI_ERR_ROLE_SWITCH_PENDING
+0x14eb5d	BT_HCI_ERR_RESERVED_SLOT_VIOLATION
+0x14eb80	BT_HCI_ERR_ROLE_SWITCH_FAILED
+0x14eb9e	BT_HCI_ERR_EXT_INQ_RESP_TOO_LARGE
+0x14ebc0	BT_HCI_ERR_SIMPLE_PAIR_NOT_SUPP_BY_HOST
+0x14ebe8	BT_HCI_ERR_HOST_BUSY_PAIRING
+0x14ec05	BT_HCI_ERR_CONN_REJECTED_DUE_TO_NO_CHAN
+0x14ec2d	BT_HCI_ERR_CONTROLLER_BUSY
+0x14ec48	BT_HCI_ERR_UNACCEPT_CONN_PARAM
+0x14ec67	BT_HCI_ERR_ADV_TIMEOUT
+0x14ec7e	BT_HCI_ERR_TERM_DUE_TO_MIC_FAIL
+0x14ec9e	BT_HCI_ERR_CONN_FAIL_TO_ESTAB
+0x14ecbc	BT_HCI_ERR_MAC_CONN_FAILED
+0x14f078	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_translate/translate_language_select_view_332.c
+0x14f39f	ble_translate_state %d
+0x14fe3d	Notify_IsEnable type=%d, global=%d, all=%d, follow=%d.
+0x14fe75	NOTIFY_ENABLE
+0x14fee2	title APP_NOTIFY_CFG_TYPE_NULL and Notify_IsEnable false! 
+0x14ff43	content APP_NOTIFY_CFG_TYPE_NULL and Notify_IsEnable false! 
+0x150497	Notify_SetEnable: type = %d, enable = %d
+0x1504c0	Notify_EnableDefaultnotify_enable = %d
+0x1504e7	Notify_EnableInit
+0x1504fa	Notify_EnableInit [%d] = %d
+0x150525	Notify_IsEnable
+0x150535	Notify_SetEnable
+0x150546	Notify_EnableDefault
+0x150566	Notify_EnableInit
+0x150583	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_msg/message_reply_view.c
+0x150d8b	BLE SEND: CMD:0x%x, KEY:0x%x
+0x1510c2	ble_send_to_app2
+0x15148b	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_msg/notify_list_view.c
+0x1516e1	notify_pin_filter_get_enable %d
+0x151701	notify_pin_filter_set_enable %d
+0x151732	notify_pin_filter_get_enable
+0x15174f	notify_pin_filter_set_enable
+0x151c2b	BTCALL_BOX_VIEW: HFP name found. Using '%s' for display.
+0x1526c0	bt_call volume updata %d
+0x1526d9	bt_music volume updata %d
+0x152a13	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_remind/reminder_list_view_V330.c
+0x152acc	Added reminder item: %s, enabled: %d
+0x152d9e	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_remind/reminder_opration_view.c
+0x154242	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ai/ai_view.c
+0x1542c0	ai view querey ble is %d
+0x1542d9	ai view loading progress timeout back, querey ble is %d
+0x15454b	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ai/proactiva_ai_view.c
+0x15479d	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_prompter/prompter_list_view.c
+0x154a6b	Auto scroll disabled for file: %s
+0x154cc3	Delete Unavailable
+0x154d48	Failed to create BLE disconnect delete view
+0x154eb5	prompter_ble_disconnect_delete_view_create
+0x154ee0	prompter_ble_disconnect_delete_view_enter
+0x154f0a	prompter_ble_disconnect_delete_view_exit
+0x15586a	No content available for pages %d and %d
+0x1559e4	Calculated max_display_lines: %d (available_height=%d, font_height=%d)
+0x1561d0	Failed to get font params for size %d
+0x156764	prompter_get_font_params
+0x156a77	ring_double_chlick_handler turn off screen
+0x156bcd	ring_gesture top double
+0x156c6d	ring_double_chlick_handler
+0x156d96	ring_scan_timeout_cnt %d,state %d,ble %d
+0x1571fc	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_password/password_view.c
+0x15765f	_bt_view_layout_update
+0x158091	Reminder timeout view: double click detected (TP_CLICK_TWICE=0x%x)
+0x15838c	>>>ble:%s,bt:%s,ring:%d
+0x1583a4	a2dp_enable
+0x1583b0	bt_call_volume_get %d: %d
+0x158411	bt_send_message_to_phone phone = %s, number = %s
+0x158442	bt_manager_set_bt_ble_name %s 
+0x158461	BT_LE_NAME
+0x15846c	[%d]ble_disconnect_log %d/%d %d:%d:%d
+0x158492	BT_STATUS_NONE
+0x1584a1	BT_STATUS_WAIT_PAIR
+0x1584b5	BT_STATUS_CONNECTED
+0x1584c9	BT_STATUS_DISCONNECTED
+0x1584e0	BT_STATUS_TWS_WAIT_PAIR
+0x1584f8	BT_STATUS_TWS_PAIRED
+0x15850d	BT_STATUS_TWS_UNPAIRED
+0x158524	BT_STATUS_MASTER_WAIT_PAIR
+0x15853f	BT_STATUS_BLE_NONE
+0x158552	BT_STATUS_BLE_ADV
+0x158564	BT_STATUS_BLE_CONNECTED
+0x15857c	BT_STATUS_BLE_DISCONNECTED
+0x1585bd	bt_send_message_to_phone
+0x1585d6	ble_is_connected
+0x1585e7	ble_disconnect_log
+0x1585fa	bt_call_volume_get
+0x158685	xs_vibration_start not enable
+0x1586a3	vibratest_start not enable
+0x1586be	vibratest_stop not enable
+0x158899	ble is disconnected and not adv, start adv, state:%d
+0x158920	battery_power_enable
+0x15896f	system_ble_adv_start
+0x158a9f	ble_update_connected %d,%d
+0x158acf	ble_state_update_work_cb
+0x158cd2	bt_call_touch_event_handle %d
+0x158d42	ble ring event: %d
+0x158d66	bt_connection_event_handle
+0x158d81	bt_disconnection_event_handle
+0x158db4	xs_event_handle MSG_BT_EVENT %d
+0x158de7	bt_connection_event_handle a2dp is enable %d
+0x159087	bt_call_touch_event_handle
+0x1590f5	ble_ring_event_handle
+0x15911f	_ble_state_update_handle
+0x159138	_ble_state_update_work_cb
+0x159152	bt_connection_event_handle
+0x15916d	bt_disconnection_event_handle
+0x1591c5	Unable to read directory
+0x1593b8	KEY_TYPE_DOUBLE_CLICK
+0x15957f	bt_music_volume_set %d:%d
+0x159772	bt_music_pp pause
+0x159784	bt_music_pp play
+0x1599b1	bt_music_pp
+0x1599bd	bt_music_volume_set
+0x15a18c	ble_to_app_notify_mute notify_enable = %d
+0x15a1ea	 _ble_rx_shipping_mode_command 
+0x15a20b	app _ble_rx_updata_param_command %d
+0x15a230	 _ble_rx_fctory_command %d %s, %s
+0x15a253	 _ble_rx_fctory 0x%x,0x%x,0x%x,0x%x,
+0x15a279	BLE_SET_BT_NAME[%d] %s
+0x15a291	BLE_TEST_VIEW
+0x15a2a0	BLE_ENTER_PPT
+0x15a2af	BLE_EANBLE_TP
+0x15a2c4	 _ble_rx_ring_command %d %s, %s
+0x15a313	ble_to_app_ota_state state: %d
+0x15a332	BLE RECV: CMD:0x%x, KEY:0x%x
+0x15a34f	Invalid BLE cmd = 0x%x
+0x15a366	_ble_rx_navi_state
+0x15a379	_ble_rx_navi_info
+0x15a38b	_ble_rx_navi_command
+0x15a3a0	_ble_rx_exercise_command
+0x15a3b9	_ble_rx_sensor_command
+0x15a3d0	ble_to_app_notify_mute
+0x15a3e7	_ble_rx_appNotifyCfg_mute
+0x15a401	_ble_rx_appNotifyCfg_command
+0x15a41e	_ble_rx_shipping_mode_command
+0x15a43c	_ble_rx_updata_param_command
+0x15a459	_ble_rx_fctory_command
+0x15a470	_ble_rx_ring_command
+0x15a485	_ble_rx_voice_control_command
+0x15a4a3	ble_to_app_ota_state
+0x15a4b8	vendor_ble_rx_event_proc
+0x15a4d1	_ble_rx_navi_state
+0x15a4e4	_ble_rx_navi_info
+0x15a4f6	_ble_rx_sensor_param
+0x15a50b	_ble_rx_appNotifyCfg_command
+0x15a7a6	_ble_ctrl_translate
+0x15a7ba	_ble_ctrl_prompter
+0x15a7cd	ble_to_app_pd_adjust
+0x15a7e2	_ble_ctrl_pd
+0x15a7ef	_ble_rx_function_command
+0x15a838	_ble_rx_set_button_shortcut_view view_id = %d
+0x15a866	_ble_rx_app_connected_state %d
+0x15a885	ble_to_query_app_connected_state
+0x15a8a6	ble_to_app_screen_zoom zoom_level = %d
+0x15a939	_ble_rx_set_command cmd:0x%x
+0x15a956	_ble_rx_set_language: %d
+0x15a9c1	_ble_rx_get_remind
+0x15aacc	ble_delete_file
+0x15aadc	ble_clear_files
+0x15aaec	>>_ble_rx_set_system_time time: %d-%02d-%02d -%01d- %02d:%02d:%02d
+0x15ab2f	_ble_rx_set_notify_enable data_len:%d
+0x15ab55	notify_enable[%d]:%d
+0x15ab97	_ble_rx_set_device_piar_uid cmd %d
+0x15abe5	_ble_rx_set_password cmd 0x%x,view_op.get_top():%d
+0x15ac18	_ble_rx_set_tp_mode tp_mode = %d
+0x15ac39	_ble_rx_guide_enable enable = %d
+0x15ac5a	_ble_rx_guide_enable step = %d
+0x15ac79	_ble_rx_set_command ERROR cmd = %d
+0x15ac9c	_ble_rx_set_system_time
+0x15acb4	_ble_rx_set_langu
+0x15acc6	_ble_rx_set_remind
+0x15acd9	_ble_rx_del_remind
+0x15acec	_ble_rx_get_remind
+0x15acff	_ble_rx_set_transfer
+0x15ad14	_ble_rx_set_device_piar_uid
+0x15ad30	_ble_rx_set_notify_enable
+0x15ad4a	_ble_rx_get_device_piar_uid
+0x15ad66	ble_sync_password
+0x15ad78	_ble_rx_set_password
+0x15ad8d	_ble_rx_set_tp_mode
+0x15ada1	_ble_rx_guide_enable
+0x15adb6	_ble_rx_set_button_shortcut_view
+0x15add7	_ble_rx_app_connected_state
+0x15adf3	ble_to_query_app_connected_state
+0x15ae14	_ble_rx_set_screen_zoom
+0x15ae2c	ble_to_app_screen_zoom
+0x15ae43	_ble_rx_set_command
+0x15ae57	_ble_rx_set_remind
+0x15ae6a	_ble_rx_get_remind
+0x15ae7d	_ble_rx_get_device_piar_uid
+0x15ae99	ble_sync_password
+0x15aed8	Notify user_appid %d is not enabled
+0x15af90	_ble_rx_txt_message
+0x15afa4	_ble_rx_txt_promp
+0x15afb6	_ble_rx_local_promp
+0x15afca	_ble_rx_sync_cheatsheet
+0x15afe2	_ble_rx_text_command
+0x15aff7	_ble_rx_txt_message
+0x15b00b	ble_rx_voice_record type = %d,state = %d
+0x15b0be	ble_translate[%d] state = %d, len = %d, %s
+0x15b11a	BLE AI role: %d, len: %d, data: %s
+0x15b13e	BLE question: %s, received: %s
+0x15b15e	BLE answer[%d] [%d][%d][%d]: %s
+0x15b17f	ai agent ble user data %s
+0x15b1b9	ble_rx_stt_content state [%d] stt [%d], sizeof(%d) = %s
+0x15b1f2	ble_rx_ai_loading_progress type = %d,progress = %d
+0x15b24e	ble_rx_ai_loading_progress len = %d
+0x15b272	ble_rx_ai_loading_progress content %s
+0x15b304	_ble_rx_voice_record
+0x15b319	_ble_rx_voice_transl
+0x15b32e	_ble_rx_voice_ai
+0x15b33f	_ble_rx_voice_assistant
+0x15b357	_ble_rx_stt_content
+0x15b36b	_ble_rx_ai_loading_progress
+0x15b387	_ble_rx_voice_command
+0x15b3a6	ble_opus_start %d
+0x15b3b8	ble_translate_state = %d original %d translation %d
+0x15b46b	ble_to_app_translate_config = %d %d %d %d %d
+0x15b498	ble_ai_state = %d
+0x15b4bd	ble_ai_stt_control state = %d
+0x15b4dc	ble_ai_poke_to_app
+0x15b510	ble_stt_control state = %d
+0x15b52c	ble_send_message malloc fail
+0x15b549	ble_send_message number = %s, msg = %s
+0x15b570	ble_to_app_ring_state battery_percent %d,battery_state %d, sn %s
+0x15b5f0	ble_send_ring_state cur_state = %d, to_app_state = %d
+0x15b626	ble_send_ring_info sn %s,mac %02x:%02x:%02x:%02x:%02x:%02x
+0x15b661	ble_opus_start
+0x15b670	ble_translate_state
+0x15b684	ble_to_app_translate_config
+0x15b6a0	ble_ai_state
+0x15b6ad	ble_ai_stt_control
+0x15b6c0	ble_stt_control
+0x15b6d0	ble_send_message
+0x15b6e1	ble_to_app_ring_state
+0x15b6f7	ble_send_ring_state
+0x15b70b	ble_send_ring_info
+0x15b71e	ble_translate_state
+0x15b732	ble_ai_state
+0x15b73f	ble_stt_control
+0x15b74f	ble_send_message
+0x15bd00	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_setting/setting_view_v330.c
+0x15be60	bt_is_connected %d, ble_is_connected %d, phone_name %s.
+0x15beb2	BLE no connect,Phone: %s 
+0x15bf02	bt_refresh_ui
+0x15bf4a	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_setting/xs_language/language_view.c
+0x15bffa	/NAND:A/bt_watch.
+0x15c1e1	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_setting/xs_screen_time/screen_time_view.c
+0x15c7fe	ble_read_mutex Deadlock!!!!!!!! 
+0x15c83d	vendor app ble stream open failed %d
+0x15c862	vendor app ble stream open success
+0x15c8cf	APP BLE connection
+0x15c8e9	APP BLE disconnection
+0x15c8ff	ble_connect_cb: %d
+0x15c912	ble stream create failed
+0x15c92b	vendor_app_init ble_stream: %p
+0x15c964	ble_data_stream: %p
+0x15c9d4	app_ble_connect_handling
+0x15ca12	ble_connect_cb
+0x15caad	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_service/xs_vendor_ble_stream.c
+0x15caff	%s attr %p, enable %d
+0x15cb40	1 stream_ble_connect_cb BLE %s
+0x15cb5f	2 stream_ble_connect_cb %2x:%2x:%2x:%2x:%2x:%2x
+0x15cb8f	3 stream_ble_connect_cb stream[%d]: %p
+0x15cbb6	4 stream_ble_connect_cb info->connected: %d,%s
+0x15cbe5	ble_add_stream handle: %p
+0x15cbff	ble_create_stream[%d]: %p
+0x15cc59	ble_remove_stream[%d]: %p
+0x15cc95	ble_add_stream
+0x15cca4	ble_remove_stream
+0x15ccb6	ble_rx_data
+0x15ccc2	stream_ble_tx_cfg_changed
+0x15ccdc	stream_ble_connect_cb
+0x15ccf2	ble_stream_init
+0x15cd02	ble_stream_open
+0x15cd12	ble_stream_close
+0x15cd23	ble_stream_destroy
+0x15cd36	ble_stream_init
+0x15cd46	ble_stream_open
+0x15ce3a	----ble RX error----
+0x15ce50	ble stream write error:%d,buf_len:%d
+0x15ce75	BLE SEND: CMD:0x%x(%d), KEY:0x%x(%d),len:%d
+0x15cea1	ble tx: cmd:0x%x, key:0x%x
+0x15cebc	ble send error:%d,cmd:0x%x,key:0x%x
+0x15cef6	ble_data_read
+0x15cf10	ble_send_to_app
+0x15cf46	ble_end_write_file
+0x15cf5a	ble_file_sem Timeout
+0x15cf70	ble_file_mutex Deadlock!!!!!!!! 
+0x15cf92	ble_end_write_file error The remaining %d bytes of the file have not been transferred
+0x15d0a4	ble_end_write_file end
+0x15d0bc	ble_start_write_file
+0x15d0ef	ble ready write_file type = %d,file_name = %s, actual_file_name = %s, path = %s,file_len = %d
+0x15d175	ble started_write_file create dir %s
+0x15d257	ble start_write_file  path:%s,file_len = %d, disk remain = %d
+0x15d2bb	ble_delete_file file_type = %d,file_name = %s
+0x15d419	ble_file_rdwr end
+0x15d555	ble_start_write_file
+0x15d56a	ble_end_write_file
+0x15d57d	ble_delete_file
+0x15d58d	ble_file_rdwr
+0x15d5b1	ble_clear_file
+0x15d5c0	ble_end_write_file
+0x15d5d3	ble_delete_file
+0x15d5f9	ble_ring_read thread started
+0x15d673	ring ble cfg value open
+0x15d68b	ring ble cfg value close
+0x15d6a4	ring ble stop
+0x15d6b2	ring ble connect: %d
+0x15d6c7	ble_ring_service
+0x15d6d8	ble stream not ready
+0x15d6ed	===> 1 ring ble send data %d
+0x15d70b	===> 2 ring ble send data %d
+0x15d729	 ble ring service start
+0x15d741	ble ringstream open failed %d
+0x15d75f	ble_ring_read
+0x15d76d	ble ring service init
+0x15d783	ble ring stream create failed
+0x15d7a1	ble ring service init ok
+0x15d7ba	ble_ring_app_stop
+0x15d7cc	ble_connect_cb
+0x15d7db	ring_bleq_cfg_changed
+0x15d7f1	ble_ring_send_data
+0x15d804	ble_stream_read
+0x15d814	ble_ring_read_thread
+0x15d829	ble_ring_app_start
+0x15d83c	ble_ring_app_init
+0x15d84e	ble_ring_service_main
+0x15d864	ble_ring_app_init
+0x15d876	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_ring_service/ble_ring_stream.c
+0x15d8c8	ring ble_stream_open not connected
+0x15d8eb	ring ble_stream_open buf size %u
+0x15d90c	1 ring stream_ble_connect_cb BLE %s
+0x15d930	2 ring stream_ble_connect_cb %2x:%2x:%2x:%2x:%2x:%2x
+0x15d965	3 ring stream_ble_connect_cb stream[%d]: %p
+0x15d991	4 ring stream_ble_connect_cb info->connected: %d,%s
+0x15d9c5	ble_add_stream
+0x15d9d4	ble_remove_stream
+0x15d9e6	ble_rx_data
+0x15d9f2	stream_ble_tx_cfg_changed
+0x15da0c	stream_ble_connect_cb
+0x15da22	ble_stream_init
+0x15da32	ble_stream_open
+0x15da42	ble_stream_close
+0x15da53	ble_stream_destroy
+0x15da66	ble_stream_init
+0x15da76	ble_stream_open
+0x15da86	Timer not started for data flush, buffer_count:%d,enabled:%d,flush_interval:%d,running %d
+0x15db8f	%s error  initialized %d,enabled %d 
+0x15dd95	BLE callback: writing %u bytes
+0x15dfbc	Testing BLE export with callback...
+0x15dfe0	BLE is not connected
+0x15dff5	BLE callback export test PASSED - %u events exported
+0x15e02a	BLE callback export test FAILED: %d
+0x15e180	gl_translation_advanced_enabled
+0x15e4cd	gl_settings_low_power_mode_enabled
+0x15e4f0	gl_settings_low_power_mode_disabled
+0x15e514	gl_settings_silence_mode_enabled
+0x15e535	gl_settings_silence_mode_disabled
+0x15e557	gl_settings_guest_mode_enabled
+0x15e576	gl_settings_guest_mode_disabled
+0x15e715	ble_write_callback
+0x15e728	ble_export_with_callback
+0x15e8f9	unexpected heap state (double-free?) for memory at %p
+0x15effb	counter8hz does not enable yet
+0x15f1b8	soc_pmu_alarm8hz_enable
+0x15f4e4	BT_WAKE_LOCK_USER    :%d
+0x15f5c6	BT_WAKE_LOCK_USER   : %d
+0x15f709	Unable to determine unused stack size (%d)
+0x15f8de	Unable to determine unused stack size (%d)
+0x15fa30	DISABLED
+0x15ffc5	Please press the <Tab> button to see all available commands.
+0x160151	Available commands:
+0x160683	Disable shell echo. Editing keys and meta-keys are not handled
+0x1606c2	Enable shell echo.
+0x1606d5	Disable colored syntax.
+0x1606ed	Enable colored syntax.
+0x160ac2	params invalid.
+0x162221	partition table (%p) has wrong magic
+0x162247	partition table (%p) checksum error
+0x16229c	g_part_table
+0x1625be	Pull Up and Pull Down should not be enabled simultaneously
+0x16276c	_panel_te_set_enable
+0x1634f3	Cannot both enable and disable interrupts
+0x163549	Must either enable or disable interrupts
+0x1635be	At least one of GPIO_INT_LOW_0, GPIO_INT_HIGH_1 has to be enabled.
+0x16461c	os_send_async_msg_discardable
+0x164967	hal_aout_channel_enable_sample_cnt
+0x165268	L-%d: ptr=0x%08x fmt=0x%02x stride=%u color=0x%08x blend=0x%x frame=(%d,%d-%d,%d)%s
+0x1653a9	DE path not unavailable
+0x16562b	enable watchdog (%d ms)
+0x165643	disable watchdog
+0x165c75	  Bus fault on vector table read
+0x166618	mount path %s is not unmountable
+0x166a2e	Master Mode is not enabled
+0x167ab3	eable xip
+0x167cd6	enable status1-2=0x%x,0x%x
+0x167cf2	disable status1-2=0x%x,0x%x
+0x168ee8	ble rf tx power %d
+0x168f2b	bt_pth.bin
+0x1692ee	property_get CFG_BT_MAC ret: %d
+0x1693bd	bt_drv
+0x1694e3	bt_monitor_thread
+0x169694	BQB mode %d [0:BR BQB Test, 1:BLE BQB Test, 2:BR/BLE dual BQB Test]
+0x169f06	Disable channel type %d error:%d
+0x16a0d5	Enable channel type %d error:%d
+0x16a125	Enable AOUT DMA separated mode
+0x16a1bd	audio_out_enable_i2stx
+0x16a1e9	audio_out_dma_separated_enable
+0x16a232	audio_out_disable_i2stx
+0x16a3fe	Failed to enable ADC err=%d
+0x16a519	Enable AIN DMA separated mode:%d
+0x16a62d	audio_in_enable_adc
+0x16a655	audio_in_dma_separated_enable
+0x16a69b	audio_in_disable_adc
+0x16a7b9	phy_i2stx_enable=out_param->channel_type:%d,out_param->outfifo_type:%d
+0x16a82b	Failed to prepare enable i2stx err=%d
+0x16a851	phy_i2stx_enable=data->mclksrc:%d,link_dac:%d
+0x16a8a0	  phy_i2stx_enable: CMU_I2STXCLK:%08x
+0x16a8e2	I2STX SRD enable
+0x16abb8	I2STX sample counter enable
+0x16ad4c	i2stx_fifocount_enable
+0x16ad99	phy_i2stx_prepare_enable
+0x16adb2	phy_i2stx_enable
+0x16add3	i2stx_digital_enable
+0x16b172	ADC digital enable error %d
+0x16b202	disable input device:0x%x
+0x16b22e	__adc_hpf_fast_stable
+0x16b25d	__adc_external_trigger_enable
+0x16b2a0	adc_channels_enable
+0x16b2b4	adc_channels_disable
+0x16b347	phy_adc_enable
+0x16b356	phy_adc_disable
+0x16b45c	AUDIO_PLL0 is not enable yet
+0x16b496	AUDIO_PLL0 is not enable
+0x16b725	es8156 power_amplifier_enable mode2 %d
+0x16b74d	es8156 power_amplifier_enable mode1 %d
+0x16b775	es8156 disable
+0x16b7d1	==>es8156_enable buf[1] = 0x%02x
+0x16b7f3	es8156 enable ok
+0x16b94a	% power_amplifier_enble
+0x16b977	es8156_disable
+0x16b986	es8156_enable
+0x16c205	Enable PMU ADC channel@%d
+0x16c341	Only one of GPIO_INT_LOW_0, GPIO_INT_HIGH_1 can be enabled for a level interrupt.
+0x16cd2f	bat_mv_pstore impossible!
+0x16ce53	bat driver init ok,so enable peripheral_power!
+0x16d06d	battery_acts_enable
+0x16d128	DC5V_In, charge enable!
+0x16d140	charger enabled
+0x16d2d4	charge not enabled yet
+0x16d448	charger_enable_timer_handler
+0x16d47c	bat_charge_ctrl_enable
+0x16d4ae	bat_charge_check_enable
+0x16d4c6	bat_charge_ctrl_disable
+0x16dbe8	init_spinand_params
+0x16df5e	Info | %s:%d zone table 0 for die 0
+0x16df83	Info | %s:%d data block table:
+0x16dfa3	Info | %s:%d free block table:
+0x16dfc3	Info | %s:%d free block table start %p 
+0x16dfec	Info | %s:%d log block table:
+0x16e00b	Error| %s:%d can't allocate free block from free block table!
+0x16e30f	Error| %s:%d zone table %d:check sum failed!
+0x16e33d	Error| %s:%d log table %d:check sum failed!
+0x16e36a	Error| %s:%d write all page map table err
+0x16e395	Error| %s:%d rebuild logic page map table error,zone %d blk %d phyblk %d lastusedpage %d 
+0x16e3f0	Error| %s:%d no zone table found
+0x16e412	Error| %s:%d write back table err
+0x16e504	Error| %s:%d swap page mapping table failed when create new log block!
+0x16e58c	Error| %s:%d switch block mapping table failed 
+0x16e5bd	Error| %s:%d switch page mapping table failed. 
+0x16e5ee	Error| %s:%d swap block mapping table failed!
+0x16e61d	Error| %s:%d switch page mapping table failed when logic page write!
+0x16e6a4	Error| %s:%d switch page mapping table to ram failed when logic page write!
+0x16e99b	Error| %s:%d Failed to erase zone table %u in Die %d, ret %d
+0x16e9d9	Debug| %s:%d Zone table %d has dirty flag for die %d at block %d.
+0x16ea1c	Error| %s:%d Zone table %d checksum errorfor die %d at block %d.
+0x16ea5e	Error| %s:%d Zone table %d LogBlkTbl checksum errorfor die %d at block %d.
+0x16eaaa	Info | %s:%d Found valid zone table %d for die %d at block %d, page %d.
+0x16eb52	Error| %s:%d zone table block %u is not in zone table area.
+0x16ebf6	Error| %s:%d sorry, cannot found free blocks in zone table block area for zone %d.
+0x16ec72	Error| %s:%d failed to fill nand zone table %d in die %d, need %d, but only have %d free blocks
+0x16ed47	Debug| %s:%d write zone table for zone %u to SuBlk %u Page %d in Die %d.
+0x16ed91	Error| %s:%d Failed to write zone table at SuBlk %u Page %d in Die %d, ret %d
+0x16ede0	Info | %s:%d zone table %d for die %d
+0x16f747	cali use alarm: power on need disable alarm
+0x16fa3b	Undesirable input pwm setting frequency
+0x16fc7e	BT_CFO_VAL
+0x16fe13	idx   level_id   dsp   cpu   gpu   de    jpeg  vdd   enable_cnt
+0x17028e	lv_disp_enable_invalidation
+0x1702aa	lv_disp_is_invalidation_enabled
+0x171198	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/sw/lv_draw_sw_blend.c
+0x1711db	fill_blended: unsupported blend mode
+0x171200	fill_blended
+0x17120d	map_blended
+0x175f65	Compressed fonts is used but LV_USE_FONT_COMPRESSED is not enabled in lv_conf.h
+0x17aa18	No more custom property IDs available
+0x17aa6c	Unable to allocate space for custom property lookup table
+0x17aaa6	_lv_style_custom_prop_flag_lookup_table != NULL
+0x17b3f6	LV_USE_IMGFONT disabled
+0x17b73f	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/vglite/lv_draw_vglite_blend.c
+0x17bfb3	msg_manager_send_async_msg_discardable
+0x17cb26	bluetooth
+0x17cb99	Disable auto powerdown
+0x17d9b2	filter %s enable:%d log num %d limit time %d
+0x17da38	NEWIDusage: rt_log  enable/disable
+0x17da8d	Set actlog module %s enable %d max num %d time %d ret %d
+0x17dc7c	runtime log enable/disable save log to flash
+0x17dcec	file_id=%d not spport
+0x17f134	tws_decoder not enabled
+0x17f9e1	aec force disabled
+0x1800a3	ota_unit_size %d, interval %d, ack_enable %d
+0x1802d1	open sppble_stream %p
+0x180365	ota_bt_send_cmd
+0x18044c	ota_backend_bt_ioctl
+0x180461	ota_backend_bt_read
+0x180475	ota_backend_bt_read_prepare
+0x180491	ota_backend_bt_read_complete
+0x1804ae	ota_backend_bt_open
+0x1804c2	ota_backend_bt_close
+0x1804d7	sppble_connect_cb
+0x1804e9	ota_backend_bt_init
+0x180519	ota_backend_bt_init
+0x18094a	spp_test_backend_init
+0x180960	spp_test_backend_open
+0x180976	spp_test_backend_close
+0x18098d	spp_test_backend_write
+0x1809a4	spp_test_connect_cb
+0x1809b8	spp_test_backend_load_bt_init
+0x1809d6	spp_test_backend_load_bt_init
+0x181581	enable no version control
+0x1822a3	bt_mem_malloc %d failed!!
+0x1822bd	bt_mem_malloc block %d
+0x1822d4	bt_mem_malloc
+0x18231e	bt is not ok, bt_ready %d.
+0x182477	BT_PINCODE_MODE
+0x182511	BT_BQB_MODE
+0x1825ec	bt is not ok, bt_ready %d.
+0x182608	BT_CRASH_CNT
+0x182643	 num %d, tws_mode %d, bt_state %d, playing %d
+0x1826a5	bt_mgr_btsrv_ready
+0x1826b8	bt_mgr_add_dev_info
+0x1826cc	bt_mgr_notify_connected
+0x1826e4	bt_mgr_check_disconnect_notify
+0x182703	bt_mgr_check_connect_req
+0x18271c	bt_mgr_trs_check_connect_notify
+0x18273c	bt_mgr_trs_check_disconnect_notify
+0x18275f	bt_manager_get_trs_dev_info
+0x18277b	bt_mgr_link_event
+0x18278d	bt_mgr_btsrv_pairing_event
+0x1827a8	_bt_mgr_callback
+0x1827b9	bt_manager_check_enter_bqb
+0x1827fc	bt_temp_comp_timer_handler
+0x182817	bt_manager_init
+0x182827	bt_manager_deinit
+0x182844	BT_PRE_NAME
+0x182867	Halliday SPP
+0x182883	bt_manager_bt_name
+0x182896	bt_manager_bt_mac
+0x1828c4	bt_discover_check_finish
+0x182916	BMC disable do reconnect
+0x1829a2	bt_manager_startup_reconnect
+0x1829bf	bt_manager_startup_reconnect_phone
+0x1829e2	bt_manager_disconnected_reason
+0x182a01	bt_manager_halt_phone
+0x182a17	bt_manager_resume_phone
+0x182a2f	bt_manager_get_actived_dev_rssi
+0x182a67	bt_manager_br_resolve_connect
+0x182a9b	bt_manager_set_stream
+0x182b40	_bt_manager_a2dp_callback
+0x182b5a	bt_manager_a2dp_get_codecid
+0x182b76	bt_manager_a2dp_get_sample_rate
+0x182b96	bt_manager_a2dp_get_max_bitpool
+0x182cb0	_bt_manager_avrcp_callback
+0x182ccb	_bt_manager_avrcp_set_volume_callback
+0x182cf1	_bt_manager_avrcp_pass_ctrl_callback
+0x182d16	_bt_manager_trs_avrcp_set_volume_callback
+0x182d5a	Set hfp state 0x%x -> 0x%x
+0x182d8b	hfp accept call
+0x182d9b	hfp reject call
+0x182dab	hfp hangup call
+0x182dbb	hfp hangup another call
+0x182dd3	hfp holdcur answer call
+0x182deb	hfp hangupcur answer call
+0x182e0d	hfp incoming break siri
+0x182e25	hfp resume incoming
+0x182e49	hfp simu outgoing
+0x182e6d	hfp info
+0x182ece	BT_MANAGER_HFP: Set ANCS contact name: '%s'
+0x182efa	BT_MANAGER_HFP: Cleared ANCS contact name
+0x182f41	BT_MANAGER_HFP: Received phone number: '%s'
+0x182f6d	hfp phone stop
+0x182f7c	BT_MANAGER_HFP: Received phone name (raw): %d bytes
+0x182fb0	BT_MANAGER_HFP: Phone name: '%s'
+0x182fd1	hfp ccwa phone num %s size %d
+0x182fef	hfp clcc info
+0x182ffd	hfp clcc simu return
+0x183037	hfp clcc phone num %s size %d
+0x183071	hfp call incoming
+0x183083	hfp call %s
+0x18308f	hfp call ongoing
+0x1830a1	hfp 3wayin
+0x1830ac	hfp call multiparty
+0x1830d1	hfp call exit
+0x1830df	hfp sco
+0x1830e7	hfp volume change
+0x18311c	hfp siri change state %d
+0x18314b	hfp sco cnnected
+0x183175	hfp sco discnnected
+0x183189	hfp only_sco %d state 0x%x
+0x1831a4	hfp dev changed
+0x1831c3	hfp sco rejected
+0x1831d4	hfp battery Indicator enable.
+0x1831f2	btmgr_hfp_allow_sco
+0x183206	bt_manager_hfp_set_status
+0x183220	btmgr_hfp_clcc_info_proc
+0x183239	btmgr_hfp_connected_proc
+0x183252	btmgr_hfp_call_incoming_proc
+0x18326f	btmgr_hfp_check_start_pending_incoming
+0x183296	btmgr_hfp_call_ongoing_proc
+0x1832b2	btmgr_hfp_call_multiparty_proc
+0x1832d1	btmgr_hfp_volume_change_proc
+0x1832ee	btmgr_hfp_siri_state_change_proc
+0x18330f	btmgr_hfp_sco_connected_proc
+0x18332c	btmgr_hfp_sco_disconnected_proc
+0x18334c	_bt_manager_hfp_callback
+0x183365	bt_manager_hfp_battery_report
+0x183383	bt_manager_hfp_battery_hprec_report
+0x1833a7	bt_manager_hfp_accept_call
+0x1833c2	bt_manager_hfp_reject_call
+0x1833dd	bt_manager_hfp_hangup_call
+0x1833f8	bt_manager_hfp_hangup_another_call
+0x18341b	bt_manager_hfp_holdcur_answer_call
+0x18343e	bt_manager_hfp_hangupcur_answer_call
+0x183463	bt_manager_hfp_active_source_switch
+0x183487	bt_manager_hfp_set_ancs_contact_name
+0x1834ac	bt_manager_hfp_clear_ancs_contact_name
+0x18353f	WEST_TOPDIR/framework/bluetooth/bt_manager/bt_manager_sco.c
+0x18357b	_bt_manager_sco_callback
+0x183594	bt_manager_sco_get_codecid
+0x1835af	bt_manager_sco_get_sample_rate
+0x1835ce	bt_manager_sco_set_codec_info
+0x1835ec	BTSRV_SPP_REGISTER_FAILED
+0x183621	bt_manager_spp_reg_uuid
+0x183639	bt_manager_spp_callback
+0x1836fe	_bt_map_set_time
+0x18375a	ble_conn_speed %d
+0x1837b7	ble_check_update_param %d,state %d
+0x1837fc	Ble htimer en %d t %d
+0x18382c	Ble connected MAC: %s inv %d lat %d timeout %d
+0x1838a7	Ble disconnected MAC: %s, reason: %s
+0x1838de	ble_advertise
+0x183919	ble_info ble_state %d
+0x18392f	8ble_info adv_id %d hostif_bt_le_adv_stop
+0x183959	7ble_info adv_id %d toggle_advertise_onoff
+0x183984	5ble_info adv_id %d hostif_bt_le_adv_stop
+0x1839ae	6ble_info adv_id %d ble_advertise
+0x1839d0	2ble_info adv_id %d hostif_bt_le_adv_stop
+0x1839fa	3ble_info adv_id %d hostif_bt_le_adv_stop
+0x183a24	ble_state %d speed %d adv_status %d
+0x183a48	set_ble_connection_param phone:%d speed %d
+0x183a73	ble txrx_status pre %d, cur %d.
+0x183ab5	warnning: bt_manager_ble_disconnect
+0x183b0f	Ble stop adv, state %d %d
+0x183b29	Ble adv already start
+0x183b3f	Ble start adv
+0x183b4d	Ble wake lock %d
+0x183b5e	Ble info wake_lock 0x%x
+0x183b78	 Ble %s
+0x183b82	 Ble manager update param
+0x183b9e	 Open ble notify pending
+0x183bb9	 App enable adv %d
+0x183bce	 Ble connected MAC: %s sec %d
+0x183c29	 Advertising disable
+0x183c3f	ble_advertise
+0x183c4d	ble_advertise_v2
+0x183c5e	ble_update_txrx_status_busy
+0x183c95	ble_check_update_param
+0x183cef	bt_manager_set_ble_connection_param
+0x183d13	bt_manager_ble_send_data
+0x183d2c	bt_manager_ble_disconnect
+0x183d46	ble_wake_lock_check_work
+0x183d5f	ble_connected_notify_work_callback
+0x183d82	bt_manager_ble_htimer_enable
+0x183d9f	dualble_advertising_handover
+0x183dbc	ble_toggle_advertise_work_callback
+0x183ddf	ble_advertise_manager_work_callback
+0x183e1b	bt_mgr_ble_pairing_event
+0x183e81	bt_manager_ble_adv_stop
+0x183e99	bt_manager_ble_adv_start
+0x183eb2	ble_advertise_manager_work_callback
+0x183ed6	Sppble stream not support destroy new!!
+0x183f3b	attr:%p, enable:%d
+0x183f7b	stream_spp_disconnected_cb channel:%d
+0x183fa1	Not connecte spp: %d
+0x183fb6	Failed register spp uuid
+0x183fcf	sppble_add_stream
+0x183fe1	sppble_remove_stream
+0x183ff6	stream_spp_connected_cb
+0x18400e	stream_spp_disconnected_cb
+0x184029	stream_ble_rx_set_notifyind
+0x184045	stream_ble_rx_write_state
+0x18405f	stream_ble_connect_cb
+0x184075	sppble_register
+0x184085	sppble_init
+0x184091	sppble_rx_date
+0x1840a0	sppble_close
+0x1840ad	sppble_destroy
+0x1840bc	Used: bt hfp cmd
+0x1840da	Hfp send DTMF %s
+0x1840eb	Used: bt ble_speed 0/1/2
+0x184114	Used: bt ble_test on/off
+0x18412d	ble test on
+0x184139	ble test off
+0x18414e	ble test adv_reset
+0x184169	Unknow connectable cmd %s
+0x1841c0	visible
+0x1841c8	Unknow visible cmd %s
+0x1841de	connectable
+0x18420e	Bluetooth manager commands
+0x18423f	ble_test
+0x184248	ble power test
+0x184257	ble_speed
+0x184261	Set ble speed
+0x184273	send hfp cmd
+0x184280	ble_test_308a
+0x1842a0	shell_cmd_ble_test
+0x1842b3	shell_cmd_set_ble_speed
+0x1842cb	shell_cmd_send_hfp_cmd
+0x18431b	BLE super service %s
+0x18437b	ble_super_test_write_cb
+0x184393	ble_super_connect_cb
+0x1843a8	ble_super_enter_bqb
+0x1843bc	bt_manager_ble_super_enter_bqb
+0x1843db	ble_super_control_cb
+0x1843f0	dual_ble
+0x1843f9	dualble send event_code 0x%x, status:0x%x, reserve 0x%x!
+0x184445	dualble addr %s reason %d
+0x18445f	dualble addr %s bonded %d
+0x184492	dualble disconnected MAC: %s inv %d lat %d timeout %d
+0x1844c8	dualble connected MAC: %s inv %d lat %d timeout %d
+0x1844fb	bond_deleted,id identity address not BT_ID_DUALBLE
+0x184549	dualble addr:%s
+0x1845bb	notify_dualble_connected le_mgr->link_cb %p
+0x1845e7	dual ble msg exit
+0x1845f9	dual ble msg app adv
+0x18460e	dual ble msg timer
+0x184621	dual ble msg EVENT
+0x184634	dual ble msg sys event
+0x18464b	enter dual ble
+0x184667	handler dual ble msg.type:%d(%s)
+0x184688	dual_ble_event_handle code %d
+0x1846a6	dual_ble_event_handle DUAL_BLE_CONECTED_IND
+0x1846d2	dualble_conn ref error
+0x1846e9	dual_ble_event_handle DUAL_BLE_DISCONECTED_IND
+0x184718	exit dual ble
+0x184726	open dual ble service
+0x18473c	dual ble service opened
+0x184754	close dual ble service
+0x18476b	dualble_send_msg_to_app
+0x1847dd	dualble_update_txrx_status_busy
+0x1847fd	bt_manager_set_dualble_connection_param
+0x184825	bt_manager_dualble_send_data
+0x1848a8	notify_dualble_connected
+0x1848c1	dual_ble_event_handle
+0x1848d7	dual_ble_open
+0x1848e5	dual_ble_close
+0x1848f4	dual_ble_exit
+0x184902	dual_ble_app_loop
+0x184962	WEST_TOPDIR/framework/bluetooth/bt_stack/src/buf.c
+0x184ceb	BT_ID
+0x184d94	BT_IRK
+0x184d9f	Unable to setup an identity address
+0x184dc3	bt_property
+0x184dfc	WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/sdp.c
+0x184f94	No available SDP context for conn %p
+0x185402	Invalid user params
+0x185416	No available SDP client context
+0x1854b2	bt_sdp
+0x18554d	bt_sdp_recv
+0x185559	bt_sdp_accept
+0x185567	bt_sdp_init
+0x185573	bt_sdp_register_service
+0x18558b	bt_sdp_unregister_service
+0x185609	bt_sdp_discover
+0x185671	bt_sdp_get_attr
+0x1856bb	bt_sdp_get_proto_param
+0x18578b	Unable to find conn for %s
+0x1857c4	bt_ssp
+0x18592b	WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/buf.c
+0x185967	type == BT_BUF_EVT || type == BT_BUF_ACL_IN || type == BT_BUF_SCO_IN || type == BT_BUF_ISO_IN
+0x1859f8	bt_buf
+0x1859ff	bt_buf_get_rx_len
+0x185a54	Unable to lookup conn for handle %u
+0x185a78	Unable to look up conn with handle %u
+0x185bbb	WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/hci_core.c
+0x185c68	Unable to find conn for handle %u
+0x185c8a	bt_hci_evt_get_flags(hdr->evt) & (1UL << (1))
+0x185f48	Failed to disable address resolution
+0x18608e	Unable to send to driver (err %d)
+0x18610b	dualble id dualble smp sec info request
+0x186133	dualble sec info request fail
+0x186187	Unable to allocate buffer
+0x18623d	Unable to store name
+0x18629e	set bt_dev.id_count add!
+0x1862b7	set bt_dev.id_addr static address!
+0x186380	ECC HCI commands not available
+0x1863cd	Non-LE capable controller detected!
+0x186451	bt_disable enter
+0x186463	Unable to send to driver.
+0x18647d	%d bt_thread_exit.
+0x1864e3	bt_disable exit
+0x18652e	bt_hci_core
+0x186576	bt_hci_cmd_create
+0x186588	bt_hci_cmd_send
+0x186598	bt_hci_cmd_send_sync
+0x1865fe	bt_le_create_conn_cancel
+0x186724	bt_esco_conn_req
+0x1867e8	bt_id_add
+0x1867f2	bt_id_del
+0x1868c3	bt_read_public_addr
+0x1868e0	bt_recv
+0x1868f6	bt_enable
+0x18690d	bt_set_name
+0x186919	bt_id_create
+0x186926	dual_ble_addrsss_copy
+0x18693c	bt_le_adv_start_legacy
+0x186953	bt_pub_key_gen
+0x186987	bt_sco_conn_req
+0x186997	bt_thread_exit
+0x1869a6	bt_br_enable_pincode
+0x1869ed	bt_crypto
+0x186a0d	WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/conn.c
+0x186b5f	bt_conn_unref 0 !!
+0x186ba0	Unable to allocate buffer within timeout
+0x186bc9	0 <= index && index < bt_inner_value.br_max_conn
+0x186bfb	Invalid bt_conn pointer
+0x186c14	0 <= index && index < bt_inner_value.max_conn
+0x186c42	Unable to allocate TX context
+0x186d87	bt_conn
+0x186d8f	bt_conn_recv
+0x186d9c	bt_conn_send_cb
+0x186db6	bt_conn_process_tx
+0x186dc9	bt_conn_exists_le
+0x186ddb	bt_conn_set_state
+0x186ded	bt_conn_unref
+0x186dfb	bt_conn_create_pdu_len_timeout
+0x186e1a	bt_conn_create_pdu_timeout
+0x186e35	bt_conn_send_sco_data
+0x186e4b	No available L2CAP context for conn %p
+0x186e72	Unable to allocate buffer for op 0x%02x
+0x186e9a	Segmentation disabled but MTU > MPS, truncating MTU
+0x186ede	Unable to send seg %d
+0x186f12	Unable to send credits update
+0x186f30	Unable to allocate L2CAP channel ID
+0x186f54	WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/l2cap.c
+0x186f92	fchan <= _bt_l2cap_fixed_chan_list_end
+0x186fcd	Unable to store SDU
+0x186ff4	Unable to allocate buffer for SDU
+0x187177	Invalid LE-Conn Req params
+0x18721b	Unable to find channel of LE Credits packet
+0x1872b3	bt_l2cap
+0x187401	bt_l2cap_recv
+0x18741c	bt_l2cap_chan_send
+0x18742f	BT_HASH
+0x18745d	BT_SC
+0x187499	unable to save SC: no cfg left
+0x1874eb	WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/gatt.c
+0x187554	No buffer available to send indication
+0x18757b	No buffer available to send notification
+0x1875a4	static_svc <= _bt_gatt_service_static_list_end
+0x1875d3	Unable to setup AES CMAC
+0x1875ec	Unable to calculate hash
+0x18763a	Unable to register handle 0x%04x
+0x18765b	params->attr
+0x1876b4	CCC %p not writable
+0x1876fa	params && params->func
+0x187711	(params->start_handle && params->end_handle)
+0x18773e	(params->start_handle <= params->end_handle)
+0x1877ac	params->handle
+0x1877bb	params && params->notify
+0x1877d4	params->value
+0x1877e2	params->ccc_handle
+0x18782f	Unable to decode address %s
+0x18784b	Unable to restore SC: no cfg left
+0x18786d	BT_CF
+0x187873	Unable to restore CF: no cfg left
+0x187895	BT_CCC
+0x1878e3	bt_gatt
+0x1878f4	bt_gatt_clear_sc
+0x187947	bt_gatt_attr_write_ccc
+0x18798e	bt_gatt_mult_notification
+0x187a11	bt_gatt_discover
+0x187a3d	bt_gatt_store_cf
+0x187a4e	bt_gatt_store_ccc
+0x187a6e	Unable to create UUID: size %u
+0x187a8d	Unable to create UUID: size %d
+0x187abf	WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/att.c
+0x187b1e	Unable to find ATT channel
+0x187b70	No available ATT context for conn %p
+0x187b95	No available ATT channel for conn %p
+0x187c88	bt_att
+0x187ca7	bt_att_chan_create_pdu
+0x187cda	bt_att_recv
+0x187cee	bt_att_create_pdu
+0x187d19	bt_att_accept
+0x187d89	Unable to get keys for %s
+0x187da3	No available SMP context for conn %p
+0x187dc8	Unable to find SMP channel
+0x187ef3	Unable to get random bytes
+0x187f0e	Unable to allocate Encrypt Info buffer
+0x187f35	Unable to allocate Master Ident buffer
+0x188072	Public key not available
+0x18809f	WEST_TOPDIR/framework/bluetooth/bt_stack/src/bt_stack/smp.c
+0x1880f5	bt_smp
+0x18818d	bt_smp_br_recv
+0x18819c	bt_smp_br_accept
+0x1881f9	bt_smp_distribute_keys
+0x18837e	bt_smp_recv
+0x18838a	bt_smp_pkey_ready
+0x18839c	bt_smp_update_keys
+0x1883af	bt_smp_accept
+0x188467	1pmt2pmtbt_hex
+0x18847b	bt_addr
+0x18848a	bt_addr_le
+0x1884b3	bt_rpa
+0x1884cf	bt_dis
+0x188511	MSG_BTSRV_SPP_START
+0x188525	MSG_BTSRV_HFP_AG_START
+0x18853c	MSG_BTSRV_HFP_SWITCH_SOUND_SOURCE
+0x18855e	MSG_BTSRV_HFP_START
+0x18868c	_bt_service_init
+0x1886ca	bt_service_main_loop
+0x1886df	bt_service_main_loop
+0x1887e7	failed to get BT_MAC
+0x1887fc	BT_MAC: %s
+0x188d00	hfp already %s
+0x188d2a	dev %p hfp_active_state %d state %d
+0x188d4f	others %p hfp_active_state %d state %d
+0x188dc0	All spp already disconnected
+0x188f0d	 Connected a2dp %d avrcp %d hfp %d spp %d pbap %d hid %d map %d
+0x188f91	 Hfp active_state %d, format %d, sample %d
+0x188fbe	 Hfp state %d sco state %d notify state %d hfp role %d
+0x189283	btsrv_rdm_set_hfp_connected
+0x18929f	btsrv_rdm_set_hfp_role
+0x1892b6	btsrv_rdm_get_hfp_role
+0x1892cd	btsrv_rdm_hfp_actived
+0x1892e3	btsrv_rdm_hfp_set_codec_info
+0x189300	btsrv_rdm_hfp_set_notify_phone_num_state
+0x189329	btsrv_rdm_hfp_get_notify_phone_num_state
+0x189352	btsrv_rdm_hfp_set_state
+0x18936a	btsrv_rdm_hfp_get_state
+0x189382	btsrv_rdm_hfp_set_sco_state
+0x18939e	btsrv_rdm_hfp_get_sco_state
+0x1893ba	btsrv_rdm_hfp_set_call_state
+0x1893d7	btsrv_rdm_hfp_get_call_state
+0x1893f4	btsrv_rdm_hfp_get_codec_info
+0x1894a3	btsrv_rdm_set_spp_connected
+0x1896b0	BT_AUTOCONN_INFO
+0x1898f7	BAC curr:%d%d, hfp:%d%d, a2dp:%d%d, avrcp:%d%d hid:%d%d
+0x18992f	Hfp AG not open
+0x189af0	BAC hfp ag connected
+0x189b05	BAC hfp connected
+0x189b17	BAC hfp ag disconnected
+0x189b2f	BAC hfp disconnected
+0x189b61	BAC check_connectable:%d,%d,%d,%d,%d
+0x189d48	 a2dp %d, avrcp %d, hfp %d hid %d
+0x18a0c7	btsrv_check_connectable
+0x18a188	discoverable 0, connectable 0(Update parem)
+0x18a1b4	Failed to write_scan_enable !!!
+0x18a205	discoverable %d, connectable %d
+0x18a28f	 user_discoverable %d, user_connectable %d
+0x18a2bc	 srv_discoverable %d, srv_connectable %d
+0x18a2e7	 curr_discoverable %d, curr_connectable %d
+0x18a525	btsrv a2dp disable
+0x18a538	btsrv a2dp enable
+0x18aca2	hfp signal %u
+0x18aec7	Connect hfp_conn:%p
+0x18aedc	cmd_bredr_hfp_connect failed
+0x18af0d	hfp connected:%p addr %p
+0x18af31	hfp disconnected:%p addr %p
+0x18b1c5	_btsrv_hfp_service_cb
+0x18b1db	_btsrv_hfp_call_cb
+0x18b1ee	_btsrv_hfp_call_setup_cb
+0x18b207	_btsrv_hfp_call_held_cb
+0x18b21f	_btsrv_hfp_signal_cb
+0x18b234	_btsrv_hfp_roam_cb
+0x18b247	_btsrv_hfp_battery_cb
+0x18b25d	_btsrv_hfp_ring_cb
+0x18b270	_btsrv_hfp_bsir_cb
+0x18b283	_btsrv_hfp_ccwa_cb
+0x18b296	_btsrv_hfp_clip_cb
+0x18b2a9	_btsrv_hfp_bcs_cb
+0x18b2bb	_btsrv_hfp_bvra_cb
+0x18b2ce	_btsrv_hfp_vgs_cb
+0x18b2e0	_btsrv_hfp_vgm_cb
+0x18b2f2	_btsrv_hfp_btrh_cb
+0x18b305	_btsrv_hfp_cops_cb
+0x18b318	_btsrv_hfp_cnum_cb
+0x18b32b	_btsrv_hfp_clcc_cb
+0x18b33e	_btsrv_hfp_cclk_cb
+0x18b351	_btsrv_hfp_cgmi_cb
+0x18b364	_btsrv_hfp_battery_indicator_cb
+0x18b384	_btsrv_hfp_cmd_complete_cb
+0x18b39f	btsrv_hfp_call_status_cb
+0x18b3b8	btsrv_hfp_set_status
+0x18b3cd	btsrv_hfp_connect
+0x18b3df	btsrv_hfp_init
+0x18b3ee	_btsrv_hfp_connected
+0x18b403	_btsrv_hfp_disconnected
+0x18b41b	btsrv_hfp_process
+0x18b42d	btsrv_hfp_ag_set_status
+0x18b593	_btsrv_sco_data_avaliable_cb
+0x18b6b6	Not more idle spp
+0x18b6c9	Failed to register spp
+0x18b6e1	Register spp, app_id %d, spp_id %d
+0x18b717	MSG_BTSRV_SPP_CONNECT_FAILED
+0x18b735	Not find spp_info for spp_id %d
+0x18b756	MSG_BTSRV_SPP_CONNECTED
+0x18b782	MSG_BTSRV_SPP_DISCONNECTED
+0x18b7b4	MSG_BTSRV_SPP_SDP_SERVICE_RESTORE
+0x18b7d7	btsrv_spp_reg
+0x18b7e5	btsrv_spp_connect
+0x18b7f7	btsrv_spp_connect_failed
+0x18b810	btsrv_spp_connected
+0x18b824	btsrv_spp_disconnected
+0x18b83b	btsrv_spp_process
+0x18b9c3	WEST_TOPDIR/framework/bluetooth/bt_stack/libbt_stack/a2dp.c
+0x18ba3b	bt_a2dp
+0x18bd2d	bt_avdtp
+0x18bd49	bt_avdtp_ep
+0x18bd89	No available RFCOMM context for conn %p
+0x18bf4f	bt_rfcomm
+0x18c14c	bt_goep_client
+0x18c15b	BT_KEYS
+0x18c1a3	bt_keys
+0x18c1ab	BT_PARIED_INFO
+0x18c1ba	BT_PARIED_INDEX
+0x18c26a	bt_keys_br
+0x18c529	bt_l2cap_br
+0x18c6de	Rfcomm: Unable to disconnect :%d
+0x18c7a7	Unable to establish HF connection (%p)
+0x18c7ea	HFPAG Server CN param 0x%04x
+0x18c844	Unable to format variable arguments
+0x18c869	HFP TX:
+0x18c95f	WEST_TOPDIR/framework/bluetooth/bt_stack/libbt_stack/hfp_hf.c
+0x18c9f2	HFP RX:
+0x18c9fb	Cache hfp cmd
+0x18cabe	HFP Drop comand:
+0x18cbc0	bt_hfp_hf
+0x18cbfc	bt_hfp_ag
+0x18cc06	Error: No Buff available
+0x18cd6e	bt_avrcp
+0x18cde4	bt_avrcp_cttg
+0x18cdf2	bt_hiddev
+0x18ceb2	No SDP spp data from remote
+0x18ceee	bt_map_client_get_message
+0x18cf16	bt_map_client_abort_get %d
+0x18cf73	bt_map_client
+0x18d15a	bt_pbap_client
+0x18d1d9	Unable to send: %d
+0x18d213	spp_id %d, channel %d
+0x18d24b	Already register spp cb
+0x18d263	bt_spp
+0x18d304	bt_pnp_info
+0x18d5f2	bitmap font init failed due to unable to malloc bitmap_cache data
+0x18d635	bitmap font init failed due to unable to malloc opend_font data
+0x18e36e	block alloc: no res block or mem available, stat %d
+0x18e7b3	res mem peak statistic not enabled
+0x18f74f	double-free for memory at %p
+0x18fe4a	msgbox %u disabled
+0x190b04	!flag_test(&work->flags, K_WORK_DELAYABLE_BIT)
+0x19109e	invalid overlay table

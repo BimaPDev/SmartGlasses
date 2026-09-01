@@ -1,0 +1,57 @@
+{
+  "leaf": "1.2",
+  "subsystem": "firmware_map",
+  "firmware": "HallidayOfficialOTA.bin / app.bin",
+  "soc": "ATS3089 Leopard",
+  "load_base": "0x10000000",
+  "platform": "ats3089_dev_watch",
+  "build": "1.00_2601211113",
+  "sources": [
+    "Reverse/firmware/Halliday/export/official/manifest.json",
+    "Reverse/firmware/Halliday/export/official/strings/app_ascii.txt",
+    "Reverse/firmware/Halliday/export/official/strings/categorized/"
+  ],
+  "note": "va = 0x10000000 + file_offset from app_ascii.txt. Entries are string rodata anchors; handler VAs require Ghidra xref recovery.",
+  "functions": [
+    {
+      "va": "0x1014d3f8",
+      "name": "_launcher_app_init",
+      "evidence": "0x14d3f8\t_launcher_app_init in app_ascii.txt; source path launcher_app.c @ 0x1014d151"
+    },
+    {
+      "va": "0x1014c286",
+      "name": "ota_app_main",
+      "evidence": "0x14c286\tota_app_main in app_ascii.txt; adjacent ota_app_init @ 0x1014c262, /NAND:/ota.bin @ 0x1014c1aa"
+    },
+    {
+      "va": "0x10146c2c",
+      "name": "view_manager_init",
+      "evidence": "0x146c2c\tview_manager_init; ui_service @ 0x101464a0; view_manager.c @ 0x10146648"
+    },
+    {
+      "va": "0x1014e328",
+      "name": "xs_app_init",
+      "evidence": "0x14e328\txs_app_init in halliday.txt; >>>xs_app_init end @ 0x1014e375"
+    },
+    {
+      "va": "0x10182817",
+      "name": "bt_manager_init",
+      "evidence": "0x182817\tbt_manager_init; Halliday SPP @ 0x10182867, Halliday Glasses @ 0x10182856"
+    },
+    {
+      "va": "0x1015fd29",
+      "name": "shell.c",
+      "evidence": "0x15fd29\tWEST_TOPDIR/zephyr/subsys/shell/shell.c; Application shell commands @ 0x1014aff4"
+    },
+    {
+      "va": "0x1015895a",
+      "name": "system_ready_suspend",
+      "evidence": "0x15895a\tsystem_ready_suspend; sys_wakelock.c @ 0x1015f466; --system_ready_suspend-- @ 0x1015886f"
+    },
+    {
+      "va": "0x1014c355",
+      "name": "_ota_view_handler",
+      "evidence": "0x14c355\t_ota_view_handler; ota_view_init @ 0x1014c315, _ota_view_layout @ 0x1014c333"
+    }
+  ]
+}

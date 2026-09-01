@@ -1,0 +1,633 @@
+0x146458	libdisplay: version %s, release time: %s:%s
+0x1464d0	view_uisrv
+0x146648	WEST_TOPDIR/framework/display/libdisplay/ui_service/view_manager.c
+0x146994	view %u repaint display
+0x1469ac	display lock cnt already 0
+0x1469c8	display locked %d, cnt %u
+0x1469e4	%s: cannot get display resolution
+0x146be8	view_create
+0x146bf4	view_set_dirty_region
+0x146c0c	view_manager_pre_anim_refocus
+0x146c2c	view_manager_init
+0x146cc8	WEST_TOPDIR/framework/display/libdisplay/ui_service/input_dispatcher.c
+0x146d30	view_input
+0x146d8c	anim start: view %u, last_view %u, last_view_offset(%d %d), start(%d %d), stop(%d %d), duration %d
+0x146e00	view_anim
+0x146e5c	view_gesture
+0x146e7c	view_inrec
+0x14b1e6	_lpower_view_paint
+0x14b1f9	_lpower_view_exit
+0x14b222	welcome_view_handler msg_id = %d
+0x14b2e7	_welcome_view_load_resource
+0x14b31e	_welcome_view_layout
+0x14b333	_welcome_view_handler
+0x14b349	_welcome_view_layout
+0x14b36b	_goodbye_view_load_resource
+0x14b387	_goodbye_view_layout
+0x14b39c	_goodbye_view_layout
+0x14b5a2	btmusic_view_input_event_proc
+0x14c315	ota_view_init
+0x14c323	ota_view_deinit
+0x14c333	_ota_view_layout
+0x14c344	_ota_view_delete
+0x14c355	_ota_view_handler
+0x14c367	_ota_view_layout
+0x14cd54	display timeout
+0x14cf18	alarm_view_stop_event
+0x14cf2e	alarm_view_snooze_event
+0x14cffe	alarm_view_init
+0x14d00e	_alarm_view_exit
+0x14d01f	alarm_view_deinit
+0x14d047	alarm_view_init
+0x14d127	launcher enter
+0x14d151	WEST_TOPDIR/application/bt_watch/src/launcher/launcher_app.c
+0x14d1c2	launcher early-suspend
+0x14d1e4	launcher late-resume
+0x14d207	launcher suspend
+0x14d219	launcher resume
+0x14d2a6	launcher exit
+0x14d2c7	_launcher_app_early_suspend
+0x14d2e3	_launcher_app_late_resume
+0x14d2fd	_launcher_app_suspend
+0x14d313	_launcher_app_resume
+0x14d340	_launcher_bt_event_handle
+0x14d35a	_launcher_bt_mgr_event_handle
+0x14d378	_launcher_alarm_event_handle
+0x14d395	_launcher_key_event_handle
+0x14d3b0	launcher_restore_last_player
+0x14d3cd	launcher_suspend_player
+0x14d3e5	_launcher_app_loop
+0x14d3f8	_launcher_app_init
+0x14d40b	launcher_suspend_player
+0x14d423	view_id == CLOCK_VIEW
+0x14d4a5	_clock_view_select
+0x14d4ef	view_id == HEALTH_BP_VIEW
+0x14d509	WEST_TOPDIR/application/bt_watch/src/launcher/health/bp_view.c
+0x14d563	_bp_view_load_resource
+0x14d57a	_bp_view_layout
+0x14d58a	_bp_view_layout_update
+0x14d5a1	_bp_view_handler
+0x14d5cc	view_id == HEALTH_SPO2_VIEW
+0x14d5e8	WEST_TOPDIR/application/bt_watch/src/launcher/health/spo2_view.c
+0x14d648	_spo2_view_load_resource
+0x14d661	_spo2_view_layout
+0x14d673	_spo2_view_layout_update
+0x14d68c	_spo2_view_handler
+0x14dcdb	_tlv_unpack_head
+0x14dcec	_tlv_unpack_data
+0x14dd32	_logsrv_proc_tlv_cmd
+0x14dee9	charger_view_deinit
+0x14df14	_charger_view_layout
+0x14df29	_charger_view_layout
+0x14ed77	controller_center_view_data is NULL
+0x14ee54	view_event_handler
+0x14ee67	controller_center_view_update_sliders
+0x14eecf	vertical_view_event_handler index %d, content %s
+0x14ef38	vertical_view_event_handler
+0x14ef54	lanucher_view_vertical_layout_focus
+0x14ef78	LAUNCHER_GADGET
+0x14efa6	view_stack_get_num = %d, ret = %d
+0x14f023	menu_view_create
+0x14f078	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_translate/translate_language_select_view_332.c
+0x14f0d6	LV_EVENT_CLICKED!  %d
+0x14f0ed	tran_view_start tran_to_start_translate
+0x14f220	tran_view_select_language_layout_create
+0x14f248	_tran_language_advanced_translate_no_credits_view_event_cb
+0x14f283	tran_view_update_no_credits_layout_content
+0x14f2ca	_tran_language_main_view_list_event_cb
+0x14f33d	tran_view_start
+0x14f34d	tran_view_start retry_connect_timer_cb
+0x14f375	tran_view_start translate_view_init_show
+0x14f3b7	translate_view_update
+0x14f3ce	tran_error_view_show
+0x14f3e3	tran_view_start
+0x14f3f3	translate_view_init_show
+0x14f40c	translate_view_delete
+0x14f439	translate_connect_view_updata
+0x15062e	message_reply_main_view_create
+0x15125a	notify_detail_view_create msg_idx = %d
+0x151281	notify_detail_view_delete
+0x15129b	notify_detail_view_create
+0x1512b5	notify_detail_view_delete
+0x151314	message_list_view_tp_handler: %d
+0x151360	Display time format: %s (is_today=%d, is_invalid_year=%d)
+0x15139a	Display date format: %02d/%02d
+0x151431	notify_list_view_update: %d ms for %d messages
+0x151460	notify_list_view_focus: %d ms for %d items
+0x151525	notify_list_view_focus
+0x151561	message_list_view_tp_handler
+0x151596	notify_list_view_update
+0x151a61	 LV_EVENT_CLICKED user_data == %s
+0x151a9a	LV_EVENT_KEY %d state_idx =%d
+0x151ab9	btcall_box_view_create records_data is NULL
+0x151ae6	_btcall_view_control key_event = %d
+0x151b0b	btcall_view_init
+0x151b1d	btcall_view_deinit
+0x151c2b	BTCALL_BOX_VIEW: HFP name found. Using '%s' for display.
+0x151cd2	BTCALL_BOX_VIEW: No contact name found, using phone number for display.
+0x151d45	btcall_box_view_create
+0x151d5c	_btcall_view_control
+0x151d71	btcall_view_init
+0x151d82	btcall_view_deinit
+0x151e6c	btcall_view_init
+0x152017	Updated call record display name: '%s'
+0x152077	Set call record: phone_num='%s', display_name='%s'
+0x15220a	_phone_book_view_layout_update
+0x152230	Attempting to dial from record: phone_num='%s', display_name='%s'
+0x152333	phone_records_view_update_list
+0x152370	music_view_update_play_state %d 
+0x1523e2	music_view_update_song_name_album
+0x152404	music_view_update_play_state
+0x1526f3	titlebar_view_updata screen_zoom_value %d,zoom_value %d
+0x152792	title_view_layout
+0x1527c1	title_view_delete
+0x1527e7	view_set_screen_zoom
+0x1527fc	title_view_layout
+0x15280e	title_view_delete
+0x152a13	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_remind/reminder_list_view_V330.c
+0x152bf1	reminder_list_view_delete
+0x152c29	reminder_create_view_is_show event = %x
+0x152d0c	reminder_list_view_delete
+0x152d26	reminder_list_view_tp_handler
+0x152d76	reminder_list_view_tp_handler
+0x153b85	=== remind_timeup_view_exit called ===
+0x153f74	Reminder: pushed launcher view to empty stack after auto-exit
+0x153fec	Reminder: pushed launcher view to empty stack
+0x15410b	remind_timeup_view_exit
+0x1541c9	waring: ui_jump_to_view: view_stack_clean
+0x154203	ai_view_set_layout tutorial_is_open
+0x15438c	ai_view_updata content: %s
+0x1543a8	----------------- ai_view_delete 
+0x1543cb	ai_view_set_layout
+0x1543de	view_update_timer_cb
+0x154423	ai_view_updata
+0x154432	ai_view_delete
+0x1545f3	ai_agent_content_view_create
+0x15495d	Font updated: size=%d, display_lines=%d, calculated_height=%d
+0x154a44	Starting display mode: %d for file: %s
+0x154c03	prompter_view_open_file_by_app: %d
+0x154c5a	prompter_view_update speed = %d auto: %d
+0x154dc4	prompter_view_file_iterate
+0x154ddf	prompter_list_view_update
+0x154e11	prompter_view_new_file_by_app
+0x154e2f	prompter_view_open_file_by_app
+0x154e8b	prompter_view_create
+0x154ea0	prompter_view_update
+0x154eb5	prompter_ble_disconnect_delete_view_create
+0x154ee0	prompter_ble_disconnect_delete_view_enter
+0x154f0a	prompter_ble_disconnect_delete_view_exit
+0x154f4a	prompter_view_new_file_by_app
+0x155260	p_prompter_data is NULL in prompter_display_page
+0x1552af	prompter_display_page called with dir: %d, current_page: %d, file: %s
+0x155415	First enter - initializing display
+0x1559e4	Calculated max_display_lines: %d (available_height=%d, font_height=%d)
+0x155a9f	Font updated and re-centered: size=%d, display_lines=%d
+0x155ad7	Forced LVGL refresh after font change
+0x155b25	Final global LVGL refresh completed
+0x155b49	Content reload completed, display mode: %d, final position: cur_page=%d, has_read_offset=%d, auto_scroll=%d
+0x155c1e	prompter_display_page
+0x155ca9	prompter_view_reload_content_after_font_change
+0x15610d	Prompter config initialized with font_size=%d, display_mode=%d
+0x156a52	ring_chlick_handler jump to launcher
+0x156ee0	LV_EVENT_MSG_RECEIVED
+0x156f31	carousel_images_view_event_handler
+0x156f64	_ces_demo_view_layout_update
+0x156f9a	test_view_tp_handler
+0x156faf	test_view_layout_update
+0x157266	view_create->password_mode: %d
+0x157318	view_event_cb
+0x157326	password_view_create
+0x157590	_view_layout_update
+0x1575a4	_view_layout_update
+0x1575ec	_view_layout_update
+0x157600	_view_layout_update
+0x15762e	_brightness_view_layout_update
+0x15765f	_bt_view_layout_update
+0x15769e	_btcall_view_paint
+0x1576f9	_btcall_view_exit ok
+0x157728	btcall_view_end
+0x15776a	_btcall_view_paint
+0x157798	_btcall_view_end
+0x1577a9	_btcall_view_exit
+0x1577d5	btcall_view_paint
+0x157846	controller_center_view_layout_create
+0x15786b	guide_view_handler %d
+0x157882	guide_view_delete
+0x157894	guide_view_user_data %d
+0x1578c6	_guide_view_delete
+0x1578d9	guide_view_user_data
+0x1578ee	guide_view_handler
+0x157901	guide_view_layout_update
+0x157932	_language_view_layout_update
+0x15794f	 _launcher_view_handler msg id %d
+0x157971	SCENE_LAUNCHER_VIEW not found
+0x1579da	_launcher_view_handler
+0x1579f1	_launcher_view_layout_update
+0x157a22	_menu_view_layout_update
+0x157a97	_view_layout_update
+0x157aab	_view_layout_update
+0x157ad8	_view_layout: %d ms
+0x157b13	notify_view_res_load
+0x157b28	_view_layout
+0x157b35	notify_view_res_load
+0x157b62	password_view_layout_update
+0x157b8d	_pd_view_layout_update
+0x157c3a	_view_layout_update
+0x157c4e	_view_layout_update
+0x157c62	phone_records_view_handler msg_id = %d
+0x157c8a	phone_records_view_updata
+0x157cbc	phone_records_view_paint
+0x157cd5	phone_records_view_handler
+0x157cf0	phone_records_view_layout_update
+0x157d20	_power_off_view_layout_update
+0x157dbd	_view_layout_update
+0x157dd1	_view_user_data
+0x157de1	_view_layout_update
+0x157e30	_prompter_view_paint
+0x157f3e	_prompter_view_paint
+0x157f53	_prompter_view_delete
+0x157f69	_prompter_view_user_data
+0x157f82	_prompter_view_handler
+0x157f99	_prompter_view_layout_update
+0x157fb6	_remind_view_layout_update: updating reminder content for idx=%d
+0x158041	reminder_timeout_view_handler %d
+0x15817a	_remind_view_layout_update
+0x1581b3	reminder_timeout_view_handler
+0x1581d1	_remind_view_layout_update
+0x1581fb	_remind_view_delete
+0x15820f	_remind_view_layout_update
+0x158239	_reset_view_layout_update
+0x158253	ring_view_handler %d
+0x158278	_ring_view_handler
+0x15828b	_ring_view_layout_update
+0x1582bf	_screen_time_view_layout_update
+0x1582fb	_setting_view_layout_update
+0x158326	_tran_view_layout_update
+0x15834e	_volume_view_layout_update
+0x1587ca	Early suspend: view_stack_get_num() = %d
+0x158818	Early suspend: return to launcher view, ret = %d
+0x158935	view_stack_clean_and_return_launcher
+0x158e56	_launcher_opus_event_handle %d
+0x158f21	_launcher_mp3_event_handle %d
+0x1590be	_launcher_opus_event_handle
+0x1590da	_launcher_mp3_event_handle
+0x159368	msgbox_cache_get_top == BTCALL_VIEW_MSGBOX_ID
+0x159433	lv_send_key_event key %d event %d
+0x159455	ui_key_common_event[%d] view_op.get_top: %d
+0x15954c	lv_send_key_event
+0x15970c	music_view_mutex Deadlock!!!!!!!! 
+0x159ce4	screen_display_turn_off
+0x159d41	screen_display_turn_off
+0x159fcd	touch_event_handle = %d, view_id = %d 
+0x159ff5	111 ui_view_tp view_id = %d, event = %d
+0x15a01d	222 ui_view_tp view_id = %d, event = %d
+0x15a045	333 ui_view_tp view_id = %d, event = %d
+0x15a808	view_op.get_top %d
+0x15a838	_ble_rx_set_button_shortcut_view view_id = %d
+0x15abe5	_ble_rx_set_password cmd 0x%x,view_op.get_top():%d
+0x15b091	Display length %d exceeds max %d, truncating
+0x15b96c	guide_view_skip_step step_view: %d
+0x15b98f	guide_view_prev_step step_view: %d
+0x15b9b2	guide_view_event_cb jump step: %d
+0x15b9d4	guide_view_app_jump_step app: %d
+0x15ba42	guide_view_delete %d
+0x15ba7b	guide_view_skip_step
+0x15ba90	guide_view_prev_step
+0x15baa5	guide_view_jump_step
+0x15baba	guide_view_event_cb
+0x15bb3c	guide_view_delete
+0x15bd00	WEST_TOPDIR/application/bt_watch/src/xs_app/xs_setting/setting_view_v330.c
+0x15be12	_setting_view_list_event_cb
+0x15be4d	view_event_handler
+0x15bfb6	_language_view_list_event_cb
+0x15c00c	lv_lan_different_str not found
+0x15c02b	lv_lan_different_str lvgl_res_load_strings_from_scene failed
+0x15c116	lv_lan_different_str
+0x15c1a4	time_view_create
+0x15c1b5	time_view_12hour_event_cb
+0x15c1cf	time_view_destroy
+0x15c24c	_screen_time_view_list_event_cb
+0x15c30c	view_event_handler
+0x15c34e	LV_KEY_RIGHT
+0x15c35b	LV_KEY_LEFT
+0x15c457	screen_zoom_view_create
+0x15c498	screen_zoom_view_delete
+0x15c4b0	screen_zoom_view_create_standalone
+0x15c4d3	screen_zoom_view_create
+0x15f585	DISPLAY_WAKE_LOCK_USER   :%d
+0x15f667	DISPLAY_WAKE_LOCK_USER  : %d
+0x16036d	Console gets terminal screen size or assumes default in case the readout fails. It must be executed after each terminal width change to ensure correct text display.
+0x1610d9	display memory by word: mdw address [,count]
+0x16110a	display memory by half-word: mdh address [,count]
+0x161140	display memory by byte: mdb address [,count]
+0x161434	uimem dump [0|1|2], where 0-FB, 1-LVGL, 2-RES
+0x16240d	display set_brightness %u
+0x16247d	display blanking off
+0x1624c9	display blanking on
+0x162680	Could not get display engine device
+0x16270b	WEST_TOPDIR/zephyr/drivers/display/panel/panel_device.c
+0x162ba1	WEST_TOPDIR/zephyr/drivers/display/engine/de_common.c
+0x16433c	led_display
+0x164348	led_display_init
+0x164656	displayworkq
+0x165025	WEST_TOPDIR/zephyr/framework/display/sw_math.c
+0x1650c5	WEST_TOPDIR/zephyr/framework/display/sw_rotate.c
+0x16510a	WEST_TOPDIR/zephyr/framework/display/graphic_buffer.c
+0x16521a	WEST_TOPDIR/zephyr/framework/display/composer/display_composer.c
+0x1652f7	cannot find display lcd_panel
+0x1654be	display_composer_init
+0x1654d4	display_composer_destroy
+0x1654ed	_composer_display_vsync_handler
+0x16550d	_composer_display_pm_notify_handler
+0x16555f	display_composer_post
+0x165575	display_composer_init
+0x167ea5	WEST_TOPDIR/zephyr/drivers/display/controller/lcdc_leopard.c
+0x168541	WEST_TOPDIR/zephyr/drivers/display/engine/private/de_leopard.c
+0x168580	[DE][W]: de display-only
+0x168619	[DE][W]: display mode not configured
+0x1700f1	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_disp.c
+0x170128	no display registered to get its active screen
+0x170157	no display registered to get its previous screen
+0x170188	lv_layer_top: no display registered to get its top layer
+0x1701c1	lv_layer_sys: no display registered to get its sys. layer
+0x1701fb	no display registered
+0x170211	lv_disp_get_scr_act
+0x170225	lv_disp_get_scr_prev
+0x17023a	lv_disp_get_layer_top
+0x170250	lv_disp_get_layer_sys
+0x170266	lv_disp_set_bg_color
+0x17027b	lv_disp_set_bg_opa
+0x17028e	lv_disp_enable_invalidation
+0x1702aa	lv_disp_is_invalidation_enabled
+0x1702ca	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_event.c
+0x170353	LVGL fail
+0x170383	lv_obj_add_event_cb
+0x170397	lv_obj_remove_event_cb
+0x1703ae	lv_event_get_indev
+0x1703c1	lv_event_get_draw_ctx
+0x1703d7	lv_event_get_key
+0x1703e8	lv_event_set_ext_draw_size
+0x170403	lv_event_get_self_size_info
+0x17041f	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_group.c
+0x170472	lv_group_create
+0x170482	lv_group_add_obj
+0x170493	lv_group_remove_obj
+0x1704a7	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_indev.c
+0x1704df	lv_indev_get_read_timer: indev was NULL
+0x1705ae	lv_indev_get_read_timer
+0x1705eb	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_obj.c
+0x170621	lv_init: already inited
+0x170650	lv_init
+0x170658	lv_obj_allocate_spec_attr
+0x170672	lv_obj_destructor
+0x170684	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_obj_class.c
+0x1706c0	No display created yet. No place to assign the new screen
+0x1706fa	lv_obj_class_create_obj
+0x170712	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_obj_pos.c
+0x17074c	_lv_layout_list != NULL
+0x170764	lv_layout_register
+0x170777	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_obj_style.c
+0x1707c7	lv_obj_add_style
+0x1707d8	lv_obj_remove_style
+0x1707ec	_lv_obj_style_create_transition
+0x17084a	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_obj_tree.c
+0x170895	lv_obj_get_disp
+0x1708b2	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/core/lv_refr.c
+0x17094f	cannot rotate a full refreshed display!
+0x170a14	_lv_inv_area
+0x170a21	_lv_disp_refr_timer
+0x170a88	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/lv_draw_img.c
+0x170b2f	  lv_draw_img
+0x170b4d	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/lv_draw_label.c
+0x170bdd	lv_draw_label
+0x170beb	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/lv_draw_layer.c
+0x170c60	lv_draw_layer_create
+0x170c75	lv_draw_layer_destroy
+0x170c8b	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/lv_draw_mask.c
+0x170cc7	lv_mask_add: no place to add the mask
+0x170cfc	lv_draw_mask_add
+0x170d0d	lv_draw_mask_free_param
+0x170d25	_lv_draw_mask_cleanup
+0x170d3b	lv_draw_mask_radius_init
+0x170d62	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/lv_draw_transform.c
+0x170de2	lv_draw_transform
+0x170df4	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/lv_img_cache.c
+0x170e5a	_lv_img_cache_open
+0x170e6d	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/lv_img_decoder.c
+0x17104c	lv_img_decoder_open: out of memory
+0x17107f	lv_img_decoder_init: out of memory
+0x1710a2	_lv_img_decoder_init
+0x1710b7	lv_img_decoder_open
+0x1710cb	lv_img_decoder_close
+0x1710e0	lv_img_decoder_create
+0x1710f6	lv_img_decoder_built_in_info
+0x171113	lv_img_decoder_built_in_open
+0x171130	lv_img_decoder_built_in_read_line
+0x171152	lv_img_decoder_built_in_close
+0x171170	lv_img_decoder_built_in_line_true_color
+0x171198	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/sw/lv_draw_sw_blend.c
+0x171259	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/sw/lv_draw_sw_gradient.c
+0x17129f	_lv_grad_cache_mem != NULL
+0x17131f	lv_gradient_set_cache_size
+0x17133a	lv_gradient_get
+0x17134a	lv_gradient_calculate
+0x171360	lv_gradient_cleanup
+0x171374	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/sw/lv_draw_sw_layer.c
+0x171415	lv_draw_sw_layer_create
+0x17142d	lv_draw_sw_layer_destroy
+0x171446	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/sw/lv_draw_sw_letter.c
+0x17148a	lv_draw_letter: glyph dsc. not found for U+%X
+0x1714b8	lv_draw_letter: character's bitmap not found
+0x1714e5	Can't draw sub-pixel rendered letter because LV_USE_FONT_SUBPX == 0 in lv_conf.h
+0x171536	lv_draw_letter: invalid bpp
+0x171552	lv_draw_sw_letter
+0x1716ae	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/draw/sw/lv_draw_sw_rect.c
+0x17171f	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/extra/layouts/flex/lv_flex.c
+0x1717a6	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/extra/others/msg/lv_msg.c
+0x1717e8	lv_msg_subsribe
+0x1717f8	lv_msg_unsubscribe
+0x17180b	lv_event_get_msg
+0x17181c	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.c
+0x175e7c	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/font/lv_font.c
+0x175edf	lv_font_get_glyph_bitmap
+0x175ef8	lv_font_get_glyph_dsc
+0x175f0e	lv_font_get_glyph_width
+0x175f26	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/font/lv_font_fmt_txt.c
+0x175f65	Compressed fonts is used but LV_USE_FONT_COMPRESSED is not enabled in lv_conf.h
+0x175fb5	lv_font_get_bitmap_fmt_txt
+0x17a43e	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/hal/lv_hal_disp.c
+0x17a4d9	lv_disp_drv_register
+0x17a4ee	lv_disp_remove
+0x17a4fd	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/hal/lv_hal_indev.c
+0x17a566	lv_indev_drv_register
+0x17a57c	_lv_indev_read
+0x17a58b	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/misc/lv_anim.c
+0x17a5d3	lv_anim_start
+0x17a5e1	lv_anim_del
+0x17a635	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/misc/lv_color.c
+0x17a681	lv_palette_main
+0x17a691	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/misc/lv_fs.c
+0x17a7aa	lv_fs_open
+0x17a7b5	lv_fs_close
+0x17a7c1	lv_fs_read_cached
+0x17a7d3	lv_fs_drv_register
+0x17a7e6	_lv_ll_ins_head
+0x17a7f6	_lv_ll_ins_prev
+0x17a806	_lv_ll_ins_tail
+0x17a816	_lv_ll_clear
+0x17a867	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/misc/lv_mem.c
+0x17a8b6	Out of memory, can't allocate a new buffer (increase your LV_MEM_SIZE/heap size)
+0x17a907	no more buffers. (increase LV_MEM_BUF_MAX_NUM)
+0x17a936	No more buffers. Increase LV_MEM_BUF_MAX_NUM.
+0x17a97c	lv_mem_realloc_debug
+0x17a991	lv_mem_buf_get
+0x17a9a0	lv_mem_buf_release
+0x17a9b3	lv_mem_buf_free_all
+0x17a9c7	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/misc/lv_style.c
+0x17aaa6	_lv_style_custom_prop_flag_lookup_table != NULL
+0x17ab20	lv_style_reset
+0x17ab2f	lv_style_register_prop
+0x17ab46	lv_style_remove_prop
+0x17ab5b	lv_style_set_prop_internal
+0x17abe7	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/misc/lv_timer.c
+0x17ac31	It seems lv_tick_inc() is not called.
+0x17ac57	lv_timer_handler
+0x17ac68	lv_timer_create
+0x17ac78	lv_timer_del
+0x17ac8d	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/misc/lv_txt.c
+0x17acd3	lv_txt_get_size: integer overflow while calculating text height
+0x17ad13	lv_txt_get_size
+0x17ad23	_lv_txt_set_text_vfmt
+0x17ad39	_lv_txt_ap_proc
+0x17ad49	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/widgets/lv_arc.c
+0x17adaa	lv_checkbox_set_text
+0x17adbf	lv_checkbox_destructor
+0x17add6	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/widgets/lv_img.c
+0x17ae0f	lv_img_set_src: unknown type
+0x17ae2c	lv_img_set_src: unknown image type
+0x17ae86	lv_img_set_src
+0x17ae95	lv_img_destructor
+0x17aeb0	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/widgets/lv_label.c
+0x17af55	lv_label_set_text
+0x17af67	lv_label_set_text_fmt
+0x17af7d	lv_label_get_letter_pos
+0x17af95	lv_label_get_letter_on
+0x17afac	lv_label_is_char_under_pos
+0x17afc7	lv_label_ins_text
+0x17afd9	lv_label_destructor
+0x17afed	lv_label_set_dot_tmp
+0x17b002	lv_label_dot_tmp_free
+0x17b018	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/widgets/lv_roller.c
+0x17b091	lv_roller_set_options
+0x17b0a7	lv_roller_event
+0x17b0b7	WEST_TOPDIR/thirdparty/lib/gui/lvgl/src/widgets/lv_textarea.c
+0x17b111	lv_textarea_set_placeholder_text: couldn't allocate memory for placeholder
+0x17b174	lv_textarea_add_char
+0x17b189	lv_textarea_add_text
+0x17b19e	lv_textarea_del_char
+0x17b1b3	lv_textarea_set_text
+0x17b1c8	lv_textarea_destructor
+0x17b1df	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/decoder/lv_img_decoder_acts_basic.c
+0x17b31f	lv_img_decoder_acts_basic_init
+0x17b3b8	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/lv_gpu_acts.c
+0x17b3f6	LV_USE_IMGFONT disabled
+0x17b44d	lv_gpu_acts_set_accl_type
+0x17b467	lv_gpu_acts_flush_dcache
+0x17b480	_lv_draw_gpu_letter_internal
+0x17b49d	_lv_draw_gpu_layer_init
+0x17b4b5	_lv_draw_gpu_layer_destroy
+0x17b4d0	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/lv_gpu_acts_dma2d.c
+0x17b52c	lv_gpu_acts_dma2d_draw_letter
+0x17b54a	_lv_gpu_dma2d_blit
+0x17b55d	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/lv_gpu_acts_sw.c
+0x17b59e	_lv_gpu_sw_draw_img_var
+0x17b5b6	_lv_gpu_sw_draw_transform_img_var
+0x17b5d8	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/vglite/lv_draw_vglite.c
+0x17b642	lv_draw_vglite_buffer_copy
+0x17b65d	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/vglite/lv_draw_vglite_arc.c
+0x17b71b	lv_gpu_vglite_draw_arc
+0x17b73f	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/vglite/lv_draw_vglite_blend.c
+0x17b7c8	lv_gpu_vglite_fill
+0x17b7db	lv_vglite_blit
+0x17b7ea	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/vglite/lv_draw_vglite_glyphs.c
+0x17b857	lv_gpu_vglite_draw_glyphs
+0x17b871	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/vglite/lv_draw_vglite_line.c
+0x17b940	lv_gpu_vglite_draw_line
+0x17b958	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/vglite/lv_draw_vglite_rect.c
+0x17ba4b	lv_gpu_vglite_draw_bg
+0x17ba61	WEST_TOPDIR/thirdparty/lib/gui/lvgl/porting/gpu/vglite/lv_vglite_utils.c
+0x17bac3	lv_vglite_run
+0x17bae1	lvgl
+0x17bae6	lvgl_log
+0x17baef	lvgl_fs_open
+0x17bafc	lvgl_fs_close
+0x17bb0a	lvgl_fs_dir_open
+0x17bb1b	lvgl_fs_dir_close
+0x17bb4e	lvgl_port_indev_encoder_init
+0x17febb	tlv_unpack failed, err 0x%x
+0x180327	tlv_unpack_head
+0x180337	tlv_unpack
+0x180342	tlv_unpack_data
+0x183e03	le_auth_passkey_display
+0x1889f8	br_auth_passkey_display
+0x18d98e	  lvglworkq
+0x18dcfd	lvgl_res_loader_init
+0x18dd31	lvgl_res_load_scene
+0x18dd45	lvgl_res_load_group_from_scene
+0x18dd64	lvgl_res_load_group_from_group
+0x18dd83	lvgl_res_load_pictures_from_scene
+0x18dda5	lvgl_res_load_strings_from_scene
+0x18ddc6	lvgl_res_load_pictures_from_group
+0x18dde8	lvgl_res_load_strings_from_group
+0x18de09	lvgl_res_load_picregion_from_group
+0x18de2c	lvgl_res_load_picregion_from_scene
+0x18de4f	lvgl_res_load_pictures_from_picregion
+0x18de89	lvgl_res_preload_pictures_from_picregion
+0x18df39	lvgl_res_preload_scene_compact
+0x18df58	lvgl_res_preload_scene_compact_serial
+0x18df7e	lvgl_res_scene_preload_default_cb_for_view
+0x18dfa9	lvgl_res_preload_scene_compact_default_init
+0x18dfd5	lvgl_res_loader_init
+0x18dfea	lvgl_res_preload_pictures_from_picregion
+0x18e06e	lvgl_res_preload_scene_compact_default_init
+0x18e199	lvgl_freetype_font_init
+0x18e1b1	lvgl_freetype_font_open
+0x18e1c9	lvgl_freetype_font_close
+0x18e1e2	WEST_TOPDIR/framework/display/lvgl/lvgl_virtual_display.c
+0x18e2f1	lvgl_virtual_display_create
+0x18e30d	lvgl_virtual_display_destroy
+0x18e32a	_lvgl_render_start_cb
+0x18e340	_lvgl_flush_cb
+0x18e34f	_lvgl_rotate_flag_from_surface
+0x18f5af	WEST_TOPDIR/framework/display/memory/ui_mem.c
+0x18f705	WEST_TOPDIR/framework/display/memory/ui_mem_fb.c
+0x18f7e3	WEST_TOPDIR/framework/display/surface/ui_surface.c
+0x18f9d0	view_scrl
+0x18fa4f	_view_stack_jump _view_stack_update
+0x18fa73	_view_stack_jump view_stack_clean
+0x18fa95	_view_stack_jump view_stack_pop
+0x18fafb	view_stack
+0x18fb06	view_stack_clean
+0x18fb17	view_stack_pop
+0x18fb26	_view_stack_update
+0x18fb39	_view_stack_jump
+0x18fb4a	view_id != VIEW_INVALID_ID
+0x18fb65	WEST_TOPDIR/framework/display/ui_service/view_cache.c
+0x18fb9b	view_cache: restore view %d
+0x18fbfb	view_cache: already init
+0x18fc14	view_cache: init %u, main %u (res=%d)
+0x18fc3a	view_cache: not init yet
+0x18fc69	view_cache: deinit
+0x18fca4	view_cache
+0x18fcaf	_view_cache_monitor_cb
+0x18fcc6	view_cache_init2
+0x18fcd7	view_cache_deinit
+0x18fce9	_view_cache_restore
+0x18fcfd	_view_cache_unload
+0x18fd10	_view_cache_set_attr
+0x18fd25	view_cache_deinit
+0x18fd82	WEST_TOPDIR/framework/display/ui_service/msgbox_cache_lvgl.c
+0x18ffd1	_lvgl_pointer_put
+0x18ffe3	lvgl_input_pointer_init
+0x18fffb	Failed to create lvgl display
+0x190019	_lvgl_view_init

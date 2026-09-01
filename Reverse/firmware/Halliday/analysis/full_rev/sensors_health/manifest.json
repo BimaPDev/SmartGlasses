@@ -1,0 +1,64 @@
+{
+  "leaf": "1.8",
+  "subsystem": "sensors_health",
+  "firmware": "HallidayOfficialOTA app.bin (official)",
+  "variant": "official",
+  "load_base": "0x10000000",
+  "string_va_rule": "0x10000000 + app.bin file_off",
+  "owns": "Reverse/firmware/Halliday/analysis/full_rev/sensors_health/**",
+  "sources": [
+    "Reverse/firmware/Halliday/export/official/strings/categorized/sensors_health.txt",
+    "Reverse/firmware/Halliday/export/official/strings/app_ascii.txt"
+  ],
+  "note": "No Ghidra function export for Halliday app.bin yet. Entries are rodata string anchors and adjacent symbol names from WEST_TOPDIR paths — not confirmed Thumb entry points.",
+  "functions": [
+    {
+      "va": "0x1014d5a1",
+      "off": "0x14d5a1",
+      "name": "_bp_view_handler",
+      "evidence": "bp_view.c @ 0x14d509; lifecycle cluster with _bp_view_load_resource @ 0x14d563, _bp_view_layout @ 0x14d57a, view_id == HEALTH_BP_VIEW @ 0x14d4ef"
+    },
+    {
+      "va": "0x1014d68c",
+      "off": "0x14d68c",
+      "name": "_spo2_view_handler",
+      "evidence": "spo2_view.c @ 0x14d5e8; paired _spo2_view_layout_update @ 0x14d673, health_spo2 @ 0x14d63c, spo2 view inflated @ 0x14d629"
+    },
+    {
+      "va": "0x1014d559",
+      "off": "0x14d559",
+      "name": "health_bp",
+      "evidence": "Registered BP view name; SCENE_BP_VIEW not found @ 0x14d4d7 on lvgl_res_load_scene miss"
+    },
+    {
+      "va": "0x1014d63c",
+      "off": "0x14d63c",
+      "name": "health_spo2",
+      "evidence": "Registered SpO2 view name; SCENE_SPO2_VIEW not found @ 0x14d5b2; view_id == HEALTH_SPO2_VIEW @ 0x14d5cc"
+    },
+    {
+      "va": "0x1015a3b9",
+      "off": "0x15a3b9",
+      "name": "_ble_rx_sensor_command",
+      "evidence": "Vendor BLE RX dispatch table; adjacent SENSOR_PARAMETERS @ 0x15a17a, _ble_rx_exercise_command @ 0x15a3a0, vendor_ble_rx_event_proc @ 0x15a4b8"
+    },
+    {
+      "va": "0x1015a4f6",
+      "off": "0x15a4f6",
+      "name": "_ble_rx_sensor_param",
+      "evidence": "Paired sensor config handler; same xs_vendor_ble_stream.c neighborhood as BLE RECV: CMD:0x%x @ 0x15a332"
+    },
+    {
+      "va": "0x1015cf04",
+      "off": "0x15cf04",
+      "name": "send_result",
+      "evidence": "TX path beside ble_send_to_app @ 0x15cf10 and send_result2 @ 0x15cf20; BLE SEND log @ 0x15ce75"
+    },
+    {
+      "va": "0x10157142",
+      "off": "0x157142",
+      "name": "send_result_simulator",
+      "evidence": "Duplicate rodata @ 0x157174; xs unit-test cluster with xs_ai_unit_test_start @ 0x15718a and translate_unit_test_start @ 0x1571a0"
+    }
+  ]
+}

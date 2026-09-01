@@ -1,0 +1,83 @@
+0x14a6dc	social
+0x14aaa6	BAT_CHG_EVENT_BATTERY_TOO_LOW
+0x14aac4	BAT_CHG_EVENT_BATTERY_TOO_LOW2
+0x14ddad	mini charger resume
+0x14ddc2	bat is not lowpower, exit mini charger. 
+0x14ddec	mini charger entry.
+0x14de01	mini charger suspend
+0x14de17	mini charger get exit mini charge msg...
+0x14de41	exit mini charger and reboot...
+0x14de62	charger_suspend
+0x14de72	charger_resume
+0x14de81	charger_mode_check
+0x14de94	SCENE_CHARGER_VIEW not found
+0x14deb9	charger scene load pictures failed
+0x14dedc	charger_view
+0x14dee9	charger_view_deinit
+0x14defd	_charger_load_resource
+0x14df14	_charger_view_layout
+0x14df29	_charger_view_layout
+0x15695d	ring_info type[%d] hardware[%d] software[%d] battery_state[%d] battery_percent[%d]
+0x158920	battery_power_enable
+0x158f9f	battery_event_handle %d
+0x159002	SYS_EVENT_BATTERY_LOW 
+0x1591b0	battery_event_handle
+0x15b570	ble_to_app_ring_state battery_percent %d,battery_state %d, sn %s
+0x15ed3e	PM_BAK_TIME
+0x15ee44	int battery first insert, poweroff
+0x15f0ba	soc cali vd12 =%d
+0x15f0cd	soc get cali vd12 fail
+0x15f168	soc_pmu_register_notify
+0x15f180	soc_pmu_get_wakeup_source
+0x15f19a	soc_pmu_get_counter8hz_cycles
+0x15f1b8	soc_pmu_alarm8hz_enable
+0x15f208	soc_pmu_get_temperature
+0x15f44b	wakelock->ref_cnt < 0xFFFF
+0x15f466	WEST_TOPDIR/zephyr/soc/arm/actions/leopard/sys_wakelock.c
+0x15f4a0	wakelock->ref_cnt > 0
+0x161825	info.state < (1 + PM_STATE_SOFT_OFF - PM_STATE_ACTIVE)
+0x161974	_pm_devices
+0x161980	pm_early_suspend
+0x162853	_panel_pm_early_suspend
+0x16286b	_panel_pm_late_resume
+0x162881	_panel_pm_resume_handler
+0x16289a	_panel_pm_enter_low_power
+0x1628b4	_panel_pm_exit_low_power
+0x1628cd	_lcd_panel_pm_control
+0x163f44	_jpeg_hw_pm_control
+0x16550d	_composer_display_pm_notify_handler
+0x166cf5	i2cmt_pm_control
+0x167e40	block_dev_pm_control
+0x1682d0	lcdc_pm_control
+0x16a2b4	audio_out_pm_check_all_sessions
+0x16a2d4	audio_out_pm_control
+0x16b387	audio_adc_pm_control
+0x16b9c8	es8156_pm_suspend
+0x16b9da	es8156_pm_resume
+0x16c403	gpiokey_pm_control
+0x16c8b0	battery ADC read error %d
+0x16ca2b	battery real voltage init:%dmv
+0x16cab0	mini charger get batmv err!
+0x16cacd	mini charger get bat_mv: %dmv.
+0x16caed	mini charger get batchk_mv err!
+0x16cb0e	mini charger check protect get bat_mv: %dmv.
+0x16cb52	mini charger get bat_mv err!
+0x16d01e	battery_acts_set_property
+0x16d038	battery_acts_register_notify
+0x16d06d	battery_acts_enable
+0x16d0a0	battery_acts_init
+0x16d140	charger enabled
+0x16d3a3	set init charger const current:%d
+0x16d428	bat_charger_set_before_enter_s4
+0x16d448	charger_enable_timer_handler
+0x16d5ca	battery error
+0x16d69e	Precharge time too long, battery is bad!
+0x16d82a	** battery voltage:%dmV capacity:%d%% **
+0x1831d4	hfp battery Indicator enable.
+0x183365	bt_manager_hfp_battery_report
+0x183383	bt_manager_hfp_battery_hprec_report
+0x188eba	MAC %s name %s base conn %p soc conn %p
+0x18ac7b	Battery value: %u
+0x18b247	_btsrv_hfp_battery_cb
+0x18b364	_btsrv_hfp_battery_indicator_cb
+0x18cb8b	battery level

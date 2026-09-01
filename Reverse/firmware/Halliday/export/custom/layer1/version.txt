@@ -1,0 +1,2 @@
+build_ver=1.00_2601211113
+platform_id=ats3089_dev_watch

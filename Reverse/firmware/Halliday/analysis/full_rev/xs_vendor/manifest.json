@@ -1,0 +1,100 @@
+{
+  "leaf": "1.12",
+  "subsystem": "xs_vendor",
+  "firmware": "HallidayOfficialOTA app.bin (official)",
+  "variant": "official",
+  "app_bin_md5": "32f7cdc25818cdcb853d04702687fc8a",
+  "app_bin_size": 1662592,
+  "xip_base": "0x10000000",
+  "owns": "Reverse/firmware/Halliday/analysis/full_rev/xs_vendor/**",
+  "sources": [
+    "Reverse/firmware/Halliday/export/official/strings/categorized/halliday.txt",
+    "Reverse/firmware/Halliday/export/official/strings/categorized/ble_bluetooth.txt",
+    "Reverse/firmware/Halliday/export/functions/app/decomp/100449d8_FUN_100449d8.c",
+    "Reverse/firmware/Halliday/export/functions/app/decomp/10050294_FUN_10050294.c",
+    "Reverse/firmware/Halliday/export/functions/app/decomp/10050808_FUN_10050808.c"
+  ],
+  "note": "Mix of Ghidra-recovered Thumb entry points (export/functions/app) and rodata string anchors. CMD/KEY dispatch body is FUN_100449d8; symbol name vendor_ble_rx_event_proc is string-only @ 0x15a4b8.",
+  "functions": [
+    {
+      "va": "0x100449d8",
+      "off": null,
+      "name": "vendor_ble_rx_event_proc",
+      "role": "CMD/KEY RX dispatcher; 11 KB switch on param_1[0] → _ble_rx_* handlers; decomp FUN_100449d8",
+      "evidence": "String anchor vendor_ble_rx_event_proc @ file 0x15a4b8; logs BLE RECV: CMD:0x%x, KEY:0x%x @ 0x15a332"
+    },
+    {
+      "va": "0x10050294",
+      "off": null,
+      "name": "ble_rx_data",
+      "role": "Vendor stream RX reassembly; validates 0x5F sync, CRC-16 (FUN_100501c4), calls FUN_100449d8",
+      "evidence": "String ble_rx_data @ 0x15ccb6; ----ble RX error---- @ 0x15ce3a"
+    },
+    {
+      "va": "0x10050808",
+      "off": null,
+      "name": "ble_vendor_tx_frame",
+      "role": "Builds 0x5F-framed TX packet (sync, flags, len, CRC, seq, payload); used by ble_send_to_app path",
+      "evidence": "BLE SEND: CMD:0x%x(%d), KEY:0x%x(%d),len:%d @ 0x15ce75; ble stream write error @ 0x15ce50"
+    },
+    {
+      "va": "0x100231e4",
+      "off": null,
+      "name": "ble_send_to_app2",
+      "role": "High-level TX API; reads CMD/KEY from buffer, checks vendor init (FUN_1004f6cc), calls FUN_10050808",
+      "evidence": "String ble_send_to_app2 @ 0x1510c2; vendor_not_init guard; message_reply_view.c path @ 0x150583"
+    },
+    {
+      "va": "0x1015caad",
+      "off": "0x15caad",
+      "name": "xs_vendor_ble_stream.c",
+      "role": "Source TU for vendor GATT/stream; ble_stream_init, stream_ble_connect_cb, ble_send_to_app cluster",
+      "evidence": "WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_service/xs_vendor_ble_stream.c"
+    },
+    {
+      "va": "0x1015c92b",
+      "off": "0x15c92b",
+      "name": "vendor_app_init",
+      "role": "Vendor BLE service bring-up; logs ble_stream pointer, APP BLE connection/disconnection",
+      "evidence": "vendor_app_init ble_stream: %p @ 0x15c92b; vendor app ble stream open success @ 0x15c862"
+    },
+    {
+      "va": "0x1015cf10",
+      "off": "0x15cf10",
+      "name": "ble_send_to_app",
+      "role": "Primary glasses→phone send entry beside send_result @ 0x15cf04",
+      "evidence": "Adjacent to ble_data_read @ 0x15cef6 and BLE SEND log @ 0x15ce75"
+    },
+    {
+      "va": "0x1015a332",
+      "off": "0x15a332",
+      "name": "BLE RECV log",
+      "role": "RX framing debug anchor: CMD/KEY decode site in vendor_ble_rx_event_proc neighborhood",
+      "evidence": "BLE RECV: CMD:0x%x, KEY:0x%x"
+    }
+  ],
+  "source_anchors": [
+    "WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_service/xs_vendor_ble_stream.c",
+    "WEST_TOPDIR/application/bt_watch/src/xs_app/xs_ble_ring_service/ble_ring_stream.c",
+    "WEST_TOPDIR/application/bt_watch/src/xs_app/xs_msg/message_reply_view.c"
+  ],
+  "protocol_surface": {
+    "sync_byte": "0x5F",
+    "crc": "CRC-16/MODBUS 0xA001 via FUN_100501c4",
+    "fields": ["CMD", "KEY", "payload"],
+    "cmd_examples_recovered": {
+      "0x03": "_ble_rx_navi_command",
+      "0x0C": "_ble_rx_set_transfer / file write",
+      "0x30": "_ble_rx_set_command settings block",
+      "0xFB": "_ble_rx_voice_control_command",
+      "0xFC": "_ble_rx_ring_command",
+      "0xFD": "_ble_rx_function_command",
+      "0xFE": "_ble_rx_fctory_command"
+    }
+  },
+  "absences_verified_strings_only": [
+    "No GATT service/characteristic UUID literals in export strings",
+    "No StarryNet / xjxr_starrynet symbols",
+    "Full CMD/KEY enum not recovered — companion APK required for completeness"
+  ]
+}

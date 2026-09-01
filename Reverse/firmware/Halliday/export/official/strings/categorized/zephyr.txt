@@ -1,0 +1,54 @@
+0x14bdfc	WEST_TOPDIR/zephyr/include/sys/ring_buffer.h
+0x1500ce	com.linkedin.Zephyr
+0x158730	WEST_TOPDIR/zephyr/include/drivers/gpio.h
+0x15e891	WEST_TOPDIR/zephyr/lib/os/heap.h
+0x15e8c6	WEST_TOPDIR/zephyr/lib/os/heap.c
+0x15ebde	WEST_TOPDIR/zephyr/lib/os/ring_buffer.c
+0x15f466	WEST_TOPDIR/zephyr/soc/arm/actions/leopard/sys_wakelock.c
+0x15f7b1	Zephyr version %d.%d.%d
+0x15fd29	WEST_TOPDIR/zephyr/subsys/shell/shell.c
+0x1601e5	WEST_TOPDIR/zephyr/subsys/shell/shell_utils.c
+0x16022e	WEST_TOPDIR/zephyr/subsys/shell/shell_ops.c
+0x160288	WEST_TOPDIR/zephyr/subsys/shell/shell_uart.c
+0x16071e	WEST_TOPDIR/zephyr/subsys/shell/shell_history.c
+0x160c77	WEST_TOPDIR/zephyr/subsys/shell/shell_dbg.c
+0x161800	WEST_TOPDIR/zephyr/subsys/pm/power.c
+0x161ef2	%%ZEPHYR_TOOLS%%\gcc-arm-none-eabi-9-2020-q2-update-win32\bin\arm-none-eabi-addr2line.exe -e zephyr.elf -a -f 
+0x16226c	WEST_TOPDIR/zephyr/subsys/partition/partition.c
+0x16270b	WEST_TOPDIR/zephyr/drivers/display/panel/panel_device.c
+0x162ba1	WEST_TOPDIR/zephyr/drivers/display/engine/de_common.c
+0x1639a8	WEST_TOPDIR/zephyr/drivers/timer/sys_clock_init.c
+0x1639e4	WEST_TOPDIR/zephyr/drivers/timer/acts_hrtimer.c
+0x164093	WEST_TOPDIR/zephyr/drivers/gpu/verisilicon/VGLiteKernel/zephyr/vg_lite_hal.c
+0x1644d3	WEST_TOPDIR/zephyr/framework/osal/os_message.c
+0x164698	WEST_TOPDIR/zephyr/framework/audio/audioin_hal.c
+0x164786	WEST_TOPDIR/zephyr/framework/audio/audioout_hal.c
+0x164eb2	WEST_TOPDIR/zephyr/framework/dma2d/dma2d_hal.c
+0x165025	WEST_TOPDIR/zephyr/framework/display/sw_math.c
+0x1650c5	WEST_TOPDIR/zephyr/framework/display/sw_rotate.c
+0x16510a	WEST_TOPDIR/zephyr/framework/display/graphic_buffer.c
+0x16521a	WEST_TOPDIR/zephyr/framework/display/composer/display_composer.c
+0x1657e4	WEST_TOPDIR/zephyr/arch/arm/core/aarch32/irq_manage.c
+0x16594d	WEST_TOPDIR/zephyr/arch/arm/core/aarch32/cortex_m/fault.c
+0x165dc5	WEST_TOPDIR/zephyr/lib/libc/newlib/libc-hooks.c
+0x16681b	WEST_TOPDIR/zephyr/drivers/serial/uart_acts.c
+0x166d06	WEST_TOPDIR/zephyr/drivers/gpio/gpio_utils.h
+0x167ea5	WEST_TOPDIR/zephyr/drivers/display/controller/lcdc_leopard.c
+0x168541	WEST_TOPDIR/zephyr/drivers/display/engine/private/de_leopard.c
+0x185004	WEST_TOPDIR/zephyr/include/sys/byteorder.h
+0x190455	>>> ZEPHYR FATAL ERROR %d: %s on CPU %d
+0x1904b6	WEST_TOPDIR/zephyr/kernel/fatal.c
+0x1905bd	WEST_TOPDIR/zephyr/kernel/kheap.c
+0x190644	WEST_TOPDIR/zephyr/kernel/mem_slab.c
+0x190686	WEST_TOPDIR/zephyr/kernel/thread.c
+0x190915	WEST_TOPDIR/zephyr/kernel/idle.c
+0x19095e	WEST_TOPDIR/zephyr/kernel/mutex.c
+0x1909bc	WEST_TOPDIR/zephyr/kernel/include/ksched.h
+0x190a18	WEST_TOPDIR/zephyr/kernel/sem.c
+0x190a8e	WEST_TOPDIR/zephyr/kernel/work.c
+0x190b96	WEST_TOPDIR/zephyr/kernel/sched.c
+0x190d82	WEST_TOPDIR/zephyr/kernel/timeout.c
+0x190dc6	WEST_TOPDIR/zephyr/kernel/poll.c
+0x1911ca	WEST_TOPDIR/zephyr/kernel/mempool.c
+0x1912b2	WEST_TOPDIR/zephyr/kernel/thread_timer.c
+0x1912e8	*** Booting Zephyr OS build %s %s ***

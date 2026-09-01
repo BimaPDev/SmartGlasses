@@ -1,0 +1,57 @@
+{
+  "leaf": "1.3",
+  "variant": "official",
+  "firmware": "HallidayOfficialOTA app.bin",
+  "load_base": "0x10000000",
+  "owns": "Reverse/firmware/Halliday/analysis/full_rev/ui_launcher/**",
+  "functions": [
+    {
+      "va": "0x1014d3f8",
+      "off": "0x14d3f8",
+      "name": "_launcher_app_init",
+      "evidence": "Debug string in launcher_app.c cluster @ 0x14d151; paired with 'launcher enter' @ 0x14d127 and '_launcher_app_loop' @ 0x14d3e5"
+    },
+    {
+      "va": "0x10146c2c",
+      "off": "0x146c2c",
+      "name": "view_manager_init",
+      "evidence": "view_manager.c @ 0x146648; init symbol adjacent to view_create @ 0x146be8 and view_input @ 0x146d30"
+    },
+    {
+      "va": "0x10158935",
+      "off": "0x158935",
+      "name": "view_stack_clean_and_return_launcher",
+      "evidence": "Navigation escape string; used with 'Early suspend: return to launcher view' @ 0x158818 and view_stack_get_num @ 0x14efa6"
+    },
+    {
+      "va": "0x1014f33d",
+      "off": "0x14f33d",
+      "name": "tran_view_start",
+      "evidence": "xs_translate entry; __FILE__ translate_language_select_view_332.c @ 0x14f078; calls translate_view_init_show @ 0x14f3f3"
+    },
+    {
+      "va": "0x101543cb",
+      "off": "0x1543cb",
+      "name": "ai_view_set_layout",
+      "evidence": "ai_view.c @ 0x154242; layout/update/delete cluster with ai_view_updata @ 0x154423 and SCENE_AI_VIEW @ 0x157538"
+    },
+    {
+      "va": "0x1014ecfc",
+      "off": "0x14ecfc",
+      "name": "_xs_app_init",
+      "evidence": "Halliday xs_app bootstrap; xs_app_init @ 0x14e328, font path /NAND:C/xs_font.ttf @ 0x14ed27, Halliday Glasses @ 0x182856"
+    },
+    {
+      "va": "0x101579da",
+      "off": "0x1579da",
+      "name": "_launcher_view_handler",
+      "evidence": "Launcher chrome handler; SCENE_LAUNCHER_VIEW @ 0x157971; _launcher_view_layout_update @ 0x1579f1"
+    },
+    {
+      "va": "0x1018fb39",
+      "off": "0x18fb39",
+      "name": "_view_stack_jump",
+      "evidence": "view_stack API cluster @ 0x18fafb; branches logged as view_stack_clean / view_stack_pop @ 0x18fa73 / 0x18fa95"
+    }
+  ]
+}

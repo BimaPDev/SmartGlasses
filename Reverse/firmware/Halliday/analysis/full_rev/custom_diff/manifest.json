@@ -1,0 +1,106 @@
+{
+  "leaf": "1.6",
+  "title": "Halliday official vs HomeBuddy custom app.bin diff",
+  "load_base": "0x10000000",
+  "inputs": {
+    "official_app_bin": "Reverse/firmware/Halliday/export/official/layer3/app.bin",
+    "custom_app_bin": "Reverse/firmware/Halliday/export/custom/layer3/app.bin",
+    "official_manifest": "Reverse/firmware/Halliday/export/official/manifest.json",
+    "custom_manifest": "Reverse/firmware/Halliday/export/custom/manifest.json",
+    "summary": "Reverse/firmware/Halliday/export/summary.json"
+  },
+  "diff_summary": {
+    "app_bin_size": 1662592,
+    "total_diff_runs": 114,
+    "total_diff_bytes": 1216,
+    "version_string_identical": "build_ver=1.00_2601211113 / platform_id=ats3089_dev_watch",
+    "official_app_bin_md5": "32f7cdc25818cdcb853d04702687fc8a",
+    "custom_app_bin_md5": "9dc263a12606e06231bbd41fd09bdb18"
+  },
+  "functions": [
+    {
+      "name": "_clock_view_select",
+      "source_file": "application/bt_watch/src/launcher/clock_view.c",
+      "string_offset": "0x14d439",
+      "va": "0x1014d439",
+      "evidence": [
+        "Official embeds WEST_TOPDIR/.../clock_view.c at this offset",
+        "Custom replaces with format string HomeBuddy-v3  %s %02u/%02u",
+        "_clock_view_select symbol at 0x14d4a5 unchanged in both builds"
+      ],
+      "change_type": "string_replacement",
+      "hypothesis": "Custom HUD watermark on clock/launcher view; likely snprintf of date/time using HomeBuddy branding"
+    },
+    {
+      "name": "notify_list_view_update",
+      "source_file": "application/bt_watch/src/xs_app/xs_msg/notify_list_view.c",
+      "string_offset": "0x15148b",
+      "va": "0x1015148b",
+      "related_diff_region": {
+        "start": "0x15030d",
+        "end": "0x15047d",
+        "va_start": "0x1015030d",
+        "va_end": "0x1015047d"
+      },
+      "evidence": [
+        "Package-name whitelist table at 0x15030d sits immediately before Notify_SetEnable strings",
+        "notify_list_view_update/focus perf strings at 0x151431-0x151596",
+        "Custom swaps e-commerce/payment bundle IDs for HomeBuddy-relevant apps (Gmail, ClearView, Tapo, Viber, Mi Home, Maps)"
+      ],
+      "change_type": "notification_filter_table",
+      "hypothesis": "Per-app notification routing whitelist used by notify_list_view and Notify_EnableInit"
+    },
+    {
+      "name": "Notify_SetEnable",
+      "source_file": "xs_msg notification subsystem (inferred)",
+      "string_offset": "0x150535",
+      "va": "0x10150535",
+      "related_strings": [
+        "Notify_SetEnable: type = %d, enable = %d @ 0x150497",
+        "Notify_EnableDefault @ 0x150546",
+        "Notify_EnableInit @ 0x150566",
+        "global_appid @ 0x15045f"
+      ],
+      "evidence": [
+        "Package table diff ends at 0x15047d; Notify_* symbols unchanged at same offsets",
+        "Only bundled app IDs differ; notify enable API surface is identical"
+      ],
+      "change_type": "constant_table",
+      "hypothesis": "Notify_EnableInit iterates the adjacent package table; custom build retargets default-enabled notification sources"
+    }
+  ],
+  "patch_regions": [
+    {
+      "name": "image_header_checksum",
+      "start": "0x1c",
+      "end": "0x24",
+      "va_start": "0x1000001c",
+      "va_end": "0x10000024",
+      "size": 8,
+      "hypothesis": "Actions/Zephyr image header integrity field updated after app.bin body edits"
+    },
+    {
+      "name": "injected_thumb_code",
+      "start": "0x14456c",
+      "end": "0x144ab8",
+      "va_start": "0x1014456c",
+      "va_end": "0x10144ab8",
+      "size": 837,
+      "hypothesis": "Official image has zero padding; custom fills with ARM Thumb stubs (likely hooks or relocated helpers for clock/notify changes). Scattered 4-byte BL/B branch patches elsewhere (0x18062, 0x3d0a4, 0x413a4, 0x7b5ac) retarget into this region"
+    },
+    {
+      "name": "code_relocation_patches",
+      "start": "0x18062",
+      "end": "0x7b5b0",
+      "va_start": "0x10018062",
+      "va_end": "0x1007b5b0",
+      "size": 84,
+      "run_count": 38,
+      "hypothesis": "Thumb32 branch/bl immediate fixes and small opcode tweaks caused by +837 bytes of injected code shifting link-time addresses"
+    }
+  ],
+  "artifacts": {
+    "report": "CUSTOM_DIFF.md",
+    "diff_regions": "diff_regions.json"
+  }
+}

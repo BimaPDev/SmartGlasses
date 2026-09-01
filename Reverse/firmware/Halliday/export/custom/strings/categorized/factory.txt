@@ -1,0 +1,59 @@
+0x14ae57	shell_set_volume type:%d volume: %d
+0x14ae7c	shell_get_volume type:%d volume: %d
+0x14af4c	shell_set_dualble_adv_connected %d
+0x14aff4	Application shell commands
+0x14b088	shell_set_config
+0x14b099	shell_set_led
+0x14b0a7	shell_set_vibration
+0x14b0bb	shell_device_test
+0x14b0cd	shell_set_volume
+0x14b0de	shell_device_info
+0x14b0f0	shell_set_dualble_adv_connected
+0x14c019	ota_type %d, is not factory?
+0x1592b5	key_power_to_factory_reset_handle key_event 0x%x time_diff %d cnt %d
+0x159396	key_power_to_factory_reset_handle
+0x1594e3	key_power_to_factory_reset_handle
+0x15ee22	factory power down WKEN_CTL=0x%x
+0x15fd29	WEST_TOPDIR/zephyr/subsys/shell/shell.c
+0x15fd51	shell->ctx && shell->iface
+0x15fd6c	WARNING: A print request was detected on not active shell backend.
+0x15fe64	shell->ctx
+0x15fe8a	shell->ctx && shell->iface && shell->default_prompt
+0x15febe	(shell->shell_flag == SHELL_FLAG_CRLF_DEFAULT) || (shell->shell_flag == SHELL_FLAG_OLF_CRLF)
+0x15ff1b	Shell thread error: %d
+0x15ff5c	(shell->ctx->internal.flags.cmd_ctx == 1) || (k_current_get() != shell->ctx->tid)
+0x15ffae	shell->fprintf_ctx
+0x1600b7	Shell supports following meta-keys:
+0x160119	Please refer to shell documentation for more details.
+0x160166	shell->ctx->internal.flags.cmd_ctx == 0
+0x1601e5	WEST_TOPDIR/zephyr/subsys/shell/shell_utils.c
+0x16022e	WEST_TOPDIR/zephyr/subsys/shell/shell_ops.c
+0x16025a	shell && data
+0x160288	WEST_TOPDIR/zephyr/subsys/shell/shell_uart.c
+0x1602b5	shell.shell_uart
+0x16042b	Useful, not Unix-like shell commands.
+0x1604cd	Some terminals are not sending separate escape code for backspace and delete button. This command forces shell to interpret delete key as backspace.
+0x160585	Toggle shell echo.
+0x16059e	Shell statistics.
+0x160629	Reset shell statistics for the Logger module.
+0x160657	Get shell statistics for the Logger module.
+0x160683	Disable shell echo. Editing keys and meta-keys are not handled
+0x1606c2	Enable shell echo.
+0x16071e	WEST_TOPDIR/zephyr/subsys/shell/shell_history.c
+0x160980	shell_dvfs
+0x160c77	WEST_TOPDIR/zephyr/subsys/shell/shell_dbg.c
+0x1662a1	Print stored coredump to shell
+0x17ce18	shell_set_config
+0x17ce29	shell_set_effect_config
+0x17ce41	shell_set_voice_effect_config
+0x17ce5f	shell_dump_meminfo
+0x17dbff	Print stored actlog to shell
+0x17dc1c	Set level filter actlog to shell
+0x17dc3d	Set num filter actlog to shell
+0x17dc5c	get actlog info to shell
+0x18428e	shell_cmd_br_test
+0x1842a0	shell_cmd_ble_test
+0x1842b3	shell_cmd_set_ble_speed
+0x1842cb	shell_cmd_send_hfp_cmd
+0x1932b8	Factory Config
+0x1932f0	Factory RW

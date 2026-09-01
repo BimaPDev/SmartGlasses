@@ -1,0 +1,212 @@
+0x0b85cc	AOTAr
+0x14aea8	diskcapacity total %d remain: %d Kb 
+0x14c019	ota_type %d, is not factory?
+0x14c036	ota state: %d->%d
+0x14c04c	OTA_UPG_FLAG
+0x14c062	REC_OTA_FLAG
+0x14c08a	btcall unsupport ota, skip...
+0x14c0e2	ota app start
+0x14c154	failed to init sdcard ota
+0x14c1aa	/NAND:/ota.bin
+0x14c1e1	ota_app_start
+0x14c1ef	ota_app_stop
+0x14c1fc	ota_app_backend_callback
+0x14c215	ota_app_init_sdcard
+0x14c229	ota_app_init_bluetooth
+0x14c253	ota_app_notify
+0x14c262	ota_app_init
+0x14c26f	ota_type_process_allow
+0x14c286	ota_app_main
+0x14c2bf	obj_ota_bg null
+0x14c2d0	obj_ota_tips[TXT_TIP_0] null
+0x14c2ee	obj_ota_tips[TXT_TIP_1] null
+0x14c30c	ota_view
+0x14c315	ota_view_init
+0x14c323	ota_view_deinit
+0x14c333	_ota_view_layout
+0x14c344	_ota_view_delete
+0x14c355	_ota_view_handler
+0x14c367	_ota_view_layout
+0x14cac0	total_time=%d, sample_rate=%d,
+0x150d1e	Total files in directory '%s': %d
+0x1557bc	Content analysis: total_chars=%d, chars_per_line=%d, estimated_lines=%d
+0x1589d5	The event is not shown:  ota is running
+0x1593ce	OTA is running, ignore key event
+0x15a313	ble_to_app_ota_state state: %d
+0x15a4a3	ble_to_app_ota_state
+0x15ea85	  bucket#    min units        total      largest      largest
+0x15ec7a	reboot ota
+0x15f5a3	type : FULL_WAKE_LOCK total
+0x15f896	Total execution cycles: %lu (%u %%)
+0x15f8bc	Total execution cycles: ? (? %%)
+0x1617d8	find_flash_total_size
+0x164557	high priority msg free %d used %d total %d 
+0x164c10	submit cmd %d %d %d %d seq %d totalsize %d buffer  %d 
+0x1650c5	WEST_TOPDIR/zephyr/framework/display/sw_rotate.c
+0x1683a5	[DE][W]: L%d already has or unsupport rotation
+0x1683d5	[DE][W]: L%d format 0x%x not support rotation
+0x168685	[DE][W]: unsupported rotation format %u
+0x1686d4	[DE][W]: src width %d and format 0x%x must meet circle rotation
+0x168715	[DE][W]: src and dest must meet circle rotation
+0x168746	[DE][W]: circle rotation line range exceed
+0x16906f	alloc hci rx rbuf failed total %d(%d) size %d
+0x1690fa	read_buf total %d drop data %d!
+0x16978f	region %s: base addr 0x%x total size 0x%x
+0x16c78e	Total_Time_Limit: %dmin
+0x16cba4	mini charge total wast: %ums.
+0x16cdc9	extremely low power charge total wast: %ums.
+0x16f718	recovery alarm:  after %d ms, inter=%d, bk=%d
+0x17094f	cannot rotate a full refreshed display!
+0x170a78	draw_buf_rotate
+0x17c0cf	total size of pool %d 
+0x17c69c	handle %p total_size %d mode %x 
+0x17d4a8	total %d Mbytes
+0x17d4ed	fs_manager_get_total_capacity
+0x17de06	(ctx->total_size)
+0x17de18	(ctx->total_size) % (4 * 1024) == 0
+0x17de3c	(ctx->total_size) / (4 * 1024) >= 2
+0x17ecd7	init_buf.streaminfo.total_time = %d;
+0x17ecfd	init_buf.streaminfo.total_samples = %d;
+0x17f84e	format=%s,max_chunksize=%d,total_time=%d,avg_bitrate=%d,sample_rate=%d,sample_bits=%d,channels=%d
+0x17ffa3	upgrade request: param_size %d
+0x17ffc2	request upgrade cmd repeated.
+0x17fffc	ota type: 0x%x
+0x1800a3	ota_unit_size %d, interval %d, ack_enable %d
+0x180365	ota_bt_send_cmd
+0x180375	ota_cmd_h2d_request_upgrade
+0x180391	ota_cmd_h2d_connect_negotiation
+0x1803b1	ota_cmd_h2d_negotiation_result
+0x1803d0	ota_cmd_require_image_data
+0x1803eb	ota_cmd_h2d_send_image_data
+0x180407	ota_cmd_d2h_report_image_valid
+0x18044c	ota_backend_bt_ioctl
+0x180461	ota_backend_bt_read
+0x180475	ota_backend_bt_read_prepare
+0x180491	ota_backend_bt_read_complete
+0x1804ae	ota_backend_bt_open
+0x1804c2	ota_backend_bt_close
+0x1804e9	ota_backend_bt_init
+0x1804fd	ota_backend_ota_type_cb_set
+0x180519	ota_backend_bt_init
+0x18055a	cannot found ota file '%s' in sdcard
+0x1805cb	ota_backend_sdcard_ioctl
+0x1805e4	ota_backend_sdcard_read
+0x1805fc	ota_backend_sdcard_open
+0x180614	ota_backend_sdcard_close
+0x18062d	ota_backend_sdcard_init
+0x18065a	ota_backend_sdcard_init
+0x1807fa	ota_storage_read_default
+0x180813	ota_storage_is_clean
+0x180828	ota_storage_erase_sd_nand
+0x180842	ota_storage_erase_spinor
+0x18085b	ota_storage_erase
+0x18086d	ota_storage_init
+0x18087e	ota_storage_exit
+0x18088f	ota_storage_write_sd_nand
+0x1808a9	ota_storage_write_default
+0x1808c3	ota_storage_read_sd_nand
+0x1808dc	ota_storage_erase_sd_nand
+0x1808f6	ota_storage_write_sd_nand
+0x180910	ota_storage_read_sd_nand
+0x1809f4	upadte ota state:  %d
+0x180a0b	WEST_TOPDIR/framework/ota/include/ota_backend.h
+0x180acb	upgrade pending, skip erase parts
+0x180aed	upgrade is in process, skip erase temp part
+0x180b3f	part[%d]: file_id %d not ota temp partition, skip erase
+0x180ca6	ota_rx thread started
+0x180cbc	ota_rx wait rbuf
+0x180ce9	ota_rx thread exited
+0x180cfe	ota file_cnt %d
+0x181041	ota_rx
+0x181269	OTA upgrade retry after verify failed
+0x18128f	handle upgrade
+0x18129e	ota state <%d> is not OTA_INIT, skip upgrade
+0x1812cb	ota backend null
+0x1812dd	ota image open failed
+0x181300	ota.xml
+0x18132a	ota fw version:
+0x1813ba	unmatched board name, skip ota, not return
+0x1813e5	ota image is same or older, skip ota
+0x181471	ota file[%d]%s: total size %d, bp offset 0x%x
+0x18149f	upgrade failed, err %d
+0x1814b6	write ota image failed, err %d
+0x1814d5	upgrade successfully!
+0x1814eb	ota status -> OTA_INIT, wait for upgrading resume!
+0x1815ac	invalid flag_is_recovery_app
+0x1815db	ota_update_fw_version
+0x1815f1	ota_update_state
+0x181602	ota_partition_erase_part
+0x18161b	ota_partition_update_prepare
+0x181638	ota_caculate_storage_file_crc
+0x181656	ota_verify_file
+0x181666	ota_rx_thread
+0x181674	ota_rx_init
+0x181680	ota_write_file_normal
+0x181696	ota_write_and_verify_file
+0x1816b0	ota_upgrade_verify_along
+0x1816c9	ota_do_upgrade
+0x1816d8	ota_is_need_upgrade
+0x1816ec	ota_upgrade_statistics
+0x181703	ota_upgrade_exit
+0x181714	ota_upgrade_check
+0x181726	ota_upgrade_attach_backend
+0x181741	ota_upgrade_detach_backend
+0x18175c	ota_upgrade_init
+0x18176d	ota_rx_init
+0x181779	ota_upgrade_check
+0x18178b	ota_upgrade_init
+0x1817fd	OTA image progress total size %d
+0x18181e	OTA upgrade progress ==> %d%%
+0x18183c	error total size %d xfer_size %d
+0x18185d	error xfer_size %d cur_size %d total_size %d
+0x181a99	ota_image_find_file
+0x181aad	ota_image_get_file_length
+0x181ac7	ota_image_get_file_offset
+0x181ae1	ota_image_progress_on
+0x181af7	ota_image_report_progress
+0x181b11	ota_image_check_file
+0x181b26	ota_image_calc_crc
+0x181b39	ota_image_check_head_crc
+0x181b52	ota_image_check_data
+0x181b67	ota_image_check
+0x181b77	ota_image_open
+0x181b86	ota_image_close
+0x181b96	ota_image_bind
+0x181ba5	ota_image_unbind
+0x181bb6	ota_image_init
+0x181bc5	ota_image_exit
+0x181bd4	ota_image_calc_crc
+0x181be7	ota_image_open
+0x181d21	too many ota file cnt: %d
+0x181eb3	OTA new fw version:
+0x182005	RECOVERY
+0x18203b	ota_manifest_parse_partitions
+0x182059	ota_manifest_parse_data
+0x182071	ota_manifest_check_data
+0x182089	ota_manifest_check_file_size
+0x1820a6	ota_manifest_parse_file
+0x1820be	ota_manifest_parse_file
+0x1820e9	cannot found OTA_BP
+0x1821a7	ota_breakpoint_save
+0x1821bb	ota_breakpoint_load
+0x1821cf	ota_breakpoint_set_file_state
+0x1821ed	ota_breakpoint_get_file_state
+0x18220b	ota_breakpoint_clear_all_file_state
+0x18222f	ota_breakpoint_update_state
+0x18224b	ota_breakpoint_init
+0x18227a	libota: version %s ,release time: %s:%s
+0x1852cd	total %d, rec_buf %d
+0x1855bb	sdp_client_get_total
+0x18cc8a	total_len %d, header %d.
+0x18cca3	total_len %d, attrlen %d.
+0x18d502	bitmap font cache info dump: total used %d, peak size %d, max size %d
+0x18d816	font %d, path %s, metric buf %p, data buf %p, cached total %d, cached max %d, cache size now %d, cache size max %d
+0x18dbec	 ###  scene 0x%x, split total_size %d
+0x18dc3e	 #### scene res 0x%x, total_size %d
+0x18dc64	 ###  scene 0x%x, total_size %d
+0x18deeb	_add_preload_total_size
+0x18e25c	rotation <= 270
+0x18e34f	_lvgl_rotate_flag_from_surface
+0x18e7d7	full screen bitmap total %d
+0x18f816	no sw rotation
+0x19107d	section overlay, total count %d

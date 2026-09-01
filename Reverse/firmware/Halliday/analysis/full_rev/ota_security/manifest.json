@@ -1,0 +1,60 @@
+{
+  "leaf": "1.5",
+  "subsystem": "ota_security",
+  "firmware": "HallidayOfficialOTA.bin",
+  "inner_binary": "app.bin",
+  "version": "1.00_2601211113",
+  "board_name": "ats3089_dev_watch",
+  "load_base": "0x10000000",
+  "string_va_rule": "0x10000000 + app.bin file_off",
+  "anchors": [
+    {
+      "va": "0x10181b26",
+      "name": "ota_image_calc_crc",
+      "evidence": "STRING __func__: CRC over OTA image payload; paired with ota_image_check_head_crc @ 0x10181b39 and ota_image_check @ 0x10181b67"
+    },
+    {
+      "va": "0x101813ba",
+      "name": "board_name_gate",
+      "evidence": "STRING log 'unmatched board name, skip ota, not return'; compares cur_ver->board_name vs img_ver->board_name @ 0x10181389; manifest tag board_name @ 0x10181cbd"
+    },
+    {
+      "va": "0x101816c9",
+      "name": "ota_do_upgrade",
+      "evidence": "STRING __func__: top-level apply; calls ota_is_need_upgrade, ota_write_and_verify_file, ota_update_fw_version; success log 'upgrade successfully!' @ 0x101814d5"
+    },
+    {
+      "va": "0x10181666",
+      "name": "ota_rx_thread",
+      "evidence": "STRING __func__: RX worker; logs 'ota_rx thread started' @ 0x10180ca6, 'ota_rx wait rbuf' @ 0x10180cbc; feeds ota_storage_write_sd_nand"
+    },
+    {
+      "va": "0x1014c286",
+      "name": "ota_app_main",
+      "evidence": "STRING __func__: UI/transport orchestrator; init chain ota_app_init @ 0x1014c262, backends ota_backend_bt_init / ota_backend_sdcard_init; blocks keys while OTA running"
+    },
+    {
+      "va": "0x1018203b",
+      "name": "ota_manifest_parse_partitions",
+      "evidence": "STRING __func__: parses ota.xml partition table; sibling ota_manifest_check_data @ 0x10182071; outer checksum TEMP 0xf81cb243 inner app 0xe0362806"
+    },
+    {
+      "va": "0x10181211",
+      "name": "verify_file_crc_log",
+      "evidence": "STRING 'check file %s: crc_orig 0x%x, crc_calc 0x%x'; failure path bad data crc @ 0x101812f3; retry 'OTA upgrade retry after verify failed' @ 0x10181269"
+    },
+    {
+      "va": "0x1014c04c",
+      "name": "OTA_UPG_FLAG",
+      "evidence": "STRING persistent flag name; paired REC_OTA_FLAG @ 0x1014c062; state machine gates on OTA_INIT @ 0x1018129e"
+    }
+  ],
+  "container_anchors": {
+    "outer_aota_magic": "AOTA",
+    "temp_boot_magic": "ACTHHTCA",
+    "lzma_magic": "LZMA\\x10\\x00\\x00\\x00",
+    "export_tool": "Reverse/firmware/Halliday/tools/export_halliday.py",
+    "outer_ota_xml": "Reverse/firmware/Halliday/export/official/layer1/ota.xml",
+    "inner_ota_xml": "Reverse/firmware/Halliday/export/official/layer3/ota.xml"
+  }
+}

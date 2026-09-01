@@ -1,0 +1,20 @@
+0x14d4ef	view_id == HEALTH_BP_VIEW
+0x14d509	WEST_TOPDIR/application/bt_watch/src/launcher/health/bp_view.c
+0x14d559	health_bp
+0x14d5b2	SCENE_SPO2_VIEW not found
+0x14d5cc	view_id == HEALTH_SPO2_VIEW
+0x14d5e8	WEST_TOPDIR/application/bt_watch/src/launcher/health/spo2_view.c
+0x14d629	spo2 view inflated
+0x14d63c	health_spo2
+0x14d648	_spo2_view_load_resource
+0x14d661	_spo2_view_layout
+0x14d673	_spo2_view_layout_update
+0x14d68c	_spo2_view_handler
+0x157142	send_result_simulator
+0x157174	send_result_simulator
+0x15a17a	SENSOR_PARAMETERS
+0x15a3b9	_ble_rx_sensor_command
+0x15a4f6	_ble_rx_sensor_param
+0x1625be	Pull Up and Pull Down should not be enabled simultaneously
+0x182e49	hfp simu outgoing
+0x182ffd	hfp clcc simu return

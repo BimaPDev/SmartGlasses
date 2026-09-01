@@ -1,0 +1,75 @@
+{
+  "leaf": "1.7",
+  "subsystem": "audio_display",
+  "firmware": "HallidayOfficialOTA app.bin (official)",
+  "variant": "official",
+  "app_bin_md5": "32f7cdc25818cdcb853d04702687fc8a",
+  "app_bin_size": 1662592,
+  "xip_base": "0x10000000",
+  "note": "No Ghidra functions.csv for Halliday app.bin yet. Entries are string-anchor VAs (xip_base + file_offset from Reverse/firmware/Halliday/export/official/strings). Names come from adjacent log strings and WEST_TOPDIR paths, not recovered Thumb entry points.",
+  "functions": [
+    {
+      "va": "0x10146c2c",
+      "name": "view_manager_init",
+      "evidence": "Log symbol @ file 0x146c2c; TU WEST_TOPDIR/framework/display/libdisplay/ui_service/view_manager.c @ 0x146648"
+    },
+    {
+      "va": "0x101475a0",
+      "name": "freetype_font_init",
+      "evidence": "Init API @ file 0x1475a0; success log freetype_font_init ok @ 0x147110; pairs _freetype_cache_init @ 0x1475cc"
+    },
+    {
+      "va": "0x1018e199",
+      "name": "lvgl_freetype_font_init",
+      "evidence": "LVGL bridge @ file 0x18e199; lvgl_freetype_font_open @ 0x18e1b1; lvgl_virtual_display.c @ 0x18e1e2"
+    },
+    {
+      "va": "0x101654be",
+      "name": "display_composer_init",
+      "evidence": "Composer init @ file 0x1654be; display_composer.c @ 0x16521a; display_composer_post @ 0x16555f"
+    },
+    {
+      "va": "0x1017e65f",
+      "name": "audio_track_create",
+      "evidence": "Playback track API @ file 0x17e65f; audio_track.c @ 0x17e3cc; stream types AUDIO_STREAM_MUSIC @ 0x159697"
+    },
+    {
+      "va": "0x1016a28b",
+      "name": "acts_audio_out_write",
+      "evidence": "HAL write @ file 0x16a28b; audioout_hal.c @ 0x164786; ACTS-AUDIO OUT initialized @ 0x169e87"
+    },
+    {
+      "va": "0x10182b40",
+      "name": "_bt_manager_a2dp_callback",
+      "evidence": "bt_manager A2DP shim @ file 0x182b40; bt_manager_a2dp_get_codecid @ 0x182b5a; BT A2DP CONNECTION @ 0x158dd4"
+    },
+    {
+      "va": "0x1018a72b",
+      "name": "btsrv_a2dp_init",
+      "evidence": "BT service A2DP init @ file 0x18a72b; a2dp.c @ 0x18b9c3; btsrv_a2dp_process @ 0x18a781"
+    },
+    {
+      "va": "0x10155c1e",
+      "name": "prompter_display_page",
+      "evidence": "Prompter HUD @ file 0x155c1e; font reload prompter_view_reload_content_after_font_change @ 0x155ca9"
+    },
+    {
+      "va": "0x1015b7a1",
+      "name": "audio_memo_start",
+      "evidence": "Audio Memo capture @ file 0x15b7a1; audio_memo_view @ 0x1575cd; gl_audio_memo_recording_started @ 0x15e24c"
+    }
+  ],
+  "source_anchors": [
+    "Reverse/firmware/Halliday/export/official/strings/categorized/audio_display.txt",
+    "WEST_TOPDIR/framework/display/libdisplay/ui_service/view_manager.c",
+    "WEST_TOPDIR/framework/display/lvgl/lvgl_virtual_display.c",
+    "WEST_TOPDIR/framework/audio/audio_track.c",
+    "WEST_TOPDIR/zephyr/framework/audio/audioout_hal.c",
+    "WEST_TOPDIR/framework/bluetooth/bt_stack/libbt_stack/a2dp.c"
+  ],
+  "absences_verified_strings_only": [
+    "No export/functions/app/functions.csv for Halliday",
+    "No aw883xx / smartpa symbols (Star Air pattern does not apply)",
+    "No recovered Thumb VA for audio_track_create body (string anchor only)"
+  ]
+}
