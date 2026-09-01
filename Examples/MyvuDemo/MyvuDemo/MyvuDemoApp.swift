@@ -12,6 +12,9 @@ struct MyvuDemoApp: App {
         // This build exists to capture traffic, so the per-packet wire log is on
         // from launch rather than from whenever the Log tab's toggle is flipped.
         SdkLog.minimumLevel = .trace
+        // iOS wants this before launch finishes, and a banner raised while the
+        // app is open is swallowed without it.
+        AlertPresenter.install()
     }
 
     var body: some Scene {

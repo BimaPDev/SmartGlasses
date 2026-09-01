@@ -48,7 +48,7 @@ struct ConnectionView: View {
                 if let info = model.info {
                     Section("Glasses") {
                         LabeledContent("Name", value: info.name)
-                        LabeledContent("Battery", value: "\(info.battery)%")
+                        LabeledContent("Battery", value: batteryText(info))
                         LabeledContent("Model", value: info.modelId)
                         LabeledContent("Address", value: info.btMac)
                     }
@@ -83,5 +83,12 @@ struct ConnectionView: View {
             }
             .navigationTitle("MYVU")
         }
+    }
+
+    /// The live level once the glasses have pushed one; `info.battery` is the
+    /// pairing snapshot and never updates.
+    private func batteryText(_ info: DeviceInfo) -> String {
+        guard let live = model.battery else { return "\(info.battery)%" }
+        return live.isCharging ? "\(live.percent)% (charging)" : "\(live.percent)%"
     }
 }

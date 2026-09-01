@@ -3,6 +3,7 @@ import Foundation
 import MyvuAI
 import MyvuCore
 import MyvuNav
+import MyvuUniden
 import MyvuWeather
 import SwiftUI
 import UIKit
@@ -22,6 +23,16 @@ final class GlassesModel: ObservableObject {
     @Published var lastError: String?
     @Published private(set) var isConnecting = false
     @Published private(set) var navigating = false
+    /// Cruise HUD state, for the line under the toggle.
+    @Published private(set) var cruiseStatus: CruiseSession.Status = .off
+    @Published private(set) var cruiseDemoRunning = false
+    /// Uniden R-series radar (R4W etc.) — independent of the glasses link.
+    @Published private(set) var unidenState: UnidenClient.State = .idle
+    @Published private(set) var unidenDeviceName: String?
+    @Published private(set) var unidenLastAlert = ""
+    @Published var unidenError: String?
+    /// Latest GPS speed from the Uniden drive watcher, for the status line.
+    @Published private(set) var unidenDriveMph: Int?
     /// True while `WeatherSync` is attached (auto-starts on every ready session).
     @Published private(set) var weatherEnabled = false
     /// The most recent inbound objects, newest last — a rough activity monitor.
@@ -33,6 +44,9 @@ final class GlassesModel: ObservableObject {
     @Published private(set) var firmwareFraction = 0.0
     @Published private(set) var firmwareStatus = ""
     @Published private(set) var renameStatus = ""
+    /// Live battery, from the glasses' own pushes. `info.battery` is only the
+    /// value captured at pairing and never moves.
+    @Published private(set) var battery: GlassesBattery?
 
     /// Persisted so the next launch reconnects without a scan. iOS never
     /// exposes a peripheral's MAC, so this identifier is the only durable handle
@@ -43,15 +57,52 @@ final class GlassesModel: ObservableObject {
     @AppStorage("iosBtName") var iosBtName = "Testing1"
     /// Auto-bring-up the classic-BT audio link once BLE is ready.
     @AppStorage("iosBtAutoConnect") var iosBtAutoConnect = true
+    /// Show street + speed on the lens automatically while driving.
+    @AppStorage("autoCruiseHud") var autoCruiseHud = false
+    /// Which surface the cruise HUD draws on — `lensCard` or `hud`.
+    @AppStorage("cruiseSurface") var cruiseSurfaceRaw = CruiseSession.Surface.lensCard.rawValue
+    /// Mirror the iPhone's notifications onto the lens (ANCS).
+    @AppStorage("phoneNotifications") private var phoneNotificationsRaw = false
+    /// Categories the wearer has muted, comma-separated. Storing the muted ones
+    /// rather than the enabled ones keeps "everything on" as the default.
+    @AppStorage("phoneNotificationsMuted") private var mutedTypesRaw = ""
+    /// Incoming calls are their own flag on the glasses, not a category.
+    @AppStorage("phoneNotificationCalls") private var phoneNotificationCallsRaw = true
+    /// Scan and connect the Uniden radar once GPS holds at 10 mph.
+    @AppStorage("autoUnidenWhileDriving") var autoUnidenWhileDriving = false
+    /// Last Uniden peripheral iOS identifier, so a later drive can skip the scan.
+    @AppStorage("lastUnidenId") private var lastUnidenId = ""
 
     let glasses = MyvuGlasses()
+    let alerts = PhoneAlerts()
+    let contacts = ContactsAccess()
     let spotifyAuth = SpotifyAuth()
     let spotifyLyrics: SpotifyLyricsSession
+
+    /// Alerts the wearer as the glasses' battery falls past each threshold.
+    private let batteryAlerts = BatteryMonitor()
 
     private(set) var assistant: AiSession?
     private(set) var lensScript: LensScript?
     private var weather: WeatherSync?
     private var nav: NavSession?
+    private var cruise: CruiseSession?
+    private var cruiseDemo: CruiseSession?
+    private var cruiseDemoStop: Task<Void, Never>?
+    private let uniden = UnidenClient()
+    private var unidenDriveDetector: DriveDetector?
+    private var lastUnidenAlerts: [UnidenAlert] = []
+    private var lastUnidenIdentity = ""
+    private var lastUnidenSendAt: Date?
+    private var unidenFlushTask: Task<Void, Never>?
+    /// Avoids restarting a BLE scan on every GPS tick after a miss.
+    private var lastUnidenAutoAttempt: Date?
+    /// Long enough to watch the card settle and pick up a street, short enough
+    /// that a forgotten demo clears itself.
+    private static let cruiseDemoSeconds = 90
+    /// Set while tearing the link down on purpose, so the drop that follows is
+    /// not reported as a surprise.
+    private var userIsDisconnecting = false
     private var streams: [Task<Void, Never>] = []
     private var bag = Set<AnyCancellable>()
 
@@ -71,15 +122,42 @@ final class GlassesModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in self?.objectWillChange.send() }
             .store(in: &bag)
+        alerts.objectWillChange
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in self?.objectWillChange.send() }
+            .store(in: &bag)
+        contacts.objectWillChange
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in self?.objectWillChange.send() }
+            .store(in: &bag)
+        // Watching for driving is independent of the glasses being connected,
+        // so it resumes at launch rather than waiting for a session.
+        observeUniden()
+        startCruise()
+        startUnidenDriveWatch()
     }
 
     private func observe() {
         streams.append(Task { [weak self] in
             guard let self else { return }
             for await state in glasses.states() {
+                let wasReady = self.state == .ready
                 self.state = state
+                // Opens or closes the cruise HUD's write gate. On a reconnect
+                // mid-drive this is what puts the card straight back up.
+                self.syncCruiseGate()
+                if wasReady, state != .ready { self.reportGlassesDropped() }
                 if state == .ready {
+                    // The glasses' notification filter is re-asserted on every
+                    // session: it is not known to survive a power cycle, and a
+                    // silent lens is indistinguishable from a quiet phone.
+                    if self.phoneNotifications { self.pushNotificationConfig() }
                     self.info = self.glasses.glassesInfo
+                    // Arms the thresholds above wherever the battery is now, so
+                    // reconnecting at 45% does not re-announce 80% and 50%.
+                    if let level = self.glasses.glassesInfo?.battery {
+                        self.batteryAlerts.seed(percent: level)
+                    }
                     if let id = self.glasses.connectedGlassesId {
                         self.lastGlassesId = id.uuidString
                     }
@@ -97,6 +175,7 @@ final class GlassesModel: ObservableObject {
                     if self.iosBtAutoConnect {
                         self.client.startIosBtKeepAlive(deviceName: self.iosBtName)
                     }
+                    self.pushUnidenCardIfNeeded()
                 }
             }
         })
@@ -107,6 +186,7 @@ final class GlassesModel: ObservableObject {
                 case .unknown(let raw):
                     self.recentInbound.append(raw)
                     if self.recentInbound.count > 50 { self.recentInbound.removeFirst() }
+                    self.checkBattery(raw)
                 case .fileReceived(let url, let name, let bytes):
                     self.lastReceivedFile = url
                     self.lastReceivedLabel = "\(name) (\(bytes) bytes)"
@@ -151,6 +231,7 @@ final class GlassesModel: ObservableObject {
     }
 
     func disconnect() {
+        userIsDisconnecting = true
         glasses.disconnect()
         info = nil
         firmwareBusy = false
@@ -229,6 +310,93 @@ final class GlassesModel: ObservableObject {
         lastGlassesId = ""
     }
 
+    // MARK: - Notifications
+
+    /// Mirror the iPhone's notifications onto the lens.
+    ///
+    /// This only flips the glasses' own master switch (`SYNC_SMART_REMINDER_CONFIG`);
+    /// the notifications themselves travel over ANCS, straight from iOS to the
+    /// glasses, and need an ordinary Bluetooth pairing in Settings. Without the
+    /// switch the firmware drops them and complains that notifications are not
+    /// enabled in the MYVU app.
+    var phoneNotifications: Bool {
+        get { phoneNotificationsRaw }
+        set {
+            objectWillChange.send()
+            phoneNotificationsRaw = newValue
+            pushNotificationConfig()
+        }
+    }
+
+    var phoneNotificationCalls: Bool {
+        get { phoneNotificationCallsRaw }
+        set {
+            objectWillChange.send()
+            phoneNotificationCallsRaw = newValue
+            pushNotificationConfig()
+        }
+    }
+
+    private var mutedTypes: Set<String> {
+        get { Set(mutedTypesRaw.split(separator: ",").map(String.init)) }
+        set { mutedTypesRaw = newValue.sorted().joined(separator: ",") }
+    }
+
+    func isNotificationType(_ type: String) -> Bool { !mutedTypes.contains(type) }
+
+    func setNotificationType(_ type: String, on: Bool) {
+        objectWillChange.send()
+        var muted = mutedTypes
+        if on { muted.remove(type) } else { muted.insert(type) }
+        mutedTypes = muted
+        pushNotificationConfig()
+    }
+
+    private func pushNotificationConfig() {
+        guard isReady else { return }
+        let types = Dictionary(uniqueKeysWithValues:
+            Notifications.allTypes.map { ($0, isNotificationType($0)) })
+        glasses.enablePhoneNotifications(phoneNotificationsRaw, types: types,
+                                         calls: phoneNotificationCallsRaw)
+    }
+
+    /// Puts one person from the address book on the lens.
+    func showContact(_ person: ContactsAccess.Person) {
+        glasses.showLensCard(title: person.name,
+                             body: person.detail.isEmpty ? "No number saved" : person.detail,
+                             numericId: LensCards.contactNumericId)
+    }
+
+    /// A drop the wearer did not ask for is worth a banner, because the glasses
+    /// go quiet without saying so and the phone is usually in a pocket.
+    private func reportGlassesDropped() {
+        guard !userIsDisconnecting else { return userIsDisconnecting = false }
+        guard UIApplication.shared.applicationState != .active else { return }
+        alerts.post(title: "Glasses disconnected",
+                    body: "The link to \(info?.name ?? "your glasses") dropped.",
+                    id: "glasses-dropped")
+    }
+
+    /// One inbound object; only battery pushes get past the first line.
+    private func checkBattery(_ raw: String) {
+        guard let msg = JsonReader(parsing: raw),
+              let level = BatteryFeed.parse(msg) else { return }
+        battery = level
+        guard let threshold = batteryAlerts.update(level) else { return }
+
+        let name = info?.name ?? "Your glasses"
+        // Below 20% the wearer needs to DO something; above it this is just a
+        // heads-up, and reading like an emergency every time would train them
+        // to ignore the one that matters.
+        let body = threshold <= 20
+            ? "\(name) is down to \(level.percent)% — worth charging now."
+            : "\(name) is at \(level.percent)%."
+        alerts.post(title: "Glasses battery \(threshold)%", body: body,
+                    // Stable per threshold: a repeat replaces its predecessor
+                    // in Notification Center instead of stacking.
+                    id: "glasses-battery-\(threshold)")
+    }
+
     // MARK: - Feature modules
 
     /// Keeps the glasses' weather panel fed and answers their refresh requests.
@@ -289,6 +457,271 @@ final class GlassesModel: ObservableObject {
         assistant = nil
     }
 
+    // MARK: - Uniden radar
+
+    /// Manual scan/connect. Phone notification permission is requested here so
+    /// a later GATT hit can raise a banner without a silent drop.
+    func connectUniden() {
+        unidenError = nil
+        alerts.request()
+        let id = UUID(uuidString: lastUnidenId)
+        uniden.connect(knownId: id)
+    }
+
+    func disconnectUniden() {
+        uniden.disconnect()
+    }
+
+    func setAutoUnidenWhileDriving(_ on: Bool) {
+        autoUnidenWhileDriving = on
+        if on {
+            alerts.request()
+            startUnidenDriveWatch()
+        } else {
+            stopUnidenDriveWatch()
+        }
+    }
+
+    private func observeUniden() {
+        uniden.onStateChange = { [weak self] state, name, id in
+            Task { @MainActor in
+                guard let self else { return }
+                self.unidenState = state
+                self.unidenDeviceName = name
+                if state == .connected, let id {
+                    self.lastUnidenId = id.uuidString
+                }
+                if state == .idle {
+                    self.clearUnidenCard()
+                }
+            }
+        }
+        uniden.onAlerts = { [weak self] hits in
+            Task { @MainActor in self?.handleUnidenAlerts(hits) }
+        }
+        uniden.onError = { [weak self] message in
+            Task { @MainActor in self?.unidenError = message }
+        }
+    }
+
+    private func startUnidenDriveWatch() {
+        guard autoUnidenWhileDriving, unidenDriveDetector == nil else { return }
+        let detector = DriveDetector(
+            scheduler: client.scheduler,
+            location: CoreLocationSource(allowsBackgroundUpdates: true),
+            // GPS 10 mph is the gate. CoreMotion often reads "walking" for a
+            // phone on a seat or in a pocket and would block auto-connect.
+            motion: NoMotionSource(),
+            startSpeedMps: UnidenDrive.startSpeedMps,
+            startHold: 2)
+        detector.start(onUpdate: { [weak self] update in
+            Task { @MainActor in
+                guard let self else { return }
+                if update.fix.speedMps >= 0 {
+                    self.unidenDriveMph = Int((update.fix.speedMps * 2.236936294).rounded())
+                }
+                guard update.isDriving else { return }
+                self.connectUnidenIfIdle()
+            }
+        }, onUnavailable: { [weak self] reason in
+            Task { @MainActor in self?.unidenError = reason }
+        })
+        unidenDriveDetector = detector
+    }
+
+    private func stopUnidenDriveWatch() {
+        unidenDriveDetector?.stop()
+        unidenDriveDetector = nil
+        unidenDriveMph = nil
+    }
+
+    private func connectUnidenIfIdle() {
+        guard unidenState == .idle else { return }
+        let now = Date()
+        if let last = lastUnidenAutoAttempt, now.timeIntervalSince(last) < 20 { return }
+        lastUnidenAutoAttempt = now
+        connectUniden()
+    }
+
+    private func handleUnidenAlerts(_ hits: [UnidenAlert]) {
+        lastUnidenAlerts = hits
+        switch UnidenAlertGate.decision(hasHits: !hits.isEmpty,
+                                       lastSentAt: lastUnidenSendAt,
+                                       now: Date()) {
+        case .clear:
+            unidenFlushTask?.cancel()
+            unidenFlushTask = nil
+            lastUnidenSendAt = nil
+            lastUnidenIdentity = ""
+            unidenLastAlert = ""
+            clearUnidenCard()
+        case .sendNow:
+            unidenFlushTask?.cancel()
+            unidenFlushTask = nil
+            emitUnidenAlerts(hits)
+        case .wait(let delay):
+            scheduleUnidenFlush(after: delay)
+        }
+    }
+
+    private func scheduleUnidenFlush(after delay: TimeInterval) {
+        guard unidenFlushTask == nil else { return }
+        unidenFlushTask = Task { [weak self] in
+            let ns = UInt64(max(delay, 0) * 1_000_000_000)
+            try? await Task.sleep(nanoseconds: ns)
+            await MainActor.run {
+                guard let self, !Task.isCancelled else { return }
+                self.unidenFlushTask = nil
+                guard !self.lastUnidenAlerts.isEmpty else { return }
+                self.emitUnidenAlerts(self.lastUnidenAlerts)
+            }
+        }
+    }
+
+    private func emitUnidenAlerts(_ hits: [UnidenAlert]) {
+        lastUnidenSendAt = Date()
+        let title = UnidenAlertCard.title(for: hits)
+        let body = UnidenAlertCard.body(for: hits)
+        unidenLastAlert = "\(title) · \(body)"
+        pushUnidenCard(title: title, body: body)
+        let identity = hits.map { "\($0.type)|\($0.rawValue)|\($0.direction)" }
+            .joined(separator: "&")
+        guard identity != lastUnidenIdentity else { return }
+        lastUnidenIdentity = identity
+        alerts.post(title: title, body: body, id: "uniden-radar")
+    }
+
+    private func pushUnidenCardIfNeeded() {
+        guard !lastUnidenAlerts.isEmpty else { return }
+        pushUnidenCard(title: UnidenAlertCard.title(for: lastUnidenAlerts),
+                       body: UnidenAlertCard.body(for: lastUnidenAlerts))
+    }
+
+    private func pushUnidenCard(title: String, body: String) {
+        guard isReady else { return }
+        glasses.showLensCard(title: title, body: body,
+                             numericId: LensCards.unidenAlertNumericId)
+    }
+
+    private func clearUnidenCard() {
+        lastUnidenAlerts = []
+        unidenLastAlert = ""
+        guard isReady else { return }
+        glasses.dismissLensCard(numericId: LensCards.unidenAlertNumericId)
+    }
+
+    // MARK: - Cruise HUD (auto street + speed while driving)
+
+    /// Starts or stops watching for driving. The detector runs whenever this is
+    /// on, glasses connected or not, so the card appears the moment they come
+    /// back mid-drive.
+    func setAutoCruiseHud(_ on: Bool) {
+        autoCruiseHud = on
+        if on {
+            startCruise()
+        } else {
+            cruise?.stop()
+            cruise = nil
+            cruiseStatus = .off
+        }
+    }
+
+    var cruiseSurface: CruiseSession.Surface {
+        get { CruiseSession.Surface(rawValue: cruiseSurfaceRaw) ?? .lensCard }
+        set {
+            guard newValue != cruiseSurface else { return }
+            cruiseSurfaceRaw = newValue.rawValue
+            // The surface is fixed for a session's lifetime, so switching means
+            // tearing the current one down (which clears whatever it drew).
+            let demoWasRunning = cruiseDemoRunning
+            cruise?.stop()
+            cruise = nil
+            cruiseStatus = .off
+            // Flipping the picker mid-demo is the whole point of the demo, so
+            // restart it on the new surface rather than dropping the preview.
+            if demoWasRunning {
+                startCruiseDemo()
+            } else {
+                startCruise()
+            }
+        }
+    }
+
+    private func startCruise() {
+        guard autoCruiseHud, cruise == nil else { return }
+        // Same background-updates requirement as turn-by-turn: without them the
+        // detector dies at screen-lock, which is most of a drive.
+        let detector = DriveDetector(
+            scheduler: client.scheduler,
+            location: CoreLocationSource(allowsBackgroundUpdates: true),
+            motion: CoreMotionSource())
+        let session = CruiseSession(client: client, detector: detector,
+                                    surface: cruiseSurface)
+        session.onStatus = { [weak self] status in
+            Task { @MainActor in self?.cruiseStatus = status }
+        }
+        session.start()
+        session.setCanSend(isReady && !navigating)
+        cruise = session
+    }
+
+    /// The glasses can only be written to when the session is live and
+    /// turn-by-turn is not already using the lens.
+    private func syncCruiseGate() {
+        cruise?.setCanSend(isReady && !navigating)
+        cruiseDemo?.setCanSend(isReady && !navigating)
+    }
+
+    /// Runs the cruise HUD off a fake track so it can be seen — and the two
+    /// surfaces compared — without driving.
+    ///
+    /// Deliberately the real pipeline: same detector, same geocode, same speed
+    /// limit lookup, same renderer. Only the fixes are invented, and they start
+    /// from the phone's actual position, so the street on the lens is the real
+    /// one for where you are.
+    func startCruiseDemo() {
+        stopCruiseDemo()
+        // The live session and the demo would otherwise both write the lens.
+        cruise?.stop()
+        cruise = nil
+
+        let detector = DriveDetector(
+            scheduler: client.scheduler,
+            location: SimulatedLocationSource(origin: CoreLocationSource()),
+            motion: SimulatedMotionSource(),
+            // A demo nobody is willing to wait 8 seconds for is a demo nobody
+            // runs; the real thresholds stay untouched.
+            startHold: 2,
+            stopHold: 3)
+        let session = CruiseSession(client: client, detector: detector,
+                                    surface: cruiseSurface)
+        session.onStatus = { [weak self] status in
+            Task { @MainActor in self?.cruiseStatus = status }
+        }
+        session.start()
+        session.setCanSend(isReady && !navigating)
+        cruiseDemo = session
+        cruiseDemoRunning = true
+
+        cruiseDemoStop = Task { [weak self] in
+            try? await Task.sleep(nanoseconds: UInt64(Self.cruiseDemoSeconds) * 1_000_000_000)
+            guard !Task.isCancelled else { return }
+            await MainActor.run { self?.stopCruiseDemo() }
+        }
+    }
+
+    func stopCruiseDemo() {
+        cruiseDemoStop?.cancel()
+        cruiseDemoStop = nil
+        guard cruiseDemo != nil else { return }
+        cruiseDemo?.stop()
+        cruiseDemo = nil
+        cruiseDemoRunning = false
+        cruiseStatus = .off
+        // Hand the lens back to the live watcher if the toggle is still on.
+        startCruise()
+    }
+
     func startNavigation(to destination: String) {
         stopNavigation()
         // Background updates, or guidance stops the moment the screen locks —
@@ -302,12 +735,14 @@ final class GlassesModel: ObservableObject {
         session.start(destination)
         nav = session
         navigating = true
+        syncCruiseGate()
     }
 
     func stopNavigation() {
         nav?.stop()
         nav = nil
         navigating = false
+        syncCruiseGate()
     }
 
     // MARK: - Lens script (BLE teleprompter substitute)

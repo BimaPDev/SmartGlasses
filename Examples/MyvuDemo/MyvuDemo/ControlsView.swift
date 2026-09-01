@@ -25,6 +25,7 @@ struct ControlsView: View {
     @State private var scriptIndexLabel = ""
     @State private var scriptParagraph = 0
     @State private var confirmOta = false
+    @State private var contactSearch = ""
 
     var body: some View {
         NavigationStack {
@@ -137,21 +138,100 @@ struct ControlsView: View {
                 .requiresSession(model.isReady)
 
                 Section {
+                    Toggle("Show them on the lens",
+                           isOn: Binding(get: { model.phoneNotifications },
+                                         set: { model.phoneNotifications = $0 }))
+                    if model.phoneNotifications {
+                        Toggle("Calls",
+                               isOn: Binding(get: { model.phoneNotificationCalls },
+                                             set: { model.phoneNotificationCalls = $0 }))
+                        ForEach(Self.notificationKinds, id: \.type) { kind in
+                            Toggle(kind.label,
+                                   isOn: Binding(
+                                    get: { model.isNotificationType(kind.type) },
+                                    set: { model.setNotificationType(kind.type, on: $0) }))
+                        }
+                    }
+                } header: {
+                    Text("iPhone notifications")
+                } footer: {
+                    Text(mirroringFooter)
+                }
+                .requiresSession(model.isReady)
+
+                Section {
+                    switch model.alerts.status {
+                    case .authorized, .provisional, .ephemeral:
+                        Label("Alerts are on", systemImage: "checkmark.circle.fill")
+                            .foregroundStyle(.green)
+                        Button("Send a test banner") {
+                            model.alerts.post(title: "MyvuDemo",
+                                              body: "Alerts from this app are working.")
+                        }
+                    case .denied:
+                        Button("Open Settings to turn alerts on") {
+                            model.alerts.openSettings()
+                        }
+                    default:
+                        Button("Turn on alerts from this app") { model.alerts.request() }
+                    }
+                    if !model.alerts.lastResult.isEmpty {
+                        Text(model.alerts.lastResult)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                } header: {
+                    Text("Alerts from this app")
+                } footer: {
+                    Text("Banners on the phone, not the lens. Used to say when the "
+                        + "glasses drop off while you are in another app.")
+                }
+
+                Section {
+                    if model.contacts.isAuthorized {
+                        TextField("Search contacts", text: $contactSearch)
+                            .autocorrectionDisabled()
+                            .onChange(of: contactSearch) { _, text in
+                                model.contacts.find(text)
+                            }
+                        ForEach(model.contacts.matches) { person in
+                            Button {
+                                model.showContact(person)
+                            } label: {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(person.name)
+                                    if !person.detail.isEmpty {
+                                        Text(person.detail)
+                                            .font(.footnote)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
+                            }
+                            .disabled(!model.isReady)
+                        }
+                    } else {
+                        Button(model.contacts.status == .denied
+                            ? "Open Settings to allow contacts"
+                            : "Allow contacts") { model.contacts.request() }
+                    }
+                } header: {
+                    Text("Contacts")
+                } footer: {
+                    Text(contactsFooter)
+                }
+
+                Section {
                     TextField("Title", text: $notificationTitle)
                     TextField("Body", text: $notificationBody)
                     Button("Send") {
                         model.glasses.showNotification(title: notificationTitle,
                                                        body: notificationBody)
                     }
-                    Button("Allow iPhone texts on the lens") {
-                        model.glasses.enablePhoneNotifications(true)
-                    }
                 } header: {
-                    Text("Notification")
+                    Text("Test card")
                 } footer: {
-                    Text("Send is a card from this app. Texts need a Bluetooth bond "
-                        + "in Settings, then Allow iPhone texts (ANCS). This app "
-                        + "cannot read iMessage itself.")
+                    Text("Pushes one card from this app to the lens, which works "
+                        + "whether or not mirroring is on.")
                 }
                 .requiresSession(model.isReady)
 
@@ -321,9 +401,42 @@ struct ControlsView: View {
                 .requiresSession(model.isReady)
             }
             .navigationTitle("Controls")
+            // Permission can be revoked in Settings while the app is away, and
+            // iOS never tells the app about it.
+            .onReceive(NotificationCenter.default
+                .publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                    model.alerts.refresh()
+                    model.contacts.refresh()
+            }
         }
     }
 
+    /// The categories the glasses' filter understands, in the official app's
+    /// order, under names that mean something to a wearer.
+    private static let notificationKinds: [(type: String, label: String)] = [
+        (Notifications.typeIm, "Texts and chats"),
+        (Notifications.typeReminder, "Reminders"),
+        (Notifications.typeTaxi, "Rides"),
+        (Notifications.typeFlight, "Flights"),
+        (Notifications.typeTakeout, "Food orders"),
+        (Notifications.typeExpress, "Deliveries"),
+        (Notifications.typeWeather, "Weather"),
+    ]
+
+    private var mirroringFooter: String {
+        "Sends your phone's notifications to the lens over ANCS. The glasses "
+            + "read them from iOS directly, so they must also be paired in "
+            + "Settings > Bluetooth; this app cannot read Messages itself. "
+            + "Re-sent on every connection. If nothing arrives, check that the "
+            + "glasses are Connected in Settings > Bluetooth, that no Focus is "
+            + "on, and that Zen mode below is off."
+    }
+
+    private var contactsFooter: String {
+        "Puts one person on the lens as a card. The glasses have no phonebook "
+            + "to sync into, so nothing is uploaded — a name is read only when "
+            + "you tap it."
+    }
 
     /// Fires IOS_CONNECT_BT every 3s for 30s, so it keeps trying while the user
     /// switches to Settings > Bluetooth (which makes the phone discoverable).
