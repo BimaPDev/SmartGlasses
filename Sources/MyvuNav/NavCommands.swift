@@ -132,6 +132,94 @@ public enum NavCommands {
         buildEvent("navi_stop", naviMode: 0, nowMs: nowMs)
     }
 
+    /// Epoch millis shifted so a 24-hour clock renders the 12-hour HOUR.
+    ///
+    /// The nav page's clock is `%02d:%02d` with no am/pm string anywhere in the
+    /// firmware, so 13:45 cannot be made to print "1:45 PM". What it CAN print
+    /// is "01:45" — by being handed a timestamp 12 hours earlier. The glasses
+    /// draw whatever hour they are given; only the number is a lie.
+    ///
+    /// WHETHER THIS REACHES THE CLOCK IS UNPROVEN. `NaviMileageAndTimeWidget`
+    /// draws the time, but nothing in the decompilation ties it to `ack` rather
+    /// than the device RTC — and `ack` may equally be a freshness stamp, in
+    /// which case a 12-hour-old value gets the whole frame dropped. Send it,
+    /// look at the lens, revert if the HUD goes stale.
+    ///
+    /// The shift is whole hours, so minutes stay honest.
+    public static func twelveHourAck(nowMs: Int64 = Session.nowMillis(),
+                                     calendar: Calendar = .current) -> Int64 {
+        let hour = calendar.component(.hour, from: Date(timeIntervalSince1970:
+            Double(nowMs) / 1000))
+        // Noon and midnight both read as 12 on a 12-hour face, so a bare
+        // `hour % 12` would print midnight as "00" and noon as "00".
+        let shown = hour % 12 == 0 ? 12 : hour % 12
+        return nowMs - Int64(hour - shown) * 3_600_000
+    }
+
+    /// Lights up `NaviDriveSpeedView` — the round speed bubble the nav page
+    /// normally uses for speed-camera zones, and the only numeric speed display
+    /// on that page (`ns` in `navi_info` draws nothing).
+    ///
+    /// THE SHAPE HERE IS INFERRED, NOT CAPTURED. The firmware's handler
+    /// references `cameraIntervalInfo`, then `intervalCameraInfo`, then errors
+    /// with "array_item is null" before reading `carEnterCameraStatus` and
+    /// `cameraSpeed` — which reads as an array of items nested under an outer
+    /// object. Which of the two names is the wrapper and which is the array is
+    /// genuinely unclear from strings alone, so the array is published under
+    /// both; a JSON parser ignores the key it does not want.
+    ///
+    /// - Parameter speed: the number to draw. The widget's unit label is a
+    ///   hardcoded `km/h` that no message can change.
+    /// - Parameter entering: `carEnterCameraStatus` — 1 shows the bubble, 0 is
+    ///   the "left the zone" state used to clear it.
+    public static func buildCameraSpeed(_ speed: Int, entering: Bool = true,
+                                        nowMs: Int64 = Session.nowMillis()) -> String {
+        var item = JsonObject()
+        item.put("carEnterCameraStatus", entering ? 1 : 0)
+        item.put("cameraSpeed", speed)
+
+        let array = JsonValue.array([.object(item)])
+        var inner = JsonObject()
+        inner.put("intervalCameraInfo", array)
+
+        var out = JsonObject()
+        out.put("identity", "interval_camera_info")
+        out.put("cameraIntervalInfo", .object(inner))
+        out.put("intervalCameraInfo", array)
+        out.put("ack", nowMs)
+        return out.serialized()
+    }
+
+    /// A frame for the CRUISE HUD — current road and speed with no destination.
+    ///
+    /// The nav page has no route-less mode of its own, so this is a normal
+    /// `navi_info` frame with the route fields zeroed: the road and speed go in
+    /// the only free-text slot there is (`nrn`, nominally "next road"), and the
+    /// maneuver arrow is forced straight ahead because there is no turn to
+    /// describe.
+    ///
+    /// UNITS: `ns` must be KM/H here. `NaviDriveSpeedView` draws a hardcoded
+    /// `km/h` label (there is no `mph` string anywhere in the firmware), so
+    /// sending mph would render a correct number under a wrong unit.
+    ///
+    /// `speedMph` is deliberately routed into `nrd`, the maneuver-distance slot.
+    /// That slot is the only LARGE numeral the page draws, and with no route
+    /// there is no maneuver to describe — so it holds the speed instead. The
+    /// page appends its own `m` to whatever goes there and no message can stop
+    /// it, so the number reads correctly under a unit that does not apply.
+    public static func cruiseFrame(roadName: String, speedKmh: Int, speedMph: Int,
+                                   tripDistanceM: Int, hasFix: Bool) -> Frame {
+        Frame(ic: IcMap.defaultIc,
+              pathDistanceM: 0,
+              remainingM: 0,
+              remainingS: 0,
+              nextRoadName: roadName,
+              nextRoadDistanceM: speedMph,
+              speed: String(speedKmh),
+              rideDistanceM: tripDistanceM,
+              gpsStatus: hasFix ? 1 : 0)
+    }
+
     /// Key order is load-bearing only insofar as it matches the captured frames;
     /// keeping one writer means `navi_info` and `navi_start` cannot drift apart.
     private static func putFrame(_ f: Frame, into json: inout JsonObject) {

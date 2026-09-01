@@ -14,6 +14,7 @@ import MyvuCore
 /// Location background mode, and set `allowsBackgroundUpdates`.
 public final class CoreLocationSource: NSObject, LocationSourceProviding {
     private let manager = CLLocationManager()
+    private let wantsBackground: Bool
     /// Set only while started, so a stray delegate callback after `stop` is
     /// simply ignored.
     private var onFix: ((LocationFix) -> Void)?
@@ -23,6 +24,7 @@ public final class CoreLocationSource: NSObject, LocationSourceProviding {
     ///   backgrounded. Requires Always authorisation and the Location background
     ///   mode; CoreLocation raises an exception if it is set without them.
     public init(allowsBackgroundUpdates: Bool = false) {
+        self.wantsBackground = allowsBackgroundUpdates
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -45,13 +47,29 @@ public final class CoreLocationSource: NSObject, LocationSourceProviding {
 
         switch manager.authorizationStatus {
         case .notDetermined:
-            // Updates begin from the authorisation callback instead.
-            manager.requestWhenInUseAuthorization()
+            requestAuthorization()
         case .denied, .restricted:
             onUnavailable("location access is denied")
+        case .authorizedWhenInUse:
+            #if os(iOS)
+                if wantsBackground { manager.requestAlwaysAuthorization() }
+            #endif
+            manager.startUpdatingLocation()
         default:
             manager.startUpdatingLocation()
         }
+    }
+
+    private func requestAuthorization() {
+        #if os(iOS)
+            if wantsBackground {
+                manager.requestAlwaysAuthorization()
+            } else {
+                manager.requestWhenInUseAuthorization()
+            }
+        #else
+            manager.requestAlwaysAuthorization()
+        #endif
     }
 
     public func stop() {
@@ -84,6 +102,11 @@ extension CoreLocationSource: CLLocationManagerDelegate {
         guard onFix != nil else { return }
         switch manager.authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
+            #if os(iOS)
+                if wantsBackground, manager.authorizationStatus == .authorizedWhenInUse {
+                    manager.requestAlwaysAuthorization()
+                }
+            #endif
             manager.startUpdatingLocation()
         case .denied, .restricted:
             onUnavailable?("location access was denied")
