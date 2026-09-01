@@ -86,6 +86,21 @@ final class JsonShapeTests: XCTestCase {
         XCTAssertNotNil(cfg["notificationDisplayTime"])
     }
 
+    func testMutingOneCategoryStillSendsTheWholeFilter() {
+        let action = TestJson.object(
+            Notifications.buildSyncConfig(enabled: true,
+                                          types: [Notifications.typeWeather: false],
+                                          calls: false))
+        let cfg = TestJson.nested(TestJson.nested(action, "data"), "data")
+        XCTAssertEqual(TestJson.bool(cfg, "callNotificationState"), false)
+        let types = cfg["reminderOpenState"] as? [String: Any] ?? [:]
+        // A category the firmware never hears about is a category it cannot
+        // honour, so every key ships on every push — muted or not.
+        XCTAssertEqual(types.count, Notifications.allTypes.count)
+        XCTAssertEqual(TestJson.bool(types, Notifications.typeWeather), false)
+        XCTAssertEqual(TestJson.bool(types, Notifications.typeIm), true)
+    }
+
     func testStMessageEnvelopeCarriesBothPackagesAndAnId() {
         // {2:src, 3:dst, 4:json, 6:msgId} — verify the packages appear and the
         // body is embedded verbatim.

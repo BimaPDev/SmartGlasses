@@ -21,9 +21,12 @@ xcuserdata/
 DerivedData/
 *.xcuserstate
 
-# Ghidra headless project (rebuilt by firmware/ghidra/import_bth.sh)
+# Ghidra headless project (rebuilt by Halliday/ghidra/import_app.sh)
 Reverse/firmware/ghidra/project/
 Reverse/firmware/ghidra/analyzeHeadless.log
+Reverse/firmware/Halliday/ghidra/project/
+Reverse/firmware/Halliday/ghidra/analyzeHeadless.log
+Reverse/firmware/Halliday/ghidra/import.log
 
 # Unlazy session ledgers, leases, and hook state (Leonxlnx/unlazy)
 .unlazy/

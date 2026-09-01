@@ -22,6 +22,12 @@ public enum Notifications {
     public static let typeExpress = "MSG_TYPE_EXPRESS"
     public static let typeWeather = "MSG_TYPE_WEATHER"
 
+    /// Every key `reminderOpenState` understands, in the order the official app
+    /// lists them. `MSG_TYPE_NORMAL` is deliberately absent: that is the type on
+    /// an individual pushed card, not a category the filter knows about.
+    public static let allTypes = [typeIm, typeReminder, typeTaxi, typeFlight,
+                                  typeTakeout, typeExpress, typeWeather]
+
     /// Longest title/content we will send. The glasses render on a small lens and
     /// have shown themselves to be fragile about malformed notification
     /// payloads, so oversized text is truncated rather than trusted to their
@@ -116,26 +122,28 @@ public enum Notifications {
 
     /// Gson field names from `NotificationConfig` (no `@SerializedName`).
     /// This is JSON on `action: notification`, not the protobuf notify path.
+    ///
+    /// - Parameter types: per-category switches keyed by the `MSG_TYPE_*`
+    ///   constants. Every key in `allTypes` is always written, because the
+    ///   firmware reads `reminderOpenState` as a whole object; categories left
+    ///   out of this map are sent as on.
     public static func buildSyncConfig(enabled: Bool,
-                                       includeIm: Bool = true,
+                                       types: [String: Bool] = [:],
+                                       calls: Bool = true,
                                        dismissMs: Int64 = 10_000) -> String {
-        var types = JsonObject()
-        types.put(typeIm, includeIm)
-        types.put(typeReminder, true)
-        types.put(typeTaxi, true)
-        types.put(typeFlight, true)
-        types.put(typeTakeout, true)
-        types.put(typeExpress, true)
-        types.put(typeWeather, true)
+        var openState = JsonObject()
+        for type in allTypes {
+            openState.put(type, types[type] ?? true)
+        }
 
         var cfg = JsonObject()
         cfg.put("notificationControlState", enabled)
         cfg.put("reminderScenesControlState", true)
-        cfg.put("reminderOpenState", types)
+        cfg.put("reminderOpenState", openState)
         cfg.put("notificationDisplayTime", dismissMs)
         cfg.put("notificationBroadcast", false)
         cfg.put("notificationBrightenScreen", true)
-        cfg.put("callNotificationState", true)
+        cfg.put("callNotificationState", calls)
         cfg.put("scheduleDisplayTime", 30_000)
         cfg.put("notificationBroadcastPauseType", 2)
         return envelope(syncConfig, .object(cfg))

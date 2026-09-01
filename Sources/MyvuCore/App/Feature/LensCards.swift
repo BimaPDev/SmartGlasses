@@ -10,6 +10,14 @@ public enum LensCards {
     /// a new card every tap.
     public static let scriptNumericId = 7_010_001
     public static let guideNumericId = 7_010_002
+    /// Cruise HUD (street + speed while driving). Distinct from `guideNumericId`
+    /// so turn-by-turn and cruise never overwrite one another's card.
+    public static let cruiseNumericId = 7_010_003
+    /// A person looked up in the phone's address book.
+    public static let contactNumericId = 7_010_004
+    /// Uniden radar/laser hits. Distinct from cruise so a KA alert does not
+    /// replace the street+speed card.
+    public static let unidenAlertNumericId = 7_010_005
 
     public static func buildShow(title: String, body: String, numericId: Int,
                                  nowMs: Int64 = Session.nowMillis()) -> String {

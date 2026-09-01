@@ -144,8 +144,10 @@ public final class MyvuGlasses {
         client.showNotification(title: title, body: body)
     }
 
-    public func enablePhoneNotifications(_ enabled: Bool = true) {
-        client.enablePhoneNotifications(enabled)
+    public func enablePhoneNotifications(_ enabled: Bool = true,
+                                         types: [String: Bool] = [:],
+                                         calls: Bool = true) {
+        client.enablePhoneNotifications(enabled, types: types, calls: calls)
     }
 
     public func showLensCard(title: String, body: String,

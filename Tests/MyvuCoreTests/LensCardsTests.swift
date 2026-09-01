@@ -38,4 +38,10 @@ final class LensCardsTests: XCTestCase {
         XCTAssertTrue(sent[3].contains("DISMISS_NOTIFICATION"))
         XCTAssertTrue(script.isEmpty)
     }
+
+    func testUnidenAlertIdDoesNotCollideWithCruise() {
+        XCTAssertEqual(LensCards.unidenAlertNumericId, 7_010_005)
+        XCTAssertNotEqual(LensCards.unidenAlertNumericId, LensCards.cruiseNumericId)
+        XCTAssertNotEqual(LensCards.unidenAlertNumericId, LensCards.contactNumericId)
+    }
 }

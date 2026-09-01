@@ -912,8 +912,14 @@ public final class MyvuClient {
     /// a real OS BLE bond with the glasses (Settings > Bluetooth), which is
     /// separate from the StarryNet ECDH session this SDK already does. A
     /// third-party iOS app cannot read Messages itself.
-    public func enablePhoneNotifications(_ enabled: Bool = true) {
-        sendAction(Notifications.buildSyncConfig(enabled: enabled))
+    ///
+    /// Whether the glasses keep the flag across a power cycle is unverified, so
+    /// callers should re-send it on each ready session rather than once.
+    public func enablePhoneNotifications(_ enabled: Bool = true,
+                                         types: [String: Bool] = [:],
+                                         calls: Bool = true) {
+        sendAction(Notifications.buildSyncConfig(enabled: enabled, types: types,
+                                                 calls: calls))
     }
 
     /// Shows or updates a stable lens card (same numeric id replaces in place).
