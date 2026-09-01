@@ -1,0 +1,137 @@
+{
+  "leaf": "1.6",
+  "package": "com.uniden.rtach",
+  "topic": "ui_features",
+  "version": "1.0.9",
+  "launcher": "com.uniden.rtach.p005ui.activity.SplashActivity",
+  "anchors": [
+    {
+      "id": "manifest-activities",
+      "path": "decompiled/resources/AndroidManifest.xml",
+      "lines": "65-90",
+      "symbol": "activity",
+      "note": "Seven com.uniden.rtach activities; only SplashActivity is exported with MAIN/LAUNCHER."
+    },
+    {
+      "id": "splash-to-ble",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/activity/SplashActivity.java",
+      "lines": "51-77",
+      "symbol": "SplashActivity.initUi",
+      "note": "3s delay then startActivity(BLeDeviceListActivity) and finish."
+    },
+    {
+      "id": "ble-scan-vm",
+      "path": "decompiled/sources/com/uniden/rtach/viewmodel/BleDeviceListViewModel.java",
+      "lines": "55-125",
+      "symbol": "BleDeviceListViewModel.startBleScan",
+      "note": "Refresh/swipe call startBleScan(); filters names containing R4, R8, R9, AE903i."
+    },
+    {
+      "id": "ble-to-dashboard",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/base/BaseActivity.java",
+      "lines": "501-553",
+      "symbol": "BaseActivity.initObservables",
+      "note": "STATE_CONNECTED on BLeDeviceListActivity waits 5s then startActivity(DashboardActivity) and finish."
+    },
+    {
+      "id": "drawer-loadmenu",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/activity/DashboardActivity.java",
+      "lines": "1078-1158",
+      "symbol": "DashboardActivity.loadMenu",
+      "note": "NavigationMenuModel items: Settings always; Wi-Fi if isWiFiModel+BT; Firmware if R9/Wi-Fi+BT; About always."
+    },
+    {
+      "id": "dashboard-vm-clicks",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/activity/DashboardActivity.java",
+      "lines": "511-726",
+      "symbol": "DashboardActivity.setListeners",
+      "note": "txtDashboard/txtMap -> selectedTab; imgGpsIcon -> onGpsClick; mute/receive -> BluetoothManager plus ViewModel."
+    },
+    {
+      "id": "gauge-tach",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/fragment/DashboardFragment.java",
+      "lines": "130-347",
+      "symbol": "DashboardFragment.initUi",
+      "note": "GaugeView imgSpeedometer from ETCDataModel.currentSpeed; altitude/volt/direction LiveData on DashboardViewModel."
+    },
+    {
+      "id": "settings-basic-expert",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/activity/SettingMenuActivity.java",
+      "lines": "149-277",
+      "symbol": "SettingMenuActivity.setListeners",
+      "note": "txtBasic/txtExpert write BTreqSETC:0=0|1; SettingMenuItemViewModel.isBasicMode / isSettingsAvailable."
+    },
+    {
+      "id": "firmware-download",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/activity/FirmwareUpdateActivity.java",
+      "lines": "1116-1325",
+      "symbol": "FirmwareUpdateActivity.setListeners",
+      "note": "txtFullUpdate/txtDbUpdate -> doUpdate; BT path calls FirmwareUpdateViewModel.downloadFile."
+    },
+    {
+      "id": "wifi-swap",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/activity/WifiSettingActivity.java",
+      "lines": "155-377",
+      "symbol": "WifiSettingActivity.setListeners",
+      "note": "No dedicated ViewModel. onStart writes BTreqGWAP:; btnUpdate writes BTreqSWAP:ssid,password."
+    },
+    {
+      "id": "webview-about",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/activity/WebViewActivity.java",
+      "lines": "57-117",
+      "symbol": "WebViewActivity.onCreate",
+      "note": "No ViewModel. About screen; privacy https://uniden.com/pages/app-policy; terms https://uniden.com/policies/terms-of-service."
+    },
+    {
+      "id": "nav-model",
+      "path": "decompiled/sources/com/uniden/rtach/data/model/NavigationMenuModel.java",
+      "lines": "10-70",
+      "symbol": "NavigationMenuModel",
+      "note": "Data class (icon:int, title:String) bound by NavigationDrawerAdapter."
+    }
+  ],
+  "activities": [
+    {
+      "class": "com.uniden.rtach.p005ui.activity.SplashActivity",
+      "launcher": true,
+      "exported": true,
+      "viewModel": null
+    },
+    {
+      "class": "com.uniden.rtach.p005ui.activity.BLeDeviceListActivity",
+      "launcher": false,
+      "exported": false,
+      "viewModel": "com.uniden.rtach.viewmodel.BleDeviceListViewModel"
+    },
+    {
+      "class": "com.uniden.rtach.p005ui.activity.DashboardActivity",
+      "launcher": false,
+      "exported": false,
+      "viewModel": "com.uniden.rtach.viewmodel.DashboardViewModel"
+    },
+    {
+      "class": "com.uniden.rtach.p005ui.activity.SettingMenuActivity",
+      "launcher": false,
+      "exported": false,
+      "viewModel": "com.uniden.rtach.viewmodel.SettingMenuItemViewModel"
+    },
+    {
+      "class": "com.uniden.rtach.p005ui.activity.FirmwareUpdateActivity",
+      "launcher": false,
+      "exported": false,
+      "viewModel": "com.uniden.rtach.viewmodel.FirmwareUpdateViewModel"
+    },
+    {
+      "class": "com.uniden.rtach.p005ui.activity.WifiSettingActivity",
+      "launcher": false,
+      "exported": false,
+      "viewModel": null
+    },
+    {
+      "class": "com.uniden.rtach.p005ui.activity.WebViewActivity",
+      "launcher": false,
+      "exported": false,
+      "viewModel": null
+    }
+  ]
+}

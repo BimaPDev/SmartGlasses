@@ -1,0 +1,70 @@
+{
+  "leaf": "1.4",
+  "title": "Uniden R/TACH 1.0.9 device protocol",
+  "scope": "Phone-to-radar-detector GATT protocol: settings blob indexes, alert/ETC layouts, ASCII BTreq commands, version reads, framing",
+  "primary": "analysis/full_rev/device_protocol/DEVICE_PROTOCOL.md",
+  "anchors": [
+    {
+      "id": "gatt-constants",
+      "path": "decompiled/sources/com/uniden/rtach/helper/Constant.java",
+      "lines": "12-44",
+      "note": "BTreqUMRK/MUTE/MMEM/RLCD ASCII cmds; SETTINGS_CHARACTERISTIC_UUID_1/2/3; ALERT; ETC; WRITE/READ command; 0x2A26/0x2A28"
+    },
+    {
+      "id": "settings-write-path",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/adapter/RadarItemSettingAdapter.java",
+      "lines": "423-509,1383-1385",
+      "note": "BTreqSETC:{write_index}={value} on WRITE_COMMAND; byte_value==2 seek-bar frequencies"
+    },
+    {
+      "id": "settings-blob-read",
+      "path": "decompiled/sources/com/uniden/rtach/helper/BaseApplication.java",
+      "lines": "169-211,296-297,544-564,676",
+      "note": "UUID_1 packed byte[] overlay; convertUnsignedIntFromByte; blob[0]/blob[1] Basic/City; 0xFF unavailable; UUID_3 POI hex; UUID_2 unhandled"
+    },
+    {
+      "id": "alert-etc-parse",
+      "path": "decompiled/sources/com/uniden/rtach/helper/AlertDataConverter.java",
+      "lines": "69-174,187-205,609-691,896-957,1009-1100,1126-1178",
+      "note": "parseAlertBandData &/, comma fields; laser gun ids; parseETCData; POI IEEE754 BE floats"
+    },
+    {
+      "id": "gatt-write-notify",
+      "path": "decompiled/sources/com/uniden/rtach/helper/BluetoothManager.java",
+      "lines": "180-377",
+      "note": "MTU via callback; enableReadSettingsNotification 1 then 2; UTF-8 writeType=1 on WRITE_COMMAND; readRadarSoftwareVersion reads 0x2A28 only"
+    },
+    {
+      "id": "rjson-index-table",
+      "path": "decompiled/resources/assets/R.json",
+      "lines": "1-20",
+      "note": "200 radar_settings items; write_index/read_index/byte_value/values[]; blob >= 216 bytes. Category.json items[] are write_index values."
+    },
+    {
+      "id": "ascii-cmd-extras",
+      "path": "decompiled/sources/com/uniden/rtach/helper/BluetoothUtils.java",
+      "lines": "11-46",
+      "note": "BTdn* firmware framing; RDrespACK/NAK; RDrptSETC/MUTE/MMEM/WIAP/WSTS"
+    },
+    {
+      "id": "models",
+      "path": "decompiled/sources/com/uniden/rtach/data/model/AlertBandDataModel.java",
+      "lines": "12-21,185-203",
+      "note": "alert_detected_flag, alert_id, alert_type, rssi_level, raw_value, info, dir_type, mute_type, rcv_mode_status"
+    }
+  ],
+  "sources": [
+    "decompiled/sources/com/uniden/rtach/helper/Constant.java",
+    "decompiled/sources/com/uniden/rtach/helper/AlertDataConverter.java",
+    "decompiled/sources/com/uniden/rtach/helper/AlertDataConverterKt.java",
+    "decompiled/sources/com/uniden/rtach/helper/BluetoothManager.java",
+    "decompiled/sources/com/uniden/rtach/helper/BluetoothManager$gattCallback$1.java",
+    "decompiled/sources/com/uniden/rtach/helper/BaseApplication.java",
+    "decompiled/sources/com/uniden/rtach/helper/BluetoothUtils.java",
+    "decompiled/sources/com/uniden/rtach/helper/Utils.java",
+    "decompiled/sources/com/uniden/rtach/data/model/RadarSettingsModel.java",
+    "decompiled/sources/com/uniden/rtach/data/model/ETCDataModel.java",
+    "decompiled/resources/assets/R.json",
+    "decompiled/resources/assets/Category.json"
+  ]
+}

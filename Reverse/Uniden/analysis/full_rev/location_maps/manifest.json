@@ -1,0 +1,68 @@
+{
+  "leaf": "1.7",
+  "topic": "location_maps",
+  "package": "com.uniden.rtach",
+  "versionName": "1.0.9",
+  "summary": "Phone GPS feeds Google Maps camera/car marker; detector GPS via BLE ETC feeds the tach gauge. Live coordinates are not written to the radar. NMEA mock simulation is shipped off.",
+  "anchors": [
+    {
+      "id": "uniden-location-manager",
+      "file": "decompiled/sources/com/uniden/rtach/helper/simulation/UnidenLocationManager.java",
+      "symbol": "UnidenLocationManager.startGPSUpdate / LocationListener.onLocationChanged",
+      "note": "Live GPS: LocationManager.requestLocationUpdates(\"gps\", 800ms, 5m). Broadcasts GPSStatusUpdate.GPS_LOCATION_UPDATE with Constant.GPS_LOCATION_EXTRA. FusedLocationProviderClient is a 3s stationary one-shot fallback (priority 100)."
+    },
+    {
+      "id": "maps-fragment",
+      "file": "decompiled/sources/com/uniden/rtach/p005ui/fragment/MapsFragment.java",
+      "symbol": "MapsFragment / GoogleMap / MOCKLOCATION_ON",
+      "note": "SupportMapFragment + GoogleMap. MOCKLOCATION_ON is compile-time false. Camera follows GPS with speed-based zoom and geodesic Destination offset; custom car marker. FusedLocation getLastLocation/getCurrentLocation seeds first fix. MyLocationListener is constructed and never registered."
+    },
+    {
+      "id": "nmea-simulation",
+      "file": "decompiled/sources/com/uniden/rtach/helper/simulation/LocationDriverService.java",
+      "symbol": "LocationDriverService.startSimulation / parseLocationFromString",
+      "note": "NMEA replay from Documents/UNIDEN/gps1.txt (R.raw.gps1). MOCKLOCATION_ON true → setTestProviderLocation; else mockSimulatedLocation. No startService caller in BaseApplication.onCreate. MockLocationProvider data.txt path is dead (mockLocationProviderSingletonStarted defaults true)."
+    },
+    {
+      "id": "gauge-etc-speed",
+      "file": "decompiled/sources/com/uniden/rtach/p005ui/fragment/DashboardFragment.java",
+      "symbol": "GaugeView.setTargetValue(ETCDataModel.getCurrentSpeed())",
+      "note": "Tach/speedometer is detector GPS speed from BLE ETC field index 2 (gpsDirection,currentSpeed,altitude,gpsStatus), not phone Location.getSpeed()."
+    },
+    {
+      "id": "poi-markers",
+      "file": "decompiled/sources/com/uniden/rtach/helper/AlertDataConverter.java",
+      "symbol": "parsePoiData / MarkerTypeEnum SPEED_CAMERA RED_LIGHT_CAMERA USER_MARK",
+      "note": "Hex POI packets on SETTINGS_CHARACTERISTIC_UUID_3. Prefix 01/02/03. BLE writes BTreqUMRK:1 (add, detector GPS), BTreqUMRK:0,{hexLat},{hexLng} (delete from map), BTreqRLCD:0."
+    },
+    {
+      "id": "manifest-permissions",
+      "file": "decompiled/resources/AndroidManifest.xml",
+      "symbol": "ACCESS_FINE_LOCATION ACCESS_COARSE_LOCATION ACCESS_MOCK_LOCATION com.google.android.geo.API_KEY LocationDriverService",
+      "note": "No ACCESS_BACKGROUND_LOCATION. queries com.google.android.apps.maps. No Map Activity; map is MapsFragment. LocationDriverService exported=false."
+    },
+    {
+      "id": "no-gps-to-detector",
+      "file": "decompiled/sources/com/uniden/rtach/helper/BluetoothManager.java",
+      "symbol": "writeCharacteristic",
+      "note": "Phone GPS is not sent to the detector. Detector reports its own gpsStatus/currentSpeed on ETC_DATA_CHARACTERISTIC_UUID. Quiet Ride is mute type 6, not GeofencingClient."
+    }
+  ],
+  "constants": {
+    "GPS_LOCATION_EXTRA": "GPS_LOCATION_EXTRA",
+    "GPS_LOCATION_UPDATE": "GPS_LOCATION_UPDATE",
+    "USERMARK": "USERMARK",
+    "SPEEDCAM": "SPEEDCAM",
+    "REDLIGHT": "REDLIGHT",
+    "ADD_USER_MARK": "BTreqUMRK:1",
+    "DELETE_USER_MARK": "BTreqUMRK:0",
+    "DELETE_RED_LIGHT_CAMERA": "BTreqRLCD:0",
+    "EARTHRADIUSKM": 6371.0,
+    "EARTHCIRCKM": 40075.017,
+    "KNOTS_TO_METERS_PER_SECOND": 0.5144445,
+    "minTimeMs": 800,
+    "minDistMeters": 5,
+    "invalidAccuracyM": 300,
+    "fallbackLatLng": [37.5326, 127.024612]
+  }
+}

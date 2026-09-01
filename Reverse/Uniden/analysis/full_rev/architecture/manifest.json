@@ -1,0 +1,169 @@
+{
+  "leaf": "1.2",
+  "title": "Uniden R/TACH 1.0.9 application architecture",
+  "package": "com.uniden.rtach",
+  "pattern": "MVVM + Hilt",
+  "application": "com.uniden.rtach.helper.BaseApplication",
+  "launcher": "com.uniden.rtach.p005ui.activity.SplashActivity",
+  "flavor": "uniden",
+  "buildType": "release",
+  "versionName": "1.0.9",
+  "versionCode": 14,
+  "anchors": [
+    {
+      "id": "manifest",
+      "source": "decompiled/resources/AndroidManifest.xml",
+      "note": "Package com.uniden.rtach, version 1.0.9/14, minSdk 24 targetSdk 35. Application class BaseApplication. Launcher SplashActivity. First-party activities, ConnectivityReceiver, LocationDriverService, FileProvider, Hilt AppModule meta-data, Maps API key."
+    },
+    {
+      "id": "application-class",
+      "source": "decompiled/sources/com/uniden/rtach/helper/BaseApplication.java",
+      "note": "@HiltAndroidApp Application: StoreUserData, BluetoothManager singleton, LocalBroadcast GATT bus (alert/settings/ETC/POI/firmware), MutableLiveData process state."
+    },
+    {
+      "id": "hilt-generated-app",
+      "source": "decompiled/sources/com/uniden/rtach/helper/Hilt_BaseApplication.java",
+      "note": "Hilt wrapper builds DaggerBaseApplication_HiltComponents_SingletonC with ApplicationContextModule before BaseApplication.onCreate."
+    },
+    {
+      "id": "dagger-graph",
+      "source": "decompiled/sources/com/uniden/rtach/helper/DaggerBaseApplication_HiltComponents_SingletonC.java",
+      "note": "Singleton graph imports AppModule and the six @AndroidEntryPoint activities plus five ViewModel HiltModules."
+    },
+    {
+      "id": "buildconfig",
+      "source": "decompiled/sources/com/uniden/rtach/BuildConfig.java",
+      "note": "FLAVOR=uniden BUILD_TYPE=release DEBUG=false VERSION_NAME=1.0.9 VERSION_CODE=14 LATEST_FIRMWARE_VERSION_CHECK_URL=https://www.unidenup.com/R_series_latest_ver_info.json"
+    },
+    {
+      "id": "app-module",
+      "source": "decompiled/sources/com/uniden/rtach/data/module/AppModule.java",
+      "note": "@Module provideBluetoothAdapter(Context) via BluetoothManager.getAdapter(); provideContext(Application) returns applicationContext. Installed via AndroidManifest Hilt modules meta-data."
+    },
+    {
+      "id": "app-module-adapter-factory",
+      "source": "decompiled/sources/com/uniden/rtach/data/module/AppModule_ProvideBluetoothAdapterFactory.java",
+      "note": "Dagger factory for AppModule.provideBluetoothAdapter; consumed by BleDeviceListViewModel_Factory."
+    },
+    {
+      "id": "app-module-context-factory",
+      "source": "decompiled/sources/com/uniden/rtach/data/module/AppModule_ProvideContextFactory.java",
+      "note": "Dagger factory for AppModule.provideContext."
+    },
+    {
+      "id": "launcher-splash",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/SplashActivity.java",
+      "note": "@AndroidEntryPoint launcher. 3s delay then BLeDeviceListActivity. MAIN/LAUNCHER in AndroidManifest."
+    },
+    {
+      "id": "activity-ble-list",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/BLeDeviceListActivity.java",
+      "note": "@AndroidEntryPoint BLE scan/pair screen; uses BleDeviceListViewModel."
+    },
+    {
+      "id": "activity-dashboard",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/DashboardActivity.java",
+      "note": "@AndroidEntryPoint main UI. Hosts DashboardFragment and MapsFragment. Reads BuildConfig.LATEST_FIRMWARE_VERSION_CHECK_URL."
+    },
+    {
+      "id": "activity-settings",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/SettingMenuActivity.java",
+      "note": "@AndroidEntryPoint radar settings; SettingMenuItemViewModel."
+    },
+    {
+      "id": "activity-wifi",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/WifiSettingActivity.java",
+      "note": "@AndroidEntryPoint device Wi-Fi for firmware path."
+    },
+    {
+      "id": "activity-firmware",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/FirmwareUpdateActivity.java",
+      "note": "@AndroidEntryPoint firmware download/flash UI; FirmwareUpdateViewModel."
+    },
+    {
+      "id": "activity-webview",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/WebViewActivity.java",
+      "note": "Plain AppCompatActivity, not Hilt, not BaseActivity. Loads weburl extra."
+    },
+    {
+      "id": "base-activity",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/base/BaseActivity.java",
+      "note": "Shared ViewBinding base: BT/location permissions, lazy SharedViewModel/BleDeviceListViewModel/DashboardViewModel, StoreUserData, BluetoothManager."
+    },
+    {
+      "id": "fragment-dashboard",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/fragment/DashboardFragment.java",
+      "note": "Gauge/band-alert fragment; ViewModelProvider not @AndroidEntryPoint."
+    },
+    {
+      "id": "fragment-maps",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/fragment/MapsFragment.java",
+      "note": "Google Maps + fused location; not a Manifest component."
+    },
+    {
+      "id": "vm-dashboard",
+      "source": "decompiled/sources/com/uniden/rtach/viewmodel/DashboardViewModel.java",
+      "note": "@Inject constructor(Context). Dashboard LiveData: tabs, alerts, GPS/BT icons, mute, laser TP, lat/lng."
+    },
+    {
+      "id": "vm-ble",
+      "source": "decompiled/sources/com/uniden/rtach/viewmodel/BleDeviceListViewModel.java",
+      "note": "@Inject constructor(BluetoothAdapter, Context). startBleScan/stopBleScan via BluetoothScanner. Adapter comes from AppModule."
+    },
+    {
+      "id": "vm-firmware",
+      "source": "decompiled/sources/com/uniden/rtach/viewmodel/FirmwareUpdateViewModel.java",
+      "note": "@Inject constructor(Context). downloadFile coroutine; enqueues FirmWareUpdateWorker; BT flash."
+    },
+    {
+      "id": "vm-settings",
+      "source": "decompiled/sources/com/uniden/rtach/viewmodel/SettingMenuItemViewModel.java",
+      "note": "@Inject empty ctor. isSettingsAvailable / isBasicMode LiveData."
+    },
+    {
+      "id": "vm-shared",
+      "source": "decompiled/sources/com/uniden/rtach/viewmodel/SharedViewModel.java",
+      "note": "@Inject empty ctor. isRequiredPermissionAllowed LiveData shared across BaseActivity."
+    },
+    {
+      "id": "vm-firmware-hilt-modules",
+      "source": "decompiled/sources/com/uniden/rtach/viewmodel/FirmwareUpdateViewModel_HiltModules.java",
+      "note": "Generated BindsModule/KeyModule proving @HiltViewModel map entry for FirmwareUpdateViewModel."
+    },
+    {
+      "id": "prefs",
+      "source": "decompiled/sources/com/uniden/rtach/data/sharedpref/StoreUserData.java",
+      "note": "Primary persistence. AppPreferences_* keys for firmware URLs, BT flags, band colors, laser/GPS/mute. Extends BaseSharedPrefs. Not Room."
+    },
+    {
+      "id": "receiver-connectivity",
+      "source": "decompiled/sources/com/uniden/rtach/helper/ConnectivityReceiver.java",
+      "note": "Manifest-exported CONNECTIVITY_CHANGE receiver with ConnectivityReceiverListener callbacks."
+    },
+    {
+      "id": "service-location-driver",
+      "source": "decompiled/sources/com/uniden/rtach/helper/simulation/LocationDriverService.java",
+      "note": "First-party IntentService, exported=false. Mock/NMEA location for MapsFragment; pairs with ACCESS_MOCK_LOCATION."
+    },
+    {
+      "id": "firmware-utils",
+      "source": "decompiled/sources/com/uniden/rtach/helper/firmware_update/FirmwareUtils.java",
+      "note": "Enqueues FileReadWorker with fileUrl from Utils.getFirmwareUpdateURL / BuildConfig JSON."
+    },
+    {
+      "id": "utils-firmware-urls",
+      "source": "decompiled/sources/com/uniden/rtach/helper/Utils.java",
+      "note": "getFirmwareUpdateURL; hardcoded unidenup.com per-model _latest.bin URLs (R4/R8/R9/AE903i)."
+    },
+    {
+      "id": "constant",
+      "source": "decompiled/sources/com/uniden/rtach/helper/Constant.java",
+      "note": "Aliases BuildConfig.LATEST_FIRMWARE_VERSION_CHECK_URL; also holds BLE GATT UUID constants (sibling leaf)."
+    },
+    {
+      "id": "fingerprint",
+      "source": "analysis/fingerprint.md",
+      "note": "Native Kotlin, Hilt, MVVM, 175 first-party files, firmware JSON URL, BLE+Wi-Fi firmware path."
+    }
+  ]
+}

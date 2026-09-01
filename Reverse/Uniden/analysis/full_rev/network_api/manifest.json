@@ -1,0 +1,24 @@
+{
+  "leaf": "1.5",
+  "topic": "network_api",
+  "package": "com.uniden.rtach",
+  "okhttp_version": "4.10.0",
+  "finding": "almost_no_cloud_api_besides_unidenup.com",
+  "sources": [
+    "decompiled/sources/com/uniden/rtach/BuildConfig.java",
+    "decompiled/sources/com/uniden/rtach/helper/firmware_update/FileReadWorker.java",
+    "decompiled/sources/com/uniden/rtach/helper/firmware_update/FirmwareUtils.java",
+    "decompiled/sources/com/uniden/rtach/viewmodel/FirmwareUpdateViewModel.java",
+    "decompiled/sources/com/uniden/rtach/p005ui/activity/WebViewActivity.java",
+    "decompiled/sources/com/uniden/rtach/p005ui/activity/WifiSettingActivity.java",
+    "decompiled/sources/com/uniden/rtach/helper/Utils.java",
+    "decompiled/sources/com/uniden/rtach/p005ui/activity/FirmwareUpdateActivity.java"
+  ],
+  "anchors": [
+    "LATEST_FIRMWARE_VERSION_CHECK_URL=https://www.unidenup.com/R_series_latest_ver_info.json",
+    "FileReadWorker OkHttpClient Request.Builder GET version JSON latest_version firmware_url",
+    "FirmwareUpdateViewModel.downloadFile OkHttpClient.Builder GET firmware_url to uniden_firmware_file.bin",
+    "WebViewActivity https://uniden.com/pages/app-policy and https://uniden.com/policies/terms-of-service",
+    "WifiSettingActivity BLE BTreqSWAP not HTTP"
+  ]
+}

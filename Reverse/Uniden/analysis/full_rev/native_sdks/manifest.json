@@ -1,0 +1,79 @@
+{
+  "leaf": "1.9",
+  "package": "com.uniden.rtach",
+  "topic": "native_sdks",
+  "version": "1.0.9",
+  "jni_so_payload": false,
+  "anchors": [
+    {
+      "id": "google-api-keys",
+      "path": "decompiled/resources/res/values/strings.xml",
+      "lines": "107-112",
+      "symbol": "google_api_key",
+      "note": "google_api_key and google_crash_reporting_api_key share AIzaSyA15xpXNbNht_qOaJT_w7Hg_xG5j5D0yCM; google_maps_key is a different AIza key; project_id uniden-9a602 at line 285."
+    },
+    {
+      "id": "maps-meta-api-key",
+      "path": "decompiled/resources/AndroidManifest.xml",
+      "lines": "99-101",
+      "symbol": "com.google.android.geo.API_KEY",
+      "note": "Maps SDK key bound to @string/google_maps_key, not google_api_key."
+    },
+    {
+      "id": "firebase-component-discovery",
+      "path": "decompiled/resources/AndroidManifest.xml",
+      "lines": "137-181",
+      "symbol": "ComponentDiscoveryService",
+      "note": "Crashlytics + AnalyticsConnector + Sessions + Installations registrars; FirebaseInitProvider com.uniden.rtach.firebaseinitprovider initOrder 100."
+    },
+    {
+      "id": "crashlytics-buildconfig",
+      "path": "decompiled/sources/com/google/firebase/crashlytics/BuildConfig.java",
+      "lines": "4-8",
+      "symbol": "VERSION_NAME",
+      "note": "Firebase Crashlytics library 19.2.0 (Java). No firebase-crashlytics-ndk / libcrashlytics.so."
+    },
+    {
+      "id": "crashlytics-ndk-deferred",
+      "path": "decompiled/sources/com/google/firebase/crashlytics/internal/CrashlyticsNativeComponentDeferredProxy.java",
+      "lines": "11-29",
+      "symbol": "CrashlyticsNativeComponentDeferredProxy",
+      "note": "Optional native Crashlytics component never becomes available; no System.loadLibrary in the APK."
+    },
+    {
+      "id": "analytics-param-location-misuse",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/base/BaseActivity.java",
+      "lines": "38-38,462-464",
+      "symbol": "FirebaseAnalytics.Param.LOCATION",
+      "note": "First-party code uses Analytics Param.LOCATION as LocationManager service name; no getInstance/logEvent."
+    },
+    {
+      "id": "okhttp-firmware",
+      "path": "decompiled/sources/com/uniden/rtach/helper/firmware_update/FileReadWorker.java",
+      "lines": "19-47",
+      "symbol": "OkHttpClient",
+      "note": "OkHttp 4.10.0 used for firmware HTTP; okhttp3.OkHttp.VERSION is 4.10.0."
+    },
+    {
+      "id": "lottie-loader",
+      "path": "decompiled/resources/res/layout/loader_dialog.xml",
+      "lines": "13-20",
+      "symbol": "LottieAnimationView",
+      "note": "Airbnb Lottie confirmed; raw ripple_animation; helper/Loader.java binds the view."
+    },
+    {
+      "id": "wheelpicker-settings",
+      "path": "decompiled/sources/com/uniden/rtach/p005ui/adapter/SettingItemPickerAdapter.java",
+      "lines": "9-17",
+      "symbol": "ValuePickerAdapter",
+      "note": "io.woong.wheelpicker used for settings wheel."
+    },
+    {
+      "id": "extract-native-libs",
+      "path": "decompiled/resources/AndroidManifest.xml",
+      "lines": "59-59",
+      "symbol": "extractNativeLibs",
+      "note": "extractNativeLibs=false; XAPK splits are language/density only, no ABI .so split."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "leaf": "1.8",
+  "topic": "storage_data",
+  "package": "com.uniden.rtach",
+  "prefs_file": "com_uniden_rtach",
+  "room": "unused — transitive WorkManager only; no app @Entity/@Dao",
+  "anchors": [
+    {
+      "path": "decompiled/resources/assets/R.json",
+      "symbol": "radar_settings",
+      "note": "200 catalog rows; write_index equals 0-based array index"
+    },
+    {
+      "path": "decompiled/resources/assets/Category.json",
+      "symbol": "items",
+      "note": "7 categories; 1-based indexes into R.json radar_settings"
+    },
+    {
+      "path": "decompiled/sources/com/uniden/rtach/helper/Utils.java",
+      "symbol": "assetJSONFile / assetCategoryTableJonFile",
+      "note": "Assets open of R.json and Category.json as UTF-8 strings"
+    },
+    {
+      "path": "decompiled/sources/com/uniden/rtach/data/sharedpref/StoreUserData.java",
+      "symbol": "PREF_DEVICE_NAME / getPrefName",
+      "note": "SharedPreferences keys; last BLE name AppPreferences_device_name"
+    },
+    {
+      "path": "decompiled/sources/com/uniden/rtach/data/sharedpref/BaseSharedPrefs.java",
+      "symbol": "get / set",
+      "note": "Typed SharedPreferences helper; edit().apply()"
+    },
+    {
+      "path": "decompiled/sources/com/uniden/rtach/helper/BluetoothManager.java",
+      "symbol": "connectToDevice",
+      "note": "Persists device.getName() before connectGatt"
+    },
+    {
+      "path": "decompiled/sources/com/uniden/rtach/helper/BaseApplication.java",
+      "symbol": "saveSettingInLocal / setSettingsToLocal / settingList",
+      "note": "BLE overlay into LiveData and prefs mirror"
+    },
+    {
+      "path": "decompiled/sources/com/uniden/rtach/data/model/RadarSettingsModel.java",
+      "symbol": "RadarSettingsModel",
+      "note": "Gson-shaped catalog row plus runtime category stamp"
+    },
+    {
+      "path": "decompiled/sources/androidx/work/impl/WorkDatabase.java",
+      "symbol": "WorkDatabase",
+      "note": "Only Room database in the APK; WorkManager, not Uniden app entities"
+    }
+  ]
+}

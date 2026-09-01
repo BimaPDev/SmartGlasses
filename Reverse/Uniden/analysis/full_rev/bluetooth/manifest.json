@@ -1,0 +1,69 @@
+{
+  "leaf": "1.3",
+  "topic": "bluetooth",
+  "app": "com.uniden.rtach",
+  "version": "1.0.9",
+  "transport": "BLE GATT (no Classic RFCOMM)",
+  "anchors": [
+    {
+      "id": "scan-name-filter",
+      "source": "decompiled/sources/com/uniden/rtach/viewmodel/BleDeviceListViewModel.java",
+      "note": "Software name filter after empty ScanFilter list: keep devices whose name contains R4, R8, R9, or AE903i; dedupe by name in tempList."
+    },
+    {
+      "id": "le-scanner",
+      "source": "decompiled/sources/com/uniden/rtach/helper/BluetoothScanner.java",
+      "note": "BluetoothLeScanner.startScan(emptyList, SCAN_MODE_BALANCED=1). isPaired := bondState==12. Null name becomes Unknown Device."
+    },
+    {
+      "id": "gatt-connect",
+      "source": "decompiled/sources/com/uniden/rtach/helper/BluetoothManager.java",
+      "note": "connectToDevice → tryConnectGatt: connectGatt(ctx, autoConnect=false, callback, TRANSPORT_LE=2); retry up to 3 times at 300ms; abort if getName()==null."
+    },
+    {
+      "id": "gatt-callback",
+      "source": "decompiled/sources/com/uniden/rtach/helper/BluetoothManager$gattCallback$1.java",
+      "note": "STATE_CONNECTED → requestMtu(512) after 500ms; onMtuChanged → discoverServices if bond 12 or 10; onServicesDiscovered → readCharacteristicsWithDelay."
+    },
+    {
+      "id": "uuid-constant",
+      "source": "decompiled/sources/com/uniden/rtach/helper/Constant.java",
+      "note": "All Uniden service/characteristic UUID strings and CCCD 00002902-0000-1000-8000-00805f9b34fb plus BTreq* ASCII commands."
+    },
+    {
+      "id": "pairing-createbond",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/BLeDeviceListActivity.java",
+      "note": "Unpaired tap shows assist dialog then createBond after 3s; paired tap or BOND_BONDED broadcast calls connectBluetooth → GATT connect."
+    },
+    {
+      "id": "bond-receiver",
+      "source": "decompiled/sources/com/uniden/rtach/p005ui/activity/BLeDeviceListActivity$pairingBroadcastReceiver$1.java",
+      "note": "Handles BOND_STATE_CHANGED only. BOND_BONDED connects; BOND_NONE retries createBond after 2s. PAIRING_REQUEST is registered but unused."
+    },
+    {
+      "id": "write-char",
+      "source": "decompiled/sources/com/uniden/rtach/helper/BluetoothManager.java",
+      "note": "writeCharacteristic UTF-8 to UNIDEN_SERVICE_5_UUID + WRITE_COMMAND_CHARACTERISTIC_UUID with WRITE_TYPE_NO_RESPONSE (1)."
+    },
+    {
+      "id": "notify-cccd",
+      "source": "decompiled/sources/com/uniden/rtach/helper/BluetoothManager.java",
+      "note": "enableNotifications / enableReadSettingsNotification write CLIENT_CHARACTERISTIC_CONFIG CCCD ENABLE_NOTIFICATION_VALUE; extra read for ALERT and ETC_DATA UUIDs."
+    },
+    {
+      "id": "disconnect",
+      "source": "decompiled/sources/com/uniden/rtach/helper/BluetoothManager.java",
+      "note": "disconnect() calls BluetoothGatt.disconnect then close and nulls bluetoothGatt; also invoked from onConnectionStateChange newState==0."
+    },
+    {
+      "id": "char-payload",
+      "source": "decompiled/sources/com/uniden/rtach/data/model/CharacteristicData.java",
+      "note": "Parcelable wrapper (BluetoothGattCharacteristic + byte[]) sent on MyBroadcaster.BLUETOOTH_CHARACTERISTIC_CHANGED."
+    },
+    {
+      "id": "bt-utils-ascii",
+      "source": "decompiled/sources/com/uniden/rtach/helper/BluetoothUtils.java",
+      "note": "Firmware download BTdn* tokens and RDresp/RDrpt* report prefixes carried on the command write/notify pair."
+    }
+  ]
+}
