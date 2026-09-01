@@ -1,0 +1,23 @@
+; FUN_1009dc98 @ 0x1009dc98 size=52
+  push {r3,lr}
+  ldr r3,[0x1009dccc]
+  cbz r0,0x1009dcc8
+  movs r0,#0x0
+  movs r1,#0xfc
+  movs r2,#0x1
+  strb r0,[r3,#0x1]
+  strb r1,[r3,#0x2]
+  strb r0,[r3,#0x3]
+  orr r1,r1,#0x3
+  orr r0,r0,#0x7
+  strb r0,[r3,#0x5]
+  strb r1,[r3,#0x6]
+  strb r0,[r3,#0x7]
+  strb r2,[r3,#0x0]
+  ldr r0,[0x1009dccc]
+  bl 0x1010e9c4
+  clz r0,r0
+  lsrs r0,r0,#0x5
+  pop {r3,pc}
+  strb r0,[r3,#0x0]
+  b 0x1009dcba

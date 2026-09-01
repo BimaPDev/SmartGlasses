@@ -1,0 +1,22 @@
+; FUN_100debd8 @ 0x100debd8 size=44
+  ldr r2,[0x100dec04]
+  mov r3,r0
+  ldr r0,[r2,#0x0]
+  cbnz r0,0x100debe2
+  bx lr
+  ldrb r2,[r0,#0x1]
+  ubfx r2,r2,#0x3,#0x1
+  cmp r2,r3
+  bne 0x100dec00
+  ldr r2,[r0,#0x4]
+  ldrb r2,[r2,#0x1]
+  cmp r2,r1
+  bne 0x100dec00
+  ldrb r2,[r0,#0x0]
+  lsls r2,r2,#0x1e
+  bmi 0x100dec00
+  ldrb r2,[r0,#0x8]
+  lsls r2,r2,#0x1d
+  bpl 0x100debe0
+  ldr r0,[r0,#0xc]
+  b 0x100debde

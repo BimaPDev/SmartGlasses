@@ -1,0 +1,27 @@
+; FUN_1012f50e @ 0x1012f50e size=58
+  push {r4,lr}
+  sub sp,#0x18
+  cbz r0,0x1012f542
+  ldrb r3,[r0,#0x5]
+  ldrb r4,[r0,#0x4]
+  str r3,[sp,#0x10]
+  movs r3,#0x0
+  strd r4,r2,[sp,#0x8]
+  ldr r2,[r1,#0x0]
+  cmp r4,#0x1
+  str r3,[sp,#0x14]
+  str r2,[sp,#0x0]
+  bls 0x1012f532
+  ldrb r2,[r0,#0x6]
+  lsls r2,r2,#0x1f
+  it pl
+  ldr.pl r3,[r1,#0x4]
+  mov r2,sp
+  movs r1,#0x5
+  ldr r0,[r0,#0x0]
+  str r3,[sp,#0x4]
+  bl 0x1012ef56
+  add sp,#0x18
+  pop {r4,pc}
+  mvn r0,#0xd
+  b 0x1012f53e

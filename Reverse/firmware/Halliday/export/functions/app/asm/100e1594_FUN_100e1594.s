@@ -1,0 +1,25 @@
+; FUN_100e1594 @ 0x100e1594 size=60
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  mov.w r3,#0xffffffff
+  mov.w r2,#0xffffffff
+  ldr r0,[0x100e15d0]
+  bl 0x10113cfc
+  ldr r3,[0x100e15d4]
+  ldr r4,[r3,#0x0]
+  cbz r4,0x100e15b0
+  subs r4,#0x8
+  cbnz r4,0x100e15b8
+  bl 0x100e14a0
+  movs r4,#0x0
+  b 0x100e15c2
+  ldrh r3,[r4,#0x0]
+  cmp r3,r5
+  bne 0x100e15c6
+  bl 0x100e14a0
+  mov r0,r4
+  pop {r3,r4,r5,pc}
+  cmn r4,#0x8
+  beq 0x100e15b0
+  ldr r4,[r4,#0x8]
+  b 0x100e15aa

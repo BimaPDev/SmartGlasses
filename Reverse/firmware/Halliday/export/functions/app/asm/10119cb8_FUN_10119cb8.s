@@ -1,0 +1,13 @@
+; FUN_10119cb8 @ 0x10119cb8 size=26
+  cmp r0,#0x9
+  bhi 0x10119cc4
+  adds r0,#0x30
+  strb r0,[r1,#0x0]
+  movs r0,#0x0
+  bx lr
+  cmp r0,#0xf
+  bhi 0x10119ccc
+  adds r0,#0x57
+  b 0x10119cbe
+  mvn r0,#0x15
+  bx lr

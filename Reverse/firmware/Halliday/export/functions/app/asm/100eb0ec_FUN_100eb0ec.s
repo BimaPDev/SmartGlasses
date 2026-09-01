@@ -1,0 +1,19 @@
+; FUN_100eb0ec @ 0x100eb0ec size=36
+  ldr r2,[0x100eb110]
+  mov r3,r0
+  ldr r0,[r2,#0x4]
+  cbnz r0,0x100eb0f6
+  bx lr
+  ldr r2,[r0,#0x0]
+  cmp r2,r3
+  bne 0x100eb102
+  ldr r2,[r0,#0x4]
+  cmp r2,r1
+  beq 0x100eb106
+  ldr r0,[r0,#0x3c]
+  b 0x100eb0f2
+  ldr r3,[r0,#0xc]
+  adds r3,#0x1
+  str r3,[r0,#0xc]
+  ldr r0,[r0,#0x20]
+  bx lr

@@ -1,0 +1,21 @@
+; FUN_100beebc @ 0x100beebc size=54
+  mov.w r1,#0xffffffff
+  push {r4,lr}
+  mov r4,r0
+  ldr r0,[0x100beef4]
+  bl 0x1011dbf4
+  movs r3,#0x0
+  str r3,[r4,#0x10]
+  ldr r3,[0x100beef8]
+  add.w r2,r4,#0x10
+  ldr r1,[r3,#0x4]
+  cbnz r1,0x100beeec
+  strd r2,r2,[r3,#0x0]
+  adds r0,r4,#0x4
+  bl 0x1013243e
+  pop.w {r4,lr}
+  ldr r0,[0x100beef4]
+  b.w 0x10131636
+  str r2,[r1,#0x0]
+  str r2,[r3,#0x4]
+  b 0x100beedc

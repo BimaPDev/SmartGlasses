@@ -1,0 +1,19 @@
+; FUN_10089bf8 @ 0x10089bf8 size=48
+  push {r3,r4,r5,lr}
+  ldr r4,[0x10089c28]
+  ldrb r3,[r4,#0x0]
+  cbnz r3,0x10089c16
+  movs r3,#0x1
+  strb r3,[r4,#0x0]
+  bl 0x10126fa2
+  mov r5,r0
+  ldrb.w r3,[r5,#0x2a]
+  ands r2,r3,#0x4
+  bne 0x10089c18
+  strb r2,[r4,#0x0]
+  pop {r3,r4,r5,pc}
+  bfc r3,#0x2,#0x1
+  mov r0,r5
+  strb.w r3,[r5,#0x2a]
+  bl 0x10089b64
+  b 0x10089c0a

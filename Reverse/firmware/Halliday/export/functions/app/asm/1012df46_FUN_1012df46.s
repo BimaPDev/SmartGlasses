@@ -1,0 +1,20 @@
+; FUN_1012df46 @ 0x1012df46 size=42
+  push {r4,lr}
+  mov r4,r0
+  bl 0x1011dbc4
+  bic r3,r4,#0x4
+  cbz r0,0x1012df5e
+  cmp r3,#0xb
+  ite eq
+  mov.eq r0,#0x5
+  mov.ne r0,#0xf
+  pop {r4,pc}
+  cmp r3,#0xb
+  beq 0x1012df6c
+  cmp r4,#0x11
+  ite eq
+  mov.eq r0,#0x10
+  mov.ne r0,#0x64
+  b 0x1012df5c
+  movs r0,#0x1e
+  b 0x1012df5c

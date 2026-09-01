@@ -1,0 +1,24 @@
+; FUN_100e78cc @ 0x100e78cc size=62
+  push {r4,lr}
+  ldr r4,[0x100e790c]
+  ldr r3,[r4,#0x0]
+  cbz r3,0x100e7908
+  ldrb.w r3,[r4,#0x28]
+  and r3,r3,#0x7
+  cmp r3,#0x1
+  bne 0x100e7908
+  ldr r2,[0x100e7910]
+  ldr r3,[0x100e7914]
+  ldr r0,[0x100e7918]
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  orrs r0,r3
+  ldr r1,[0x100e791c]
+  bl 0x100a5b78
+  ldr r0,[r4,#0x0]
+  bl 0x10131fd6
+  ldrb.w r3,[r4,#0x28]
+  orr r3,r3,#0x4
+  strb.w r3,[r4,#0x28]
+  pop {r4,pc}

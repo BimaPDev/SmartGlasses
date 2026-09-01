@@ -1,0 +1,26 @@
+; FUN_100836b8 @ 0x100836b8 size=68
+  cmp r0,#0x5f
+  push {r4,r5,lr}
+  bhi 0x100836f6
+  mov.w r3,#0x20
+  mrs r5,basepri
+  msr basepri_max,r3
+  isb #0xf
+  add.w r0,r0,#0x10000000
+  add.w r0,r0,#0x1a000
+  ldr r4,[0x100836fc]
+  lsls r0,r0,#0x2
+  cbz r2,0x100836f0
+  ldr r3,[r0,#0x0]
+  ands r3,r4
+  orrs r1,r3
+  str r1,[r0,#0x0]
+  msr basepri,r5
+  isb #0xf
+  movs r0,#0x0
+  pop {r4,r5,pc}
+  ldr r1,[r0,#0x0]
+  ands r1,r4
+  b 0x100836e2
+  mvn r0,#0x15
+  b 0x100836ee

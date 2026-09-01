@@ -1,0 +1,21 @@
+; FUN_100daebc @ 0x100daebc size=52
+  push {r4,r5,r6,lr}
+  mov r6,r0
+  mov r5,r1
+  ldr r0,[0x100daef0]
+  ldr r4,[0x100daef4]
+  mov r3,r1
+  subs r4,r4,r0
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orr r0,r4,#0x2b0000
+  ldr r2,[0x100daef8]
+  ldr r1,[0x100daefc]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  mov r2,r6
+  uxtb r3,r5
+  movs r1,#0x99
+  pop.w {r4,r5,r6,lr}
+  movs r0,#0xcc
+  b.w 0x100d44a8

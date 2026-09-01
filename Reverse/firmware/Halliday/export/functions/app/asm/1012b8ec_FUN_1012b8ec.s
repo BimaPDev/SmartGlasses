@@ -1,0 +1,24 @@
+; FUN_1012b8ec @ 0x1012b8ec size=56
+  push {r4,lr}
+  mov r4,r0
+  sub sp,#0x20
+  add r2,sp,#0x4
+  add r1,sp,#0x8
+  bl 0x1012b68e
+  ldr r2,[sp,#0x4]
+  mov r0,r4
+  add r3,sp,#0x10
+  add r1,sp,#0x8
+  bl 0x1012b70e
+  mov r0,r4
+  bl 0x1012b85a
+  subs r2,r0,#0x0
+  ble 0x1012b918
+  mov r1,r2
+  add r0,sp,#0x10
+  bl 0x1012a862
+  mov r0,r4
+  add r1,sp,#0x10
+  bl 0x10125ab8
+  add sp,#0x20
+  pop {r4,pc}

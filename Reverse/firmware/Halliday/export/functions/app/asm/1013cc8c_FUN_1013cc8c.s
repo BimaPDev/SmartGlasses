@@ -1,0 +1,24 @@
+; FUN_1013cc8c @ 0x1013cc8c size=74
+  push {r0,r1,r2,r4,r5,lr}
+  mov r4,r0
+  mov.w r3,#0x20
+  mrs r5,basepri
+  msr basepri_max,r3
+  isb #0xf
+  ldrb.w r3,[r0,#-0xb]
+  tst r3,#0x28
+  bne 0x1013ccca
+  ldr.w r3,[r4,#-0x10]
+  subs r0,#0x18
+  cbz r3,0x1013ccba
+  str r0,[sp,#0x4]
+  bl 0x10114b08
+  ldr r0,[sp,#0x4]
+  ldrb.w r3,[r4,#-0xb]
+  bic r3,r3,#0x14
+  strb.w r3,[r4,#-0xb]
+  bl 0x10114cf4
+  msr basepri,r5
+  isb #0xf
+  add sp,#0xc
+  pop {r4,r5,pc}

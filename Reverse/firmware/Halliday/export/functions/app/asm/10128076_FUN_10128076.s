@@ -1,0 +1,19 @@
+; FUN_10128076 @ 0x10128076 size=36
+  push {r4,r5,r6}
+  ldr r4,[r2,#0xc]
+  ldr r6,[r2,#0x4]
+  adds r4,#0x1
+  subs r4,r4,r6
+  cmp r4,#0x0
+  ble 0x10128096
+  ldr r4,[r2,#0x8]
+  ldr r3,[r2,#0x0]
+  adds r4,#0x1
+  subs r4,r4,r3
+  cmp r4,#0x0
+  ble 0x10128096
+  pop {r4,r5,r6}
+  ldr r3,[r0,#0x10]
+  bx r3
+  pop {r4,r5,r6}
+  bx lr

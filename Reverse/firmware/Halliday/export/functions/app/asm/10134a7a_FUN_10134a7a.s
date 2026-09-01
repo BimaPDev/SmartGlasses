@@ -1,0 +1,24 @@
+; FUN_10134a7a @ 0x10134a7a size=54
+  push {r3,r4,r5,lr}
+  mov r5,r2
+  add.w r4,r0,#0x8
+  movs r1,#0x4
+  mov r0,r4
+  bl 0x100c1fe4
+  ldrh r3,[r5,#0x8]
+  ldr r1,[r5,#0xc]
+  strh r3,[r0,#0x0]
+  ldrh r3,[r5,#0xa]
+  strh r3,[r0,#0x2]
+  ldrb r3,[r1,#0x0]
+  cbnz r3,0x10134aa4
+  mov r0,r4
+  ldrh r1,[r1,#0x2]
+  bl 0x101327c8
+  movs r0,#0x0
+  pop {r3,r4,r5,pc}
+  movs r2,#0x10
+  mov r0,r4
+  adds r1,#0x1
+  bl 0x101327a0
+  b 0x10134aa0

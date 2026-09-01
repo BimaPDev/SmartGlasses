@@ -1,0 +1,25 @@
+; FUN_100863a0 @ 0x100863a0 size=56
+  mov.w r3,#0x800
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  ldrh r0,[r0,#0xc]
+  udiv r3,r3,r0
+  ldr r0,[0x100863d8]
+  ldr r5,[r0,#0x28]
+  cmp r5,r1
+  bhi 0x100863d4
+  ldr r6,[r0,#0x2c]
+  cmp r6,r4
+  bne 0x100863d4
+  uxtb r3,r3
+  add r3,r5
+  add r2,r1
+  cmp r3,r2
+  bcc 0x100863d4
+  ldrb.w r3,[r0,#0x24]!
+  tst r3,#0x1
+  it eq
+  mov.eq r0,#0x0
+  pop {r4,r5,r6,pc}
+  movs r0,#0x0
+  b 0x100863d2

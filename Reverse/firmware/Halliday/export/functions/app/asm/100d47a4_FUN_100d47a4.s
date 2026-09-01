@@ -1,0 +1,22 @@
+; FUN_100d47a4 @ 0x100d47a4 size=46
+  push {r3,r4,r5,r6,r7,lr}
+  mov r5,r0
+  mov r7,r1
+  movs r6,#0x0
+  ldr r3,[0x100d47d4]
+  ldr r3,[r3,#0x0]
+  ldr r4,[r3,#0x0]
+  cbnz r4,0x100d47b8
+  mov r0,r6
+  pop {r3,r4,r5,r6,r7,pc}
+  ldrb.w r1,[r4,#0x38]
+  lsls r3,r1,#0x1f
+  bpl 0x100d47ce
+  adds r6,#0x1
+  cbz r5,0x100d47ce
+  mov r2,r7
+  ldr r0,[r4,#0xc]
+  ubfx r1,r1,#0x4,#0x3
+  blx r5
+  ldr r4,[r4,#0x0]
+  b 0x100d47b2

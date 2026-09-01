@@ -1,0 +1,19 @@
+; FUN_100dff80 @ 0x100dff80 size=38
+  push {r4,lr}
+  movs r0,#0x0
+  movs r4,#0x1
+  ldr r3,[0x100dffa8]
+  ldr r1,[r3,#0x0]
+  lsl.w r2,r4,r0
+  tst r2,r1
+  bne 0x100dff9c
+  orrs r2,r1
+  adds r0,#0xa
+  str r2,[r3,#0x0]
+  uxtb r0,r0
+  pop {r4,pc}
+  adds r0,#0x1
+  cmp r0,#0x14
+  bne 0x100dff8a
+  movs r0,#0x0
+  b 0x100dff9a

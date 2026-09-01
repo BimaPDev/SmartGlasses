@@ -1,0 +1,20 @@
+; FUN_100eeef4 @ 0x100eeef4 size=50
+  movs r3,#0x1
+  push {r4,r5,r6,lr}
+  ldr r6,[0x100eef28]
+  lsl.w r5,r3,r0
+  ldr r4,[r6,#0x4]
+  tst r5,r4
+  beq 0x100eef24
+  bl 0x100eebe8
+  cbnz r0,0x100eef16
+  movs r1,#0x85
+  ldr r3,[0x100eef2c]
+  ldr r2,[0x100eef30]
+  ldr r0,[0x100eef34]
+  bl 0x10117c88
+  bic.w r4,r4,r5
+  str r4,[r6,#0x4]
+  pop.w {r4,r5,r6,lr}
+  b.w 0x10138b9c
+  pop {r4,r5,r6,pc}

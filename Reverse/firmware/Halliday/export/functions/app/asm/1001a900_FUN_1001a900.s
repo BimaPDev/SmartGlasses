@@ -1,0 +1,20 @@
+; FUN_1001a900 @ 0x1001a900 size=48
+  push {r0,r1,r2,lr}
+  ldr r2,[0x1001a930]
+  mov r3,r0
+  ldr r2,[r2,#0x0]
+  str r2,[sp,#0x4]
+  mov.w r2,#0x0
+  ldaex r0,[r3]
+  adds r2,r0,#0x1
+  stlex r1,r2,[r3]
+  cmp r1,#0x0
+  bne 0x1001a90e
+  ldr r3,[0x1001a930]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x1001a92a
+  bl 0x1013cdc0
+  add sp,#0xc
+  pop.w pc

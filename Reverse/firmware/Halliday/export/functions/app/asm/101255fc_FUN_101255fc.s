@@ -1,0 +1,22 @@
+; FUN_101255fc @ 0x101255fc size=46
+  push {r0,r1,r2,r4,r5,lr}
+  movs r3,#0x0
+  mov r4,r1
+  add r2,sp,#0x4
+  movs r1,#0x8
+  mov r5,r0
+  bl 0x10126ad8
+  cmp r0,#0x1
+  bne 0x1012561a
+  ldr r3,[sp,#0x4]
+  cmp r3,r4
+  bne 0x1012561e
+  add sp,#0xc
+  pop {r4,r5,pc}
+  cmp r0,#0x0
+  bne 0x10125616
+  movs r2,#0x0
+  mov r1,r4
+  mov r0,r5
+  bl 0x10126e00
+  b 0x10125616

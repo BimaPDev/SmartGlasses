@@ -1,0 +1,19 @@
+; FUN_100a3170 @ 0x100a3170 size=46
+  push {r0,r1,r4,lr}
+  ldr r3,[0x100a31a0]
+  ldr r4,[0x100a31a4]
+  str r0,[sp,#0x4]
+  subs r4,r4,r3
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  mov r3,r0
+  orr r0,r4,#0xc40000
+  ldr r2,[0x100a31a8]
+  ldr r1,[0x100a31ac]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  add r1,sp,#0x4
+  movs r0,#0xb
+  bl 0x100a2fe4
+  add sp,#0x8
+  pop {r4,pc}

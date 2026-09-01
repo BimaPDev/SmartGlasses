@@ -1,0 +1,27 @@
+; FUN_10099a18 @ 0x10099a18 size=58
+  push {r3,r4,r5,r6,r7,lr}
+  movs r7,#0x0
+  ldr r6,[0x10099a54]
+  mov r2,r1
+  mov r4,r1
+  movs r1,#0x1d
+  mov r5,r0
+  str r7,[r6,#0x0]
+  bl 0x10086f50
+  ldr r0,[r6,#0x0]
+  cbnz r0,0x10099a36
+  movs r3,#0x1
+  mov r0,r3
+  pop {r3,r4,r5,r6,r7,pc}
+  ldrb r3,[r0,#0x0]
+  cmp r3,#0x0
+  beq 0x10099a32
+  mov r1,r4
+  bl 0x1011ea18
+  cmp r0,#0x0
+  beq 0x10099a30
+  mov r0,r5
+  ldr r1,[r6,#0x0]
+  bl 0x100998a8
+  mov r3,r7
+  b 0x10099a32

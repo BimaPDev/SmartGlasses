@@ -1,0 +1,26 @@
+; FUN_100690c0 @ 0x100690c0 size=70
+  cbz r1,0x100690ec
+  ldr r1,[0x10069108]
+  ldr r2,[0x1006910c]
+  ldr r3,[r1,#0x0]
+  str r3,[r2,#0x0]
+  mov.w r3,#0x1000
+  str r3,[r1,#0x0]
+  cbnz r0,0x100690ec
+  ldr.w r0,[r1,#-0x38]
+  str r0,[r2,#0x4]
+  str.w r3,[r1,#-0x38]
+  ldr.w r0,[r1,#-0xc]
+  str r0,[r2,#0x8]
+  ldr r2,[0x10069110]
+  str.w r3,[r1,#-0xc]
+  str r3,[r2,#0x0]
+  str r3,[r2,#0xc]
+  mov.w r3,#0x1000
+  ldr r2,[0x10069114]
+  str r3,[r2,#0x0]
+  str.w r3,[r2,#-0x50]
+  str.w r3,[r2,#-0x4c]
+  str.w r3,[r2,#-0x48]
+  str.w r3,[r2,#-0x44]
+  bx lr

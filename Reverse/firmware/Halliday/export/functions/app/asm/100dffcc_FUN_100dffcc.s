@@ -1,0 +1,20 @@
+; FUN_100dffcc @ 0x100dffcc size=46
+  ldr r2,[0x100dfffc]
+  ldrb.w r3,[r2,#0x62]
+  cbz r3,0x100dffdc
+  add.w r3,r2,#0x10
+  cmp r0,r3
+  beq 0x100dfff2
+  ldrb.w r3,[r2,#0x102]
+  cbz r3,0x100dfff6
+  ldr r3,[0x100e0000]
+  cmp r0,r3
+  bne 0x100dfff6
+  movs r0,#0x1
+  movs r3,#0xa0
+  mla r0,r3,r0,r2
+  bx lr
+  movs r0,#0x0
+  b 0x100dffea
+  movs r0,#0x0
+  bx lr

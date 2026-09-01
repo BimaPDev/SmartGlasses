@@ -1,0 +1,19 @@
+; FUN_1013700a @ 0x1013700a size=48
+  push {r4,lr}
+  bl 0x100dd8a8
+  mov r4,r0
+  cbz r0,0x10137034
+  ldrsb.w r3,[r0,#0xc8]
+  cmp r3,#0x0
+  bge 0x10137022
+  adds r0,#0x68
+  bl 0x1013751e
+  ldrsb.w r3,[r4,#0x60]
+  cmp r3,#0x0
+  bge 0x10137030
+  mov r0,r4
+  bl 0x1013751e
+  movs r0,#0x0
+  b 0x10137038
+  mvn r0,#0x10
+  pop {r4,pc}

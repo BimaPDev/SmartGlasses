@@ -1,0 +1,23 @@
+; FUN_100ed77c @ 0x100ed77c size=54
+  mov r3,r0
+  cbz r1,0x100ed7b0
+  cmp r0,#0x2
+  bls 0x100ed7a0
+  ldr r2,[0x100ed7b4]
+  ldr r0,[0x100ed7b8]
+  ldr r1,[0x100ed7bc]
+  subs r0,r0,r2
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x1140000
+  ldr r2,[0x100ed7c0]
+  orr r0,r0,#0x11
+  b.w 0x100a5b78
+  movs r2,#0x24
+  ldr r0,[0x100ed7c4]
+  mla r3,r2,r3,r0
+  ldr r3,[r3,#0x14]
+  cbz r3,0x100ed7b0
+  mov r0,r1
+  bx r3
+  bx lr

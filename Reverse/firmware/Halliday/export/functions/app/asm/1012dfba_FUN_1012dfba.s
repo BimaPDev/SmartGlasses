@@ -1,0 +1,23 @@
+; FUN_1012dfba @ 0x1012dfba size=54
+  push {r4,lr}
+  mov r4,r0
+  cbz r0,0x1012dfea
+  ldr r0,[r0,#0x20]
+  cbz r0,0x1012dfc8
+  bl 0x100a0a70
+  bl 0x1012df42
+  cmp r0,#0x2
+  bne 0x1012dfde
+  ldrb r3,[r4,#0x0]
+  cmp r3,#0x5
+  bne 0x1012dfde
+  movs r1,#0x0
+  ldr r0,[r4,#0x1c]
+  bl 0x10064218
+  ldr r0,[r4,#0x1c]
+  cbz r0,0x1012dfe8
+  bl 0x10064180
+  movs r0,#0x0
+  pop {r4,pc}
+  mvn r0,#0x15
+  b 0x1012dfe8

@@ -1,0 +1,21 @@
+; FUN_1008953c @ 0x1008953c size=46
+  push {r3,r4,r5,lr}
+  ldr r1,[0x1008956c]
+  mov r5,r0
+  bl 0x10124cc6
+  mov r4,r0
+  cbz r0,0x1008954e
+  movs r0,#0x0
+  pop {r3,r4,r5,pc}
+  mov r0,r5
+  bl 0x10126fae
+  cmp r0,#0x0
+  beq 0x1008954a
+  movs r2,#0xa
+  mov r1,r4
+  bl 0x1012691c
+  uxth r0,r0
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  b 0x1008954c

@@ -1,0 +1,19 @@
+; FUN_10117c88 @ 0x10117c88 size=42
+  push {r0,r1,r2,r3,r4,lr}
+  mov r4,r2
+  mov r2,r3
+  ldr r3,[0x10117cb4]
+  mov r5,r0
+  ldr r3,[r3,#0x0]
+  ldr r0,[r3,#0xc]
+  cbz r4,0x10117cac
+  ldr r3,[0x10117cb8]
+  str r1,[sp,#0x0]
+  ldr r1,[0x10117cbc]
+  strd r3,r4,[sp,#0x4]
+  mov r3,r5
+  bl 0x10117cc4
+  bl 0x1013d524
+  ldr r3,[0x10117cc0]
+  mov r4,r3
+  b 0x10117c9a

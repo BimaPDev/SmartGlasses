@@ -1,0 +1,21 @@
+; FUN_100eec10 @ 0x100eec10 size=42
+  push {r4,lr}
+  ldr r3,[0x100eec3c]
+  mov r1,r0
+  ldr r4,[r3,#0x0]
+  ldrb r3,[r4,#0x2]
+  subs r3,#0x1
+  sxtb r0,r3
+  lsls r2,r0,#0x1
+  cmp r0,#0x0
+  bge 0x100eec2a
+  mov.w r0,#0xffffffff
+  pop {r4,pc}
+  ldr r3,[r4,#0x4]
+  ldrh r3,[r3,r2]
+  subs r2,#0x2
+  cmp r3,r1
+  beq 0x100eec28
+  subs r3,r0,#0x1
+  sxtb r0,r3
+  b 0x100eec20

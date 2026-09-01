@@ -1,0 +1,25 @@
+; FUN_100bc130 @ 0x100bc130 size=56
+  cmp r0,#0x1
+  push {r4,lr}
+  bne 0x100bc15c
+  ldr r3,[0x100bc168]
+  ldrb r4,[r3,#0x2]
+  ldr r3,[0x100bc16c]
+  ldr r0,[0x100bc170]
+  ldr r2,[0x100bc174]
+  subs r0,r0,r3
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x1140000
+  mov r3,r4
+  ldr r1,[0x100bc178]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  mov r0,r4
+  pop {r4,pc}
+  cmp r0,#0x3
+  itet eq
+  ldr.eq r3,[0x100bc168]
+  mov.ne r4,#0x30
+  ldrb.eq r4,[r3,#0x5]
+  b 0x100bc13a

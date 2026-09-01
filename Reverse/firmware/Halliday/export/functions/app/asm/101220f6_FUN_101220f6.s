@@ -1,0 +1,36 @@
+; FUN_101220f6 @ 0x101220f6 size=88
+  ldr r3,[r0,#0x10]
+  push {r4,lr}
+  ldr r2,[r3,#0x0]
+  cbz r1,0x10122148
+  movs r0,#0x0
+  str r0,[r1,#0x0]
+  str r0,[r1,#0x4]
+  str r0,[r1,#0x8]
+  ldrb r3,[r3,#0x18]
+  strb r3,[r1,#0xa]
+  ldr r3,[r2,#0xc]
+  and r4,r3,#0x3f
+  strb r4,[r1,#0x0]
+  ubfx r4,r3,#0x8,#0x6
+  ubfx r3,r3,#0x10,#0x5
+  strb r4,[r1,#0x1]
+  strb r3,[r1,#0x2]
+  ldr r3,[r2,#0x10]
+  strb r0,[r1,#0x5]
+  and r4,r3,#0x1f
+  strb r4,[r1,#0x3]
+  ubfx r4,r3,#0x8,#0x4
+  subs r4,#0x1
+  ubfx r3,r3,#0x10,#0x7
+  adds r3,#0x64
+  strb r4,[r1,#0x4]
+  strh r3,[r1,#0x6]
+  ldr r3,[r2,#0x8]
+  and r3,r3,#0x7f
+  add.w r3,r3,r3, lsl #0x2
+  lsls r3,r3,#0x1
+  strh r3,[r1,#0x8]
+  pop {r4,pc}
+  mvn r0,#0x15
+  b 0x10122146

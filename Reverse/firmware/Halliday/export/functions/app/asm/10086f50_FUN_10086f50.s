@@ -1,0 +1,23 @@
+; FUN_10086f50 @ 0x10086f50 size=58
+  push {r4,lr}
+  sub sp,#0x20
+  cbz r0,0x10086f86
+  movs r3,#0x0
+  strd r3,r2,[sp,#0x10]
+  ldrb.w r3,[sp,#0x1c]
+  ldr r4,[0x10086f8c]
+  bic r3,r3,#0x7
+  strb.w r3,[sp,#0x1c]
+  ldr r3,[r4,#0x0]
+  strd r0,r0,[sp,#0x4]
+  add r0,sp,#0x4
+  str r3,[sp,#0x18]
+  strb.w r1,[sp,#0xc]
+  str r0,[r4,#0x0]
+  bl 0x10086dbc
+  ldr r3,[sp,#0x18]
+  str r3,[r4,#0x0]
+  add sp,#0x20
+  pop {r4,pc}
+  movs r0,#0x1
+  b 0x10086f82

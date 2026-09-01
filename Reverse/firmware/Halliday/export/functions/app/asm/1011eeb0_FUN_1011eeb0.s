@@ -1,0 +1,19 @@
+; FUN_1011eeb0 @ 0x1011eeb0 size=36
+  ldr r3,[r0,#0x4]
+  push {r4,r5,lr}
+  ldr r4,[r3,#0x0]
+  movs r3,#0x0
+  uxtb r0,r3
+  subs r5,r2,r0
+  cmp r5,#0x0
+  bgt 0x1011eec6
+  movs r3,#0x1
+  str r3,[r4,#0xc]
+  pop {r4,r5,pc}
+  ldr r5,[r4,#0xc]
+  adds r3,#0x1
+  lsls r5,r5,#0x1a
+  bmi 0x1011eec0
+  ldr r5,[r4,#0x4]
+  strb r5,[r1,r0]
+  b 0x1011eeb8

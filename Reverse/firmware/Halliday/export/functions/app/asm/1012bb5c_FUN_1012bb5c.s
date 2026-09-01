@@ -1,0 +1,19 @@
+; FUN_1012bb5c @ 0x1012bb5c size=46
+  ldrsh.w r3,[r0,#0x38]
+  cmp r3,r1
+  bne 0x1012bb6c
+  ldrsh.w r3,[r0,#0x3a]
+  cmp r3,r2
+  beq 0x1012bb88
+  ldrsh.w r3,[r0,#0x36]
+  strh r1,[r0,#0x38]
+  cmp r3,r1
+  it lt
+  strh.lt r1,[r0,#0x36]
+  ldrsh.w r3,[r0,#0x36]
+  strh r2,[r0,#0x3a]
+  cmp r3,r2
+  it gt
+  strh.gt r2,[r0,#0x36]
+  b.w 0x100955f4
+  bx lr

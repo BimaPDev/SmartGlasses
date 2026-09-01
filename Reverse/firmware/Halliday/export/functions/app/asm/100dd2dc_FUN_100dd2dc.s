@@ -1,0 +1,22 @@
+; FUN_100dd2dc @ 0x100dd2dc size=44
+  ldr r3,[0x100dd308]
+  ldrb r2,[r3,#0x5]
+  cmp r2,r1
+  bne 0x100dd2ea
+  ldr r2,[r3,#0x0]
+  cmp r0,r2
+  beq 0x100dd300
+  ldrb r2,[r3,#0x19]
+  cmp r2,r1
+  bne 0x100dd304
+  ldr r2,[r3,#0x14]
+  cmp r0,r2
+  bne 0x100dd304
+  movs r0,#0x1
+  movs r2,#0x14
+  mla r0,r2,r0,r3
+  bx lr
+  movs r0,#0x0
+  b 0x100dd2f8
+  movs r0,#0x0
+  bx lr

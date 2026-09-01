@@ -1,0 +1,23 @@
+; FUN_100af490 @ 0x100af490 size=56
+  push {r3,lr}
+  ldr r0,[0x100af4c8]
+  bl 0x1009e9f8
+  cbnz r0,0x100af4bc
+  ldr r0,[0x100af4c8]
+  bl 0x1009e86c
+  ldr r3,[0x100af4cc]
+  ldr r2,[0x100af4d0]
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  cbnz r0,0x100af4c0
+  orr r0,r3,#0x3480000
+  ldr r1,[0x100af4d4]
+  orr r0,r0,#0x11
+  bl 0x100a5b78
+  movs r0,#0x0
+  pop {r3,pc}
+  ldr r0,[0x100af4d8]
+  ldr r1,[0x100af4dc]
+  orrs r0,r3
+  b 0x100af4b8

@@ -1,0 +1,19 @@
+; FUN_101359dc @ 0x101359dc size=54
+  push {r4,lr}
+  mov r4,r0
+  adds r0,#0x70
+  bl 0x1013cb84
+  movs r3,#0x0
+  add.w r2,r4,#0x64
+  ldaex r1,[r2]
+  stlex r0,r3,[r2]
+  cmp r0,#0x0
+  bne 0x101359ec
+  add.w r0,r4,#0x60
+  ldaex r2,[r0]
+  stlex r1,r3,[r0]
+  cmp r1,#0x0
+  bne 0x101359fc
+  pop.w {r4,lr}
+  movs r1,#0x1
+  b.w 0x10135440

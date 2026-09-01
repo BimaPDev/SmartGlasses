@@ -1,0 +1,27 @@
+; FUN_1011a1b6 @ 0x1011a1b6 size=58
+  push {r3,r4,r5,r6,r7,lr}
+  ldr r7,[r0,#0x4]
+  ldr r3,[r0,#0xc]
+  mov r5,r0
+  cmp r3,r7
+  mov r4,r1
+  bls 0x1011a1ec
+  ldr r6,[r0,#0x10]
+  bl 0x1011a076
+  udiv r0,r0,r6
+  subs r0,#0x1
+  muls r0,r6
+  add r7,r0
+  ldr r1,[r5,#0x0]
+  add r1,r4
+  cmp r1,r7
+  itett ls
+  sub.ls r1,r1,r0
+  mvn.hi r0,#0x15
+  mov.ls r0,#0x0
+  str.ls r1,[r5,#0x0]
+  it ls
+  str.ls r1,[r5,#0xc]
+  pop {r3,r4,r5,r6,r7,pc}
+  movs r0,#0x0
+  b 0x1011a1d4

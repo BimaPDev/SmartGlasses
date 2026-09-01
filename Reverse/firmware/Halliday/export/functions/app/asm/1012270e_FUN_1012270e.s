@@ -1,0 +1,113 @@
+; FUN_1012270e @ 0x1012270e size=302
+  cmp r1,#0x1
+  push {r3,r4,r5,r6,r7,lr}
+  mov r3,r0
+  mov r4,r1
+  bls.w 0x10122836
+  ldr r5,[r0,#0x0]
+  ldr r2,[r5,#0x34]
+  cmp r2,r1
+  bls.w 0x10122836
+  ldrb r2,[r5,#0x0]
+  subs r2,#0x1
+  cmp r2,#0x3
+  bhi.w 0x10122836
+  tbb [pc,r2]
+  ldr r1,[r5,#0x40]
+  add.w r6,r4,r4, lsr #0x1
+  mov r0,r5
+  add.w r1,r1,r6, lsr #0x9
+  bl 0x10122662
+  cbz r0,0x1012274e
+  mov.w r0,#0xffffffff
+  pop {r3,r4,r5,r6,r7,pc}
+  ldr r1,[r5,#0x40]
+  adds r7,r6,#0x1
+  ubfx r6,r6,#0x0,#0x9
+  add r6,r5
+  mov r0,r5
+  add.w r1,r1,r7, lsr #0x9
+  ldrb.w r6,[r6,#0x50]
+  bl 0x10122662
+  cmp r0,#0x0
+  bne 0x10122748
+  ubfx r7,r7,#0x0,#0x9
+  add r5,r7
+  ldrb.w r0,[r5,#0x50]
+  lsls r3,r4,#0x1f
+  orr.w r0,r6,r0, lsl #0x8
+  ite mi
+  lsr.mi r0,r0,#0x4
+  ubfx.pl r0,r0,#0x0,#0xc
+  b 0x1012274c
+  ldr r1,[r5,#0x40]
+  mov r0,r5
+  add.w r1,r1,r4, lsr #0x8
+  bl 0x10122662
+  cmp r0,#0x0
+  bne 0x10122748
+  lsls r1,r4,#0x1
+  adds r5,#0x50
+  and r1,r1,#0x1fe
+  adds r3,r5,r1
+  ldrb r4,[r3,#0x1]
+  ldrb r0,[r5,r1]
+  orr.w r0,r0,r4, lsl #0x8
+  b 0x1012274c
+  ldr r1,[r5,#0x40]
+  mov r0,r5
+  add.w r1,r1,r4, lsr #0x7
+  bl 0x10122662
+  cmp r0,#0x0
+  bne 0x10122748
+  lsls r4,r4,#0x2
+  add.w r0,r5,#0x50
+  and r4,r4,#0x1fc
+  add r0,r4
+  bl 0x1012227a
+  bic r0,r0,#0xf0000000
+  b 0x1012274c
+  ldrd r0,r1,[r0,#0x10]
+  orrs.w r2,r0,r1
+  ldrb r6,[r3,#0x7]
+  beq 0x101227de
+  ldr r2,[r3,#0x8]
+  cbnz r2,0x101227e0
+  cbnz r6,0x10122836
+  ldr r2,[r3,#0x8]
+  cmp r6,#0x2
+  sub.w r2,r4,r2
+  bne 0x10122808
+  adds.w r3,r0,#0xffffffff
+  adc r1,r1,#0xffffffff
+  lsrs r3,r3,#0x9
+  orr.w r3,r3,r1, lsl #0x17
+  ldrh r1,[r5,#0xa]
+  udiv r3,r3,r1
+  cmp r2,r3
+  bhi 0x10122836
+  beq 0x1012283a
+  adds r0,r4,#0x1
+  b 0x1012274c
+  cmp r6,#0x3
+  bne 0x10122812
+  ldr r3,[r3,#0x18]
+  cmp r3,r2
+  bhi 0x10122804
+  ldr r1,[r5,#0x40]
+  mov r0,r5
+  add.w r1,r1,r4, lsr #0x7
+  bl 0x10122662
+  cmp r0,#0x0
+  bne 0x10122748
+  lsls r0,r4,#0x2
+  adds r5,#0x50
+  and r0,r0,#0x1fc
+  add r0,r5
+  bl 0x1012227a
+  bic r0,r0,#0x80000000
+  b 0x1012274c
+  movs r0,#0x1
+  b 0x1012274c
+  mvn r0,#0x80000000
+  b 0x1012274c

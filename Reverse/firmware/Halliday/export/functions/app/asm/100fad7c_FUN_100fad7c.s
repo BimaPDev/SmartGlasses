@@ -1,0 +1,24 @@
+; FUN_100fad7c @ 0x100fad7c size=46
+  cmp r1,#0x0
+  blt 0x100fada6
+  push {r4,r5,r6,lr}
+  ldr r4,[r0,#0x8]
+  ldr r6,[r0,#0x14]
+  mov r5,r0
+  add r4,r1
+  cbz r6,0x100fad9c
+  movs r3,#0x0
+  mov r1,r4
+  mov r2,r3
+  blx r6
+  cbnz r0,0x100fada2
+  movs r0,#0x0
+  str r4,[r5,#0x8]
+  pop {r4,r5,r6,pc}
+  ldr r3,[r0,#0x4]
+  cmp r4,r3
+  bls 0x100fad96
+  movs r0,#0x55
+  pop {r4,r5,r6,pc}
+  movs r0,#0x55
+  bx lr

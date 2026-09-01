@@ -1,0 +1,26 @@
+; FUN_10107374 @ 0x10107374 size=56
+  push {r4,r5,r6,lr}
+  mov r5,r3
+  orrs.w r3,r0,r1
+  sub sp,#0x8
+  beq 0x101073a6
+  mov r4,r0
+  mov r6,r2
+  mov r0,sp
+  strd r4,r1,[sp,#0x0]
+  bl 0x100f8860
+  ldr r0,[sp,#0x0]
+  ldr r1,[sp,#0x4]
+  cmp r0,#0x0
+  it lt
+  add.lt r0,#0x3
+  cmp r1,#0x0
+  it lt
+  add.lt r1,#0x3
+  asrs r0,r0,#0x2
+  asrs r1,r1,#0x2
+  strh r0,[r6,#0x0]
+  strh r1,[r5,#0x0]
+  movs r0,#0x0
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

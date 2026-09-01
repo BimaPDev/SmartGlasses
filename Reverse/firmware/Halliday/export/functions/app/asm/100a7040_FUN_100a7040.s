@@ -1,0 +1,22 @@
+; FUN_100a7040 @ 0x100a7040 size=48
+  push {r0,r1,r4,r5,r6,lr}
+  mov r5,r0
+  bl 0x1013ce56
+  ldr r6,[0x100a7070]
+  ldr r4,[0x100a7074]
+  ldr r3,[r6,#0x0]
+  subs r0,r0,r3
+  ldrb r3,[r4,#0x8]
+  cmp r0,r3
+  bcc 0x100a706c
+  bl 0x1013ce56
+  ldrb r3,[r4,#0x6]
+  str r0,[r6,#0x0]
+  str r3,[sp,#0x0]
+  mov r1,r5
+  mov r0,r4
+  ldrb r3,[r4,#0x4]
+  ldrb r2,[r4,#0x5]
+  bl 0x1012ddf0
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

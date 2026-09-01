@@ -1,0 +1,22 @@
+; FUN_1011e72e @ 0x1011e72e size=58
+  ldrsh.w r2,[r0,#0x0]
+  ldrsh.w r3,[r1,#0x0]
+  cmp r2,r3
+  blt 0x1011e764
+  ldrsh.w r2,[r0,#0x2]
+  ldrsh.w r3,[r1,#0x2]
+  cmp r2,r3
+  blt 0x1011e764
+  ldrsh.w r2,[r0,#0x4]
+  ldrsh.w r3,[r1,#0x4]
+  cmp r2,r3
+  bgt 0x1011e764
+  ldrsh.w r0,[r0,#0x6]
+  ldrsh.w r3,[r1,#0x6]
+  cmp r0,r3
+  ite gt
+  mov.gt r0,#0x0
+  mov.le r0,#0x1
+  bx lr
+  movs r0,#0x0
+  bx lr

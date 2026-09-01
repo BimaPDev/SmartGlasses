@@ -1,0 +1,23 @@
+; FUN_10130f28 @ 0x10130f28 size=56
+  push {r3,r4,r5,lr}
+  mov r4,r1
+  mov r5,r0
+  ldr r0,[r0,#0x8]
+  mov.w r1,#0xffffffff
+  adds r0,#0x38
+  bl 0x1011dbf4
+  ldr r1,[r4,#0x0]
+  cmp r1,#0x9
+  ble 0x10130f5a
+  ldr r0,[r5,#0x10]
+  cbz r0,0x10130f5a
+  ldrd r2,r3,[r4,#0x4]
+  bl 0x101310ae
+  mov r4,r0
+  ldr r0,[r5,#0x8]
+  adds r0,#0x38
+  bl 0x10130954
+  mov r0,r4
+  pop {r3,r4,r5,pc}
+  mvn r4,#0x15
+  b 0x10130f4e

@@ -1,0 +1,19 @@
+; FUN_101379ce @ 0x101379ce size=46
+  push {r3,r4,r5,lr}
+  movs r2,#0x28
+  movs r3,#0x0
+  mov r5,r0
+  adds r0,#0x97
+  bl 0x10137964
+  mov r4,r0
+  ldr r1,[r0,#0x8]
+  movs r0,#0x2
+  bl 0x100df30c
+  mov r1,r0
+  mov r0,r4
+  bl 0x101376b2
+  mov r1,r4
+  mov r0,r5
+  pop.w {r3,r4,r5,lr}
+  movs r2,#0x1
+  b.w 0x101376b8

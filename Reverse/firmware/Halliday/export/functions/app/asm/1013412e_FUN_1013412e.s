@@ -1,0 +1,26 @@
+; FUN_1013412e @ 0x1013412e size=70
+  push {r3,r4,r5,r6,r7,r8,r9,lr}
+  ldrb.w r9,[sp,#0x20]
+  mov r6,r0
+  mov r7,r2
+  movs r0,#0x1
+  add.w r2,r9,#0x2
+  mov r5,r3
+  bl 0x100cb5a8
+  mov r4,r0
+  cbz r0,0x10134170
+  add.w r8,r0,#0x8
+  movs r1,#0x2
+  mov r0,r8
+  bl 0x100c1fe4
+  strh r7,[r0,#0x0]
+  cbz r5,0x10134164
+  mov r2,r9
+  mov r1,r5
+  mov r0,r8
+  bl 0x101327a0
+  mov r1,r4
+  mov r0,r6
+  pop.w {r3,r4,r5,r6,r7,r8,r9,lr}
+  b.w 0x1013411a
+  pop.w {r3,r4,r5,r6,r7,r8,r9,pc}

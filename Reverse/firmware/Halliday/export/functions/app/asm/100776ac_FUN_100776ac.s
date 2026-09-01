@@ -1,0 +1,44 @@
+; FUN_100776ac @ 0x100776ac size=108
+  push {r4,r5,r6,r7,r8,lr}
+  mov r5,r2
+  mov r7,r0
+  mov r8,r3
+  bl 0x1011fa04
+  movs r4,#0x0
+  muls r1,r0
+  ldr r6,[sp,#0x18]
+  ldr r2,[0x10077718]
+  ldr.w r3,[r2,r4,lsl #0x3]
+  cmp r3,r1
+  bne 0x100776e8
+  cmp r4,#0x8
+  add.w r2,r2,r4, lsl #0x3
+  ite gt
+  mov.gt r4,#0x0
+  mov.le r4,#0x1
+  movs r0,#0x0
+  ldrb r3,[r2,#0x4]
+  strb r3,[r5,#0x0]
+  ldrb r3,[r2,#0x5]
+  strb.w r3,[r8,#0x0]
+  strb r4,[r6,#0x0]
+  pop.w {r4,r5,r6,r7,r8,pc}
+  adds r4,#0x1
+  cmp r4,#0xe
+  bne 0x100776c2
+  ldr r0,[0x1007771c]
+  ldr r4,[0x10077720]
+  mov r3,r7
+  subs r4,r4,r0
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orr r0,r4,#0xe40000
+  orr r0,r0,#0x11
+  ldr r2,[0x10077724]
+  ldr r1,[0x10077728]
+  bl 0x100a5b78
+  movs r3,#0xff
+  mvn r0,#0x7
+  strb r3,[r5,#0x0]
+  strb r3,[r6,#0x0]
+  b 0x100776e4

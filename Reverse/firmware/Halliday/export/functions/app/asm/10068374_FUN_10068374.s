@@ -1,0 +1,45 @@
+; FUN_10068374 @ 0x10068374 size=122
+  push {r3,lr}
+  mov r5,r1
+  mov r4,r2
+  movs r3,#0x0
+  vmsr fpscr,r3
+  mrs r3,control
+  bic r3,r3,#0x4
+  msr control,r3
+  isb #0xf
+  isb #0xf
+  ldr r3,[0x100683b8]
+  str r0,[r3,#0x8]
+  bl 0x1013c756
+  mov r0,r4
+  msr psp,r5
+  movs r1,#0x0
+  cpsie if
+  msr basepri,r1
+  isb #0xf
+  movs r2,#0x0
+  movs r3,#0x0
+  bl 0x10119df6
+  nop
+  sbcs.w r8,r8,r3, lsl #0xc
+  push {r0,lr}
+  cpsid i
+  ldr r2,[0x100683f0]
+  ldr r0,[r2,#0x18]
+  cmp r0,#0x0
+  ittt ne
+  mov.ne r1,#0x0
+  str.ne r1,[r2,#0x18]
+  bl.ne 0x1013c780
+  cpsie i
+  mrs r0,ipsr
+  sub.w r0,r0,#0x10
+  lsl.w r0,r0,#0x3
+  ldr r1,[0x100683f4]
+  add r1,r0
+  ldmia r1!,{r0,r3}
+  blx r3
+  pop.w {r0,lr}
+  ldr r1,[0x100683f8]
+  bx r1

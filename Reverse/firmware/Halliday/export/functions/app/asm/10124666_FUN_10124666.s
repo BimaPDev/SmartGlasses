@@ -1,0 +1,15 @@
+; FUN_10124666 @ 0x10124666 size=36
+  push {r4,lr}
+  eor r4,r1,#0x1
+  cbz r0,0x10124680
+  ldrb r2,[r0,#0x5]
+  bfi r2,r4,#0x2,#0x1
+  strb r2,[r0,#0x5]
+  pop {r4,pc}
+  ldrb r3,[r0,#0x5]
+  bfi r3,r4,#0x2,#0x1
+  strb r3,[r0,#0x5]
+  bl 0x10093034
+  cmp r0,#0x0
+  bne 0x10124678
+  b 0x10124676

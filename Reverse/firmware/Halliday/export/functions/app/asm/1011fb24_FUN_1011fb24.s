@@ -1,0 +1,21 @@
+; FUN_1011fb24 @ 0x1011fb24 size=60
+  add.w r0,r0,#0xd0000000
+  add.w r3,r0,#0xd0000
+  cmp.w r3,#0xc000
+  bcs 0x1011fb36
+  lsrs r0,r3,#0x1
+  bx lr
+  add.w r3,r0,#0x20000
+  cmp.w r3,#0x78000
+  bcs 0x1011fb48
+  lsrs r0,r3,#0x1
+  add.w r0,r0,#0x40000000
+  bx lr
+  add.w r0,r0,#0xe8000
+  cmp.w r0,#0x8000
+  ittte cc
+  lsr.cc r0,r0,#0x1
+  add.cc.w r0,r0,#0x40000000
+  add.cc.w r0,r0,#0x100000
+  mov.cs r0,#0x0
+  bx lr

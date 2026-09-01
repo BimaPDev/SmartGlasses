@@ -1,0 +1,20 @@
+; FUN_10119df6 @ 0x10119df6 size=46
+  mov r4,r0
+  push {r3,lr}
+  mov r0,r1
+  mov r1,r2
+  mov r2,r3
+  blx r4
+  bl 0x10115464
+  bl 0x10068ad0
+  push {r0,r1,r4,lr}
+  bl 0x100539e8
+  mov r4,r0
+  str r1,[sp,#0x4]
+  bl 0x1011e9ea
+  movs r3,#0x0
+  str r3,[r0,#0x0]
+  mov r0,r4
+  ldr r1,[sp,#0x4]
+  add sp,#0x8
+  pop {r4,pc}

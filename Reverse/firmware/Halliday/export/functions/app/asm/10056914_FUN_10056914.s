@@ -1,0 +1,27 @@
+; FUN_10056914 @ 0x10056914 size=60
+  ldr r3,[0x10056950]
+  push {r4,lr}
+  ldr r2,[r3,#0x0]
+  bic r2,r2,#0x8
+  str r2,[r3,#0x0]
+  ldr r3,[r3,#0x0]
+  lsls r1,r3,#0x1c
+  bmi 0x1005694a
+  ldr r3,[0x10056954]
+  ldr r3,[r3,#0x0]
+  lsls r2,r3,#0x1c
+  bmi 0x1005694a
+  ldr r3,[0x10056958]
+  ldr r3,[r3,#0x0]
+  lsls r3,r3,#0x1c
+  bmi 0x1005694a
+  ldr r3,[0x1005695c]
+  ldr r4,[r3,#0x0]
+  ands r4,r4,#0x8
+  bne 0x1005694a
+  movs r0,#0x10
+  bl 0x10055c2c
+  mov r0,r4
+  pop {r4,pc}
+  mvn r0,#0xa
+  b 0x10056948

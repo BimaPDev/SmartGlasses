@@ -1,0 +1,23 @@
+; FUN_10055c2c @ 0x10055c2c size=60
+  cmp r0,#0x3f
+  push {r4,lr}
+  bgt 0x10055c66
+  mov.w r3,#0x20
+  mrs r4,basepri
+  msr basepri_max,r3
+  isb #0xf
+  movs r3,#0x1
+  cmp r0,#0x1f
+  itete le
+  ldr.le r1,[0x10055c68]
+  ldr.gt r1,[0x10055c6c]
+  ldr.le r2,[r1,#0x0]
+  ldr.gt r2,[r1,#0x0]
+  it gt
+  sub.gt r0,#0x20
+  lsl.w r0,r3,r0
+  bic.w r0,r2,r0
+  str r0,[r1,#0x0]
+  msr basepri,r4
+  isb #0xf
+  pop {r4,pc}

@@ -1,0 +1,20 @@
+; FUN_10119d9c @ 0x10119d9c size=38
+  push {r4,r5,lr}
+  ldr r2,[r1,#0x8]
+  ldr r4,[r1,#0x0]
+  adds r5,r2,#0x1
+  cbz r4,0x10119dac
+  ldr r3,[r1,#0x4]
+  cmp r3,r2
+  bgt 0x10119db0
+  str r5,[r1,#0x8]
+  pop {r4,r5,pc}
+  subs r3,#0x1
+  cmp r3,r2
+  it eq
+  mov.eq r2,#0x0
+  str r5,[r1,#0x8]
+  ite eq
+  strb.eq r2,[r4,r3]
+  strb.ne r0,[r4,r2]
+  b 0x10119dae

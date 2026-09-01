@@ -1,0 +1,25 @@
+; FUN_100a5114 @ 0x100a5114 size=62
+  push {r0,r1,r4,lr}
+  movs r4,#0x0
+  add r0,sp,#0x4
+  str r4,[sp,#0x4]
+  bl 0x10055524
+  cbnz r0,0x100a514e
+  ldr r2,[0x100a5154]
+  ldr r4,[0x100a5158]
+  ldrb.w r3,[sp,#0x4]
+  subs r4,r4,r2
+  ldr r0,[0x100a515c]
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orrs r0,r4
+  ldr r2,[0x100a5160]
+  ldr r1,[0x100a5164]
+  ubfx r3,r3,#0x3,#0x1
+  bl 0x100a5b78
+  ldrb.w r0,[sp,#0x4]
+  ubfx r0,r0,#0x3,#0x1
+  add sp,#0x8
+  pop {r4,pc}
+  mov r0,r4
+  b 0x100a514a

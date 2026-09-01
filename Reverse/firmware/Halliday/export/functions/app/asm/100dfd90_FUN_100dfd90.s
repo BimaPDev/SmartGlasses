@@ -1,0 +1,25 @@
+; FUN_100dfd90 @ 0x100dfd90 size=52
+  push {r4,r5,lr}
+  ldrb r4,[r0,#0x0]
+  subs r3,r4,#0x1
+  cmp r3,#0x1d
+  bhi 0x100dfdb8
+  ldr r3,[r0,#0x4]
+  cbz r3,0x100dfdb8
+  ldr r2,[0x100dfdc4]
+  ldr r1,[r2,#0x0]
+  mov r3,r1
+  cbnz r3,0x100dfdae
+  str r1,[r0,#0x8]
+  str r0,[r2,#0x0]
+  mov r0,r3
+  b 0x100dfdbc
+  ldrb r5,[r3,#0x0]
+  cmp r5,r4
+  beq 0x100dfdbe
+  ldr r3,[r3,#0x8]
+  b 0x100dfda4
+  mvn r0,#0x15
+  pop {r4,r5,pc}
+  mvn r0,#0x6f
+  b 0x100dfdbc

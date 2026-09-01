@@ -1,0 +1,7 @@
+; FUN_100d8c98 @ 0x100d8c98 size=16
+  ldr r3,[0x100d8ca8]
+  ldr r3,[r3,#0x0]
+  ldrb r2,[r3,#0x0]
+  bfi r2,r0,#0x1,#0x1
+  strb r2,[r3,#0x0]
+  b.w 0x100d88cc

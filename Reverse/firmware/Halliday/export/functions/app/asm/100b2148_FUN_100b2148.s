@@ -1,0 +1,21 @@
+; FUN_100b2148 @ 0x100b2148 size=50
+  push {r4,lr}
+  mov r4,r0
+  ldr r2,[0x100b217c]
+  ldr r3,[0x100b2180]
+  ldr r1,[0x100b2184]
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  mov r2,r0
+  ldr r0,[0x100b2188]
+  and r3,r3,#0xff00
+  orrs r0,r3
+  bl 0x100a5b78
+  ldrb.w r3,[r4,#0x62]
+  cmp r3,#0x1
+  ittet eq
+  mov.eq r3,#0x2
+  mov.eq r0,#0x0
+  mvn.ne r0,#0x15
+  strb.eq.w r3,[r4,#0x62]
+  pop {r4,pc}

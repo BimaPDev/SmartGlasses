@@ -1,0 +1,22 @@
+; FUN_1012dd88 @ 0x1012dd88 size=52
+  ldrb.w r2,[r0,#0x28]
+  push {r4,r5,lr}
+  ands r2,r2,#0x1
+  beq 0x1012ddb8
+  ldrd r2,r3,[r0,#0x18]
+  ldrd r4,r5,[r0,#0x20]
+  cmp r3,r5
+  it eq
+  cmp.eq r2,r4
+  itett cs
+  ldr.cs r0,[r0,#0x10]
+  sub.cc r2,r4,r2
+  add.cs r0,r0,r4
+  sub.cs r2,r0,r2
+  movs r0,#0xc
+  lsrs r3,r2,#0xc
+  mla r0,r3,r0,r0
+  subs r0,r2,r0
+  pop {r4,r5,pc}
+  mov r0,r2
+  b 0x1012ddb6

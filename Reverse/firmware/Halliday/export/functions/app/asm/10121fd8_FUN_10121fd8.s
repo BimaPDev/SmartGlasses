@@ -1,0 +1,20 @@
+; FUN_10121fd8 @ 0x10121fd8 size=48
+  push {r4,lr}
+  mov r4,r0
+  sub sp,#0x20
+  str r3,[sp,#0x0]
+  mov r3,r2
+  mov r2,r1
+  add r1,sp,#0xc
+  bl 0x10120a74
+  ldr r3,[sp,#0x28]
+  mov r0,r4
+  str.w r3,[sp,#0x11]
+  ldr r3,[sp,#0x2c]
+  add r1,sp,#0xc
+  str.w r3,[sp,#0x15]
+  ldr r3,[sp,#0x30]
+  str.w r3,[sp,#0x19]
+  bl 0x1007e498
+  add sp,#0x20
+  pop {r4,pc}

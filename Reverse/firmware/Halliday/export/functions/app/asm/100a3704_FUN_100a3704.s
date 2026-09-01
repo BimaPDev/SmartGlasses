@@ -1,0 +1,147 @@
+; FUN_100a3704 @ 0x100a3704 size=376
+  push {r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,lr}
+  movs r3,#0x0
+  strd r3,r3,[sp,#0x4]
+  mov r7,r0
+  ldr r0,[r0,#0x4]
+  str r3,[sp,#0xc]
+  ldr r3,[r0,#0x8]
+  mov r5,r1
+  ldr r3,[r3,#0x8]
+  cbz r3,0x100a3720
+  add r1,sp,#0x4
+  blx r3
+  ldrh.w r0,[sp,#0x8]
+  ldrsh.w r2,[sp,#0x4]
+  subs r1,r0,#0x1
+  rsbs.w r12,r1,#0x0
+  adc.w r12,r12,r1
+  ldr r1,[0x100a387c]
+  ldrsh.w r3,[sp,#0x6]
+  ldr r1,[r1,#0x0]
+  strh r2,[r5,#0x0]
+  strh r3,[r5,#0x2]
+  strb.w r12,[r5,#0x8]
+  cmp r1,#0x0
+  bne.w 0x100a386a
+  ldr r6,[0x100a3880]
+  ldrb r4,[r6,#0x8]
+  cmp r4,#0x0
+  beq.w 0x100a3866
+  cmp r0,#0x1
+  ldr.w r8,[0x100a388c]
+  ldr r0,[0x100a3884]
+  bne 0x100a3856
+  ldrh r4,[r6,#0x0]
+  ldrh.w lr,[r8,#0x0]
+  subs r2,r2,r4
+  ldrh r4,[r6,#0x2]
+  sxth r2,r2
+  subs r3,r3,r4
+  ldrh.w r4,[r8,#0x2]
+  sxth r3,r3
+  add lr,r2
+  add r4,r3
+  sxth.w lr,lr
+  sxth r4,r4
+  strh.w lr,[r8,#0x0]
+  strh.w r4,[r8,#0x2]
+  eor.w r8,lr,lr, asr #0x1f
+  ldrb.w r10,[r7,#0x14]
+  sub.w r8,r8,lr, asr #0x1f
+  uxth.w r8,r8
+  eor.w r9,r4,r4, asr #0x1f
+  sub.w r9,r9,r4, asr #0x1f
+  cmp r8,r10
+  uxth.w r9,r9
+  bhi 0x100a37a6
+  cmp r9,r10
+  bls 0x100a37b4
+  cmp r9,r8
+  bhi 0x100a3842
+  cmp.w lr,#0x0
+  ite gt
+  mov.gt r1,#0x4
+  mov.le r1,#0x3
+  eor.w r4,r2,r2, asr #0x1f
+  ldrb.w lr,[r7,#0x16]
+  sub.w r4,r4,r2, asr #0x1f
+  uxth r4,r4
+  cmp r4,lr
+  bcs 0x100a37da
+  eor.w r4,r3,r3, asr #0x1f
+  sub.w r4,r4,r3, asr #0x1f
+  uxth r4,r4
+  cmp lr,r4
+  ittt hi
+  mov.hi r4,#0x0
+  strh.hi r4,[r0,#0x0]
+  strh.hi r4,[r0,#0x2]
+  ldrh r4,[r0,#0x0]
+  ldrb r7,[r7,#0x17]
+  add r2,r4
+  ldrh r4,[r0,#0x2]
+  sxth r2,r2
+  add r3,r4
+  eor.w r4,r2,r2, asr #0x1f
+  sxth r3,r3
+  sub.w r4,r4,r2, asr #0x1f
+  strh r2,[r0,#0x0]
+  strh r3,[r0,#0x2]
+  uxth r4,r4
+  eor.w r0,r3,r3, asr #0x1f
+  sub.w r0,r0,r3, asr #0x1f
+  cmp r4,r7
+  uxth r0,r0
+  bhi 0x100a3808
+  cmp r7,r0
+  bcs 0x100a3862
+  cmp r4,r0
+  bcc 0x100a384c
+  cmp r2,#0x0
+  ite gt
+  mov.gt r4,#0x4
+  mov.le r4,#0x3
+  strb r4,[r5,#0x4]
+  strb r1,[r5,#0x5]
+  ldm.w r5,{r0,r1,r2}
+  stm r6,{r0,r1,r2}
+  ldr r4,[0x100a3888]
+  ldrb r3,[r4,#0x0]
+  cmp r3,r12
+  beq 0x100a383a
+  mov r0,r12
+  bl 0x100a36ac
+  ldrb r0,[r5,#0x8]
+  cmp r0,#0x1
+  strb r0,[r4,#0x0]
+  bne 0x100a3874
+  bl 0x1011aab8
+  movs r0,#0x0
+  add sp,#0x10
+  pop.w {r4,r5,r6,r7,r8,r9,r10,pc}
+  cmp r4,#0x0
+  ite gt
+  mov.gt r1,#0x1
+  mov.le r1,#0x2
+  b 0x100a37b4
+  cmp r3,#0x0
+  ite gt
+  mov.gt r4,#0x1
+  mov.le r4,#0x2
+  b 0x100a3814
+  strh r1,[r0,#0x0]
+  strh r1,[r0,#0x2]
+  strh.w r1,[r8,#0x0]
+  strh.w r1,[r8,#0x2]
+  movs r4,#0x0
+  b 0x100a3814
+  mov r1,r4
+  b 0x100a3814
+  ldrsb.w r3,[sp,#0xa]
+  strb r3,[r5,#0x4]
+  strb r3,[r5,#0x5]
+  b 0x100a3820
+  movs r0,#0x1
+  bl 0x1011aabe
+  b 0x100a383a

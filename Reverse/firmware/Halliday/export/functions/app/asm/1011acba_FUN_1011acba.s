@@ -1,0 +1,27 @@
+; FUN_1011acba @ 0x1011acba size=56
+  push {r3,r4,r5,lr}
+  ldr r3,[r1,#0xc]
+  mov r5,r0
+  ldrb r3,[r3,#0x10]
+  mov r4,r1
+  cmp r3,#0x2
+  bne 0x1011acd2
+  cmp r0,#0xa
+  bne 0x1011acd2
+  movs r0,#0xd
+  bl 0x1011acba
+  ldr r3,[r4,#0x10]
+  ldr r2,[r4,#0x0]
+  ldr r3,[r3,#0x0]
+  strb r5,[r2,r3]
+  ldr r2,[r4,#0x10]
+  ldr r3,[r2,#0x0]
+  adds r3,#0x1
+  str r3,[r2,#0x0]
+  ldr r2,[r4,#0x4]
+  cmp r3,r2
+  bne 0x1011acee
+  mov r0,r4
+  bl 0x1011aca2
+  movs r0,#0x0
+  pop {r3,r4,r5,pc}

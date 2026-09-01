@@ -1,0 +1,20 @@
+; FUN_100d4440 @ 0x100d4440 size=48
+  push {r4,r5,r6,lr}
+  mov r6,r0
+  mov r5,r1
+  mov r4,r2
+  sub sp,#0x18
+  movs r2,#0x14
+  movs r1,#0x0
+  add r0,sp,#0x4
+  bl 0x1011ea48
+  add r1,sp,#0x4
+  ldr r0,[0x100d4470]
+  strb.w r6,[sp,#0x6]
+  strb.w r5,[sp,#0x7]
+  str r4,[sp,#0xc]
+  bl 0x1009ece8
+  eor r0,r0,#0x1
+  uxtb r0,r0
+  add sp,#0x18
+  pop {r4,r5,r6,pc}

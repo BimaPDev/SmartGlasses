@@ -1,0 +1,20 @@
+; FUN_1011c1d0 @ 0x1011c1d0 size=48
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  mov r4,r1
+  bl 0x10057234
+  cbz r0,0x1011c1e4
+  bl 0x10056618
+  udiv r4,r4,r0
+  ldr r3,[r5,#0x8]
+  cmp r3,r4
+  itet cc
+  ldr.cc r1,[r5,#0x8]
+  mov.cs r4,#0x0
+  sub.cc r4,r4,r1
+  bl 0x10057234
+  cbz r0,0x1011c1fc
+  bl 0x10056618
+  muls r4,r0
+  mov r0,r4
+  pop {r3,r4,r5,pc}

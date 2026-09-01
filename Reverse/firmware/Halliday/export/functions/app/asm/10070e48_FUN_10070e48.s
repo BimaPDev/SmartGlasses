@@ -1,0 +1,21 @@
+; FUN_10070e48 @ 0x10070e48 size=50
+  push {r0,r1,r4,lr}
+  add.w r4,r0,#0x2fc00000
+  add.w r4,r4,#0x318000
+  movs r1,#0x14
+  mov r0,r4
+  add r2,sp,#0x4
+  bl 0x1011ea96
+  cbz r0,0x10070e76
+  ldr r2,[sp,#0x4]
+  ldr r1,[0x10070e7c]
+  cmp r2,#0x14
+  it cs
+  mov.cs r2,#0x14
+  bl 0x1011ea40
+  mov r0,r4
+  ldr r1,[sp,#0x4]
+  bl 0x1011eb2a
+  ldr r0,[sp,#0x4]
+  add sp,#0x8
+  pop {r4,pc}

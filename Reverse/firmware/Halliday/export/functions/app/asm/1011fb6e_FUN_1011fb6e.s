@@ -1,0 +1,23 @@
+; FUN_1011fb6e @ 0x1011fb6e size=64
+  ands r3,r0,#0x20000000
+  beq 0x1011fba6
+  bic r0,r0,#0xbf000000
+  bic r0,r0,#0xfc0000
+  cmp.w r0,#0x2000
+  bcc 0x1011fbaa
+  sub.w r3,r0,#0x10000
+  cmp.w r3,#0x10000
+  bcc 0x1011fbaa
+  add.w r3,r0,#0xc0000000
+  cmp.w r3,#0x3c000
+  bcc 0x1011fbaa
+  sub.w r0,r0,#0x35000
+  cmp.w r0,#0x3c000
+  ite cs
+  mov.cs r0,#0x0
+  mov.cc r0,#0x1
+  bx lr
+  mov r0,r3
+  bx lr
+  movs r0,#0x1
+  bx lr

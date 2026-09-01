@@ -1,0 +1,21 @@
+; FUN_100d0a38 @ 0x100d0a38 size=56
+  ldr r3,[0x100d0a70]
+  push {r4,lr}
+  ldrb r3,[r3,#0x0]
+  cbz r3,0x100d0a64
+  and r4,r0,#0x2f
+  bl 0x100d0724
+  ldr r3,[0x100d0a74]
+  cmp r0,#0x3
+  ldrb r3,[r3,#0x0]
+  ite eq
+  and.eq r4,r4,#0x2b
+  orr.ne r4,r4,#0x4
+  cbz r3,0x100d0a6a
+  orr r4,r4,#0x1
+  orr r0,r4,#0x20
+  pop {r4,pc}
+  and r4,r0,#0x7
+  b 0x100d0a44
+  and r4,r4,#0xfe
+  b 0x100d0a5e

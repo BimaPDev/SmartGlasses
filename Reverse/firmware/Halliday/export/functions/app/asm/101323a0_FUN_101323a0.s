@@ -1,0 +1,20 @@
+; FUN_101323a0 @ 0x101323a0 size=48
+  push {r4,r5,lr}
+  sub sp,#0x1c
+  strd r2,r1,[sp,#0x10]
+  mov r4,r0
+  str r3,[sp,#0xc]
+  bl 0x10131956
+  ldrd r3,r2,[sp,#0xc]
+  mov r5,r0
+  ldr r0,[sp,#0x28]
+  ldr r1,[sp,#0x14]
+  str r0,[sp,#0x0]
+  mov r0,r4
+  bl 0x100c84fc
+  mov r4,r0
+  mov r0,r5
+  bl 0x1013197e
+  mov r0,r4
+  add sp,#0x1c
+  pop {r4,r5,pc}

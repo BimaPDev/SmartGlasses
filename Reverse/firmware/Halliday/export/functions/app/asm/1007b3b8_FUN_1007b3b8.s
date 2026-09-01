@@ -1,0 +1,21 @@
+; FUN_1007b3b8 @ 0x1007b3b8 size=50
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  bl 0x1007b2e4
+  cmp r0,#0x0
+  ble 0x1007b3bc
+  bl 0x1011feb0
+  mov r5,r0
+  movw r0,#0x109a
+  cmp r4,r0
+  it cs
+  mov.cs r4,r0
+  uxth r0,r5
+  subs r0,r4,r0
+  bl 0x1013d02e
+  ldr r3,[0x1007b3ec]
+  cmp r0,#0xc7
+  it gt
+  uxth.gt r4,r5
+  strh.w r4,[r3,#0x15e]
+  pop {r3,r4,r5,pc}

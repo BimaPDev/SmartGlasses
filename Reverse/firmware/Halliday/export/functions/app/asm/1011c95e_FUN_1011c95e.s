@@ -1,0 +1,20 @@
+; FUN_1011c95e @ 0x1011c95e size=38
+  push {r4,r5,r6,lr}
+  movs r4,#0x0
+  subs r2,#0x1
+  sxtb r2,r2
+  lsls r3,r2,#0x2
+  cmp r2,#0x0
+  bge 0x1011c974
+  subs r0,r4,#0x0
+  it ne
+  mov.ne r0,#0x1
+  pop {r4,r5,r6,pc}
+  ldr r5,[r0,r3]
+  ldr r6,[r1,r3]
+  subs r2,#0x1
+  eors r5,r6
+  orrs r4,r5
+  sxtb r2,r2
+  subs r3,#0x4
+  b 0x1011c968

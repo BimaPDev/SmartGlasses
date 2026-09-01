@@ -1,0 +1,19 @@
+; FUN_1010e958 @ 0x1010e958 size=42
+  cmp r0,#0x10
+  mov r3,r1
+  bhi 0x1010e978
+  cmp r0,#0x1
+  bls 0x1010e97e
+  movs r1,#0x1
+  ldr r2,[0x1010e984]
+  lsls r1,r0
+  ands r2,r1
+  cbz r2,0x1010e97e
+  mov r2,r0
+  mov.w r1,#0xb00
+  ldr r0,[0x1010e988]
+  b.w 0x1013b122
+  cmp.w r0,#0x100
+  beq 0x1010e96c
+  movs r0,#0x1
+  bx lr

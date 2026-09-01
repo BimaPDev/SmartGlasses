@@ -1,0 +1,25 @@
+; FUN_100a22ac @ 0x100a22ac size=56
+  push {r3,r4,r5,lr}
+  ldr r4,[0x100a22e4]
+  ldr r3,[r4,#0x0]
+  ldr r3,[r3,#0xc]
+  cbz r3,0x100a22de
+  bl 0x1012d932
+  ldr r3,[r4,#0x0]
+  ldr r5,[r3,#0xc]
+  subs r5,r0,r5
+  ldr r3,[0x100a22e8]
+  ldr r4,[0x100a22ec]
+  ldr r0,[0x100a22f0]
+  subs r4,r4,r3
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orrs r0,r4
+  mov r3,r5
+  ldr r2,[0x100a22f4]
+  ldr r1,[0x100a22f8]
+  bl 0x100a5b78
+  mov r0,r5
+  pop {r3,r4,r5,pc}
+  mov.w r5,#0xffffffff
+  b 0x100a22c0

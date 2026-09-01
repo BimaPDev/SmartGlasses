@@ -1,0 +1,19 @@
+; FUN_100b05d8 @ 0x100b05d8 size=48
+  push {r4,lr}
+  mov r4,r0
+  ldr r3,[0x100b0608]
+  ldr r0,[0x100b060c]
+  mov r2,r4
+  subs r3,r3,r0
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  orr r0,r3,#0x1fc0000
+  ldr r1,[0x100b0610]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  mov r0,r4
+  bl 0x1012fcfc
+  movs r3,#0x5
+  movs r0,#0x0
+  strb.w r3,[r4,#0xb0]
+  pop {r4,pc}

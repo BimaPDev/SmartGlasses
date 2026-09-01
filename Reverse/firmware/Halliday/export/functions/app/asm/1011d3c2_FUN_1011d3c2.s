@@ -1,0 +1,66 @@
+; FUN_1011d3c2 @ 0x1011d3c2 size=138
+  ldrb r3,[r1,#0x3]
+  ldrb r2,[r0,#0x0]
+  eors r3,r2
+  strb r3,[r0,#0x0]
+  ldrh r3,[r1,#0x2]
+  ldrb r2,[r0,#0x1]
+  eors r3,r2
+  strb r3,[r0,#0x1]
+  ldr r2,[r1,#0x0]
+  ldrb r3,[r0,#0x2]
+  eor.w r3,r3,r2, lsr #0x8
+  strb r3,[r0,#0x2]
+  ldr r2,[r1,#0x0]
+  ldrb r3,[r0,#0x3]
+  eors r3,r2
+  strb r3,[r0,#0x3]
+  ldrb r3,[r1,#0x7]
+  ldrb r2,[r0,#0x4]
+  eors r3,r2
+  strb r3,[r0,#0x4]
+  ldrh r3,[r1,#0x6]
+  ldrb r2,[r0,#0x5]
+  eors r3,r2
+  strb r3,[r0,#0x5]
+  ldr r2,[r1,#0x4]
+  ldrb r3,[r0,#0x6]
+  eor.w r3,r3,r2, lsr #0x8
+  strb r3,[r0,#0x6]
+  ldr r2,[r1,#0x4]
+  ldrb r3,[r0,#0x7]
+  eors r3,r2
+  strb r3,[r0,#0x7]
+  ldrb r3,[r1,#0xb]
+  ldrb r2,[r0,#0x8]
+  eors r3,r2
+  strb r3,[r0,#0x8]
+  ldrb r2,[r0,#0x9]
+  ldrh r3,[r1,#0xa]
+  eors r3,r2
+  strb r3,[r0,#0x9]
+  ldr r2,[r1,#0x8]
+  ldrb r3,[r0,#0xa]
+  eor.w r3,r3,r2, lsr #0x8
+  strb r3,[r0,#0xa]
+  ldr r2,[r1,#0x8]
+  ldrb r3,[r0,#0xb]
+  eors r3,r2
+  strb r3,[r0,#0xb]
+  ldrb r3,[r1,#0xf]
+  ldrb r2,[r0,#0xc]
+  eors r3,r2
+  strb r3,[r0,#0xc]
+  ldrh r3,[r1,#0xe]
+  ldrb r2,[r0,#0xd]
+  eors r3,r2
+  strb r3,[r0,#0xd]
+  ldr r2,[r1,#0xc]
+  ldrb r3,[r0,#0xe]
+  eor.w r3,r3,r2, lsr #0x8
+  strb r3,[r0,#0xe]
+  ldr r2,[r1,#0xc]
+  ldrb r3,[r0,#0xf]
+  eors r3,r2
+  strb r3,[r0,#0xf]
+  bx lr

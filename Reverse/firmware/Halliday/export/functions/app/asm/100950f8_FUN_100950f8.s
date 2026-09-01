@@ -1,0 +1,19 @@
+; FUN_100950f8 @ 0x100950f8 size=46
+  push {r4,r5,r6,r7,r8,lr}
+  mov r4,r3
+  ldr.w r8,[0x10095128]
+  mov r7,r1
+  ldr.w r3,[r8,#0x0]
+  mov r1,r4
+  mov r6,r0
+  mov r5,r2
+  blx r3
+  str r0,[r7,#0x0]
+  cbz r0,0x10095120
+  ldr r0,[r4,#0x0]
+  movs r1,#0x0
+  ldr.w r3,[r8,#0x0]
+  add r0,r6
+  blx r3
+  str r0,[r5,#0x0]
+  pop.w {r4,r5,r6,r7,r8,pc}

@@ -1,0 +1,22 @@
+; FUN_10127112 @ 0x10127112 size=42
+  push {r4,r5,r6,r7,lr}
+  ldr r7,[r0,#0x10]
+  ldr r5,[r1,#0x0]
+  sub sp,#0x14
+  add r5,r7
+  ldr r6,[r0,#0x14]
+  ldr r4,[r1,#0x8]
+  str r5,[sp,#0x0]
+  ldr r5,[r1,#0x4]
+  ldr r1,[r1,#0xc]
+  add r5,r6
+  add r1,r6
+  add r4,r7
+  str r1,[sp,#0xc]
+  ldr r3,[r0,#0x20]
+  mov r1,sp
+  str r5,[sp,#0x4]
+  str r4,[sp,#0x8]
+  blx r3
+  add sp,#0x14
+  pop {r4,r5,r6,r7,pc}

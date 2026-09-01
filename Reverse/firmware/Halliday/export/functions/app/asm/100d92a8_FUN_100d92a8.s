@@ -1,0 +1,24 @@
+; FUN_100d92a8 @ 0x100d92a8 size=62
+  push {r3,lr}
+  ldr r0,[0x100d92e8]
+  bl 0x1009e9f8
+  cbnz r0,0x100d92d4
+  ldr r3,[0x100d92ec]
+  ldr r0,[0x100d92f0]
+  ldr r2,[0x100d92f4]
+  subs r0,r0,r3
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x3a0000
+  orr r0,r0,#0x11
+  ldr r1,[0x100d92f8]
+  bl 0x100a5b78
+  mvn r0,#0x2
+  pop {r3,pc}
+  ldr r0,[0x100d92e8]
+  bl 0x1009e7a0
+  cmp r0,#0x0
+  ite ne
+  mov.ne r0,#0x0
+  mvn.eq r0,#0x73
+  b 0x100d92d2

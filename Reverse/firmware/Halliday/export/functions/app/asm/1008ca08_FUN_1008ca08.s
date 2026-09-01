@@ -1,0 +1,26 @@
+; FUN_1008ca08 @ 0x1008ca08 size=62
+  push {r3,r4,r5,lr}
+  mov r4,r1
+  mov r5,r0
+  bl 0x101272fc
+  ldr r3,[r4,#0x34]
+  str r3,[r5,#0x0]
+  ldr r3,[r4,#0x30]
+  str r3,[r5,#0x4]
+  ldr r3,[r4,#0x2c]
+  str r3,[r5,#0x8]
+  bl 0x1008bbb4
+  ldr r3,[r0,#0x0]
+  ldrb.w r1,[r4,#0x38]
+  ldrb r2,[r3,#0x1c]
+  bfi r2,r1,#0x6,#0x1
+  strb r2,[r3,#0x1c]
+  ldr r3,[r5,#0x48]
+  cbz r3,0x1008ca3a
+  mov r1,r4
+  mov r0,r5
+  blx r3
+  mov r0,r4
+  pop.w {r3,r4,r5,lr}
+  ldr r1,[0x1008ca48]
+  b.w 0x10094268

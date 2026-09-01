@@ -1,0 +1,24 @@
+; FUN_1012d0fc @ 0x1012d0fc size=60
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  mov r6,r1
+  bl 0x10115464
+  bl 0x1009eaf4
+  mov r4,r0
+  cbz r0,0x1012d118
+  ldr r0,[r0,#0xc]
+  cmp r0,#0x0
+  blt 0x1012d118
+  bl 0x1005c270
+  mov r0,r5
+  mov r2,r6
+  movs r1,#0x14
+  bl 0x10063eb0
+  clz r5,r0
+  lsrs r5,r5,#0x5
+  cbz r4,0x1012d134
+  movw r0,#0x1388
+  bl 0x100a25dc
+  str r0,[r4,#0xc]
+  mov r0,r5
+  pop {r4,r5,r6,pc}

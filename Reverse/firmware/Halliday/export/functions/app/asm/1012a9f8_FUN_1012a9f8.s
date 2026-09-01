@@ -1,0 +1,22 @@
+; FUN_1012a9f8 @ 0x1012a9f8 size=42
+  ldr r2,[r0,#0x0]
+  ldr r3,[r1,#0x8]
+  cmp r2,r3
+  bgt 0x1012aa1e
+  ldr r2,[r0,#0x8]
+  ldr r3,[r1,#0x0]
+  cmp r2,r3
+  blt 0x1012aa1e
+  ldr r2,[r0,#0x4]
+  ldr r3,[r1,#0xc]
+  cmp r2,r3
+  bgt 0x1012aa1e
+  ldr r0,[r0,#0xc]
+  ldr r3,[r1,#0x4]
+  cmp r0,r3
+  ite lt
+  mov.lt r0,#0x0
+  mov.ge r0,#0x1
+  bx lr
+  movs r0,#0x0
+  bx lr

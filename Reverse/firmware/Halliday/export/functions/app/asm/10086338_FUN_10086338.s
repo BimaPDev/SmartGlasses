@@ -1,0 +1,43 @@
+; FUN_10086338 @ 0x10086338 size=94
+  cmp r0,#0x4
+  push {r3,r4,r5,lr}
+  mov r4,r2
+  bhi 0x10086396
+  cmp r1,#0x3
+  bhi 0x10086354
+  subs r1,#0x1
+  ldr r3,[0x1008639c]
+  cmp r1,#0x2
+  bhi 0x1008635e
+  tbb [pc,r1]
+  cmp r1,#0x64
+  beq 0x10086390
+  movs r0,#0x4
+  uxtb r0,r0
+  pop {r3,r4,r5,pc}
+  ldr.w r5,[r3,r0,lsl #0x2]
+  mov r0,r5
+  bl 0x10086948
+  mov r2,r4
+  movs r1,#0x5
+  mov r0,r5
+  bl 0x1011b536
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  b 0x1008635a
+  mov r2,r4
+  movs r1,#0x2
+  ldr.w r0,[r3,r0,lsl #0x2]
+  b 0x1008636e
+  mov r2,r4
+  movs r1,#0x1
+  b 0x1008637e
+  mov r2,r4
+  movs r1,#0x4
+  b 0x1008637e
+  movs r1,#0xa
+  ldr r3,[0x1008639c]
+  b 0x1008637e
+  movs r0,#0x2
+  b 0x1008635c

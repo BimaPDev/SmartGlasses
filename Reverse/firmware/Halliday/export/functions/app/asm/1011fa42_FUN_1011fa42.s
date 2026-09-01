@@ -1,0 +1,26 @@
+; FUN_1011fa42 @ 0x1011fa42 size=62
+  push {r4,r5,r6,lr}
+  sub sp,#0x28
+  mov r4,r0
+  mov r6,r1
+  mov r5,r2
+  movs r1,#0x0
+  movs r2,#0x12
+  add r0,sp,#0xc
+  bl 0x1011ea48
+  movs r3,#0x2
+  strb.w r3,[sp,#0xc]
+  movs r3,#0x8
+  strh.w r3,[sp,#0x1e]
+  movs r3,#0x1
+  strb.w r3,[sp,#0x1c]
+  movs r3,#0x0
+  ldr r2,[r4,#0x8]
+  strd r3,r3,[sp,#0x20]
+  mov r0,r4
+  strd r6,r5,[sp,#0x4]
+  ldr r3,[r2,#0x8]
+  add r1,sp,#0x4
+  blx r3
+  add sp,#0x28
+  pop {r4,r5,r6,pc}

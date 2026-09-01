@@ -1,0 +1,20 @@
+; FUN_1012d466 @ 0x1012d466 size=40
+  mov r3,r0
+  ldrd r2,r0,[r0,#0x0]
+  subs r0,r0,r2
+  cmp r1,r0
+  bhi 0x1012d48a
+  add r2,r1
+  str r2,[r3,#0x0]
+  ldr r2,[r3,#0x18]
+  ldr r0,[r3,#0x8]
+  add r2,r1
+  cmp r2,r0
+  str r2,[r3,#0x18]
+  bcc 0x1012d486
+  subs r2,r2,r0
+  str r2,[r3,#0x18]
+  mov r0,r1
+  bx lr
+  movs r1,#0x0
+  b 0x1012d486

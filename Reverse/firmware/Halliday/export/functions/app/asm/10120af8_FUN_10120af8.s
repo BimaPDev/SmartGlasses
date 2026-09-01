@@ -1,0 +1,21 @@
+; FUN_10120af8 @ 0x10120af8 size=44
+  push {r4,r5,r6,lr}
+  movs r3,#0x0
+  movs r6,#0x1c
+  ldr r2,[r0,#0xc]
+  ldrb.w r5,[r2,#0x20]
+  adds r2,#0x14
+  uxtb r0,r3
+  cmp r5,r0
+  bhi 0x10120b12
+  it eq
+  mov.eq r0,#0xff
+  pop {r4,r5,r6,pc}
+  adds r3,#0x1
+  mul r4,r6,r3
+  ldrb r4,[r2,r4]
+  cmp r4,r1
+  bhi 0x10120b10
+  subs r1,r1,r4
+  uxtb r1,r1
+  b 0x10120b06

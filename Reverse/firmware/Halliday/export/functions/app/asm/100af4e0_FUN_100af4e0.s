@@ -1,0 +1,21 @@
+; FUN_100af4e0 @ 0x100af4e0 size=48
+  cmp r0,#0x2c
+  beq 0x100af4fe
+  bhi 0x100af4f6
+  cmp r0,#0xb
+  beq 0x100af504
+  cmp r0,#0x16
+  beq 0x100af50a
+  mov.w r3,#0x3e8
+  muls r0,r3
+  bx lr
+  cmp r0,#0x58
+  bne 0x100af4ee
+  ldr r0,[0x100af510]
+  bx lr
+  movw r0,#0xac44
+  bx lr
+  movw r0,#0x2b11
+  bx lr
+  movw r0,#0x5622
+  bx lr

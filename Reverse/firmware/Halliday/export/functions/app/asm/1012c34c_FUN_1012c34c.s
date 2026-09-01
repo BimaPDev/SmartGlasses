@@ -1,0 +1,23 @@
+; FUN_1012c34c @ 0x1012c34c size=62
+  str r1,[r0,#0x48]
+  b.w 0x10125af4
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  ldr r0,[r0,#0x2c]
+  bl 0x1012bed4
+  movw r3,#0xffff
+  cmp r0,r3
+  mov r5,r0
+  beq 0x1012c378
+  ldr r0,[r4,#0x2c]
+  movw r1,#0xffff
+  bl 0x1012beba
+  ldr r0,[r4,#0x2c]
+  movw r1,#0xffff
+  pop.w {r3,r4,r5,lr}
+  b.w 0x1012bec0
+  ldr r0,[r4,#0x2c]
+  bl 0x1012bed8
+  cmp r0,r5
+  bne 0x1012c360
+  pop {r3,r4,r5,pc}

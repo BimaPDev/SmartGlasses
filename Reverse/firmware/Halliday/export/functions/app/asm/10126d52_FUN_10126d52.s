@@ -1,0 +1,20 @@
+; FUN_10126d52 @ 0x10126d52 size=54
+  push {r0,r1,r4,r5,r6,lr}
+  mov r4,r2
+  movs r2,#0x5b
+  mov r5,r0
+  mov r6,r1
+  bl 0x1012691c
+  mov r1,r6
+  strb.w r0,[sp,#0x6]
+  movs r2,#0x16
+  mov r0,r5
+  bl 0x1012691c
+  mov r2,r4
+  strb.w r0,[sp,#0x7]
+  add.w r1,sp,#0x7
+  add.w r0,sp,#0x6
+  bl 0x1012aefc
+  ldrb.w r0,[sp,#0x6]
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

@@ -1,0 +1,37 @@
+; FUN_1008af34 @ 0x1008af34 size=84
+  ldr r3,[r0,#0x4]
+  push {r0,r1,r4,r5,r6,lr}
+  mov r5,r0
+  cbz r3,0x1008af42
+  bl 0x10126fa2
+  mov r5,r0
+  ldr r0,[0x1008af88]
+  bl 0x1012b06a
+  mov r4,r0
+  ldr r6,[0x1008af88]
+  cbz r4,0x1008af70
+  movs r3,#0x0
+  ldr r2,[r4,#0x24]
+  b 0x1008af60
+  ldr r1,[r4,#0xc]
+  ldr.w r1,[r1,r3,lsl #0x2]
+  cmp r1,r5
+  beq 0x1008af82
+  adds r3,#0x1
+  cmp r2,r3
+  bne 0x1008af54
+  mov r1,r4
+  mov r0,r6
+  bl 0x1012b076
+  mov r4,r0
+  b 0x1008af4c
+  ldr r3,[0x1008af8c]
+  movw r2,#0x119
+  str r3,[sp,#0x0]
+  movs r0,#0x2
+  ldr r3,[0x1008af90]
+  ldr r1,[0x1008af94]
+  bl 0x10094174
+  mov r0,r4
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

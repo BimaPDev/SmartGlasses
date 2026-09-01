@@ -1,0 +1,21 @@
+; FUN_10139020 @ 0x10139020 size=48
+  ldr r3,[r0,#0x0]
+  push {r4,lr}
+  ldr r3,[r3,#0x0]
+  mov r4,r0
+  cmp r3,#0x3
+  bne 0x10139036
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x10138fbc
+  cmp r3,#0x4
+  bne 0x10139040
+  bl 0x100eb820
+  b 0x1013902c
+  cmp r3,#0x2
+  bne 0x1013904a
+  bl 0x100eb888
+  b 0x1013902c
+  cmp r3,#0x1
+  beq 0x1013902c
+  pop {r4,pc}

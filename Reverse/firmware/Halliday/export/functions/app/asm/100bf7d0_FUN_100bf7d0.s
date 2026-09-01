@@ -1,0 +1,25 @@
+; FUN_100bf7d0 @ 0x100bf7d0 size=60
+  push {r3,r4,r5,lr}
+  mov.w r1,#0xffffffff
+  mov r5,r0
+  ldr r0,[0x100bf80c]
+  bl 0x1011dbf4
+  movs r3,#0x0
+  ldr r2,[0x100bf810]
+  ldr.w r4,[r2],#0x4
+  cbz r4,0x100bf7fc
+  ldr r1,[r4,#0x54]
+  ldrb.w r1,[r1,#0x2d]
+  cmp r1,r5
+  bne 0x100bf7fc
+  ldr r0,[0x100bf80c]
+  bl 0x10131646
+  mov r0,r4
+  pop {r3,r4,r5,pc}
+  adds r3,#0x1
+  cmp r3,#0x5
+  bne 0x100bf7e2
+  ldr r0,[0x100bf80c]
+  bl 0x10131646
+  movs r4,#0x0
+  b 0x100bf7f8

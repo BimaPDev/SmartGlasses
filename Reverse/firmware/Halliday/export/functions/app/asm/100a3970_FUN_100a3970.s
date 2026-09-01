@@ -1,0 +1,20 @@
+; FUN_100a3970 @ 0x100a3970 size=48
+  push {r4,lr}
+  mov r4,r0
+  ldr r3,[0x100a39a0]
+  ldr r0,[0x100a39a4]
+  ldr r2,[0x100a39a8]
+  subs r0,r0,r3
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x860000
+  orr r0,r0,#0x31
+  mov r3,r4
+  ldr r1,[0x100a39ac]
+  bl 0x100a5b78
+  cmp r4,#0x1
+  itet ne
+  clz.ne r0,r4
+  mov.eq r0,r4
+  lsr.ne r0,r0,#0x5
+  pop {r4,pc}

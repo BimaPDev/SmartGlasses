@@ -1,0 +1,19 @@
+; FUN_1008c354 @ 0x1008c354 size=48
+  push {r4,lr}
+  movs r2,#0x20
+  mov r4,r0
+  movs r1,#0x0
+  adds r0,#0xc
+  bl 0x1011ea48
+  movs r3,#0xff
+  strb.w r3,[r4,#0x24]
+  ldr r3,[0x1008c384]
+  movs r0,#0x5
+  str r3,[r4,#0x0]
+  movw r3,#0xffff
+  strd r3,r3,[r4,#0x4]
+  bl 0x10093bf0
+  movs r3,#0x0
+  strh r0,[r4,#0x10]
+  strb.w r3,[r4,#0x25]
+  pop {r4,pc}

@@ -1,0 +1,27 @@
+; FUN_100a5670 @ 0x100a5670 size=70
+  push {r4,lr}
+  ldr r4,[0x100a56b8]
+  ldrb r0,[r4,#0x0]
+  ands r0,r0,#0x40
+  bne 0x100a56b4
+  bl 0x1005d20c
+  ldrb r3,[r4,#0x2]
+  lsls r3,r3,#0x1d
+  bmi 0x100a568a
+  bl 0x100a6260
+  movs r3,#0x6
+  ldr r0,[0x100a56bc]
+  strb r3,[r4,#0x2]
+  bl 0x1011a09e
+  ldr r1,[0x100a56c0]
+  mov r2,r0
+  ldr r0,[0x100a56c4]
+  bl 0x10119dc2
+  ldrb r3,[r4,#0x0]
+  ldr r0,[0x100a56b8]
+  orr r3,r3,#0x40
+  strb r3,[r4,#0x0]
+  bl 0x100a5538
+  pop.w {r4,lr}
+  b.w 0x100a61d0
+  pop {r4,pc}

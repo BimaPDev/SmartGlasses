@@ -1,0 +1,19 @@
+; FUN_1003fc78 @ 0x1003fc78 size=46
+  push {r0,r1,r2,lr}
+  ldr r3,[0x1003fca8]
+  movs r1,#0x0
+  ldr r0,[0x1003fcac]
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  bl 0x1009eeac
+  ldr r3,[0x1003fca8]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x1003fc9a
+  bl 0x1013cdc0
+  ldr r0,[0x1003fcac]
+  add sp,#0xc
+  pop.w lr
+  b.w 0x1012d1ae

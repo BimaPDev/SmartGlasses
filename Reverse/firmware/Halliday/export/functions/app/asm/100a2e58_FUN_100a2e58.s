@@ -1,0 +1,19 @@
+; FUN_100a2e58 @ 0x100a2e58 size=44
+  ldr r3,[0x100a2e84]
+  push {r4,lr}
+  ldr r4,[0x100a2e88]
+  movs r2,#0x68
+  movs r1,#0x0
+  mov r0,r3
+  str r3,[r4,#0x0]
+  bl 0x1011ea48
+  adds r0,#0x10
+  bl 0x1013c856
+  ldr r0,[r4,#0x0]
+  ldr r1,[0x100a2e8c]
+  adds r0,#0x38
+  bl 0x1013cba6
+  ldr r0,[0x100a2e90]
+  bl 0x100a2de0
+  movs r0,#0x0
+  pop {r4,pc}

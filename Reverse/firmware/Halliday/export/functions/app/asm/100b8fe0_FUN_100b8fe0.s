@@ -1,0 +1,26 @@
+; FUN_100b8fe0 @ 0x100b8fe0 size=60
+  push {r3,r4,r5,lr}
+  mov r5,r0
+  ldr r4,[0x100b901c]
+  ldr r0,[0x100b9020]
+  ldrb r3,[r5,#0x3]
+  subs r4,r4,r0
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orr r0,r4,#0x300000
+  ldr r2,[0x100b9024]
+  ldr r1,[0x100b9028]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  ldrb r3,[r5,#0x0]
+  movs r2,#0x4a
+  adds r3,#0x1
+  mov r1,r5
+  strb r3,[r5,#0x0]
+  ldr r0,[0x100b902c]
+  bl 0x1007378c
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  rsbs r0,r0
+  pop {r3,r4,r5,pc}

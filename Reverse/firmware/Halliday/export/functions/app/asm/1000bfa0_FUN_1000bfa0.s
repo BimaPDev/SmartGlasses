@@ -1,0 +1,19 @@
+; FUN_1000bfa0 @ 0x1000bfa0 size=44
+  push {r0,r1,r4,lr}
+  ldr r3,[0x1000bfcc]
+  mov r4,r2
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  bl 0x1000b9ac
+  ldr r3,[0x1000bfcc]
+  cmp r0,r4
+  it ne
+  mvn.ne r0,#0x3
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x1000bfc8
+  bl 0x1013cdc0
+  add sp,#0x8
+  pop {r4,pc}

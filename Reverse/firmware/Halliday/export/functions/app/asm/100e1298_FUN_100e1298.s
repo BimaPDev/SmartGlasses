@@ -1,0 +1,21 @@
+; FUN_100e1298 @ 0x100e1298 size=48
+  push {r4,r5,r6,lr}
+  mov r6,r0
+  mov r5,r2
+  mov r4,r1
+  sub sp,#0x20
+  mov r1,r3
+  mov r0,sp
+  bl 0x10137ff6
+  mov r1,sp
+  add r0,sp,#0x10
+  bl 0x100e0ec8
+  mov r1,r6
+  ldr r0,[0x100e12c8]
+  bl 0x10119dc2
+  mov r1,r5
+  mov r0,r4
+  add r2,sp,#0x10
+  bl 0x100e0e70
+  add sp,#0x20
+  pop {r4,r5,r6,pc}

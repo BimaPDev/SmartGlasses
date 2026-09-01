@@ -1,0 +1,22 @@
+; FUN_100d44a8 @ 0x100d44a8 size=54
+  push {r4,r5,r6,r7,lr}
+  mov r5,r3
+  mov r7,r0
+  mov r6,r1
+  mov r4,r2
+  sub sp,#0x1c
+  movs r2,#0x14
+  movs r1,#0x0
+  add r0,sp,#0x4
+  bl 0x1011ea48
+  add r1,sp,#0x4
+  ldr r0,[0x100d44e0]
+  strb.w r7,[sp,#0x6]
+  strb.w r6,[sp,#0x7]
+  strb.w r5,[sp,#0x8]
+  str r4,[sp,#0xc]
+  bl 0x1009ece8
+  eor r0,r0,#0x1
+  uxtb r0,r0
+  add sp,#0x1c
+  pop {r4,r5,r6,r7,pc}

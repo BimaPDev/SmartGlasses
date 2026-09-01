@@ -1,0 +1,34 @@
+; FUN_1011bee0 @ 0x1011bee0 size=92
+  push {r3,r4,r5,r6,r7,lr}
+  ldr r6,[r0,#0x10]
+  mov r5,r1
+  mov r0,r6
+  bl 0x1011bea2
+  cbz r0,0x1011bf36
+  mov.w r3,#0x20
+  mrs r0,basepri
+  msr basepri_max,r3
+  isb #0xf
+  movs r3,#0x24
+  ldrsb.w r1,[r6,#0x1]
+  muls r3,r5
+  subs r1,r1,r5
+  rsbs r5,r1
+  add.w r7,r6,r3
+  adcs r5,r1
+  strb r5,[r7,#0x14]
+  msr basepri,r0
+  isb #0xf
+  ldrb r0,[r7,#0x14]
+  cbz r0,0x1011bf34
+  orr.w r2,r2,r2, asr #0x1f
+  asrs r5,r2,#0x1f
+  add.w r0,r3,#0x18
+  add r0,r6
+  mov r3,r5
+  bl 0x1011401c
+  movs r3,#0x0
+  strb r3,[r7,#0x14]
+  pop {r3,r4,r5,r6,r7,pc}
+  mvn r0,#0x15
+  b 0x1011bf34

@@ -1,0 +1,5 @@
+; FUN_10136892 @ 0x10136892 size=10
+  movs r2,#0x0
+  movs r1,#0x5
+  movs r0,#0xc9
+  b.w 0x100d4440

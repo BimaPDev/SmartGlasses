@@ -1,0 +1,19 @@
+; FUN_10132d4c @ 0x10132d4c size=36
+  cmp r0,#0xf
+  bhi 0x10132d5e
+  cmp r0,#0xd
+  bhi 0x10132d6c
+  cmp r0,#0x5
+  ite ne
+  mov.ne r0,#0x2
+  mov.eq r0,#0x3
+  bx lr
+  cmp r0,#0x13
+  beq 0x10132d6c
+  cmp r0,#0x1a
+  ite ne
+  mov.ne r0,#0x2
+  mov.eq r0,#0x1
+  bx lr
+  movs r0,#0x1
+  bx lr

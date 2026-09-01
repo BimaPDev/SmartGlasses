@@ -1,0 +1,19 @@
+; FUN_10000f4c @ 0x10000f4c size=42
+  push {r4,r5,lr}
+  movs r1,#0x0
+  movw r4,#0x3b6
+  ldr r2,[0x10000f78]
+  ldr r0,[0x10000f7c]
+  ldrh r3,[r2,#0x0]
+  cmp r3,r4
+  bne 0x10000f6a
+  ldr r3,[r0,#0x0]
+  ldrh r5,[r2,#0x2]
+  bic r3,r3,#0x3f
+  orrs r3,r5
+  str r3,[r0,#0x0]
+  adds r1,#0x1
+  cmp r1,#0x7
+  add.w r2,r2,#0x4
+  bne 0x10000f58
+  pop {r4,r5,pc}

@@ -1,0 +1,27 @@
+; FUN_10016570 @ 0x10016570 size=64
+  push {r0,r1,r2,lr}
+  ldr r3,[0x100165b0]
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  ldrb.w r3,[r0,#0x3a]
+  cbz r1,0x1001659c
+  cmp r3,#0x16
+  ite hi
+  mov.hi r3,#0x0
+  add.ls r3,#0x1
+  strb.w r3,[r0,#0x3a]
+  ldr r3,[0x100165b0]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x100165a6
+  bl 0x1013cdc0
+  cbnz r3,0x100165a2
+  movs r3,#0x17
+  b 0x1001658a
+  subs r3,#0x1
+  b 0x1001658a
+  add sp,#0xc
+  pop.w lr
+  b.w 0x10017450

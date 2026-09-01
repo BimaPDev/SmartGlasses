@@ -1,0 +1,26 @@
+; FUN_1013967e @ 0x1013967e size=62
+  push {r4,r5,r6,r7,r8,lr}
+  mov r4,r0
+  mov r6,r1
+  mov r5,r2
+  bl 0x100f114c
+  cbz r0,0x101396b8
+  ldr r7,[r0,#0x8]
+  cbz r7,0x101396a8
+  mov r0,r4
+  bl 0x100f1174
+  mov r3,r6
+  mov r1,r0
+  mov r2,r5
+  mov r0,r4
+  mov r12,r7
+  pop.w {r4,r5,r6,r7,r8,lr}
+  bx r12
+  ldr r3,[r0,#0x4]
+  cbz r3,0x101396b8
+  mov r2,r6
+  mov r1,r5
+  mov r0,r4
+  pop.w {r4,r5,r6,r7,r8,lr}
+  bx r3
+  pop.w {r4,r5,r6,r7,r8,pc}

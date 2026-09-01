@@ -1,0 +1,23 @@
+; FUN_100b65a8 @ 0x100b65a8 size=54
+  push {r4,r5,r6,lr}
+  mov r6,r0
+  mov r5,r1
+  ldr r0,[0x100b65e0]
+  ldr r4,[0x100b65e4]
+  mov r3,r1
+  subs r4,r4,r0
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orr r0,r4,#0xb10000
+  ldr r1,[0x100b65e8]
+  ldr r2,[0x100b65ec]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  ldr r3,[r6,#0xc]
+  ldr r1,[r6,#0x0]
+  str r5,[r6,#0x0]
+  cbz r3,0x100b65dc
+  mov r0,r5
+  pop.w {r4,r5,r6,lr}
+  bx r3
+  pop {r4,r5,r6,pc}

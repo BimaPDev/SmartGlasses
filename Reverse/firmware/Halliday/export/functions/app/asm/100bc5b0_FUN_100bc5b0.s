@@ -1,0 +1,32 @@
+; FUN_100bc5b0 @ 0x100bc5b0 size=80
+  cmp r0,#0x2
+  push {r0,r1,r4,r5,r6,lr}
+  mov r6,r0
+  mov r4,r1
+  bne 0x100bc5c6
+  cmp r1,#0x63
+  itet ls
+  mov.ls r3,#0xa
+  mov.hi r4,#0x9
+  udiv.ls r4,r1,r3
+  ldr r0,[0x100bc5f4]
+  ldr r5,[0x100bc5f8]
+  mov r3,r6
+  subs r5,r5,r0
+  lsls r5,r5,#0x5
+  and r5,r5,#0xff00
+  orr r0,r5,#0x3580000
+  ldr r2,[0x100bc5fc]
+  ldr r1,[0x100bc600]
+  str r4,[sp,#0x0]
+  orr r0,r0,#0x32
+  bl 0x100a5b78
+  mov r1,r4
+  mov r0,r6
+  add sp,#0x8
+  pop.w {r4,r5,r6,lr}
+  b.w 0x10136a8a
+  orr.w r2,r1,r0, lsl #0x10
+  movs r1,#0x44
+  movs r0,#0xcc
+  b.w 0x100d4440

@@ -1,0 +1,27 @@
+; FUN_10121be4 @ 0x10121be4 size=68
+  push {r0,r1,r4,r5,r6,r7,r8,lr}
+  mov r7,r3
+  ldr r3,[r0,#0xc]
+  mov r4,r1
+  ldr r1,[r3,#0x0]
+  mov r6,r0
+  ldrb r1,[r1,#0xa]
+  cbz r1,0x10121c24
+  ldrh.w r5,[r3,#0xc2]
+  udiv r1,r2,r5
+  mls r5,r5,r1,r2
+  str r1,[sp,#0x4]
+  bl 0x10121b5c
+  ldr r1,[sp,#0x4]
+  mov r8,r0
+  mov r0,r6
+  bl 0x10121ba6
+  strh r0,[r4,#0x0]
+  movs r0,#0x1
+  strb.w r8,[r4,#0x8]
+  strh r5,[r4,#0x2]
+  str r7,[r4,#0x4]
+  add sp,#0x8
+  pop.w {r4,r5,r6,r7,r8,pc}
+  mov r0,r1
+  b 0x10121c1e

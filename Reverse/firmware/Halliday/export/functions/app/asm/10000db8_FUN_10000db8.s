@@ -1,0 +1,22 @@
+; FUN_10000db8 @ 0x10000db8 size=54
+  push {r4,lr}
+  ldr r4,[0x10000df0]
+  ldr.w r3,[r4,#0x2f4]
+  cbz r3,0x10000dc6
+  ldr r2,[0x10000df4]
+  str r3,[r2,#0x0]
+  ldr.w r3,[r4,#0x2f8]
+  cbz r3,0x10000dd0
+  ldr r2,[0x10000df8]
+  str r3,[r2,#0x0]
+  bl 0x100007b0
+  cbz r0,0x10000dec
+  ldr.w r1,[r4,#0x2fc]
+  cbz r1,0x10000dec
+  ldr r2,[0x10000dfc]
+  ldr r3,[r2,#0x0]
+  bic r3,r3,#0xff0000
+  bic r3,r3,#0x8000
+  orrs r3,r1
+  str r3,[r2,#0x0]
+  pop {r4,pc}

@@ -1,0 +1,26 @@
+; FUN_10121e54 @ 0x10121e54 size=68
+  ldr r3,[r0,#0xc]
+  ldr r1,[r3,#0x0]
+  ldrb r2,[r1,#0x8]
+  ldrb r1,[r1,#0x9]
+  muls r2,r1
+  movw r1,#0x10d3
+  uxtb r2,r2
+  strb r2,[r3,r1]
+  movw r1,#0x10d4
+  strb r2,[r3,r1]
+  movw r1,#0x10d5
+  ldrb.w r2,[r3,#0xc5]
+  strb r2,[r3,r1]
+  movw r1,#0x10da
+  ldrh r1,[r3,r1]
+  muls r2,r1
+  movw r1,#0x10d8
+  strh r2,[r3,r1]
+  movw r2,#0x10de
+  ldrh.w r1,[r3,#0xc2]
+  strh r1,[r3,r2]
+  movw r2,#0x10d2
+  movs r1,#0x0
+  strb r1,[r3,r2]
+  bx lr

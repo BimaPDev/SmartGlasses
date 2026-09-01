@@ -1,0 +1,19 @@
+; FUN_10138238 @ 0x10138238 size=52
+  push {r0,r1,r4,lr}
+  mov r4,r0
+  add.w r3,r0,#0x58
+  lda r3,[r3]
+  lsls r3,r3,#0x1d
+  bpl 0x10138266
+  str r1,[sp,#0x0]
+  ldrb.w r3,[r0,#0x48]
+  ldrh.w r2,[r0,#0x50]
+  ldrh.w r1,[r0,#0x54]
+  ldr r0,[r0,#0x0]
+  bl 0x100e13d0
+  movs r0,#0x0
+  strb.w r0,[r4,#0x48]
+  add sp,#0x8
+  pop {r4,pc}
+  mvn r0,#0x2
+  b 0x10138262

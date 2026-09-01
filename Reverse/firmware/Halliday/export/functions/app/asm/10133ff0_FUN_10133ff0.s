@@ -1,0 +1,20 @@
+; FUN_10133ff0 @ 0x10133ff0 size=44
+  ldr r3,[r0,#0x54]
+  push {r4,lr}
+  cbz r3,0x1013401a
+  subs.w r0,r3,#0x8
+  beq 0x1013401a
+  ldr r4,[r3,#0x0]
+  cbz r4,0x10134002
+  subs r4,#0x8
+  bl 0x10133f9e
+  cbz r4,0x1013401a
+  adds.w r3,r4,#0x8
+  beq 0x10134014
+  ldr r3,[r4,#0x8]
+  cbz r3,0x10134014
+  subs r3,#0x8
+  mov r0,r4
+  mov r4,r3
+  b 0x10134002
+  pop {r4,pc}

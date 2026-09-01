@@ -1,0 +1,22 @@
+; FUN_1006742c @ 0x1006742c size=52
+  push {r3,lr}
+  cbnz r0,0x1006743c
+  movs r1,#0x30
+  ldr r3,[0x10067460]
+  ldr r2,[0x10067464]
+  ldr r0,[0x10067468]
+  bl 0x10117c88
+  add.w r3,r0,#0x1c
+  lda r2,[r3]
+  cmp r2,#0x0
+  bge 0x10067450
+  movs r1,#0x31
+  ldr r3,[0x1006746c]
+  ldr r2,[0x10067464]
+  b 0x10067436
+  ldaex r0,[r3]
+  adds r2,r0,#0x1
+  stlex r1,r2,[r3]
+  cmp r1,#0x0
+  bne 0x10067450
+  pop {r3,pc}

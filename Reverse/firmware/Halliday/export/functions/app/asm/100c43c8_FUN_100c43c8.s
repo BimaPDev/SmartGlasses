@@ -1,0 +1,22 @@
+; FUN_100c43c8 @ 0x100c43c8 size=42
+  ldr r3,[0x100c43f4]
+  ldr r3,[r3,#0x0]
+  cbz r3,0x100c43e6
+  ldr r2,[r3,#0x8]
+  cbz r2,0x100c43d6
+  ldr r2,[r3,#0x0]
+  cbnz r2,0x100c43ea
+  ldr r2,[r3,#0x4]
+  cbnz r2,0x100c43ee
+  ldr r3,[r3,#0x0]
+  cmp r3,#0x0
+  ite eq
+  mov.eq r0,#0x3
+  mov.ne r0,#0x0
+  bx lr
+  movs r0,#0x3
+  bx lr
+  movs r0,#0x1
+  bx lr
+  movs r0,#0x2
+  bx lr

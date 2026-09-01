@@ -1,0 +1,21 @@
+; FUN_100b9988 @ 0x100b9988 size=50
+  push {r4,lr}
+  ldr r4,[0x100b99bc]
+  sub sp,#0x8
+  ldr r3,[r4,#0x8]
+  cmp.w r3,#0x1000000
+  bcc 0x100b999a
+  add sp,#0x8
+  pop {r4,pc}
+  ldr r2,[r4,#0xc]
+  lsls r3,r3,#0x8
+  lsls r2,r2,#0x8
+  add.w r0,sp,#0x7
+  strd r3,r2,[r4,#0x8]
+  bl 0x100b940c
+  ldr r3,[r4,#0xc]
+  ldrb.w r2,[sp,#0x7]
+  orrs r3,r2
+  str r3,[r4,#0xc]
+  add sp,#0x8
+  pop {r4,pc}

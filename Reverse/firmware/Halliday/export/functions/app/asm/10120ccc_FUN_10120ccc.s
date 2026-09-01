@@ -1,0 +1,26 @@
+; FUN_10120ccc @ 0x10120ccc size=70
+  push {r4,r5,r6,r7,r8,lr}
+  ldr r6,[r0,#0xc]
+  mov r5,r0
+  add.w r8,r6,#0x10e0
+  ldr.w r1,[r8,#0x0]
+  adds r2,r1,#0x1
+  beq 0x10120d0e
+  movw r7,#0x10e4
+  add.w r3,r6,#0xc6
+  ldr r2,[r6,r7]
+  bl 0x10120c8e
+  mov.w r3,#0xffffffff
+  str.w r3,[r8,#0x0]
+  movs r3,#0x0
+  mov r4,r0
+  str r3,[r6,r7]
+  mov r0,r5
+  bl 0x10121c28
+  orrs r0,r4
+  subs r3,r0,#0x1
+  rsbs r0,r3
+  adcs r0,r3
+  pop.w {r4,r5,r6,r7,r8,pc}
+  movs r4,#0x1
+  b 0x10120cfc

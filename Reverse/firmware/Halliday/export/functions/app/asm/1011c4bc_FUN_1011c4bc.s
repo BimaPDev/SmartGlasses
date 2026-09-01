@@ -1,0 +1,20 @@
+; FUN_1011c4bc @ 0x1011c4bc size=46
+  cmp r0,#0x8
+  push {r4,lr}
+  mov r4,r2
+  beq 0x1011c4ca
+  movs r4,#0x0
+  mov r0,r4
+  pop {r4,pc}
+  cbnz r2,0x1011c4d4
+  mov r0,r3
+  bl 0x1011aa14
+  mov r4,r0
+  add.w r3,r4,#0xf0000000
+  cmp.w r3,#0x8000000
+  bcc 0x1011c4c4
+  mov r0,r4
+  bl 0x1011a9aa
+  ldr r3,[sp,#0xc]
+  str r0,[r3,#0x0]
+  b 0x1011c4c6

@@ -1,0 +1,26 @@
+; FUN_1007a4dc @ 0x1007a4dc size=56
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  ldr r5,[0x1007a514]
+  ldrb r0,[r5,#0x10]
+  subs r0,r4,r0
+  bl 0x1013d02e
+  cmp r0,#0x11
+  bgt 0x1007a50c
+  ldrb r0,[r5,#0x10]
+  subs r0,r4,r0
+  bl 0x1013d02e
+  cmp r0,#0xd
+  bgt 0x1007a510
+  ldrb r0,[r5,#0x10]
+  subs r0,r4,r0
+  bl 0x1013d02e
+  cmp r0,#0x8
+  ite le
+  mov.le r0,#0x5
+  mov.gt r0,#0x4
+  pop {r3,r4,r5,pc}
+  movs r0,#0x2
+  b 0x1007a50a
+  movs r0,#0x3
+  b 0x1007a50a

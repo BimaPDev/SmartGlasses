@@ -1,0 +1,25 @@
+; FUN_1011f658 @ 0x1011f658 size=58
+  push {r0,r1,r2,r4,r5,r6,r7,lr}
+  mov r5,r2
+  add.w r4,r0,#0x2fc00000
+  add.w r4,r4,#0x318000
+  mov r6,r1
+  mov r0,r4
+  mov r1,r5
+  add r2,sp,#0x4
+  bl 0x1011eb60
+  cbz r0,0x1011f68e
+  ldr r7,[sp,#0x4]
+  mov r2,r5
+  cmp r5,r7
+  mov r1,r0
+  it cs
+  mov.cs r2,r7
+  mov r0,r6
+  bl 0x1011ea40
+  mov r1,r7
+  mov r0,r4
+  bl 0x1011ebda
+  ldr r0,[sp,#0x4]
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}

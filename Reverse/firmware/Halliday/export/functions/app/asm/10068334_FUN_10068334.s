@@ -1,0 +1,20 @@
+; FUN_10068334 @ 0x10068334 size=60
+  str.w r3,[r2,#-0x20]
+  ldr r3,[sp,#0x0]
+  ldr r1,[0x10068370]
+  str.w r3,[r2,#-0x1c]
+  ldr r3,[sp,#0x4]
+  bic r1,r1,#0x1
+  str.w r3,[r2,#-0x18]
+  ldr r3,[sp,#0x8]
+  str.w r1,[r2,#-0x8]
+  str.w r3,[r2,#-0x14]
+  mov.w r3,#0x1000000
+  str.w r3,[r2,#-0x4]
+  movs r3,#0x0
+  str.w r3,[r0,#0xc8]
+  mov.w r3,#0xfd00
+  subs r2,#0x20
+  str r2,[r0,#0x50]
+  str.w r3,[r0,#0x110]
+  bx lr

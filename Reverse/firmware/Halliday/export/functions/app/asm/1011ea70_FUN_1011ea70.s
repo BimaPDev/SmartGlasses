@@ -1,0 +1,19 @@
+; FUN_1011ea70 @ 0x1011ea70 size=38
+  push {r4,r5,lr}
+  movs r4,#0x0
+  cmp r2,#0x1
+  ite eq
+  mov.eq r2,#0x4
+  mov.ne r2,r4
+  sub.w r5,r0,#0x7f80
+  subs r5,#0x70
+  subs r1,#0x10
+  strh r4,[r0,#0x2]
+  strh r4,[r0,#0x0]
+  strh r4,[r0,#0x6]
+  strh r4,[r0,#0x4]
+  strh r5,[r0,#0x8]
+  strh r1,[r0,#0xa]
+  strh r2,[r0,#0xc]
+  strh r4,[r0,#0xe]
+  pop {r4,r5,pc}

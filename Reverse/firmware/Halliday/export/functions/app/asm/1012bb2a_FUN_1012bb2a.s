@@ -1,0 +1,20 @@
+; FUN_1012bb2a @ 0x1012bb2a size=50
+  push {r4}
+  ldrsh.w r4,[r0,#0x36]
+  cmp r4,r1
+  beq 0x1012bb56
+  ldrsh.w r2,[r0,#0x3a]
+  cmp r2,r1
+  it ge
+  mov.ge r2,r1
+  ldrsh.w r1,[r0,#0x38]
+  cmp r1,r2
+  it lt
+  mov.lt r1,r2
+  cmp r4,r1
+  beq 0x1012bb56
+  pop.w r4
+  strh r1,[r0,#0x36]
+  b.w 0x100955f4
+  pop.w r4
+  bx lr

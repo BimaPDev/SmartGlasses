@@ -1,0 +1,21 @@
+; FUN_100a0310 @ 0x100a0310 size=48
+  push {r4,lr}
+  mov r4,r0
+  cbnz r0,0x100a0336
+  ldr r3,[0x100a0340]
+  ldr r0,[0x100a0344]
+  ldr r2,[0x100a0348]
+  subs r0,r0,r3
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x160000
+  orr r0,r0,#0x31
+  ldr r1,[0x100a034c]
+  bl 0x100a5b78
+  mov r0,r4
+  pop {r4,pc}
+  ldrb r3,[r0,#0x2]
+  subs r3,r3,r1
+  rsbs r0,r3
+  adcs r0,r3
+  b 0x100a0334

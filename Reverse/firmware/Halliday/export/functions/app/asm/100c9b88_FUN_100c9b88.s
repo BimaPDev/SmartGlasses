@@ -1,0 +1,19 @@
+; FUN_100c9b88 @ 0x100c9b88 size=44
+  push {r3,r4,r5,lr}
+  ldr r2,[0x100c9bb4]
+  mov r4,r0
+  mov r5,r1
+  bl 0x1011daf0
+  adds r3,r0,#0x1
+  bne 0x100c9ba8
+  bl 0x100c9a20
+  cbnz r0,0x100c9bb2
+  mov r1,r5
+  mov r0,r4
+  ldr r2,[0x100c9bb4]
+  bl 0x1011daf0
+  cmp r0,#0x1
+  ite ne
+  mvn.ne r0,#0x4
+  mov.eq r0,#0x0
+  pop {r3,r4,r5,pc}

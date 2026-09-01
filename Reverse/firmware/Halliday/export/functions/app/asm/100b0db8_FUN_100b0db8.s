@@ -1,0 +1,20 @@
+; FUN_100b0db8 @ 0x100b0db8 size=52
+  push {r4,r5,r6,r7,r8,lr}
+  mov r8,r0
+  mov r7,r1
+  add.w r0,r2,#0xc
+  ldr r1,[0x100b0dec]
+  mov r5,r2
+  mov r6,r3
+  bl 0x1012d1f0
+  mov r4,r0
+  cbz r0,0x100b0de6
+  strd r7,r5,[r0,#0x4]
+  strh.w r8,[r0,#0x0]
+  cbz r6,0x100b0de6
+  mov r2,r5
+  mov r1,r6
+  adds r0,#0xc
+  bl 0x1011ea40
+  mov r0,r4
+  pop.w {r4,r5,r6,r7,r8,pc}

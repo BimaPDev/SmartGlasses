@@ -1,0 +1,36 @@
+; FUN_100fb070 @ 0x100fb070 size=74
+  push {r4,r5,r6,lr}
+  mov r5,r1
+  ldrd r3,r1,[r0,#0x4]
+  movs r6,#0x0
+  adds r2,r1,#0x1
+  cmp r2,r3
+  sub sp,#0x8
+  str r6,[r5,#0x0]
+  bcs 0x100fb0a8
+  ldr r6,[r0,#0x14]
+  mov r4,r0
+  cbz r6,0x100fb0b2
+  movs r3,#0x2
+  add r2,sp,#0x4
+  blx r6
+  cmp r0,#0x2
+  bne 0x100fb0a8
+  ldr r1,[r4,#0x8]
+  add r0,sp,#0x4
+  ldrb r3,[r0,#0x0]
+  ldrb r0,[r0,#0x1]
+  orr.w r0,r0,r3, lsl #0x8
+  adds r1,#0x2
+  str r1,[r4,#0x8]
+  add sp,#0x8
+  pop {r4,r5,r6,pc}
+  movs r3,#0x55
+  movs r0,#0x0
+  str r3,[r5,#0x0]
+  add sp,#0x8
+  pop {r4,r5,r6,pc}
+  ldr r0,[r0,#0x0]
+  adds r0,r0,r1
+  beq 0x100fb0a0
+  b 0x100fb098

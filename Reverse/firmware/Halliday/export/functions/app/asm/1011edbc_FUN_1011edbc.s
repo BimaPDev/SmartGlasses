@@ -1,0 +1,21 @@
+; FUN_1011edbc @ 0x1011edbc size=48
+  cmp r0,#0x1
+  push {r0,r1,r4,lr}
+  mov r4,r1
+  bhi 0x1011ede6
+  cbz r1,0x1011ede6
+  movs r2,#0x8
+  cbnz r0,0x1011ede0
+  mov.w r1,#0x100
+  add r0,sp,#0x4
+  bl 0x1011ec80
+  cbnz r0,0x1011eddc
+  movs r0,#0x0
+  ldr r3,[sp,#0x4]
+  str r3,[r4,#0x0]
+  add sp,#0x8
+  pop {r4,pc}
+  mov.w r1,#0x108
+  b 0x1011edce
+  mov.w r0,#0xffffffff
+  b 0x1011eddc

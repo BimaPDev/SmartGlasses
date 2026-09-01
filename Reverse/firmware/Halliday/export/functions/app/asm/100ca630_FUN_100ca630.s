@@ -1,0 +1,26 @@
+; FUN_100ca630 @ 0x100ca630 size=54
+  ldr r3,[0x100ca668]
+  cbnz r0,0x100ca638
+  str r0,[r3,#0x0]
+  bx lr
+  ldr r2,[r3,#0x0]
+  cbnz r2,0x100ca65a
+  ldr r2,[r0,#0x10]
+  cbnz r2,0x100ca654
+  ldr r2,[r0,#0x0]
+  cbnz r2,0x100ca660
+  ldr r2,[r0,#0x4]
+  cbnz r2,0x100ca660
+  ldr r2,[r0,#0x8]
+  cbnz r2,0x100ca660
+  ldr r2,[r0,#0x18]
+  cbnz r2,0x100ca660
+  ldr r2,[r0,#0x14]
+  cbnz r2,0x100ca660
+  str r0,[r3,#0x0]
+  movs r0,#0x0
+  bx lr
+  mvn r0,#0x77
+  bx lr
+  mvn r0,#0x15
+  bx lr

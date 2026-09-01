@@ -1,0 +1,21 @@
+; FUN_1012d4aa @ 0x1012d4aa size=42
+  mov r3,r0
+  push {r4,r5,lr}
+  ldrd r4,r5,[r0,#0x4]
+  ldr r0,[r0,#0x0]
+  add r0,r5
+  subs r0,r0,r4
+  cmp r1,r0
+  bhi 0x1012d4d0
+  ldr r2,[r3,#0x1c]
+  add r4,r1
+  add r2,r1
+  cmp r2,r5
+  it cs
+  sub.cs r2,r2,r5
+  str r4,[r3,#0x4]
+  str r2,[r3,#0x1c]
+  mov r0,r1
+  pop {r4,r5,pc}
+  movs r1,#0x0
+  b 0x1012d4cc

@@ -1,0 +1,25 @@
+; FUN_10114878 @ 0x10114878 size=72
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  cbnz r0,0x1011489a
+  push {r0,r1,r2,r3}
+  mov.w r3,#0x3f8
+  ldr r2,[0x101148c0]
+  ldr r1,[0x101148c4]
+  ldr r0,[0x101148c8]
+  bl 0x10119dc2
+  pop {r0,r1,r2,r3}
+  mov.w r1,#0x3f8
+  ldr r0,[0x101148c0]
+  bl 0x1011a1f0
+  mov.w r3,#0x20
+  mrs r5,basepri
+  msr basepri_max,r3
+  isb #0xf
+  mov r0,r4
+  bl 0x1013caa0
+  mov r0,r4
+  bl 0x1013cabc
+  msr basepri,r5
+  isb #0xf
+  pop {r3,r4,r5,pc}

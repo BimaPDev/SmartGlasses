@@ -1,0 +1,23 @@
+; FUN_10118dd8 @ 0x10118dd8 size=52
+  push {lr}
+  sub sp,#0x6c
+  str r1,[sp,#0x0]
+  str r1,[sp,#0x10]
+  mvn r1,#0x80000000
+  str r1,[sp,#0x14]
+  str r1,[sp,#0x8]
+  ldr r1,[0x10118dd4]
+  str r1,[sp,#0xc]
+  mov r1,sp
+  bl 0x101199a8
+  ldr r3,[sp,#0x0]
+  movs r2,#0x0
+  strb r2,[r3,#0x0]
+  add sp,#0x6c
+  pop.w pc
+  mov r3,r2
+  mov r2,r1
+  mov r1,r0
+  ldr r0,[0x10118de8]
+  ldr r0,[r0,#0x0]
+  b.w 0x10118dac

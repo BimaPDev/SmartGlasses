@@ -1,0 +1,21 @@
+; FUN_100fa540 @ 0x100fa540 size=48
+  cbz r0,0x100fa56e
+  push {r4,r5,r6}
+  ldrsh.w r6,[r0,#0x2]
+  ldr r3,[r0,#0x4]
+  cmp r6,#0x0
+  ble 0x100fa56a
+  movs r0,#0x0
+  adds r3,#0x8
+  adds r0,#0x1
+  uxth r0,r0
+  ldrd r5,r4,[r3,#-0x8]
+  cmp r0,r6
+  add r5,r1
+  add r4,r2
+  strd r5,r4,[r3,#-0x8]
+  add.w r3,r3,#0x8
+  blt 0x100fa552
+  pop {r4,r5,r6}
+  bx lr
+  bx lr

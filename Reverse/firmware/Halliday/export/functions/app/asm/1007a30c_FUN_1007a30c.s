@@ -1,0 +1,20 @@
+; FUN_1007a30c @ 0x1007a30c size=44
+  movs r0,#0x0
+  movs r2,#0xb
+  mov r3,r0
+  push {r4,lr}
+  ldr r1,[0x1007a338]
+  subs r2,#0x1
+  ands r2,r2,#0xff
+  bne 0x1007a326
+  cbz r0,0x1007a324
+  udiv r0,r3,r0
+  pop {r4,pc}
+  ldrh.w r4,[r1],#0x2
+  cmp r4,#0x0
+  beq 0x1007a316
+  adds r0,#0x1
+  add r3,r4
+  uxtb r0,r0
+  uxth r3,r3
+  b 0x1007a316

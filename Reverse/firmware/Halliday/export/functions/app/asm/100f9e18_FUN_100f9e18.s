@@ -1,0 +1,36 @@
+; FUN_100f9e18 @ 0x100f9e18 size=74
+  cbz r0,0x100f9e5e
+  push {r3,r4,r5,r6,r7,lr}
+  ldr r3,[r0,#0x0]
+  mov r5,r2
+  ldr r3,[r3,#0x20]
+  mov r4,r0
+  mov r6,r1
+  cbz r3,0x100f9e30
+  blx r3
+  cbz r5,0x100f9e2e
+  cbz r0,0x100f9e32
+  pop {r3,r4,r5,r6,r7,pc}
+  cbz r2,0x100f9e5a
+  ldr r5,[r4,#0x4]
+  ldr r7,[r5,#0x10]
+  adds r5,#0x14
+  add.w r7,r5,r7, lsl #0x2
+  cmp r5,r7
+  bcs 0x100f9e5a
+  ldr.w r0,[r5],#0x4
+  cmp r4,r0
+  beq 0x100f9e56
+  ldr r3,[r0,#0x0]
+  ldr r3,[r3,#0x20]
+  cbz r3,0x100f9e56
+  mov r1,r6
+  blx r3
+  cmp r0,#0x0
+  bne 0x100f9e2e
+  cmp r7,r5
+  bhi 0x100f9e40
+  movs r0,#0x0
+  pop {r3,r4,r5,r6,r7,pc}
+  movs r0,#0x0
+  bx lr

@@ -1,0 +1,19 @@
+; FUN_1006309c @ 0x1006309c size=54
+  ldr r3,[0x100630d4]
+  mov r1,r0
+  ldr r0,[r3,#0x0]
+  push {r4,lr}
+  cbnz r0,0x100630b4
+  movw r1,#0x103
+  ldr r3,[0x100630d8]
+  ldr r2,[0x100630dc]
+  ldr r0,[0x100630e0]
+  bl 0x10117c88
+  mov.w r3,#0x20
+  mrs r4,basepri
+  msr basepri_max,r3
+  isb #0xf
+  bl 0x10053ea0
+  msr basepri,r4
+  isb #0xf
+  pop {r4,pc}

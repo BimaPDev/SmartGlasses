@@ -1,0 +1,26 @@
+; FUN_1013ba14 @ 0x1013ba14 size=56
+  push {r3,r4,r5,lr}
+  mov r5,r1
+  mov r4,r0
+  cbz r0,0x1013ba44
+  movs r0,#0x18
+  bl 0x100f0524
+  str r0,[r5,#0x0]
+  cbz r0,0x1013ba48
+  movs r2,#0x18
+  movs r1,#0x0
+  bl 0x1011ea48
+  ldr r0,[r4,#0x5c]
+  ldr r2,[r5,#0x0]
+  cbz r0,0x1013ba3e
+  str r2,[r0,#0x0]
+  movs r0,#0x0
+  ldr r3,[r5,#0x0]
+  str r3,[r4,#0x5c]
+  pop {r3,r4,r5,pc}
+  strd r2,r2,[r4,#0x58]
+  b 0x1013ba3c
+  movs r0,#0x1
+  b 0x1013ba3c
+  movs r0,#0x5
+  b 0x1013ba3c

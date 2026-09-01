@@ -1,0 +1,24 @@
+; FUN_1000b008 @ 0x1000b008 size=64
+  vldr.32 s15,[pc,#0x3c]
+  vmul.f32 s0,s0,s15
+  push {r0,r1,r2,lr}
+  ldr r3,[0x1000b04c]
+  vcvt.u32.f32 s15,s0
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  ldr r3,[0x1000b050]
+  vmov r0,s15
+  ldrb r2,[r3,#0xb]
+  bfc r2,#0x0,#0x1
+  strb r2,[r3,#0xb]
+  bl 0x1013144c
+  ldr r3,[0x1000b04c]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x1000b040
+  bl 0x1013cdc0
+  movs r0,#0x0
+  add sp,#0xc
+  pop.w pc

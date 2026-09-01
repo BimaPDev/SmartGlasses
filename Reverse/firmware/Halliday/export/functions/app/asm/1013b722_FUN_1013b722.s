@@ -1,0 +1,22 @@
+; FUN_1013b722 @ 0x1013b722 size=52
+  mov.w r2,#0x3f800000
+  movs r3,#0x0
+  push {lr}
+  sub sp,#0x34
+  mov r1,sp
+  vstr.32 s0,[sp,#0x8]
+  vstr.32 s1,[sp,#0x14]
+  str r2,[sp,#0x0]
+  str r3,[sp,#0x4]
+  str r3,[sp,#0xc]
+  str r2,[sp,#0x10]
+  str r3,[sp,#0x18]
+  str r3,[sp,#0x1c]
+  str r2,[sp,#0x20]
+  str r2,[sp,#0x24]
+  str r2,[sp,#0x28]
+  str r3,[sp,#0x2c]
+  bl 0x1013b696
+  movs r0,#0x0
+  add sp,#0x34
+  pop.w pc

@@ -1,0 +1,24 @@
+; FUN_100da24c @ 0x100da24c size=60
+  push {r4,lr}
+  bl 0x1013213a
+  ldr r3,[0x100da288]
+  ldr r2,[0x100da28c]
+  mov r4,r0
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  cbnz r0,0x100da272
+  ldr r0,[0x100da290]
+  ldr r2,[0x100da294]
+  ldr r1,[0x100da298]
+  orrs r0,r3
+  bl 0x100a5b78
+  mov r0,r4
+  pop {r4,pc}
+  orr r0,r3,#0x1b00000
+  ldr r2,[0x100da29c]
+  ldr r1,[0x100da298]
+  orr r0,r0,#0x11
+  bl 0x100a5b78
+  mov.w r4,#0xffffffff
+  b 0x100da26e

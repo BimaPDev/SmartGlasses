@@ -1,0 +1,23 @@
+; FUN_10073bc8 @ 0x10073bc8 size=66
+  push {r0,r1,r2,lr}
+  strb.w r1,[sp,#0x7]
+  cbz r0,0x10073c04
+  mov.w r1,#0x102
+  add.w r2,sp,#0x7
+  bl 0x1011f8d0
+  cbz r0,0x10073bfe
+  ldr r3,[0x10073c0c]
+  ldr r0,[0x10073c10]
+  ldr r2,[0x10073c14]
+  subs r0,r0,r3
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x2640000
+  orr r0,r0,#0x11
+  ldr r1,[0x10073c18]
+  bl 0x100a5b78
+  mvn r0,#0xd
+  add sp,#0xc
+  pop.w pc
+  mvn r0,#0x15
+  b 0x10073bfe

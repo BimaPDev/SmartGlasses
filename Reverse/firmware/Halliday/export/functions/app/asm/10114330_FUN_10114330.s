@@ -1,0 +1,24 @@
+; FUN_10114330 @ 0x10114330 size=54
+  ldr r3,[r0,#0xc]
+  push {r4,r5,r6,lr}
+  ubfx r6,r3,#0x1,#0x1
+  lsls r3,r3,#0x1e
+  mov r5,r0
+  mov r4,r1
+  bpl 0x1011435c
+  movs r2,#0x1
+  movs r1,#0x0
+  add.w r0,r4,#0x8
+  bl 0x1013ca1a
+  movs r3,#0x0
+  str r3,[r4,#0x0]
+  ldr r3,[0x10114368]
+  str r5,[r4,#0x4]
+  ldr r2,[r3,#0x4]
+  cbnz r2,0x10114360
+  strd r4,r4,[r3,#0x0]
+  mov r0,r6
+  pop {r4,r5,r6,pc}
+  str r4,[r2,#0x0]
+  str r4,[r3,#0x4]
+  b 0x1011435c

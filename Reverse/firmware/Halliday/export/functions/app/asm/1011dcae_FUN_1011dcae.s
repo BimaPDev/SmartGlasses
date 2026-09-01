@@ -1,0 +1,20 @@
+; FUN_1011dcae @ 0x1011dcae size=46
+  movs r3,#0x0
+  ldr r2,[0x10064b30]
+  cmp r0,r2
+  bne 0x10064b22
+  movs r2,#0x1
+  ldr r1,[0x10064b34]
+  lsl.w r3,r2,r3
+  ldr r2,[r1,#0x0]
+  bic.w r2,r2,r3
+  str r2,[r1,#0x0]
+  bx lr
+  adds r3,#0x1
+  cmp r3,#0x14
+  add.w r2,r2,#0x20
+  bne 0x10064b0c
+  bx lr
+  cbz r0,0x1011dcb4
+  b.w 0x10064b08
+  bx lr

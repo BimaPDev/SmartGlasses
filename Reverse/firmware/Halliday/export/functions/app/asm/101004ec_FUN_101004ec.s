@@ -1,0 +1,46 @@
+; FUN_101004ec @ 0x101004ec size=106
+  push {r3,r4,r5,r6,r7,lr}
+  ldr r3,[r1,#0x8]
+  add.w r5,r0,#0x14
+  cmp r3,r5
+  mov r6,r1
+  mov r7,r0
+  bcc 0x1010054c
+  ldr r3,[r7,#0x4]
+  ldr r0,[r6,#0x8]
+  ldr r4,[r7,#0x10]
+  rev r3,r3
+  subs r7,r0,r7
+  cmp r7,r3
+  rev r4,r4
+  bcc 0x10100510
+  cmp r3,#0x13
+  bhi 0x10100542
+  movs r1,#0x8
+  mov r0,r6
+  bl 0x100f9004
+  ldrb r3,[r6,#0xc]
+  cbz r3,0x1010051e
+  cbnz r4,0x1010052e
+  movs r0,#0x0
+  pop {r3,r4,r5,r6,r7,pc}
+  movs r1,#0x10
+  mov r0,r6
+  bl 0x100f9004
+  subs r4,#0x1
+  beq 0x1010051e
+  ldrb.w r1,[r5],#0x2
+  ldr r2,[r6,#0x14]
+  ldrb.w r3,[r5,#-0x1]
+  orr.w r3,r3,r1, lsl #0x8
+  cmp r2,r3
+  bhi 0x1010052a
+  b 0x10100522
+  subs r3,#0x14
+  cmp.w r4,r3, lsr #0x1
+  bls 0x10100518
+  b 0x10100510
+  movs r1,#0x8
+  mov r0,r6
+  bl 0x100f9004
+  b 0x101004fc

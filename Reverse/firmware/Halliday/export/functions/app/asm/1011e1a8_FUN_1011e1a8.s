@@ -1,0 +1,22 @@
+; FUN_1011e1a8 @ 0x1011e1a8 size=78
+  push {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  ldrsh.w r4,[sp,#0x24]
+  ldrsh.w r5,[sp,#0x28]
+  ldrsh.w r12,[sp,#0x34]
+  strd r4,r5,[sp,#0x24]
+  movw r4,#0x70a0
+  ldrsh.w r6,[sp,#0x2c]
+  ldrsh.w r7,[sp,#0x30]
+  ldrsh.w lr,[sp,#0x38]
+  ldrh.w r8,[sp,#0x3c]
+  ldrh.w r9,[sp,#0x40]
+  ldrh.w r10,[sp,#0x44]
+  ldrh.w r11,[sp,#0x48]
+  strd r12,lr,[sp,#0x34]
+  strd r10,r11,[sp,#0x44]
+  strd r8,r9,[sp,#0x3c]
+  strd r6,r7,[sp,#0x2c]
+  ldr r4,[r4,#0x2c]
+  mov r12,r4
+  pop.w {r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  bx r12

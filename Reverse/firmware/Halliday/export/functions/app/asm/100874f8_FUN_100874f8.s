@@ -1,0 +1,19 @@
+; FUN_100874f8 @ 0x100874f8 size=54
+  ldrb r2,[r0,#0x5]
+  lsls r3,r2,#0x1e
+  bpl 0x1008752c
+  movs r3,#0x0
+  ldrb.w r1,[r0,#0x70]
+  bic r2,r2,#0x3
+  strb r2,[r0,#0x5]
+  strd r3,r3,[r0,#0x48]
+  ldr r2,[0x10087530]
+  strd r3,r3,[r0,#0x74]
+  strd r3,r3,[r0,#0x30]
+  strd r3,r3,[r0,#0x38]
+  strd r3,r3,[r0,#0x68]
+  bfi r1,r3,#0x0,#0x4
+  str r3,[r0,#0x50]
+  strb.w r1,[r0,#0x70]
+  str r3,[r2,#0x0]
+  bx lr

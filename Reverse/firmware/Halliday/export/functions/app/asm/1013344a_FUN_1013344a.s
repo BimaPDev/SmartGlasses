@@ -1,0 +1,24 @@
+; FUN_1013344a @ 0x1013344a size=64
+  mov.w r3,#0x20
+  mrs r1,basepri
+  msr basepri_max,r3
+  isb #0xf
+  ldr r3,[r0,#0x0]
+  cbz r3,0x10133486
+  ldr r2,[r0,#0x4]
+  movs r0,#0x0
+  ldr r2,[r2,#0x0]
+  ldr r3,[r3,#0x0]
+  and r2,r2,#0x3
+  bic r3,r3,#0x3
+  cmp r3,r2
+  bne 0x1013347c
+  msr basepri,r1
+  isb #0xf
+  bx lr
+  ldr r3,[r3,#0x0]
+  adds r0,#0x1
+  bic r3,r3,#0x3
+  b 0x1013346e
+  mov r0,r3
+  b 0x10133472

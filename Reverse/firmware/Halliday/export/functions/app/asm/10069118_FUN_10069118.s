@@ -1,0 +1,19 @@
+; FUN_10069118 @ 0x10069118 size=40
+  push {r3,r4,r5,lr}
+  mov r5,r1
+  mov r4,r0
+  movs r1,#0x7
+  ldr r0,[0x10069140]
+  bl 0x1011a71c
+  cbz r5,0x1006913e
+  ldr r3,[0x10069144]
+  ldr r2,[0x10069148]
+  ldr r1,[r3,#0x0]
+  str r1,[r2,#0x0]
+  cbnz r4,0x1006913e
+  ldr r1,[r3,#0x4]
+  str.w r1,[r2,#-0x38]
+  ldr r2,[r3,#0x8]
+  ldr r3,[0x1006914c]
+  str r2,[r3,#0x0]
+  pop {r3,r4,r5,pc}

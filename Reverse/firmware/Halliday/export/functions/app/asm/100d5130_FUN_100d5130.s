@@ -1,0 +1,19 @@
+; FUN_100d5130 @ 0x100d5130 size=42
+  push {r4,lr}
+  bl 0x100d456c
+  mov r4,r0
+  cbnz r0,0x100d5156
+  ldr r2,[0x100d515c]
+  ldr r3,[0x100d5160]
+  ldr r0,[0x100d5164]
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  ldr r2,[0x100d5168]
+  ldr r1,[0x100d516c]
+  orrs r0,r3
+  bl 0x100a5b78
+  mov r0,r4
+  pop {r4,pc}
+  adds r4,#0x9c
+  b 0x100d5152

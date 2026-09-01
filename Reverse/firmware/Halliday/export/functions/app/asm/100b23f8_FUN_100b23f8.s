@@ -1,0 +1,20 @@
+; FUN_100b23f8 @ 0x100b23f8 size=54
+  push {r4,lr}
+  mov r4,r0
+  ldr r3,[0x100b2430]
+  ldr r0,[0x100b2434]
+  ldr r1,[0x100b2438]
+  subs r3,r3,r0
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  orr r0,r3,#0x1ce0000
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  cbz r4,0x100b242a
+  mov r0,r4
+  bl 0x101304ac
+  ldrb.w r3,[r4,#0x60]
+  bic r3,r3,#0x1
+  strb.w r3,[r4,#0x60]
+  movs r0,#0x0
+  pop {r4,pc}

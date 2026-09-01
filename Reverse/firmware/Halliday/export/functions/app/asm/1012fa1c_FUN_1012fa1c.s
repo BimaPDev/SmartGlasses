@@ -1,0 +1,29 @@
+; FUN_1012fa1c @ 0x1012fa1c size=66
+  movs r3,#0x0
+  push {r4,r5,r6,r7,lr}
+  subs r5,r1,#0x1
+  ldr r7,[r0,#0x0]
+  cmp r2,#0x1
+  ldrsh.w r4,[r7,r3,lsl #0x1]
+  lsl.w r6,r3,#0x1
+  ite eq
+  mul.eq r4,r3
+  mul.ne r4,r5
+  udiv r4,r4,r1
+  strh r4,[r7,r6]
+  ldr r4,[r0,#0x8]
+  cmp r4,#0x1
+  ble 0x1012fa52
+  ldr r7,[r0,#0x4]
+  cmp r2,#0x1
+  ldrsh r4,[r7,r6]
+  ite eq
+  mul.eq r4,r3
+  mul.ne r4,r5
+  udiv r4,r4,r1
+  strh r4,[r7,r6]
+  adds r3,#0x1
+  cmp r1,r3
+  add.w r5,r5,#0xffffffff
+  bne 0x1012fa22
+  pop {r4,r5,r6,r7,pc}

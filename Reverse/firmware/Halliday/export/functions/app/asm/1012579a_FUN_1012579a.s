@@ -1,0 +1,19 @@
+; FUN_1012579a @ 0x1012579a size=46
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  bl 0x101254be
+  mov r6,r0
+  mov r0,r4
+  bl 0x101254b2
+  mov r5,r0
+  mov r0,r4
+  bl 0x101254a6
+  ldr r3,[r4,#0x1c]
+  ldr r2,[r4,#0x14]
+  adds r1,r3,#0x1
+  subs r1,r1,r2
+  subs r2,r1,r6
+  subs r5,r2,r5
+  mvn r2,#0x1
+  mla r0,r2,r0,r5
+  pop {r4,r5,r6,pc}

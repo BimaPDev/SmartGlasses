@@ -1,0 +1,20 @@
+; FUN_100cb330 @ 0x100cb330 size=42
+  push {r3,lr}
+  ldrb r3,[r0,#0x2]
+  cmp r3,#0x2
+  bne 0x100cb356
+  ldrb r3,[r0,#0xd]
+  cmp r3,#0x7
+  bne 0x100cb356
+  adds r0,#0x38
+  bl 0x1013344a
+  ldr r3,[0x100cb35c]
+  ldrh.w r3,[r3,#0x11e]
+  subs r3,#0x2
+  cmp r0,r3
+  ite lt
+  mov.lt r0,#0x0
+  mov.ge r0,#0x1
+  pop {r3,pc}
+  movs r0,#0x1
+  b 0x100cb354

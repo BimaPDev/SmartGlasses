@@ -1,0 +1,26 @@
+; FUN_10126fda @ 0x10126fda size=56
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  cbz r0,0x1012700a
+  ldr r5,[r0,#0x4]
+  cbz r5,0x1012700e
+  mov r0,r5
+  bl 0x10126fd2
+  movs r2,#0x0
+  mov r6,r0
+  cmp r6,r2
+  bne 0x10126ffa
+  mov.w r2,#0xffffffff
+  mov r0,r2
+  pop {r4,r5,r6,pc}
+  mov r1,r2
+  mov r0,r5
+  bl 0x10126fb4
+  cmp r4,r0
+  beq 0x10126ff6
+  adds r2,#0x1
+  b 0x10126fee
+  mov r2,r0
+  b 0x10126ff6
+  mov r2,r5
+  b 0x10126ff6

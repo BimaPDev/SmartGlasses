@@ -1,0 +1,30 @@
+; FUN_10120be2 @ 0x10120be2 size=82
+  push {r3,r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  mov.w r8,#0x0
+  mov r5,r1
+  mov r6,r2
+  mov r9,r3
+  mov r4,r8
+  mov.w r11,#0x1
+  ldr r7,[sp,#0x28]
+  ldr.w r10,[r0,#0xc]
+  ldr.w r3,[r10,#0x0]
+  ldrb r1,[r3,#0xb]
+  ldrb r2,[r3,#0xa]
+  muls r2,r1
+  cmp r2,r4
+  bgt 0x10120c14
+  ldr r2,[r5,#0x0]
+  orrs r2,r6
+  str r2,[r5,#0x0]
+  pop.w {r3,r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  lsl.w r3,r11,r4
+  tst r3,r6
+  beq 0x10120c30
+  add.w r1,r7,r8
+  mov.w r2,#0x200
+  add.w r0,r9,r4, lsl #0x9
+  bl 0x1011ea40
+  add.w r8,r8,#0x200
+  adds r4,#0x1
+  b 0x10120bfc

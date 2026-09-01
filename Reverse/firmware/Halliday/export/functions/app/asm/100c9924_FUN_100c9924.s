@@ -1,0 +1,21 @@
+; FUN_100c9924 @ 0x100c9924 size=46
+  push {r3,lr}
+  ldr r3,[0x100c9954]
+  ldr r1,[r3,#0x0]
+  cbnz r1,0x100c9936
+  mov r0,r3
+  movs r2,#0x14
+  bl 0x1011ea48
+  mov r3,r0
+  ldr r2,[0x100c9958]
+  str r2,[r3,#0x4]
+  movs r2,#0x5
+  strh r2,[r3,#0x8]
+  ldr r3,[0x100c995c]
+  ldrb r3,[r3,#0x3]
+  lsls r3,r3,#0x1c
+  bmi 0x100c9950
+  pop.w {r3,lr}
+  ldr r0,[0x100c9954]
+  b.w 0x100c3fac
+  pop {r3,pc}

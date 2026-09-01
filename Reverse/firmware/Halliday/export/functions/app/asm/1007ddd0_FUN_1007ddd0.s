@@ -1,0 +1,19 @@
+; FUN_1007ddd0 @ 0x1007ddd0 size=40
+  ldr r3,[r0,#0x0]
+  ldr r0,[r3,#0x0]
+  ldr r3,[0x1007ddf8]
+  cmp r0,r3
+  beq 0x1007ddf0
+  add.w r3,r3,#0x4000
+  cmp r0,r3
+  beq 0x1007ddf4
+  add.w r3,r3,#0x4000
+  cmp r0,r3
+  ite eq
+  mov.eq r0,#0x2
+  mov.ne r0,#0x3
+  bx lr
+  movs r0,#0x0
+  bx lr
+  movs r0,#0x1
+  bx lr

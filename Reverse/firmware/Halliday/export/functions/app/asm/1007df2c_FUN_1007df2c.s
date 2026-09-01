@@ -1,0 +1,20 @@
+; FUN_1007df2c @ 0x1007df2c size=42
+  push {r3,lr}
+  mov r2,r0
+  bl 0x1007ddd0
+  ldr r3,[r2,#0x0]
+  ands r0,r0,#0xff
+  ldr r3,[r3,#0x8]
+  bne 0x1007df44
+  ldr r2,[0x1007df58]
+  str r2,[r3,#0x0]
+  pop {r3,pc}
+  cmp r0,#0x1
+  bne 0x1007df4c
+  ldr r2,[0x1007df5c]
+  b 0x1007df40
+  cmp r0,#0x2
+  ite eq
+  ldr.eq r2,[0x1007df60]
+  ldr.ne r2,[0x1007df64]
+  b 0x1007df40

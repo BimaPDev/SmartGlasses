@@ -1,0 +1,20 @@
+; FUN_1007cfb4 @ 0x1007cfb4 size=58
+  push {r4,lr}
+  ldr r4,[0x1007cff0]
+  ldrb.w r3,[r4,#0x13f]
+  cmp r3,#0x1
+  bne 0x1007cfe6
+  ldrb.w r3,[r4,#0x13e]
+  lsls r3,r3,#0x1f
+  ite mi
+  ldrb.mi.w r0,[r4,#0x143]
+  ldrb.pl r0,[r4,#0x9]
+  bl 0x1007cb20
+  movs r3,#0x4
+  strb.w r3,[r4,#0x141]
+  ldrb.w r3,[r4,#0x13c]
+  bfc r3,#0x4,#0x1
+  strb.w r3,[r4,#0x13c]
+  pop {r4,pc}
+  pop.w {r4,lr}
+  b.w 0x1007cc1c

@@ -1,0 +1,19 @@
+; FUN_10036cd8 @ 0x10036cd8 size=42
+  push {r0,r1,r2,lr}
+  ldr r3,[0x10036d04]
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  ldr r3,[0x10036d08]
+  ldrb r0,[r3,#0x0]
+  ldr r3,[0x10036d04]
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x10036cfc
+  bl 0x1013cdc0
+  add sp,#0xc
+  pop.w pc

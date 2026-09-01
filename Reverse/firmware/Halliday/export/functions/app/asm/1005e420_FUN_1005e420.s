@@ -1,0 +1,21 @@
+; FUN_1005e420 @ 0x1005e420 size=54
+  push {r4,lr}
+  ldr r4,[0x1005e458]
+  ldr r3,[r4,#0x0]
+  ldr r3,[r3,#0x3c]
+  ldr r3,[r3,#0x18]
+  cbz r3,0x1005e454
+  ldrb.w r1,[r4,#0x90]
+  ldrb.w r2,[r4,#0x31e]
+  bfi r1,r2,#0x0,#0x1
+  strb.w r1,[r4,#0x90]
+  cbnz r2,0x1005e454
+  ldr r0,[0x1005e45c]
+  blx r3
+  subs r0,#0x0
+  it ne
+  mov.ne r0,#0x1
+  ldrb.w r3,[r4,#0x90]
+  bfi r3,r0,#0x1,#0x1
+  strb.w r3,[r4,#0x90]
+  pop {r4,pc}

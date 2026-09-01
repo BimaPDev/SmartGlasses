@@ -1,0 +1,27 @@
+; FUN_101918d6 @ 0x101918d6 size=58
+  push {r3,r4,r5,r6,r7,lr}
+  mov r4,r0
+  movs r5,#0x3
+  mov.w r7,#0x188
+  ldr r3,[r7,#0x1c]
+  movs r1,#0x75
+  mov r0,r4
+  ldr r3,[r3,#0x2c]
+  blx r3
+  movs r0,#0x1e
+  bl 0x10192454
+  movs r6,#0x64
+  movs r0,#0x5
+  bl 0x10192454
+  ldr r3,[r7,#0x1c]
+  movs r1,#0x5
+  ldr r3,[r3,#0xc]
+  mov r0,r4
+  blx r3
+  lsls r3,r0,#0x1f
+  bpl 0x1019190e
+  subs r6,#0x1
+  bne 0x101918f2
+  subs r5,#0x1
+  bne 0x101918e0
+  pop {r3,r4,r5,r6,r7,pc}

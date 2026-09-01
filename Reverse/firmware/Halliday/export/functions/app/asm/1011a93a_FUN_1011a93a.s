@@ -1,0 +1,24 @@
+; FUN_1011a93a @ 0x1011a93a size=68
+  push {r3,r4,r5,lr}
+  bl 0x1005608c
+  ldrd r5,r4,[r0,#0x48]
+  ldr r3,[r4,#0x14]
+  lsls r3,r3,#0x1b
+  bpl 0x1011a95a
+  ldr r3,[r4,#0x14]
+  mov.w r0,#0x12c
+  orr r3,r3,#0x10
+  str r3,[r4,#0x14]
+  bl 0x1011a866
+  ldr r3,[r5,#0x40]
+  mov.w r0,#0x12c
+  bic r3,r3,#0x10
+  str r3,[r5,#0x40]
+  ldr r3,[r4,#0x10]
+  bic r3,r3,#0x10
+  str r3,[r4,#0x10]
+  ldr r3,[r4,#0x1c]
+  and r3,r3,#0xfc000000
+  str r3,[r4,#0x1c]
+  pop.w {r3,r4,r5,lr}
+  b.w 0x1011a866

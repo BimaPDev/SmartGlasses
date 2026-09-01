@@ -1,0 +1,27 @@
+; FUN_1006bdc4 @ 0x1006bdc4 size=64
+  ldr r3,[r0,#0x4]
+  push {r4,lr}
+  cbz r3,0x1006bdf8
+  ldr r3,[r3,#0x1c]
+  ldr r3,[r3,#0x14]
+  cbz r3,0x1006bdfe
+  blx r3
+  subs r4,r0,#0x0
+  bge 0x1006bdf4
+  ldr r3,[0x1006be04]
+  ldr r0,[0x1006be08]
+  ldr r2,[0x1006be0c]
+  subs r0,r0,r3
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x1440000
+  mov r3,r4
+  ldr r1,[0x1006be10]
+  orr r0,r0,#0x11
+  bl 0x100a5b78
+  mov r0,r4
+  pop {r4,pc}
+  mvn r4,#0x8
+  b 0x1006bdf4
+  mvn r4,#0x85
+  b 0x1006bdf4

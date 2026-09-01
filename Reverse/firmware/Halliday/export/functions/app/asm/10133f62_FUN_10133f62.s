@@ -1,0 +1,24 @@
+; FUN_10133f62 @ 0x10133f62 size=54
+  ldr r3,[r0,#0x54]
+  push {r4}
+  cbz r3,0x10133f6e
+  movs r4,#0x0
+  subs r3,#0x8
+  cbnz r3,0x10133f74
+  pop.w r4
+  bx lr
+  cmp r3,r1
+  add.w r2,r3,#0x8
+  bne 0x10133f88
+  mov r1,r4
+  adds r0,#0x54
+  pop.w r4
+  b.w 0x10133dc0
+  cmp r2,#0x0
+  beq 0x10133f6e
+  ldr r3,[r3,#0x8]
+  cmp r3,#0x0
+  beq 0x10133f6e
+  mov r4,r2
+  subs r3,#0x8
+  b 0x10133f6c

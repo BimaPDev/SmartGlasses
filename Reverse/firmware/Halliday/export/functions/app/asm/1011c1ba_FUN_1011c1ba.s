@@ -1,0 +1,12 @@
+; FUN_1011c1ba @ 0x1011c1ba size=22
+  movs r3,#0x0
+  sub sp,#0x8
+  str r3,[sp,#0x4]
+  ldr r3,[sp,#0x4]
+  cmp r3,#0x9
+  ble 0x1011c1ca
+  add sp,#0x8
+  bx lr
+  ldr r3,[sp,#0x4]
+  adds r3,#0x1
+  b 0x1011c1be

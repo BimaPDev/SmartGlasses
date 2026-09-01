@@ -1,0 +1,30 @@
+; FUN_10121b14 @ 0x10121b14 size=72
+  push {r4,r5,r6,r7,lr}
+  movs r6,#0x1
+  ldr r5,[r0,#0xc]
+  mov.w r0,#0xffffffff
+  add.w r3,r5,#0x1da0
+  add.w r4,r5,#0x1dc0
+  adds r3,#0x14
+  adds r4,#0x4
+  ldrh r2,[r3,#0x2]
+  cmp r2,#0x1
+  bls 0x10121b4a
+  ldr r2,[r5,#0x74]
+  ldrh.w r12,[r3,#0x0]
+  ldr r7,[r2,#0xc]
+  movs r2,#0x0
+  ldrh.w lr,[r7,r2,lsl #0x3]
+  cmp lr,r12
+  bne 0x10121b54
+  lsl.w r2,r6,r2
+  bic.w r0,r0,r2
+  adds r3,#0x4
+  cmp r3,r4
+  bne 0x10121b2a
+  str r0,[r1,#0x0]
+  pop {r4,r5,r6,r7,pc}
+  adds r2,#0x1
+  cmp r2,#0x8
+  bne 0x10121b3a
+  b 0x10121b4a

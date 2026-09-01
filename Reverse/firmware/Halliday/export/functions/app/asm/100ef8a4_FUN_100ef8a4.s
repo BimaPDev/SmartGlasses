@@ -1,0 +1,19 @@
+; FUN_100ef8a4 @ 0x100ef8a4 size=38
+  push {r4,r5,lr}
+  movs r5,#0xc
+  ldr r2,[0x100ef8cc]
+  ldrb r3,[r2,#0x4]
+  ldr r1,[r2,#0x0]
+  subs r3,#0x1
+  adds r2,r3,#0x1
+  bne 0x100ef8ba
+  movs r2,#0x0
+  mov r0,r2
+  pop {r4,r5,pc}
+  mul r4,r5,r3
+  adds r2,r1,r4
+  ldrh r4,[r1,r4]
+  cmp r4,r0
+  beq 0x100ef8b6
+  subs r3,#0x1
+  b 0x100ef8b0

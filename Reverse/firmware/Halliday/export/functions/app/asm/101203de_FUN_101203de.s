@@ -1,0 +1,23 @@
+; FUN_101203de @ 0x101203de size=60
+  push {r0,r1,r4,lr}
+  movw r3,#0xa00f
+  mov r4,r0
+  movs r1,#0x1
+  strh.w r3,[sp,#0x4]
+  bl 0x101200fc
+  mov r0,r4
+  add r1,sp,#0x4
+  movs r3,#0x0
+  movs r2,#0x2
+  bl 0x10120148
+  movs r3,#0x0
+  movs r2,#0x1
+  mov r0,r4
+  add.w r1,sp,#0x3
+  bl 0x10120314
+  mov r0,r4
+  movs r1,#0x0
+  bl 0x101200fc
+  ldrb.w r0,[sp,#0x3]
+  add sp,#0x8
+  pop {r4,pc}

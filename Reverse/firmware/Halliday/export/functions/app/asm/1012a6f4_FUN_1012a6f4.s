@@ -1,0 +1,23 @@
+; FUN_1012a6f4 @ 0x1012a6f4 size=50
+  push {r3,r4,r5,r6,r7,lr}
+  mov r5,r2
+  mov r7,r1
+  movs r1,#0x2c
+  mov r4,r0
+  mov r6,r3
+  bl 0x1012a6ec
+  cmp r5,#0x4
+  it cs
+  mov.cs r5,#0x4
+  mov r1,r7
+  mov r0,r4
+  strb r5,[r4,#0x10]
+  lsls r2,r5,#0x2
+  bl 0x1011ea40
+  ldr r3,[r4,#0x0]
+  strd r3,r6,[r4,#0x14]
+  ldrb r3,[r4,#0x10]
+  str r3,[r4,#0x1c]
+  movs r3,#0x0
+  str r3,[r4,#0x20]
+  pop {r3,r4,r5,r6,r7,pc}

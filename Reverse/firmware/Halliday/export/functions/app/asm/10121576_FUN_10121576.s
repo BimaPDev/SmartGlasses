@@ -1,0 +1,19 @@
+; FUN_10121576 @ 0x10121576 size=54
+  push {r4,r5,lr}
+  movs r1,#0x0
+  movs r5,#0xff
+  movw r4,#0xffff
+  ldr r3,[r0,#0xc]
+  add.w r2,r3,#0x19a0
+  add.w r0,r3,#0x30
+  str.w r2,[r3,#0x98]
+  strb.w r1,[r3,#0x90]
+  strb.w r5,[r3,#0x91]
+  strh.w r4,[r3,#0x92]
+  strh.w r1,[r3,#0x94]
+  adds r3,#0xc
+  cmp r3,r0
+  add.w r2,r2,#0x100
+  bne 0x1012158a
+  movs r0,#0x1
+  pop {r4,r5,pc}

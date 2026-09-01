@@ -1,0 +1,21 @@
+; FUN_1012d8b0 @ 0x1012d8b0 size=70
+  push {r3,lr}
+  bl 0x100a3598
+  movs r0,#0x0
+  bl 0x1009e480
+  bl 0x100baf8c
+  movs r0,#0x0
+  bl 0x100a3200
+  bl 0x100a1cc0
+  movs r0,#0x0
+  bl 0x1012d1ae
+  bl 0x1012d872
+  bl 0x10064664
+  bl 0x1012d9a6
+  cbnz r0,0x1012d8ea
+  bl 0x100a31b0
+  pop.w {r3,lr}
+  b.w 0x100557f8
+  movw r0,#0x201
+  pop.w {r3,lr}
+  b.w 0x1005576c

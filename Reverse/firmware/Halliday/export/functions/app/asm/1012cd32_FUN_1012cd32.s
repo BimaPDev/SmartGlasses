@@ -1,0 +1,27 @@
+; FUN_1012cd32 @ 0x1012cd32 size=66
+  push {r4,r5,r6,r7,r8,lr}
+  ldrb.w r5,[sp,#0x18]
+  mov r6,r0
+  mov r0,r1
+  mov r1,r5
+  mov r4,r2
+  ldr r7,[sp,#0x1c]
+  bl 0x1009dc20
+  cmp r0,#0x1
+  bne 0x1012cd6e
+  mov r0,r4
+  bl 0x1009ce94
+  ldrb r3,[r7,#0x19]
+  mov r1,r4
+  str r3,[sp,#0x1c]
+  subs r3,r5,#0x6
+  rsbs r5,r3
+  adcs r5,r3
+  str r5,[sp,#0x18]
+  mov r0,r6
+  ldrb r3,[r7,#0x18]
+  ldrh r2,[r7,#0x8]
+  pop.w {r4,r5,r6,r7,r8,lr}
+  b.w 0x1009cec8
+  movs r0,#0x0
+  pop.w {r4,r5,r6,r7,r8,pc}

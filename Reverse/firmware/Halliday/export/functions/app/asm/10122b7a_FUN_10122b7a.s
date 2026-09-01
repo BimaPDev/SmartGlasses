@@ -1,0 +1,15 @@
+; FUN_10122b7a @ 0x10122b7a size=34
+  cbz r0,0x10122b8e
+  sub.w r3,r1,#0xb
+  cmp r3,#0x1
+  bls 0x10122b8e
+  cmp r1,#0xf
+  beq 0x10122b8e
+  ldr r0,[r0,#0x14]
+  b.w 0x101242e2
+  bx lr
+  subs r3,r0,#0x1
+  adds r3,#0x3
+  bhi 0x101242ec
+  b.w 0x10113e2c
+  bx lr

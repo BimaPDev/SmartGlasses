@@ -1,0 +1,27 @@
+; FUN_10013e50 @ 0x10013e50 size=70
+  push {r0,r1,r4,lr}
+  mov r4,r0
+  ldr r3,[0x10013e98]
+  movs r2,#0x0
+  ldr r1,[0x10013e9c]
+  add.w r0,r0,#0x264
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  bl 0x101164a0
+  movs r2,#0x0
+  ldr r1,[0x10013ea0]
+  add.w r0,r4,#0x248
+  bl 0x101164a0
+  ldr r3,[0x10013e98]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x10013e84
+  bl 0x1013cdc0
+  mov r2,r4
+  ldr r1,[0x10013ea4]
+  add.w r0,r4,#0x29c
+  add sp,#0x8
+  pop.w {r4,lr}
+  b.w 0x101164a0

@@ -1,0 +1,23 @@
+; FUN_1011d844 @ 0x1011d844 size=58
+  push {r4,r5,lr}
+  subs r3,r0,#0x1
+  adds r5,r1,r2
+  cmp r1,r5
+  bne 0x1011d85c
+  movs r1,#0x36
+  movs r4,#0x5c
+  add r2,r0
+  subs r3,r2,r0
+  cmp r3,#0x3f
+  bls 0x1011d874
+  pop {r4,r5,pc}
+  ldrb r4,[r1,#0x0]
+  eor r4,r4,#0x36
+  strb.w r4,[r3,#0x1]!
+  ldrb.w r4,[r1],#0x1
+  eor r4,r4,#0x5c
+  strb.w r4,[r3,#0x40]
+  b 0x1011d84a
+  strb.w r1,[r2],#0x1
+  strb.w r4,[r2,#0x3f]
+  b 0x1011d854

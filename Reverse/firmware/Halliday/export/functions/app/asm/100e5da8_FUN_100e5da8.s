@@ -1,0 +1,22 @@
+; FUN_100e5da8 @ 0x100e5da8 size=50
+  ldr r3,[0x100e5ddc]
+  ldr r2,[r3,#0x0]
+  cmp r0,r2
+  bne 0x100e5db6
+  ldrb r2,[r3,#0x8]
+  cmp r2,r1
+  beq 0x100e5dd2
+  ldr.w r2,[r3,#0x21c]
+  cmp r0,r2
+  bne 0x100e5dd6
+  ldrb.w r2,[r3,#0x224]
+  cmp r2,r1
+  bne 0x100e5dd6
+  movs r0,#0x1
+  mov.w r2,#0x21c
+  mla r0,r2,r0,r3
+  bx lr
+  movs r0,#0x0
+  b 0x100e5dc8
+  movs r0,#0x0
+  bx lr

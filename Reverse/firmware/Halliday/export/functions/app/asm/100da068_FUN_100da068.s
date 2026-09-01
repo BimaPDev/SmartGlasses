@@ -1,0 +1,24 @@
+; FUN_100da068 @ 0x100da068 size=54
+  push {r0,r1,r4,lr}
+  ldr r4,[r0,#0x0]
+  ldr r3,[r0,#0x8]
+  mov r0,r4
+  str r3,[sp,#0x4]
+  bl 0x1013655c
+  cmp r0,#0x1
+  bne 0x100da09a
+  movs r1,#0x0
+  mov r0,r4
+  bl 0x1013653e
+  bl 0x10136516
+  cmp r4,r0
+  bne 0x100da09a
+  ldr r3,[0x100da0a0]
+  ldr r3,[r3,#0x0]
+  ldr r4,[r3,#0x0]
+  bl 0x10131c1c
+  movs r1,#0x7
+  add r2,sp,#0x4
+  blx r4
+  add sp,#0x8
+  pop {r4,pc}

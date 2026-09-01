@@ -1,0 +1,20 @@
+; FUN_100ca10c @ 0x100ca10c size=44
+  push {r0,r1,r4,lr}
+  mov r4,r0
+  str r1,[sp,#0x4]
+  bl 0x100c9d30
+  mov r2,r0
+  cbz r0,0x100ca132
+  strb r4,[r0,#0x8]
+  ldr r1,[sp,#0x4]
+  adds r0,#0x90
+  bl 0x101334c8
+  movs r3,#0x1
+  strb r3,[r2,#0x9]
+  strb r3,[r2,#0xa]
+  strb r3,[r2,#0x2]
+  ldr r3,[0x100ca138]
+  str.w r3,[r2,#0xa8]
+  mov r0,r2
+  add sp,#0x8
+  pop {r4,pc}

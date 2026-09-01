@@ -1,0 +1,20 @@
+; FUN_10121e28 @ 0x10121e28 size=44
+  push {r4,lr}
+  ldr r2,[r0,#0x0]
+  mov r3,r0
+  ldrb r0,[r2,#0x7]
+  cbnz r0,0x10121e4c
+  ldr r2,[r3,#0xc]
+  add.w r3,r2,#0x1ea0
+  adds r3,#0x1c
+  add.w r2,r2,#0x1ec0
+  ldrb.w r4,[r3],#0x1
+  cmp r4,r1
+  beq 0x10121e50
+  cmp r3,r2
+  bne 0x10121e3e
+  pop {r4,pc}
+  movs r0,#0x0
+  b 0x10121e4a
+  movs r0,#0x1
+  b 0x10121e4a

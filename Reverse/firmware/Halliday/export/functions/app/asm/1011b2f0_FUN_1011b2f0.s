@@ -1,0 +1,27 @@
+; FUN_1011b2f0 @ 0x1011b2f0 size=74
+  push {r4,lr}
+  mov r4,r0
+  ldr r0,[r0,#0x8]
+  mov.w r2,#0x100
+  movs r1,#0x0
+  add.w r0,r0,#0x142
+  bl 0x1011ea48
+  ldr r0,[r4,#0x8]
+  ldrh r2,[r0,#0x3c]
+  add.w r1,r0,#0x42
+  add.w r0,r0,#0x142
+  bl 0x1011ea40
+  ldr r0,[r4,#0x8]
+  add.w r0,r0,#0x142
+  bl 0x100595d4
+  ldr r3,[r4,#0x8]
+  adds.w r0,r3,#0x142
+  beq 0x1011b336
+  bl 0x1011ea10
+  uxth r3,r0
+  ldr r2,[r4,#0x8]
+  adds r3,#0x1
+  strh.w r3,[r2,#0x40]
+  pop {r4,pc}
+  mov r3,r0
+  b 0x1011b32c

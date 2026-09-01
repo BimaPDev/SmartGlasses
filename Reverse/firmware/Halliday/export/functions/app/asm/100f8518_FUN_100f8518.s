@@ -1,0 +1,81 @@
+; FUN_100f8518 @ 0x100f8518 size=212
+  cmp r0,#0x0
+  beq 0x100f85c4
+  cmp r1,#0x0
+  beq 0x100f85bc
+  push {r4,r5,r6,r7,lr}
+  eor.w r3,r1,r1, asr #0x1f
+  eor.w r4,r0,r0, asr #0x1f
+  sub.w r3,r3,r1, asr #0x1f
+  sub.w r4,r4,r0, asr #0x1f
+  orrs r4,r3
+  clz r4,r4
+  rsb.w r3,r4,#0x1f
+  cmp r3,#0x1d
+  sub sp,#0xc
+  bgt 0x100f85ce
+  subs r4,#0x2
+  lsl.w r2,r0,r4
+  lsl.w r3,r1,r4
+  mov r0,sp
+  add r1,sp,#0x4
+  strd r2,r3,[sp,#0x0]
+  bl 0x100f81a0
+  movw r3,#0x5b16
+  movw r0,#0xdbd9
+  ldr r1,[sp,#0x0]
+  cmp r1,#0x0
+  it lt
+  rsb.lt r1,r1
+  lsr.w r7,r1,#0x10
+  uxth r1,r1
+  mul r2,r0,r1
+  mul r5,r3,r7
+  mul r3,r3,r1
+  ite lt
+  mov.lt.w r6,#0xffffffff
+  mov.ge r6,#0x1
+  adds r5,r2,r5
+  lsl.w r2,r5,#0x10
+  ite cs
+  mov.cs.w r1,#0x10000
+  mov.cc r1,#0x0
+  adds r2,r3,r2
+  ite cs
+  mov.cs r3,#0x1
+  mov.cc r3,#0x0
+  lsrs r5,r5,#0x10
+  mla r0,r0,r7,r5
+  add r0,r3
+  cmp.w r2,#0xc0000000
+  it cs
+  add.cs r0,#0x1
+  adds r6,#0x1
+  add r0,r1
+  it eq
+  rsb.eq r0,r0
+  cmp r4,#0x0
+  bgt 0x100f85de
+  rsbs r1,r4
+  lsls r0,r1
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}
+  cmp r0,#0x0
+  it lt
+  rsb.lt r0,r0
+  bx lr
+  eor.w r0,r1,r1, asr #0x1f
+  sub.w r0,r0,r1, asr #0x1f
+  bx lr
+  rsb.w r3,r4,#0x2
+  asr.w r2,r0,r3
+  subs r4,#0x2
+  asr.w r3,r1,r3
+  b 0x100f854c
+  movs r1,#0x1
+  subs r3,r4,#0x1
+  lsls r1,r3
+  add r0,r1
+  asrs r0,r4
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}

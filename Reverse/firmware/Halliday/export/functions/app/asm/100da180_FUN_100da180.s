@@ -1,0 +1,19 @@
+; FUN_100da180 @ 0x100da180 size=44
+  push {r4,lr}
+  mov r4,r0
+  ldr r0,[0x100da1ac]
+  bl 0x1013211e
+  ldr r3,[0x100da1b0]
+  movs r2,#0x0
+  ldr r1,[0x100da1b4]
+  ldr r0,[0x100da1b8]
+  str r4,[r3,#0x0]
+  bl 0x101164a0
+  movs r2,#0x0
+  ldr r1,[0x100da1bc]
+  ldr r0,[0x100da1c0]
+  bl 0x101164a0
+  mov r0,r4
+  bl 0x100e7898
+  movs r0,#0x0
+  pop {r4,pc}

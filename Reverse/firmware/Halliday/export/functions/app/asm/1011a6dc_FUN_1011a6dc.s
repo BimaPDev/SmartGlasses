@@ -1,0 +1,22 @@
+; FUN_1011a6dc @ 0x1011a6dc size=64
+  cmp r0,#0x5f
+  push {r4,lr}
+  bhi 0x1011a716
+  mov.w r3,#0x20
+  mrs r4,basepri
+  msr basepri_max,r3
+  isb #0xf
+  add.w r0,r0,#0x10000000
+  add.w r0,r0,#0x1a000
+  lsls r0,r0,#0x2
+  ldr r3,[r0,#0x0]
+  bic r3,r3,#0x7f00
+  bic r3,r3,#0x3f
+  orrs r1,r3
+  str r1,[r0,#0x0]
+  msr basepri,r4
+  isb #0xf
+  movs r0,#0x0
+  pop {r4,pc}
+  mvn r0,#0x15
+  b 0x1011a714

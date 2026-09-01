@@ -1,0 +1,19 @@
+; FUN_100b940c @ 0x100b940c size=38
+  ldr r3,[0x100b9434]
+  mov r2,r0
+  ldrd r1,r0,[r3,#0x4]
+  push {r4,r5}
+  adds r4,r1,#0x1
+  cmp r4,r0
+  bhi 0x100b942a
+  ldr r5,[r3,#0x0]
+  str r4,[r3,#0x4]
+  ldrb r3,[r5,r1]
+  movs r0,#0x1
+  strb r3,[r2,#0x0]
+  pop {r4,r5}
+  bx lr
+  movs r0,#0x0
+  strb r0,[r2,#0x0]
+  pop {r4,r5}
+  bx lr

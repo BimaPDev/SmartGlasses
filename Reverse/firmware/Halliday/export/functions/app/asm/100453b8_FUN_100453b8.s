@@ -1,0 +1,47 @@
+; FUN_100453b8 @ 0x100453b8 size=118
+  push {r4,lr}
+  ldr r3,[0x10045430]
+  sub sp,#0x30
+  mov r4,r0
+  movs r2,#0x24
+  movs r1,#0x0
+  add r0,sp,#0x4
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x2c]
+  mov.w r3,#0x0
+  bl 0x1011ea48
+  movs r2,#0x24
+  add r1,sp,#0x4
+  ldr r0,[0x10045434]
+  bl 0x1012d138
+  movs r2,#0xc
+  add r3,sp,#0x30
+  mla r2,r2,r4,r3
+  ldrb.w r3,[r2,#-0x29]
+  ldrb.w r1,[r2,#-0x2c]
+  rsb r0,r3,r3, lsl #0x4
+  ldrb.w r3,[r2,#-0x28]
+  cmp r1,#0x1
+  add.w r3,r3,r0, lsl #0x2
+  add r2,sp,#0x30
+  sxth r3,r3
+  add r2,r4
+  bne 0x10045422
+  movs r0,#0x3c
+  strb.w r1,[r2,#-0x8]
+  muls r0,r3
+  ldrb.w r2,[r2,#-0x8]
+  mov r1,r4
+  bl 0x100a5174
+  ldr r3,[0x10045430]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x2c]
+  eors r2,r3
+  beq 0x1004542a
+  bl 0x1013cdc0
+  cmp r1,#0x2
+  it ne
+  mov.ne r1,#0x0
+  b 0x10045402
+  add sp,#0x30
+  pop {r4,pc}

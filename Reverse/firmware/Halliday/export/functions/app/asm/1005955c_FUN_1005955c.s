@@ -1,0 +1,44 @@
+; FUN_1005955c @ 0x1005955c size=98
+  push {r4,r5,r6,lr}
+  mov r5,r1
+  mov r4,r2
+  mov r6,r0
+  cbnz r0,0x1005957c
+  ldr r1,[0x100595c0]
+  ldr r3,[0x100595c4]
+  subs r3,r3,r1
+  cmp.w r5,r3, lsr #0x3
+  bcs 0x100595b0
+  add.w r1,r1,r5, lsl #0x3
+  ldr r4,[r1,#0x4]
+  mov r0,r4
+  pop {r4,r5,r6,pc}
+  cbnz r2,0x1005959a
+  push {r0,r1,r2,r3}
+  movw r3,#0x103
+  ldr r2,[0x100595c8]
+  ldr r1,[0x100595cc]
+  ldr r0,[0x100595d0]
+  bl 0x10119dc2
+  pop {r0,r1,r2,r3}
+  movw r1,#0x103
+  ldr r0,[0x100595c8]
+  bl 0x1011a1f0
+  ldr r2,[r6,#0x8]
+  cbz r2,0x100595b0
+  ldr r3,[r2,#0x4]
+  ldrb r2,[r2,#0x0]
+  cbz r2,0x100595b4
+  mov r1,r4
+  mov r0,r5
+  blx r3
+  ldr r3,[r4,#0x0]
+  cmp r3,#0x0
+  bne 0x10059578
+  movs r4,#0x0
+  b 0x10059578
+  movs r1,#0x14
+  muls r5,r1
+  adds r4,r3,r5
+  ldr r3,[r3,r5]
+  b 0x100595ac

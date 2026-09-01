@@ -1,0 +1,21 @@
+; FUN_100415cc @ 0x100415cc size=44
+  push {r0,r1,r4,lr}
+  ldr r3,[0x100415f8]
+  ldr r4,[0x100415fc]
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  ldr r3,[r4,#0x18]
+  blx r3
+  cbz r0,0x100415e4
+  ldr r3,[r4,#0xc]
+  blx r3
+  ldr r3,[0x100415f8]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x100415f2
+  bl 0x1013cdc0
+  movs r0,#0x1
+  add sp,#0x8
+  pop {r4,pc}

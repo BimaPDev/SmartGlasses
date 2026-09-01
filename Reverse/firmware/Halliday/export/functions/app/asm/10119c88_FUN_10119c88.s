@@ -1,0 +1,21 @@
+; FUN_10119c88 @ 0x10119c88 size=48
+  sub.w r3,r0,#0x30
+  uxtb r3,r3
+  cmp r3,#0x9
+  bhi 0x10119c98
+  strb r3,[r1,#0x0]
+  movs r0,#0x0
+  bx lr
+  sub.w r3,r0,#0x61
+  cmp r3,#0x5
+  bhi 0x10119ca6
+  subs r0,#0x57
+  strb r0,[r1,#0x0]
+  b 0x10119c94
+  sub.w r3,r0,#0x41
+  cmp r3,#0x5
+  bhi 0x10119cb2
+  subs r0,#0x37
+  b 0x10119ca2
+  mvn r0,#0x15
+  bx lr

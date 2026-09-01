@@ -1,0 +1,25 @@
+; FUN_1011a124 @ 0x1011a124 size=60
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  mov r4,r1
+  bl 0x1011a076
+  ldr r6,[r5,#0x4]
+  ldr r2,[r5,#0x10]
+  ldr r3,[r5,#0x0]
+  adds r1,r6,r4
+  add r3,r2
+  cmp r1,r3
+  bhi 0x1011a15a
+  cmp r6,r0
+  ite hi
+  udiv.hi r3,r0,r2
+  mov.ls r3,#0x0
+  mov.w r0,#0x0
+  itt hi
+  add.hi.w r3,r3,#0xffffffff
+  mul.hi r3,r2
+  subs r1,r1,r3
+  strd r1,r1,[r5,#0x4]
+  pop {r4,r5,r6,pc}
+  mvn r0,#0x15
+  b 0x1011a158

@@ -1,0 +1,21 @@
+; FUN_10125e18 @ 0x10125e18 size=46
+  push {r4,r5,lr}
+  mov r4,r0
+  sub sp,#0x14
+  bl 0x10125436
+  ldrd r1,r2,[r4,#0x18]
+  ldr r3,[r4,#0x20]
+  ldr r5,[r4,#0x14]
+  subs r1,r1,r0
+  add r2,r0
+  add r3,r0
+  subs r5,r5,r0
+  str r1,[sp,#0x4]
+  mov r0,r4
+  mov r1,sp
+  str r5,[sp,#0x0]
+  str r2,[sp,#0x8]
+  str r3,[sp,#0xc]
+  bl 0x101259d0
+  add sp,#0x14
+  pop {r4,r5,pc}

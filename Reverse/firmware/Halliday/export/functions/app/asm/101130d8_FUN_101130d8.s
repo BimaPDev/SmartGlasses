@@ -1,0 +1,34 @@
+; FUN_101130d8 @ 0x101130d8 size=86
+  push {r4,r5,r6,lr}
+  mov.w r5,#0x118
+  sub sp,#0x20
+  ldr r3,[0x10113130]
+  add r6,sp,#0x18
+  mla r5,r5,r0,r3
+  mov r4,r0
+  mov r3,r0
+  movs r1,#0x8
+  mov r0,r6
+  ldr r2,[0x10113134]
+  bl 0x10119ddc
+  movs r3,#0xf
+  movs r2,#0x1
+  strd r3,r2,[sp,#0xc]
+  movs r3,#0x0
+  strd r3,r3,[sp,#0x4]
+  movs r3,#0x18
+  ldr r2,[0x10113138]
+  ldr r1,[0x1011313c]
+  mla r3,r3,r4,r2
+  mov r0,r5
+  str r3,[sp,#0x0]
+  mov.w r2,#0x1000
+  ldr r3,[0x10113140]
+  str r6,[sp,#0x14]
+  add.w r1,r1,r4, lsl #0xc
+  bl 0x101136cc
+  ldrb r3,[r5,#0xd]
+  bic r3,r3,#0x4
+  strb r3,[r5,#0xd]
+  add sp,#0x20
+  pop {r4,r5,r6,pc}

@@ -1,0 +1,24 @@
+; FUN_10138a9e @ 0x10138a9e size=48
+  ldrh r1,[r0,#0x2]
+  push {r4,r5,lr}
+  cbz r1,0x10138ab0
+  ldrh r2,[r0,#0x0]
+  movs r3,#0x0
+  cmp r1,r2
+  bcc 0x10138ab2
+  strh r3,[r0,#0x2]
+  strh r3,[r0,#0x0]
+  pop {r4,r5,pc}
+  subs r2,r2,r1
+  uxth r2,r2
+  adds r4,r0,#0x4
+  adds r3,#0x1
+  ldrb r5,[r4,r1]
+  uxth r3,r3
+  cmp r2,r3
+  strb.w r5,[r4],#0x1
+  bne 0x10138ab8
+  movs r3,#0x0
+  strh r2,[r0,#0x0]
+  strh r3,[r0,#0x2]
+  b 0x10138ab0

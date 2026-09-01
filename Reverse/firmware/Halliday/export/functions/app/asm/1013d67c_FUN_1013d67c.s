@@ -1,0 +1,26 @@
+; FUN_1013d67c @ 0x1013d67c size=62
+  push {r3,r4,r5,r6,r7,r8,r9,lr}
+  mov r6,r0
+  mov r8,r1
+  add.w r4,r0,#0x48
+  movs r7,#0x0
+  ldrd r9,r5,[r4,#0x4]
+  subs.w r9,r9,#0x1
+  bpl 0x1013d6a0
+  ldr r4,[r4,#0x0]
+  cmp r4,#0x0
+  bne 0x1013d68a
+  mov r0,r7
+  pop.w {r3,r4,r5,r6,r7,r8,r9,pc}
+  ldrh r3,[r5,#0xc]
+  cmp r3,#0x1
+  bls 0x1013d6b6
+  ldrsh.w r3,[r5,#0xe]
+  adds r3,#0x1
+  beq 0x1013d6b6
+  mov r1,r5
+  mov r0,r6
+  blx r8
+  orrs r7,r0
+  adds r5,#0x68
+  b 0x1013d68e

@@ -1,0 +1,25 @@
+; FUN_101330fa @ 0x101330fa size=62
+  push {r3,r4,r5,r6,r7,lr}
+  mov r7,r1
+  movs r1,#0x1
+  mov r5,r0
+  mov r6,r2
+  bl 0x100c5d4c
+  mov r4,r0
+  cbz r0,0x10133132
+  movs r1,#0x1
+  adds r0,#0x8
+  bl 0x100c1fe4
+  strb r7,[r0,#0x0]
+  cbz r6,0x10133126
+  mov r1,r4
+  mov r0,r5
+  pop.w {r3,r4,r5,r6,r7,lr}
+  movs r2,#0x0
+  b.w 0x100c5e48
+  mov r1,r4
+  mov r0,r5
+  pop.w {r3,r4,r5,r6,r7,lr}
+  b.w 0x100c756c
+  mvn r0,#0x68
+  pop {r3,r4,r5,r6,r7,pc}

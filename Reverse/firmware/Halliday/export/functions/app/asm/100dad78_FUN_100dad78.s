@@ -1,0 +1,21 @@
+; FUN_100dad78 @ 0x100dad78 size=52
+  push {r4,r5,r6,lr}
+  mov r6,r0
+  mov r5,r1
+  ldr r0,[0x100dadac]
+  ldr r4,[0x100dadb0]
+  mov r3,r1
+  subs r4,r4,r0
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orr r0,r4,#0xb30000
+  ldr r2,[0x100dadb4]
+  ldr r1,[0x100dadb8]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  mov r2,r6
+  uxtb r3,r5
+  movs r1,#0x36
+  pop.w {r4,r5,r6,lr}
+  movs r0,#0xcc
+  b.w 0x100d44a8

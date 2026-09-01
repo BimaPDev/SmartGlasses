@@ -1,0 +1,26 @@
+; FUN_1012b19a @ 0x1012b19a size=52
+  push {r4,r5,lr}
+  cmp r2,r1
+  mov r4,r0
+  ldr r0,[sp,#0xc]
+  blt 0x1012b1b2
+  cmp r2,r4
+  ble 0x1012b1b0
+  cmp r1,r4
+  bge 0x1012b1ca
+  cmp r2,r1
+  bne 0x1012b1ba
+  pop {r4,r5,pc}
+  cmp r2,r4
+  bge 0x1012b1b0
+  cmp r1,r4
+  ble 0x1012b1ca
+  subs r5,r4,r1
+  subs r4,r0,r3
+  muls r4,r5
+  subs r0,r2,r1
+  sdiv r0,r4,r0
+  add r0,r3
+  b 0x1012b1b0
+  mov r0,r3
+  b 0x1012b1b0

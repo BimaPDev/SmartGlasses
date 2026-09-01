@@ -1,0 +1,19 @@
+; FUN_10138356 @ 0x10138356 size=44
+  push {r0,r1,r2,r4,r5,lr}
+  mov r4,r0
+  mov r0,r1
+  str r1,[sp,#0x4]
+  bl 0x1011ea10
+  uxtb r5,r0
+  cmp r5,#0x1f
+  it cs
+  mov.cs r5,#0x1f
+  ldr r1,[sp,#0x4]
+  mov r2,r5
+  add.w r0,r4,#0x1c8
+  bl 0x1011ea40
+  movs r3,#0x0
+  add r4,r5
+  strb.w r3,[r4,#0x1c8]
+  add sp,#0xc
+  pop {r4,r5,pc}

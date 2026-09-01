@@ -1,0 +1,19 @@
+; FUN_1011c14c @ 0x1011c14c size=50
+  push {r0,r1,r2,r3,r4,lr}
+  mov r4,r1
+  movs r0,#0x0
+  str r2,[sp,#0xc]
+  str r3,[sp,#0x8]
+  bl 0x1011c0c6
+  ldrd r2,r1,[sp,#0x8]
+  ldrb.w r3,[sp,#0x1c]
+  mov r0,r4
+  str r3,[sp,#0x0]
+  ldrh.w r3,[sp,#0x18]
+  bl 0x10060908
+  mov r4,r0
+  bl 0x100609e8
+  eor r0,r4,#0x1
+  uxtb r0,r0
+  add sp,#0x10
+  pop {r4,pc}

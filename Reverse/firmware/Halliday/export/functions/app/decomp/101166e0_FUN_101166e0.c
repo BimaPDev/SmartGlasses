@@ -1,0 +1,9 @@
+/* FUN_101166e0 @ 0x101166e0 */
+
+void FUN_101166e0(void)
+
+{
+  FUN_10119dc2(DAT_101166f4,DAT_101166f0,DAT_101166ec);
+  return;
+}
+

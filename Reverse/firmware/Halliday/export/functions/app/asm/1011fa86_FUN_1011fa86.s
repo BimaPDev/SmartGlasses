@@ -1,0 +1,25 @@
+; FUN_1011fa86 @ 0x1011fa86 size=62
+  push {r0,r1,r2,r3,r4,r5,r6,lr}
+  movs r6,#0x0
+  strh.w r6,[sp,#0x2]
+  movs r6,#0x7
+  ldr r4,[r0,#0x4]
+  ldr r5,[r0,#0x10]
+  ldr r4,[r4,#0x8]
+  strd r1,r2,[sp,#0x4]
+  strh.w r6,[sp,#0x0]
+  str r3,[sp,#0xc]
+  ldrsb.w r3,[r5,#0x0]
+  cmp r3,#0x1
+  bne 0x1011fab8
+  ldr r3,[r4,#0x0]
+  cmp r3,#0x3
+  bne 0x1011fabe
+  mov r1,sp
+  bl 0x100793c8
+  add sp,#0x10
+  pop {r4,r5,r6,pc}
+  mvn r0,#0xc
+  b 0x1011fab4
+  mvn r0,#0x76
+  b 0x1011fab4

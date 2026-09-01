@@ -1,0 +1,24 @@
+; FUN_1012fde4 @ 0x1012fde4 size=68
+  push {r0,r1,r2,r4,r5,lr}
+  mov r4,r0
+  bl 0x1012fcbc
+  ldr.w r3,[r4,#0x120]
+  mov r5,r0
+  cbz r3,0x1012fe22
+  ldrh.w r0,[r4,#0xb2]
+  cbz r0,0x1012fdfe
+  bl 0x1012de76
+  ldr r3,[r4,#0x48]
+  cbnz r3,0x1012fe22
+  ldrd r0,r1,[r4,#0x114]
+  ldrb.w r3,[r4,#0xcf]
+  ldrb.w r2,[r4,#0xcb]
+  str r3,[sp,#0x4]
+  ldrb.w r3,[r4,#0xce]
+  str r3,[sp,#0x0]
+  ldrb.w r3,[r4,#0xcc]
+  bl 0x1012fe64
+  bl 0x100a7040
+  mov r0,r5
+  add sp,#0xc
+  pop {r4,r5,pc}

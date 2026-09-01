@@ -1,0 +1,21 @@
+; FUN_10138a72 @ 0x10138a72 size=44
+  push {r3,r4,r5,lr}
+  mov r5,r2
+  ldrh r2,[r2,#0x0]
+  rsb.w r3,r2,#0x200
+  uxth r3,r3
+  cmp r3,r1
+  it cs
+  mov.cs r3,r1
+  mov r4,r3
+  cbz r3,0x10138a9a
+  adds r3,r2,#0x4
+  mov r1,r0
+  mov r2,r4
+  adds r0,r5,r3
+  bl 0x1011ea40
+  ldrh r3,[r5,#0x0]
+  add r3,r4
+  strh r3,[r5,#0x0]
+  mov r0,r4
+  pop {r3,r4,r5,pc}

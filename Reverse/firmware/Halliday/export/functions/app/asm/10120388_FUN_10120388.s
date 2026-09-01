@@ -1,0 +1,7 @@
+; FUN_10120388 @ 0x10120388 size=16
+  ubfx r3,r1,#0x10,#0x8
+  strb r3,[r0,#0x0]
+  ubfx r3,r1,#0x8,#0x8
+  strb r3,[r0,#0x1]
+  strb r1,[r0,#0x2]
+  bx lr

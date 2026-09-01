@@ -1,0 +1,19 @@
+; FUN_1012aefc @ 0x1012aefc size=38
+  push {r3,r4,r5,lr}
+  ldrb r3,[r1,#0x0]
+  mov r4,r0
+  cmp r3,#0x2
+  mov r5,r1
+  mov r0,r2
+  bne 0x1012af10
+  bl 0x100938a8
+  strb r0,[r5,#0x0]
+  ldrb r3,[r4,#0x0]
+  cbnz r3,0x1012af20
+  ldrb r3,[r5,#0x0]
+  cmp r3,#0x1
+  ite eq
+  mov.eq r3,#0x3
+  mov.ne r3,#0x1
+  strb r3,[r4,#0x0]
+  pop {r3,r4,r5,pc}

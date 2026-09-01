@@ -1,0 +1,23 @@
+; FUN_10113528 @ 0x10113528 size=56
+  mov.w r3,#0x20
+  mrs r1,basepri
+  msr basepri_max,r3
+  isb #0xf
+  ldr r2,[0x10113560]
+  ldr r3,[r2,#0x2c]
+  cmp r3,r0
+  bne 0x10113550
+  ldr r3,[r3,#0x74]
+  str r3,[r2,#0x2c]
+  msr basepri,r1
+  isb #0xf
+  bx lr
+  mov r3,r2
+  cmp r3,#0x0
+  beq 0x10113544
+  ldr r2,[r3,#0x74]
+  cmp r2,r0
+  bne 0x1011354e
+  ldr r2,[r0,#0x74]
+  str r2,[r3,#0x74]
+  b 0x10113544

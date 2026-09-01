@@ -1,0 +1,24 @@
+; FUN_1011bade @ 0x1011bade size=60
+  push {r4,r5,lr}
+  sub sp,#0x14
+  mov r4,r1
+  mov r1,sp
+  bl 0x1013c768
+  mov r5,r0
+  add r0,sp,#0x8
+  bl 0x101139a4
+  orrs.w r3,r5,r0
+  bne 0x1011bb16
+  movs r3,#0x64
+  ldr r0,[sp,#0x0]
+  ldr r2,[sp,#0x4]
+  str r0,[r4,#0x0]
+  umull r0,r1,r0,r3
+  mla r1,r3,r2,r1
+  ldrd r2,r3,[sp,#0x8]
+  bl 0x10004238
+  uxtb r0,r0
+  add sp,#0x14
+  pop {r4,r5,pc}
+  movs r0,#0x6f
+  b 0x1011bb12

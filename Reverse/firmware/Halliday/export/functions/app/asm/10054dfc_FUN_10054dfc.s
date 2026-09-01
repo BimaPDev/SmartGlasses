@@ -1,0 +1,21 @@
+; FUN_10054dfc @ 0x10054dfc size=44
+  push {r0,r1,r2,r4,r5,lr}
+  mov r5,r0
+  cbz r0,0x10054e24
+  bl 0x1011ea10
+  ldr r3,[0x10054e28]
+  adds r2,r0,#0x1
+  mov r0,r2
+  ldr r3,[r3,#0x0]
+  str r2,[sp,#0x4]
+  blx r3
+  mov r4,r0
+  cbz r0,0x10054e1e
+  mov r1,r5
+  ldr r2,[sp,#0x4]
+  bl 0x1011ea40
+  mov r0,r4
+  add sp,#0xc
+  pop {r4,r5,pc}
+  mov r4,r0
+  b 0x10054e1e

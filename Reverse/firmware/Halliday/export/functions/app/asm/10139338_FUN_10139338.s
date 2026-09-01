@@ -1,0 +1,23 @@
+; FUN_10139338 @ 0x10139338 size=64
+  push {r4,lr}
+  mov r4,r0
+  add.w r3,r0,#0x3c
+  ldaex r2,[r3]
+  subs r2,#0x1
+  stlex r1,r2,[r3]
+  cmp r1,#0x0
+  bne 0x10139340
+  add.w r0,r4,#0x40
+  bl 0x10113fd0
+  add.w r3,r4,#0x68
+  ldaex r2,[r3]
+  subs r1,r2,#0x1
+  stlex r0,r1,[r3]
+  cmp r0,#0x0
+  bne 0x1013935a
+  cmp r2,#0x1
+  bne 0x10139376
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x1012d1f4
+  pop {r4,pc}

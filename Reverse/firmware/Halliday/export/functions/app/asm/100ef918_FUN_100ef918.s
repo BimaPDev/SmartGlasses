@@ -1,0 +1,20 @@
+; FUN_100ef918 @ 0x100ef918 size=40
+  ldr r1,[0x100ef940]
+  mov r3,r0
+  mov r2,r1
+  ldr.w r0,[r2,#0xc]!
+  cmp r0,r2
+  beq 0x100ef93c
+  ldr r2,[r1,#0x10]
+  cbnz r0,0x100ef92c
+  bx lr
+  ldr r1,[r0,#0x10]
+  ldrh r1,[r1,#0x0]
+  cmp r1,r3
+  beq 0x100ef93e
+  cmp r0,r2
+  beq 0x100ef93c
+  ldr r0,[r0,#0x0]
+  b 0x100ef928
+  movs r0,#0x0
+  bx lr

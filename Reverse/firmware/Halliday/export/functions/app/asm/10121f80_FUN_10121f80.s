@@ -1,0 +1,24 @@
+; FUN_10121f80 @ 0x10121f80 size=56
+  push {r0,r1,r2,r4,r5,r6,r7,lr}
+  mov r7,r3
+  movw r3,#0x10de
+  mov r4,r0
+  mov r6,r1
+  ldr r5,[r0,#0xc]
+  ldrh r5,[r5,r3]
+  mov r3,sp
+  subs r5,#0x1
+  strd r5,r5,[sp,#0x0]
+  bl 0x10121ec8
+  add r3,sp,#0x4
+  mov r2,r7
+  mov r1,r6
+  mov r0,r4
+  bl 0x10121ec8
+  ldrd r0,r3,[sp,#0x0]
+  cmp r0,r3
+  ite ls
+  mov.ls r0,#0x0
+  mov.hi r0,#0x1
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}

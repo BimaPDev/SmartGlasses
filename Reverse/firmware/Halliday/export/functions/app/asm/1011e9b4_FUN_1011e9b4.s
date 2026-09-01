@@ -1,0 +1,21 @@
+; FUN_1011e9b4 @ 0x1011e9b4 size=44
+  push {r3,r4,r5,r6,r7,lr}
+  mov r6,r0
+  mov r5,r1
+  movs r4,#0x0
+  ldr r7,[0x10068b80]
+  cmp r4,r5
+  bge 0x10068b7c
+  ldr r3,[r7,#0x0]
+  blx r3
+  cmp r0,#0xa
+  strb r0,[r6,r4]
+  add.w r4,r4,#0x1
+  beq 0x10068b7c
+  cmp r0,#0xd
+  bne 0x10068b66
+  mov r0,r4
+  pop {r3,r4,r5,r6,r7,pc}
+  mov r0,r1
+  mov r1,r2
+  b.w 0x10068b5c

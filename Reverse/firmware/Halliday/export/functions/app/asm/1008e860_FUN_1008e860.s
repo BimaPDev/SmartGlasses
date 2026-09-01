@@ -1,0 +1,36 @@
+; FUN_1008e860 @ 0x1008e860 size=88
+  push {r4,r5,r6,r7,r8,lr}
+  mov r4,r0
+  mov r0,r1
+  ldrb r1,[r4,#0x2]
+  cmp r1,#0x2
+  bls 0x1008e8b4
+  ldrb r1,[r4,#0x1]
+  ldrb r5,[r4,#0x0]
+  ldr r6,[0x1008e8b8]
+  add.w r5,r5,r1, lsl #0x8
+  ldrh r1,[r6,#0x0]
+  uxth r5,r5
+  cmp r1,r5
+  ldr.w lr,[0x1008e8c0]
+  ldr.w r12,[0x1008e8c4]
+  ldr r7,[0x1008e8bc]
+  bne 0x1008e89c
+  ldrh.w r8,[lr,#0x0]
+  uxth r1,r0
+  cmp r8,r1
+  bne 0x1008e89c
+  ldr.w r1,[r12,#0x0]
+  cmp r1,r2
+  beq 0x1008e8ac
+  mov r1,r5
+  strh r5,[r6,#0x0]
+  strh.w r0,[lr,#0x0]
+  str.w r2,[r12,#0x0]
+  blx r3
+  strh r0,[r7,#0x0]
+  ldrh r3,[r7,#0x0]
+  strb r3,[r4,#0x0]
+  lsrs r3,r3,#0x8
+  strb r3,[r4,#0x1]
+  pop.w {r4,r5,r6,r7,r8,pc}

@@ -1,0 +1,23 @@
+; FUN_100e8428 @ 0x100e8428 size=54
+  push {r4,r5,r6,lr}
+  mov r1,r0
+  mov r6,r0
+  movs r2,#0x0
+  movs r3,#0x0
+  ldr r0,[0x100e8460]
+  bl 0x1013c66c
+  mov r5,r0
+  cbnz r0,0x100e845a
+  ldr r0,[0x100e8464]
+  ldr r4,[0x100e8468]
+  mov r3,r6
+  subs r4,r4,r0
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orr r0,r4,#0x1b60000
+  ldr r2,[0x100e846c]
+  ldr r1,[0x100e8470]
+  orr r0,r0,#0x11
+  bl 0x100a5b78
+  mov r0,r5
+  pop {r4,r5,r6,pc}

@@ -1,0 +1,21 @@
+; FUN_100e6b90 @ 0x100e6b90 size=46
+  movs r3,#0x0
+  movs r0,#0x70
+  push {r4,r5,lr}
+  ldr r2,[0x100e6bc0]
+  mul r1,r0,r3
+  ldrb r5,[r1,r2]
+  uxtb r4,r3
+  cbnz r5,0x100e6bb4
+  adds r0,r2,r1
+  orn r3,r4,#0x7f
+  strb r3,[r2,r1]
+  ldrb r3,[r0,#0x1]
+  bfi r3,r5,#0x4,#0x1
+  strb r3,[r0,#0x1]
+  pop {r4,r5,pc}
+  adds r3,#0x1
+  cmp r3,#0x4
+  bne 0x100e6b98
+  movs r0,#0x0
+  b 0x100e6bb2

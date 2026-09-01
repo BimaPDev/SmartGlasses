@@ -1,0 +1,21 @@
+; FUN_100831e8 @ 0x100831e8 size=50
+  ldr r3,[0x1008321c]
+  lsls r2,r1,#0x1e
+  push {r4,lr}
+  ldrb r4,[r3,r0]
+  bne 0x100831fe
+  movs r2,#0x64
+  udiv r3,r1,r2
+  mls r3,r2,r3,r1
+  cbnz r3,0x1008320c
+  mov.w r2,#0x190
+  udiv r3,r1,r2
+  mls r1,r2,r3,r1
+  cbnz r1,0x10083216
+  subs r3,r0,#0x1
+  rsbs r0,r3
+  adcs r0,r3
+  add r0,r4
+  pop {r4,pc}
+  movs r0,#0x0
+  b 0x10083212

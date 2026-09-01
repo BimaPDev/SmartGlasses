@@ -1,0 +1,27 @@
+; FUN_10092c10 @ 0x10092c10 size=76
+  push {r4,lr}
+  movs r1,#0x60
+  mov r4,r0
+  bl 0x1012a6ec
+  movs r3,#0xf0
+  mov.w r2,#0x140
+  strd r2,r3,[r4,#0x0]
+  mov.w r3,#0xffffffff
+  strd r3,r3,[r4,#0x8]
+  movs r3,#0x0
+  strd r3,r3,[r4,#0x10]
+  ldr r3,[r4,#0x1c]
+  bic r3,r3,#0x1fe00
+  bic r3,r3,#0x1c8
+  orr r3,r3,#0x4100
+  orr r3,r3,#0x8
+  str r3,[r4,#0x1c]
+  mov.w r3,#0x7e0
+  strh.w r3,[r4,#0x48]
+  ldr r3,[0x10092c5c]
+  str r3,[r4,#0x50]
+  ldr r3,[0x10092c60]
+  str r3,[r4,#0x54]
+  movs r3,#0x58
+  str r3,[r4,#0x58]
+  pop {r4,pc}

@@ -1,0 +1,24 @@
+; FUN_1013b044 @ 0x1013b044 size=58
+  movw r3,#0x425
+  cmp r0,r3
+  bhi 0x1013b072
+  cmp.w r0,#0x418
+  bhi 0x1013b07a
+  cmp.w r0,#0x408
+  bhi 0x1013b064
+  cmp.w r0,#0x400
+  ite cc
+  mov.cc r0,#0x7
+  mov.cs r0,#0x0
+  bx lr
+  subw r0,r0,#0x40a
+  cmp r0,#0x1
+  ite ls
+  mov.ls r0,#0x0
+  mov.hi r0,#0x7
+  bx lr
+  subw r0,r0,#0x427
+  cmp r0,#0x5
+  b 0x1013b06a
+  movs r0,#0x0
+  bx lr

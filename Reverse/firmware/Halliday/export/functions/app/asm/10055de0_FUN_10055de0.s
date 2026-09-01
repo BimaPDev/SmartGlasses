@@ -1,0 +1,47 @@
+; FUN_10055de0 @ 0x10055de0 size=148
+  push {r4,r6,r7,r8,r9,lr}
+  mov r2,r1
+  mov r8,r0
+  mov.w r3,#0x20
+  mrs r6,basepri
+  msr basepri_max,r3
+  isb #0xf
+  bl 0x10055c70
+  ldr r7,[0x10055e74]
+  udiv r7,r0,r7
+  cmp r7,r1
+  bcc 0x10055e66
+  cbz r1,0x10055e66
+  cmp r7,r8
+  bcc 0x10055e66
+  cmp.w r8,#0x0
+  beq 0x10055e66
+  mov r0,r2
+  mov r1,r7
+  bl 0x1011a6a0
+  ldr.w r9,[0x10055e7c]
+  ldr.w r2,[r9,#0x0]
+  bic r2,r2,#0x3f4
+  bic r2,r2,#0x3
+  orr.w r4,r2,r0, lsl #0x4
+  bl 0x1013d9d0
+  cbz r0,0x10055e6a
+  orr r4,r4,#0x102
+  mov r1,r7
+  mov r0,r8
+  str.w r4,[r9,#0x0]
+  bl 0x1011a6a0
+  ldr r2,[0x10055e78]
+  ldr r3,[r2,#0x0]
+  bic r3,r3,#0x3f4
+  bic r3,r3,#0x3
+  orr.w r0,r3,r0, lsl #0x4
+  orr r0,r0,#0x200
+  orr r0,r0,#0x2
+  str r0,[r2,#0x0]
+  msr basepri,r6
+  isb #0xf
+  pop.w {r4,r6,r7,r8,r9,pc}
+  orr r4,r4,#0x200
+  orr r4,r4,#0x2
+  b 0x10055e38

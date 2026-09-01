@@ -1,0 +1,41 @@
+; FUN_100dce84 @ 0x100dce84 size=98
+  push {r3,r4,r5,r6,r7,r8,r9,lr}
+  ldr r6,[0x100dcee8]
+  mov r8,r0
+  mov r9,r1
+  mov r7,r2
+  movs r5,#0x0
+  mov r4,r6
+  cmp.w r8,#0x0
+  beq 0x100dcea8
+  ldrb r3,[r6,#0x0]
+  cmp r3,r8
+  bne 0x100dcec4
+  add.w r0,r4,r5, lsl #0x3
+  pop.w {r3,r4,r5,r6,r7,r8,r9,pc}
+  cmp.w r9,#0x0
+  beq 0x100dceb4
+  ldrb r3,[r6,#0x1]
+  cmp r3,r9
+  b 0x100dce9e
+  cbz r7,0x100dced2
+  movs r2,#0x10
+  mov r1,r7
+  ldr r0,[r6,#0x4]
+  bl 0x1011ea30
+  cmp r0,#0x0
+  beq 0x100dcea0
+  adds r5,#0x1
+  cmp r5,#0x4
+  add.w r6,r6,#0x8
+  bne 0x100dce94
+  movs r0,#0x0
+  b 0x100dcea4
+  ldrb r3,[r6,#0x1]
+  cmp r3,#0x0
+  bne 0x100dcec4
+  add.w r0,r4,r5, lsl #0x3
+  ldrb r3,[r0,#0x2]
+  bfi r3,r7,#0x1,#0x1
+  strb r3,[r0,#0x2]
+  b 0x100dcea4

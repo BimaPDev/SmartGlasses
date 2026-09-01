@@ -1,0 +1,19 @@
+; FUN_100bd820 @ 0x100bd820 size=38
+  cmp r0,#0xf
+  push {r3,lr}
+  bne 0x100bd836
+  cmp r1,#0x8
+  beq 0x100bd83e
+  movs r1,#0x74
+  ldr r3,[0x100bd848]
+  ldr r2,[0x100bd84c]
+  ldr r0,[0x100bd850]
+  bl 0x10117c88
+  cmp r0,#0xb
+  bne 0x100bd82a
+  cmp r1,#0x10
+  b 0x100bd828
+  ldr r3,[0x100bd854]
+  strb r0,[r3,#0x0]
+  strb r1,[r3,#0x1]
+  pop {r3,pc}

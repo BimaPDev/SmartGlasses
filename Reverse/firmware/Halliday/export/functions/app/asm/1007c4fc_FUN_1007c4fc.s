@@ -1,0 +1,24 @@
+; FUN_1007c4fc @ 0x1007c4fc size=64
+  movs r1,#0x0
+  ldr r2,[0x1007c53c]
+  push {r3,lr}
+  ldrb.w r3,[r2,#0x13c]
+  strb.w r1,[r2,#0x145]
+  lsls r0,r3,#0x1d
+  itt mi
+  bfi.mi r3,r1,#0x2,#0x1
+  strb.mi.w r3,[r2,#0x13c]
+  ldr r2,[0x1007c540]
+  ldr r3,[0x1007c544]
+  ldr r0,[0x1007c548]
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  orrs r0,r3
+  ldr r1,[0x1007c54c]
+  ldr r2,[0x1007c550]
+  bl 0x100a5b78
+  pop.w {r3,lr}
+  mov.w r1,#0x80000
+  mov r0,r1
+  b.w 0x1007c100

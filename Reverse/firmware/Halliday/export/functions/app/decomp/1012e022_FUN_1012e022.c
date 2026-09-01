@@ -1,0 +1,14 @@
+/* FUN_1012e022 @ 0x1012e022 */
+
+undefined4 FUN_1012e022(int param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = 0;
+  if (param_1 != 0) {
+    uVar1 = *(undefined4 *)(param_1 + 0x20);
+  }
+  return uVar1;
+}
+

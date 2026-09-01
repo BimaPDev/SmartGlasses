@@ -1,0 +1,26 @@
+; FUN_101346c0 @ 0x101346c0 size=60
+  push {r4,r5,lr}
+  mov r4,r2
+  sub sp,#0x14
+  mov r5,r0
+  movs r1,#0x2
+  adds r0,#0x8
+  bl 0x100c1fe4
+  ldrh r3,[r4,#0x4]
+  movs r2,#0x0
+  strh r3,[r0,#0x0]
+  movs r3,#0x0
+  strd r3,r3,[sp,#0x8]
+  movs r3,#0x0
+  mov r0,r5
+  strd r2,r3,[sp,#0x0]
+  ldrh r1,[r4,#0xc]
+  ldr r2,[r4,#0x8]
+  bl 0x100c2044
+  ldrh r3,[r4,#0xc]
+  cmp r3,r0
+  ite ne
+  mvn.ne r0,#0xb
+  mov.eq r0,#0x0
+  add sp,#0x14
+  pop {r4,r5,pc}

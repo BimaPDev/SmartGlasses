@@ -1,0 +1,44 @@
+; FUN_100b99c0 @ 0x100b99c0 size=110
+  push {r4,r5,r6,lr}
+  ldr r4,[0x100b9a30]
+  mov r5,r0
+  ldr r3,[r4,#0x8]
+  sub sp,#0x8
+  cmp.w r3,#0x1000000
+  bcc 0x100b99f2
+  ldrh r2,[r5,#0x0]
+  lsrs r1,r3,#0xb
+  mul r1,r2,r1
+  ldr r6,[r4,#0xc]
+  cmp r1,r6
+  bhi 0x100b9a1c
+  movs r0,#0x1
+  subs r3,r3,r1
+  sub.w r2,r2,r2, lsr #0x5
+  subs r1,r6,r1
+  strd r3,r1,[r4,#0x8]
+  strh r2,[r5,#0x0]
+  add sp,#0x8
+  pop {r4,r5,r6,pc}
+  ldr r2,[r4,#0xc]
+  lsls r3,r3,#0x8
+  lsls r2,r2,#0x8
+  add.w r0,sp,#0x7
+  strd r3,r2,[r4,#0x8]
+  bl 0x100b940c
+  ldrd r3,r1,[r4,#0x8]
+  ldrb.w r6,[sp,#0x7]
+  ldrh r2,[r5,#0x0]
+  orrs r6,r1
+  lsrs r1,r3,#0xb
+  mul r1,r2,r1
+  cmp r1,r6
+  str r6,[r4,#0xc]
+  bls 0x100b99de
+  movs r0,#0x0
+  rsb.w r3,r2,#0x800
+  add.w r2,r2,r3, asr #0x5
+  str r1,[r4,#0x8]
+  strh r2,[r5,#0x0]
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

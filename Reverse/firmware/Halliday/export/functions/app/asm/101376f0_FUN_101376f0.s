@@ -1,0 +1,23 @@
+; FUN_101376f0 @ 0x101376f0 size=58
+  push {r4,lr}
+  mov r4,r0
+  bl 0x1013cb84
+  ldr r3,[r4,#0x34]
+  cbz r3,0x101376e6
+  ldr r3,[r3,#0x4]
+  cbz r3,0x101376e6
+  mov r0,r4
+  blx r3
+  movs r3,#0x0
+  strb.w r3,[r4,#0x41]
+  str r3,[r4,#0x30]
+  pop {r4,pc}
+  push {r4,lr}
+  mov r4,r0
+  ldr r3,[r0,#0x30]
+  ldrb.w r1,[r0,#0x40]
+  ldr.w r0,[r3,#0x90]
+  bl 0x10137686
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x101376d2

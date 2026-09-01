@@ -1,0 +1,43 @@
+; FUN_100fdb7c @ 0x100fdb7c size=104
+  push {r4,r5,r6,r7}
+  bics r4,r1,#0x3
+  mov r5,r0
+  beq 0x100fdbe0
+  movs r6,#0x0
+  mov r2,r0
+  mov r0,r6
+  ldrb r3,[r2,#0x1]
+  ldrb r7,[r2,#0x0]
+  ldrb.w r12,[r2,#0x3]
+  lsls r3,r3,#0x10
+  orr.w r3,r3,r7, lsl #0x18
+  ldrb r7,[r2,#0x2]
+  orr.w r3,r3,r12
+  adds r6,#0x4
+  orr.w r3,r3,r7, lsl #0x8
+  cmp r4,r6
+  add r0,r3
+  add.w r2,r2,#0x4
+  bhi 0x100fdb8c
+  cmp r1,r4
+  beq 0x100fdbdc
+  bls 0x100fdbdc
+  movs r6,#0x0
+  subs r2,r4,#0x1
+  add r1,r5
+  add r2,r5
+  subs r4,r1,#0x1
+  ldrb.w r1,[r2,#0x1]!
+  mvns r3,r2
+  add r3,r5
+  and r3,r3,#0x3
+  lsls r3,r3,#0x3
+  lsl.w r3,r1,r3
+  cmp r2,r4
+  orr.w r6,r6,r3
+  bne 0x100fdbc0
+  add r0,r6
+  pop {r4,r5,r6,r7}
+  bx lr
+  mov r0,r4
+  b 0x100fdbb0

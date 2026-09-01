@@ -1,0 +1,27 @@
+; FUN_100f0298 @ 0x100f0298 size=68
+  push {r4,lr}
+  sub sp,#0x18
+  strh.w r0,[sp,#0x4]
+  movs r0,#0x9
+  movs r4,#0x0
+  strb.w r0,[sp,#0x6]
+  strb.w r1,[sp,#0x7]
+  ldr r0,[0x100e7e28]
+  add r1,sp,#0x4
+  strd r4,r2,[sp,#0x8]
+  str r4,[sp,#0x14]
+  str r3,[sp,#0x10]
+  bl 0x1009ece8
+  eor r0,r0,#0x1
+  uxtb r0,r0
+  add sp,#0x18
+  pop {r4,pc}
+  cmp r0,#0x5
+  mov r2,r0
+  bhi 0x100f02a8
+  movs r1,#0x80
+  movs r0,#0x0
+  ldr r3,[0x100f02b0]
+  b.w 0x100e7df8
+  mvn r0,#0x15
+  bx lr

@@ -1,0 +1,29 @@
+; FUN_1011aa34 @ 0x1011aa34 size=72
+  lsls r0,r0,#0x2
+  add.w r0,r0,#0x40000000
+  add.w r0,r0,#0x90000
+  push {r4,lr}
+  ldr r4,[r0,#0x10]
+  bic r4,r4,#0x80000000
+  str r4,[r0,#0x10]
+  ldr r3,[r0,#0x10]
+  str r3,[r0,#0x10]
+  ldr r4,[r0,#0x10]
+  bic r4,r4,#0x1f00
+  str r4,[r0,#0x10]
+  ldr r3,[r0,#0x10]
+  orr.w r1,r3,r1, lsl #0x8
+  str r1,[r0,#0x10]
+  ldr r3,[r0,#0x10]
+  bic r3,r3,#0x3f
+  str r3,[r0,#0x10]
+  ldr r3,[r0,#0x10]
+  orrs r2,r3
+  str r2,[r0,#0x10]
+  ldr r3,[r0,#0x10]
+  bic r3,r3,#0x80000000
+  str r3,[r0,#0x10]
+  ldr r3,[r0,#0x10]
+  orr r3,r3,#0x80000000
+  str r3,[r0,#0x10]
+  pop {r4,pc}

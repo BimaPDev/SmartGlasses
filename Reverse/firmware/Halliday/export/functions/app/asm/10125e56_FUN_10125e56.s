@@ -1,0 +1,22 @@
+; FUN_10125e56 @ 0x10125e56 size=42
+  push {r4,r5,r6,lr}
+  ldr r2,[r0,#0x18]
+  ldr r5,[r0,#0x14]
+  ldr r4,[r0,#0x1c]
+  ldr r6,[r0,#0x20]
+  ldr r3,[r0,#0x8]
+  str r5,[r1,#0x0]
+  str r2,[r1,#0x4]
+  str r4,[r1,#0x8]
+  str r6,[r1,#0xc]
+  cbz r3,0x10125e7e
+  ldr r3,[r3,#0x18]
+  subs r5,r5,r3
+  add r4,r3
+  subs r2,r2,r3
+  add r3,r6
+  str r5,[r1,#0x0]
+  str r4,[r1,#0x8]
+  str r2,[r1,#0x4]
+  str r3,[r1,#0xc]
+  pop {r4,r5,r6,pc}

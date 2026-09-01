@@ -1,0 +1,19 @@
+; FUN_1010b62c @ 0x1010b62c size=46
+  push {r0,r1,r2,r3,r4,r5,r6,lr}
+  mov.w r3,#0xffffffff
+  cmp r1,#0x0
+  it eq
+  mov.eq.w r1,#0xffffffff
+  str r3,[sp,#0xc]
+  movs r3,#0x2
+  str r0,[sp,#0x4]
+  str r1,[sp,#0x8]
+  movs r0,#0x5
+  add r1,sp,#0x4
+  strb.w r3,[sp,#0x14]
+  bl 0x10062a28
+  cbnz r0,0x1010b654
+  ldr r3,[0x1010b65c]
+  str r0,[r3,#0x0]
+  add sp,#0x1c
+  pop.w pc

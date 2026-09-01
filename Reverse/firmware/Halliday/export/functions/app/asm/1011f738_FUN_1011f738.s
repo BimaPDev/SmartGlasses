@@ -1,0 +1,26 @@
+; FUN_1011f738 @ 0x1011f738 size=60
+  push {r0,r1,r4,lr}
+  mov r4,r0
+  bl 0x100568ec
+  add r1,sp,#0x4
+  mov r0,sp
+  bl 0x10056960
+  ldr r3,[sp,#0x0]
+  strb r3,[r4,#0x0]
+  ubfx r2,r3,#0x8,#0x8
+  lsrs r3,r3,#0x10
+  strb r3,[r4,#0x2]
+  lsrs r3,r3,#0x8
+  strb r3,[r4,#0x3]
+  ldr r3,[sp,#0x4]
+  strb r2,[r4,#0x1]
+  strb r3,[r4,#0x4]
+  ubfx r2,r3,#0x8,#0x8
+  lsrs r3,r3,#0x10
+  strb r3,[r4,#0x6]
+  lsrs r3,r3,#0x8
+  strb r2,[r4,#0x5]
+  strb r3,[r4,#0x7]
+  bl 0x10056914
+  add sp,#0x8
+  pop {r4,pc}

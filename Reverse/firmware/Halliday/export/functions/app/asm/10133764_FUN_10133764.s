@@ -1,0 +1,19 @@
+; FUN_10133764 @ 0x10133764 size=46
+  mov r3,r0
+  push {r4,lr}
+  add.w r2,r0,#0xcc
+  mov r0,r2
+  bl 0x101334a4
+  cbz r0,0x1013378e
+  adds r1,r0,#0x1
+  ldaex r4,[r2]
+  cmp r4,r0
+  bne 0x10133788
+  stlex r12,r1,[r2]
+  cmp.w r12,#0x0
+  bne 0x10133776
+  bne 0x1013376c
+  mov r0,r3
+  pop {r4,pc}
+  mov r3,r0
+  b 0x1013378a

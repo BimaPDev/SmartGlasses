@@ -1,0 +1,21 @@
+; FUN_100a9c30 @ 0x100a9c30 size=44
+  ldr r2,[0x100a9c5c]
+  push {r4,r5,lr}
+  movs r3,#0x0
+  mov r4,r2
+  ldrb r5,[r2,#0x0]
+  cmp r5,r0
+  bne 0x100a9c4e
+  ldrb r5,[r2,#0x1]
+  cmp r5,r1
+  bne 0x100a9c4e
+  movs r2,#0x14
+  mla r3,r2,r3,r4
+  ldrb r0,[r3,#0x2]
+  pop {r4,r5,pc}
+  adds r3,#0x1
+  cmp r3,#0x12
+  add.w r2,r2,#0x14
+  bne 0x100a9c38
+  movs r0,#0x0
+  b 0x100a9c4c

@@ -1,0 +1,23 @@
+; FUN_1011aa06 @ 0x1011aa06 size=64
+  add.w r3,r0,#0xf0000000
+  cmp.w r3,#0x4000000
+  push {r4,lr}
+  mov r4,r0
+  bcs 0x1011a9f6
+  and r3,r0,#0xff000000
+  cmp.w r3,#0x10000000
+  bne 0x1011a9fa
+  bl 0x100567fc
+  add.w r4,r4,#0x4000000
+  add r4,r0
+  mov r0,r4
+  pop {r4,pc}
+  cmp.w r3,#0x12000000
+  it eq
+  add.eq.w r4,r0,#0x2000000
+  b 0x1011a9f6
+  subs r1,#0x1
+  cmp r1,#0x2
+  bhi 0x1011aa10
+  b.w 0x1011a9d4
+  b.w 0x1011a9aa

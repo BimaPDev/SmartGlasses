@@ -1,0 +1,20 @@
+; FUN_10082a44 @ 0x10082a44 size=52
+  push {r3,lr}
+  ldr r0,[r0,#0x10]
+  cbz r1,0x10082a72
+  bl 0x10082840
+  cbz r0,0x10082a70
+  ldr r3,[0x10082a78]
+  ldr r0,[0x10082a7c]
+  ldr r2,[0x10082a80]
+  subs r0,r0,r3
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x1a40000
+  orr r0,r0,#0x11
+  ldr r1,[0x10082a84]
+  bl 0x100a5b78
+  mvn r0,#0xc
+  pop {r3,pc}
+  mvn r0,#0x15
+  b 0x10082a70

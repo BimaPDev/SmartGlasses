@@ -1,0 +1,20 @@
+; FUN_1012d352 @ 0x1012d352 size=38
+  ldr r3,[r0,#0x8]
+  push {r4,r5,r6,lr}
+  ldr r6,[r0,#0x1c]
+  ldr r4,[r0,#0x0]
+  ldr r5,[r0,#0x4]
+  add r4,r3
+  subs r3,r3,r6
+  cmp r3,r2
+  it cs
+  mov.cs r3,r2
+  subs r4,r4,r5
+  cmp r3,r4
+  it cs
+  mov.cs r3,r4
+  ldr r5,[r0,#0x10]
+  mov r0,r3
+  add r5,r6
+  str r5,[r1,#0x0]
+  pop {r4,r5,r6,pc}

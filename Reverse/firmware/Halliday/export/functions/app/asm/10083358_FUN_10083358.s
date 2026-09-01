@@ -1,0 +1,19 @@
+; FUN_10083358 @ 0x10083358 size=42
+  push {r0,r1,r2,r3,r4,lr}
+  ldrh r3,[r0,#0x8]
+  ldrb r2,[r0,#0x4]
+  ldrh r1,[r0,#0x6]
+  str r3,[sp,#0xc]
+  ldrb r3,[r0,#0x0]
+  adds r2,#0x1
+  str r3,[sp,#0x8]
+  ldrb r3,[r0,#0x1]
+  addw r1,r1,#0x76c
+  str r3,[sp,#0x4]
+  ldrb r3,[r0,#0x2]
+  str r3,[sp,#0x0]
+  ldrb r3,[r0,#0x3]
+  ldr r0,[0x10083384]
+  bl 0x10119dc2
+  add sp,#0x14
+  pop.w pc

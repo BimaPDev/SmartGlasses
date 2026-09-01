@@ -1,0 +1,20 @@
+; FUN_1005dc94 @ 0x1005dc94 size=48
+  push {r4,lr}
+  bl 0x100568bc
+  ldr r3,[0x1005dcc4]
+  mov r4,r0
+  ldr r3,[r3,#0x0]
+  cbnz r3,0x1005dcba
+  push {r0,r1,r2,r3}
+  movs r3,#0x61
+  ldr r2,[0x1005dcc8]
+  ldr r1,[0x1005dccc]
+  ldr r0,[0x1005dcd0]
+  bl 0x10119dc2
+  pop {r0,r1,r2,r3}
+  movs r1,#0x61
+  ldr r0,[0x1005dcc8]
+  bl 0x1011a1f0
+  ldr r0,[r4,#0x8]
+  pop.w {r4,lr}
+  b.w 0x1005dbec

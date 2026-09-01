@@ -1,0 +1,23 @@
+; FUN_1007c21c @ 0x1007c21c size=66
+  push {r4,lr}
+  bl 0x100567e0
+  bic r0,r0,#0xc0000000
+  bic r0,r0,#0xc00000
+  orr r1,r0,#0x80000000
+  orr r1,r1,#0x800000
+  ldr r0,[0x1007c260]
+  bl 0x100567cc
+  bl 0x100567e0
+  ldr r4,[0x1007c264]
+  mov r3,r0
+  ldr r0,[0x1007c268]
+  ldr r2,[0x1007c26c]
+  subs r4,r4,r0
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orr r0,r4,#0xd10000
+  ldr r1,[0x1007c270]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  movs r0,#0x0
+  pop {r4,pc}

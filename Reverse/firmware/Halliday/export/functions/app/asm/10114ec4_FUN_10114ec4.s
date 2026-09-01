@@ -1,0 +1,23 @@
+; FUN_10114ec4 @ 0x10114ec4 size=70
+  push {r4,r5,r6,r7,r8,lr}
+  mov r6,r0
+  mov r4,r2
+  mov r5,r3
+  mov.w r3,#0x20
+  mrs r7,basepri
+  msr basepri_max,r3
+  isb #0xf
+  bl 0x10114e40
+  msr basepri,r7
+  isb #0xf
+  adds r3,r5,#0x1
+  it eq
+  cmp.eq.w r4,#0xffffffff
+  beq 0x10114f06
+  mov r2,r4
+  mov r3,r5
+  add.w r0,r6,#0x18
+  ldr r1,[0x10114f0c]
+  pop.w {r4,r5,r6,r7,r8,lr}
+  b.w 0x10115740
+  pop.w {r4,r5,r6,r7,r8,pc}

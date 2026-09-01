@@ -1,0 +1,23 @@
+; FUN_10122ab6 @ 0x10122ab6 size=46
+  push {r4,r5,r6,lr}
+  ldrb r3,[r0,#0x7]
+  mov r4,r0
+  cmp r3,#0x3
+  bne 0x10122ace
+  ldr r1,[r0,#0x8]
+  ldr r3,[r0,#0x18]
+  adds r5,r1,r3
+  cmp r1,r5
+  bne 0x10122ad2
+  movs r3,#0x0
+  strb r3,[r4,#0x7]
+  movs r0,#0x0
+  pop {r4,r5,r6,pc}
+  adds r6,r1,#0x1
+  mov r2,r6
+  ldr r0,[r4,#0x0]
+  bl 0x101228d0
+  cmp r0,#0x0
+  bne 0x10122ad0
+  mov r1,r6
+  b 0x10122ac6

@@ -1,0 +1,25 @@
+; FUN_100e725c @ 0x100e725c size=70
+  push {r3,r4,r5,r6,r7,r8,r9,lr}
+  ldr r4,[0x100e72a4]
+  movs r5,#0x0
+  mov r6,r4
+  movs r7,#0x70
+  mov.w r9,#0x14
+  ldr.w r8,[0x100e72a8]
+  ldrb r3,[r4,#0x0]
+  cbz r3,0x100e7294
+  mla r3,r7,r5,r6
+  ldrb r3,[r3,#0x1]
+  lsls r3,r3,#0x1b
+  bmi 0x100e7294
+  add.w r0,r4,#0x18
+  bl 0x100dfd90
+  ldrb r0,[r4,#0x0]
+  bic r0,r0,#0x80
+  mla r0,r9,r0,r8
+  bl 0x100c3fac
+  adds r5,#0x1
+  cmp r5,#0x4
+  add.w r4,r4,#0x70
+  bne 0x100e7270
+  pop.w {r3,r4,r5,r6,r7,r8,r9,pc}

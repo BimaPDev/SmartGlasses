@@ -1,0 +1,21 @@
+; FUN_10123aa2 @ 0x10123aa2 size=46
+  push {r0,r1,r2,r4,r5,lr}
+  add r1,sp,#0x4
+  mov r5,r0
+  bl 0x101225c6
+  cbnz r0,0x10123ac0
+  ldr r0,[r5,#0x28]
+  cbnz r0,0x10123ac4
+  movs r4,#0x0
+  str r4,[r5,#0x0]
+  ldr r0,[sp,#0x4]
+  movs r1,#0x0
+  bl 0x10122b7a
+  mov r0,r4
+  add sp,#0xc
+  pop {r4,r5,pc}
+  bl 0x10084408
+  mov r4,r0
+  cmp r0,#0x0
+  bne 0x10123ab6
+  b 0x10123ab2

@@ -1,0 +1,25 @@
+; FUN_10135c42 @ 0x10135c42 size=68
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  ldr r5,[r0,#0x0]
+  add.w r0,r0,#0x1c0
+  bl 0x1013cb84
+  movs r3,#0x0
+  add.w r0,r4,#0xd0
+  strb.w r3,[r4,#0xd8]
+  ldaex r2,[r0]
+  stlex r1,r3,[r0]
+  cmp r1,#0x0
+  bne 0x10135c5a
+  adds r4,#0xd4
+  ldaex r2,[r4]
+  stlex r1,r3,[r4]
+  cmp r1,#0x0
+  bne 0x10135c68
+  ldrb r3,[r5,#0x3]
+  cbnz r3,0x10135c82
+  movs r1,#0xb
+  pop.w {r3,r4,r5,lr}
+  b.w 0x10135440
+  movs r1,#0x1
+  b 0x10135c7a

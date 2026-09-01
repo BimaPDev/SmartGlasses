@@ -1,0 +1,37 @@
+; FUN_100ca440 @ 0x100ca440 size=92
+  push {r4,lr}
+  ldrb r2,[r0,#0x2]
+  strb r2,[r1,#0x0]
+  ldrb r4,[r0,#0x3]
+  cmp r2,#0x1
+  strb r4,[r1,#0x1]
+  ldrb r3,[r0,#0x8]
+  strb r3,[r1,#0x2]
+  beq 0x100ca45c
+  cmp r2,#0x2
+  beq 0x100ca496
+  mvn r0,#0x15
+  pop {r4,pc}
+  add.w r2,r0,#0x90
+  str r2,[r1,#0x8]
+  ldr r2,[0x100ca49c]
+  rsb r3,r3,r3, lsl #0x3
+  add r3,r2
+  str r3,[r1,#0x4]
+  add.w r2,r0,#0x9e
+  add.w r3,r0,#0x97
+  cbnz r4,0x100ca490
+  strd r3,r2,[r1,#0xc]
+  ldrh.w r3,[r0,#0xa6]
+  strh r3,[r1,#0x14]
+  ldrh.w r3,[r0,#0xac]
+  strh r3,[r1,#0x16]
+  ldrh.w r3,[r0,#0xae]
+  strh r3,[r1,#0x18]
+  movs r0,#0x0
+  b 0x100ca45a
+  strd r2,r3,[r1,#0xc]
+  b 0x100ca47a
+  adds r0,#0x90
+  str r0,[r1,#0x4]
+  b 0x100ca48c

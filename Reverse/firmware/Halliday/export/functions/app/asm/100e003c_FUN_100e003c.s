@@ -1,0 +1,22 @@
+; FUN_100e003c @ 0x100e003c size=54
+  ldr r3,[r1,#0x8]
+  ldr.w r2,[r3,#0x1]
+  ldrb.w r3,[r0,#0x5d]
+  rev r2,r2
+  cmp r3,#0x3
+  bne 0x100e0050
+  str r2,[r0,#0x64]
+  bx lr
+  ldr r3,[r0,#0x64]
+  cmp r3,r2
+  beq 0x100e0070
+  ldr r1,[0x100e0074]
+  ldr r0,[0x100e0078]
+  subs r0,r0,r1
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x1640000
+  ldr r1,[0x100e007c]
+  orr r0,r0,#0x22
+  b.w 0x100a5b78
+  bx lr

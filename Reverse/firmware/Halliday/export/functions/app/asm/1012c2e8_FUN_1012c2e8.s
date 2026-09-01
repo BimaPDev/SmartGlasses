@@ -1,0 +1,23 @@
+; FUN_1012c2e8 @ 0x1012c2e8 size=58
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  bl 0x1012437a
+  mov r4,r0
+  mov r0,r5
+  bl 0x10124372
+  mov r6,r0
+  bl 0x10126fae
+  subs r4,#0x29
+  uxtb r4,r4
+  cmp r4,#0x1
+  mov r5,r0
+  bhi 0x1012c320
+  mov r0,r6
+  movs r1,#0x0
+  bl 0x10097998
+  mov r0,r5
+  bl 0x10099478
+  mov r0,r5
+  pop.w {r4,r5,r6,lr}
+  b.w 0x10099414
+  pop {r4,r5,r6,pc}

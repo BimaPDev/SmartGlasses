@@ -1,0 +1,25 @@
+; FUN_10130472 @ 0x10130472 size=58
+  push {r3,r4,r5,lr}
+  ldr r3,[r0,#0x14]
+  mov r5,r0
+  ldrh r0,[r3,#0x0]
+  cbz r0,0x101304a4
+  ubfx r4,r0,#0x0,#0xf
+  ldr r0,[r5,#0x6c]
+  bl 0x1012d654
+  adds r4,#0x1
+  bic r4,r4,#0x1
+  adds r4,#0x2
+  cmp r0,r4
+  bcc 0x101304a6
+  mov r2,r4
+  ldr r1,[r5,#0x14]
+  ldr r0,[r5,#0x6c]
+  bl 0x100a07a0
+  movs r0,#0x0
+  ldr r3,[r5,#0x14]
+  strb r0,[r3,#0x0]
+  strb r0,[r3,#0x1]
+  pop {r3,r4,r5,pc}
+  mvn r0,#0x68
+  b 0x101304a4

@@ -1,0 +1,22 @@
+; FUN_1012438a @ 0x1012438a size=48
+  ldr r0,[r0,#0x8]
+  push {r4,r5,r6,r7,lr}
+  cbz r0,0x101243b4
+  movs r3,#0x0
+  movs r6,#0xc
+  ldrb.w r4,[r0,#0x22]
+  and r4,r4,#0x3f
+  cmp r4,r3
+  bgt 0x101243a4
+  movs r0,#0x0
+  b 0x101243b4
+  mul r2,r6,r3
+  ldr r5,[r0,#0xc]
+  adds r7,r5,r2
+  ldr r2,[r5,r2]
+  cmp r2,r1
+  bne 0x101243b6
+  ldr r0,[r7,#0x4]
+  pop {r4,r5,r6,r7,pc}
+  adds r3,#0x1
+  b 0x1012439c

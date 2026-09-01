@@ -1,0 +1,21 @@
+; FUN_1012c0da @ 0x1012c0da size=52
+  push {r3,r4,r5,r6,r7,lr}
+  mov r6,r1
+  movs r1,#0x0
+  mov r4,r0
+  bl 0x1012bee0
+  mov r7,r0
+  mov r0,r4
+  bl 0x1012bf2a
+  movs r1,#0x0
+  mov r5,r0
+  movs r2,#0x32
+  mov r0,r4
+  bl 0x1012691c
+  ldr r1,[r7,#0x8]
+  lsls r0,r0,#0x1
+  add r1,r5
+  mla r1,r6,r1,r0
+  mov r0,r4
+  pop.w {r3,r4,r5,r6,r7,lr}
+  b.w 0x1012566e

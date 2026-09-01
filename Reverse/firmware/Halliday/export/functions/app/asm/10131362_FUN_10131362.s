@@ -1,0 +1,22 @@
+; FUN_10131362 @ 0x10131362 size=46
+  push {r0,r1,r2,r3,r4,r5,r6,lr}
+  mov r4,r1
+  mov r1,sp
+  bl 0x101368be
+  mov r5,r0
+  cbnz r0,0x1013138a
+  cbz r4,0x1013138a
+  mov r2,sp
+  mov r3,r4
+  add r6,sp,#0x10
+  mov r4,r2
+  ldmia r4!,{r0,r1}
+  cmp r4,r6
+  str r0,[r3,#0x0]
+  str r1,[r3,#0x4]
+  mov r2,r4
+  add.w r3,r3,#0x8
+  bne 0x10131378
+  mov r0,r5
+  add sp,#0x10
+  pop {r4,r5,r6,pc}

@@ -1,0 +1,22 @@
+; FUN_10139392 @ 0x10139392 size=46
+  ldrsb.w r3,[r0,#0x2]
+  cbz r3,0x101393be
+  ldrsb.w r2,[r0,#0x1]
+  cmp r3,r2
+  beq 0x101393be
+  cmp r3,#0x2
+  ite gt
+  mov.gt r1,#0x0
+  mov.le r1,#0x1
+  cmp r2,#0x2
+  ite gt
+  mov.gt r2,#0x0
+  mov.le r2,#0x1
+  cmp r1,r2
+  bne 0x101393be
+  ldrh r2,[r0,#0xa]
+  strb r3,[r0,#0x1]
+  ldrh r3,[r0,#0xc]
+  strh r2,[r0,#0xc]
+  strh r3,[r0,#0xa]
+  bx lr

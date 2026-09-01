@@ -1,0 +1,27 @@
+; FUN_1011e51c @ 0x1011e51c size=68
+  ldrsh.w r3,[r2,#0x0]
+  push {r4,lr}
+  ldrsh.w r4,[r1,#0x0]
+  cmp r3,r4
+  it ge
+  mov.ge r3,r4
+  ldrsh.w r4,[r1,#0x2]
+  strh r3,[r0,#0x0]
+  ldrsh.w r3,[r2,#0x2]
+  cmp r3,r4
+  it ge
+  mov.ge r3,r4
+  ldrsh.w r4,[r1,#0x4]
+  strh r3,[r0,#0x2]
+  ldrsh.w r3,[r2,#0x4]
+  cmp r3,r4
+  it lt
+  mov.lt r3,r4
+  strh r3,[r0,#0x4]
+  ldrsh.w r3,[r2,#0x6]
+  ldrsh.w r2,[r1,#0x6]
+  cmp r3,r2
+  it lt
+  mov.lt r3,r2
+  strh r3,[r0,#0x6]
+  pop {r4,pc}

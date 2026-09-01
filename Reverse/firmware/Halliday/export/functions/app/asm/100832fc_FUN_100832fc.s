@@ -1,0 +1,32 @@
+; FUN_100832fc @ 0x100832fc size=88
+  push {r4,lr}
+  subs r4,r1,#0x2
+  cmp r4,#0x0
+  it le
+  add.le.w r4,r1,#0xa
+  mov.w r1,#0x190
+  it le
+  add.le.w r0,r0,#0xffffffff
+  udiv r1,r0,r1
+  add.w r1,r1,r0, lsr #0x2
+  add r2,r1
+  movw r1,#0x16d
+  mla r2,r1,r0,r2
+  movw r1,#0x16f
+  muls r1,r4
+  movs r4,#0xc
+  udiv r1,r1,r4
+  add r2,r1
+  movs r1,#0x64
+  udiv r0,r0,r1
+  subs r0,r2,r0
+  movs r2,#0x18
+  mla r3,r2,r0,r3
+  movs r0,#0x3c
+  ldr r2,[sp,#0x8]
+  ldr r1,[sp,#0xc]
+  mla r3,r0,r3,r2
+  ldr r2,[0x10083354]
+  add r2,r1
+  mla r0,r0,r3,r2
+  pop {r4,pc}

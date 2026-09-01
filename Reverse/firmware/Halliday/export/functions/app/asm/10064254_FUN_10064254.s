@@ -1,0 +1,26 @@
+; FUN_10064254 @ 0x10064254 size=68
+  push {r3,lr}
+  ldr r0,[0x10064298]
+  bl 0x10112e84
+  ldr r3,[0x1006429c]
+  ldr r2,[0x100642a0]
+  str r0,[r3,#0x0]
+  ldr r3,[0x100642a4]
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  cbnz r0,0x10064284
+  orr r0,r3,#0x1f0000
+  orr r0,r0,#0x11
+  ldr r2,[0x100642a8]
+  ldr r1,[0x100642ac]
+  bl 0x100a5b78
+  mvn r0,#0x12
+  pop {r3,pc}
+  orr r0,r3,#0x230000
+  orr r0,r0,#0x31
+  ldr r2,[0x100642b0]
+  ldr r1,[0x100642ac]
+  bl 0x100a5b78
+  movs r0,#0x0
+  b 0x10064282

@@ -1,0 +1,24 @@
+; FUN_1011af68 @ 0x1011af68 size=60
+  ldr r2,[0x100596b4]
+  ldr r1,[0x100596b8]
+  b.w 0x1011ae5e
+  push {r4,lr}
+  mov r4,r0
+  ldr r0,[r0,#0x8]
+  ldrh r2,[r0,#0x3c]
+  ldrh r1,[r0,#0x3e]
+  adds r0,#0x20
+  bl 0x1011ad32
+  ldr r3,[r4,#0x8]
+  mov r0,r4
+  ldrh r1,[r3,#0x20]
+  rsb.w r1,r1,#0x1
+  bl 0x100596dc
+  ldr r3,[r4,#0x8]
+  mov r0,r4
+  ldrh r1,[r3,#0x24]
+  subs r1,#0x1
+  bl 0x100596bc
+  ldr r0,[r4,#0x14]
+  pop.w {r4,lr}
+  b.w 0x100596ac

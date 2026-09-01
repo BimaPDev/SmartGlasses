@@ -1,0 +1,24 @@
+; FUN_1013be7e @ 0x1013be7e size=90
+  vldr.32 s14,[r2,#0xc]
+  vmov.f32 s13,0x3f800000
+  vadd.f32 s14,s14,s14
+  vsub.f32 s12,s13,s0
+  vmul.f32 s13,s14,s12
+  vmul.f32 s15,s12,s12
+  vldr.32 s14,[r2,#0x4]
+  vmul.f32 s14,s15,s14
+  vmul.f32 s11,s0,s0
+  vmla.f32 s14,s13,s0
+  vldr.32 s13,[r2,#0x14]
+  vmla.f32 s14,s11,s13
+  vldr.32 s13,[r2,#0x8]
+  vadd.f32 s13,s13,s13
+  vmul.f32 s13,s13,s12
+  vldr.32 s12,[r2]
+  vmul.f32 s15,s15,s12
+  vmla.f32 s15,s13,s0
+  vldr.32 s13,[r2,#0x10]
+  vmla.f32 s15,s11,s13
+  vstr.32 s15,[r0]
+  vstr.32 s14,[r1]
+  bx lr

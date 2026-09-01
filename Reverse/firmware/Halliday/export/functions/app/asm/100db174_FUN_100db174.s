@@ -1,0 +1,27 @@
+; FUN_100db174 @ 0x100db174 size=64
+  push {r4,r5,r6,lr}
+  mov r5,r1
+  mov r6,r0
+  ldr r4,[0x100db1b4]
+  ldr r0,[0x100db1b8]
+  mov r3,r1
+  subs r4,r4,r0
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  orr r0,r4,#0x350000
+  ldr r2,[0x100db1bc]
+  ldr r1,[0x100db1c0]
+  orr r0,r0,#0x31
+  bl 0x100a5b78
+  cbnz r5,0x100db1aa
+  movs r3,#0xa
+  mov r2,r6
+  pop.w {r4,r5,r6,lr}
+  movs r1,#0x35
+  movs r0,#0xcc
+  b.w 0x100d44a8
+  cmp r5,#0x1
+  bne 0x100db1b2
+  movs r3,#0x5
+  b 0x100db19c
+  pop {r4,r5,r6,pc}

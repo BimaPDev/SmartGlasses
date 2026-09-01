@@ -1,0 +1,25 @@
+; FUN_100e11ec @ 0x100e11ec size=66
+  mov r1,r0
+  push {r3,lr}
+  cbnz r0,0x100e1204
+  ldr r3,[0x100e1230]
+  movs r2,#0xc8
+  ldr r0,[r3,#0x0]
+  bl 0x1011ea48
+  pop.w {r3,lr}
+  b.w 0x100e0e44
+  bl 0x100e0e08
+  cbnz r0,0x100e1228
+  ldr r3,[0x100e1234]
+  ldr r0,[0x100e1238]
+  ldr r1,[0x100e123c]
+  subs r0,r0,r3
+  lsls r0,r0,#0x5
+  and r0,r0,#0xff00
+  orr r0,r0,#0x1540000
+  orr r0,r0,#0x21
+  pop.w {r3,lr}
+  b.w 0x100a5b78
+  movs r3,#0x0
+  strb r3,[r0,#0x6]
+  b 0x100e11fc

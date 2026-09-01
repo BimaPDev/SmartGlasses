@@ -1,0 +1,24 @@
+; FUN_10116a20 @ 0x10116a20 size=72
+  push {r3,lr}
+  vpush {d8}
+  vmov.f32 s16,s0
+  bl 0x10117358
+  ldr r3,[0x10116a68]
+  ldrsb.w r3,[r3,#0x0]
+  adds r3,#0x1
+  beq 0x10116a50
+  vcmpe.f32 s16,s16
+  vmrs apsr,fpscr
+  bvs 0x10116a50
+  vldr.32 s17,[pc,#0x28]
+  vcmpe.f32 s16,s17
+  vmrs apsr,fpscr
+  bmi 0x10116a56
+  vpop {d8}
+  pop {r3,pc}
+  bl 0x1011e9ea
+  vdiv.f32 s0,s17,s17
+  movs r3,#0x21
+  str r3,[r0,#0x0]
+  vpop {d8}
+  pop {r3,pc}

@@ -1,0 +1,24 @@
+; FUN_10025a9c @ 0x10025a9c size=60
+  push {r0,r1,r2,lr}
+  ldr r2,[0x10025ad8]
+  mov r3,r0
+  ldr r2,[r2,#0x0]
+  str r2,[sp,#0x4]
+  mov.w r2,#0x0
+  ldr r2,[0x10025adc]
+  ldr r0,[r2,#0x0]
+  cbz r0,0x10025ac4
+  movs r1,#0xa
+  udiv r2,r3,r1
+  mls r3,r1,r2,r3
+  mov.w r2,#0x19e
+  uxtb r3,r3
+  mla r0,r2,r3,r0
+  ldr r3,[0x10025ad8]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x10025ad2
+  bl 0x1013cdc0
+  add sp,#0xc
+  pop.w pc

@@ -1,0 +1,24 @@
+; FUN_10094ca0 @ 0x10094ca0 size=54
+  push {r4,r5,r6,r7,r8,lr}
+  movs r4,#0x0
+  mov r5,r0
+  mov r7,r1
+  mov r6,r4
+  ldr.w r8,[0x10094cd8]
+  cmp r6,r7
+  beq 0x10094cba
+  ldrb r3,[r5,r4]
+  adds r0,r5,r4
+  cbnz r3,0x10094cc0
+  mov r0,r4
+  pop.w {r4,r5,r6,r7,r8,pc}
+  ldr.w r3,[r8,#0x0]
+  blx r3
+  cmp r0,#0x1
+  mov r3,r0
+  it cc
+  mov.cc r3,#0x1
+  uxtb r3,r3
+  add r4,r3
+  adds r6,#0x1
+  b 0x10094cb0

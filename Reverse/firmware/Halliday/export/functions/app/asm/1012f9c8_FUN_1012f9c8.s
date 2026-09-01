@@ -1,0 +1,25 @@
+; FUN_1012f9c8 @ 0x1012f9c8 size=62
+  push {r3,r4,r5,lr}
+  ldr r5,[r0,#0xc]
+  mov r4,r0
+  cbz r5,0x1012f9f2
+  ldr r0,[r5,#0x40]
+  cbz r0,0x1012f9d8
+  bl 0x10064adc
+  ldr.w r0,[r5,#0xd0]
+  cbz r0,0x1012f9e8
+  movs r2,#0x0
+  movs r1,#0x1
+  ldr.w r3,[r5,#0xcc]
+  blx r3
+  mov r0,r5
+  bl 0x100a92e4
+  movs r3,#0x0
+  str r3,[r4,#0xc]
+  ldr r0,[r4,#0x2c]
+  cbz r0,0x1012fa04
+  bl 0x100a0a70
+  ldr r0,[r4,#0x2c]
+  pop.w {r3,r4,r5,lr}
+  b.w 0x100a0b00
+  pop {r3,r4,r5,pc}

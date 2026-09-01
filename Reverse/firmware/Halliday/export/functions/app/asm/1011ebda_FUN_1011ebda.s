@@ -1,0 +1,27 @@
+; FUN_1011ebda @ 0x1011ebda size=58
+  push {r3,r4,r5,lr}
+  ldrh r3,[r0,#0xc]
+  mov r4,r0
+  cbz r3,0x1011ebea
+  adds r1,#0x3
+  bic r1,r1,#0x3
+  add r1,r3
+  mov r0,r4
+  bl 0x1011ea58
+  ldrh r5,[r4,#0xa]
+  subs r3,r5,#0x1
+  subs r0,r3,r0
+  cmp r0,r1
+  bcc 0x1011ec0e
+  movs r0,#0x0
+  ldrh r3,[r4,#0x0]
+  add r1,r3
+  cmp r5,r1
+  it ls
+  sub.ls r1,r1,r5
+  uxth r1,r1
+  strh r1,[r4,#0x0]
+  strh r1,[r4,#0x2]
+  pop {r3,r4,r5,pc}
+  mov.w r0,#0xffffffff
+  b 0x1011ec0c

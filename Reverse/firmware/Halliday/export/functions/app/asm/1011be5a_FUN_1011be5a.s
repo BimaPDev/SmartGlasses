@@ -1,0 +1,21 @@
+; FUN_1011be5a @ 0x1011be5a size=50
+  movs r3,#0xa0
+  push {r4,r5,r6}
+  movs r4,#0x0
+  mla r3,r3,r2,r1
+  strd r4,r4,[r0,#0x0]
+  str.w r4,[r3,#-0x4]
+  ldr r6,[r0,#0x4]
+  subs r5,r3,#0x4
+  cbnz r6,0x1011be86
+  strd r5,r5,[r0,#0x0]
+  subs r3,#0xa0
+  cmp r1,r3
+  bne 0x1011be68
+  pop {r4,r5,r6}
+  mov r1,r2
+  adds r0,#0x8
+  b.w 0x1013ca1a
+  str r5,[r6,#0x0]
+  str r5,[r0,#0x4]
+  b 0x1011be76

@@ -1,0 +1,21 @@
+; FUN_100edb14 @ 0x100edb14 size=48
+  push {r0,r1,r4,lr}
+  str r0,[sp,#0x4]
+  bl 0x10115464
+  mov r4,r0
+  bl 0x10088f7c
+  cbz r0,0x100edb2e
+  ldr r2,[0x100edb44]
+  ldr r1,[sp,#0x4]
+  ldr r3,[r2,#0x0]
+  cbnz r3,0x100edb32
+  str r4,[r2,#0x0]
+  add sp,#0x8
+  pop {r4,pc}
+  cmp r3,r4
+  beq 0x100edb2e
+  mov r2,r4
+  ldr r0,[0x100edb48]
+  add sp,#0x8
+  pop.w {r4,lr}
+  b.w 0x1011dc50

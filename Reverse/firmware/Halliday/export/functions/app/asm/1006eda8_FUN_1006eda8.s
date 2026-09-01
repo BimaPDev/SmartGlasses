@@ -1,0 +1,23 @@
+; FUN_1006eda8 @ 0x1006eda8 size=62
+  push {r3,lr}
+  mov.w r3,#0x20
+  mrs r1,basepri
+  msr basepri_max,r3
+  isb #0xf
+  ldr r3,[0x1006ede8]
+  ldr r2,[r3,#0x0]
+  adds r2,#0x1
+  str r2,[r3,#0x0]
+  msr basepri,r1
+  isb #0xf
+  ldr r2,[r3,#0x0]
+  cmp r2,#0x14
+  bls 0x1006ede4
+  ldr r1,[r3,#0x0]
+  ldr r0,[0x1006edec]
+  bl 0x10119dc2
+  eors r0,r0
+  msr basepri,r0
+  mov.w r0,#0x4
+  svc 0x2
+  pop {r3,pc}

@@ -1,0 +1,21 @@
+; FUN_10138aea @ 0x10138aea size=46
+  push {r3,r4,r5,lr}
+  ldrb r3,[r0,#0xd]
+  mov r4,r0
+  cmp r3,#0x3
+  ldrb r3,[r0,#0xe]
+  ite cc
+  mov.cc.w r5,#0x7d0
+  mov.cs r5,#0xc8
+  ands r3,r3,#0x40
+  beq 0x10138b14
+  bl 0x1013ce56
+  ldr r3,[r4,#0x10]
+  subs r0,r0,r3
+  cmp r0,r5
+  ite cs
+  mov.cs r0,#0x0
+  mov.cc r0,#0x1
+  pop {r3,r4,r5,pc}
+  mov r0,r3
+  b 0x10138b12

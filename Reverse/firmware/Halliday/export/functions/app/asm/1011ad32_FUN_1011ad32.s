@@ -1,0 +1,19 @@
+; FUN_1011ad32 @ 0x1011ad32 size=44
+  ldrb r3,[r0,#0xc]
+  push {r4,r5,lr}
+  ldrh r4,[r0,#0xa]
+  add r1,r3
+  udiv r5,r1,r4
+  add r2,r3
+  udiv r3,r2,r4
+  mls r1,r4,r5,r1
+  adds r1,#0x1
+  strh r1,[r0,#0x0]
+  adds r1,r3,#0x1
+  mls r3,r4,r3,r2
+  adds r5,#0x1
+  adds r3,#0x1
+  strh r5,[r0,#0x4]
+  strh r1,[r0,#0x6]
+  strh r3,[r0,#0x2]
+  pop {r4,r5,pc}

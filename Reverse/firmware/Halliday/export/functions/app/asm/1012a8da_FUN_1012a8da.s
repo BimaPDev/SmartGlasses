@@ -1,0 +1,27 @@
+; FUN_1012a8da @ 0x1012a8da size=52
+  ldr r3,[r1,#0x0]
+  push {r4,lr}
+  ldr r4,[r2,#0x0]
+  cmp r4,r3
+  ite le
+  str.le r4,[r0,#0x0]
+  str.gt r3,[r0,#0x0]
+  ldr r4,[r2,#0x4]
+  ldr r3,[r1,#0x4]
+  cmp r4,r3
+  ite le
+  str.le r4,[r0,#0x4]
+  str.gt r3,[r0,#0x4]
+  ldr r4,[r2,#0x8]
+  ldr r3,[r1,#0x8]
+  ldr r2,[r2,#0xc]
+  cmp r4,r3
+  ite ge
+  str.ge r4,[r0,#0x8]
+  str.lt r3,[r0,#0x8]
+  ldr r3,[r1,#0xc]
+  cmp r2,r3
+  ite ge
+  str.ge r2,[r0,#0xc]
+  str.lt r3,[r0,#0xc]
+  pop {r4,pc}

@@ -1,0 +1,26 @@
+; FUN_100a9ab8 @ 0x100a9ab8 size=70
+  push {r3,r4,r5,lr}
+  mov.w r1,#0xffffffff
+  mov r5,r0
+  ldr r0,[0x100a9b00]
+  bl 0x1011dbf4
+  ldr r3,[0x100a9b04]
+  ldr r4,[r3,#0x0]
+  cbz r4,0x100a9ae4
+  ldr r3,[r4,#0x8]
+  cbz r3,0x100a9af0
+  bl 0x100a9314
+  ldrd r3,r0,[r4,#0x8]
+  blx r3
+  mov.w r1,#0xffffffff
+  ldr r0,[0x100a9b00]
+  bl 0x1011dbf4
+  ldr r3,[0x100a9b08]
+  strb r5,[r3,#0x0]
+  pop.w {r3,r4,r5,lr}
+  b.w 0x100a9314
+  mov r0,r4
+  bl 0x100a9394
+  mov r0,r4
+  bl 0x100a98c4
+  b 0x100a9ae4

@@ -1,0 +1,26 @@
+; FUN_1005e308 @ 0x1005e308 size=70
+  ldr.w r3,[r0,#0x318]
+  push {r4,lr}
+  cmp r3,#0x2
+  mov r4,r0
+  bne 0x1005e348
+  ldr r2,[0x1005e350]
+  ldr r3,[0x1005e354]
+  ldr r0,[0x1005e358]
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  orrs r0,r3
+  ldr r2,[0x1005e35c]
+  ldr r1,[0x1005e360]
+  bl 0x100a5b78
+  ldrb.w r3,[r4,#0x31c]
+  add.w r1,r4,#0x94
+  orr r3,r3,#0x1
+  strb.w r3,[r4,#0x31c]
+  add.w r0,r4,#0xa8
+  bl 0x10114490
+  movs r0,#0x0
+  pop {r4,pc}
+  mov.w r0,#0xffffffff
+  b 0x1005e346

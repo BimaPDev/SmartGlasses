@@ -1,0 +1,20 @@
+; FUN_10136c08 @ 0x10136c08 size=46
+  push {r4,lr}
+  movs r4,#0x0
+  sub sp,#0x18
+  str r0,[sp,#0x8]
+  ldr r0,[r1,#0x0]
+  ldr r1,[r1,#0x4]
+  add r3,sp,#0xc
+  strh.w r4,[sp,#0x15]
+  strb.w r4,[sp,#0x17]
+  stmia r3!,{r0,r1}
+  strb.w r2,[sp,#0x14]
+  movs r3,#0x10
+  movs r1,#0x8d
+  str r4,[sp,#0x0]
+  add r2,sp,#0x8
+  movs r0,#0xca
+  bl 0x100d44e4
+  add sp,#0x18
+  pop {r4,pc}

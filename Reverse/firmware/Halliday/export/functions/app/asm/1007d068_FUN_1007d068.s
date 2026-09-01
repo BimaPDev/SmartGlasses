@@ -1,0 +1,21 @@
+; FUN_1007d068 @ 0x1007d068 size=48
+  ldr r3,[0x1007d098]
+  ldrb.w r2,[r3,#0x1b2]
+  cmp r2,#0x9
+  bls 0x1007d092
+  movs r2,#0x0
+  mov r1,r2
+  add.w r3,r3,#0x1a8
+  ldrb.w r0,[r3],#0x1
+  cbz r0,0x1007d096
+  adds r1,#0x1
+  cmp r1,#0xa
+  add r2,r0
+  bne 0x1007d07a
+  cmp r2,#0x14
+  ite ne
+  mov.ne r0,#0x1
+  mov.eq r0,#0x2
+  bx lr
+  mov.w r0,#0xffffffff
+  bx lr

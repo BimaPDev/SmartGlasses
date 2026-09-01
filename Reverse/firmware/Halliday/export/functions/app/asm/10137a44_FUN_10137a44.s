@@ -1,0 +1,23 @@
+; FUN_10137a44 @ 0x10137a44 size=60
+  movs r3,#0x4
+  push {r4,lr}
+  mov r4,r0
+  strb.w r3,[r0,#0x41]
+  movs r2,#0x8d
+  movs r1,#0x1
+  bl 0x101379fc
+  ldr r0,[r4,#0x30]
+  ldrb.w r3,[r0,#0x98]
+  cbnz r3,0x10137a72
+  movs r3,#0x1
+  strb.w r3,[r0,#0x98]
+  movs r1,#0x1
+  bl 0x101379ce
+  movs r3,#0x0
+  strb.w r3,[r4,#0x43]
+  b 0x10137a76
+  cmp r3,#0x1
+  beq 0x10137a64
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x1013cb84

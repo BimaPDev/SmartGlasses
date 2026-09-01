@@ -1,0 +1,24 @@
+; FUN_10133a36 @ 0x10133a36 size=62
+  push {r0,r1,r4,r5,r6,lr}
+  mov r6,r0
+  mov r5,r1
+  movw r0,#0xc37
+  movs r1,#0x4
+  bl 0x100c5d4c
+  mov r4,r0
+  cbz r0,0x10133a6c
+  ldrh r1,[r6,#0x0]
+  adds r0,#0x8
+  str r0,[sp,#0x4]
+  bl 0x101327c8
+  mov r1,r5
+  ldr r0,[sp,#0x4]
+  bl 0x101327c8
+  mov r1,r4
+  movw r0,#0xc37
+  add sp,#0x8
+  pop.w {r4,r5,r6,lr}
+  b.w 0x100c756c
+  mvn r0,#0xb
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

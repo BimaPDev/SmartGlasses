@@ -1,0 +1,21 @@
+; FUN_1011f442 @ 0x1011f442 size=44
+  cmp r2,#0x3
+  it hi
+  mov.hi r3,#0x18
+  push {r4,lr}
+  itt ls
+  add.ls.w r3,r2,#0xffffffff
+  lsl.ls r3,r3,#0x3
+  add r2,r0
+  cmp r2,r0
+  bne 0x1011f45a
+  pop {r4,pc}
+  ldr r4,[r1,#0x0]
+  lsrs r4,r3
+  subs r3,#0x8
+  it mi
+  mov.mi r3,#0x18
+  strb.w r4,[r0],#0x1
+  it mi
+  add.mi r1,#0x4
+  b 0x1011f454

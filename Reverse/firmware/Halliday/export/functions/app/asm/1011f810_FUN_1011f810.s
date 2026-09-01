@@ -1,0 +1,47 @@
+; FUN_1011f810 @ 0x1011f810 size=124
+  cmp r2,r1
+  mov r3,r0
+  push {r4,r5,lr}
+  bcs 0x1011f888
+  lsrs r5,r2,#0x5
+  add.w r4,r0,r5, lsl #0x2
+  bic r0,r2,#0x1f
+  ands r2,r2,#0x1f
+  sub.w r1,r1,r0
+  beq 0x1011f848
+  ldr.w r5,[r3,r5,lsl #0x2]
+  mov.w r3,#0xffffffff
+  cmp r1,#0x1f
+  lsl.w r3,r3,r2
+  and.w r3,r3,r5
+  bls 0x1011f858
+  cbnz r3,0x1011f874
+  adds r4,#0x4
+  subs r1,#0x20
+  adds r0,#0x20
+  adds r2,r0,r1
+  bics r3,r1,#0x1f
+  sub.w r0,r2,r1
+  bne 0x1011f86a
+  cbz r1,0x1011f868
+  ldr r3,[r4,#0x0]
+  mov.w r2,#0xffffffff
+  rsb.w r4,r1,#0x20
+  lsrs r2,r4
+  ands r3,r2
+  bne 0x1011f874
+  add r0,r1
+  pop {r4,r5,pc}
+  ldr.w r3,[r4],#0x4
+  cbnz r3,0x1011f874
+  subs r1,#0x20
+  b 0x1011f84a
+  rbit r2,r3
+  cmp r3,#0x0
+  clz r2,r2
+  it eq
+  mov.eq.w r2,#0xffffffff
+  add r0,r2
+  b 0x1011f868
+  mov r0,r1
+  b 0x1011f868

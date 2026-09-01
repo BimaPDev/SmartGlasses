@@ -1,0 +1,24 @@
+; FUN_1007a5c8 @ 0x1007a5c8 size=54
+  ldr r3,[0x1007a600]
+  ldrb r0,[r3,#0x11]
+  cmp r0,r1
+  beq 0x1007a5f2
+  strb r1,[r3,#0x11]
+  movs r1,#0x1
+  strb r2,[r3,#0x12]
+  strb r1,[r3,#0x13]
+  movs r0,#0x3c
+  ldrb r1,[r3,#0x12]
+  rsb.w r1,r1,#0x3c
+  add r2,r1
+  sdiv r1,r2,r0
+  mls r2,r0,r1,r2
+  cmp r2,#0xe
+  bgt 0x1007a5f8
+  b.w 0x1007a568
+  ldrb r1,[r3,#0x13]
+  cmp r1,#0x1
+  beq 0x1007a5d8
+  movs r0,#0x0
+  strb r0,[r3,#0x13]
+  bx lr

@@ -1,0 +1,21 @@
+; FUN_100a8588 @ 0x100a8588 size=48
+  push {r4,lr}
+  mov r4,r0
+  cbnz r0,0x100a859c
+  mov.w r1,#0x2a4
+  ldr r3,[0x100a85b8]
+  ldr r2,[0x100a85bc]
+  ldr r0,[0x100a85c0]
+  bl 0x10117c88
+  ldrb r3,[r0,#0x0]
+  cmp r3,#0x3
+  beq 0x100a85ae
+  ldrb r3,[r4,#0x9]
+  bfc r3,#0x0,#0x1
+  strb r3,[r4,#0x9]
+  movs r0,#0x0
+  pop {r4,pc}
+  bl 0x100ba094
+  cmp r0,#0x0
+  beq 0x100a85a2
+  b 0x100a85aa

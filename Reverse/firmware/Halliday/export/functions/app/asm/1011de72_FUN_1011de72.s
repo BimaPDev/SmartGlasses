@@ -1,0 +1,20 @@
+; FUN_1011de72 @ 0x1011de72 size=56
+  mov r2,r0
+  push {r3,lr}
+  cbnz r1,0x1011de8a
+  ldr.w r3,[r0,#0x88]
+  orr r3,r3,#0x40
+  str.w r3,[r0,#0x88]
+  mvn r0,#0x15
+  pop {r3,pc}
+  bl 0x1011de62
+  cmp r0,#0x1
+  itett ne
+  ldr.ne.w r3,[r2,#0x88]
+  mov.eq r0,#0x0
+  orr.ne r3,r3,#0x40
+  mvn.ne r0,#0xf
+  ite eq
+  str.eq r1,[r2,#0xc]
+  str.w.ne r3,[r2,#0x88]
+  b 0x1011de88

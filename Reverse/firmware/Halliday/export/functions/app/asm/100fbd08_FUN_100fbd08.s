@@ -1,0 +1,116 @@
+; FUN_100fbd08 @ 0x100fbd08 size=290
+  push {r4,r5,r6,r7,r8,r9,lr}
+  ldr r5,[r0,#0x4]
+  subs r4,r2,#0x1
+  rsbs r7,r5
+  add r4,r5
+  ands r4,r7
+  and.w r6,r7,r3
+  cmp r4,r6
+  bgt 0x100fbd48
+  ldr r3,[r0,#0x0]
+  asrs r4,r3
+  bmi 0x100fbd44
+  ldrh r3,[r0,#0x34]
+  cmp r3,r4
+  ble 0x100fbd44
+  movs r3,#0x80
+  ldr.w r2,[r0,#0x8c]
+  ldr r1,[r0,#0x38]
+  add.w r2,r2,r4, asr #0x3
+  ldrb r0,[r1,r2]
+  and r4,r4,#0x7
+  asr.w r4,r3,r4
+  orrs r4,r0
+  strb r4,[r1,r2]
+  pop.w {r4,r5,r6,r7,r8,r9,pc}
+  add.w r12,r5,r6
+  cmp r12,r4
+  bne 0x100fbd44
+  mov r9,r1
+  ldr r1,[sp,#0x1c]
+  ldrh.w lr,[r1,#0xc]
+  and r12,lr,#0x7
+  cmp.w r12,#0x5
+  bhi 0x100fbd44
+  adr r1,[0x100fbd68]
+  ldr.w pc,[r1,r12,lsl #0x2]
+  ldr r1,[sp,#0x1c]
+  ldr r1,[r1,#0x1c]
+  mov r8,r1
+  ldr r1,[sp,#0x20]
+  cmp r8,r1
+  beq 0x100fbe0e
+  ldr r1,[sp,#0x20]
+  ldr.w r8,[r1,#0x1c]
+  ldr r1,[sp,#0x1c]
+  cmp r8,r1
+  beq 0x100fbe28
+  cmp.w r12,#0x1
+  beq 0x100fbdb2
+  rsbs r5,r5,r5, lsl #0x6
+  it mi
+  add.mi r5,#0x3f
+  add r3,r2
+  add.w r3,r3,r5, asr #0x6
+  and.w r5,r7,r3, asr #0x1
+  b 0x100fbdb4
+  mov r5,r6
+  cmp r5,#0x0
+  ldr r3,[r0,#0x0]
+  blt 0x100fbdca
+  ldrh r2,[r0,#0x34]
+  asr.w r1,r5,r3
+  cmp r1,r2
+  blt 0x100fbe04
+  mov r2,r6
+  mov r6,r4
+  mov r4,r2
+  asrs r6,r3
+  bmi 0x100fbd20
+  ldrh r2,[r0,#0x34]
+  cmp r2,r6
+  ble 0x100fbd20
+  movs r2,#0x80
+  ldr r1,[r0,#0x38]
+  ldr.w r5,[r0,#0x8c]
+  add.w r1,r1,r6, asr #0x3
+  ldrb r1,[r1,r5]
+  and r6,r6,#0x7
+  asr.w r6,r2,r6
+  tst r1,r6
+  beq 0x100fbd20
+  b 0x100fbd44
+  rsbs r5,r5,r5, lsl #0x6
+  it mi
+  add.mi r5,#0x3f
+  add r3,r2
+  add.w r5,r3,r5, asr #0x6
+  and.w r5,r7,r5, asr #0x1
+  b 0x100fbdb4
+  cmp r5,r4
+  beq 0x100fbdca
+  mov r6,r4
+  mov r4,r5
+  b 0x100fbdca
+  ldr r1,[sp,#0x1c]
+  ldr r1,[r1,#0x10]
+  cmp r1,#0x0
+  bgt 0x100fbd8c
+  tst lr,#0x10
+  beq 0x100fbd44
+  ldr r1,[r0,#0x8]
+  sub.w r8,r3,r2
+  cmp r8,r1
+  bge 0x100fbd8c
+  b 0x100fbd44
+  ldr.w r8,[r1,#0x14]
+  cmp r8,r9
+  bne 0x100fbd98
+  tst lr,#0x20
+  beq 0x100fbd44
+  ldr r1,[r0,#0x8]
+  sub.w lr,r3,r2
+  cmp lr,r1
+  bge 0x100fbd98
+  b 0x100fbd44

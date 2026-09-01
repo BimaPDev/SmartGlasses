@@ -1,0 +1,19 @@
+; FUN_10114e08 @ 0x10114e08 size=46
+  push {r4,lr}
+  ldrsb.w r2,[r0,#0xd]
+  mov r4,r0
+  cmp r2,#0x0
+  ldrb r3,[r0,#0xd]
+  bge 0x10114e24
+  and r3,r3,#0x7f
+  mov r1,r0
+  strb r3,[r0,#0xd]
+  ldr r0,[0x10114e38]
+  bl 0x10114ac0
+  ldr r3,[0x10114e3c]
+  ldr r0,[r3,#0x8]
+  subs r3,r0,r4
+  rsbs r0,r3
+  adcs r0,r3
+  pop.w {r4,lr}
+  b.w 0x10114b50

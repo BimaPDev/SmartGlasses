@@ -1,0 +1,20 @@
+; FUN_1011e768 @ 0x1011e768 size=38
+  ldrh r3,[r0,#0x4]
+  ldrh r2,[r0,#0x0]
+  adds r3,#0x1
+  subs r3,r3,r2
+  sxth r3,r3
+  cmp r3,#0x0
+  ble 0x1011e78a
+  ldrh r3,[r0,#0x6]
+  ldrh r0,[r0,#0x2]
+  adds r3,#0x1
+  subs r0,r3,r0
+  sxth r0,r0
+  cmp r0,#0x0
+  ite gt
+  mov.gt r0,#0x0
+  mov.le r0,#0x1
+  bx lr
+  movs r0,#0x1
+  bx lr

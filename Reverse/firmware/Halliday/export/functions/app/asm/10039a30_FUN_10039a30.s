@@ -1,0 +1,27 @@
+; FUN_10039a30 @ 0x10039a30 size=62
+  push {r0,r1,r2,lr}
+  ldr r2,[0x10039a70]
+  ldr r1,[0x10039a74]
+  ldr r2,[r2,#0x0]
+  str r2,[sp,#0x4]
+  mov.w r2,#0x0
+  ldrb r2,[r1,#0xb]
+  cbz r2,0x10039a5e
+  cbz r0,0x10039a5e
+  ldr r3,[0x10039a70]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x10039a52
+  bl 0x1013cdc0
+  adds r1,#0x1
+  add sp,#0xc
+  pop.w lr
+  b.w 0x1011e9f0
+  ldr r3,[0x10039a70]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  bne 0x10039a4e
+  add sp,#0xc
+  pop.w pc

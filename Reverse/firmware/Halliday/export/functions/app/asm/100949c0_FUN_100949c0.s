@@ -1,0 +1,25 @@
+; FUN_100949c0 @ 0x100949c0 size=52
+  movw r3,#0xffff
+  cmp r0,r3
+  beq 0x100949ec
+  cbz r0,0x100949f2
+  cmp r0,#0x70
+  bhi 0x100949d4
+  ldr r3,[0x100949f4]
+  ldrb r0,[r3,r0]
+  bx lr
+  ldr r3,[0x100949f8]
+  ldr r2,[r3,#0x0]
+  cbz r2,0x100949f0
+  ldr r1,[0x100949fc]
+  sub.w r3,r0,#0x71
+  ldr r1,[r1,#0x0]
+  uxth r3,r3
+  cmp r3,r1
+  bcs 0x100949f0
+  ldrb r0,[r2,r3]
+  bx lr
+  movs r0,#0x1f
+  bx lr
+  movs r0,#0x0
+  bx lr

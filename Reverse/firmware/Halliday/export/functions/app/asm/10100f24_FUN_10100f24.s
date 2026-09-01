@@ -1,0 +1,20 @@
+; FUN_10100f24 @ 0x10100f24 size=50
+  push {r4,r5,r6,lr}
+  mov r2,r1
+  mov r5,r1
+  ldr.w r6,[r0,#0x204]
+  ldr r1,[0x10100f58]
+  add.w r3,r0,#0x200
+  mov r4,r0
+  blx r6
+  cbz r0,0x10100f3c
+  pop {r4,r5,r6,pc}
+  mov r0,r5
+  ldr.w r1,[r4,#0x200]
+  add.w r2,r4,#0x1fc
+  bl 0x100fae48
+  cmp r0,#0x0
+  beq 0x10100f3a
+  movs r3,#0x0
+  str.w r3,[r4,#0x200]
+  pop {r4,r5,r6,pc}

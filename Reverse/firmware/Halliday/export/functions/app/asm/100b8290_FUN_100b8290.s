@@ -1,0 +1,26 @@
+; FUN_100b8290 @ 0x100b8290 size=60
+  push {r4,r5,r6,r7,r8,lr}
+  ldr r4,[r0,#0x0]
+  mov r5,r1
+  mov r6,r2
+  mov r7,r3
+  cbnz r4,0x100b82b6
+  push {r0,r1,r2,r3}
+  movs r3,#0xb0
+  ldr r2,[0x100b82cc]
+  ldr r1,[0x100b82d0]
+  ldr r0,[0x100b82d4]
+  bl 0x10119dc2
+  pop {r0,r1,r2,r3}
+  movs r1,#0xb0
+  ldr r0,[0x100b82cc]
+  bl 0x1011a1f0
+  ldr r3,[r4,#0x0]
+  mov r2,r6
+  ldr.w lr,[r3,#0x18]
+  mov r1,r5
+  mov r3,r7
+  mov r0,r4
+  mov r12,lr
+  pop.w {r4,r5,r6,r7,r8,lr}
+  bx r12

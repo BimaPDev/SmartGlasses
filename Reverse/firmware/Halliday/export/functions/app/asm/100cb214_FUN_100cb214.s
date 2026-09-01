@@ -1,0 +1,20 @@
+; FUN_100cb214 @ 0x100cb214 size=42
+  ldrb r3,[r0,#0xd]
+  cmp r3,#0x7
+  beq 0x100cb21e
+  movs r0,#0x0
+  bx lr
+  ldr r3,[0x100cb240]
+  ldr r3,[r3,#0x0]
+  cmp r3,#0x0
+  beq 0x100cb21a
+  ldr r3,[0x100cb244]
+  ldr r2,[0x100cb248]
+  ldrb r0,[r3,#0x1]
+  ubfx r3,r0,#0x3,#0x3
+  ldr.w r0,[r2,#0x10c]
+  cmp r0,r3
+  ite ls
+  mov.ls r0,#0x0
+  mov.hi r0,#0x1
+  bx lr

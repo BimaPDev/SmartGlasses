@@ -1,0 +1,20 @@
+; FUN_1011ec14 @ 0x1011ec14 size=42
+  push {r0,r1,r4,r5,r6,lr}
+  mov r5,r2
+  add r2,sp,#0x4
+  str r1,[sp,#0x4]
+  mov r4,r0
+  mov r6,r3
+  bl 0x1011eb60
+  mov r1,r0
+  cbz r0,0x1011ec30
+  mov r0,r6
+  ldr r2,[sp,#0x4]
+  blx r5
+  str r0,[sp,#0x4]
+  mov r0,r4
+  ldr r1,[sp,#0x4]
+  bl 0x1011ebda
+  ldr r0,[sp,#0x4]
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

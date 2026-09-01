@@ -1,0 +1,21 @@
+; FUN_100ee018 @ 0x100ee018 size=52
+  ldrb r3,[r0,#0x1b]
+  push {r4,lr}
+  lsls r3,r3,#0x1f
+  mov r4,r0
+  bpl 0x100ee04a
+  ldr r3,[0x100ee04c]
+  ldrb r3,[r3,#0x0]
+  cbz r3,0x100ee042
+  mov.w r1,#0xffffffff
+  ldr r0,[0x100ee050]
+  bl 0x1011dbf4
+  mov.w r1,#0xffffffff
+  ldr r0,[0x100ee054]
+  bl 0x1011deaa
+  ldr r0,[0x100ee050]
+  bl 0x10113e2c
+  ldrb r3,[r4,#0x1b]
+  bfc r3,#0x0,#0x1
+  strb r3,[r4,#0x1b]
+  pop {r4,pc}

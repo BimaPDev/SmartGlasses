@@ -1,0 +1,19 @@
+; FUN_1013b874 @ 0x1013b874 size=48
+  push {r4,r5,lr}
+  mov.w r12,#0x1000
+  movs r5,#0x0
+  sub sp,#0x24
+  strd r5,r12,[sp,#0x14]
+  str r5,[sp,#0x10]
+  movw r5,#0x1d01
+  ldr r4,[sp,#0x30]
+  str r5,[sp,#0xc]
+  ldrh.w r5,[sp,#0x34]
+  str r5,[sp,#0x8]
+  add.w r5,r4,#0x84
+  adds r4,#0xb4
+  str r5,[sp,#0x4]
+  str r4,[sp,#0x0]
+  bl 0x1010f628
+  add sp,#0x24
+  pop {r4,r5,pc}

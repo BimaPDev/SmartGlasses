@@ -1,0 +1,20 @@
+; FUN_10133f30 @ 0x10133f30 size=50
+  push {r4,lr}
+  mov r4,r0
+  adds r0,#0x64
+  bl 0x10133e7c
+  add.w r1,r4,#0x40
+  ldaex r3,[r1]
+  orr r2,r3,#0x1
+  stlex r0,r2,[r1]
+  cmp r0,#0x0
+  bne 0x10133f3e
+  lsls r3,r3,#0x1f
+  bmi 0x10133f60
+  ldr r3,[r4,#0x4]
+  ldr r3,[r3,#0x18]
+  cbz r3,0x10133f60
+  mov r0,r4
+  pop.w {r4,lr}
+  bx r3
+  pop {r4,pc}

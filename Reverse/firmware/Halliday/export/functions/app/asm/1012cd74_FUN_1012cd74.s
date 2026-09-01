@@ -1,0 +1,22 @@
+; FUN_1012cd74 @ 0x1012cd74 size=60
+  movw r3,#0x107
+  movs r1,#0x0
+  ubfx r2,r0,#0xb,#0x5
+  muls r2,r3
+  adds r2,#0x7
+  asrs r2,r2,#0x5
+  bfi r1,r2,#0x10,#0x8
+  movw r2,#0x103
+  push {r4,lr}
+  ubfx r4,r0,#0x5,#0x6
+  muls r2,r4
+  and r0,r0,#0x1f
+  muls r3,r0
+  adds r2,#0x3
+  asrs r2,r2,#0x6
+  adds r3,#0x7
+  bfi r1,r2,#0x8,#0x8
+  asrs r3,r3,#0x5
+  bfi r1,r3,#0x0,#0x8
+  orr r0,r1,#0xff000000
+  pop {r4,pc}

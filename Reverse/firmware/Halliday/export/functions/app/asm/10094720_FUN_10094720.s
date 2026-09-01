@@ -1,0 +1,41 @@
+; FUN_10094720 @ 0x10094720 size=98
+  cmp r0,#0x37
+  bhi 0x100947a4
+  cmp r0,#0x1f
+  bhi 0x10094738
+  cmp r0,#0x3
+  beq.w 0x10094886
+  cmp r0,#0x6
+  beq.w 0x10094886
+  movs r0,#0x0
+  bx lr
+  subs r0,#0x20
+  cmp r0,#0x17
+  bhi 0x10094734
+  adr r3,[0x10094744]
+  ldr.w pc,[r3,r0,lsl #0x2]
+  subs r0,#0x44
+  uxth r3,r0
+  cmp r3,#0x29
+  bhi 0x10094734
+  cmp r0,#0x29
+  bhi 0x10094734
+  adr r3,[0x100947b8]
+  ldr.w pc,[r3,r0,lsl #0x2]
+  mov.w r0,#0x100
+  bx lr
+  movs r0,#0x0
+  bfc r0,#0x0,#0x10
+  bx lr
+  mov.w r3,#0xffffffff
+  movs r0,#0x0
+  bfi r0,r3,#0x0,#0x10
+  bx lr
+  movs r0,#0xff
+  bx lr
+  movs r0,#0xf
+  bx lr
+  ldr r0,[0x1009488c]
+  bx lr
+  mvn r0,#0xe0000000
+  bx lr

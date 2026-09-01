@@ -1,0 +1,19 @@
+; FUN_10119ee8 @ 0x10119ee8 size=46
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  mov r5,r1
+  bl 0x10119e3a
+  ldr r3,[r4,#0x8]
+  mov r1,r0
+  cmp.w r3,#0x8000
+  bcc 0x10119f00
+  cmp r0,#0x1
+  beq 0x10119f14
+  mov r0,r4
+  bl 0x10119e92
+  mov r1,r5
+  mov r2,r0
+  mov r0,r4
+  pop.w {r3,r4,r5,lr}
+  b.w 0x10053c24
+  pop {r3,r4,r5,pc}

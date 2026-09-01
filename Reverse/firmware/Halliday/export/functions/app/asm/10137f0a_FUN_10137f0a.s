@@ -1,0 +1,29 @@
+; FUN_10137f0a @ 0x10137f0a size=76
+  push {r4,r5,r6,lr}
+  mov r4,r0
+  mov r0,r1
+  mov r5,r1
+  ldr.w r6,[r0,#0x8]!
+  movs r1,#0x7
+  bl 0x100c1f58
+  ldrh.w r3,[r6,#0x1]
+  mov r1,r5
+  lsls r2,r3,#0x8
+  orr.w r2,r2,r3, lsr #0x8
+  subs r2,#0x7
+  uxth r2,r2
+  mov r0,r4
+  bl 0x100e0358
+  add.w r0,r4,#0x70
+  bl 0x1013cb84
+  movs r3,#0x4
+  strb.w r3,[r4,#0x5d]
+  ldr r3,[r4,#0x68]
+  cbz r3,0x10137f54
+  ldr r3,[r3,#0x0]
+  cbz r3,0x10137f54
+  ldrb.w r1,[r4,#0x62]
+  ldr r0,[r4,#0x0]
+  pop.w {r4,r5,r6,lr}
+  bx r3
+  pop {r4,r5,r6,pc}

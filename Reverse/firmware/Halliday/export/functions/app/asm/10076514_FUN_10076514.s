@@ -1,0 +1,42 @@
+; FUN_10076514 @ 0x10076514 size=110
+  push {r4,r5,r6,r7,lr}
+  ldr r4,[r0,#0x4]
+  ldr r7,[r4,#0x0]
+  mov r5,r7
+  ldr.w r6,[r5],#0x4
+  ldr.w r4,[r5,r1,lsl #0x2]
+  cbz r3,0x10076556
+  ldr r3,[0x10076584]
+  ldr r0,[r3,#0x0]
+  orr r0,r0,#0xc00000
+  str r0,[r3,#0x0]
+  cbnz r2,0x10076548
+  ldr r2,[r3,#0x0]
+  bic r4,r4,#0x20000
+  orr r2,r2,#0x200000
+  str r2,[r3,#0x0]
+  orr r4,r4,#0x8000
+  str.w r4,[r5,r1,lsl #0x2]
+  pop {r4,r5,r6,r7,pc}
+  ldr r2,[r3,#0x0]
+  orr r4,r4,#0x20000
+  orr r2,r2,#0x100000
+  str r2,[r3,#0x0]
+  b 0x1007653e
+  movs r3,#0x1
+  ldr r2,[r0,#0x10]
+  add.w r0,r1,#0xc
+  lsls r3,r0
+  bic.w r3,r6,r3
+  tst r3,#0xf000
+  bic r4,r4,#0x8000
+  str r3,[r7,#0x0]
+  bne 0x10076542
+  ldrb r3,[r2,#0x0]
+  lsls r3,r3,#0x1e
+  itttt pl
+  ldr.pl r2,[0x10076584]
+  ldr.pl r3,[r2,#0x0]
+  bic.pl r3,r3,#0xf00000
+  str.pl r3,[r2,#0x0]
+  b 0x10076542

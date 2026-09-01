@@ -1,0 +1,19 @@
+; FUN_10087344 @ 0x10087344 size=40
+  ldrb r3,[r0,#0x1c]
+  push {r4,lr}
+  lsls r3,r3,#0x1f
+  mov r4,r0
+  bmi 0x10087366
+  ldr r1,[0x1008736c]
+  ldr r2,[0x10087370]
+  bl 0x10124408
+  mov r1,r0
+  ldr r3,[r4,#0x14]
+  cbz r3,0x1008736a
+  cbnz r1,0x1008736a
+  mov r0,r4
+  pop.w {r4,lr}
+  bx r3
+  movs r1,#0x0
+  b 0x10087358
+  pop {r4,pc}

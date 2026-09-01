@@ -1,0 +1,42 @@
+; FUN_1000ad34 @ 0x1000ad34 size=94
+  push {r0,r1,r2,r4,r5,r6,r7,lr}
+  movs r1,#0x8
+  movs r7,#0x0
+  ldr r3,[0x1000ad94]
+  ldr r3,[r3,#0x0]
+  str r3,[sp,#0x4]
+  mov.w r3,#0x0
+  ldr r3,[0x1000ad98]
+  ldrb r4,[r3,#0xc]
+  add r4,r1
+  add.w r6,r3,r4, lsl #0x3
+  ldrb r5,[r6,#0x4]
+  cmp r5,#0x1
+  itee ne
+  mov.ne r5,#0x0
+  ldr.eq.w r2,[r3,r4,lsl #0x3]
+  str.eq r2,[r0,#0x0]
+  ldrb r2,[r3,#0xc]
+  it eq
+  strb.eq r7,[r6,#0x4]
+  adds r2,#0x1
+  sxtb r2,r2
+  cmp r2,#0x7
+  ite le
+  strb.le r2,[r3,#0xc]
+  strb.gt r7,[r3,#0xc]
+  cbnz r5,0x1000ad8a
+  subs r2,r1,#0x1
+  ands r1,r2,#0xff
+  bne 0x1000ad4e
+  mov.w r0,#0xffffffff
+  ldr r3,[0x1000ad94]
+  ldr r2,[r3,#0x0]
+  ldr r3,[sp,#0x4]
+  eors r2,r3
+  beq 0x1000ad8e
+  bl 0x1013cdc0
+  movs r0,#0x0
+  b 0x1000ad7c
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}

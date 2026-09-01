@@ -1,0 +1,25 @@
+; FUN_1013d3f0 @ 0x1013d3f0 size=56
+  push {r4,r5,r6,lr}
+  mov r5,r0
+  mov r0,r1
+  mov r6,r2
+  mov r4,r1
+  bl 0x1011ea10
+  adds r2,r0,#0x1
+  cmp r2,r6
+  bls 0x1013d408
+  bl 0x10068cd8
+  cmp r4,r5
+  bhi 0x1013d416
+  adds r3,r4,r2
+  cmp r5,r3
+  bcc 0x1013d404
+  cmp r4,r5
+  bne 0x1013d41c
+  adds r3,r5,r2
+  cmp r4,r3
+  bcc 0x1013d404
+  mov r1,r4
+  mov r0,r5
+  pop.w {r4,r5,r6,lr}
+  b.w 0x1011ea40

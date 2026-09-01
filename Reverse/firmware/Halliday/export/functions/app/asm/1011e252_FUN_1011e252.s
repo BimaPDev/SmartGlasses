@@ -1,0 +1,29 @@
+; FUN_1011e252 @ 0x1011e252 size=84
+  push {r4,r5,r6,r7,r8,lr}
+  ldrh.w r5,[sp,#0x18]
+  ldrh.w r12,[sp,#0x1c]
+  add.w r5,r0,r5, lsl #0x1
+  cmp.w r12,#0x0
+  bne 0x1011e26c
+  pop.w {r4,r5,r6,r7,r8,pc}
+  mov r6,r0
+  sub.w lr,r1,#0x2
+  cmp r6,r5
+  bne 0x1011e282
+  add r0,r2
+  add r1,r3
+  add.w r12,r12,#0xffffffff
+  add r5,r2
+  b 0x1011e262
+  ldrh.w r4,[lr,#0x2]!
+  ldrh.w r8,[r6,#0x0]
+  sxth r7,r4
+  cmp r7,#0x0
+  bge 0x1011e2a0
+  lsls r4,r4,#0x1
+  bic r4,r4,#0x3f
+  and r7,r7,#0x3f
+  orrs r4,r7
+  uxth.w r8,r4
+  strh r8,[r6],#0x2
+  b 0x1011e272

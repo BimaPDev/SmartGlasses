@@ -1,0 +1,25 @@
+; FUN_10120a74 @ 0x10120a74 size=60
+  push {r4,r5,r6,lr}
+  ldr r0,[r0,#0xc]
+  ldr r5,[r0,#0x0]
+  ldrb r4,[r5,#0x9]
+  ldrb r0,[r5,#0x8]
+  muls r0,r4
+  beq 0x10120aaa
+  mov r0,r4
+  cbz r4,0x10120aaa
+  ldrb r6,[r5,#0xa]
+  cbz r6,0x10120aac
+  ldrh r4,[r5,#0x10]
+  udiv r5,r2,r0
+  udiv r4,r4,r6
+  mls r2,r0,r5,r2
+  movs r0,#0x1
+  mla r3,r2,r4,r3
+  strh.w r3,[r1,#0x3]
+  ldr r3,[sp,#0x10]
+  strb r5,[r1,#0x0]
+  strh.w r3,[r1,#0x1]
+  pop {r4,r5,r6,pc}
+  mov r0,r6
+  b 0x10120aaa

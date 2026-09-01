@@ -1,0 +1,21 @@
+; FUN_10061900 @ 0x10061900 size=56
+  mov.w r3,#0x20
+  mrs r2,basepri
+  msr basepri_max,r3
+  isb #0xf
+  ldr r1,[0x10061938]
+  ldr r3,[0x1006193c]
+  ldr r0,[r1,#0x0]
+  ldr r3,[r3,#0x0]
+  ldr r1,[0x10061940]
+  add r3,r0
+  ldr r0,[r1,#0x0]
+  ldr r1,[0x10061944]
+  subs r3,r3,r0
+  ldr r0,[r1,#0x0]
+  subs r3,r3,r0
+  msr basepri,r2
+  isb #0xf
+  mov.w r0,#0x7d00
+  udiv r0,r3,r0
+  bx lr

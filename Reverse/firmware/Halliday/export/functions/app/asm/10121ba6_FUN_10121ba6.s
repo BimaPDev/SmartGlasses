@@ -1,0 +1,26 @@
+; FUN_10121ba6 @ 0x10121ba6 size=62
+  push {r4,r5,r6,lr}
+  ldr r4,[r0,#0xc]
+  movs r3,#0x0
+  mov r2,r4
+  ldrb.w r5,[r4,#0x20]
+  cmp r5,r3
+  bgt 0x10121bbe
+  bne 0x10121bcc
+  mov.w r0,#0xffffffff
+  b 0x10121bdc
+  ldrb.w r6,[r2,#0x30]
+  ldr r0,[r2,#0x34]
+  adds r2,#0x1c
+  muls r0,r6
+  cmp r0,r1
+  bls 0x10121bde
+  movs r2,#0x1c
+  mla r3,r2,r3,r4
+  ldr r3,[r3,#0x34]
+  udiv r0,r1,r3
+  mls r0,r3,r0,r1
+  pop {r4,r5,r6,pc}
+  subs r1,r1,r0
+  adds r3,#0x1
+  b 0x10121bb2

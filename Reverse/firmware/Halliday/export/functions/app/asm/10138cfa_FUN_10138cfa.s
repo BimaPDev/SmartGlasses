@@ -1,0 +1,19 @@
+; FUN_10138cfa @ 0x10138cfa size=46
+  push {r0,r1,r2,lr}
+  str r0,[sp,#0x4]
+  bl 0x1011e920
+  cbz r0,0x10138d24
+  ldr r1,[sp,#0x4]
+  movs r0,#0x0
+  bl 0x100ed8f8
+  ldr r1,[sp,#0x4]
+  cbnz r0,0x10138d20
+  movs r0,#0x2
+  bl 0x100ed8f8
+  and r0,r0,#0x1
+  add sp,#0xc
+  pop.w pc
+  movs r0,#0x1
+  b 0x10138d16
+  movs r0,#0x1
+  b 0x10138d1a

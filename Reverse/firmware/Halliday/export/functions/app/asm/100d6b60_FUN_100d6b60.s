@@ -1,0 +1,20 @@
+; FUN_100d6b60 @ 0x100d6b60 size=42
+  push {r0,r1,r2,r3,r4,r5,r6,lr}
+  mov r3,r0
+  ldrb r2,[r3,#0x0]
+  mov r0,r1
+  str r2,[sp,#0x10]
+  ldrb r2,[r3,#0x1]
+  movs r1,#0x12
+  str r2,[sp,#0xc]
+  ldrb r2,[r3,#0x2]
+  str r2,[sp,#0x8]
+  ldrb r2,[r3,#0x3]
+  str r2,[sp,#0x4]
+  ldrb r2,[r3,#0x4]
+  str r2,[sp,#0x0]
+  ldrb r3,[r3,#0x5]
+  ldr r2,[0x100d6b8c]
+  bl 0x10119ddc
+  add sp,#0x1c
+  pop.w pc

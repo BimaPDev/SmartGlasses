@@ -1,0 +1,45 @@
+; FUN_100fbb34 @ 0x100fbb34 size=100
+  push {r4,r5,r6,r7,lr}
+  ldr r3,[r0,#0x18]
+  ldr r1,[r0,#0x10]
+  ldr r5,[r0,#0x8]
+  ldr r2,[r0,#0x0]
+  add.w r12,r3,r1
+  add r1,r5
+  add r5,r2
+  ldr r7,[r0,#0x1c]
+  ldr r4,[r0,#0x14]
+  ldr r2,[r0,#0xc]
+  ldr r6,[r0,#0x4]
+  str r3,[r0,#0x30]
+  add.w r3,r1,r12
+  add r1,r5
+  asr.w lr,r12, asr #0x1
+  asr.w r12,r3, asr #0x2
+  add r3,r1
+  add r6,r2
+  asrs r3,r3,#0x3
+  add r2,r4
+  asrs r1,r1,#0x2
+  add r4,r7
+  str r3,[r0,#0x18]
+  str r1,[r0,#0x10]
+  adds r3,r6,r2
+  adds r1,r2,r4
+  adds r2,r1,r3
+  asrs r5,r5,#0x1
+  asrs r4,r4,#0x1
+  asrs r6,r6,#0x1
+  asrs r1,r1,#0x2
+  asrs r2,r2,#0x3
+  asrs r3,r3,#0x2
+  str.w lr,[r0,#0x28]
+  str.w r12,[r0,#0x20]
+  str r5,[r0,#0x8]
+  str r7,[r0,#0x34]
+  str r4,[r0,#0x2c]
+  str r1,[r0,#0x24]
+  str r2,[r0,#0x1c]
+  str r3,[r0,#0x14]
+  str r6,[r0,#0xc]
+  pop {r4,r5,r6,r7,pc}

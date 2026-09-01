@@ -1,0 +1,19 @@
+; FUN_1011ae78 @ 0x1011ae78 size=44
+  ldr r2,[r0,#0x0]
+  push {r3,r4,r5,lr}
+  mov r4,r0
+  ldr r0,[r2,#0x0]
+  ldrh r5,[r2,#0x3c]
+  cbz r0,0x1011aea0
+  bl 0x1011ea10
+  uxth r3,r0
+  ldr r2,[r4,#0x0]
+  add r3,r5
+  ldrh r2,[r2,#0x2a]
+  udiv r0,r3,r2
+  mls r0,r2,r0,r3
+  clz r0,r0
+  lsrs r0,r0,#0x5
+  pop {r3,r4,r5,pc}
+  mov r3,r0
+  b 0x1011ae8a

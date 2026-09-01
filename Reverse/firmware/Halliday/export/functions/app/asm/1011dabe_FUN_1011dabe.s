@@ -1,0 +1,23 @@
+; FUN_1011dabe @ 0x1011dabe size=50
+  push {r0,r1,r2,r4,r5,r6,r7,lr}
+  ldr r4,[sp,#0x20]
+  mov r5,r0
+  cbz r0,0x1011dae8
+  cbz r1,0x1011dae8
+  cmp r2,#0x1f
+  bls 0x1011dae8
+  cbz r3,0x1011dae4
+  cbz r4,0x1011daec
+  str r4,[sp,#0x0]
+  bl 0x1011d95c
+  mov.w r3,#0xffffffff
+  movs r0,#0x1
+  str.w r3,[r5,#0x130]
+  add sp,#0xc
+  pop {r4,r5,r6,r7,pc}
+  str r3,[sp,#0x0]
+  b 0x1011dad2
+  movs r0,#0x0
+  b 0x1011dae0
+  mov r0,r4
+  b 0x1011dae0

@@ -1,0 +1,19 @@
+; FUN_10000b54 @ 0x10000b54 size=46
+  movs r3,#0x0
+  push {r4,lr}
+  ldr r2,[0x10000b84]
+  add.w r1,r2,#0x18
+  ldr.w r4,[r2],#0x4
+  ldr.w r0,[r1],#0x4
+  adds r3,#0x1
+  cmp r3,#0x6
+  str r4,[r0,#0x0]
+  bne 0x10000b5e
+  ldr r2,[0x10000b88]
+  ldr r3,[0x10000b8c]
+  ldr r1,[0x10000b90]
+  ldr.w r0,[r2],#0x4
+  str.w r0,[r3],#0x4
+  cmp r3,r1
+  bne 0x10000b74
+  pop {r4,pc}

@@ -1,0 +1,26 @@
+; FUN_10055b98 @ 0x10055b98 size=68
+  cmp r0,#0x3f
+  push {r4,lr}
+  bgt 0x10055bcc
+  mov.w r3,#0x20
+  mrs r1,basepri
+  msr basepri_max,r3
+  isb #0xf
+  cmp r0,#0x1f
+  mov.w r3,#0x1
+  bgt 0x10055bce
+  mov.w r2,#0x40000000
+  ldr r4,[r2,#0x0]
+  lsl.w r0,r3,r0
+  orrs r0,r4
+  str r0,[r2,#0x0]
+  msr basepri,r1
+  isb #0xf
+  pop {r4,pc}
+  ldr r2,[0x10055bdc]
+  subs r0,#0x20
+  ldr r4,[r2,#0x0]
+  lsls r3,r0
+  orrs r3,r4
+  str r3,[r2,#0x0]
+  b 0x10055bc4

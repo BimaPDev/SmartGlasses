@@ -1,0 +1,22 @@
+; FUN_1012fcfc @ 0x1012fcfc size=56
+  push {r3,lr}
+  ldr r2,[0x100b164c]
+  ldr r3,[0x100b1650]
+  ldr r0,[0x100b1654]
+  subs r3,r3,r2
+  lsls r3,r3,#0x5
+  and r3,r3,#0xff00
+  orrs r0,r3
+  ldr r1,[0x100b1658]
+  bl 0x100a5b78
+  movs r0,#0x0
+  pop {r3,pc}
+  ldrb.w r3,[r0,#0xd6]
+  bic r3,r3,#0xf
+  strb.w r3,[r0,#0xd6]
+  movs r0,#0x0
+  bx lr
+  ldr r3,[r0,#0x48]
+  cbz r3,0x1012fd04
+  b.w 0x100b1630
+  b.w 0x1012fb92

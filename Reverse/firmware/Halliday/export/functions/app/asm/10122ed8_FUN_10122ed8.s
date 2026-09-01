@@ -1,0 +1,21 @@
+; FUN_10122ed8 @ 0x10122ed8 size=48
+  ldr r3,[r1,#0x0]
+  push {r4,lr}
+  str r3,[r0,#0x0]
+  ldr r3,[r1,#0x1c]
+  mov r4,r0
+  str r3,[r0,#0x8]
+  ldr r3,[r1,#0x20]
+  strb r3,[r0,#0x7]
+  bic r3,r3,#0xff
+  str r3,[r0,#0x10]
+  movs r3,#0x0
+  ldr r1,[r1,#0x24]
+  str r3,[r0,#0x14]
+  str r1,[r0,#0x4c]
+  bl 0x10122840
+  cbnz r0,0x10122f06
+  mov r0,r4
+  pop.w {r4,lr}
+  b.w 0x10122e2e
+  pop {r4,pc}

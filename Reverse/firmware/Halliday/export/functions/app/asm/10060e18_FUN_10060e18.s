@@ -1,0 +1,20 @@
+; FUN_10060e18 @ 0x10060e18 size=48
+  push {r3,r4,r5,lr}
+  ldr r3,[0x10060e48]
+  ldr r4,[0x10060e4c]
+  ldr r5,[0x10060e50]
+  subs r4,r4,r3
+  ldr r0,[0x10060e54]
+  lsls r4,r4,#0x5
+  and r4,r4,#0xff00
+  ldrb.w r3,[r5,#0x2c]
+  ldr r2,[0x10060e58]
+  ldr r1,[0x10060e5c]
+  orrs r0,r4
+  bl 0x100a5b78
+  ldr r3,[r5,#0xc]
+  ldr r0,[r3,#0x10]
+  bl 0x10060880
+  eor r0,r0,#0x1
+  uxtb r0,r0
+  pop {r3,r4,r5,pc}

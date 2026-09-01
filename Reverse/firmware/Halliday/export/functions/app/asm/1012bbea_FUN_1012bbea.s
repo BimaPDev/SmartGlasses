@@ -1,0 +1,25 @@
+; FUN_1012bbea @ 0x1012bbea size=54
+  push {r0,r1,r4,r5,r6,lr}
+  ldr r5,[r0,#0x2c]
+  cmp r5,r1
+  beq 0x1012bc1c
+  ldr r3,[r0,#0x34]
+  ldr r6,[r0,#0x38]
+  cmp r1,r3
+  it ge
+  mov.ge r1,r3
+  ldr r3,[r0,#0x30]
+  cmp r3,r6
+  it lt
+  mov.lt r3,r6
+  cmp r1,r3
+  it lt
+  mov.lt r1,r3
+  cmp r5,r1
+  beq 0x1012bc1c
+  str r2,[sp,#0x0]
+  add.w r3,r0,#0x4c
+  add.w r2,r0,#0x2c
+  bl 0x10095d34
+  add sp,#0x8
+  pop {r4,r5,r6,pc}

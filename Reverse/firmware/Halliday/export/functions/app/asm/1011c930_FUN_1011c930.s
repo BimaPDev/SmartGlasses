@@ -1,0 +1,22 @@
+; FUN_1011c930 @ 0x1011c930 size=46
+  push {r4,r5,lr}
+  subs r2,#0x1
+  sxtb r2,r2
+  lsls r3,r2,#0x2
+  cmp r2,#0x0
+  bge 0x1011c940
+  movs r0,#0x0
+  pop {r4,r5,pc}
+  ldr r5,[r0,r3]
+  ldr r4,[r1,r3]
+  cmp r5,r4
+  bhi 0x1011c954
+  sub.w r3,r3,#0x4
+  bcc 0x1011c958
+  subs r2,#0x1
+  sxtb r2,r2
+  b 0x1011c938
+  movs r0,#0x1
+  b 0x1011c93e
+  mov.w r0,#0xffffffff
+  b 0x1011c93e

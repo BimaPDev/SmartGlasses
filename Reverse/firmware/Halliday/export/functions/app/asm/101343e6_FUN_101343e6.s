@@ -1,0 +1,27 @@
+; FUN_101343e6 @ 0x101343e6 size=52
+  mov r3,r1
+  ldrh r1,[r1,#0x12]
+  ldrh r2,[r3,#0x1c]
+  cmp r1,r2
+  it cc
+  mov.cc r1,r2
+  ldrh r2,[r3,#0x26]
+  cmp r1,r2
+  it cc
+  mov.cc r1,r2
+  ldrh r2,[r3,#0x8]
+  cmp r1,r2
+  it cc
+  mov.cc r1,r2
+  ldrh r2,[r3,#0x30]
+  cmp r1,r2
+  it cc
+  mov.cc r1,r2
+  ldrh r2,[r3,#0x32]
+  cmp r2,r1
+  beq 0x10134418
+  strh r1,[r3,#0x32]
+  ldr r3,[r3,#0x34]
+  cbz r3,0x10134418
+  bx r3
+  bx lr

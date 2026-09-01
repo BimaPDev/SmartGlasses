@@ -1,0 +1,12 @@
+/* FUN_100c1418 @ 0x100c1418 */
+
+void FUN_100c1418(void)
+
+{
+  FUN_1013cb84(DAT_100c1444);
+  FUN_100a5b78(DAT_100c1450 | (DAT_100c144c - DAT_100c1448) * 0x20 & 0xff00U,DAT_100c1458,
+               DAT_100c1454);
+  FUN_1009e7a0(DAT_100c145c);
+  return;
+}
+

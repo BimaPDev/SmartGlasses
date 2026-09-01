@@ -1,0 +1,19 @@
+; FUN_1012d7a8 @ 0x1012d7a8 size=42
+  push {r4,r5,r6,lr}
+  ldr r5,[r0,#0x54]
+  mov r4,r0
+  cbz r5,0x1012d7cc
+  ldr r0,[r5,#0x0]
+  cbnz r1,0x1012d7c6
+  mov r1,r2
+  bl 0x1012d4aa
+  ldr r3,[r5,#0x0]
+  ldr r2,[r3,#0x0]
+  ldr r3,[r3,#0x4]
+  str r2,[r4,#0x4]
+  str r3,[r4,#0x8]
+  pop {r4,r5,r6,pc}
+  bl 0x1012d2f0
+  b 0x1012d7ba
+  mvn r0,#0xc
+  b 0x1012d7c4

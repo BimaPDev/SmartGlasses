@@ -1,0 +1,24 @@
+; FUN_10114b08 @ 0x10114b08 size=58
+  ldr r3,[r0,#0x8]
+  push {r4,lr}
+  mov r4,r0
+  cbnz r3,0x10114b2c
+  push {r0,r1,r2,r3}
+  movw r3,#0x253
+  ldr r2,[0x10114b44]
+  ldr r1,[0x10114b48]
+  ldr r0,[0x10114b4c]
+  bl 0x10119dc2
+  pop {r0,r1,r2,r3}
+  movw r1,#0x253
+  ldr r0,[0x10114b44]
+  bl 0x1011a1f0
+  mov r1,r4
+  ldr r0,[r4,#0x8]
+  bl 0x10114ac0
+  ldrb r3,[r4,#0xd]
+  bic r3,r3,#0x2
+  strb r3,[r4,#0xd]
+  movs r3,#0x0
+  str r3,[r4,#0x8]
+  pop {r4,pc}
