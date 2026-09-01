@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="rangeColors">
+        <item>#E7202B</item>
+        <item>#E86F21</item>
+        <item>#E8E721</item>
+        <item>#1BCA21</item>
+    </array>
+    <array name="ranges">
+        <item>50</item>
+        <item>25</item>
+        <item>40</item>
+        <item>200</item>
+    </array>
+</resources>

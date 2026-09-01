@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:tag="layout/item_setting_category_header_0"
+    android:background="@android:color/transparent"
+    android:paddingTop="20dp"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:gravity="start|center_vertical"
+        android:id="@+id/categoryText"
+        android:tag="binding_1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:paddingStart="15dp"/>
+</LinearLayout>
