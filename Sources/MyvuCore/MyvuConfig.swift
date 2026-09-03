@@ -31,6 +31,11 @@ public enum GlassesEvent {
     /// periodically and whenever their panel is opened.
     case weatherRequested
 
+    /// The glasses asked for a fresh step count (`syncSport`). Fired only while
+    /// the Steps standby widget is on screen; answer it with
+    /// `MyvuClient.sendStepCount` (or let `HealthSync` do it for you).
+    case stepsRequested
+
     /// A file the glasses finished pushing over ShareAbility (HUD screenshot,
     /// glass log). Written under `Documents/MyvuReceived/`.
     case fileReceived(url: URL, fileName: String, byteCount: Int)
@@ -41,6 +46,11 @@ public enum GlassesEvent {
     /// Terminal firmware-update result. `romVersion` is set on success when the
     /// glasses report it.
     case firmwareUpdateFinished(success: Bool, romVersion: String, message: String)
+
+    /// The glasses asked the phone to resolve a phone number — an incoming
+    /// call, almost always. Answer it with `MyvuClient.answerAirFunction`;
+    /// leaving it unanswered is what makes the lens say "Unknown".
+    case contactLookupRequested(AirFunction.Request)
 
     /// An inbound JSON object the SDK does not parse into a type. This is
     /// high-volume telemetry mixed with query replies; filter it yourself.

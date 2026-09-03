@@ -19,8 +19,15 @@ public final class InboundRouter {
     public var onAiTrigger: ((_ code: Int, _ payload: JsonReader?) -> Void)?
     /// Fired when the glasses ask for a fresh weather push.
     public var onWeatherRequested: (() -> Void)?
+    /// Fired when the glasses ask for a fresh step count (`syncSport`).
+    public var onStepsRequested: (() -> Void)?
     /// Fired for inbound `air_ota` sub-actions (firmware update).
     public var onAirOta: ((_ subAction: String, _ value: String) -> Void)?
+    /// Fired when the glasses ask the phone to resolve a phone number.
+    public var onContactLookup: ((AirFunction.Request) -> Void)?
+    /// Fired when the glasses answer `open_app` for the teleprompter with the
+    /// line table for the script they just laid out.
+    public var onTeleprompterLayout: ((TeleprompterLayout) -> Void)?
 
     public init(send: @escaping Sender) {
         self.send = send
@@ -34,8 +41,11 @@ public final class InboundRouter {
             checkLaunchAppRequest(obj)
             checkTimeSyncRequest(obj)
             checkWeatherRequest(obj)
+            checkStepsRequest(obj)
             checkAiTrigger(obj)
             checkAirOta(obj)
+            checkContactLookup(obj)
+            checkTeleprompterLayout(obj)
         }
     }
 
@@ -82,9 +92,33 @@ public final class InboundRouter {
         onWeatherRequested?()
     }
 
+    private func checkStepsRequest(_ msg: JsonReader) {
+        guard Health.isSyncRequest(msg) else { return }
+        SdkLog.log("<- the glasses asked for step count")
+        onStepsRequested?()
+    }
+
     private func checkAirOta(_ msg: JsonReader) {
         guard let parsed = AirOta.parseInbound(msg) else { return }
         onAirOta?(parsed.subAction, parsed.value)
+    }
+
+    /// The glasses cannot resolve an HFP caller number themselves — iOS never
+    /// gives them a phonebook — so they ask us. Unanswered, the lens shows
+    /// "Unknown" beside the number.
+    private func checkContactLookup(_ msg: JsonReader) {
+        guard let request = AirFunction.parseRequest(msg) else { return }
+        SdkLog.log("<- the glasses asked who \(request.phoneNumber) is"
+            + " (\(request.functionName))")
+        onContactLookup?(request)
+    }
+
+    /// The glasses lay the script out themselves and report where every rendered
+    /// line falls. Without this the phone cannot know which index to highlight.
+    private func checkTeleprompterLayout(_ msg: JsonReader) {
+        guard let layout = Teleprompter.parseOpenResult(msg) else { return }
+        SdkLog.log("<- prompter laid out \(layout.fileKey) as \(layout.lines.count) lines")
+        onTeleprompterLayout?(layout)
     }
 
     /// AI assistant triggers: code 3 is the hardware button, code 7 the wake
@@ -131,5 +165,12 @@ public final class InboundRouter {
     public static func isAirOtaObject(_ candidate: String) -> Bool {
         guard let o = JsonReader(parsing: candidate) else { return false }
         return o.optString("action") == AirOta.action
+    }
+
+    /// True for an inbound number-lookup request, which is dispatched as
+    /// `contactLookupRequested` rather than as a generic event.
+    public static func isContactLookupObject(_ candidate: String) -> Bool {
+        guard let o = JsonReader(parsing: candidate) else { return false }
+        return AirFunction.parseRequest(o) != nil
     }
 }

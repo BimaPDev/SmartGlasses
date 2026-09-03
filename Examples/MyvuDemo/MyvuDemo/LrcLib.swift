@@ -50,16 +50,20 @@ enum LrcLib {
         }
     }
 
-    /// Current (and optional next) line for a playback position.
-    static func line(atMs ms: Int, in lines: [LyricLine]) -> (current: LyricLine, next: LyricLine?)? {
+    /// Index of the line playing at a playback position.
+    static func index(atMs ms: Int, in lines: [LyricLine]) -> Int? {
         guard !lines.isEmpty else { return nil }
         var idx = 0
         for (i, line) in lines.enumerated() {
             if line.timeMs <= ms { idx = i } else { break }
         }
-        let current = lines[idx]
-        let next = idx + 1 < lines.count ? lines[idx + 1] : nil
-        return (current, next)
+        return idx
+    }
+
+    /// Current (and optional next) line for a playback position.
+    static func line(atMs ms: Int, in lines: [LyricLine]) -> (current: LyricLine, next: LyricLine?)? {
+        guard let idx = index(atMs: ms, in: lines) else { return nil }
+        return (lines[idx], idx + 1 < lines.count ? lines[idx + 1] : nil)
     }
 
     // MARK: - Network

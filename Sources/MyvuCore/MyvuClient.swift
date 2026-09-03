@@ -53,6 +53,15 @@ public final class MyvuClient {
     /// Doubles each attempt so a persistently absent device is not hammered.
     private static let reconnectBase: TimeInterval = 2
     private static let reconnectMax: TimeInterval = 60
+    /// Classic-BT keepalive pacing. A soft keepalive once the link is up; a
+    /// retry that DOUBLES while it is down, because every failed attempt makes
+    /// the glasses run a classic-BT page scan, which is the most power-hungry
+    /// thing their radio does. The phone is only discoverable while the user
+    /// sits on iOS's Bluetooth screen, so "down" is the common case and a flat
+    /// retry would page the glasses flat.
+    private static let iosBtKeepAliveInterval: TimeInterval = 6
+    private static let iosBtRetryBase: TimeInterval = 2
+    private static let iosBtRetryMax: TimeInterval = 60
     /// Pacing between init-burst messages.
     private static let initBurstInterval: TimeInterval = 0.2
     /// The glasses need a moment after AUTH_SUCCESS before the burst lands.
@@ -101,6 +110,8 @@ public final class MyvuClient {
     private let iosBtTimer = TimerSlot()
     private var iosBtName: String?
     private var iosBtLastState = LinkCommands.btStatusNoConnectedBt
+    /// Consecutive failed classic-BT attempts, for the retry backoff.
+    private var iosBtAttempt = 0
     private let initBurstTimer = TimerSlot()
     private let authDelayTimer = TimerSlot()
 
@@ -175,8 +186,22 @@ public final class MyvuClient {
             guard let self else { return }
             self.notify { o, c in o.myvuClient(c, didReceive: .weatherRequested) }
         }
+        // Steps widget: the glasses ask `syncSport` while it is on screen;
+        // MyvuHealth's HealthSync listens for this and pushes the count.
+        inbound.onStepsRequested = { [weak self] in
+            guard let self else { return }
+            self.notify { o, c in o.myvuClient(c, didReceive: .stepsRequested) }
+        }
         inbound.onAirOta = { [weak self] sub, value in
             self?.firmwareSession?.handleAirOta(subAction: sub, value: value)
+        }
+        // Caller ID: the glasses have the number from HFP but no phonebook, so
+        // they ask us who it is. Answer with `answerAirFunction`.
+        inbound.onContactLookup = { [weak self] request in
+            guard let self else { return }
+            self.notify { o, c in
+                o.myvuClient(c, didReceive: .contactLookupRequested(request))
+            }
         }
     }
 
@@ -333,8 +358,8 @@ public final class MyvuClient {
                 onExternalMessage: { [weak self] _, payload in
                     self?.routePayload(payload)
                 },
-                onDisconnected: { [weak self] reason in
-                    self?.onTransportDisconnected(reason)
+                onDisconnected: { [weak self] reason, needsRePairing in
+                    self?.onTransportDisconnected(reason, needsRePairing: needsRePairing)
                 }))
         ble = transport
         transport.connect()
@@ -437,7 +462,12 @@ public final class MyvuClient {
             // synchronously storms BLE. The 2s timer retries while down. If the
             // link *drops* from up, pull the next retry forward to 2s.
             if iosBtName != nil, wasUp, !LinkCommands.isClassicLinkUp(state) {
-                iosBtTimer.schedule(on: scheduler, after: 2) { [weak self] in
+                // A link that was up and dropped is worth chasing immediately;
+                // the backoff exists for a phone that was never findable, so it
+                // resets here rather than inheriting a long delay.
+                iosBtAttempt = 0
+                iosBtTimer.schedule(on: scheduler,
+                                    after: MyvuClient.iosBtRetryBase) { [weak self] in
                     self?.iosBtTick()
                 }
             }
@@ -464,7 +494,13 @@ public final class MyvuClient {
             + "an RFCOMM channel without MFi, so app traffic stays on BLE)")
     }
 
-    private func onTransportDisconnected(_ reason: String) {
+    private func onTransportDisconnected(_ reason: String, needsRePairing: Bool = false) {
+        // A stale bond cannot heal on a timer: iOS will offer the same rejected
+        // key every time. Retrying just burns both batteries and buries the one
+        // message that tells the user what to do, so stop and say so.
+        if needsRePairing {
+            return failHard("BLE \(reason)")
+        }
         SdkLog.warn("BLE \(reason)")
         teardown()
         setState(.failed)
@@ -583,7 +619,8 @@ public final class MyvuClient {
             for candidate in InboundRouter.findJsonObjects(body) {
                 guard candidate.count > 4,
                       !InboundRouter.isAiTriggerObject(candidate),
-                      !InboundRouter.isAirOtaObject(candidate) else { continue }
+                      !InboundRouter.isAirOtaObject(candidate),
+                      !InboundRouter.isContactLookupObject(candidate) else { continue }
                 notify { o, c in o.myvuClient(c, didReceive: .unknown(rawJson: candidate)) }
             }
 
@@ -725,13 +762,20 @@ public final class MyvuClient {
     ///
     /// The connection drops on its own (iOS tears down an idle classic link, and
     /// the glasses re-pair each time), so this keeps re-issuing IOS_CONNECT_BT:
-    /// a 2s retry while disconnected, a 6s keepalive once connected. Call once
-    /// the session is ready. Do not tick on every BT_STATE_CHANGE 8 — that ACK
-    /// arrives in ~60ms and would storm the link.
+    /// a 6s soft keepalive once connected, and a retry that backs off 2s → 60s
+    /// while disconnected. Call once the session is ready. Do not tick on every
+    /// BT_STATE_CHANGE 8 — that ACK arrives in ~60ms and would storm the link.
+    ///
+    /// COSTS GLASSES BATTERY. Each attempt makes the glasses run a classic-BT
+    /// page scan for the phone, and the phone is only discoverable while the
+    /// user is on iOS's Bluetooth screen — so leave this OFF unless something
+    /// actually needs the audio link (the native teleprompter and navigation
+    /// pages). Lens cards ride BLE and need none of it.
     public func startIosBtKeepAlive(deviceName: String) {
         scheduler.run { [weak self] in
             guard let self else { return }
             self.iosBtName = deviceName
+            self.iosBtAttempt = 0
             SdkLog.log("iOS BT keepalive ON (name=\(deviceName))")
             self.iosBtTick()
         }
@@ -741,6 +785,7 @@ public final class MyvuClient {
         scheduler.run { [weak self] in
             guard let self else { return }
             self.iosBtName = nil
+            self.iosBtAttempt = 0
             self.iosBtTimer.cancel()
             SdkLog.log("iOS BT keepalive OFF")
             self.sendLinkCommand(LinkCommands.iosDisconnectBt)
@@ -754,7 +799,22 @@ public final class MyvuClient {
         // when up so we don't tear down a good link. State 9 is "already up".
         iosConnectBt(deviceName: name, isFirstConnect: !connected,
                      timeout: 60, cycleCount: 5)
-        iosBtTimer.schedule(on: scheduler, after: connected ? 6 : 2) { [weak self] in
+
+        let delay: TimeInterval
+        if connected {
+            iosBtAttempt = 0
+            delay = MyvuClient.iosBtKeepAliveInterval
+        } else {
+            // A 60s/5-cycle attempt was already in flight; re-kicking it every
+            // 2s stacked page scans on the glasses for as long as the toggle
+            // was on. Back off instead, so an undiscoverable phone costs a
+            // handful of attempts rather than a flat battery.
+            iosBtAttempt += 1
+            delay = min(MyvuClient.iosBtRetryMax,
+                        MyvuClient.iosBtRetryBase * pow(2, Double(min(5, iosBtAttempt - 1))))
+            SdkLog.trace("classic BT still down -- next attempt in \(Int(delay))s")
+        }
+        iosBtTimer.schedule(on: scheduler, after: delay) { [weak self] in
             self?.iosBtTick()
         }
     }
@@ -917,9 +977,14 @@ public final class MyvuClient {
     /// callers should re-send it on each ready session rather than once.
     public func enablePhoneNotifications(_ enabled: Bool = true,
                                          types: [String: Bool] = [:],
-                                         calls: Bool = true) {
+                                         calls: Bool = true,
+                                         announce: Bool = false,
+                                         brightenScreen: Bool = true,
+                                         dismissMs: Int64 = 10_000) {
         sendAction(Notifications.buildSyncConfig(enabled: enabled, types: types,
-                                                 calls: calls))
+                                                 calls: calls, dismissMs: dismissMs,
+                                                 announce: announce,
+                                                 brightenScreen: brightenScreen))
     }
 
     /// Shows or updates a stable lens card (same numeric id replaces in place).
@@ -941,6 +1006,11 @@ public final class MyvuClient {
     /// Pushes a weather reading to the glasses' weather panel.
     public func sendWeather(_ reading: Weather.Reading) {
         sendAction(Weather.build(reading))
+    }
+
+    /// Pushes a step count to the glasses' Steps standby widget.
+    public func sendStepCount(_ reading: Health.Reading) {
+        sendAction(Health.build(reading))
     }
 
     // Trackpad: the phone as a remote touchpad for the glasses' launcher.
@@ -991,6 +1061,70 @@ public final class MyvuClient {
     public func setDeviceName(_ name: String) { sendAction(SystemSettings.setDeviceName(name)) }
     public func setLanguage(_ language: String, country: String) {
         sendAction(SystemSettings.setLanguage(language: language, country: country))
+    }
+    /// Ties brightness to sunrise/sunset.
+    public func setAutoBrightness(_ on: Bool) {
+        sendAction(SystemSettings.setAutoBrightness(on))
+    }
+    /// The glasses' own clicks and chimes, not the media volume.
+    public func setSoundEffects(_ on: Bool) {
+        sendAction(SystemSettings.setSoundEffects(on))
+    }
+    public func setHearingAssist(_ on: Bool) {
+        sendAction(SystemSettings.setHearingAssist(on))
+    }
+    /// HUD text size.
+    public func setFontSize(_ size: SystemSettings.FontSize) {
+        sendAction(SystemSettings.setFontSize(size))
+    }
+    /// Which glasses app a long press opens; see `SystemSettings.GlassApps`.
+    public func setAppFastOpen(_ packageName: String) {
+        sendAction(SystemSettings.setAppFastOpen(packageName))
+    }
+    /// Reorders the launcher dock; see `SystemSettings.GlassApps`.
+    public func setDockItems(_ packages: [String]) {
+        sendAction(SystemSettings.setDockItems(packages))
+    }
+    /// Which standby widgets are shown, in order. Pass the wearer's chosen
+    /// subset through `SystemSettings.StandbyWidgets.ordered` first.
+    public func setStandbyWidgets(_ widgets: [String]) {
+        sendAction(SystemSettings.setStandbyWidgets(widgets))
+    }
+    /// Wipes the glasses. There is no undo and no confirmation on the device.
+    public func factoryReset() { sendAction(SystemSettings.factoryReset()) }
+    /// Sets the gesture that pauses a notification being read aloud.
+    public func setNotificationBroadcastPauseType(_ type: Int) {
+        sendAction(Notifications.buildBroadcastPauseType(type))
+    }
+
+    /// Answers a `contactLookupRequested` event — the glasses asking who a
+    /// phone number belongs to.
+    ///
+    /// This is what puts a NAME on an incoming-call card instead of "Unknown".
+    /// The glasses take the number from the classic-Bluetooth HFP link, which
+    /// carries digits only, and iOS exposes no phonebook to them; the phone
+    /// answering this request is the whole mechanism.
+    ///
+    /// Answer promptly — the card is already on the lens by the time this
+    /// arrives. Pass `displayName: nil` when the number is not in the address
+    /// book, which tells the glasses to stop waiting and keep the number.
+    ///
+    /// The reply is routed to the request's own `targetPackage`, not the
+    /// launcher; sending it anywhere else is silently dropped.
+    public func answerAirFunction(_ request: AirFunction.Request,
+                                  displayName: String? = nil,
+                                  address: String? = nil) {
+        let json = AirFunction.reply(to: request, displayName: displayName,
+                                     address: address)
+        sendAction(json, targetPkg: request.targetPackage,
+                   sourcePkg: AppLayer.pkgSelf)
+    }
+
+    /// Tells the glasses the lookup failed, so they stop waiting on us.
+    public func failAirFunction(_ request: AirFunction.Request,
+                                message: String) {
+        sendAction(AirFunction.failure(to: request, message: message),
+                   targetPkg: request.targetPackage, sourcePkg: AppLayer.pkgSelf)
     }
     /// Pushes the current wall-clock time to the glasses.
     public func syncTime() { sendAction(ClockSync.build()) }

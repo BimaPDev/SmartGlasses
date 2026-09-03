@@ -59,7 +59,9 @@ public final class BleCentral: NSObject {
 
     struct ConnectionObserver {
         let onConnected: () -> Void
-        let onDisconnected: (String) -> Void
+        /// `needsRePairing` means retrying is pointless until the user clears
+        /// the stale bond in Settings > Bluetooth.
+        let onDisconnected: (_ reason: String, _ needsRePairing: Bool) -> Void
     }
 
     public init(scheduler: Scheduler) {
@@ -294,13 +296,15 @@ extension BleCentral: CBCentralManagerDelegate {
     public func centralManager(_ central: CBCentralManager,
                                didFailToConnect peripheral: CBPeripheral, error: Error?) {
         let observer = connectionObservers.removeValue(forKey: peripheral.identifier)
-        observer?.onDisconnected(error?.localizedDescription ?? "connection failed")
+        observer?.onDisconnected(error?.localizedDescription ?? "connection failed",
+                                 BleCentral.requiresRePairing(error))
     }
 
     public func centralManager(_ central: CBCentralManager,
                                didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         let observer = connectionObservers.removeValue(forKey: peripheral.identifier)
-        observer?.onDisconnected(BleCentral.describe(error))
+        observer?.onDisconnected(BleCentral.describe(error),
+                                 BleCentral.requiresRePairing(error))
     }
 
     /// One advertisement as a single log line: name, services, manufacturer data.
@@ -343,6 +347,18 @@ extension BleCentral: CBCentralManagerDelegate {
         return parts.joined(separator: " ")
     }
 
+    /// True when only the user can clear this — the bond records on the two
+    /// sides disagree, and no amount of retrying will reconcile them.
+    static func requiresRePairing(_ error: Error?) -> Bool {
+        guard let error = error as NSError?, error.domain == CBErrorDomain else {
+            return false
+        }
+        switch CBError.Code(rawValue: error.code) {
+        case .peerRemovedPairingInformation: return true
+        default: return false
+        }
+    }
+
     /// Turns the raw CoreBluetooth error into something a user can act on. These
     /// are the disconnects that actually happen with these glasses.
     private static func describe(_ error: Error?) -> String {
@@ -352,6 +368,14 @@ extension BleCentral: CBCentralManagerDelegate {
         switch CBError.Code(rawValue: error.code) {
         case .connectionTimeout:
             return "connection timed out (glasses out of range or powered off)"
+        case .peerRemovedPairingInformation:
+            return "the glasses have forgotten their pairing with this iPhone, but iOS "
+                + "still holds one, so the encrypted link can never come up. Open "
+                + "Settings > Bluetooth, tap the i next to the glasses, choose Forget "
+                + "This Device, then pair them again"
+        case .encryptionTimedOut:
+            return "the encrypted link timed out. If it keeps happening, forget the "
+                + "glasses in Settings > Bluetooth and pair them again"
         case .peripheralDisconnected:
             return "the glasses closed the BLE link. They most likely only accept their "
                 + "currently-bonded phone — disconnect the glasses in the MYVU app and retry"

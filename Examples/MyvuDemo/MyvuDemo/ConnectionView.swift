@@ -73,6 +73,24 @@ struct ConnectionView: View {
                 }
 
                 Section {
+                    Toggle("Keep the Steps widget updated",
+                           isOn: Binding(
+                            get: { model.stepsEnabled },
+                            set: { on in
+                                on ? model.startHealth() : model.stopHealth()
+                            }))
+                    Button("Sync steps now") {
+                        model.refreshHealth()
+                    }
+                    .disabled(!model.isReady)
+                } footer: {
+                    Text("Reads today's step count from Apple Health and pushes it to the "
+                        + "glasses' Steps standby widget, so the lens matches the phone. "
+                        + "Add the Steps widget under Standby Components to see it. Needs "
+                        + "Health access; a denied count reads as 0.")
+                }
+
+                Section {
                     Button("Forget these glasses", role: .destructive) {
                         model.forgetGlasses()
                     }

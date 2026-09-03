@@ -96,27 +96,45 @@ final class UnidenAlertGateTests: XCTestCase {
     private let t0 = Date(timeIntervalSince1970: 1_000)
 
     func testEmptyClearsImmediately() {
-        XCTAssertEqual(UnidenAlertGate.decision(hasHits: false, lastSentAt: t0, now: t0),
+        XCTAssertEqual(UnidenAlertGate.decision(hasHits: false, changed: true,
+                                                lastSentAt: t0, now: t0),
                        .clear)
     }
 
     func testFirstHitSendsImmediately() {
-        XCTAssertEqual(UnidenAlertGate.decision(hasHits: true, lastSentAt: nil, now: t0),
+        XCTAssertEqual(UnidenAlertGate.decision(hasHits: true, changed: true,
+                                                lastSentAt: nil, now: t0),
                        .sendNow)
     }
 
-    func testSecondHitWithinEightSecondsWaits() {
-        let now = t0.addingTimeInterval(3)
-        XCTAssertEqual(
-            UnidenAlertGate.decision(hasHits: true, lastSentAt: t0, now: now),
-            .wait(5))
+    func testUnchangedReadingIsHeldNoMatterHowLongItHasBeen() {
+        XCTAssertEqual(UnidenAlertGate.decision(hasHits: true, changed: false,
+                                                lastSentAt: t0, now: t0),
+                       .hold)
+        let muchLater = t0.addingTimeInterval(600)
+        XCTAssertEqual(UnidenAlertGate.decision(hasHits: true, changed: false,
+                                                lastSentAt: t0, now: muchLater),
+                       .hold)
     }
 
-    func testHitAfterEightSecondsSends() {
-        let now = t0.addingTimeInterval(8)
+    func testChangeInsideTheFloorCoalescesInsteadOfDropping() {
+        let now = t0.addingTimeInterval(0.5)
         XCTAssertEqual(
-            UnidenAlertGate.decision(hasHits: true, lastSentAt: t0, now: now),
+            UnidenAlertGate.decision(hasHits: true, changed: true,
+                                     lastSentAt: t0, now: now),
+            .wait(UnidenAlertGate.minInterval - 0.5))
+    }
+
+    func testChangeAfterTheFloorSendsImmediately() {
+        let now = t0.addingTimeInterval(UnidenAlertGate.minInterval)
+        XCTAssertEqual(
+            UnidenAlertGate.decision(hasHits: true, changed: true,
+                                     lastSentAt: t0, now: now),
             .sendNow)
+    }
+
+    func testFloorIsShortEnoughToTrackAClosingAlert() {
+        XCTAssertLessThanOrEqual(UnidenAlertGate.minInterval, 2)
     }
 }
 
@@ -163,6 +181,86 @@ final class UnidenEtcParserTests: XCTestCase {
             from: "12.6&REDLIGHT,250,0&N,32,10,C&0&0&0&0")
         XCTAssertEqual(UnidenAlertCard.title(for: hits), "Red light camera")
         XCTAssertEqual(UnidenAlertCard.body(for: hits), "250 ft")
+    }
+
+    func testCameraIdentityFollowsTheDistance() {
+        let far = UnidenEtcParser.poiAlerts(from: "12.6&REDLIGHT,900,0&0")
+        let near = UnidenEtcParser.poiAlerts(from: "12.6&REDLIGHT,250,0&0")
+        XCTAssertNotEqual(UnidenAlertCard.identity(for: far),
+                          UnidenAlertCard.identity(for: near))
+        XCTAssertEqual(UnidenAlertCard.identity(for: near),
+                       UnidenAlertCard.identity(
+                           for: UnidenEtcParser.poiAlerts(from: "12.6&REDLIGHT,250,0&0")))
+    }
+
+    func testSpeedCameraIdentityFollowsTheDistance() {
+        let far = UnidenEtcParser.poiAlerts(from: "12.6&SPEEDCAM,800,45&0")
+        let near = UnidenEtcParser.poiAlerts(from: "12.6&SPEEDCAM,400,45&0")
+        XCTAssertNotEqual(UnidenAlertCard.identity(for: far),
+                          UnidenAlertCard.identity(for: near))
+    }
+
+    func testRadarIdentityFollowsStrength() {
+        let one = UnidenAlertParser.parse("1,0,KA,1,34.700,,F,1,0")
+        let two = UnidenAlertParser.parse("1,0,KA,2,34.700,,F,1,0")
+        XCTAssertNotEqual(UnidenAlertCard.identity(for: one),
+                          UnidenAlertCard.identity(for: two))
+    }
+
+    func testIdentityIgnoresWhatTheCardNeverShows() {
+        // Field 7 is mute state, field 8 rcv — neither reaches the banner.
+        let notMuted = UnidenAlertParser.parse("1,0,KA,4,34.700,,F,1,0")
+        let muted = UnidenAlertParser.parse("1,0,KA,4,34.700,,F,2,1")
+        XCTAssertEqual(UnidenAlertCard.identity(for: notMuted),
+                       UnidenAlertCard.identity(for: muted))
+    }
+
+    func testAutoMutedHitAlertsOnceAcrossStrengthChanges() {
+        let weak = UnidenAlertParser.parse("1,0,K,1,24.150,,F,4,0")
+        let strong = UnidenAlertParser.parse("1,0,K,6,24.152,,F,4,0")
+        XCTAssertTrue(weak[0].isAutoMuted)
+        // The card still reads differently — only the re-alert decision holds.
+        XCTAssertNotEqual(UnidenAlertCard.identity(for: weak),
+                          UnidenAlertCard.identity(for: strong))
+        XCTAssertEqual(UnidenAlertCard.notifyIdentity(for: weak),
+                       UnidenAlertCard.notifyIdentity(for: strong))
+    }
+
+    func testLiveHitJoiningAnAutoMutedOneStillAlerts() {
+        let muted = UnidenAlertParser.parse("1,0,K,3,24.150,,F,4,0")
+        let joined = UnidenAlertParser.parse(
+            "1,0,K,3,24.150,,F,4,0&1,1,KA,5,34.700,,F,1,0")
+        XCTAssertNotEqual(UnidenAlertCard.notifyIdentity(for: muted),
+                          UnidenAlertCard.notifyIdentity(for: joined))
+        // Mixed set: back to the full reading, so strength keeps it moving.
+        let louder = UnidenAlertParser.parse(
+            "1,0,K,3,24.150,,F,4,0&1,1,KA,7,34.700,,F,1,0")
+        XCTAssertNotEqual(UnidenAlertCard.notifyIdentity(for: joined),
+                          UnidenAlertCard.notifyIdentity(for: louder))
+    }
+
+    func testAutoMutedBandLeavingOrJoiningAlertsAgain() {
+        let front = UnidenAlertParser.parse("1,0,K,3,24.150,,F,4,0")
+        let frontAndRear = UnidenAlertParser.parse(
+            "1,0,K,3,24.150,,F,4,0&1,1,X,2,10.525,,R,4,0")
+        XCTAssertNotEqual(UnidenAlertCard.notifyIdentity(for: front),
+                          UnidenAlertCard.notifyIdentity(for: frontAndRear))
+    }
+
+    func testHandStoredMuteMemoryStillAlertsNormally() {
+        // mute_type 3 is Mute Memory, not Auto Mute Memory.
+        let one = UnidenAlertParser.parse("1,0,K,1,24.150,,F,3,0")
+        let two = UnidenAlertParser.parse("1,0,K,5,24.150,,F,3,0")
+        XCTAssertFalse(one[0].isAutoMuted)
+        XCTAssertNotEqual(UnidenAlertCard.notifyIdentity(for: one),
+                          UnidenAlertCard.notifyIdentity(for: two))
+    }
+
+    func testIdentityFollowsASecondHitJoining() {
+        let alone = UnidenEtcParser.poiAlerts(from: "12.6&REDLIGHT,250,0&0")
+        let joined = alone + UnidenAlertParser.parse("1,0,KA,4,34.700,,F,1,0")
+        XCTAssertNotEqual(UnidenAlertCard.identity(for: alone),
+                          UnidenAlertCard.identity(for: joined))
     }
 
     func testNoneAndEmptyPoiAreIgnored() {

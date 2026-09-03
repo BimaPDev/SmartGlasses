@@ -47,6 +47,8 @@ public enum AiProtocol {
     public static let codeRecordDataTrans = 109
     /// phone → glasses: answer text.
     public static let codeChatGptResponse = 122
+    /// phone → glasses: one assistant preference. See `assistantSetting`.
+    public static let codeAssistantSettings = 111
 
     // MARK: - VrState values
 
@@ -66,26 +68,106 @@ public enum AiProtocol {
     /// The glasses' own listening timeout, armed by code:4.
     public static let listeningTimeout: TimeInterval = 8
 
+    // MARK: - Preferences
+
+    /// The wearer-facing assistant preferences — the "Voice Assistant" screen.
+    ///
+    /// The same six switches travel two ways, and BOTH are needed: code 2 sends
+    /// them as one capability block at the start of a conversation, and code 111
+    /// sends one at a time when the wearer flips it. The official app does the
+    /// same, and the glasses read them from different places.
+    public struct AssistantPreferences: Equatable, Sendable {
+        /// Wake on "Hey, Aicy".
+        public var wakeWord: Bool
+        /// Keep listening for the wake word with the lens asleep. Costs battery,
+        /// and the official app greys it out unless `wakeWord` is on.
+        public var wakeWordScreenOff: Bool
+        /// Multi-turn: stay open for a follow-up instead of ending the turn.
+        public var continuousDialogue: Bool
+        /// Show what the wearer said as a caption.
+        public var showWhatYouSaid: Bool
+        /// Read the answer aloud ("Broadcast reply").
+        public var speakReplies: Bool
+        /// Show the answer as text on the lens.
+        public var showReplyText: Bool
+        /// Which TTS voice; 0 is the default and the only value ever captured.
+        public var ttsTimbre: Int
+
+        /// What the glasses ship with, and what this SDK used to hardcode.
+        public static let `default` = AssistantPreferences(
+            wakeWord: true, wakeWordScreenOff: true, continuousDialogue: true,
+            showWhatYouSaid: true, speakReplies: true, showReplyText: true,
+            ttsTimbre: 0)
+
+        public init(wakeWord: Bool = true, wakeWordScreenOff: Bool = true,
+                    continuousDialogue: Bool = true, showWhatYouSaid: Bool = true,
+                    speakReplies: Bool = true, showReplyText: Bool = true,
+                    ttsTimbre: Int = 0) {
+            self.wakeWord = wakeWord
+            self.wakeWordScreenOff = wakeWordScreenOff
+            self.continuousDialogue = continuousDialogue
+            self.showWhatYouSaid = showWhatYouSaid
+            self.speakReplies = speakReplies
+            self.showReplyText = showReplyText
+            self.ttsTimbre = ttsTimbre
+        }
+    }
+
+    /// `AssistantSettingsType` — the `type` string of a code-111 message.
+    public enum SettingType {
+        public static let wakeWord = "low_power_wakeup"
+        public static let wakeWordScreenOff = "low_power_wakeup_screen_off"
+        public static let continuousDialogue = "continuous_dialogue"
+        public static let showWhatYouSaid = "asr_result_screen"
+        public static let speakReplies = "chat_gpt_tts_play"
+        public static let showReplyText = "chat_gpt_card_display"
+        public static let ttsTimbre = "tts_timbre"
+    }
+
+    /// 111 — one preference. `isSwitchChecked` is the Kotlin field name, kept
+    /// verbatim: Gson never renamed it, so neither can we.
+    public static func assistantSetting(_ type: String, on: Bool,
+                                        value: Int = 0) -> String {
+        var p = JsonObject()
+        p.put("type", type)
+        p.put("isSwitchChecked", on)
+        p.put("value", value)
+        return message(codeAssistantSettings, p)
+    }
+
+    /// The whole "Voice Assistant" screen as individual 111 messages, in the
+    /// order the screen lists them.
+    public static func assistantSettings(_ prefs: AssistantPreferences) -> [String] {
+        [assistantSetting(SettingType.wakeWord, on: prefs.wakeWord),
+         assistantSetting(SettingType.wakeWordScreenOff, on: prefs.wakeWordScreenOff),
+         assistantSetting(SettingType.continuousDialogue, on: prefs.continuousDialogue),
+         assistantSetting(SettingType.showWhatYouSaid, on: prefs.showWhatYouSaid),
+         assistantSetting(SettingType.speakReplies, on: prefs.speakReplies),
+         assistantSetting(SettingType.showReplyText, on: prefs.showReplyText),
+         assistantSetting(SettingType.ttsTimbre, on: true, value: prefs.ttsTimbre)]
+    }
+
     /// Tells the glasses which assistant capabilities are on — crucially
     /// `isContinuousDialogueEnable` (multi-turn) and `isChatGptCardDisplayEnable`,
     /// without which the glasses' ChatGPT card scene is never configured for
     /// follow-ups and crashes when a second answer is appended.
     ///
-    /// Field names and values are taken verbatim from a capture of the official
-    /// app, which sends this once and the glasses retain it. We send it at the
-    /// start of each conversation, which is harmless to repeat.
-    public static func assistantConfig() -> String {
+    /// Field names are taken verbatim from a capture of the official app, which
+    /// sends this once and the glasses retain it. We send it at the start of
+    /// each conversation, which is harmless to repeat.
+    public static func assistantConfig(_ prefs: AssistantPreferences = .default)
+        -> String {
         var p = JsonObject()
         p.put("hasWakeupVoicePrint", false)
-        p.put("isAsrResultScreenEnable", true)
-        p.put("isChatGptCardDisplayEnable", true)
-        p.put("isChatGptTTSPlayEnable", true)
-        p.put("isContinuousDialogueEnable", true)
-        p.put("isLowPowerWakeupEnable", true)
-        p.put("isLowPowerWakeupScreenOffEnable", true)
+        p.put("isAsrResultScreenEnable", prefs.showWhatYouSaid)
+        p.put("isChatGptCardDisplayEnable", prefs.showReplyText)
+        p.put("isChatGptTTSPlayEnable", prefs.speakReplies)
+        p.put("isContinuousDialogueEnable", prefs.continuousDialogue)
+        p.put("isLowPowerWakeupEnable", prefs.wakeWord)
+        p.put("isLowPowerWakeupScreenOffEnable", prefs.wakeWordScreenOff)
         p.put("isNetworkAvailable", true)
         p.put("isWakeupVoiceRecording", false)
-        p.put("ttsTimbreValue", 0)
+        p.put("ttsTimbreValue", prefs.ttsTimbre)
         return message(codeAssistantConfig, p)
     }
 

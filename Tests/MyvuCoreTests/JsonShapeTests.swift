@@ -101,6 +101,31 @@ final class JsonShapeTests: XCTestCase {
         XCTAssertEqual(TestJson.bool(types, Notifications.typeIm), true)
     }
 
+    func testSmartReminderCarriesTheScreenSwitchesUnderTheirGsonNames() {
+        let action = TestJson.object(
+            Notifications.buildSyncConfig(enabled: true, dismissMs: 15_000,
+                                          announce: true, brightenScreen: false))
+        let cfg = TestJson.nested(TestJson.nested(action, "data"), "data")
+        // "Announce Notifications" and "Automatically light up screen".
+        XCTAssertEqual(TestJson.bool(cfg, "notificationBroadcast"), true)
+        XCTAssertEqual(TestJson.bool(cfg, "notificationBrightenScreen"), false)
+        XCTAssertEqual(TestJson.int(cfg, "notificationDisplayTime"), 15_000)
+        XCTAssertEqual(TestJson.int(cfg, "notificationBroadcastPauseType"),
+                       Notifications.defaultBroadcastPauseType)
+    }
+
+    func testBroadcastPauseTypeIsItsOwnSubActionNotTheWholeConfig() {
+        let action = TestJson.object(Notifications.buildBroadcastPauseType(1))
+        XCTAssertEqual(TestJson.string(action, "action"), "notification")
+        let data = TestJson.nested(action, "data")
+        XCTAssertEqual(TestJson.string(data, "notificationAction"),
+                       "SYNC_CONFIG_BROADCAST_PAUSE_TYPE")
+        let payload = TestJson.nested(data, "data")
+        XCTAssertEqual(TestJson.int(payload, "notificationBroadcastPauseType"), 1)
+        // Sending the whole config here would clobber the other switches.
+        XCTAssertEqual(payload.count, 1)
+    }
+
     func testStMessageEnvelopeCarriesBothPackagesAndAnId() {
         // {2:src, 3:dst, 4:json, 6:msgId} — verify the packages appear and the
         // body is embedded verbatim.

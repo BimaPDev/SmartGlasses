@@ -88,4 +88,69 @@ final class TeleprompterTests: XCTestCase {
     func testOpenToContentDelayIsPreserved() {
         XCTAssertEqual(Teleprompter.openToContentDelay, 0.4, accuracy: 0.001)
     }
+
+    // MARK: - Layout reply
+
+    /// The lens wraps the script itself and reports the result; `highlight_index`
+    /// counts THOSE lines. Reading the table wrong makes the prompter scroll
+    /// ahead of the script.
+    func testParsesOpenResultObjectsIntoALineTable() {
+        let value = #"{"fileKey":"1/Demo","msgId":"m1","paragraphIndexes":"#
+            + #"[{"start":0,"end":10},{"start":10,"end":24}]}"#
+        let msg = Self.ticiReply(action: "open_result", value: value)
+
+        let layout = Teleprompter.parseOpenResult(msg)
+        XCTAssertEqual(layout?.fileKey, "1/Demo")
+        XCTAssertEqual(layout?.msgId, "m1")
+        XCTAssertEqual(layout?.lines,
+                       [TeleprompterLayout.Line(start: 0, end: 10),
+                        TeleprompterLayout.Line(start: 10, end: 24)])
+    }
+
+    func testParsesV2StartEndPairs() {
+        let value = #"{"fileKey":"1/Demo","paragraphIndexes":[[0,10],[10,24]]}"#
+        let layout = Teleprompter.parseOpenResult(Self.ticiReply(action: "open_result_v2",
+                                                                 value: value))
+        XCTAssertEqual(layout?.lines,
+                       [TeleprompterLayout.Line(start: 0, end: 10),
+                        TeleprompterLayout.Line(start: 10, end: 24)])
+    }
+
+    /// v3 sends boundaries, not ranges: each entry closes the previous line.
+    func testParsesV3BoundaryListAsRanges() {
+        let value = #"{"fileKey":"1/Demo","paragraphIndexes":[0,10,24]}"#
+        let layout = Teleprompter.parseOpenResult(Self.ticiReply(action: "open_result_v3",
+                                                                 value: value))
+        XCTAssertEqual(layout?.lines,
+                       [TeleprompterLayout.Line(start: 0, end: 10),
+                        TeleprompterLayout.Line(start: 10, end: 24)])
+    }
+
+    func testIgnoresMessagesThatAreNotOpenReplies() {
+        XCTAssertNil(Teleprompter.parseOpenResult(
+            Self.ticiReply(action: "highlight_index", value: #"{"index":3}"#)))
+        XCTAssertNil(Teleprompter.parseOpenResult(
+            JsonReader(raw: ["action": "app"])))
+    }
+
+    /// The point of the table: a paragraph that wrapped costs two indexes, so
+    /// paragraph 2 is line 3 — highlighting index 2 would be a line ahead.
+    func testOffsetMapsToTheWrappedLineNotTheParagraph() {
+        let layout = TeleprompterLayout(fileKey: "1/Demo", msgId: "m1", lines: [
+            .init(start: 0, end: 8),
+            .init(start: 8, end: 15),
+            .init(start: 15, end: 22),
+        ])
+        XCTAssertEqual(layout.index(forOffset: 0), 0)
+        XCTAssertEqual(layout.index(forOffset: 9), 1)
+        XCTAssertEqual(layout.index(forOffset: 15), 2)
+        // Past the end (a trailing newline belongs to no line): hold the last.
+        XCTAssertEqual(layout.index(forOffset: 99), 2)
+    }
+
+    private static func ticiReply(action: String, value: String) -> JsonReader {
+        JsonReader(raw: ["action": "tici",
+                         "data": ["action": action, "value": value]])
+    }
+
 }

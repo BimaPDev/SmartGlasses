@@ -71,6 +71,70 @@ public enum SystemSettings {
         }
     }
 
+    /// Ties HUD brightness to sunrise/sunset. Flat boolean — recovered from
+    /// `ControlUtils.R`. Note the glasses keep obeying `setBrightness` while
+    /// this is on; the official app simply hides its slider.
+    public static func setAutoBrightness(_ on: Bool) -> String {
+        system("set_auto_brightness_mode") { data in
+            data.put("value", on)
+        }
+    }
+
+    /// The glasses' own UI clicks and chimes ("System Sound Effects"). Flat
+    /// boolean, from `ControlUtils.c0`. Unrelated to `setVolume`, which is the
+    /// media stream.
+    public static func setSoundEffects(_ on: Bool) -> String {
+        system("set_glass_sound_effect_mode") { data in
+            data.put("value", on)
+        }
+    }
+
+    /// Hearing-assist mode. Flat boolean, from `SuperMessageManger.i0`.
+    public static func setHearingAssist(_ on: Bool) -> String {
+        system("set_hear_impairment_mode") { data in
+            data.put("value", on)
+        }
+    }
+
+    /// HUD text size. The wire value is 1-based, because the official app sends
+    /// `GlassFontSize.ordinal() + 1` — sending 0 selects nothing.
+    public enum FontSize: Int, CaseIterable, Sendable {
+        case small = 1
+        case medium = 2
+        case large = 3
+    }
+
+    public static func setFontSize(_ size: FontSize) -> String {
+        system("set_font_mode") { data in
+            data.put("value", size.rawValue)
+        }
+    }
+
+    /// The app a long press on the glasses' trackpad opens. Flat STRING holding
+    /// a package name, e.g. `GlassApps.recorder`.
+    public static func setAppFastOpen(_ packageName: String) -> String {
+        system("set_app_fast_open") { data in
+            data.put("value", packageName)
+        }
+    }
+
+    /// Reorders the launcher dock ("App List").
+    ///
+    /// The value is a single flat STRING of package names joined by `|` — the
+    /// official app builds it in `GlassAppListFragment.N0` and hands the
+    /// `added` half to `DynamicOperateUtil.C`. An array here is ignored.
+    public static func setDockItems(_ packages: [String]) -> String {
+        system("change_dock_items") { data in
+            data.put("value", packages.joined(separator: "|"))
+        }
+    }
+
+    /// Wipes the glasses back to factory state. No value; the reset starts as
+    /// soon as this arrives, so confirm with the wearer first.
+    public static func factoryReset() -> String {
+        system("do_recovery")
+    }
+
     // MARK: - Nested-value form
 
     public static func setLanguage(language: String, country: String) -> String {
@@ -85,6 +149,10 @@ public enum SystemSettings {
     public static func setDeviceName(_ name: String) -> String {
         nested("set_device_name", "device_name", .string(name))
     }
+
+    /// The auto-lock timeouts the official app offers, in seconds. The shorter
+    /// two are firmware-gated there; the glasses accept any value.
+    public static let screenOffChoicesSeconds = [15, 30, 60, 120, 300, 600, 3600]
 
     /// Display auto-off timeout, in seconds.
     public static func setScreenOffTime(_ seconds: Int) -> String {
@@ -119,6 +187,53 @@ public enum SystemSettings {
     /// Field-of-view position type. The enum's meaning was never established.
     public static func setFovPosType(_ value: Int) -> String {
         nested("set_fov_pos_type", "fov_pos", .int(Int64(value)))
+    }
+
+    /// Which idle-standby widgets are shown, in order.
+    ///
+    /// Nested under `widgets`, an ARRAY of the `StandbyWidgets` names. The
+    /// official app always brackets the list with `time` first and `aiBall`
+    /// last — `StandbyWidgets.ordered` does that for you.
+    public static func setStandbyWidgets(_ widgets: [String]) -> String {
+        nested("set_standby_widget_lists", "widgets",
+               .array(widgets.map { .string($0) }))
+    }
+
+    // MARK: - Names the firmware knows
+
+    /// Idle-standby widget names, from `StandbyComponentBottomSheet`.
+    public enum StandbyWidgets {
+        public static let time = "time"
+        public static let weatherSmall = "weather_1x1"
+        public static let weatherLarge = "weather_1x2"
+        public static let steps = "steps"
+        public static let weekday = "weekday"
+        public static let aiBall = "aiBall"
+
+        /// The widgets the wearer can add or remove, in the app's own order.
+        /// `time` and `aiBall` are not here: they are fixed ends of the row.
+        public static let optional = [weatherSmall, weatherLarge, steps, weekday]
+
+        /// Wraps a chosen subset in the fixed `time` … `aiBall` bookends the
+        /// launcher expects.
+        public static func ordered(_ chosen: [String]) -> [String] {
+            [time] + chosen.filter { $0 != time && $0 != aiBall } + [aiBall]
+        }
+    }
+
+    /// Package names of the glasses' own apps, for `setDockItems` and
+    /// `setAppFastOpen`.
+    public enum GlassApps {
+        public static let teleprompter = "com.upuphone.ar.tici"
+        public static let navigation = "com.upuphone.ar.navi.glass"
+        public static let translation = "com.upuphone.ar.translation.glasses"
+        public static let transcribe = "com.upuphone.ar.transcribe.glasses"
+        public static let recorder = "com.upuphone.ar.recorder"
+        public static let musicPlayer = "com.upuphone.star.launcher.music_player"
+        public static let settings = "com.upuphone.star.launcher.setting"
+        public static let universe = "com.upuphone.star.launcher.universe"
+        public static let userGuide = "com.upuphone.star.launcher.user_guide"
+        public static let ringManager = "com.upuphone.xr.ringmanager"
     }
 
     // MARK: - Queries

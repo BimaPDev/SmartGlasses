@@ -13,13 +13,12 @@ struct ControlsView: View {
     @State private var notificationBody = "Stand up and stretch."
     @State private var brightness = 5.0
     @State private var volume = 8.0
-    @State private var zenMode = false
     @State private var demoMode = false
     @State private var queryReply = ""
     @State private var probing = false
     @State private var rawAction = ""
     @AppStorage("iosBtName") private var phoneBtName = "Testing1"
-    @AppStorage("iosBtAutoConnect") private var iosBtKeepAlive = true
+    @AppStorage("iosBtAutoConnect") private var iosBtKeepAlive = false
     @State private var iosBtRetrying = false
     @State private var iosBtLeft = 0
     @State private var scriptIndexLabel = ""
@@ -53,6 +52,11 @@ struct ControlsView: View {
                             get: { model.spotifyLyrics.enabled },
                             set: { model.setSpotifyLyricsEnabled($0) }))
                     .disabled(!model.isReady || !model.spotifyAuth.isAuthorized)
+                    Toggle("Use the prompter",
+                           isOn: Binding(
+                            get: { model.spotifyLyrics.useTeleprompter },
+                            set: { model.spotifyLyrics.useTeleprompter = $0 }))
+                    .disabled(!model.isReady)
                     if model.spotifyLyrics.enabled {
                         VStack(alignment: .leading) {
                             Text("Sync offset \(model.spotifyLyrics.syncOffsetMs > 0 ? "+" : "")"
@@ -91,7 +95,11 @@ struct ControlsView: View {
                     Text("Create an app at developer.spotify.com/dashboard, set redirect "
                         + "URI to myvudemo://spotify-callback, paste the Client ID, then "
                         + "connect. Plays from your Spotify account; lyrics from LRCLIB "
-                        + "(not every track has them). Needs glasses connected.")
+                        + "(not every track has them). Needs glasses connected.\n\n"
+                        + "\"Use the prompter\" runs the whole song in the prompter app and "
+                        + "scrolls it line by line — that needs the classic-BT audio link "
+                        + "(Controls > Auto-connect + keep alive). Off, the current line "
+                        + "shows on a notification card instead.")
                 }
 
                 Section { StatusBadge(state: model.state) }
@@ -134,28 +142,6 @@ struct ControlsView: View {
                     Text("Opens the native prompter app on the glasses. Needs the classic-BT "
                         + "audio link up (Controls > Auto-connect + keep alive) to clear the "
                         + "launcher gate.")
-                }
-                .requiresSession(model.isReady)
-
-                Section {
-                    Toggle("Show them on the lens",
-                           isOn: Binding(get: { model.phoneNotifications },
-                                         set: { model.phoneNotifications = $0 }))
-                    if model.phoneNotifications {
-                        Toggle("Calls",
-                               isOn: Binding(get: { model.phoneNotificationCalls },
-                                             set: { model.phoneNotificationCalls = $0 }))
-                        ForEach(Self.notificationKinds, id: \.type) { kind in
-                            Toggle(kind.label,
-                                   isOn: Binding(
-                                    get: { model.isNotificationType(kind.type) },
-                                    set: { model.setNotificationType(kind.type, on: $0) }))
-                        }
-                    }
-                } header: {
-                    Text("iPhone notifications")
-                } footer: {
-                    Text(mirroringFooter)
                 }
                 .requiresSession(model.isReady)
 
@@ -214,6 +200,30 @@ struct ControlsView: View {
                             ? "Open Settings to allow contacts"
                             : "Allow contacts") { model.contacts.request() }
                     }
+                    if model.contacts.isAuthorized {
+                        if model.callerLookups.isEmpty {
+                            Text("Caller ID is armed — \(model.contacts.indexedNumbers) "
+                                + "numbers indexed so the name still resolves with "
+                                + "the phone locked. Answers appear here as calls "
+                                + "come in.")
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
+                        } else {
+                            ForEach(model.callerLookups, id: \.self) { line in
+                                Text(line)
+                                    .font(.system(.footnote, design: .monospaced))
+                            }
+                        }
+                        Button("Send my contacts to the glasses") {
+                            model.sendContactsToGlasses()
+                        }
+                        .disabled(!model.isReady)
+                        if !model.contactPushStatus.isEmpty {
+                            Text(model.contactPushStatus)
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
                 } header: {
                     Text("Contacts")
                 } footer: {
@@ -248,8 +258,6 @@ struct ControlsView: View {
                             if !editing { model.glasses.setVolume(Int(volume)) }
                         }
                     }
-                    Toggle("Zen mode", isOn: $zenMode)
-                        .onChange(of: zenMode) { model.glasses.setZenMode(zenMode) }
                     Button("Sync the clock") { model.glasses.syncTime() }
                 }
                 .requiresSession(model.isReady)
@@ -297,22 +305,6 @@ struct ControlsView: View {
                         + "(set_demo_mode) and is not implemented on Star Air. "
                         + "Log and screenshot files save under Files → On My iPhone "
                         + "→ MyvuDemo → MyvuReceived. Does not enable ADB.")
-                }
-                .requiresSession(model.isReady)
-
-                Section {
-                    HStack {
-                        Button("English") { model.glasses.setLanguage("en", country: "US") }
-                        Spacer()
-                        Button("中文") { model.glasses.setLanguage("zh", country: "CN") }
-                        Spacer()
-                        Button("Check") { runQuery("get_language") }
-                    }
-                    .buttonStyle(.bordered)
-                } header: {
-                    Text("Language")
-                } footer: {
-                    Text("Switches the HUD locale. en/US and zh/CN are the attested pairs.")
                 }
                 .requiresSession(model.isReady)
 
@@ -377,7 +369,11 @@ struct ControlsView: View {
                     Text("The protocol defines IOS_CONNECT_BT (32) — a command the SDK never "
                         + "implemented. It may tell the glasses to drive the HFP/A2DP audio "
                         + "link to the iPhone (the link that clears \"connect to mobile "
-                        + "first\"). Tap, then watch the log and iOS Settings > Bluetooth.")
+                        + "first\"). Tap, then watch the log and iOS Settings > Bluetooth."
+                        + "\n\nKeep alive DRAINS THE GLASSES: every attempt makes them page "
+                        + "scan for the iPhone, and the iPhone is only discoverable while "
+                        + "iOS Settings > Bluetooth is open. Turn it on only for the native "
+                        + "teleprompter and navigation pages — lens cards do not need it.")
                 }
                 .requiresSession(model.isReady)
 
@@ -411,31 +407,16 @@ struct ControlsView: View {
         }
     }
 
-    /// The categories the glasses' filter understands, in the official app's
-    /// order, under names that mean something to a wearer.
-    private static let notificationKinds: [(type: String, label: String)] = [
-        (Notifications.typeIm, "Texts and chats"),
-        (Notifications.typeReminder, "Reminders"),
-        (Notifications.typeTaxi, "Rides"),
-        (Notifications.typeFlight, "Flights"),
-        (Notifications.typeTakeout, "Food orders"),
-        (Notifications.typeExpress, "Deliveries"),
-        (Notifications.typeWeather, "Weather"),
-    ]
-
-    private var mirroringFooter: String {
-        "Sends your phone's notifications to the lens over ANCS. The glasses "
-            + "read them from iOS directly, so they must also be paired in "
-            + "Settings > Bluetooth; this app cannot read Messages itself. "
-            + "Re-sent on every connection. If nothing arrives, check that the "
-            + "glasses are Connected in Settings > Bluetooth, that no Focus is "
-            + "on, and that Zen mode below is off."
-    }
-
     private var contactsFooter: String {
-        "Puts one person on the lens as a card. The glasses have no phonebook "
-            + "to sync into, so nothing is uploaded — a name is read only when "
-            + "you tap it."
+        "Tapping a name puts that one person on the lens as a card, and nothing "
+            + "leaves the phone until you do.\n\nSending your contacts is "
+            + "different: it uploads up to 100 name/number pairs to the glasses' "
+            + "own Phone page, which is what the voice assistant picks from when "
+            + "you ask it to call someone. This is the first time that path has "
+            + "been driven from an iPhone, so it may need the assistant open on "
+            + "the lens first. It does NOT change the name shown on an incoming "
+            + "call — that comes from the classic-Bluetooth link, which carries "
+            + "the number only."
     }
 
     /// Fires IOS_CONNECT_BT every 3s for 30s, so it keeps trying while the user

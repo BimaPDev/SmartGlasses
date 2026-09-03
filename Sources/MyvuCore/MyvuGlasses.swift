@@ -146,8 +146,19 @@ public final class MyvuGlasses {
 
     public func enablePhoneNotifications(_ enabled: Bool = true,
                                          types: [String: Bool] = [:],
-                                         calls: Bool = true) {
-        client.enablePhoneNotifications(enabled, types: types, calls: calls)
+                                         calls: Bool = true,
+                                         announce: Bool = false,
+                                         brightenScreen: Bool = true,
+                                         dismissMs: Int64 = 10_000) {
+        client.enablePhoneNotifications(enabled, types: types, calls: calls,
+                                        announce: announce,
+                                        brightenScreen: brightenScreen,
+                                        dismissMs: dismissMs)
+    }
+
+    /// Sets the gesture that pauses a notification being read aloud.
+    public func setNotificationBroadcastPauseType(_ type: Int) {
+        client.setNotificationBroadcastPauseType(type)
     }
 
     public func showLensCard(title: String, body: String,
@@ -160,6 +171,8 @@ public final class MyvuGlasses {
     }
 
     public func sendWeather(_ reading: Weather.Reading) { client.sendWeather(reading) }
+
+    public func sendStepCount(_ reading: Health.Reading) { client.sendStepCount(reading) }
 
     public func setBrightness(_ value: Int) { client.setBrightness(value) }
     public func setVolume(_ value: Int) { client.setVolume(value) }
@@ -183,6 +196,15 @@ public final class MyvuGlasses {
     public func setLanguage(_ language: String, country: String) {
         client.setLanguage(language, country: country)
     }
+    public func setAutoBrightness(_ on: Bool) { client.setAutoBrightness(on) }
+    public func setSoundEffects(_ on: Bool) { client.setSoundEffects(on) }
+    public func setHearingAssist(_ on: Bool) { client.setHearingAssist(on) }
+    public func setFontSize(_ size: SystemSettings.FontSize) { client.setFontSize(size) }
+    public func setAppFastOpen(_ packageName: String) { client.setAppFastOpen(packageName) }
+    public func setDockItems(_ packages: [String]) { client.setDockItems(packages) }
+    public func setStandbyWidgets(_ widgets: [String]) { client.setStandbyWidgets(widgets) }
+    /// Wipes the glasses. No undo, and the device asks nothing.
+    public func factoryReset() { client.factoryReset() }
     public func syncTime() { client.syncTime() }
     public func sendRaw(_ actionJson: String) { client.sendRaw(actionJson) }
 

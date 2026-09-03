@@ -18,6 +18,9 @@ public enum LensCards {
     /// Uniden radar/laser hits. Distinct from cruise so a KA alert does not
     /// replace the street+speed card.
     public static let unidenAlertNumericId = 7_010_005
+    /// The current line of a song, when lyrics run on a card rather than in the
+    /// prompter.
+    public static let lyricsNumericId = 7_010_006
 
     public static func buildShow(title: String, body: String, numericId: Int,
                                  nowMs: Int64 = Session.nowMillis()) -> String {

@@ -1,8 +1,17 @@
 import Foundation
 import MyvuCore
 
-/// Polls Spotify for the current track, loads LRCLIB lyrics, and pushes the
-/// timed line onto the glasses as a lens notification card.
+/// Polls Spotify for the current track, loads LRCLIB lyrics, and follows the
+/// timed line on the glasses.
+///
+/// Two surfaces, picked by `useTeleprompter`: the native prompter app — the
+/// whole song laid out, one line per paragraph, scrolled by `highlight_index`
+/// as it plays — or a lens notification card carrying just the current line.
+///
+/// `highlight_index` counts lines as the LENS wrapped them, not the paragraphs
+/// we wrote, so the glasses' `open_result` reply (a `TeleprompterLayout`) is
+/// what turns "lyric line 12" into the index to send. Without that mapping a
+/// wrapped line costs an extra step and the prompter runs away from the song.
 ///
 /// Sync model (Spotify Web API is coarse / laggy):
 /// - Poll playback every ~1.5s and snap `progressMs` from the response, dated
@@ -12,14 +21,26 @@ import MyvuCore
 ///   the ear by ~0.5–1.5s.
 @MainActor
 final class SpotifyLyricsSession: ObservableObject {
-    static let cardId = 7_010_003
+    static let cardId = LensCards.lyricsNumericId
     private static let offsetKey = "lyricsSyncOffsetMs"
+    private static let prompterKey = "lyricsUseTeleprompter"
     /// How far ahead of the true playback position we show the lyrics, in ms.
     /// Depends on the audio path (Bluetooth audio adds latency), so it is
     /// user-calibrated and persisted. Positive = lyrics appear earlier; raise it
     /// if the lyrics lag behind what you hear.
     @Published var syncOffsetMs: Int {
         didSet { UserDefaults.standard.set(syncOffsetMs, forKey: Self.offsetKey) }
+    }
+    /// Show the lyrics in the prompter app rather than on a notification card.
+    /// The prompter is the nicer read — it keeps the surrounding lines on screen
+    /// — but its `open_app` needs the classic-BT audio link up, so the card
+    /// stays as the fallback when that gate is closed.
+    @Published var useTeleprompter: Bool {
+        didSet {
+            guard useTeleprompter != oldValue else { return }
+            UserDefaults.standard.set(useTeleprompter, forKey: Self.prompterKey)
+            switchSurface()
+        }
     }
     private static let pollIntervalNs: UInt64 = 1_500_000_000
     private static let displayIntervalNs: UInt64 = 100_000_000
@@ -38,6 +59,19 @@ final class SpotifyLyricsSession: ObservableObject {
     private var cachedKey = ""
     private var lines: [LyricLine] = []
     private var lastPushed = ""
+    private var lastPushedIndex: Int?
+    /// The track whose lyrics are currently loaded into the prompter.
+    private var promptedKey = ""
+    private var promptTitle = Teleprompter.defaultTitle
+    /// Earliest moment a highlight can land — see `pushPrompter`.
+    private var promptReadyAt = Date.distantPast
+    /// UTF-16 offset of each lyric line within the script we sent.
+    private var lineOffsets: [Int] = []
+    /// How the lens wrapped that script. Nil until the glasses answer.
+    private var layout: TeleprompterLayout?
+    /// Set once we have said the layout never arrived, so the warning is not
+    /// re-stamped over every later status line.
+    private var warnedNoLayout = false
     private var progressMs = 0
     private var progressAt = Date()
     private var isPlaying = false
@@ -47,12 +81,18 @@ final class SpotifyLyricsSession: ObservableObject {
         self.auth = auth
         self.client = client
         self.syncOffsetMs = UserDefaults.standard.object(forKey: Self.offsetKey) as? Int ?? 0
+        self.useTeleprompter =
+            UserDefaults.standard.object(forKey: Self.prompterKey) as? Bool ?? true
     }
 
     func start() {
         guard !enabled else { return }
         enabled = true
         statusMessage = "Listening for Spotify…"
+        resetSurface()
+        client.inboundRouter.onTeleprompterLayout = { [weak self] layout in
+            Task { @MainActor in self?.applyLayout(layout) }
+        }
         pollLoop?.cancel()
         displayLoop?.cancel()
 
@@ -80,11 +120,34 @@ final class SpotifyLyricsSession: ObservableObject {
         lyricsTask = nil
         trackLabel = ""
         currentLine = ""
-        lastPushed = ""
         lines = []
         cachedKey = ""
-        client.sendAction(LensCards.buildDismiss(numericId: Self.cardId))
+        client.inboundRouter.onTeleprompterLayout = nil
+        resetSurface()
         statusMessage = "Lyrics off"
+    }
+
+    // MARK: - Surface
+
+    /// Forgets what is on the lens so the next tick pushes afresh, and clears
+    /// the card. The prompter app has no "close" message — it is left showing
+    /// the last song until the wearer navigates away.
+    private func resetSurface() {
+        lastPushed = ""
+        lastPushedIndex = nil
+        promptedKey = ""
+        promptReadyAt = .distantPast
+        lineOffsets = []
+        layout = nil
+        warnedNoLayout = false
+        client.sendAction(LensCards.buildDismiss(numericId: Self.cardId))
+    }
+
+    private func switchSurface() {
+        resetSurface()
+        guard enabled else { return }
+        statusMessage = useTeleprompter ? "Lyrics in the prompter" : "Lyrics on a card"
+        updateDisplay()
     }
 
     // MARK: - Spotify poll
@@ -148,7 +211,9 @@ final class SpotifyLyricsSession: ObservableObject {
                         guard !Task.isCancelled, self.cachedKey == key else { return }
                         self.lines = []
                         self.statusMessage = "No lyrics for this track"
-                        self.pushCard(title: self.trackLabel, body: "(no lyrics found)")
+                        if !self.useTeleprompter {
+                            self.pushCard(title: self.trackLabel, body: "(no lyrics found)")
+                        }
                     }
                 }
             }
@@ -179,14 +244,90 @@ final class SpotifyLyricsSession: ObservableObject {
     private func updateDisplay() {
         guard !lines.isEmpty else { return }
         let elapsed = displayProgressMs()
-        guard let hit = LrcLib.line(atMs: elapsed, in: lines) else { return }
+        guard let index = LrcLib.index(atMs: elapsed, in: lines) else { return }
         // Only the line currently playing — no lookahead.
-        let body = hit.current.text
+        let body = lines[index].text
         currentLine = body
-        if body != lastPushed {
+        if useTeleprompter {
+            pushPrompter(lyricIndex: index)
+        } else if body != lastPushed {
             lastPushed = body
             pushCard(title: trackLabel, body: body)
         }
+    }
+
+    /// Loads the song into the prompter once, then just moves the highlight.
+    private func pushPrompter(lyricIndex: Int) {
+        if promptedKey != cachedKey {
+            promptedKey = cachedKey
+            promptTitle = Self.prompterTitle(for: trackLabel)
+            lastPushedIndex = nil
+            layout = nil
+            warnedNoLayout = false
+            // `openTeleprompter` is two messages ~400ms apart, and a highlight
+            // that arrives before the text has landed is dropped — so hold the
+            // highlights back until the content is in. The 100ms display loop
+            // retries until then.
+            promptReadyAt = Date().addingTimeInterval(Teleprompter.openToContentDelay + 0.6)
+            let script = Self.buildScript(lines)
+            lineOffsets = script.offsets
+            client.openTeleprompter(script.text, title: promptTitle)
+        }
+        guard Date() >= promptReadyAt else { return }
+        if layout == nil, !warnedNoLayout, Date() > promptReadyAt.addingTimeInterval(3) {
+            warnedNoLayout = true
+            statusMessage = "Prompter did not report its layout — scrolling may drift"
+        }
+        let target = lensIndex(forLyric: lyricIndex)
+        guard target != lastPushedIndex else { return }
+        lastPushedIndex = target
+        client.teleprompterHighlight(index: target, title: promptTitle)
+    }
+
+    /// The lens line to highlight for a lyric line.
+    ///
+    /// Falls back to the lyric's own number until the glasses report their
+    /// layout — the old behaviour, which drifts ahead as soon as a lyric wraps,
+    /// but better than freezing the prompter on line one.
+    private func lensIndex(forLyric index: Int) -> Int {
+        guard let layout, index < lineOffsets.count,
+              let mapped = layout.index(forOffset: lineOffsets[index])
+        else { return index }
+        return mapped
+    }
+
+    /// The script as the prompter gets it, plus where each lyric line starts in
+    /// it. Blank lines split paragraphs on the device, hence the double newline.
+    private static func buildScript(_ lines: [LyricLine]) -> (text: String, offsets: [Int]) {
+        var text = ""
+        var offsets: [Int] = []
+        for (i, line) in lines.enumerated() {
+            if i > 0 { text += "\n\n" }
+            offsets.append(text.utf16.count)
+            text += line.text
+        }
+        return (text, offsets)
+    }
+
+    private func applyLayout(_ incoming: TeleprompterLayout) {
+        guard useTeleprompter, enabled,
+              incoming.fileKey == Teleprompter.fileKey(for: promptTitle)
+        else { return }
+        layout = incoming
+        warnedNoLayout = false
+        // The index we last sent was computed without the layout, so re-send.
+        lastPushedIndex = nil
+        statusMessage = "Prompter ready (\(incoming.lines.count) lens lines)"
+        updateDisplay()
+    }
+
+    /// The prompter keys a document by its title (`fileKey` is "1/" + title), so
+    /// a per-track title keeps a new song out of the last one's document.
+    private static func prompterTitle(for label: String) -> String {
+        let cleaned = label.components(separatedBy: .newlines).joined(separator: " ")
+            .replacingOccurrences(of: "/", with: "-")
+            .trimmingCharacters(in: .whitespaces)
+        return cleaned.isEmpty ? "Lyrics" : String(cleaned.prefix(40))
     }
 
     private func pushCard(title: String, body: String) {

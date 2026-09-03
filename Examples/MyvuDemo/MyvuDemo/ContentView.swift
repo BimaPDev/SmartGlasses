@@ -10,8 +10,11 @@ struct ContentView: View {
                 .tabItem { Label("Connect", systemImage: "eyeglasses") }
             ControlsView()
                 .tabItem { Label("Controls", systemImage: "slider.horizontal.3") }
-            AssistantView()
-                .tabItem { Label("Assistant", systemImage: "waveform") }
+            SettingsView()
+                .tabItem { Label("Settings", systemImage: "gearshape") }
+            // The assistant lives in Settings › Voice Assistant now. Navigate
+            // takes the slot it vacated, which puts the app at five tabs — the
+            // most iOS shows before it folds the rest into "More".
             NavView()
                 .tabItem { Label("Navigate", systemImage: "location.north.line") }
             LogView()

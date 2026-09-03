@@ -85,6 +85,74 @@ final class SystemSettingsTests: XCTestCase {
         XCTAssertEqual(TestJson.string(value, "country"), "US")
     }
 
+    func testAutoBrightnessIsFlatWithABooleanValue() {
+        let d = data(SystemSettings.setAutoBrightness(true))
+        XCTAssertEqual(TestJson.string(d, "action"), "set_auto_brightness_mode")
+        XCTAssertEqual(TestJson.bool(d, "value"), true)
+        XCTAssertNil(d["value"] as? [String: Any],
+                     "auto brightness is flat, not nested like set_zen_mode")
+    }
+
+    func testSoundEffectsIsFlatWithABooleanValue() {
+        let d = data(SystemSettings.setSoundEffects(false))
+        XCTAssertEqual(TestJson.string(d, "action"), "set_glass_sound_effect_mode")
+        XCTAssertEqual(TestJson.bool(d, "value"), false)
+        XCTAssertNil(d["value"] as? [String: Any])
+    }
+
+    func testHearingAssistIsFlatWithABooleanValue() {
+        let d = data(SystemSettings.setHearingAssist(true))
+        XCTAssertEqual(TestJson.string(d, "action"), "set_hear_impairment_mode")
+        XCTAssertEqual(TestJson.bool(d, "value"), true)
+    }
+
+    func testFontSizeIsOneBasedNotZeroBased() {
+        // The official app sends ordinal + 1, so the smallest size is 1.
+        XCTAssertEqual(TestJson.int(data(SystemSettings.setFontSize(.small)), "value"), 1)
+        XCTAssertEqual(TestJson.int(data(SystemSettings.setFontSize(.medium)), "value"), 2)
+        XCTAssertEqual(TestJson.int(data(SystemSettings.setFontSize(.large)), "value"), 3)
+        XCTAssertEqual(TestJson.string(data(SystemSettings.setFontSize(.small)), "action"),
+                       "set_font_mode")
+    }
+
+    func testAppFastOpenCarriesABarePackageName() {
+        let d = data(SystemSettings.setAppFastOpen(SystemSettings.GlassApps.recorder))
+        XCTAssertEqual(TestJson.string(d, "action"), "set_app_fast_open")
+        XCTAssertEqual(TestJson.string(d, "value"), "com.upuphone.ar.recorder")
+    }
+
+    func testDockItemsAreOnePipeJoinedStringNotAnArray() {
+        let d = data(SystemSettings.setDockItems([SystemSettings.GlassApps.navigation,
+                                                  SystemSettings.GlassApps.teleprompter]))
+        XCTAssertEqual(TestJson.string(d, "action"), "change_dock_items")
+        XCTAssertEqual(TestJson.string(d, "value"),
+                       "com.upuphone.ar.navi.glass|com.upuphone.ar.tici")
+        XCTAssertNil(d["value"] as? [Any], "the dock order is a string, not an array")
+    }
+
+    func testFactoryResetCarriesNothingButItsAction() {
+        let d = data(SystemSettings.factoryReset())
+        XCTAssertEqual(TestJson.string(d, "action"), "do_recovery")
+        XCTAssertEqual(d.count, 1)
+    }
+
+    func testStandbyWidgetsAreNestedUnderWidgetsAsAnArray() {
+        let widgets = SystemSettings.StandbyWidgets.ordered(
+            [SystemSettings.StandbyWidgets.steps])
+        let d = data(SystemSettings.setStandbyWidgets(widgets))
+        XCTAssertEqual(TestJson.string(d, "action"), "set_standby_widget_lists")
+        let list = TestJson.array(TestJson.nested(d, "value"), "widgets") as? [String]
+        XCTAssertEqual(list, ["time", "steps", "aiBall"])
+    }
+
+    func testStandbyWidgetOrderAlwaysBracketsWithTimeAndAiBall() {
+        // The launcher fixes both ends, so passing them in must not double them.
+        let ordered = SystemSettings.StandbyWidgets.ordered(
+            ["aiBall", "weather_1x1", "time"])
+        XCTAssertEqual(ordered, ["time", "weather_1x1", "aiBall"])
+        XCTAssertEqual(SystemSettings.StandbyWidgets.ordered([]), ["time", "aiBall"])
+    }
+
     func testQueriesCarryNothingButTheirAction() {
         let d = data(SystemSettings.query("get_device_info"))
         XCTAssertEqual(TestJson.string(d, "action"), "get_device_info")
@@ -95,6 +163,12 @@ final class SystemSettingsTests: XCTestCase {
         for json in [SystemSettings.setVolume(1), SystemSettings.setBrightness(1),
                      SystemSettings.toggleWifi(true), SystemSettings.setDemoMode(true),
                      SystemSettings.setZenMode(true),
+                     SystemSettings.setAutoBrightness(true),
+                     SystemSettings.setSoundEffects(true),
+                     SystemSettings.setFontSize(.large),
+                     SystemSettings.setDockItems(["a"]),
+                     SystemSettings.setStandbyWidgets(["time"]),
+                     SystemSettings.factoryReset(),
                      SystemSettings.query("get_brightness")] {
             XCTAssertEqual(TestJson.string(TestJson.object(json), "action"), "system")
         }

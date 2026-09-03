@@ -90,6 +90,52 @@ final class AiProtocolTests: XCTestCase {
         XCTAssertEqual(p?.optBool("isAsrResultScreenEnable", false), true)
     }
 
+    func testAssistantConfigMirrorsThePreferencesItIsGiven() {
+        var prefs = AiProtocol.AssistantPreferences.default
+        prefs.speakReplies = false
+        prefs.showReplyText = false
+        prefs.wakeWordScreenOff = false
+        let p = parse(AiProtocol.assistantConfig(prefs)).optObject("payload")
+        XCTAssertEqual(p?.optBool("isChatGptTTSPlayEnable", true), false)
+        XCTAssertEqual(p?.optBool("isChatGptCardDisplayEnable", true), false)
+        XCTAssertEqual(p?.optBool("isLowPowerWakeupScreenOffEnable", true), false)
+        // Untouched switches stay on.
+        XCTAssertEqual(p?.optBool("isLowPowerWakeupEnable", false), true)
+        XCTAssertEqual(p?.optBool("isContinuousDialogueEnable", false), true)
+    }
+
+    /// `isSwitchChecked` is the Kotlin field name; Gson never renamed it, so a
+    /// tidier `enabled` here would silently never bind.
+    func testAssistantSettingKeepsTheIsSwitchCheckedFieldName() {
+        let m = parse(AiProtocol.assistantSetting(AiProtocol.SettingType.speakReplies,
+                                                  on: false))
+        XCTAssertEqual(m.optInt("code", -1), 111)
+        let p = m.optObject("payload")
+        XCTAssertEqual(p?.optString("type", ""), "chat_gpt_tts_play")
+        XCTAssertEqual(p?.optBool("isSwitchChecked", true), false)
+        XCTAssertEqual(p?.optInt("value", -1), 0)
+    }
+
+    func testAssistantSettingsCoverTheWholeVoiceAssistantScreen() {
+        let types = AiProtocol.assistantSettings(.default).map {
+            parse($0).optObject("payload")?.optString("type", "") ?? ""
+        }
+        XCTAssertEqual(types, ["low_power_wakeup", "low_power_wakeup_screen_off",
+                               "continuous_dialogue", "asr_result_screen",
+                               "chat_gpt_tts_play", "chat_gpt_card_display",
+                               "tts_timbre"])
+    }
+
+    func testTtsTimbreCarriesItsValueRatherThanASwitch() {
+        var prefs = AiProtocol.AssistantPreferences.default
+        prefs.ttsTimbre = 3
+        let timbre = AiProtocol.assistantSettings(prefs).compactMap { parse($0) }
+            .first { $0.optObject("payload")?.optString("type", "") == "tts_timbre" }
+        XCTAssertEqual(timbre?.optObject("payload")?.optInt("value", -1), 3)
+        XCTAssertEqual(timbre?.optObject("payload")?.optBool("isSwitchChecked", false),
+                       true)
+    }
+
     /// The id here is the EMPTY STRING, not the session id.
     func testPlayStateUsesAnEmptyId() {
         let p = parse(AiProtocol.playState(AiProtocol.playStateStart)).optObject("payload")
@@ -117,6 +163,7 @@ final class AiProtocolTests: XCTestCase {
         XCTAssertEqual(AiProtocol.codeAssistantConfig, 2)
         XCTAssertEqual(AiProtocol.codeVui, 102)
         XCTAssertEqual(AiProtocol.codeChatGptResponse, 122)
+        XCTAssertEqual(AiProtocol.codeAssistantSettings, 111)
         // The listening timeout we are racing against.
         XCTAssertEqual(AiProtocol.listeningTimeout, 8)
     }

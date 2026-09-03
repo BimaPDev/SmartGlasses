@@ -75,7 +75,9 @@ public enum Teleprompter {
         return out.serialized()
     }
 
-    /// Scrolls/highlights the prompter to a paragraph index.
+    /// Scrolls/highlights the prompter to a RENDERED-LINE index.
+    ///
+    /// Not a paragraph index: see `TeleprompterLayout`.
     public static func buildHighlight(index: Int, title: String = defaultTitle) -> String {
         var value = JsonObject()
         value.put("index", index)
@@ -89,6 +91,105 @@ public enum Teleprompter {
         out.put("action", "tici")
         out.put("data", data)
         return out.serialized()
+    }
+
+    // MARK: - Layout reply
+
+    /// Actions the glasses answer `open_app` with. The version depends on the
+    /// firmware; the three differ only in how they encode the line table.
+    private static let openResultActions: Set<String> = [
+        "open_result", "open_result_v2", "open_result_v3",
+    ]
+
+    /// Parses the glasses' reply to `buildOpen` into a line table.
+    ///
+    /// Returns nil for anything that is not an open reply, so it is safe to
+    /// call on every inbound object.
+    public static func parseOpenResult(_ msg: JsonReader) -> TeleprompterLayout? {
+        guard msg.optString("action") == "tici",
+              let data = msg.optObject("data"),
+              openResultActions.contains(data.optString("action"))
+        else { return nil }
+        // value is a JSON STRING, matching the outbound direction.
+        guard let value = JsonReader(parsing: data.optString("value")) else { return nil }
+        guard let lines = parseParagraphIndexes(value.opt("paragraphIndexes")),
+              !lines.isEmpty
+        else { return nil }
+        return TeleprompterLayout(fileKey: value.optString("fileKey"),
+                                  msgId: value.optString("msgId"),
+                                  lines: lines)
+    }
+
+    /// Three encodings across the reply versions: objects (`open_result`),
+    /// `[start, end]` pairs (v2), and a flat list of boundaries where each entry
+    /// closes the previous line (v3).
+    private static func parseParagraphIndexes(_ raw: Any?) -> [TeleprompterLayout.Line]? {
+        if let objects = raw as? [[String: Any]] {
+            return objects.compactMap { item in
+                guard let start = (item["start"] as? NSNumber)?.intValue,
+                      let end = (item["end"] as? NSNumber)?.intValue
+                else { return nil }
+                return TeleprompterLayout.Line(start: start, end: end)
+            }
+        }
+        if let pairs = raw as? [[NSNumber]] {
+            return pairs.compactMap { pair in
+                guard pair.count >= 2 else { return nil }
+                return TeleprompterLayout.Line(start: pair[0].intValue, end: pair[1].intValue)
+            }
+        }
+        if let bounds = raw as? [NSNumber], bounds.count >= 2 {
+            return (1 ..< bounds.count).map {
+                TeleprompterLayout.Line(start: bounds[$0 - 1].intValue,
+                                        end: bounds[$0].intValue)
+            }
+        }
+        return nil
+    }
+}
+
+/// Where every rendered line of the script begins and ends on the lens, as
+/// UTF-16 offsets into the text we sent.
+///
+/// The LENS decides where the text wraps, so `highlight_index` counts rendered
+/// lines, not the paragraphs the phone wrote. A phone that assumes one paragraph
+/// = one line scrolls too far on every step — the error compounding with each
+/// line that wrapped. The glasses report the real table once, in their reply to
+/// `open_app`; `Teleprompter.parseOpenResult` reads it and `index(forOffset:)`
+/// turns a position in the script into the index to highlight.
+public struct TeleprompterLayout: Equatable, Sendable {
+    public struct Line: Equatable, Sendable {
+        public let start: Int
+        public let end: Int
+
+        public init(start: Int, end: Int) {
+            self.start = start
+            self.end = end
+        }
+    }
+
+    public let fileKey: String
+    public let msgId: String
+    public let lines: [Line]
+
+    public init(fileKey: String, msgId: String, lines: [Line]) {
+        self.fileKey = fileKey
+        self.msgId = msgId
+        self.lines = lines
+    }
+
+    /// The line holding a UTF-16 offset into the script.
+    ///
+    /// An offset past the end clamps to the last line rather than returning nil:
+    /// the tail of a script can fall outside the table (a trailing newline is in
+    /// no line), and stopping the scroll there is worse than holding the end.
+    public func index(forOffset offset: Int) -> Int? {
+        guard !lines.isEmpty else { return nil }
+        if let hit = lines.firstIndex(where: { offset >= $0.start && offset < $0.end }) {
+            return hit
+        }
+        if offset >= lines[lines.count - 1].end { return lines.count - 1 }
+        return nil
     }
 }
 

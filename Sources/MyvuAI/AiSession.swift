@@ -91,6 +91,11 @@ public final class AiSession: MyvuClientObserver {
     /// Enable it to experiment if that signal ever becomes available.
     public var spokenFollowUpTurns = false
 
+    /// The wearer's "Voice Assistant" switches, resent as the capability block
+    /// at the start of every conversation. Set it from the settings screen so a
+    /// conversation does not re-enable something the wearer turned off.
+    public var preferences = AiProtocol.AssistantPreferences.default
+
     /// Drives the assistant over a `MyvuClient`.
     ///
     /// - Parameters:
@@ -258,7 +263,7 @@ public final class AiSession: MyvuClientObserver {
         turnCount = 0
         // Configure the glasses' assistant (continuous dialogue, ChatGPT card)
         // before the first frame — the config is what the card scene needs.
-        emit(AiProtocol.assistantConfig())
+        emit(AiProtocol.assistantConfig(preferences))
         tts.prepare()
 
         guard decoder != nil else {
@@ -491,7 +496,7 @@ public final class AiSession: MyvuClientObserver {
             self.stopRequested = false
             self.textMode = true
             self.turnCount = 0
-            self.emit(AiProtocol.assistantConfig())
+            self.emit(AiProtocol.assistantConfig(self.preferences))
             self.tts.prepare()
             self.sessionId = UUID().uuidString
 

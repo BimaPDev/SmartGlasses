@@ -11,6 +11,8 @@ public enum Notifications {
     /// Without this the firmware drops ANCS with
     /// `ios notification not enabled, pls open in MYVU app`.
     public static let syncConfig = "SYNC_SMART_REMINDER_CONFIG"
+    /// Sets the read-aloud pause gesture on its own. See `buildBroadcastPauseType`.
+    public static let syncBroadcastPauseType = "SYNC_CONFIG_BROADCAST_PAUSE_TYPE"
 
     /// Category keys in `NotificationConfig.reminderOpenState`. Texts/iMessage
     /// land as `MSG_TYPE_IM` after ANCS maps `com.apple.MobileSMS`.
@@ -123,14 +125,28 @@ public enum Notifications {
     /// Gson field names from `NotificationConfig` (no `@SerializedName`).
     /// This is JSON on `action: notification`, not the protobuf notify path.
     ///
-    /// - Parameter types: per-category switches keyed by the `MSG_TYPE_*`
-    ///   constants. Every key in `allTypes` is always written, because the
-    ///   firmware reads `reminderOpenState` as a whole object; categories left
-    ///   out of this map are sent as on.
+    /// - Parameters:
+    ///   - types: per-category switches keyed by the `MSG_TYPE_*` constants.
+    ///     Every key in `allTypes` is always written, because the firmware reads
+    ///     `reminderOpenState` as a whole object; categories left out of this
+    ///     map are sent as on.
+    ///   - announce: read the card aloud on the glasses ("Announce
+    ///     Notifications"). `notificationBroadcast` on the wire.
+    ///   - brightenScreen: wake the lens when a card arrives.
+    ///   - dismissMs: how long a card stays up.
+    ///   - scheduleMs: how long a calendar card stays up.
+    ///   - broadcastPauseType: which gesture stops a reading in progress; 2 is
+    ///     the power button, the value the official app ships.
     public static func buildSyncConfig(enabled: Bool,
                                        types: [String: Bool] = [:],
                                        calls: Bool = true,
-                                       dismissMs: Int64 = 10_000) -> String {
+                                       dismissMs: Int64 = 10_000,
+                                       announce: Bool = false,
+                                       brightenScreen: Bool = true,
+                                       scenes: Bool = true,
+                                       scheduleMs: Int = 30_000,
+                                       broadcastPauseType: Int = defaultBroadcastPauseType)
+        -> String {
         var openState = JsonObject()
         for type in allTypes {
             openState.put(type, types[type] ?? true)
@@ -138,14 +154,32 @@ public enum Notifications {
 
         var cfg = JsonObject()
         cfg.put("notificationControlState", enabled)
-        cfg.put("reminderScenesControlState", true)
+        cfg.put("reminderScenesControlState", scenes)
         cfg.put("reminderOpenState", openState)
         cfg.put("notificationDisplayTime", dismissMs)
-        cfg.put("notificationBroadcast", false)
-        cfg.put("notificationBrightenScreen", true)
+        cfg.put("notificationBroadcast", announce)
+        cfg.put("notificationBrightenScreen", brightenScreen)
         cfg.put("callNotificationState", calls)
-        cfg.put("scheduleDisplayTime", 30_000)
-        cfg.put("notificationBroadcastPauseType", 2)
+        cfg.put("scheduleDisplayTime", scheduleMs)
+        cfg.put("notificationBroadcastPauseType", broadcastPauseType)
         return envelope(syncConfig, .object(cfg))
+    }
+
+    /// Which gesture pauses a reading in progress. The official app only ever
+    /// sends 2 (the power button, which is what its own UI text promises).
+    public static let defaultBroadcastPauseType = 2
+
+    /// The card display times the official app offers, in milliseconds.
+    public static let dismissChoicesMs: [Int64] = [5_000, 10_000, 15_000, 30_000]
+
+    /// Changes ONLY the broadcast-pause gesture.
+    ///
+    /// Its own sub-action, because `SuperNotificationManager.K` sends it alone
+    /// rather than through the whole-config push — the other fields would be
+    /// clobbered by a full `buildSyncConfig` built from stale state.
+    public static func buildBroadcastPauseType(_ type: Int) -> String {
+        var payload = JsonObject()
+        payload.put("notificationBroadcastPauseType", type)
+        return envelope(syncBroadcastPauseType, .object(payload))
     }
 }

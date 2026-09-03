@@ -1,6 +1,10 @@
 import SwiftUI
 
-struct AssistantView: View {
+/// The app's own assistant — keys, session, and a typed turn — as sections
+/// rather than a screen, so they sit on Settings › Voice Assistant underneath
+/// the glasses' own voice switches. One page: the switches decide how an answer
+/// is delivered, and these decide what produces it.
+struct AssistantSections: View {
     @EnvironmentObject private var model: GlassesModel
 
     // Stored in UserDefaults for brevity. A shipping app should use the
@@ -11,64 +15,59 @@ struct AssistantView: View {
     @State private var question = ""
 
     var body: some View {
-        NavigationStack {
-            Form {
-                Section { StatusBadge(state: model.state) }
+        Group {
+            Section {
+                SecureField("Groq API key (Whisper)", text: $groqKey)
+                SecureField("Anthropic API key (Claude)", text: $claudeKey)
+            } header: {
+                Text("Engines")
+            } footer: {
+                Text("The SDK ships no cloud clients and no keys. These two adapters "
+                    + "are sample code; any SpeechToText / LanguageModel works.")
+            }
 
-                Section {
-                    SecureField("Groq API key (Whisper)", text: $groqKey)
-                    SecureField("Anthropic API key (Claude)", text: $claudeKey)
-                } header: {
-                    Text("Engines")
-                } footer: {
-                    Text("The SDK ships no cloud clients and no keys. These two adapters "
-                        + "are sample code; any SpeechToText / LanguageModel works.")
-                }
-
-                Section {
-                    Button(running ? "Stop the assistant" : "Start the assistant") {
-                        if running {
-                            model.stopAssistant()
-                        } else {
-                            // No Opus decoder is passed: iOS ships none, so the
-                            // glasses' microphone cannot be decoded here. Typed
-                            // questions still use the full on-glasses flow.
-                            model.startAssistant(groqKey: groqKey, claudeKey: claudeKey,
-                                                 decoder: nil)
-                        }
-                        running.toggle()
+            Section {
+                Button(running ? "Stop the assistant" : "Start the assistant") {
+                    if running {
+                        model.stopAssistant()
+                    } else {
+                        // No Opus decoder is passed: iOS ships none, so the
+                        // glasses' microphone cannot be decoded here. Typed
+                        // questions still use the full on-glasses flow.
+                        model.startAssistant(groqKey: groqKey, claudeKey: claudeKey,
+                                             decoder: nil)
                     }
-                } header: {
-                    Text("Session")
-                } footer: {
-                    Text("With an Opus decoder supplied, the glasses' AI button starts a "
-                        + "spoken turn. Without one, only the typed path below works — see "
-                        + "the README on wiring up libopus.")
+                    running.toggle()
                 }
-                .requiresSession(model.isReady)
+            } header: {
+                Text("Session")
+            } footer: {
+                Text("With an Opus decoder supplied, the glasses' AI button starts a "
+                    + "spoken turn. Without one, only the typed path below works — see "
+                    + "the README on wiring up libopus.")
+            }
+            .requiresSession(model.isReady)
 
-                Section("Ask") {
-                    TextField("Type a question", text: $question)
-                        .onSubmit(ask)
-                    Button("Ask", action: ask)
-                        .disabled(question.trimmingCharacters(in: .whitespaces).isEmpty
-                            || !running)
+            Section("Ask") {
+                TextField("Type a question", text: $question)
+                    .onSubmit(ask)
+                Button("Ask", action: ask)
+                    .disabled(question.trimmingCharacters(in: .whitespaces).isEmpty
+                        || !running)
+            }
+            .requiresSession(model.isReady)
+
+            Section("Recent inbound") {
+                if model.recentInbound.isEmpty {
+                    Text("Nothing yet.")
+                        .foregroundStyle(.secondary)
                 }
-                .requiresSession(model.isReady)
-
-                Section("Recent inbound") {
-                    if model.recentInbound.isEmpty {
-                        Text("Nothing yet.")
-                            .foregroundStyle(.secondary)
-                    }
-                    ForEach(model.recentInbound.suffix(8).reversed(), id: \.self) { raw in
-                        Text(raw)
-                            .font(.system(.caption2, design: .monospaced))
-                            .lineLimit(3)
-                    }
+                ForEach(model.recentInbound.suffix(8).reversed(), id: \.self) { raw in
+                    Text(raw)
+                        .font(.system(.caption2, design: .monospaced))
+                        .lineLimit(3)
                 }
             }
-            .navigationTitle("Assistant")
         }
     }
 

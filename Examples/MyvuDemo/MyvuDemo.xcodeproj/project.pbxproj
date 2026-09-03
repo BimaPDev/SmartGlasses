@@ -12,6 +12,7 @@
 		A100000000000000000003 /* MyvuAI in Frameworks */ = {isa = PBXBuildFile; productRef = C100000000000000000003 /* MyvuAI */; };
 		A100000000000000000004 /* MyvuWeather in Frameworks */ = {isa = PBXBuildFile; productRef = C100000000000000000004 /* MyvuWeather */; };
 		A100000000000000000005 /* MyvuUniden in Frameworks */ = {isa = PBXBuildFile; productRef = C100000000000000000005 /* MyvuUniden */; };
+		A100000000000000000006 /* MyvuHealth in Frameworks */ = {isa = PBXBuildFile; productRef = C100000000000000000006 /* MyvuHealth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 				A100000000000000000003 /* MyvuAI in Frameworks */,
 				A100000000000000000004 /* MyvuWeather in Frameworks */,
 				A100000000000000000005 /* MyvuUniden in Frameworks */,
+				A100000000000000000006 /* MyvuHealth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +81,7 @@
 				C100000000000000000003 /* MyvuAI */,
 				C100000000000000000004 /* MyvuWeather */,
 				C100000000000000000005 /* MyvuUniden */,
+				C100000000000000000006 /* MyvuHealth */,
 			);
 			productName = MyvuDemo;
 			productReference = D100000000000000000001 /* MyvuDemo.app */;
@@ -192,11 +195,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyvuDemos;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connects to your MYVU glasses and Uniden R-series radar detector.";
-				INFOPLIST_KEY_NSContactsUsageDescription = "Looks up a person so their name and number can be shown on the glasses. Nothing is uploaded.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Shows a person's name and number on the glasses. Nothing leaves the phone unless you tap Send my contacts, which uploads names and numbers to the glasses.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Keeps turn-by-turn and Uniden auto-connect running when the phone is locked or another app is open.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Used for the weather panel, turn-by-turn navigation, and auto-connecting a Uniden radar at 10 mph.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Reads today's step count to display it on the glasses' Steps standby widget.";
 				INFOPLIST_KEY_NSMotionUsageDescription = "Tells driving from walking so the cruise HUD and Uniden auto-connect can start while you are in the car.";
+				CODE_SIGN_ENTITLEMENTS = MyvuDemo/MyvuDemo.entitlements;
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -217,11 +223,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MyvuDemos;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connects to your MYVU glasses and Uniden R-series radar detector.";
-				INFOPLIST_KEY_NSContactsUsageDescription = "Looks up a person so their name and number can be shown on the glasses. Nothing is uploaded.";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Shows a person's name and number on the glasses. Nothing leaves the phone unless you tap Send my contacts, which uploads names and numbers to the glasses.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Keeps turn-by-turn and Uniden auto-connect running when the phone is locked or another app is open.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Used for the weather panel, turn-by-turn navigation, and auto-connecting a Uniden radar at 10 mph.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Reads today's step count to display it on the glasses' Steps standby widget.";
 				INFOPLIST_KEY_NSMotionUsageDescription = "Tells driving from walking so the cruise HUD and Uniden auto-connect can start while you are in the car.";
+				CODE_SIGN_ENTITLEMENTS = MyvuDemo/MyvuDemo.entitlements;
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +293,10 @@
 		C100000000000000000005 /* MyvuUniden */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MyvuUniden;
+		};
+		C100000000000000000006 /* MyvuHealth */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyvuHealth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

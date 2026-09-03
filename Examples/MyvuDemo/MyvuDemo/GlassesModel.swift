@@ -2,6 +2,7 @@ import Combine
 import Foundation
 import MyvuAI
 import MyvuCore
+import MyvuHealth
 import MyvuNav
 import MyvuUniden
 import MyvuWeather
@@ -35,6 +36,8 @@ final class GlassesModel: ObservableObject {
     @Published private(set) var unidenDriveMph: Int?
     /// True while `WeatherSync` is attached (auto-starts on every ready session).
     @Published private(set) var weatherEnabled = false
+    /// True while `HealthSync` is attached (auto-starts on every ready session).
+    @Published private(set) var stepsEnabled = false
     /// The most recent inbound objects, newest last — a rough activity monitor.
     @Published private(set) var recentInbound: [String] = []
     /// Last file the glasses finished pushing (HUD screenshot, glass log).
@@ -44,6 +47,11 @@ final class GlassesModel: ObservableObject {
     @Published private(set) var firmwareFraction = 0.0
     @Published private(set) var firmwareStatus = ""
     @Published private(set) var renameStatus = ""
+    /// Result of the last contact-list push to the glasses' Phone page.
+    @Published private(set) var contactPushStatus = ""
+    /// Last caller-ID lookup the glasses asked for, newest first — the visible
+    /// proof that the answer went out.
+    @Published private(set) var callerLookups: [String] = []
     /// Live battery, from the glasses' own pushes. `info.battery` is only the
     /// value captured at pairing and never moves.
     @Published private(set) var battery: GlassesBattery?
@@ -56,7 +64,12 @@ final class GlassesModel: ObservableObject {
     /// iOS 16+ hides the real name from apps, so it is user-set and persisted.
     @AppStorage("iosBtName") var iosBtName = "Testing1"
     /// Auto-bring-up the classic-BT audio link once BLE is ready.
-    @AppStorage("iosBtAutoConnect") var iosBtAutoConnect = true
+    ///
+    /// OFF by default: it only buys the native teleprompter and navigation
+    /// pages, and it costs glasses battery even when it never succeeds — every
+    /// attempt is a classic-BT page scan, and the phone is undiscoverable
+    /// unless the user is sitting on iOS's Bluetooth screen.
+    @AppStorage("iosBtAutoConnect") var iosBtAutoConnect = false
     /// Show street + speed on the lens automatically while driving.
     @AppStorage("autoCruiseHud") var autoCruiseHud = false
     /// Which surface the cruise HUD draws on — `lensCard` or `hud`.
@@ -68,12 +81,25 @@ final class GlassesModel: ObservableObject {
     @AppStorage("phoneNotificationsMuted") private var mutedTypesRaw = ""
     /// Incoming calls are their own flag on the glasses, not a category.
     @AppStorage("phoneNotificationCalls") private var phoneNotificationCallsRaw = true
+    /// Read each card aloud on the glasses ("Announce Notifications").
+    @AppStorage("notificationAnnounce") private var notificationAnnounceRaw = false
+    /// Wake the lens when a card arrives. On by default because that is what
+    /// this app has always sent; the official app ships it off.
+    @AppStorage("notificationBrighten") private var notificationBrightenRaw = true
+    /// How long a card stays on the lens, in milliseconds.
+    @AppStorage("notificationDismissMs") private var notificationDismissMsRaw = 10_000
+    /// Stop mirroring while the phone is unlocked and in the wearer's hand.
+    @AppStorage("notificationMuteWhileUsingPhone") private var muteWhileUsingPhoneRaw = false
     /// Scan and connect the Uniden radar once GPS holds at 10 mph.
     @AppStorage("autoUnidenWhileDriving") var autoUnidenWhileDriving = false
     /// Last Uniden peripheral iOS identifier, so a later drive can skip the scan.
     @AppStorage("lastUnidenId") private var lastUnidenId = ""
 
     let glasses = MyvuGlasses()
+    /// The device-side preference screens ("Settings for Glasses", "Voice
+    /// Assistant"). Kept apart from this model because none of it needs the
+    /// connection bookkeeping here — it only needs somewhere durable to live.
+    let settings: GlassesSettings
     let alerts = PhoneAlerts()
     let contacts = ContactsAccess()
     let spotifyAuth = SpotifyAuth()
@@ -85,6 +111,7 @@ final class GlassesModel: ObservableObject {
     private(set) var assistant: AiSession?
     private(set) var lensScript: LensScript?
     private var weather: WeatherSync?
+    private var health: HealthSync?
     private var nav: NavSession?
     private var cruise: CruiseSession?
     private var cruiseDemo: CruiseSession?
@@ -113,7 +140,16 @@ final class GlassesModel: ObservableObject {
 
     init() {
         spotifyLyrics = SpotifyLyricsSession(auth: spotifyAuth, client: glasses.client)
+        settings = GlassesSettings(glasses: glasses)
         observe()
+        settings.objectWillChange
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in self?.objectWillChange.send() }
+            .store(in: &bag)
+        observeLockState()
+        contacts.loadIndex()
+        // Refresh at launch too: contacts change while the app is not running.
+        Task { await contacts.rebuildIndex() }
         spotifyAuth.objectWillChange
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in self?.objectWillChange.send() }
@@ -151,7 +187,16 @@ final class GlassesModel: ObservableObject {
                     // The glasses' notification filter is re-asserted on every
                     // session: it is not known to survive a power cycle, and a
                     // silent lens is indistinguishable from a quiet phone.
-                    if self.phoneNotifications { self.pushNotificationConfig() }
+                    //
+                    // ALWAYS, even when mirroring is off. The init burst replays
+                    // a capture whose SYNC_SMART_REMINDER_CONFIG enables three
+                    // categories and omits MSG_TYPE_IM; skipping our push leaves
+                    // that stranger's filter in force instead of the wearer's.
+                    self.pushNotificationConfig()
+                    // After the SDK's init burst, which asserts wear detection,
+                    // zen mode and the screen-off time with its own fixed
+                    // values — so the wearer's choices land last and win.
+                    self.settings.pushAll()
                     self.info = self.glasses.glassesInfo
                     // Arms the thresholds above wherever the battery is now, so
                     // reconnecting at 45% does not re-announce 80% and 50%.
@@ -167,6 +212,9 @@ final class GlassesModel: ObservableObject {
                     // 30-minute timer or a glasses syncWeather request.
                     self.startWeather()
                     self.refreshWeather()
+                    // Steps widget: feed it from Apple Health so the lens shows
+                    // the same count as the phone. Also BLE-only.
+                    self.startHealth()
 
                     // BLE is up first (it wakes the glasses' classic radio and
                     // carries IOS_CONNECT_BT); now auto-bring-up the classic-BT
@@ -187,6 +235,8 @@ final class GlassesModel: ObservableObject {
                     self.recentInbound.append(raw)
                     if self.recentInbound.count > 50 { self.recentInbound.removeFirst() }
                     self.checkBattery(raw)
+                case .contactLookupRequested(let request):
+                    self.answerCallerLookup(request)
                 case .fileReceived(let url, let name, let bytes):
                     self.lastReceivedFile = url
                     self.lastReceivedLabel = "\(name) (\(bytes) bytes)"
@@ -310,6 +360,36 @@ final class GlassesModel: ObservableObject {
         lastGlassesId = ""
     }
 
+    /// Renames the glasses to anything. `renameToBima` is this with the name
+    /// worked out for you; both write `set_device_name`, the same command the
+    /// official app's "Name of Glasses" screen sends.
+    func rename(to name: String) {
+        let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return }
+        renameStatus = "Renaming to \(trimmed)…"
+        glasses.setDeviceName(trimmed)
+        Task {
+            try? await Task.sleep(nanoseconds: 800_000_000)
+            do {
+                let reply = try await glasses.query("get_device_info", timeout: 8)
+                let shown = Self.deviceName(from: reply) ?? "(no device_name in reply)"
+                renameStatus = shown == trimmed
+                    ? "About name is now \(shown). Reopen About on the glasses."
+                    : "Sent \(trimmed). Glasses reported \(shown)."
+            } catch {
+                renameStatus = "Sent \(trimmed). Reopen About on the glasses to confirm."
+            }
+        }
+    }
+
+    /// Wipes the glasses (`do_recovery`) and drops the saved pairing, since the
+    /// identifier will not survive the reset. Nothing on the glasses asks first.
+    func factoryReset() {
+        glasses.factoryReset()
+        forgetGlasses()
+        renameStatus = "Factory reset sent. The glasses reboot on their own."
+    }
+
     // MARK: - Notifications
 
     /// Mirror the iPhone's notifications onto the lens.
@@ -352,12 +432,174 @@ final class GlassesModel: ObservableObject {
         pushNotificationConfig()
     }
 
+    /// Read the card aloud on the glasses.
+    var announceNotifications: Bool {
+        get { notificationAnnounceRaw }
+        set {
+            objectWillChange.send()
+            notificationAnnounceRaw = newValue
+            pushNotificationConfig()
+        }
+    }
+
+    /// Wake the lens when a card arrives.
+    var brightenScreenForNotifications: Bool {
+        get { notificationBrightenRaw }
+        set {
+            objectWillChange.send()
+            notificationBrightenRaw = newValue
+            pushNotificationConfig()
+        }
+    }
+
+    /// How long a card stays up, in milliseconds.
+    var notificationDismissMs: Int {
+        get { notificationDismissMsRaw }
+        set {
+            objectWillChange.send()
+            notificationDismissMsRaw = newValue
+            pushNotificationConfig()
+        }
+    }
+
+    /// Hold notifications back while the phone is unlocked and in use.
+    ///
+    /// iOS gives an app no way to see another app's notifications, so this
+    /// cannot filter them one by one the way the Android app does — it flips
+    /// the glasses' master switch instead, which is the only lever ANCS leaves.
+    var muteWhileUsingPhone: Bool {
+        get { muteWhileUsingPhoneRaw }
+        set {
+            objectWillChange.send()
+            muteWhileUsingPhoneRaw = newValue
+            pushNotificationConfig()
+        }
+    }
+
+    /// True once the phone has locked at least once AND been unlocked since.
+    ///
+    /// A phone with no passcode never reports a lock, so this stays false and
+    /// nothing is ever suppressed — which is exactly what the official app
+    /// promises for that case.
+    private var phoneHasLocked = false
+    private var phoneUnlocked = false
+
+    /// Watches the passcode-lock transitions that stand in for "using your
+    /// phone". They keep arriving in the background, which matters: this app is
+    /// alive there for BLE, and the wearer is not looking at it either way.
+    private func observeLockState() {
+        let center = NotificationCenter.default
+        center.publisher(for: UIApplication.protectedDataWillBecomeUnavailableNotification)
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.phoneHasLocked = true
+                self.phoneUnlocked = false
+                self.pushNotificationConfig()
+            }
+            .store(in: &bag)
+        center.publisher(for: UIApplication.protectedDataDidBecomeAvailableNotification)
+            .sink { [weak self] _ in
+                guard let self else { return }
+                // Unlocking is the one moment the address book is readable, so
+                // it is when the caller index gets refreshed.
+                Task { await self.contacts.rebuildIndex() }
+                guard self.phoneHasLocked else { return }
+                self.phoneUnlocked = true
+                self.pushNotificationConfig()
+            }
+            .store(in: &bag)
+    }
+
+    /// Sends the whole filter, on or off. Sending it with
+    /// `notificationControlState:false` is how mirroring gets DISABLED, so this
+    /// must run even when the wearer has it switched off.
     private func pushNotificationConfig() {
         guard isReady else { return }
         let types = Dictionary(uniqueKeysWithValues:
             Notifications.allTypes.map { ($0, isNotificationType($0)) })
-        glasses.enablePhoneNotifications(phoneNotificationsRaw, types: types,
-                                         calls: phoneNotificationCallsRaw)
+        let suppressed = muteWhileUsingPhoneRaw && phoneUnlocked
+        glasses.enablePhoneNotifications(phoneNotificationsRaw && !suppressed,
+                                         types: types,
+                                         calls: phoneNotificationCallsRaw,
+                                         announce: notificationAnnounceRaw,
+                                         brightenScreen: notificationBrightenRaw,
+                                         dismissMs: Int64(notificationDismissMsRaw))
+    }
+
+    /// Answers the glasses' "who is this number?" question.
+    ///
+    /// This is what puts a name on the incoming-call card. The glasses read the
+    /// number off the classic-Bluetooth HFP link, which carries digits only, and
+    /// iOS hands them no phonebook — so they ask the phone, and until something
+    /// answers, the card says "Unknown".
+    ///
+    /// The card has TWO lines: `displayName` on top and `geo` — the
+    /// region/carrier line the glasses ask for with `QUERY_CONTACT_ADDRESS` —
+    /// underneath. That second line is the one that read "Unknown": iOS has no
+    /// number-to-region database, so it went out empty and the lens filled the
+    /// gap with a placeholder. The NUMBER goes there instead, which is the
+    /// thing a wearer actually wants under a name.
+    ///
+    /// Only when a name was resolved, though. With no name the number is
+    /// already the top line — `AirFunction.reply` falls back to it — and
+    /// repeating it underneath just reads as a bug.
+    ///
+    /// Speed matters: the call card is already on the lens when this arrives.
+    private func answerCallerLookup(_ request: AirFunction.Request) {
+        guard contacts.isAuthorized else {
+            client.failAirFunction(request, message: "no contacts permission")
+            note(caller: request.phoneNumber, name: nil,
+                 detail: "no contacts permission")
+            return
+        }
+        Task {
+            let name = await contacts.name(forPhoneNumber: request.phoneNumber)
+            client.answerAirFunction(request, displayName: name,
+                                     address: name == nil ? nil : request.phoneNumber)
+            note(caller: request.phoneNumber, name: name, detail: nil)
+        }
+    }
+
+    private func note(caller number: String, name: String?, detail: String?) {
+        var outcome = detail ?? (name.map { "→ \($0)" } ?? "→ not in contacts")
+        // A miss with the phone locked means something different from a miss
+        // with it open, and only one of them is worth investigating.
+        if detail == nil, name == nil, !UIApplication.shared.isProtectedDataAvailable {
+            outcome += " (phone locked)"
+        }
+        callerLookups.insert("\(number) \(outcome)", at: 0)
+        if callerLookups.count > 10 { callerLookups.removeLast() }
+    }
+
+    /// Pushes the address book to the glasses' Phone page (`PHONE_CONTACT_LIST`).
+    ///
+    /// One row per NUMBER, capped, because the list travels as a single JSON
+    /// blob over BLE and the lens renders it as a scroll wheel.
+    ///
+    /// The official app only ever sends this mid-way through a voice
+    /// call-request, so the page may want the assistant scene open first. The
+    /// wire shape is recovered exactly; the timing is the unverified part.
+    func sendContactsToGlasses(limit: Int = 100) {
+        guard isReady else { return contactPushStatus = "Connect the glasses first." }
+        guard contacts.isAuthorized else {
+            return contactPushStatus = "Allow contacts above first."
+        }
+        contactPushStatus = "Reading the address book…"
+        Task {
+            let people = await contacts.allWithNumbers(limit: limit)
+            guard !people.isEmpty else {
+                contactPushStatus = "No contacts with a phone number."
+                return
+            }
+            let entries = people.map {
+                PhoneContacts.Entry(name: $0.name, phoneNumber: $0.number,
+                                    contactId: $0.contactId, company: $0.company)
+            }
+            client.sendPhoneContacts(entries, limit: limit)
+            contactPushStatus = "Sent \(entries.count) number"
+                + (entries.count == 1 ? "" : "s")
+                + " to the glasses' Phone page. Watch the Log tab for a reply."
+        }
     }
 
     /// Puts one person from the address book on the lens.
@@ -426,6 +668,38 @@ final class GlassesModel: ObservableObject {
         weather?.refresh()
     }
 
+    /// Keeps the glasses' Steps standby widget fed from Apple Health and answers
+    /// their `syncSport` refresh requests, so the lens count matches the phone.
+    /// Requires the HealthKit capability + `NSHealthShareUsageDescription`; a
+    /// denied user simply reads as 0 steps.
+    func startHealth() {
+        if health == nil {
+            let source = HealthKitStepSource()
+            let sync = HealthSync(client: client, source: source)
+            sync.attach()
+            health = sync
+            // Ask for read access once, then push a real count as soon as it is
+            // granted rather than waiting for the next refresh tick.
+            Task {
+                try? await source.requestAuthorization()
+                sync.refresh()
+            }
+        }
+        stepsEnabled = true
+    }
+
+    func stopHealth() {
+        health?.detach()
+        health = nil
+        stepsEnabled = false
+    }
+
+    /// Reads Apple Health now and pushes the count.
+    func refreshHealth() {
+        startHealth()
+        health?.refresh()
+    }
+
     func setSpotifyLyricsEnabled(_ on: Bool) {
         if on {
             guard spotifyAuth.isAuthorized else {
@@ -459,8 +733,9 @@ final class GlassesModel: ObservableObject {
 
     // MARK: - Uniden radar
 
-    /// Manual scan/connect. Phone notification permission is requested here so
-    /// a later GATT hit can raise a banner without a silent drop.
+    /// Manual scan/connect. Radar hits themselves never raise a banner, but
+    /// permission is still asked for here because this is the first screen most
+    /// drivers touch, and a dropped link or a low battery mid-drive does.
     func connectUniden() {
         unidenError = nil
         alerts.request()
@@ -545,7 +820,9 @@ final class GlassesModel: ObservableObject {
 
     private func handleUnidenAlerts(_ hits: [UnidenAlert]) {
         lastUnidenAlerts = hits
+        let changed = UnidenAlertCard.notifyIdentity(for: hits) != lastUnidenIdentity
         switch UnidenAlertGate.decision(hasHits: !hits.isEmpty,
+                                       changed: changed,
                                        lastSentAt: lastUnidenSendAt,
                                        now: Date()) {
         case .clear:
@@ -555,6 +832,10 @@ final class GlassesModel: ObservableObject {
             lastUnidenIdentity = ""
             unidenLastAlert = ""
             clearUnidenCard()
+        case .hold:
+            // Identical reading. Any flush already pending stays pending — it
+            // will pick up whatever is current when it fires.
+            break
         case .sendNow:
             unidenFlushTask?.cancel()
             unidenFlushTask = nil
@@ -579,16 +860,20 @@ final class GlassesModel: ObservableObject {
     }
 
     private func emitUnidenAlerts(_ hits: [UnidenAlert]) {
-        lastUnidenSendAt = Date()
         let title = UnidenAlertCard.title(for: hits)
         let body = UnidenAlertCard.body(for: hits)
         unidenLastAlert = "\(title) · \(body)"
         pushUnidenCard(title: title, body: body)
-        let identity = hits.map { "\($0.type)|\($0.rawValue)|\($0.direction)" }
-            .joined(separator: "&")
+        // A deferred flush can land on a reading that has drifted back to what
+        // was already sent, so the identity is re-checked here rather than
+        // trusted from the gate. A radar hit raises no phone banner on purpose:
+        // it belongs on the lens the driver is already looking through, and a
+        // notification for something the glasses just showed is only noise. The
+        // bookkeeping below still runs — it is what paces the lens card.
+        let identity = UnidenAlertCard.notifyIdentity(for: hits)
         guard identity != lastUnidenIdentity else { return }
         lastUnidenIdentity = identity
-        alerts.post(title: title, body: body, id: "uniden-radar")
+        lastUnidenSendAt = Date()
     }
 
     private func pushUnidenCardIfNeeded() {

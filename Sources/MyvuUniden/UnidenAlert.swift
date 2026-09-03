@@ -35,6 +35,12 @@ public struct UnidenAlert: Equatable, Sendable {
         }
     }
 
+    /// Auto Mute Memory (`mute_type` 4): the detector recognised this hit as a
+    /// stored false alarm and silenced it itself. Distinct from 3 (the same
+    /// lockout stored by hand), 5 (K block) and 6 (Quiet Ride) — widen this to
+    /// `["3", "4"]` to treat hand-stored mute memory the same way.
+    public var isAutoMuted: Bool { mute == "4" }
+
     public var muteLabel: String {
         switch mute {
         case "1": return "Not Muted"
@@ -237,6 +243,32 @@ public enum UnidenAlertCard {
         return parts.joined(separator: " · ")
     }
 
+    /// The rendered card is the identity: if a single character of what the
+    /// driver reads has changed — strength 1 to 2, 900 ft to 250 ft, a second
+    /// hit joining the first — it is a different alert and earns a fresh
+    /// banner. Anything the card does not show (mute state, slot id) does not.
+    public static func identity(for alerts: [UnidenAlert]) -> String {
+        "\(title(for: alerts))\n\(body(for: alerts))"
+    }
+
+    /// Identity for deciding whether to *re-alert*, which is the card identity
+    /// except when the detector has already silenced everything on screen with
+    /// Auto Mute Memory. A known false alarm earns exactly one banner per
+    /// encounter: strength and the jittering frequency digit drop out, leaving
+    /// the muted bands themselves, so nothing re-fires until a band joins or
+    /// leaves — and a live hit landing alongside makes the set no longer all
+    /// auto-muted, which alerts at once on the full reading.
+    public static func notifyIdentity(for alerts: [UnidenAlert]) -> String {
+        guard !alerts.isEmpty, alerts.allSatisfy(\.isAutoMuted) else {
+            return identity(for: alerts)
+        }
+        let bands = alerts
+            .map { "\($0.type)|\($0.direction)" }
+            .sorted()
+            .joined(separator: ",")
+        return "auto-muted\n\(bands)"
+    }
+
     private static func strengthLine(direction: String, rssi: String) -> String {
         if direction.isEmpty { return "strength \(rssi)" }
         return "\(direction) · strength \(rssi)"
@@ -249,22 +281,35 @@ public enum UnidenDrive {
     public static var startSpeedMps: Double { startMph * 1609.344 / 3600 }
 }
 
-/// Caps glasses/phone Uniden alerts at one send every 8 seconds. The first hit
-/// goes out immediately; later GATT notifies coalesce to the latest payload.
+/// Drives glasses/phone Uniden alerts off *change*, not off a clock: an alert
+/// whose card text still reads the same is never re-sent, and one that reads
+/// differently goes out as soon as `minInterval` allows.
+///
+/// The floor exists only because the detector notifies several times a second
+/// on both characteristics and the reported frequency jitters in the last
+/// digit; without it a parked KA hit could strobe the banner. Changes that land
+/// inside the floor are not dropped — they coalesce and the newest one is sent
+/// when it lifts, so the driver always ends up looking at current numbers.
 public enum UnidenAlertGate {
-    public static let interval: TimeInterval = 8
+    /// Shortest gap between two banners. A strength jump reaches the phone
+    /// within this at worst.
+    public static let minInterval: TimeInterval = 2
 
     public enum Decision: Equatable {
         case sendNow
         case wait(TimeInterval)
+        /// Same reading as the one already on screen — leave it alone.
+        case hold
         case clear
     }
 
-    public static func decision(hasHits: Bool, lastSentAt: Date?, now: Date) -> Decision {
+    public static func decision(hasHits: Bool, changed: Bool,
+                                lastSentAt: Date?, now: Date) -> Decision {
         guard hasHits else { return .clear }
+        guard changed else { return .hold }
         guard let lastSentAt else { return .sendNow }
         let elapsed = now.timeIntervalSince(lastSentAt)
-        if elapsed >= interval { return .sendNow }
-        return .wait(interval - elapsed)
+        if elapsed >= minInterval { return .sendNow }
+        return .wait(minInterval - elapsed)
     }
 }

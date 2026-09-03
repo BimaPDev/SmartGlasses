@@ -18,6 +18,7 @@ let package = Package(
         .library(name: "MyvuNav", targets: ["MyvuNav"]),
         .library(name: "MyvuAI", targets: ["MyvuAI"]),
         .library(name: "MyvuWeather", targets: ["MyvuWeather"]),
+        .library(name: "MyvuHealth", targets: ["MyvuHealth"]),
         .library(name: "MyvuUniden", targets: ["MyvuUniden"]),
     ],
     targets: [
@@ -38,6 +39,11 @@ let package = Package(
         ),
         .target(
             name: "MyvuWeather",
+            dependencies: ["MyvuCore"],
+            swiftSettings: [.swiftLanguageMode(.v5)]
+        ),
+        .target(
+            name: "MyvuHealth",
             dependencies: ["MyvuCore"],
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
@@ -63,6 +69,11 @@ let package = Package(
         .testTarget(
             name: "MyvuWeatherTests",
             dependencies: ["MyvuWeather", "MyvuCore"],
+            swiftSettings: [.swiftLanguageMode(.v5)]
+        ),
+        .testTarget(
+            name: "MyvuHealthTests",
+            dependencies: ["MyvuHealth", "MyvuCore"],
             swiftSettings: [.swiftLanguageMode(.v5)]
         ),
         .testTarget(

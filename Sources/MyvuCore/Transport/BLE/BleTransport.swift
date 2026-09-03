@@ -26,12 +26,14 @@ public final class BleTransport: NSObject {
         public var onInternalMessage: (_ pkgType: Int, _ payload: Data) -> Void
         /// A complete message from the application characteristic.
         public var onExternalMessage: (_ pkgType: Int, _ payload: Data) -> Void
-        public var onDisconnected: (_ reason: String) -> Void
+        /// `needsRePairing` means the bond records disagree and only the user
+        /// can fix it — see `BleCentral.requiresRePairing`.
+        public var onDisconnected: (_ reason: String, _ needsRePairing: Bool) -> Void
 
         public init(onReady: @escaping () -> Void,
                     onInternalMessage: @escaping (Int, Data) -> Void,
                     onExternalMessage: @escaping (Int, Data) -> Void,
-                    onDisconnected: @escaping (String) -> Void) {
+                    onDisconnected: @escaping (String, Bool) -> Void) {
             self.onReady = onReady
             self.onInternalMessage = onInternalMessage
             self.onExternalMessage = onExternalMessage
@@ -86,7 +88,9 @@ public final class BleTransport: NSObject {
         peripheral.delegate = self
         central.connect(peripheral, observer: BleCentral.ConnectionObserver(
             onConnected: { [weak self] in self?.onConnected() },
-            onDisconnected: { [weak self] reason in self?.fail(reason) }))
+            onDisconnected: { [weak self] reason, needsRePairing in
+                self?.fail(reason, needsRePairing: needsRePairing)
+            }))
         connectTimer.schedule(on: scheduler, after: BleTransport.connectTimeout) { [weak self] in
             guard let self, !self.isConnected else { return }
             self.central.cancelConnection(self.peripheral)
@@ -221,7 +225,7 @@ public final class BleTransport: NSObject {
 
     // MARK: - Failure
 
-    private func fail(_ reason: String) {
+    private func fail(_ reason: String, needsRePairing: Bool = false) {
         guard !disconnectReported else { return }
         disconnectReported = true
         isConnected = false
@@ -231,7 +235,7 @@ public final class BleTransport: NSObject {
         discoveryTimer.cancel()
         livenessTimer.cancel()
         writeQueue?.clear()
-        handlers.onDisconnected(reason)
+        handlers.onDisconnected(reason, needsRePairing)
     }
 }
 
