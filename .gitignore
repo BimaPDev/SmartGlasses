@@ -9,6 +9,7 @@
 Reverse/extracted/
 Reverse/extracted2/
 Reverse/jadx-intl-2.40.51/
+Reverse/IPA/extracted/
 Reverse/tools/venv/
 __pycache__/
 *.pyc
@@ -31,3 +32,10 @@ Reverse/firmware/Halliday/ghidra/import.log
 # Unlazy session ledgers, leases, and hook state (Leonxlnx/unlazy)
 .unlazy/
 .unlazy-hook-state.json
+
+# Xcode/SwiftPM build products (regenerated; thousands of files)
+build/
+Examples/MyvuDemo/build/
+
+# iOS app archive - 290 MB, over GitHub's 100 MB file limit; keep local only
+*.ipa
