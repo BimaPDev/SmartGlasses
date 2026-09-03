@@ -1,0 +1,756 @@
+{
+  "source": "platform_tester.bin",
+  "note": "bases read from lv_font_fmt_txt_dsc_t; no row_shift heuristics",
+  "faces": [
+    {
+      "name": "small",
+      "bpp": 1,
+      "glyph_dsc_off": "0x31dbc4",
+      "glyph_bitmap_off": "0x2fd680",
+      "cmaps_off": "0x2fd3c0",
+      "glyph_count": 6032,
+      "bitmap_format": 0,
+      "cmap_ranges": [
+        {
+          "start": "0x20",
+          "len": 95,
+          "gid_start": 1,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xa0",
+          "len": 169,
+          "gid_start": 96,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x14a",
+          "len": 122,
+          "gid_start": 265,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1c5",
+          "len": 138,
+          "gid_start": 387,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x2bc",
+          "len": 118,
+          "gid_start": 525,
+          "type": 3,
+          "sparse_list_len": 24
+        },
+        {
+          "start": "0x600",
+          "len": 256,
+          "gid_start": 549,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x750",
+          "len": 48,
+          "gid_start": 805,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x870",
+          "len": 31,
+          "gid_start": 853,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x890",
+          "len": 2,
+          "gid_start": 884,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x898",
+          "len": 104,
+          "gid_start": 886,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xe01",
+          "len": 58,
+          "gid_start": 990,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xe3f",
+          "len": 28,
+          "gid_start": 1048,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1000",
+          "len": 159,
+          "gid_start": 1076,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1e80",
+          "len": 4212,
+          "gid_start": 1235,
+          "type": 3,
+          "sparse_list_len": 54
+        },
+        {
+          "start": "0x2f00",
+          "len": 180,
+          "gid_start": 1289,
+          "type": 0,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x2fb7",
+          "len": 146,
+          "gid_start": 1409,
+          "type": 3,
+          "sparse_list_len": 26
+        },
+        {
+          "start": "0x304a",
+          "len": 57,
+          "gid_start": 1435,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x3084",
+          "len": 33,
+          "gid_start": 1492,
+          "type": 3,
+          "sparse_list_len": 14
+        },
+        {
+          "start": "0x30a6",
+          "len": 63,
+          "gid_start": 1506,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x30e6",
+          "len": 23610,
+          "gid_start": 1569,
+          "type": 3,
+          "sparse_list_len": 3026
+        },
+        {
+          "start": "0x8d21",
+          "len": 17,
+          "gid_start": 4595,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x8d34",
+          "len": 4716,
+          "gid_start": 4612,
+          "type": 3,
+          "sparse_list_len": 533
+        },
+        {
+          "start": "0xa9e0",
+          "len": 30,
+          "gid_start": 5145,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xaa60",
+          "len": 31,
+          "gid_start": 5175,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xf901",
+          "len": 264,
+          "gid_start": 5206,
+          "type": 3,
+          "sparse_list_len": 42
+        },
+        {
+          "start": "0xfb50",
+          "len": 115,
+          "gid_start": 5248,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfbd3",
+          "len": 189,
+          "gid_start": 5363,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfc90",
+          "len": 256,
+          "gid_start": 5552,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfd92",
+          "len": 54,
+          "gid_start": 5808,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfdcf",
+          "len": 1,
+          "gid_start": 5862,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfdf0",
+          "len": 17,
+          "gid_start": 5863,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfe70",
+          "len": 5,
+          "gid_start": 5880,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfe76",
+          "len": 135,
+          "gid_start": 5885,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xff01",
+          "len": 4095,
+          "gid_start": 6020,
+          "type": 3,
+          "sparse_list_len": 12
+        }
+      ],
+      "cap_height_px": 12
+    },
+    {
+      "name": "medium",
+      "bpp": 4,
+      "glyph_dsc_off": "0x2e2dc8",
+      "glyph_bitmap_off": "0x20160c",
+      "cmaps_off": "0x20134c",
+      "glyph_count": 6032,
+      "bitmap_format": 0,
+      "cmap_ranges": [
+        {
+          "start": "0x20",
+          "len": 95,
+          "gid_start": 1,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xa0",
+          "len": 169,
+          "gid_start": 96,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x14a",
+          "len": 122,
+          "gid_start": 265,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1c5",
+          "len": 138,
+          "gid_start": 387,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x2bc",
+          "len": 118,
+          "gid_start": 525,
+          "type": 3,
+          "sparse_list_len": 24
+        },
+        {
+          "start": "0x600",
+          "len": 256,
+          "gid_start": 549,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x750",
+          "len": 48,
+          "gid_start": 805,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x870",
+          "len": 31,
+          "gid_start": 853,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x890",
+          "len": 2,
+          "gid_start": 884,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x898",
+          "len": 104,
+          "gid_start": 886,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xe01",
+          "len": 58,
+          "gid_start": 990,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xe3f",
+          "len": 28,
+          "gid_start": 1048,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1000",
+          "len": 159,
+          "gid_start": 1076,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1e80",
+          "len": 4212,
+          "gid_start": 1235,
+          "type": 3,
+          "sparse_list_len": 54
+        },
+        {
+          "start": "0x2f00",
+          "len": 180,
+          "gid_start": 1289,
+          "type": 0,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x2fb7",
+          "len": 146,
+          "gid_start": 1409,
+          "type": 3,
+          "sparse_list_len": 26
+        },
+        {
+          "start": "0x304a",
+          "len": 57,
+          "gid_start": 1435,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x3084",
+          "len": 33,
+          "gid_start": 1492,
+          "type": 3,
+          "sparse_list_len": 14
+        },
+        {
+          "start": "0x30a6",
+          "len": 63,
+          "gid_start": 1506,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x30e6",
+          "len": 23610,
+          "gid_start": 1569,
+          "type": 3,
+          "sparse_list_len": 3026
+        },
+        {
+          "start": "0x8d21",
+          "len": 17,
+          "gid_start": 4595,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x8d34",
+          "len": 4716,
+          "gid_start": 4612,
+          "type": 3,
+          "sparse_list_len": 533
+        },
+        {
+          "start": "0xa9e0",
+          "len": 30,
+          "gid_start": 5145,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xaa60",
+          "len": 31,
+          "gid_start": 5175,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xf901",
+          "len": 264,
+          "gid_start": 5206,
+          "type": 3,
+          "sparse_list_len": 42
+        },
+        {
+          "start": "0xfb50",
+          "len": 115,
+          "gid_start": 5248,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfbd3",
+          "len": 189,
+          "gid_start": 5363,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfc90",
+          "len": 256,
+          "gid_start": 5552,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfd92",
+          "len": 54,
+          "gid_start": 5808,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfdcf",
+          "len": 1,
+          "gid_start": 5862,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfdf0",
+          "len": 17,
+          "gid_start": 5863,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfe70",
+          "len": 5,
+          "gid_start": 5880,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfe76",
+          "len": 135,
+          "gid_start": 5885,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xff01",
+          "len": 4095,
+          "gid_start": 6020,
+          "type": 3,
+          "sparse_list_len": 12
+        }
+      ],
+      "cap_height_px": 14
+    },
+    {
+      "name": "large",
+      "bpp": 1,
+      "glyph_dsc_off": "0x1e610c",
+      "glyph_bitmap_off": "0x19d104",
+      "cmaps_off": "0x19ce44",
+      "glyph_count": 6032,
+      "bitmap_format": 0,
+      "cmap_ranges": [
+        {
+          "start": "0x20",
+          "len": 95,
+          "gid_start": 1,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xa0",
+          "len": 169,
+          "gid_start": 96,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x14a",
+          "len": 122,
+          "gid_start": 265,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1c5",
+          "len": 138,
+          "gid_start": 387,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x2bc",
+          "len": 118,
+          "gid_start": 525,
+          "type": 3,
+          "sparse_list_len": 24
+        },
+        {
+          "start": "0x600",
+          "len": 256,
+          "gid_start": 549,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x750",
+          "len": 48,
+          "gid_start": 805,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x870",
+          "len": 31,
+          "gid_start": 853,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x890",
+          "len": 2,
+          "gid_start": 884,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x898",
+          "len": 104,
+          "gid_start": 886,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xe01",
+          "len": 58,
+          "gid_start": 990,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xe3f",
+          "len": 28,
+          "gid_start": 1048,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1000",
+          "len": 159,
+          "gid_start": 1076,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x1e80",
+          "len": 4212,
+          "gid_start": 1235,
+          "type": 3,
+          "sparse_list_len": 54
+        },
+        {
+          "start": "0x2f00",
+          "len": 180,
+          "gid_start": 1289,
+          "type": 0,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x2fb7",
+          "len": 146,
+          "gid_start": 1409,
+          "type": 3,
+          "sparse_list_len": 26
+        },
+        {
+          "start": "0x304a",
+          "len": 57,
+          "gid_start": 1435,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x3084",
+          "len": 33,
+          "gid_start": 1492,
+          "type": 3,
+          "sparse_list_len": 14
+        },
+        {
+          "start": "0x30a6",
+          "len": 63,
+          "gid_start": 1506,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x30e6",
+          "len": 23610,
+          "gid_start": 1569,
+          "type": 3,
+          "sparse_list_len": 3026
+        },
+        {
+          "start": "0x8d21",
+          "len": 17,
+          "gid_start": 4595,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0x8d34",
+          "len": 4716,
+          "gid_start": 4612,
+          "type": 3,
+          "sparse_list_len": 533
+        },
+        {
+          "start": "0xa9e0",
+          "len": 30,
+          "gid_start": 5145,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xaa60",
+          "len": 31,
+          "gid_start": 5175,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xf901",
+          "len": 264,
+          "gid_start": 5206,
+          "type": 3,
+          "sparse_list_len": 42
+        },
+        {
+          "start": "0xfb50",
+          "len": 115,
+          "gid_start": 5248,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfbd3",
+          "len": 189,
+          "gid_start": 5363,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfc90",
+          "len": 256,
+          "gid_start": 5552,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfd92",
+          "len": 54,
+          "gid_start": 5808,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfdcf",
+          "len": 1,
+          "gid_start": 5862,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfdf0",
+          "len": 17,
+          "gid_start": 5863,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfe70",
+          "len": 5,
+          "gid_start": 5880,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xfe76",
+          "len": 135,
+          "gid_start": 5885,
+          "type": 2,
+          "sparse_list_len": null
+        },
+        {
+          "start": "0xff01",
+          "len": 4095,
+          "gid_start": 6020,
+          "type": 3,
+          "sparse_list_len": 12
+        }
+      ],
+      "cap_height_px": 17
+    }
+  ]
+}
