@@ -1,0 +1,258 @@
+{
+ "file": "kws_model.nn",
+ "size": 1422200,
+ "magic": "STAR_NN V0.1.0",
+ "arch": "DFSMN",
+ "declared_layers": 10,
+ "blocks": [
+  {
+   "kind": "metadata",
+   "byte_start": "0xc",
+   "byte_end": "0x50",
+   "words": 17,
+   "u32": [
+    12334,
+    0,
+    1297303108,
+    78,
+    0,
+    0,
+    0,
+    10,
+    0,
+    1,
+    1,
+    440,
+    1,
+    1,
+    256,
+    256,
+    440
+   ]
+  },
+  {
+   "kind": "weights",
+   "byte_start": "0x50",
+   "byte_end": "0x6e450",
+   "words": 112896
+  },
+  {
+   "kind": "metadata",
+   "byte_start": "0x6e450",
+   "byte_end": "0x6e4a4",
+   "words": 21,
+   "u32": [
+    19,
+    1,
+    1,
+    256,
+    1,
+    1,
+    256,
+    1,
+    1,
+    1,
+    256,
+    1,
+    1,
+    256,
+    2,
+    0,
+    1,
+    1,
+    0,
+    64,
+    256
+   ]
+  },
+  {
+   "kind": "weights",
+   "byte_start": "0x6e4a4",
+   "byte_end": "0x8eba4",
+   "words": 33216
+  },
+  {
+   "kind": "metadata",
+   "byte_start": "0x8eba4",
+   "byte_end": "0x8ebdc",
+   "words": 14,
+   "u32": [
+    1,
+    1,
+    1,
+    256,
+    1,
+    1,
+    256,
+    2,
+    0,
+    1,
+    1,
+    0,
+    64,
+    256
+   ]
+  },
+  {
+   "kind": "weights",
+   "byte_start": "0x8ebdc",
+   "byte_end": "0xaf2dc",
+   "words": 33216
+  },
+  {
+   "kind": "metadata",
+   "byte_start": "0xaf2dc",
+   "byte_end": "0xaf314",
+   "words": 14,
+   "u32": [
+    1,
+    1,
+    1,
+    256,
+    1,
+    1,
+    256,
+    2,
+    0,
+    1,
+    1,
+    0,
+    64,
+    256
+   ]
+  },
+  {
+   "kind": "weights",
+   "byte_start": "0xaf314",
+   "byte_end": "0xcfa14",
+   "words": 33216
+  },
+  {
+   "kind": "metadata",
+   "byte_start": "0xcfa14",
+   "byte_end": "0xcfa4c",
+   "words": 14,
+   "u32": [
+    1,
+    1,
+    1,
+    256,
+    1,
+    1,
+    256,
+    2,
+    0,
+    1,
+    1,
+    0,
+    64,
+    256
+   ]
+  },
+  {
+   "kind": "weights",
+   "byte_start": "0xcfa4c",
+   "byte_end": "0xf014c",
+   "words": 33216
+  },
+  {
+   "kind": "metadata",
+   "byte_start": "0xf014c",
+   "byte_end": "0xf0184",
+   "words": 14,
+   "u32": [
+    1,
+    1,
+    1,
+    256,
+    1,
+    1,
+    256,
+    2,
+    0,
+    1,
+    1,
+    0,
+    64,
+    256
+   ]
+  },
+  {
+   "kind": "weights",
+   "byte_start": "0xf0184",
+   "byte_end": "0x110884",
+   "words": 33216
+  },
+  {
+   "kind": "metadata",
+   "byte_start": "0x110884",
+   "byte_end": "0x1108bc",
+   "words": 14,
+   "u32": [
+    1,
+    1,
+    1,
+    256,
+    1,
+    1,
+    256,
+    2,
+    0,
+    1,
+    1,
+    0,
+    64,
+    256
+   ]
+  },
+  {
+   "kind": "weights",
+   "byte_start": "0x1108bc",
+   "byte_end": "0x130fbc",
+   "words": 33216
+  },
+  {
+   "kind": "metadata",
+   "byte_start": "0x130fbc",
+   "byte_end": "0x130ff4",
+   "words": 14,
+   "u32": [
+    1,
+    1,
+    1,
+    256,
+    1,
+    1,
+    410,
+    2,
+    0,
+    1,
+    1,
+    1,
+    64,
+    410
+   ]
+  },
+  {
+   "kind": "weights",
+   "byte_start": "0x130ff4",
+   "byte_end": "0x15b35c",
+   "words": 43226
+  },
+  {
+   "kind": "metadata",
+   "byte_start": "0x15b35c",
+   "byte_end": "0x15b378",
+   "words": 7,
+   "u32": [
+    18,
+    1,
+    1,
+    410,
+    1,
+    1,
+    410
+   ]
+  }
+ ]
+}
