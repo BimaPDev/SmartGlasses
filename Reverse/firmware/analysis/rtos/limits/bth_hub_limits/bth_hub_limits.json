@@ -15,10 +15,10 @@
       "name": "rtx5_version",
       "core": "both",
       "value": "V5.5.1",
-      "evidence": "BTH banner 'P RTX V5.5.1' @0xadd4; hub 'RTX V5.5.1' @0x15d3c in carve",
-      "file_offset": "bth:0xadd4; hub:0x15d3c",
+      "evidence": "BTH banner 'P RTX V5.5.1' @0xadd2; hub 'RTX V5.5.1' @0x15d3c in carve",
+      "file_offset": "bth:0xadd2; hub:0x15d3c",
       "confidence": "high",
-      "va": "bth:0x1400add4"
+      "va": "bth:0x1400add2"
     },
     {
       "name": "chip_subsys_banner",

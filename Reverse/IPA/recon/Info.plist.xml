@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.upuphone.superapp</string>
+	</array>
+	<key>BuildMachineOSBuild</key>
+	<string>25F80</string>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>zh-Hans</string>
+	<key>CFBundleDisplayName</key>
+	<string>MYVU AR</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Text</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.plain-text</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>XJOverSeas</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>AppIcon60x60</string>
+			</array>
+			<key>CFBundleIconName</key>
+			<string>AppIcon</string>
+		</dict>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>AppIcon60x60</string>
+				<string>AppIcon76x76</string>
+			</array>
+			<key>CFBundleIconName</key>
+			<string>AppIcon</string>
+		</dict>
+	</dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.upuphone.overseas</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>XJOverSeas</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.28</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.upuphone.superapp.xjmz</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>xjmz</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>407081002</string>
+	<key>DTAppStoreToolsBuild</key>
+	<string>17F106</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>23C53</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>26.2</string>
+	<key>DTSDKBuild</key>
+	<string>23C53</string>
+	<key>DTSDKName</key>
+	<string>iphoneos26.2</string>
+	<key>DTXcode</key>
+	<string>2620</string>
+	<key>DTXcodeBuild</key>
+	<string>17C52</string>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>qqmusic</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<false/>
+	<key>MinimumOSVersion</key>
+	<string>13.0</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Used to discover AR Glasses and smart ring devices, bind devices, establish transmission channels, and obtain system audio to play on the Glasses.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Used to discover AR Glasses and smart ring devices, bind devices, establish transmission channels, and obtain system audio to play on the Glasses.</string>
+	<key>NSBluetoothWhileInUseUsageDescription</key>
+	<string>Used to discover AR Glasses and smart ring devices, bind devices, establish transmission channels, and obtain system audio to play on the Glasses.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_me-transferdata._tcp</string>
+		<string>_uupshare._tcp</string>
+	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Used to view and manage schedule information, and to set up a schedule based on to-do items in the Meeting Assistant,Translator and Voice Transcription</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Used for sending the image to the server after the user takes a photo, and then providing feedback based on the image.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Used to display the contact information on the Glasses when a phone call is transferred to the Glasses.</string>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>Used to access health data to display the user's step count information on the Glasses</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Used to access health data to display the user's step count information on the Glasses</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Used to access health data to display the user's step count information on the Glasses</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Used to establish transmission channels between connected devices and upgrade</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Used to obtain weather information; when connected to AR Glasses, it is used to establish transmission channels, determine navigation location, translate and record locations with meeting assistants, use voice navigation, speak to check the weather, automatically adjust the brightness of the Glasses, and provide clock-in reminders; when connected to a smart ring, it is used to calculate exercise data.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Used to obtain weather information; when connected to AR Glasses, it is used to establish transmission channels, determine navigation location, translate and record locations with meeting assistants, use voice navigation, speak to check the weather, automatically adjust the brightness of the Glasses, and provide clock-in reminders; when connected to a smart ring, it is used to calculate exercise data.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Used to obtain weather information; when connected to AR Glasses, it is used to establish transmission channels, determine navigation location, translate and record locations with meeting assistants, use voice navigation, speak to check the weather, automatically adjust the brightness of the Glasses, and provide clock-in reminders; when connected to a smart ring, it is used to calculate exercise data.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used to obtain weather information; when connected to AR Glasses, it is used to establish transmission channels, determine navigation location, translate and record locations with meeting assistants, use voice navigation, speak to check the weather, automatically adjust the brightness of the Glasses, and provide clock-in reminders; when connected to a smart ring, it is used to calculate exercise data.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used for sending voice messages to the server, with feedback based on the voice message</string>
+	<key>NSMotionUsageDescription</key>
+	<string>用于高德获取运动与健身，以提升导航准确性。您不允许，不影响导航功能的正常使用</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Used for uploading photos or videos when providing feedback, saving screenshots to the gallery, and sending user-uploaded images to the server for feedback based on images</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used for uploading photos or videos when providing feedback, saving screenshots to the gallery, and sending user-uploaded images to the server for feedback based on images</string>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>Used to send important notifications</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+		<string>fetch</string>
+		<string>location</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen.storyboard</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>

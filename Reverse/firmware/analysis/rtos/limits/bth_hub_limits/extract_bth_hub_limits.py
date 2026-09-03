@@ -63,7 +63,7 @@ def extract() -> dict[str, Any]:
     entries: list[dict[str, Any]] = []
 
     # --- 1. RTX5 version ---
-    bth_ver = find_cstr(bth, b"RTX V5.5.1")
+    bth_ver = find_cstr(bth, b"P RTX V5.5.1")
     hub_ver = find_cstr(hub, b"RTX V5.5.1")
     entries.append(
         entry(

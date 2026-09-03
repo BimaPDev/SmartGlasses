@@ -21,7 +21,7 @@ That write-up is the source of truth. Older notes (`TEARDOWN.md` §6, parts of `
 - [Meizu-Myvu-SDK](https://github.com/Panny777/Meizu-Myvu-SDK) (vendored at [`Reference/Meizu-Myvu-SDK/`](Reference/Meizu-Myvu-SDK/))
 - [Meizu-Myvu-Client](https://github.com/Panny777/Meizu-Myvu-Client) (vendored at [`Reference/Meizu-Myvu-Client/`](Reference/Meizu-Myvu-Client/))
 
-The Swift products `MyvuCore`, `MyvuNav`, `MyvuAI`, and `MyvuWeather` map 1:1 onto those Android modules. Wire format (BLE packets, ECDH bond, LinkProtocol, HFP-gate diagnosis, JSON actions) is that lineage, not a second independent recovery.
+The Swift products `MyvuCore`, `MyvuNav`, `MyvuAI`, and `MyvuWeather` map 1:1 onto those Android modules (plus `MyvuHealth` for step-count sync). Wire format (BLE packets, ECDH bond, LinkProtocol, HFP-gate diagnosis, JSON actions) is that lineage, not a second independent recovery.
 
 ---
 
@@ -45,7 +45,7 @@ The Swift products `MyvuCore`, `MyvuNav`, `MyvuAI`, and `MyvuWeather` map 1:1 on
 
 ## This repo
 
-Swift 5 package, iOS 15 / macOS 12. Products: **MyvuCore**, **MyvuNav**, **MyvuAI**, **MyvuWeather**. Demo: `Examples/MyvuDemo`.
+Swift 5 package, iOS 15 / macOS 12. Products: **MyvuCore**, **MyvuNav**, **MyvuAI**, **MyvuWeather**, **MyvuHealth**. Demo: `Examples/MyvuDemo`.
 
 On iOS the glasses are found by BLE **manufacturer data** (`0x0BD1` / `0x0BD2`), not a local name or service UUID. After the ECDH bond, app JSON rides BLE `0x2021`. Teleprompter (`com.upuphone.ar.tici`) and nav HUD (`com.upuphone.ar.navi.glass`) need a classic **HFP + A2DP** link; iOS cannot open RFCOMM/SPP (the glasses are not MFi). `IOS_CONNECT_BT` (LinkProtocol cmd 32) has the glasses page the phone by Bluetooth name instead.
 

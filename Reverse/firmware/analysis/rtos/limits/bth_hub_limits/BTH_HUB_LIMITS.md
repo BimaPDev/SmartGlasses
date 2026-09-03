@@ -30,7 +30,7 @@ Re-measure after regenerate: `python3 extract_bth_hub_limits.py` prints `bth=…
 | Limit | BTH | Sensor hub |
 | --- | --- | --- |
 | Kernel | `KERNEL=RTX5` | `KERNEL=RTX5` |
-| Version banner | `P RTX V5.5.1` @ `0xadd4` | `RTX V5.5.1` @ `0x15d3c` |
+| Version banner | `P RTX V5.5.1` @ `0xadd2` | `RTX V5.5.1` @ `0x15d3c` |
 | Chip / subsys | `CHIP=best1600` / `CHIP_SUBSYS=bth` | `CHIP=best1600` / `CHIP_SUBSYS=sensor_hub` |
 | Flash slot | `FLASH_BASE=0x34000000`, **`FLASH_SIZE=0x400000`** | `FLASH_BASE=0x34000000`, **`FLASH_SIZE=0x100000`** |
 | Rev | `REV_INFO=…:best1600_watch_bth` | `REV_INFO=…:sensor_hub` |

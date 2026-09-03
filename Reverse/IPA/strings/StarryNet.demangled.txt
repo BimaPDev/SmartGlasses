@@ -1,0 +1,1279 @@
+StarryNet.StarryTag.appUniteCode.getter : Swift.String
+property descriptor for StarryNet.StarryTag.appUniteCode : Swift.String
+StarryNet.StarryTag.deviceId.getter : Swift.String
+property descriptor for StarryNet.StarryTag.deviceId : Swift.String
+type metadata accessor for StarryNet.StarryTag
+nominal type descriptor for StarryNet.StarryTag
+type metadata for StarryNet.StarryTag
+StarryNet.StarryTag.init(Swift.String, Swift.String) -> StarryNet.StarryTag
+StarryNet.StarryParam.init(listenerId: Swift.Int) -> StarryNet.StarryParam
+StarryNet.StarryParam.listenerId.modify : Swift.Int
+StarryNet.StarryParam.listenerId.getter : Swift.Int
+property descriptor for StarryNet.StarryParam.listenerId : Swift.Int
+StarryNet.StarryParam.listenerId.setter : Swift.Int
+variable initialization expression of StarryNet.StarryParam.ablity : StarryNet.AbilityType
+type metadata accessor for StarryNet.StarryParam
+nominal type descriptor for StarryNet.StarryParam
+type metadata for StarryNet.StarryParam
+StarryNet.StarryDevice.stDevice.getter : StarryNet.XJPeripheral
+method descriptor for StarryNet.StarryDevice.stDevice.getter : StarryNet.XJPeripheral
+property descriptor for StarryNet.StarryDevice.stDevice : StarryNet.XJPeripheral
+direct field offset for StarryNet.StarryDevice.stDevice : StarryNet.XJPeripheral
+StarryNet.StarryDevice.connectTimeout.modify : Swift.Int32
+method descriptor for StarryNet.StarryDevice.connectTimeout.modify : Swift.Int32
+StarryNet.StarryDevice.connectTimeout.getter : Swift.Int32
+method descriptor for StarryNet.StarryDevice.connectTimeout.getter : Swift.Int32
+property descriptor for StarryNet.StarryDevice.connectTimeout : Swift.Int32
+StarryNet.StarryDevice.connectTimeout.setter : Swift.Int32
+method descriptor for StarryNet.StarryDevice.connectTimeout.setter : Swift.Int32
+StarryNet.StarryDevice.isFirstConnect.modify : Swift.Bool
+method descriptor for StarryNet.StarryDevice.isFirstConnect.modify : Swift.Bool
+StarryNet.StarryDevice.isFirstConnect.getter : Swift.Bool
+method descriptor for StarryNet.StarryDevice.isFirstConnect.getter : Swift.Bool
+property descriptor for StarryNet.StarryDevice.isFirstConnect : Swift.Bool
+StarryNet.StarryDevice.isFirstConnect.setter : Swift.Bool
+method descriptor for StarryNet.StarryDevice.isFirstConnect.setter : Swift.Bool
+StarryNet.StarryDevice.cycleConnectCount.modify : Swift.Int32
+method descriptor for StarryNet.StarryDevice.cycleConnectCount.modify : Swift.Int32
+StarryNet.StarryDevice.cycleConnectCount.getter : Swift.Int32
+method descriptor for StarryNet.StarryDevice.cycleConnectCount.getter : Swift.Int32
+property descriptor for StarryNet.StarryDevice.cycleConnectCount : Swift.Int32
+StarryNet.StarryDevice.cycleConnectCount.setter : Swift.Int32
+method descriptor for StarryNet.StarryDevice.cycleConnectCount.setter : Swift.Int32
+StarryNet.StarryDevice.cycleConnectThreshold.modify : Swift.Int32
+method descriptor for StarryNet.StarryDevice.cycleConnectThreshold.modify : Swift.Int32
+StarryNet.StarryDevice.cycleConnectThreshold.getter : Swift.Int32
+method descriptor for StarryNet.StarryDevice.cycleConnectThreshold.getter : Swift.Int32
+property descriptor for StarryNet.StarryDevice.cycleConnectThreshold : Swift.Int32
+StarryNet.StarryDevice.cycleConnectThreshold.setter : Swift.Int32
+method descriptor for StarryNet.StarryDevice.cycleConnectThreshold.setter : Swift.Int32
+StarryNet.StarryDevice.id.getter : Swift.String
+property descriptor for StarryNet.StarryDevice.id : Swift.String
+direct field offset for StarryNet.StarryDevice.id : Swift.String
+StarryNet.StarryDevice.name.modify : Swift.String
+method descriptor for StarryNet.StarryDevice.name.modify : Swift.String
+StarryNet.StarryDevice.name.getter : Swift.String
+method descriptor for StarryNet.StarryDevice.name.getter : Swift.String
+property descriptor for StarryNet.StarryDevice.name : Swift.String
+StarryNet.StarryDevice.name.setter : Swift.String
+method descriptor for StarryNet.StarryDevice.name.setter : Swift.String
+variable initialization expression of StarryNet.StarryDevice.address : Swift.String?
+StarryNet.StarryDevice.bleState.getter : StarryNet.BleState
+method descriptor for StarryNet.StarryDevice.bleState.getter : StarryNet.BleState
+property descriptor for StarryNet.StarryDevice.bleState : StarryNet.BleState
+direct field offset for StarryNet.StarryDevice.bleState : StarryNet.BleState
+StarryNet.StarryDevice.pairParam(isFirstConnect: Swift.Bool, connectTimeout: Swift.Int32, cycleConnectCount: Swift.Int32, cycleConnectThreshold: Swift.Int32) -> ()
+method descriptor for StarryNet.StarryDevice.pairParam(isFirstConnect: Swift.Bool, connectTimeout: Swift.Int32, cycleConnectCount: Swift.Int32, cycleConnectThreshold: Swift.Int32) -> ()
+type metadata accessor for StarryNet.StarryDevice
+metaclass for StarryNet.StarryDevice
+nominal type descriptor for StarryNet.StarryDevice
+type metadata for StarryNet.StarryDevice
+StarryNet.StarryDevice.__deallocating_deinit
+StarryNet.StarryDevice.deinit
+protocol conformance descriptor for StarryNet.StarryDevice : Swift.Identifiable in StarryNet
+variable initialization expression of StarryNet.StarryMessage.isSegMessage : Swift.Bool
+StarryNet.StarryMessage.isLongMessage.getter : Swift.Bool
+method descriptor for StarryNet.StarryMessage.isLongMessage.getter : Swift.Bool
+property descriptor for StarryNet.StarryMessage.isLongMessage : Swift.Bool
+direct field offset for StarryNet.StarryMessage.isLongMessage : Swift.Bool
+variable initialization expression of StarryNet.StarryMessage.isLongMessage : Swift.Bool
+StarryNet.StarryMessage.identifier.getter : Swift.String
+method descriptor for StarryNet.StarryMessage.identifier.getter : Swift.String
+property descriptor for StarryNet.StarryMessage.identifier : Swift.String
+direct field offset for StarryNet.StarryMessage.identifier : Swift.String
+variable initialization expression of StarryNet.StarryMessage.isInternal : Swift.Bool
+StarryNet.StarryMessage.isMainQueue.modify : Swift.Bool
+method descriptor for StarryNet.StarryMessage.isMainQueue.modify : Swift.Bool
+StarryNet.StarryMessage.isMainQueue.getter : Swift.Bool
+method descriptor for StarryNet.StarryMessage.isMainQueue.getter : Swift.Bool
+property descriptor for StarryNet.StarryMessage.isMainQueue : Swift.Bool
+direct field offset for StarryNet.StarryMessage.isMainQueue : Swift.Bool
+variable initialization expression of StarryNet.StarryMessage.isMainQueue : Swift.Bool
+StarryNet.StarryMessage.isMainQueue.setter : Swift.Bool
+method descriptor for StarryNet.StarryMessage.isMainQueue.setter : Swift.Bool
+StarryNet.StarryMessage.isUrgentMsg.modify : Swift.Bool
+method descriptor for StarryNet.StarryMessage.isUrgentMsg.modify : Swift.Bool
+StarryNet.StarryMessage.isUrgentMsg.getter : Swift.Bool
+method descriptor for StarryNet.StarryMessage.isUrgentMsg.getter : Swift.Bool
+property descriptor for StarryNet.StarryMessage.isUrgentMsg : Swift.Bool
+direct field offset for StarryNet.StarryMessage.isUrgentMsg : Swift.Bool
+variable initialization expression of StarryNet.StarryMessage.isUrgentMsg : Swift.Bool
+StarryNet.StarryMessage.isUrgentMsg.setter : Swift.Bool
+method descriptor for StarryNet.StarryMessage.isUrgentMsg.setter : Swift.Bool
+variable initialization expression of StarryNet.StarryMessage.packetNumber : Swift.UInt16
+variable initialization expression of StarryNet.StarryMessage.sendDelegate : StarryNet.ISendMessageDelegate?
+variable initialization expression of StarryNet.StarryMessage.writeComplete : ((Swift.Result<Swift.Int, StarryNet.WriteValueError>) -> ()?)?
+variable initialization expression of StarryNet.StarryMessage.time : Dispatch.DispatchTime
+variable initialization expression of StarryNet.StarryMessage.encase : Swift.Bool
+StarryNet.StarryMessage.opCode.modify : StarryNet.PacketOPCode?
+method descriptor for StarryNet.StarryMessage.opCode.modify : StarryNet.PacketOPCode?
+StarryNet.StarryMessage.opCode.getter : StarryNet.PacketOPCode?
+method descriptor for StarryNet.StarryMessage.opCode.getter : StarryNet.PacketOPCode?
+property descriptor for StarryNet.StarryMessage.opCode : StarryNet.PacketOPCode?
+direct field offset for StarryNet.StarryMessage.opCode : StarryNet.PacketOPCode?
+variable initialization expression of StarryNet.StarryMessage.opCode : StarryNet.PacketOPCode?
+StarryNet.StarryMessage.opCode.setter : StarryNet.PacketOPCode?
+method descriptor for StarryNet.StarryMessage.opCode.setter : StarryNet.PacketOPCode?
+StarryNet.StarryMessage.content.getter : Foundation.Data
+method descriptor for StarryNet.StarryMessage.content.getter : Foundation.Data
+property descriptor for StarryNet.StarryMessage.content : Foundation.Data
+property wrapper backing initializer of StarryNet.StarryMessage.content : Foundation.Data
+StarryNet.StarryMessage.__allocating_init(content: Foundation.Data, identifier: Swift.String, opCode: StarryNet.PacketOPCode?, msgMode: StarryNet.MsgMode, isUrgentMsg: Swift.Bool, messageId: Swift.String?) -> StarryNet.StarryMessage
+StarryNet.StarryMessage.msgMode.modify : StarryNet.MsgMode
+method descriptor for StarryNet.StarryMessage.msgMode.modify : StarryNet.MsgMode
+StarryNet.StarryMessage.msgMode.getter : StarryNet.MsgMode
+method descriptor for StarryNet.StarryMessage.msgMode.getter : StarryNet.MsgMode
+property descriptor for StarryNet.StarryMessage.msgMode : StarryNet.MsgMode
+direct field offset for StarryNet.StarryMessage.msgMode : StarryNet.MsgMode
+variable initialization expression of StarryNet.StarryMessage.msgMode : StarryNet.MsgMode
+StarryNet.StarryMessage.msgMode.setter : StarryNet.MsgMode
+method descriptor for StarryNet.StarryMessage.msgMode.setter : StarryNet.MsgMode
+variable initialization expression of StarryNet.StarryMessage.waitAck : Swift.Bool
+StarryNet.StarryMessage.$content.getter : StarryNet.XJProtected<Foundation.Data>
+method descriptor for StarryNet.StarryMessage.$content.getter : StarryNet.XJProtected<Foundation.Data>
+property descriptor for StarryNet.StarryMessage.$content : StarryNet.XJProtected<Foundation.Data>
+StarryNet.StarryMessage.uuidType.getter : StarryNet.UUIDType
+method descriptor for StarryNet.StarryMessage.uuidType.getter : StarryNet.UUIDType
+property descriptor for StarryNet.StarryMessage.uuidType : StarryNet.UUIDType
+direct field offset for StarryNet.StarryMessage.uuidType : StarryNet.UUIDType
+variable initialization expression of StarryNet.StarryMessage.xjDevice : StarryNet.XJDevice?
+StarryNet.StarryMessage.messageId.getter : Swift.String
+method descriptor for StarryNet.StarryMessage.messageId.getter : Swift.String
+property descriptor for StarryNet.StarryMessage.messageId : Swift.String
+direct field offset for StarryNet.StarryMessage.messageId : Swift.String
+StarryNet.StarryMessage.testLabel.modify : Swift.String?
+method descriptor for StarryNet.StarryMessage.testLabel.modify : Swift.String?
+StarryNet.StarryMessage.testLabel.getter : Swift.String?
+method descriptor for StarryNet.StarryMessage.testLabel.getter : Swift.String?
+property descriptor for StarryNet.StarryMessage.testLabel : Swift.String?
+direct field offset for StarryNet.StarryMessage.testLabel : Swift.String?
+variable initialization expression of StarryNet.StarryMessage.testLabel : Swift.String?
+StarryNet.StarryMessage.testLabel.setter : Swift.String?
+method descriptor for StarryNet.StarryMessage.testLabel.setter : Swift.String?
+type metadata accessor for StarryNet.StarryMessage
+metaclass for StarryNet.StarryMessage
+nominal type descriptor for StarryNet.StarryMessage
+type metadata for StarryNet.StarryMessage
+StarryNet.StarryMessage.__deallocating_deinit
+StarryNet.StarryMessage.deinit
+protocol conformance descriptor for StarryNet.StarryNetDeviceError : Foundation.LocalizedError in StarryNet
+StarryNet.StarryNetDeviceError.errorDescription.getter : Swift.String?
+property descriptor for StarryNet.StarryNetDeviceError.errorDescription : Swift.String?
+type metadata accessor for StarryNet.StarryNetDeviceError
+nominal type descriptor for StarryNet.StarryNetDeviceError
+type metadata for StarryNet.StarryNetDeviceError
+protocol conformance descriptor for StarryNet.StarryNetDeviceError : Swift.Error in StarryNet
+variable initialization expression of StarryNet.WifiApInfo.port : Swift.Int32
+StarryNet.WifiApInfo.init(ssid: Swift.String, psk: Swift.String, localIP: Swift.String, port: Swift.Int32) -> StarryNet.WifiApInfo
+type metadata accessor for StarryNet.WifiApInfo
+nominal type descriptor for StarryNet.WifiApInfo
+type metadata for StarryNet.WifiApInfo
+static StarryNet.AbilityType.allCases.getter : [StarryNet.AbilityType]
+property descriptor for static StarryNet.AbilityType.allCases : [StarryNet.AbilityType]
+StarryNet.AbilityType.init(rawValue: Swift.String) -> StarryNet.AbilityType?
+StarryNet.AbilityType.rawValue.getter : Swift.String
+property descriptor for StarryNet.AbilityType.rawValue : Swift.String
+type metadata accessor for StarryNet.AbilityType
+nominal type descriptor for StarryNet.AbilityType
+type metadata for StarryNet.AbilityType
+protocol conformance descriptor for StarryNet.AbilityType : Swift.Encodable in StarryNet
+protocol conformance descriptor for StarryNet.AbilityType : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.AbilityType : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.AbilityType : Swift.RawRepresentable in StarryNet
+protocol conformance descriptor for StarryNet.AbilityType : Swift.Decodable in StarryNet
+protocol conformance descriptor for StarryNet.AbilityType : Swift.CaseIterable in StarryNet
+static StarryNet.CoreConnect.SDKVersion.getter : Swift.String?
+property descriptor for static StarryNet.CoreConnect.SDKVersion : Swift.String?
+StarryNet.CoreConnect.localDevice.getter : StarryNet.LocalDevice.Type
+method descriptor for StarryNet.CoreConnect.localDevice.getter : StarryNet.LocalDevice.Type
+property descriptor for StarryNet.CoreConnect.localDevice : StarryNet.LocalDevice.Type
+StarryNet.CoreConnect.discoverStop(error: StarryNet.DiscoverError?) -> ()
+StarryNet.CoreConnect.bondedDevices.getter : [StarryNet.StarryDevice]?
+method descriptor for StarryNet.CoreConnect.bondedDevices.getter : [StarryNet.StarryDevice]?
+property descriptor for StarryNet.CoreConnect.bondedDevices : [StarryNet.StarryDevice]?
+StarryNet.CoreConnect.connectDevice.getter : [Swift.String : StarryNet.StarryDevice]
+method descriptor for StarryNet.CoreConnect.connectDevice.getter : [Swift.String : StarryNet.StarryDevice]
+property descriptor for StarryNet.CoreConnect.connectDevice : [Swift.String : StarryNet.StarryDevice]
+StarryNet.CoreConnect.createZipFile(atPath: Swift.String, withFilesAtPaths: [Swift.String], pass: Swift.String, completion: (Swift.String) -> ()) -> ()
+StarryNet.CoreConnect.discoverStart(filters: [StarryNet.DiscoveryFilter]?, retrieveIds: [Swift.String]?) throws -> ()
+StarryNet.CoreConnect.currentAPState.getter : StarryNet.CoreAPStatus
+method descriptor for StarryNet.CoreConnect.currentAPState.getter : StarryNet.CoreAPStatus
+property descriptor for StarryNet.CoreConnect.currentAPState : StarryNet.CoreAPStatus
+StarryNet.CoreConnect.installAbilitys(_: [StarryNet.AbilityType], extendedParam: [StarryNet.AbilityType : [Swift.String : Any]]?) -> ()
+method descriptor for StarryNet.CoreConnect.installAbilitys(_: [StarryNet.AbilityType], extendedParam: [StarryNet.AbilityType : [Swift.String : Any]]?) -> ()
+StarryNet.CoreConnect.localIdentifier.getter : Swift.String
+method descriptor for StarryNet.CoreConnect.localIdentifier.getter : Swift.String
+property descriptor for StarryNet.CoreConnect.localIdentifier : Swift.String
+variable initialization expression of StarryNet.CoreConnect.connectDelegates : StarryNet.WeakDelegateArray<StarryNet.ConnectDelegate>
+variable initialization expression of StarryNet.CoreConnect.messageDelegates : StarryNet.WeakDelegateArray<StarryNet.MessageDelegate>
+StarryNet.CoreConnect.updateDeviceName(_: Swift.String, id: Swift.String) throws -> ()
+method descriptor for StarryNet.CoreConnect.updateDeviceName(_: Swift.String, id: Swift.String) throws -> ()
+variable initialization expression of StarryNet.CoreConnect.apConfigDelegates : StarryNet.WeakDelegateArray<StarryNet.APConfigDelegate>
+variable initialization expression of StarryNet.CoreConnect.discoverDelegates : StarryNet.WeakDelegateArray<StarryNet.DiscoverDelegate>
+StarryNet.CoreConnect.connectDevicesInfo() throws -> [[Swift.String : Any]]
+method descriptor for StarryNet.CoreConnect.connectDevicesInfo() throws -> [[Swift.String : Any]]
+variable initialization expression of StarryNet.CoreConnect.fileShareDelegates : StarryNet.WeakDelegateArray<StarryNet.FileShareDelegate>
+variable initialization expression of StarryNet.CoreConnect.castDisplayDelegates : StarryNet.WeakDelegateArray<StarryNet.CastDisplayDelegate>
+StarryNet.CoreConnect.currentLinkedDevices.getter : [StarryNet.StarryDevice]?
+method descriptor for StarryNet.CoreConnect.currentLinkedDevices.getter : [StarryNet.StarryDevice]?
+property descriptor for StarryNet.CoreConnect.currentLinkedDevices : [StarryNet.StarryDevice]?
+StarryNet.CoreConnect.fileShareAPDisconnect() -> ()
+StarryNet.CoreConnect.fileShareBLEDisconnect() -> ()
+StarryNet.CoreConnect.add(connectDelegate: StarryNet.ConnectDelegate) -> ()
+StarryNet.CoreConnect.add(messageDelegate: StarryNet.MessageDelegate, appUniteCodes: [Swift.String]) -> ()
+StarryNet.CoreConnect.add(apConfigDelegate: StarryNet.APConfigDelegate) -> ()
+StarryNet.CoreConnect.add(discoverDelegate: StarryNet.DiscoverDelegate) -> ()
+StarryNet.CoreConnect.add(fileShareDelegate: StarryNet.FileShareDelegate) -> ()
+StarryNet.CoreConnect.add(castDisplayDelegate: StarryNet.CastDisplayDelegate, groupId: Swift.String, appURL: Foundation.URL?) -> ()
+StarryNet.CoreConnect.cmd(disConnect: StarryNet.StarryDevice, _: StarryNet.DeviceConnectType) -> ()
+StarryNet.CoreConnect.cmd(disConnect: Swift.String, _: StarryNet.DeviceConnectType) -> ()
+StarryNet.CoreConnect.cmd(disConnectAP: StarryNet.StarryDevice, ssid: Swift.String, password: Swift.String) -> ()
+StarryNet.CoreConnect.cmd(disConnectWs: StarryNet.StarryDevice) -> ()
+StarryNet.CoreConnect.cmd(cancelConnect: StarryNet.StarryDevice, _: StarryNet.DeviceConnectType) -> ()
+StarryNet.CoreConnect.cmd(getBTState: StarryNet.StarryDevice) throws -> ()
+StarryNet.CoreConnect.cmd(getBTState: Swift.String) throws -> ()
+StarryNet.CoreConnect.cmd(openDiscoverable: StarryNet.StarryDevice) throws -> ()
+StarryNet.CoreConnect.cmd(openDiscoverable: Swift.String) throws -> ()
+StarryNet.CoreConnect.cmd(connect: StarryNet.StarryDevice, _: StarryNet.DeviceConnectType) throws -> ()
+StarryNet.CoreConnect.cmd(unbound: StarryNet.StarryDevice) throws -> ()
+StarryNet.CoreConnect.cmd(connectAP: StarryNet.StarryDevice, ssid: Swift.String, password: Swift.String) -> ()
+StarryNet.CoreConnect.cast(showCastView: Swift.String) -> ()
+StarryNet.CoreConnect.cast(startCastServer: StarryNet.StarryDevice) throws -> ()
+StarryNet.CoreConnect.send(message: StarryNet.Message) throws -> ()
+static StarryNet.CoreConnect.share.modify : StarryNet.CoreConnect
+StarryNet.CoreConnect.share.unsafeMutableAddressor : StarryNet.CoreConnect
+static StarryNet.CoreConnect.share.getter : StarryNet.CoreConnect
+static StarryNet.CoreConnect.share : StarryNet.CoreConnect
+property descriptor for static StarryNet.CoreConnect.share : StarryNet.CoreConnect
+static StarryNet.CoreConnect.share.setter : StarryNet.CoreConnect
+StarryNet.CoreConnect.remove(connectDelegate: StarryNet.ConnectDelegate) -> ()
+StarryNet.CoreConnect.remove(messageDelegate: StarryNet.MessageDelegate, appUniteCode: Swift.String) -> ()
+StarryNet.CoreConnect.remove(apConfigDelegate: StarryNet.APConfigDelegate) -> ()
+StarryNet.CoreConnect.remove(discoverDelegate: StarryNet.DiscoverDelegate) -> ()
+StarryNet.CoreConnect.remove(fileShareDelegate: StarryNet.FileShareDelegate) -> ()
+StarryNet.CoreConnect.remove(castDisplayDelegate: StarryNet.CastDisplayDelegate) -> ()
+StarryNet.CoreConnect.castStop() throws -> ()
+StarryNet.CoreConnect.fileShare(cancelReceive: Swift.String, taskId: Swift.String) -> ()
+StarryNet.CoreConnect.fileShare(confirmReceive: Swift.String) -> ()
+StarryNet.CoreConnect.fileShare(setRemoteSavePath: Swift.String) -> ()
+StarryNet.CoreConnect.fileShare(sendAP: [Foundation.URL], deviceId: Swift.String, extra: Swift.String) -> Swift.String?
+StarryNet.CoreConnect.fileShare(sendBLE: Foundation.URL, deviceId: Swift.String, extra: Swift.String) -> Swift.String?
+type metadata accessor for StarryNet.CoreConnect
+metaclass for StarryNet.CoreConnect
+nominal type descriptor for StarryNet.CoreConnect
+type metadata for StarryNet.CoreConnect
+StarryNet.CoreConnect.__deallocating_deinit
+StarryNet.CoreConnect.deinit
+StarryNet.LocalDevice.categoryID.unsafeMutableAddressor : Swift.String
+static StarryNet.LocalDevice.categoryID.getter : Swift.String
+static StarryNet.LocalDevice.categoryID : Swift.String
+property descriptor for static StarryNet.LocalDevice.categoryID : Swift.String
+static StarryNet.LocalDevice.identifier.modify : Swift.String
+StarryNet.LocalDevice.identifier.unsafeMutableAddressor : Swift.String
+static StarryNet.LocalDevice.identifier.getter : Swift.String
+static StarryNet.LocalDevice.identifier : Swift.String
+property descriptor for static StarryNet.LocalDevice.identifier : Swift.String
+static StarryNet.LocalDevice.identifier.setter : Swift.String
+StarryNet.LocalDevice.companyName.unsafeMutableAddressor : Swift.String
+static StarryNet.LocalDevice.companyName.getter : Swift.String
+static StarryNet.LocalDevice.companyName : Swift.String
+property descriptor for static StarryNet.LocalDevice.companyName : Swift.String
+static StarryNet.LocalDevice.authorization.getter : __C.CBManagerAuthorization
+property descriptor for static StarryNet.LocalDevice.authorization : __C.CBManagerAuthorization
+static StarryNet.LocalDevice.name.getter : Swift.String
+property descriptor for static StarryNet.LocalDevice.name : Swift.String
+static StarryNet.LocalDevice.state.getter : __C.CBManagerState
+property descriptor for static StarryNet.LocalDevice.state : __C.CBManagerState
+static StarryNet.LocalDevice.battery.getter : Swift.Int32
+property descriptor for static StarryNet.LocalDevice.battery : Swift.Int32
+StarryNet.LocalDevice.modelID.unsafeMutableAddressor : Swift.String
+static StarryNet.LocalDevice.modelID.getter : Swift.String
+static StarryNet.LocalDevice.modelID : Swift.String
+property descriptor for static StarryNet.LocalDevice.modelID : Swift.String
+StarryNet.LocalDevice.category.unsafeMutableAddressor : Swift.String
+static StarryNet.LocalDevice.category.getter : Swift.String
+static StarryNet.LocalDevice.category : Swift.String
+property descriptor for static StarryNet.LocalDevice.category : Swift.String
+StarryNet.LocalDevice.deviceID.unsafeMutableAddressor : Foundation.Data
+static StarryNet.LocalDevice.deviceID.getter : Foundation.Data
+static StarryNet.LocalDevice.deviceID : Foundation.Data
+property descriptor for static StarryNet.LocalDevice.deviceID : Foundation.Data
+static StarryNet.LocalDevice.SNVersion.getter : Swift.String?
+property descriptor for static StarryNet.LocalDevice.SNVersion : Swift.String?
+StarryNet.LocalDevice.companyID.unsafeMutableAddressor : Swift.String
+static StarryNet.LocalDevice.companyID.getter : Swift.String
+static StarryNet.LocalDevice.companyID : Swift.String
+property descriptor for static StarryNet.LocalDevice.companyID : Swift.String
+static StarryNet.LocalDevice.isScaning.getter : Swift.Bool
+property descriptor for static StarryNet.LocalDevice.isScaning : Swift.Bool
+StarryNet.LocalDevice.modelName.unsafeMutableAddressor : Swift.String
+static StarryNet.LocalDevice.modelName.getter : Swift.String
+static StarryNet.LocalDevice.modelName : Swift.String
+property descriptor for static StarryNet.LocalDevice.modelName : Swift.String
+type metadata accessor for StarryNet.LocalDevice
+nominal type descriptor for StarryNet.LocalDevice
+type metadata for StarryNet.LocalDevice
+StarryNet.RAOConstant.Cast_ownerApp.unsafeMutableAddressor : Swift.String
+static StarryNet.RAOConstant.Cast_ownerApp.getter : Swift.String
+static StarryNet.RAOConstant.Cast_ownerApp : Swift.String
+property descriptor for static StarryNet.RAOConstant.Cast_ownerApp : Swift.String
+StarryNet.RAOConstant.Cast_sessionTag.unsafeMutableAddressor : Swift.String
+static StarryNet.RAOConstant.Cast_sessionTag.getter : Swift.String
+static StarryNet.RAOConstant.Cast_sessionTag : Swift.String
+property descriptor for static StarryNet.RAOConstant.Cast_sessionTag : Swift.String
+StarryNet.RAOConstant.Config_videoFps.unsafeMutableAddressor : Swift.Int
+static StarryNet.RAOConstant.Config_videoFps.getter : Swift.Int
+static StarryNet.RAOConstant.Config_videoFps : Swift.Int
+property descriptor for static StarryNet.RAOConstant.Config_videoFps : Swift.Int
+StarryNet.RAOConstant.Config_zoomSize.unsafeMutableAddressor : Swift.Int
+static StarryNet.RAOConstant.Config_zoomSize.getter : Swift.Int
+static StarryNet.RAOConstant.Config_zoomSize : Swift.Int
+property descriptor for static StarryNet.RAOConstant.Config_zoomSize : Swift.Int
+StarryNet.RAOConstant.Cast_appUniteCode.unsafeMutableAddressor : Swift.String
+static StarryNet.RAOConstant.Cast_appUniteCode.getter : Swift.String
+static StarryNet.RAOConstant.Cast_appUniteCode : Swift.String
+property descriptor for static StarryNet.RAOConstant.Cast_appUniteCode : Swift.String
+StarryNet.RAOConstant.Config_densityDpi.unsafeMutableAddressor : Swift.Int
+static StarryNet.RAOConstant.Config_densityDpi.getter : Swift.Int
+static StarryNet.RAOConstant.Config_densityDpi : Swift.Int
+property descriptor for static StarryNet.RAOConstant.Config_densityDpi : Swift.Int
+StarryNet.RAOConstant.Config_captureType.unsafeMutableAddressor : Swift.Int
+static StarryNet.RAOConstant.Config_captureType.getter : Swift.Int
+static StarryNet.RAOConstant.Config_captureType : Swift.Int
+property descriptor for static StarryNet.RAOConstant.Config_captureType : Swift.Int
+StarryNet.RAOConstant.Config_displayFlag.unsafeMutableAddressor : Swift.Int
+static StarryNet.RAOConstant.Config_displayFlag.getter : Swift.Int
+static StarryNet.RAOConstant.Config_displayFlag : Swift.Int
+property descriptor for static StarryNet.RAOConstant.Config_displayFlag : Swift.Int
+StarryNet.RAOConstant.Config_videoMimeType.unsafeMutableAddressor : Swift.String
+static StarryNet.RAOConstant.Config_videoMimeType.getter : Swift.String
+static StarryNet.RAOConstant.Config_videoMimeType : Swift.String
+property descriptor for static StarryNet.RAOConstant.Config_videoMimeType : Swift.String
+StarryNet.RAOConstant.Config_PreferSoftDecoder.unsafeMutableAddressor : Swift.Bool
+static StarryNet.RAOConstant.Config_PreferSoftDecoder.getter : Swift.Bool
+static StarryNet.RAOConstant.Config_PreferSoftDecoder : Swift.Bool
+property descriptor for static StarryNet.RAOConstant.Config_PreferSoftDecoder : Swift.Bool
+type metadata accessor for StarryNet.RAOConstant
+nominal type descriptor for StarryNet.RAOConstant
+type metadata for StarryNet.RAOConstant
+type metadata accessor for StarryNet.WifiStaInfo
+nominal type descriptor for StarryNet.WifiStaInfo
+type metadata for StarryNet.WifiStaInfo
+StarryNet.XJModelType.init(rawValue: Swift.String) -> StarryNet.XJModelType?
+StarryNet.XJModelType.rawValue.getter : Swift.String
+property descriptor for StarryNet.XJModelType.rawValue : Swift.String
+type metadata accessor for StarryNet.XJModelType
+nominal type descriptor for StarryNet.XJModelType
+type metadata for StarryNet.XJModelType
+protocol conformance descriptor for StarryNet.XJModelType : Swift.Encodable in StarryNet
+protocol conformance descriptor for StarryNet.XJModelType : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.XJModelType : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.XJModelType : Swift.RawRepresentable in StarryNet
+protocol conformance descriptor for StarryNet.XJModelType : Swift.Decodable in StarryNet
+StarryNet.XJModelType.init(Swift.String, Swift.String, Swift.String, Swift.String?) -> StarryNet.XJModelType?
+StarryNet.XJProtected.__allocating_init(wrappedValue: A) -> StarryNet.XJProtected<A>
+method descriptor for StarryNet.XJProtected.__allocating_init(wrappedValue: A) -> StarryNet.XJProtected<A>
+StarryNet.XJProtected.init(wrappedValue: A) -> StarryNet.XJProtected<A>
+StarryNet.XJProtected.wrappedValue.modify : A
+StarryNet.XJProtected.wrappedValue.getter : A
+property descriptor for StarryNet.XJProtected.wrappedValue : A
+StarryNet.XJProtected.wrappedValue.setter : A
+StarryNet.XJProtected.projectedValue.getter : StarryNet.XJProtected<A>
+property descriptor for StarryNet.XJProtected.projectedValue : StarryNet.XJProtected<A>
+variable initialization expression of StarryNet.XJProtected.(lock in _4FB0EE16B9DA3DD2740AC068D9469BCE) : StarryNet.UnfairLock
+type metadata accessor for StarryNet.XJProtected
+nominal type descriptor for StarryNet.XJProtected
+StarryNet.XJProtected.__deallocating_deinit
+StarryNet.XJProtected.deinit
+StarryNet.BondRelation.isConnectable.getter : Swift.Bool
+property descriptor for StarryNet.BondRelation.isConnectable : Swift.Bool
+StarryNet.BondRelation.init(rawValue: Swift.String) -> StarryNet.BondRelation?
+StarryNet.BondRelation.rawValue.getter : Swift.String
+property descriptor for StarryNet.BondRelation.rawValue : Swift.String
+type metadata accessor for StarryNet.BondRelation
+nominal type descriptor for StarryNet.BondRelation
+type metadata for StarryNet.BondRelation
+protocol conformance descriptor for StarryNet.BondRelation : Swift.Encodable in StarryNet
+protocol conformance descriptor for StarryNet.BondRelation : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.BondRelation : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.BondRelation : Swift.RawRepresentable in StarryNet
+protocol conformance descriptor for StarryNet.BondRelation : Swift.Decodable in StarryNet
+StarryNet.CastStopType.init(rawValue: Swift.Int) -> StarryNet.CastStopType?
+StarryNet.CastStopType.rawValue.getter : Swift.Int
+property descriptor for StarryNet.CastStopType.rawValue : Swift.Int
+type metadata accessor for StarryNet.CastStopType
+nominal type descriptor for StarryNet.CastStopType
+type metadata for StarryNet.CastStopType
+protocol conformance descriptor for StarryNet.CastStopType : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.CastStopType : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.CastStopType : Swift.RawRepresentable in StarryNet
+static StarryNet.CoreAPStatus.__derived_enum_equals(StarryNet.CoreAPStatus, StarryNet.CoreAPStatus) -> Swift.Bool
+StarryNet.CoreAPStatus.hash(into: inout Swift.Hasher) -> ()
+StarryNet.CoreAPStatus.hashValue.getter : Swift.Int
+property descriptor for StarryNet.CoreAPStatus.hashValue : Swift.Int
+type metadata accessor for StarryNet.CoreAPStatus
+nominal type descriptor for StarryNet.CoreAPStatus
+type metadata for StarryNet.CoreAPStatus
+protocol conformance descriptor for StarryNet.CoreAPStatus : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.CoreAPStatus : Swift.Equatable in StarryNet
+static StarryNet.LocalBtState.__derived_enum_equals(StarryNet.LocalBtState, StarryNet.LocalBtState) -> Swift.Bool
+StarryNet.LocalBtState.hash(into: inout Swift.Hasher) -> ()
+StarryNet.LocalBtState.hashValue.getter : Swift.Int
+property descriptor for StarryNet.LocalBtState.hashValue : Swift.Int
+type metadata accessor for StarryNet.LocalBtState
+nominal type descriptor for StarryNet.LocalBtState
+type metadata for StarryNet.LocalBtState
+protocol conformance descriptor for StarryNet.LocalBtState : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.LocalBtState : Swift.Equatable in StarryNet
+static StarryNet.PacketOPCode.allCases.getter : [StarryNet.PacketOPCode]
+property descriptor for static StarryNet.PacketOPCode.allCases : [StarryNet.PacketOPCode]
+StarryNet.PacketOPCode.init(rawValue: Swift.UInt8) -> StarryNet.PacketOPCode?
+StarryNet.PacketOPCode.rawValue.getter : Swift.UInt8
+property descriptor for StarryNet.PacketOPCode.rawValue : Swift.UInt8
+type metadata accessor for StarryNet.PacketOPCode
+nominal type descriptor for StarryNet.PacketOPCode
+type metadata for StarryNet.PacketOPCode
+protocol conformance descriptor for StarryNet.PacketOPCode : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.PacketOPCode : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.PacketOPCode : Swift.RawRepresentable in StarryNet
+protocol conformance descriptor for StarryNet.PacketOPCode : Swift.CaseIterable in StarryNet
+StarryNet.PairProtocol.init(rawValue: Swift.Int) -> StarryNet.PairProtocol?
+StarryNet.PairProtocol.rawValue.getter : Swift.Int
+property descriptor for StarryNet.PairProtocol.rawValue : Swift.Int
+type metadata accessor for StarryNet.PairProtocol
+nominal type descriptor for StarryNet.PairProtocol
+type metadata for StarryNet.PairProtocol
+protocol conformance descriptor for StarryNet.PairProtocol : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.PairProtocol : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.PairProtocol : Swift.RawRepresentable in StarryNet
+static StarryNet.PeriDistance.__derived_enum_equals(StarryNet.PeriDistance, StarryNet.PeriDistance) -> Swift.Bool
+StarryNet.PeriDistance.hash(into: inout Swift.Hasher) -> ()
+StarryNet.PeriDistance.hashValue.getter : Swift.Int
+property descriptor for StarryNet.PeriDistance.hashValue : Swift.Int
+type metadata accessor for StarryNet.PeriDistance
+nominal type descriptor for StarryNet.PeriDistance
+type metadata for StarryNet.PeriDistance
+protocol conformance descriptor for StarryNet.PeriDistance : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.PeriDistance : Swift.Equatable in StarryNet
+StarryNet.XJAdvModeBit.__allocating_init(from: Swift.Decoder) throws -> StarryNet.XJAdvModeBit
+method descriptor for StarryNet.XJAdvModeBit.__allocating_init(from: Swift.Decoder) throws -> StarryNet.XJAdvModeBit
+StarryNet.XJAdvModeBit.init(from: Swift.Decoder) throws -> StarryNet.XJAdvModeBit
+StarryNet.XJAdvModeBit.alert.modify : Swift.Bool?
+method descriptor for StarryNet.XJAdvModeBit.alert.modify : Swift.Bool?
+StarryNet.XJAdvModeBit.alert.getter : Swift.Bool?
+method descriptor for StarryNet.XJAdvModeBit.alert.getter : Swift.Bool?
+property descriptor for StarryNet.XJAdvModeBit.alert : Swift.Bool?
+direct field offset for StarryNet.XJAdvModeBit.alert : Swift.Bool?
+variable initialization expression of StarryNet.XJAdvModeBit.alert : Swift.Bool?
+StarryNet.XJAdvModeBit.alert.setter : Swift.Bool?
+method descriptor for StarryNet.XJAdvModeBit.alert.setter : Swift.Bool?
+StarryNet.XJAdvModeBit.encode(to: Swift.Encoder) throws -> ()
+method descriptor for StarryNet.XJAdvModeBit.encode(to: Swift.Encoder) throws -> ()
+StarryNet.XJAdvModeBit.advType.modify : StarryNet.XJBLEAdvType?
+method descriptor for StarryNet.XJAdvModeBit.advType.modify : StarryNet.XJBLEAdvType?
+StarryNet.XJAdvModeBit.advType.getter : StarryNet.XJBLEAdvType?
+method descriptor for StarryNet.XJAdvModeBit.advType.getter : StarryNet.XJBLEAdvType?
+property descriptor for StarryNet.XJAdvModeBit.advType : StarryNet.XJBLEAdvType?
+direct field offset for StarryNet.XJAdvModeBit.advType : StarryNet.XJBLEAdvType?
+variable initialization expression of StarryNet.XJAdvModeBit.advType : StarryNet.XJBLEAdvType?
+StarryNet.XJAdvModeBit.advType.setter : StarryNet.XJBLEAdvType?
+method descriptor for StarryNet.XJAdvModeBit.advType.setter : StarryNet.XJBLEAdvType?
+StarryNet.XJAdvModeBit.advStatus.modify : Swift.Bool?
+method descriptor for StarryNet.XJAdvModeBit.advStatus.modify : Swift.Bool?
+StarryNet.XJAdvModeBit.advStatus.getter : Swift.Bool?
+method descriptor for StarryNet.XJAdvModeBit.advStatus.getter : Swift.Bool?
+property descriptor for StarryNet.XJAdvModeBit.advStatus : Swift.Bool?
+direct field offset for StarryNet.XJAdvModeBit.advStatus : Swift.Bool?
+variable initialization expression of StarryNet.XJAdvModeBit.advStatus : Swift.Bool?
+StarryNet.XJAdvModeBit.advStatus.setter : Swift.Bool?
+method descriptor for StarryNet.XJAdvModeBit.advStatus.setter : Swift.Bool?
+type metadata accessor for StarryNet.XJAdvModeBit
+metaclass for StarryNet.XJAdvModeBit
+nominal type descriptor for StarryNet.XJAdvModeBit
+type metadata for StarryNet.XJAdvModeBit
+protocol conformance descriptor for StarryNet.XJAdvModeBit : Swift.Encodable in StarryNet
+protocol conformance descriptor for StarryNet.XJAdvModeBit : Swift.Decodable in StarryNet
+StarryNet.XJAdvModeBit.__deallocating_deinit
+StarryNet.XJAdvModeBit.deinit
+static StarryNet.XJBLEAdvType.allCases.getter : [StarryNet.XJBLEAdvType]
+property descriptor for static StarryNet.XJBLEAdvType.allCases : [StarryNet.XJBLEAdvType]
+StarryNet.XJBLEAdvType.init(rawValue: Swift.String) -> StarryNet.XJBLEAdvType?
+StarryNet.XJBLEAdvType.rawValue.getter : Swift.String
+property descriptor for StarryNet.XJBLEAdvType.rawValue : Swift.String
+type metadata accessor for StarryNet.XJBLEAdvType
+nominal type descriptor for StarryNet.XJBLEAdvType
+type metadata for StarryNet.XJBLEAdvType
+protocol conformance descriptor for StarryNet.XJBLEAdvType : Swift.Encodable in StarryNet
+protocol conformance descriptor for StarryNet.XJBLEAdvType : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.XJBLEAdvType : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.XJBLEAdvType : Swift.RawRepresentable in StarryNet
+protocol conformance descriptor for StarryNet.XJBLEAdvType : Swift.Decodable in StarryNet
+protocol conformance descriptor for StarryNet.XJBLEAdvType : Swift.CaseIterable in StarryNet
+StarryNet.XJPeripheral.deviceInfo() throws -> [Swift.String : Any]?
+StarryNet.XJPeripheral.__allocating_init(identifier: Swift.String, btMac: Swift.String, modelId: Swift.String) -> StarryNet.XJPeripheral
+method descriptor for StarryNet.XJPeripheral.__allocating_init(identifier: Swift.String, btMac: Swift.String, modelId: Swift.String) -> StarryNet.XJPeripheral
+StarryNet.XJPeripheral.init(identifier: Swift.String, btMac: Swift.String, modelId: Swift.String) -> StarryNet.XJPeripheral
+StarryNet.XJPeripheral.isRetrieve.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.isRetrieve.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.isRetrieve : Swift.Bool
+direct field offset for StarryNet.XJPeripheral.isRetrieve : Swift.Bool
+variable initialization expression of StarryNet.XJPeripheral.isRetrieve : Swift.Bool
+StarryNet.XJPeripheral.peripheral.getter : __C.CBPeripheral?
+method descriptor for StarryNet.XJPeripheral.peripheral.getter : __C.CBPeripheral?
+property descriptor for StarryNet.XJPeripheral.peripheral : __C.CBPeripheral?
+direct field offset for StarryNet.XJPeripheral.peripheral : __C.CBPeripheral?
+variable initialization expression of StarryNet.XJPeripheral.peripheral : __C.CBPeripheral?
+StarryNet.XJPeripheral.containCTKD.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.containCTKD.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.containCTKD : Swift.Bool
+variable initialization expression of StarryNet.XJPeripheral.blePairState : StarryNet.Starry_iOSBleSTATUS
+StarryNet.XJPeripheral.pairProtocol.getter : StarryNet.PairProtocol
+method descriptor for StarryNet.XJPeripheral.pairProtocol.getter : StarryNet.PairProtocol
+property descriptor for StarryNet.XJPeripheral.pairProtocol : StarryNet.PairProtocol
+StarryNet.XJPeripheral.brIsConnected.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.brIsConnected.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.brIsConnected : Swift.Bool
+StarryNet.XJPeripheral.ancsAuthorized.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.ancsAuthorized.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.ancsAuthorized : Swift.Bool
+StarryNet.XJPeripheral.connectTimeout.getter : Swift.Int32
+method descriptor for StarryNet.XJPeripheral.connectTimeout.getter : Swift.Int32
+property descriptor for StarryNet.XJPeripheral.connectTimeout : Swift.Int32
+direct field offset for StarryNet.XJPeripheral.connectTimeout : Swift.Int32
+variable initialization expression of StarryNet.XJPeripheral.connectTimeout : Swift.Int32
+StarryNet.XJPeripheral.isFirstConnect.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.isFirstConnect.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.isFirstConnect : Swift.Bool
+direct field offset for StarryNet.XJPeripheral.isFirstConnect : Swift.Bool
+variable initialization expression of StarryNet.XJPeripheral.isFirstConnect : Swift.Bool
+StarryNet.XJPeripheral.localBondState.getter : StarryNet.DeviceBondState
+method descriptor for StarryNet.XJPeripheral.localBondState.getter : StarryNet.DeviceBondState
+property descriptor for StarryNet.XJPeripheral.localBondState : StarryNet.DeviceBondState
+StarryNet.XJPeripheral.advertisementData.getter : [Swift.String : Any]?
+method descriptor for StarryNet.XJPeripheral.advertisementData.getter : [Swift.String : Any]?
+property descriptor for StarryNet.XJPeripheral.advertisementData : [Swift.String : Any]?
+direct field offset for StarryNet.XJPeripheral.advertisementData : [Swift.String : Any]?
+variable initialization expression of StarryNet.XJPeripheral.advertisementData : [Swift.String : Any]?
+StarryNet.XJPeripheral.cycleConnectCount.getter : Swift.Int32
+method descriptor for StarryNet.XJPeripheral.cycleConnectCount.getter : Swift.Int32
+property descriptor for StarryNet.XJPeripheral.cycleConnectCount : Swift.Int32
+direct field offset for StarryNet.XJPeripheral.cycleConnectCount : Swift.Int32
+variable initialization expression of StarryNet.XJPeripheral.cycleConnectCount : Swift.Int32
+StarryNet.XJPeripheral.starryIsConnected.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.starryIsConnected.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.starryIsConnected : Swift.Bool
+StarryNet.XJPeripheral.cycleConnectThreshold.getter : Swift.Int32
+method descriptor for StarryNet.XJPeripheral.cycleConnectThreshold.getter : Swift.Int32
+property descriptor for StarryNet.XJPeripheral.cycleConnectThreshold : Swift.Int32
+direct field offset for StarryNet.XJPeripheral.cycleConnectThreshold : Swift.Int32
+variable initialization expression of StarryNet.XJPeripheral.cycleConnectThreshold : Swift.Int32
+StarryNet.XJPeripheral.bleIsPhysicalConnected.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.bleIsPhysicalConnected.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.bleIsPhysicalConnected : Swift.Bool
+StarryNet.XJPeripheral.bluetoothKeepAliveOpen.modify : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.bluetoothKeepAliveOpen.modify : Swift.Bool
+StarryNet.XJPeripheral.bluetoothKeepAliveOpen.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.bluetoothKeepAliveOpen.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.bluetoothKeepAliveOpen : Swift.Bool
+StarryNet.XJPeripheral.bluetoothKeepAliveOpen.setter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.bluetoothKeepAliveOpen.setter : Swift.Bool
+variable initialization expression of StarryNet.XJPeripheral.(_bluetoothKeepAliveOpen in _D8DA7B2077E9ABFF772CAA8B218110E6) : Swift.Bool?
+StarryNet.XJPeripheral.bleIsPhysicalConnecting.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheral.bleIsPhysicalConnecting.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheral.bleIsPhysicalConnecting : Swift.Bool
+variable initialization expression of StarryNet.XJPeripheral.($__lazy_storage_$_perMTU in _D8DA7B2077E9ABFF772CAA8B218110E6) : Swift.Int?
+StarryNet.XJPeripheral.RSSI.getter : Swift.Int
+method descriptor for StarryNet.XJPeripheral.RSSI.getter : Swift.Int
+property descriptor for StarryNet.XJPeripheral.RSSI : Swift.Int
+direct field offset for StarryNet.XJPeripheral.RSSI : Swift.Int
+variable initialization expression of StarryNet.XJPeripheral.RSSI : Swift.Int
+StarryNet.XJPeripheral.__allocating_init(data: Foundation.Data, localDevices: [Swift.String : Any]?, isConnectable: Swift.Bool) throws -> StarryNet.XJPeripheral
+method descriptor for StarryNet.XJPeripheral.__allocating_init(data: Foundation.Data, localDevices: [Swift.String : Any]?, isConnectable: Swift.Bool) throws -> StarryNet.XJPeripheral
+StarryNet.XJPeripheral.init(data: Foundation.Data, localDevices: [Swift.String : Any]?, isConnectable: Swift.Bool) throws -> StarryNet.XJPeripheral
+StarryNet.XJPeripheral.__allocating_init(hexStr: Swift.String, localDevices: [Swift.String : Any]?, isConnectable: Swift.Bool) throws -> StarryNet.XJPeripheral
+method descriptor for StarryNet.XJPeripheral.__allocating_init(hexStr: Swift.String, localDevices: [Swift.String : Any]?, isConnectable: Swift.Bool) throws -> StarryNet.XJPeripheral
+StarryNet.XJPeripheral.init(hexStr: Swift.String, localDevices: [Swift.String : Any]?, isConnectable: Swift.Bool) throws -> StarryNet.XJPeripheral
+StarryNet.XJPeripheral.__allocating_init(manuId: Swift.String, version: Swift.String, companyId: Swift.String, categoryId: Swift.String, modelId: Swift.String, identifier: Swift.String, advId: Swift.String, advMode: Swift.String, isConnectable: Swift.Bool) -> StarryNet.XJPeripheral
+StarryNet.XJPeripheral.init(manuId: Swift.String, version: Swift.String, companyId: Swift.String, categoryId: Swift.String, modelId: Swift.String, identifier: Swift.String, advId: Swift.String, advMode: Swift.String, isConnectable: Swift.Bool) -> StarryNet.XJPeripheral
+StarryNet.XJPeripheral.perMTU.getter : Swift.Int
+method descriptor for StarryNet.XJPeripheral.perMTU.getter : Swift.Int
+property descriptor for StarryNet.XJPeripheral.perMTU : Swift.Int
+StarryNet.XJPeripheral.brState.getter : StarryNet.BRState
+method descriptor for StarryNet.XJPeripheral.brState.getter : StarryNet.BRState
+property descriptor for StarryNet.XJPeripheral.brState : StarryNet.BRState
+direct field offset for StarryNet.XJPeripheral.brState : StarryNet.BRState
+variable initialization expression of StarryNet.XJPeripheral.brState : StarryNet.BRState
+StarryNet.XJPeripheral.bleState.getter : StarryNet.BLEConnectState
+method descriptor for StarryNet.XJPeripheral.bleState.getter : StarryNet.BLEConnectState
+property descriptor for StarryNet.XJPeripheral.bleState : StarryNet.BLEConnectState
+direct field offset for StarryNet.XJPeripheral.bleState : StarryNet.BLEConnectState
+variable initialization expression of StarryNet.XJPeripheral.bleState : StarryNet.BLEConnectState
+StarryNet.XJPeripheral.distance.getter : StarryNet.PeriDistance
+method descriptor for StarryNet.XJPeripheral.distance.getter : StarryNet.PeriDistance
+property descriptor for StarryNet.XJPeripheral.distance : StarryNet.PeriDistance
+type metadata accessor for StarryNet.XJPeripheral
+nominal type descriptor for StarryNet.XJPeripheral
+type metadata for StarryNet.XJPeripheral
+StarryNet.XJPeripheral.__deallocating_deinit
+static StarryNet.DiscoverError.__derived_enum_equals(StarryNet.DiscoverError, StarryNet.DiscoverError) -> Swift.Bool
+StarryNet.DiscoverError.hash(into: inout Swift.Hasher) -> ()
+StarryNet.DiscoverError.hashValue.getter : Swift.Int
+property descriptor for StarryNet.DiscoverError.hashValue : Swift.Int
+type metadata accessor for StarryNet.DiscoverError
+nominal type descriptor for StarryNet.DiscoverError
+type metadata for StarryNet.DiscoverError
+protocol conformance descriptor for StarryNet.DiscoverError : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.DiscoverError : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.DiscoverError : Swift.Error in StarryNet
+static StarryNet.DiscoverState.__derived_enum_equals(StarryNet.DiscoverState, StarryNet.DiscoverState) -> Swift.Bool
+StarryNet.DiscoverState.hash(into: inout Swift.Hasher) -> ()
+StarryNet.DiscoverState.hashValue.getter : Swift.Int
+property descriptor for StarryNet.DiscoverState.hashValue : Swift.Int
+type metadata accessor for StarryNet.DiscoverState
+nominal type descriptor for StarryNet.DiscoverState
+type metadata for StarryNet.DiscoverState
+protocol conformance descriptor for StarryNet.DiscoverState : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.DiscoverState : Swift.Equatable in StarryNet
+static StarryNet.CastResultCode.getErrorDesc(errorCode: Swift.Int) -> Swift.String
+StarryNet.CastResultCode.SINK_AUDIO_DECODE_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SINK_AUDIO_DECODE_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SINK_AUDIO_DECODE_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SINK_AUDIO_DECODE_ERROR : Swift.Int
+StarryNet.CastResultCode.SINK_VIDEO_DECODE_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SINK_VIDEO_DECODE_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SINK_VIDEO_DECODE_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SINK_VIDEO_DECODE_ERROR : Swift.Int
+StarryNet.CastResultCode.SINK_SOCKET_CLIENT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SINK_SOCKET_CLIENT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SINK_SOCKET_CLIENT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SINK_SOCKET_CLIENT_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_OPEN_CAMERA_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_OPEN_CAMERA_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_OPEN_CAMERA_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_OPEN_CAMERA_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_AUDIO_ENCODE_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_AUDIO_ENCODE_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_AUDIO_ENCODE_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_AUDIO_ENCODE_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_VIDEO_ENCODE_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_VIDEO_ENCODE_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_VIDEO_ENCODE_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_VIDEO_ENCODE_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_SOCKET_SERVER_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_SOCKET_SERVER_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_SOCKET_SERVER_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_SOCKET_SERVER_ERROR : Swift.Int
+StarryNet.CastResultCode.SINK_AUDIO_TRACK_INIT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SINK_AUDIO_TRACK_INIT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SINK_AUDIO_TRACK_INIT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SINK_AUDIO_TRACK_INIT_ERROR : Swift.Int
+StarryNet.CastResultCode.SINK_AUDIO_DECODER_INIT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SINK_AUDIO_DECODER_INIT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SINK_AUDIO_DECODER_INIT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SINK_AUDIO_DECODER_INIT_ERROR : Swift.Int
+StarryNet.CastResultCode.SINK_HEART_BEAT_TIMEOUT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SINK_HEART_BEAT_TIMEOUT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SINK_HEART_BEAT_TIMEOUT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SINK_HEART_BEAT_TIMEOUT_ERROR : Swift.Int
+StarryNet.CastResultCode.SINK_VIDEO_DECODER_INIT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SINK_VIDEO_DECODER_INIT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SINK_VIDEO_DECODER_INIT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SINK_VIDEO_DECODER_INIT_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_AUDIO_RECORD_READ_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_AUDIO_RECORD_READ_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_AUDIO_RECORD_READ_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_AUDIO_RECORD_READ_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_CAMERA_DISCONNECT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_CAMERA_DISCONNECT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_CAMERA_DISCONNECT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_CAMERA_DISCONNECT_ERROR : Swift.Int
+StarryNet.CastResultCode.SINK_MEDIA_SERVER_RECEIVE_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SINK_MEDIA_SERVER_RECEIVE_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SINK_MEDIA_SERVER_RECEIVE_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SINK_MEDIA_SERVER_RECEIVE_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_AUDIO_ENCODER_INIT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_AUDIO_ENCODER_INIT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_AUDIO_ENCODER_INIT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_AUDIO_ENCODER_INIT_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_HEART_BEAT_TIMEOUT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_HEART_BEAT_TIMEOUT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_HEART_BEAT_TIMEOUT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_HEART_BEAT_TIMEOUT_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_VIDEO_ENCODER_INIT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_VIDEO_ENCODER_INIT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_VIDEO_ENCODER_INIT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_VIDEO_ENCODER_INIT_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_CREATE_AUDIO_RECORD_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_CREATE_AUDIO_RECORD_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_CREATE_AUDIO_RECORD_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_CREATE_AUDIO_RECORD_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_CREATE_VIRTUAL_DISPLAY_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_CREATE_VIRTUAL_DISPLAY_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_CREATE_VIRTUAL_DISPLAY_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_CREATE_VIRTUAL_DISPLAY_ERROR : Swift.Int
+StarryNet.CastResultCode.SOURCE_WAIT_SINK_CONNECTION_TIMEOUT_ERROR.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SOURCE_WAIT_SINK_CONNECTION_TIMEOUT_ERROR.getter : Swift.Int
+static StarryNet.CastResultCode.SOURCE_WAIT_SINK_CONNECTION_TIMEOUT_ERROR : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SOURCE_WAIT_SINK_CONNECTION_TIMEOUT_ERROR : Swift.Int
+StarryNet.CastResultCode.SUCCESS.unsafeMutableAddressor : Swift.Int
+static StarryNet.CastResultCode.SUCCESS.getter : Swift.Int
+static StarryNet.CastResultCode.SUCCESS : Swift.Int
+property descriptor for static StarryNet.CastResultCode.SUCCESS : Swift.Int
+type metadata accessor for StarryNet.CastResultCode
+nominal type descriptor for StarryNet.CastResultCode
+type metadata for StarryNet.CastResultCode
+protocol conformance descriptor for StarryNet.FileShareError : Foundation.LocalizedError in StarryNet
+StarryNet.FileShareError.errorDescription.getter : Swift.String?
+property descriptor for StarryNet.FileShareError.errorDescription : Swift.String?
+static StarryNet.FileShareError.__derived_enum_equals(StarryNet.FileShareError, StarryNet.FileShareError) -> Swift.Bool
+type metadata accessor for StarryNet.FileShareError
+nominal type descriptor for StarryNet.FileShareError
+type metadata for StarryNet.FileShareError
+protocol conformance descriptor for StarryNet.FileShareError : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.FileShareError : Swift.Error in StarryNet
+StarryNet.BLEConnectState.init(rawValue: Swift.Int) -> StarryNet.BLEConnectState?
+StarryNet.BLEConnectState.rawValue.getter : Swift.Int
+property descriptor for StarryNet.BLEConnectState.rawValue : Swift.Int
+type metadata accessor for StarryNet.BLEConnectState
+nominal type descriptor for StarryNet.BLEConnectState
+type metadata for StarryNet.BLEConnectState
+protocol conformance descriptor for StarryNet.BLEConnectState : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.BLEConnectState : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.BLEConnectState : Swift.RawRepresentable in StarryNet
+protocol descriptor for StarryNet.ConnectDelegate
+(extension in StarryNet):StarryNet.ConnectDelegate.connect(_: StarryNet.CoreConnect, updateANCSAuthorization: StarryNet.StarryDevice, _: Swift.Bool, _: StarryNet.CoreError?) -> ()
+protocol requirements base descriptor for StarryNet.ConnectDelegate
+StarryNet.DeviceBondState.init(rawValue: Swift.Int) -> StarryNet.DeviceBondState?
+StarryNet.DeviceBondState.rawValue.getter : Swift.Int
+property descriptor for StarryNet.DeviceBondState.rawValue : Swift.Int
+type metadata accessor for StarryNet.DeviceBondState
+nominal type descriptor for StarryNet.DeviceBondState
+type metadata for StarryNet.DeviceBondState
+protocol conformance descriptor for StarryNet.DeviceBondState : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.DeviceBondState : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.DeviceBondState : Swift.RawRepresentable in StarryNet
+StarryNet.DiscoveryFilter.currentFilter() -> Swift.String
+variable initialization expression of StarryNet.DiscoveryFilter.(deviceType in _4D19D9C1E33001EAB8F88D78AC224E44) : Swift.Int
+StarryNet.DiscoveryFilter.init(category: Swift.String, company: Swift.String) -> StarryNet.DiscoveryFilter
+type metadata accessor for StarryNet.DiscoveryFilter
+nominal type descriptor for StarryNet.DiscoveryFilter
+type metadata for StarryNet.DiscoveryFilter
+protocol descriptor for StarryNet.MessageDelegate
+(extension in StarryNet):StarryNet.MessageDelegate.messageDecryptFail(_: StarryNet.CoreConnect, device: StarryNet.StarryDevice, sourceData: Foundation.Data, sourceLen: Swift.Int, destLen: Swift.Int) -> ()
+(extension in StarryNet):StarryNet.MessageDelegate.message(_: StarryNet.CoreConnect, sendSuccess: StarryNet.Message) -> ()
+(extension in StarryNet):StarryNet.MessageDelegate.message(_: StarryNet.CoreConnect, deviceListChanged: [StarryNet.StarryDevice], _: Swift.String) -> ()
+(extension in StarryNet):StarryNet.MessageDelegate.message(_: StarryNet.CoreConnect, receive: StarryNet.Message) -> ()
+(extension in StarryNet):StarryNet.MessageDelegate.message(_: StarryNet.CoreConnect, sendError: StarryNet.Message, _: Swift.Int, _: Swift.String) -> ()
+protocol requirements base descriptor for StarryNet.MessageDelegate
+variable initialization expression of StarryNet.RunAsOneService.appUnitCode : Swift.String
+StarryNet.RunAsOneService.shared.unsafeMutableAddressor : StarryNet.RunAsOneService
+static StarryNet.RunAsOneService.shared.getter : StarryNet.RunAsOneService
+static StarryNet.RunAsOneService.shared : StarryNet.RunAsOneService
+property descriptor for static StarryNet.RunAsOneService.shared : StarryNet.RunAsOneService
+StarryNet.RunAsOneService.install(Swift.String) -> ()
+type metadata accessor for StarryNet.RunAsOneService
+metaclass for StarryNet.RunAsOneService
+nominal type descriptor for StarryNet.RunAsOneService
+type metadata for StarryNet.RunAsOneService
+StarryNet.RunAsOneService.__deallocating_deinit
+StarryNet.RunAsOneService.deinit
+protocol descriptor for StarryNet.APConfigDelegate
+protocol requirements base descriptor for StarryNet.APConfigDelegate
+protocol descriptor for StarryNet.DiscoverDelegate
+(extension in StarryNet):StarryNet.DiscoverDelegate.discover(_: StarryNet.CoreConnect, deviceDiscoverState: StarryNet.DiscoverState, error: StarryNet.DiscoverError?) -> ()
+protocol requirements base descriptor for StarryNet.DiscoverDelegate
+StarryNet.RingSecurityPair.KEY_PUBKEY.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_PUBKEY.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_PUBKEY : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_PUBKEY : Swift.String
+StarryNet.RingSecurityPair.KEY_RANDOM.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_RANDOM.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_RANDOM : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_RANDOM : Swift.String
+static StarryNet.RingSecurityPair.decodeData(encrypt: Swift.Int, data: Foundation.Data?, key: Foundation.Data, iv: Foundation.Data) -> Foundation.Data
+StarryNet.RingSecurityPair.KEY_MACADDR.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_MACADDR.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_MACADDR : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_MACADDR : Swift.String
+StarryNet.RingSecurityPair.KEY_MODELID.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_MODELID.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_MODELID : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_MODELID : Swift.String
+static StarryNet.RingSecurityPair.encryptData(encrypt: Swift.Int, data: Foundation.Data?, key: Foundation.Data, iv: Foundation.Data) -> Foundation.Data
+StarryNet.RingSecurityPair.KEY_ALGORITHM.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_ALGORITHM.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_ALGORITHM : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_ALGORITHM : Swift.String
+StarryNet.RingSecurityPair.SN_TLV_TAG_IV.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_IV.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_IV : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.SN_TLV_TAG_IV : Swift.UInt8
+StarryNet.RingSecurityPair.KEY_ASYMMETRIC.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_ASYMMETRIC.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_ASYMMETRIC : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_ASYMMETRIC : Swift.String
+StarryNet.RingSecurityPair.KEY_DEVICEINFO.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_DEVICEINFO.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_DEVICEINFO : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_DEVICEINFO : Swift.String
+StarryNet.RingSecurityPair.SN_TLV_TAG_HASH.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_HASH.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_HASH : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.SN_TLV_TAG_HASH : Swift.UInt8
+StarryNet.RingSecurityPair.GATT_HEADER_SIZE.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.GATT_HEADER_SIZE.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.GATT_HEADER_SIZE : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.GATT_HEADER_SIZE : Swift.UInt8
+StarryNet.RingSecurityPair.OPCODE_RING_PAIR.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.OPCODE_RING_PAIR.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.OPCODE_RING_PAIR : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.OPCODE_RING_PAIR : Swift.UInt8
+StarryNet.RingSecurityPair.RING_DECODE_HEAD.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.RING_DECODE_HEAD.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.RING_DECODE_HEAD : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.RING_DECODE_HEAD : Swift.UInt8
+StarryNet.RingSecurityPair.KEY_ENCSWITCHINFO.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_ENCSWITCHINFO.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_ENCSWITCHINFO : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_ENCSWITCHINFO : Swift.String
+StarryNet.RingSecurityPair.SN_TLV_TAG_RANDOM.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_RANDOM.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_RANDOM : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.SN_TLV_TAG_RANDOM : Swift.UInt8
+StarryNet.RingSecurityPair.SN_TLV_TAG_MACADDR.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_MACADDR.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_MACADDR : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.SN_TLV_TAG_MACADDR : Swift.UInt8
+StarryNet.RingSecurityPair.SN_TLV_TAG_MODELID.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_MODELID.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_MODELID : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.SN_TLV_TAG_MODELID : Swift.UInt8
+StarryNet.RingSecurityPair.SN_TLV_TAG_PUB_KEY.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_PUB_KEY.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_PUB_KEY : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.SN_TLV_TAG_PUB_KEY : Swift.UInt8
+StarryNet.RingSecurityPair.SN_TLV_TAG_DEV_INFO.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_DEV_INFO.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_DEV_INFO : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.SN_TLV_TAG_DEV_INFO : Swift.UInt8
+StarryNet.RingSecurityPair.RING_MSG_HEADER_SIZE.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.RING_MSG_HEADER_SIZE.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.RING_MSG_HEADER_SIZE : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.RING_MSG_HEADER_SIZE : Swift.UInt8
+StarryNet.RingSecurityPair.SN_TLV_TAG_ENC_SWITCH_INFO.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_ENC_SWITCH_INFO.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.SN_TLV_TAG_ENC_SWITCH_INFO : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.SN_TLV_TAG_ENC_SWITCH_INFO : Swift.UInt8
+StarryNet.RingSecurityPair.OPCODE_RING_PAIR_SWITCH_KEY.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.OPCODE_RING_PAIR_SWITCH_KEY.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.OPCODE_RING_PAIR_SWITCH_KEY : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.OPCODE_RING_PAIR_SWITCH_KEY : Swift.UInt8
+StarryNet.RingSecurityPair.OPCODE_RING_PAIR_SWITCH_INFO.unsafeMutableAddressor : Swift.UInt8
+static StarryNet.RingSecurityPair.OPCODE_RING_PAIR_SWITCH_INFO.getter : Swift.UInt8
+static StarryNet.RingSecurityPair.OPCODE_RING_PAIR_SWITCH_INFO : Swift.UInt8
+property descriptor for static StarryNet.RingSecurityPair.OPCODE_RING_PAIR_SWITCH_INFO : Swift.UInt8
+StarryNet.RingSecurityPair.KEY_IV.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_IV.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_IV : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_IV : Swift.String
+StarryNet.RingSecurityPair.KEY_HASH.unsafeMutableAddressor : Swift.String
+static StarryNet.RingSecurityPair.KEY_HASH.getter : Swift.String
+static StarryNet.RingSecurityPair.KEY_HASH : Swift.String
+property descriptor for static StarryNet.RingSecurityPair.KEY_HASH : Swift.String
+type metadata accessor for StarryNet.RingSecurityPair
+nominal type descriptor for StarryNet.RingSecurityPair
+type metadata for StarryNet.RingSecurityPair
+StarryNet.XJPeripheralBase.advModeBit.getter : StarryNet.XJAdvModeBit?
+method descriptor for StarryNet.XJPeripheralBase.advModeBit.getter : StarryNet.XJAdvModeBit?
+property descriptor for StarryNet.XJPeripheralBase.advModeBit : StarryNet.XJAdvModeBit?
+direct field offset for StarryNet.XJPeripheralBase.advModeBit : StarryNet.XJAdvModeBit?
+variable initialization expression of StarryNet.XJPeripheralBase.advModeBit : StarryNet.XJAdvModeBit?
+StarryNet.XJPeripheralBase.bondStatus.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.bondStatus.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.bondStatus : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.bondStatus : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.bondStatus : Swift.String?
+StarryNet.XJPeripheralBase.categoryId.getter : Swift.String
+method descriptor for StarryNet.XJPeripheralBase.categoryId.getter : Swift.String
+property descriptor for StarryNet.XJPeripheralBase.categoryId : Swift.String
+direct field offset for StarryNet.XJPeripheralBase.categoryId : Swift.String
+StarryNet.XJPeripheralBase.deviceName.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.deviceName.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.deviceName : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.deviceName : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.deviceName : Swift.String?
+StarryNet.XJPeripheralBase.deviceType.getter : Swift.Int
+method descriptor for StarryNet.XJPeripheralBase.deviceType.getter : Swift.Int
+property descriptor for StarryNet.XJPeripheralBase.deviceType : Swift.Int
+direct field offset for StarryNet.XJPeripheralBase.deviceType : Swift.Int
+variable initialization expression of StarryNet.XJPeripheralBase.deviceType : Swift.Int
+StarryNet.XJPeripheralBase.identifier.getter : Swift.String
+method descriptor for StarryNet.XJPeripheralBase.identifier.getter : Swift.String
+property descriptor for StarryNet.XJPeripheralBase.identifier : Swift.String
+direct field offset for StarryNet.XJPeripheralBase.identifier : Swift.String
+variable initialization expression of StarryNet.XJPeripheralBase.messageKey : Foundation.Data?
+StarryNet.XJPeripheralBase.companyName.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.companyName.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.companyName : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.companyName : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.companyName : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.advHexString : Swift.String?
+StarryNet.XJPeripheralBase.bondRelation.getter : StarryNet.BondRelation
+method descriptor for StarryNet.XJPeripheralBase.bondRelation.getter : StarryNet.BondRelation
+property descriptor for StarryNet.XJPeripheralBase.bondRelation : StarryNet.BondRelation
+direct field offset for StarryNet.XJPeripheralBase.bondRelation : StarryNet.BondRelation
+variable initialization expression of StarryNet.XJPeripheralBase.bondRelation : StarryNet.BondRelation
+StarryNet.XJPeripheralBase.categoryName.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.categoryName.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.categoryName : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.categoryName : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.categoryName : Swift.String?
+StarryNet.XJPeripheralBase.leftBatterry.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.leftBatterry.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.leftBatterry : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.leftBatterry : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.leftBatterry : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.noneResponse : Swift.Bool
+StarryNet.XJPeripheralBase.connectStatus.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.connectStatus.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.connectStatus : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.connectStatus : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.connectStatus : Swift.String?
+StarryNet.XJPeripheralBase.isConnectable.getter : Swift.Bool
+method descriptor for StarryNet.XJPeripheralBase.isConnectable.getter : Swift.Bool
+property descriptor for StarryNet.XJPeripheralBase.isConnectable : Swift.Bool
+direct field offset for StarryNet.XJPeripheralBase.isConnectable : Swift.Bool
+StarryNet.XJPeripheralBase.pairDeviceMac.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.pairDeviceMac.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.pairDeviceMac : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.pairDeviceMac : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.pairDeviceMac : Swift.String?
+StarryNet.XJPeripheralBase.rightBatterry.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.rightBatterry.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.rightBatterry : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.rightBatterry : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.rightBatterry : Swift.String?
+StarryNet.XJPeripheralBase.connectDeviceMac.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.connectDeviceMac.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.connectDeviceMac : Swift.String?
+StarryNet.XJPeripheralBase.responseDeviceType.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.responseDeviceType.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.responseDeviceType : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.responseDeviceType : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.responseDeviceType : Swift.String?
+StarryNet.XJPeripheralBase.advResponseDeviceTypeBit.getter : StarryNet.XJAdvResponseDeviceTypeBit?
+method descriptor for StarryNet.XJPeripheralBase.advResponseDeviceTypeBit.getter : StarryNet.XJAdvResponseDeviceTypeBit?
+property descriptor for StarryNet.XJPeripheralBase.advResponseDeviceTypeBit : StarryNet.XJAdvResponseDeviceTypeBit?
+direct field offset for StarryNet.XJPeripheralBase.advResponseDeviceTypeBit : StarryNet.XJAdvResponseDeviceTypeBit?
+variable initialization expression of StarryNet.XJPeripheralBase.advResponseDeviceTypeBit : StarryNet.XJAdvResponseDeviceTypeBit?
+StarryNet.XJPeripheralBase.__allocating_init(from: Swift.Decoder) throws -> StarryNet.XJPeripheralBase
+method descriptor for StarryNet.XJPeripheralBase.__allocating_init(from: Swift.Decoder) throws -> StarryNet.XJPeripheralBase
+StarryNet.XJPeripheralBase.init(from: Swift.Decoder) throws -> StarryNet.XJPeripheralBase
+StarryNet.XJPeripheralBase.uuid.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.uuid.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.uuid : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.uuid : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.uuid : Swift.String?
+StarryNet.XJPeripheralBase.advId.getter : Swift.String
+method descriptor for StarryNet.XJPeripheralBase.advId.getter : Swift.String
+property descriptor for StarryNet.XJPeripheralBase.advId : Swift.String
+direct field offset for StarryNet.XJPeripheralBase.advId : Swift.String
+StarryNet.XJPeripheralBase.BLEMAC.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.BLEMAC.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.BLEMAC : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.BLEMAC : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.BLEMAC : Swift.String?
+StarryNet.XJPeripheralBase.custom.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.custom.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.custom : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.custom : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.custom : Swift.String?
+StarryNet.XJPeripheralBase.encode(to: Swift.Encoder) throws -> ()
+method descriptor for StarryNet.XJPeripheralBase.encode(to: Swift.Encoder) throws -> ()
+StarryNet.XJPeripheralBase.__allocating_init(manuId: Swift.String, version: Swift.String, companyId: Swift.String, categoryId: Swift.String, modelId: Swift.String, identifier: Swift.String, advId: Swift.String, advMode: Swift.String, isConnectable: Swift.Bool) -> StarryNet.XJPeripheralBase
+method descriptor for StarryNet.XJPeripheralBase.__allocating_init(manuId: Swift.String, version: Swift.String, companyId: Swift.String, categoryId: Swift.String, modelId: Swift.String, identifier: Swift.String, advId: Swift.String, advMode: Swift.String, isConnectable: Swift.Bool) -> StarryNet.XJPeripheralBase
+StarryNet.XJPeripheralBase.init(manuId: Swift.String, version: Swift.String, companyId: Swift.String, categoryId: Swift.String, modelId: Swift.String, identifier: Swift.String, advId: Swift.String, advMode: Swift.String, isConnectable: Swift.Bool) -> StarryNet.XJPeripheralBase
+StarryNet.XJPeripheralBase.manuId.getter : Swift.String
+method descriptor for StarryNet.XJPeripheralBase.manuId.getter : Swift.String
+property descriptor for StarryNet.XJPeripheralBase.manuId : Swift.String
+direct field offset for StarryNet.XJPeripheralBase.manuId : Swift.String
+StarryNet.XJPeripheralBase.region.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.region.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.region : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.region : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.region : Swift.String?
+StarryNet.XJPeripheralBase.userId.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.userId.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.userId : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.userId : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.userId : Swift.String?
+StarryNet.XJPeripheralBase.ability.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.ability.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.ability : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.ability : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.ability : Swift.String?
+StarryNet.XJPeripheralBase.advMode.getter : Swift.String
+method descriptor for StarryNet.XJPeripheralBase.advMode.getter : Swift.String
+property descriptor for StarryNet.XJPeripheralBase.advMode : Swift.String
+direct field offset for StarryNet.XJPeripheralBase.advMode : Swift.String
+StarryNet.XJPeripheralBase.modelId.getter : Swift.String
+method descriptor for StarryNet.XJPeripheralBase.modelId.getter : Swift.String
+property descriptor for StarryNet.XJPeripheralBase.modelId : Swift.String
+direct field offset for StarryNet.XJPeripheralBase.modelId : Swift.String
+StarryNet.XJPeripheralBase.version.getter : Swift.String
+method descriptor for StarryNet.XJPeripheralBase.version.getter : Swift.String
+property descriptor for StarryNet.XJPeripheralBase.version : Swift.String
+direct field offset for StarryNet.XJPeripheralBase.version : Swift.String
+StarryNet.XJPeripheralBase.batterry.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.batterry.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.batterry : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.batterry : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.batterry : Swift.String?
+StarryNet.XJPeripheralBase.companyId.getter : Swift.String
+method descriptor for StarryNet.XJPeripheralBase.companyId.getter : Swift.String
+property descriptor for StarryNet.XJPeripheralBase.companyId : Swift.String
+direct field offset for StarryNet.XJPeripheralBase.companyId : Swift.String
+StarryNet.XJPeripheralBase.mainBtMAC.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.mainBtMAC.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.mainBtMAC : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.mainBtMAC : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.mainBtMAC : Swift.String?
+StarryNet.XJPeripheralBase.modelName.getter : Swift.String?
+method descriptor for StarryNet.XJPeripheralBase.modelName.getter : Swift.String?
+property descriptor for StarryNet.XJPeripheralBase.modelName : Swift.String?
+direct field offset for StarryNet.XJPeripheralBase.modelName : Swift.String?
+variable initialization expression of StarryNet.XJPeripheralBase.modelName : Swift.String?
+StarryNet.XJPeripheralBase.modelType.getter : StarryNet.XJModelType?
+method descriptor for StarryNet.XJPeripheralBase.modelType.getter : StarryNet.XJModelType?
+property descriptor for StarryNet.XJPeripheralBase.modelType : StarryNet.XJModelType?
+StarryNet.XJPeripheralBase.__allocating_init() -> StarryNet.XJPeripheralBase
+StarryNet.XJPeripheralBase.init() -> StarryNet.XJPeripheralBase
+type metadata accessor for StarryNet.XJPeripheralBase
+nominal type descriptor for StarryNet.XJPeripheralBase
+type metadata for StarryNet.XJPeripheralBase
+protocol conformance descriptor for StarryNet.XJPeripheralBase : Swift.Encodable in StarryNet
+protocol conformance descriptor for StarryNet.XJPeripheralBase : Swift.Decodable in StarryNet
+StarryNet.XJPeripheralBase.__deallocating_deinit
+static StarryNet.BLEAPConnectState.__derived_enum_equals(StarryNet.BLEAPConnectState, StarryNet.BLEAPConnectState) -> Swift.Bool
+StarryNet.BLEAPConnectState.hash(into: inout Swift.Hasher) -> ()
+StarryNet.BLEAPConnectState.hashValue.getter : Swift.Int
+property descriptor for StarryNet.BLEAPConnectState.hashValue : Swift.Int
+type metadata accessor for StarryNet.BLEAPConnectState
+nominal type descriptor for StarryNet.BLEAPConnectState
+type metadata for StarryNet.BLEAPConnectState
+protocol conformance descriptor for StarryNet.BLEAPConnectState : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.BLEAPConnectState : Swift.Equatable in StarryNet
+static StarryNet.DeviceConnectType.__derived_enum_equals(StarryNet.DeviceConnectType, StarryNet.DeviceConnectType) -> Swift.Bool
+StarryNet.DeviceConnectType.hash(into: inout Swift.Hasher) -> ()
+StarryNet.DeviceConnectType.hashValue.getter : Swift.Int
+property descriptor for StarryNet.DeviceConnectType.hashValue : Swift.Int
+type metadata accessor for StarryNet.DeviceConnectType
+nominal type descriptor for StarryNet.DeviceConnectType
+type metadata for StarryNet.DeviceConnectType
+protocol conformance descriptor for StarryNet.DeviceConnectType : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.DeviceConnectType : Swift.Equatable in StarryNet
+protocol descriptor for StarryNet.FileShareDelegate
+(extension in StarryNet):StarryNet.FileShareDelegate.fileShare(_: StarryNet.CoreConnect, progressChange: Swift.Int, taskId: Swift.String, url: Foundation.URL?) -> ()
+(extension in StarryNet):StarryNet.FileShareDelegate.fileShare(_: StarryNet.CoreConnect, progressChange: Swift.Int, taskId: Swift.String, data: Foundation.Data) -> ()
+(extension in StarryNet):StarryNet.FileShareDelegate.fileShare(_: StarryNet.CoreConnect, failed: Swift.String, errInfo: Swift.String) -> ()
+(extension in StarryNet):StarryNet.FileShareDelegate.fileShare(_: StarryNet.CoreConnect, finished: Swift.String, data: Foundation.Data) -> ()
+(extension in StarryNet):StarryNet.FileShareDelegate.fileShare(_: StarryNet.CoreConnect, finished: Swift.String, oldUrl: Foundation.URL?, newUrl: Foundation.URL?) -> ()
+protocol requirements base descriptor for StarryNet.FileShareDelegate
+StarryNet.SegPacketErrorCode.init(rawValue: Swift.Int) -> StarryNet.SegPacketErrorCode?
+StarryNet.SegPacketErrorCode.rawValue.getter : Swift.Int
+property descriptor for StarryNet.SegPacketErrorCode.rawValue : Swift.Int
+type metadata accessor for StarryNet.SegPacketErrorCode
+nominal type descriptor for StarryNet.SegPacketErrorCode
+type metadata for StarryNet.SegPacketErrorCode
+protocol conformance descriptor for StarryNet.SegPacketErrorCode : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.SegPacketErrorCode : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.SegPacketErrorCode : Swift.RawRepresentable in StarryNet
+static StarryNet.BLEDeviceFoundError.__derived_enum_equals(StarryNet.BLEDeviceFoundError, StarryNet.BLEDeviceFoundError) -> Swift.Bool
+StarryNet.BLEDeviceFoundError.hash(into: inout Swift.Hasher) -> ()
+StarryNet.BLEDeviceFoundError.hashValue.getter : Swift.Int
+property descriptor for StarryNet.BLEDeviceFoundError.hashValue : Swift.Int
+type metadata accessor for StarryNet.BLEDeviceFoundError
+nominal type descriptor for StarryNet.BLEDeviceFoundError
+type metadata for StarryNet.BLEDeviceFoundError
+protocol conformance descriptor for StarryNet.BLEDeviceFoundError : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.BLEDeviceFoundError : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.BLEDeviceFoundError : Swift.Error in StarryNet
+protocol descriptor for StarryNet.CastDisplayDelegate
+(extension in StarryNet):StarryNet.CastDisplayDelegate.castDisplay(_: StarryNet.CoreConnect, receviedMessage: __C.SCProcessMessage) -> ()
+protocol requirements base descriptor for StarryNet.CastDisplayDelegate
+StarryNet.XJAdvResponseDeviceTypeBit.mobileReport.modify : Swift.Bool?
+method descriptor for StarryNet.XJAdvResponseDeviceTypeBit.mobileReport.modify : Swift.Bool?
+StarryNet.XJAdvResponseDeviceTypeBit.mobileReport.getter : Swift.Bool?
+method descriptor for StarryNet.XJAdvResponseDeviceTypeBit.mobileReport.getter : Swift.Bool?
+property descriptor for StarryNet.XJAdvResponseDeviceTypeBit.mobileReport : Swift.Bool?
+direct field offset for StarryNet.XJAdvResponseDeviceTypeBit.mobileReport : Swift.Bool?
+variable initialization expression of StarryNet.XJAdvResponseDeviceTypeBit.mobileReport : Swift.Bool?
+StarryNet.XJAdvResponseDeviceTypeBit.mobileReport.setter : Swift.Bool?
+method descriptor for StarryNet.XJAdvResponseDeviceTypeBit.mobileReport.setter : Swift.Bool?
+StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply.modify : Swift.Bool?
+method descriptor for StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply.modify : Swift.Bool?
+StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply.getter : Swift.Bool?
+method descriptor for StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply.getter : Swift.Bool?
+property descriptor for StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply : Swift.Bool?
+direct field offset for StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply : Swift.Bool?
+variable initialization expression of StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply : Swift.Bool?
+StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply.setter : Swift.Bool?
+method descriptor for StarryNet.XJAdvResponseDeviceTypeBit.mobileAdvReply.setter : Swift.Bool?
+StarryNet.XJAdvResponseDeviceTypeBit.__allocating_init(from: Swift.Decoder) throws -> StarryNet.XJAdvResponseDeviceTypeBit
+method descriptor for StarryNet.XJAdvResponseDeviceTypeBit.__allocating_init(from: Swift.Decoder) throws -> StarryNet.XJAdvResponseDeviceTypeBit
+StarryNet.XJAdvResponseDeviceTypeBit.init(from: Swift.Decoder) throws -> StarryNet.XJAdvResponseDeviceTypeBit
+StarryNet.XJAdvResponseDeviceTypeBit.encode(to: Swift.Encoder) throws -> ()
+method descriptor for StarryNet.XJAdvResponseDeviceTypeBit.encode(to: Swift.Encoder) throws -> ()
+type metadata accessor for StarryNet.XJAdvResponseDeviceTypeBit
+metaclass for StarryNet.XJAdvResponseDeviceTypeBit
+nominal type descriptor for StarryNet.XJAdvResponseDeviceTypeBit
+type metadata for StarryNet.XJAdvResponseDeviceTypeBit
+protocol conformance descriptor for StarryNet.XJAdvResponseDeviceTypeBit : Swift.Encodable in StarryNet
+protocol conformance descriptor for StarryNet.XJAdvResponseDeviceTypeBit : Swift.Decodable in StarryNet
+StarryNet.XJAdvResponseDeviceTypeBit.__deallocating_deinit
+StarryNet.XJAdvResponseDeviceTypeBit.deinit
+StarryNet.BRState.isConnectedState.getter : Swift.Bool
+property descriptor for StarryNet.BRState.isConnectedState : Swift.Bool
+StarryNet.BRState.isDisconnectState.getter : Swift.Bool
+property descriptor for StarryNet.BRState.isDisconnectState : Swift.Bool
+StarryNet.BRState.init(rawValue: Swift.Int) -> StarryNet.BRState?
+StarryNet.BRState.rawValue.getter : Swift.Int
+property descriptor for StarryNet.BRState.rawValue : Swift.Int
+type metadata accessor for StarryNet.BRState
+nominal type descriptor for StarryNet.BRState
+type metadata for StarryNet.BRState
+protocol conformance descriptor for StarryNet.BRState : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.BRState : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.BRState : Swift.RawRepresentable in StarryNet
+variable initialization expression of StarryNet.Message.isUrgentMsg : Swift.Bool
+StarryNet.Message.appUniteCode.modify : Swift.String
+method descriptor for StarryNet.Message.appUniteCode.modify : Swift.String
+StarryNet.Message.appUniteCode.getter : Swift.String
+method descriptor for StarryNet.Message.appUniteCode.getter : Swift.String
+property descriptor for StarryNet.Message.appUniteCode : Swift.String
+direct field offset for StarryNet.Message.appUniteCode : Swift.String
+StarryNet.Message.appUniteCode.setter : Swift.String
+method descriptor for StarryNet.Message.appUniteCode.setter : Swift.String
+StarryNet.Message.msgId.modify : Swift.String
+method descriptor for StarryNet.Message.msgId.modify : Swift.String
+StarryNet.Message.msgId.getter : Swift.String
+method descriptor for StarryNet.Message.msgId.getter : Swift.String
+property descriptor for StarryNet.Message.msgId : Swift.String
+direct field offset for StarryNet.Message.msgId : Swift.String
+variable initialization expression of StarryNet.Message.msgId : Swift.String
+StarryNet.Message.msgId.setter : Swift.String
+method descriptor for StarryNet.Message.msgId.setter : Swift.String
+StarryNet.Message.param.modify : StarryNet.StarryParam?
+method descriptor for StarryNet.Message.param.modify : StarryNet.StarryParam?
+StarryNet.Message.param.getter : StarryNet.StarryParam?
+method descriptor for StarryNet.Message.param.getter : StarryNet.StarryParam?
+property descriptor for StarryNet.Message.param : StarryNet.StarryParam?
+direct field offset for StarryNet.Message.param : StarryNet.StarryParam?
+variable initialization expression of StarryNet.Message.param : StarryNet.StarryParam?
+StarryNet.Message.param.setter : StarryNet.StarryParam?
+method descriptor for StarryNet.Message.param.setter : StarryNet.StarryParam?
+StarryNet.Message.__allocating_init(msgData: Foundation.Data?, msgId: Swift.String, deviceId: Swift.String, appUniteCode: Swift.String, param: StarryNet.StarryParam?, isUrgentMsg: Swift.Bool, isNeedACK: Swift.Bool) -> StarryNet.Message
+StarryNet.Message.__allocating_init(msgData: Foundation.Data?, msgId: Swift.String, starryTag: StarryNet.StarryTag, param: StarryNet.StarryParam?, isUrgentMsg: Swift.Bool, isNeedACK: Swift.Bool) -> StarryNet.Message
+StarryNet.Message.msgData.modify : Foundation.Data?
+method descriptor for StarryNet.Message.msgData.modify : Foundation.Data?
+StarryNet.Message.msgData.getter : Foundation.Data?
+method descriptor for StarryNet.Message.msgData.getter : Foundation.Data?
+property descriptor for StarryNet.Message.msgData : Foundation.Data?
+direct field offset for StarryNet.Message.msgData : Foundation.Data?
+variable initialization expression of StarryNet.Message.msgData : Foundation.Data?
+StarryNet.Message.msgData.setter : Foundation.Data?
+method descriptor for StarryNet.Message.msgData.setter : Foundation.Data?
+StarryNet.Message.__allocating_init(msgData: Foundation.Data?, deviceId: Swift.String, msgId: Swift.String, appUniteCode: Swift.String) -> StarryNet.Message
+StarryNet.Message.__allocating_init(msgData: Foundation.Data?, deviceId: Swift.String, appUniteCode: Swift.String, starryTag: StarryNet.StarryTag, isUrgentMsg: Swift.Bool, localMessageId: Swift.String) -> StarryNet.Message
+variable initialization expression of StarryNet.Message.callback : StarryNet.MessageSendRelayListener?
+StarryNet.Message.deviceId.modify : Swift.String
+method descriptor for StarryNet.Message.deviceId.modify : Swift.String
+StarryNet.Message.deviceId.getter : Swift.String
+method descriptor for StarryNet.Message.deviceId.getter : Swift.String
+property descriptor for StarryNet.Message.deviceId : Swift.String
+direct field offset for StarryNet.Message.deviceId : Swift.String
+StarryNet.Message.deviceId.setter : Swift.String
+method descriptor for StarryNet.Message.deviceId.setter : Swift.String
+StarryNet.Message.isNeedACK.modify : Swift.Bool
+method descriptor for StarryNet.Message.isNeedACK.modify : Swift.Bool
+StarryNet.Message.isNeedACK.getter : Swift.Bool
+method descriptor for StarryNet.Message.isNeedACK.getter : Swift.Bool
+property descriptor for StarryNet.Message.isNeedACK : Swift.Bool
+direct field offset for StarryNet.Message.isNeedACK : Swift.Bool
+variable initialization expression of StarryNet.Message.isNeedACK : Swift.Bool
+StarryNet.Message.isNeedACK.setter : Swift.Bool
+method descriptor for StarryNet.Message.isNeedACK.setter : Swift.Bool
+StarryNet.Message.modelType.modify : StarryNet.XJModelType
+method descriptor for StarryNet.Message.modelType.modify : StarryNet.XJModelType
+StarryNet.Message.modelType.getter : StarryNet.XJModelType
+method descriptor for StarryNet.Message.modelType.getter : StarryNet.XJModelType
+property descriptor for StarryNet.Message.modelType : StarryNet.XJModelType
+direct field offset for StarryNet.Message.modelType : StarryNet.XJModelType
+variable initialization expression of StarryNet.Message.modelType : StarryNet.XJModelType
+StarryNet.Message.modelType.setter : StarryNet.XJModelType
+method descriptor for StarryNet.Message.modelType.setter : StarryNet.XJModelType
+StarryNet.Message.starryTag.modify : StarryNet.StarryTag
+method descriptor for StarryNet.Message.starryTag.modify : StarryNet.StarryTag
+StarryNet.Message.starryTag.getter : StarryNet.StarryTag
+method descriptor for StarryNet.Message.starryTag.getter : StarryNet.StarryTag
+property descriptor for StarryNet.Message.starryTag : StarryNet.StarryTag
+direct field offset for StarryNet.Message.starryTag : StarryNet.StarryTag
+StarryNet.Message.starryTag.setter : StarryNet.StarryTag
+method descriptor for StarryNet.Message.starryTag.setter : StarryNet.StarryTag
+type metadata accessor for StarryNet.Message
+metaclass for StarryNet.Message
+nominal type descriptor for StarryNet.Message
+type metadata for StarryNet.Message
+StarryNet.Message.__deallocating_deinit
+StarryNet.Message.deinit
+static StarryNet.MsgMode.allCases.getter : [StarryNet.MsgMode]
+property descriptor for static StarryNet.MsgMode.allCases : [StarryNet.MsgMode]
+StarryNet.MsgMode.init(rawValue: Swift.UInt8) -> StarryNet.MsgMode?
+StarryNet.MsgMode.rawValue.getter : Swift.UInt8
+property descriptor for StarryNet.MsgMode.rawValue : Swift.UInt8
+type metadata accessor for StarryNet.MsgMode
+nominal type descriptor for StarryNet.MsgMode
+type metadata for StarryNet.MsgMode
+protocol conformance descriptor for StarryNet.MsgMode : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.MsgMode : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.MsgMode : Swift.RawRepresentable in StarryNet
+protocol conformance descriptor for StarryNet.MsgMode : Swift.CaseIterable in StarryNet
+StarryNet.BleState.isConnectedState.getter : Swift.Bool
+property descriptor for StarryNet.BleState.isConnectedState : Swift.Bool
+StarryNet.BleState.isDisconnectState.getter : Swift.Bool
+property descriptor for StarryNet.BleState.isDisconnectState : Swift.Bool
+StarryNet.BleState.init(rawValue: Swift.Int) -> StarryNet.BleState?
+StarryNet.BleState.rawValue.getter : Swift.Int
+property descriptor for StarryNet.BleState.rawValue : Swift.Int
+type metadata accessor for StarryNet.BleState
+nominal type descriptor for StarryNet.BleState
+type metadata for StarryNet.BleState
+protocol conformance descriptor for StarryNet.BleState : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.BleState : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.BleState : Swift.RawRepresentable in StarryNet
+static StarryNet.UUIDType.allCases.getter : [StarryNet.UUIDType]
+property descriptor for static StarryNet.UUIDType.allCases : [StarryNet.UUIDType]
+StarryNet.UUIDType.init(rawValue: Swift.String) -> StarryNet.UUIDType?
+StarryNet.UUIDType.rawValue.getter : Swift.String
+property descriptor for StarryNet.UUIDType.rawValue : Swift.String
+type metadata accessor for StarryNet.UUIDType
+nominal type descriptor for StarryNet.UUIDType
+type metadata for StarryNet.UUIDType
+protocol conformance descriptor for StarryNet.UUIDType : Swift.Hashable in StarryNet
+protocol conformance descriptor for StarryNet.UUIDType : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.UUIDType : Swift.RawRepresentable in StarryNet
+protocol conformance descriptor for StarryNet.UUIDType : Swift.CaseIterable in StarryNet
+type metadata accessor for StarryNet.CastError
+nominal type descriptor for StarryNet.CastError
+type metadata for StarryNet.CastError
+protocol conformance descriptor for StarryNet.CastError : Swift.Error in StarryNet
+static StarryNet.CoreError.== infix(StarryNet.CoreError, StarryNet.CoreError) -> Swift.Bool
+StarryNet.CoreError.error.getter : Swift.Error
+property descriptor for StarryNet.CoreError.error : Swift.Error
+StarryNet.CoreError.rawValue.getter : Swift.Int
+property descriptor for StarryNet.CoreError.rawValue : Swift.Int
+type metadata accessor for StarryNet.CoreError
+nominal type descriptor for StarryNet.CoreError
+type metadata for StarryNet.CoreError
+protocol conformance descriptor for StarryNet.CoreError : Swift.Equatable in StarryNet
+protocol conformance descriptor for StarryNet.CoreError : Swift.Error in StarryNet
