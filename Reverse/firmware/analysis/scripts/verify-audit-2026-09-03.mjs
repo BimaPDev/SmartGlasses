@@ -199,6 +199,54 @@ console.log('== LVGL images: corrected base, wordmark, resource table ==');
      m55.includes(Buffer.from('play_poweron')) || m55.includes(Buffer.from('boot_animation')), false);
 }
 
+console.log('== cross-version: bases differ, artwork does not ==');
+{
+  const V = [
+    ['1.0.12.83', m55,  0x3BFD7C0C, 0x3f8ff4, 6032, 34],
+    ['1.0.11.53', m11,  0x3BFD7CB0, 0x413490, 6032, 34],
+    ['1.0.7.83',  m07,  0x3BFD7D04, 0x3b973c, 4347, 24],
+  ];
+  // Code base is the SAME in all three; data base is NOT.
+  for (const [name, img] of V.map(v => [v[0], v[1]])) {
+    const sp = img.readUInt32LE(0x0C);
+    ck(`${name}: code base 0x2C010000 puts self-ptr in file`, sp - 0x2C010000 < img.length && sp - 0x2C010000 > 0, true);
+  }
+  ck('data bases DIFFER per build', new Set(V.map(v => v[2])).size, 3);
+  // Semantic base check: descriptors must resolve to a green-ramp palette.
+  const palOK = (d, f) => {
+    if (f < 0 || f + 64 > d.length) return false;
+    const e = []; for (let i = 0; i < 64; i += 4) e.push([d[f+i], d[f+i+1], d[f+i+2], d[f+i+3]]);
+    if (e[0][3] !== 0) return false;
+    const a = e.map(x => x[3]);
+    for (let i = 1; i < a.length; i++) if (a[i] < a[i-1]) return false;
+    if (a[15] < 200) return false;
+    return new Set(e.slice(1).map(x => x.slice(0,3).join(','))).size === 1;
+  };
+  const scoreBase = (d, base) => {
+    let ok = 0;
+    for (let o = 0; o + 12 <= d.length; o += 4) {
+      const hdr = d.readUInt32LE(o);
+      if ((hdr & 0x1F) !== 9 || ((hdr>>5)&7)) continue;
+      const w = (hdr>>10)&0x7FF, h = (hdr>>21)&0x7FF;
+      if (w < 4 || w > 1024 || h < 4 || h > 1024) continue;
+      if (d.readUInt32LE(o+4) !== 64 + Math.ceil(w/2)*h) continue;
+      if (palOK(d, d.readUInt32LE(o+8) - base)) ok++;
+    }
+    return ok;
+  };
+  for (const [name, img, base] of V) {
+    ck(`${name}: derived base yields valid palettes`, scoreBase(img, base) > 100, true);
+    ck(`${name}: NAIVE 0x3C000000 yields ZERO valid palettes`, scoreBase(img, 0x3C000000), 0);
+  }
+  // The wordmark artwork is byte-identical across all three; only its offset moves.
+  const sig = m55.subarray(0x3f8ff4, 0x3f8ff4 + 64 + 72*36);
+  ck('wordmark blob is 2656 B', sig.length, 2656);
+  for (const [name, img, , off] of V) {
+    ck(`${name}: wordmark found by CONTENT at the resource-table offset`, img.indexOf(sig), off);
+    ck(`${name}: ...and that match is unique`, img.indexOf(sig, off + 1), -1);
+  }
+}
+
 console.log('== audio extent (corrected) ==');
 let first = -1, last = -1, clips = 0, prevEnd = -1;
 for (let i = 0; i < m55.length - 7; i++) {
