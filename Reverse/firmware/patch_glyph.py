@@ -181,7 +181,11 @@ def main():
     off = face['bitmap'] + bi
     d[off:off + len(blob)] = blob
     if len(blob) < bud: d[off + len(blob):off + bud] = b'\x00' * (bud - len(blob))
-    struct.pack_into('<IIHHhh', d, face['dsc'] + gid * 16, bi, max(adv, nw * 16), nw, nh, 0, 0)
+    # advance = icon width + 1px side bearing, in 1/16 px. Keeping the ORIGINAL adv_w
+    # (as an earlier version did) leaves a huge gap after a smaller icon.
+    new_adv = (nw + 1) * 16
+    struct.pack_into('<IIHHhh', d, face['dsc'] + gid * 16, bi, new_adv, nw, nh, 0, 0)
+    print(f"  advance {adv/16:.1f}px -> {new_adv/16:.1f}px")
     out = a.out or a.fw.replace('.bin', '_glyph.bin')
     Path(out).write_bytes(bytes(d))
     print(f"  wrote {out}  ({len(d)} B, unchanged)")
