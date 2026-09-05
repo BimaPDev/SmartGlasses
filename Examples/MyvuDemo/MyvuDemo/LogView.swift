@@ -25,6 +25,11 @@ struct LogView: View {
             .navigationTitle("Log")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink { TodoProbeView() } label: {
+                        Label("Probe", systemImage: "checklist")
+                    }
+                }
+                ToolbarItem(placement: .topBarLeading) {
                     Toggle("Trace", isOn: $showTrace)
                         .toggleStyle(.button)
                         .onChange(of: showTrace) {
