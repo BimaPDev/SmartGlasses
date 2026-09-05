@@ -1,0 +1,129 @@
+{
+ "binary": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+ "version": "1.0.12.83",
+ "address_model": {
+  "code_va": "file_off + 0x2C010000",
+  "data_va": "file_off + 0x3BFD7C0C"
+ },
+ "claims": [
+  {
+   "id": "standby.nametable",
+   "kind": "code",
+   "file_off": "0x5d8c10",
+   "expect": "a413173c6cd5163c9c13173c8013173c8c13173c9413173c",
+   "note": "6 LE data VAs: weather_1x1, time, aiBall, weather_1x2, steps, weekday. These 6 strings occur nowhere else; no schedule/calendar/agenda widget id exists on standby."
+  },
+  {
+   "id": "standby.ctor_card_base",
+   "kind": "code",
+   "file_off": "0x5d9c92",
+   "expect": "4822256284f824501146e563a565a4f84020c4e90255c4e90455c4e90d55c4e91155c4e9",
+   "note": "StandByWidget base ctor: lv_obj_set_size(72,72); radius=h/2=36; border_color=0xFF00FF00; border_width=2; border_opa=0x5C. Every standby tile is already a rounded green-bordered container (a circle at 72px)."
+  },
+  {
+   "id": "standby.ctor_tbb",
+   "kind": "code",
+   "file_off": "0x5d9cf4",
+   "expect": "227e092a0ed8dfe802f01f2505313b4045536010",
+   "note": "ldrb r2,[r4,#0x18]; cmp r2,#9; bhi; tbb [pc,r2] + table at 0x5d9cfe (10 cases). The 'five factories' claim was wrong: there are 10 render styles; the 5 names are log strings."
+  },
+  {
+   "id": "standby.createTextWidget",
+   "kind": "code",
+   "file_off": "0x5d904c",
+   "expect": "2de9f041044682b00d461e46484b174640681b6801934ff000035ef0",
+   "note": "createTextWidget entry. Body creates exactly two lv_labels, both FONT_DUMMY_20, both opaque green, LV_SIZE_CONTENT; no container/border/bullets/icon of its own; only reachable from factory arm id 5 (weekday) with on-device DateTime strings."
+  },
+  {
+   "id": "schedule.showSingleInnerHor",
+   "kind": "code",
+   "file_off": "0x5763c6",
+   "expect": "90f023fb04469c4a00218df018fb1021204690f070fb90224ff48471204690f030fe00222046114690f0bdfc00220121204690f0d0fc00220c21204690f031fd00224ff0ff21204690f0b9fc00226621204690f0bafc00220c21204690f079fc",
+   "note": "ScheduleDomainView::showSingleInnerHor (fn 0x5762d4): lv_obj_create; clear scrollable; lv_obj_set_size(264,144); bg_opa=0; border_width=1; radius=12; border_color=0xFF00FF00; border_opa=0x66; pad_left=12. The mockup card, already compiled, on Pages/Assistant."
+  },
+  {
+   "id": "schedule.srcfile",
+   "kind": "string",
+   "file_off": "0x17ccc0",
+   "expect": "../../thirdparty/star_air_lvgl/app/Pages/Assistant//domain/schedule/ScheduleDomainView.cpp",
+   "note": "source path string for ScheduleDomainView.cpp"
+  },
+  {
+   "id": "schedule.i18n_Agenda",
+   "kind": "string",
+   "file_off": "0x404fec",
+   "expect": "Agenda",
+   "note": "i18n: Agenda"
+  },
+  {
+   "id": "schedule.i18n_NewSchedule",
+   "kind": "string",
+   "file_off": "0x404ff4",
+   "expect": "New schedule",
+   "note": "i18n: New schedule"
+  },
+  {
+   "id": "schedule.i18n_CheckPhone",
+   "kind": "string",
+   "file_off": "0x405004",
+   "expect": "Check more on your phone",
+   "note": "i18n: Check more on your phone"
+  },
+  {
+   "id": "schedule.fmt_range1",
+   "kind": "string",
+   "file_off": "0x17ca20",
+   "expect": "%02d/%02d %02d:%02d-%02d/%02d %02d:%02d",
+   "note": "time-range format used by ScheduleDomainView"
+  },
+  {
+   "id": "schedule.fmt_range2",
+   "kind": "string",
+   "file_off": "0x17c9ca",
+   "expect": "X,%02d:%02d-%02d:%02d",
+   "note": "short time-range format"
+  },
+  {
+   "id": "notif.layout_message_ui",
+   "kind": "code",
+   "file_off": "0x5e993c",
+   "expect": "1df068f80546a14a00211af05df800224ff4a271284625602f611df0d3f90022284611461df0d4f90022102128461df0",
+   "note": "lv_pip_misc_msg_ui.c layout_message_ui (fn 0x5e9924): lv_obj_create; radius=16; border_width=1; border_color=0xFF00FF00; border_opa=0x4C; bg_opa=0xFF; bg_color=0xFF000000; size(324, LV_SIZE_CONTENT). The free-form notification card."
+  },
+  {
+   "id": "notif.field_title",
+   "kind": "string",
+   "file_off": "0x18d884",
+   "expect": "ty title",
+   "note": "createNormalMsg JSON field 'title' (free-form)"
+  },
+  {
+   "id": "notif.field_content",
+   "kind": "string",
+   "file_off": "0x18d890",
+   "expect": "[%s] empty content",
+   "note": "createNormalMsg JSON field 'content' (free-form)"
+  },
+  {
+   "id": "notif.ios_calendar_bundle",
+   "kind": "string",
+   "file_off": "0x18f108",
+   "expect": "smartlife_notification_ios_calendar_icon",
+   "note": "com.apple.mobilecal -> smartlife_notification_ios_calendar_icon mapping"
+  },
+  {
+   "id": "notif.transience",
+   "kind": "value",
+   "file_off": "0x40ae34",
+   "expect": "transient-by-design",
+   "note": "lv_pip_misc_msg.c is a timed queue: 'Message stacked' (0x40ae34), 'now top message is ready to close' (0x40ae80), notificationDisplayTime setting (0x18d668). The card occludes the HUD and expires."
+  },
+  {
+   "id": "res.calender_icon_name",
+   "kind": "string",
+   "file_off": "0x197ee4",
+   "expect": "launcher_standby_calender",
+   "note": "44x44 calendar glyph (image at 0x33f008); referenced from standby only as a PIP status glyph via LauncherViewController::onPipIconEventChange, not as a widget"
+  }
+ ]
+}

@@ -1,0 +1,268 @@
+{
+ "binary": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+ "address_model": {
+  "code_va": "file + 0x2C010000",
+  "data_file": "VA - 0x3BFD7C0C"
+ },
+ "claims": [
+  {
+   "id": "font_table_count",
+   "kind": "struct-array",
+   "file_off": "0x466f88",
+   "expect": "a59a632c3d9a632c34000c0000fb02006c3f173c34ec433c00000000000000000000000000000000a59a632c3d9a632c2100070000fd0100f84c173c0000000000000000000000000000000000000000a59a632c3d9a632c2800020000fb020084821d3c0000000000000000000000000000000000000000a59a632c3d9a632c1600060000fe01006c8b1d3cd4ec433c00000000000000000000000000000000a59a632c3d9a632c34000c0000fb0200bc8b1d3c0000000000000000000000000000000000000000a59a632c3d9a632c1b00060000fe010000921d3c0000000000000000000000000000000000000000a59a632c3d9a632c2100070000fd0100404f2d3cbceb433c00000000000000000000000000000000a59a632c3d9a632c1a00060000fe0100904f2d3c5cec433c00000000000000000000000000000000a59a632c3d9a632c1600060000fe010074522d3c0000000000000000000000000000000000000000",
+   "note": "9 lv_font_t objects, 40 B each, contiguous 0x466f88-0x467010(end 0x4670f0). Every one begins with get_glyph_bitmap=0x2c639aa5, get_glyph_dsc=0x2c639a3d."
+  },
+  {
+   "id": "lv_font_t@466f88",
+   "kind": "lv_font_t",
+   "file_off": "0x466f88",
+   "expect": "a59a632c3d9a632c34000c0000fb02006c3f173c34ec433c",
+   "note": "FONT_CN_36_BOLD / FONT_EN_36_BOLD: line_height=52 base_line=12 underline=-5/2 dsc=0x19c360 fallback=0x467028"
+  },
+  {
+   "id": "lv_font_t@466fb0",
+   "kind": "lv_font_t",
+   "file_off": "0x466fb0",
+   "expect": "a59a632c3d9a632c2100070000fd0100f84c173c00000000",
+   "note": "FONT_CN_24_NORMAL: line_height=33 base_line=7 underline=-3/1 dsc=0x19d0ec fallback=NULL"
+  },
+  {
+   "id": "lv_font_t@466fd8",
+   "kind": "lv_font_t",
+   "file_off": "0x466fd8",
+   "expect": "a59a632c3d9a632c2800020000fb020084821d3c00000000",
+   "note": "FONT_CN_32_NORMAL / FONT_EN_32_NORMAL: line_height=40 base_line=2 underline=-5/2 dsc=0x200678 fallback=NULL"
+  },
+  {
+   "id": "lv_font_t@467000",
+   "kind": "lv_font_t",
+   "file_off": "0x467000",
+   "expect": "a59a632c3d9a632c1600060000fe01006c8b1d3cd4ec433c",
+   "note": "FONT_DUMMY_16: line_height=22 base_line=6 underline=-2/1 dsc=0x200f60 fallback=0x4670c8"
+  },
+  {
+   "id": "lv_font_t@467028",
+   "kind": "lv_font_t",
+   "file_off": "0x467028",
+   "expect": "a59a632c3d9a632c34000c0000fb0200bc8b1d3c00000000",
+   "note": "(unnamed) fallback of 36_BOLD: line_height=52 base_line=12 underline=-5/2 dsc=0x200fb0 fallback=NULL"
+  },
+  {
+   "id": "lv_font_t@467050",
+   "kind": "lv_font_t",
+   "file_off": "0x467050",
+   "expect": "a59a632c3d9a632c1b00060000fe010000921d3c00000000",
+   "note": "FONT_CN_20_NORMAL: line_height=27 base_line=6 underline=-2/1 dsc=0x2015f4 fallback=NULL"
+  },
+  {
+   "id": "lv_font_t@467078",
+   "kind": "lv_font_t",
+   "file_off": "0x467078",
+   "expect": "a59a632c3d9a632c2100070000fd0100404f2d3cbceb433c",
+   "note": "FONT_DUMMY_24: line_height=33 base_line=7 underline=-3/1 dsc=0x2fd334 fallback=0x466fb0"
+  },
+  {
+   "id": "lv_font_t@4670a0",
+   "kind": "lv_font_t",
+   "file_off": "0x4670a0",
+   "expect": "a59a632c3d9a632c1a00060000fe0100904f2d3c5cec433c",
+   "note": "FONT_DUMMY_20: line_height=26 base_line=6 underline=-2/1 dsc=0x2fd384 fallback=0x467050"
+  },
+  {
+   "id": "lv_font_t@4670c8",
+   "kind": "lv_font_t",
+   "file_off": "0x4670c8",
+   "expect": "a59a632c3d9a632c1600060000fe010074522d3c00000000",
+   "note": "FONT_CN_16_NORMAL: line_height=22 base_line=6 underline=-2/1 dsc=0x2fd668 fallback=NULL"
+  },
+  {
+   "id": "dsc@19c360",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x19c360",
+   "expect": "843f173c4449173c583f173c0000000000000108",
+   "note": "glyph_bitmap=0x19c378 glyph_dsc=0x19cd38 cmaps=0x19c34c kern=NULL kern_scale=0 cmap_num=1 bpp=4 kern_classes=0 bitmap_format=0 glyphs=15 bitmap_bytes=2495"
+  },
+  {
+   "id": "dsc@19d0ec",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x19d0ec",
+   "expect": "104d173c18dd1b3c504a173c3c651d3c10002202",
+   "note": "glyph_bitmap=0x19d104 glyph_dsc=0x1e610c cmaps=0x19ce44 kern=0x1fe930 kern_scale=16 cmap_num=34 bpp=1 kern_classes=0 bitmap_format=0 glyphs=6032 bitmap_bytes=299015"
+  },
+  {
+   "id": "dsc@200678",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x200678",
+   "expect": "9c821d3c2c8a1d3c70821d3c4c8b1d3c10000108",
+   "note": "glyph_bitmap=0x200690 glyph_dsc=0x200e20 cmaps=0x200664 kern=0x200f40 kern_scale=16 cmap_num=1 bpp=4 kern_classes=0 bitmap_format=0 glyphs=12 bitmap_bytes=1933"
+  },
+  {
+   "id": "dsc@200f60",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x200f60",
+   "expect": "848b1d3c888b1d3c588b1d3c0000000000000102",
+   "note": "glyph_bitmap=0x200f78 glyph_dsc=0x200f7c cmaps=0x200f4c kern=NULL kern_scale=0 cmap_num=1 bpp=1 kern_classes=0 bitmap_format=0 glyphs=2 bitmap_bytes=1"
+  },
+  {
+   "id": "dsc@200fb0",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x200fb0",
+   "expect": "d48b1d3c8c8e1d3ca88b1d3c388f1d3c10000102",
+   "note": "glyph_bitmap=0x200fc8 glyph_dsc=0x201280 cmaps=0x200f9c kern=0x20132c kern_scale=16 cmap_num=1 bpp=1 kern_classes=0 bitmap_format=0 glyphs=10 bitmap_bytes=694"
+  },
+  {
+   "id": "dsc@2015f4",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x2015f4",
+   "expect": "18921d3cd4a92b3c588f1d3cf8312d3c10002208",
+   "note": "glyph_bitmap=0x20160c glyph_dsc=0x2e2dc8 cmaps=0x20134c kern=0x2fb5ec kern_scale=16 cmap_num=34 bpp=4 kern_classes=0 bitmap_format=0 glyphs=6032 bitmap_bytes=923578"
+  },
+  {
+   "id": "dsc@2fd334",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x2fd334",
+   "expect": "584f2d3c5c4f2d3c2c4f2d3c0000000000000102",
+   "note": "glyph_bitmap=0x2fd34c glyph_dsc=0x2fd350 cmaps=0x2fd320 kern=NULL kern_scale=0 cmap_num=1 bpp=1 kern_classes=0 bitmap_format=0 glyphs=2 bitmap_bytes=1"
+  },
+  {
+   "id": "dsc@2fd384",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x2fd384",
+   "expect": "a84f2d3cac4f2d3c7c4f2d3c0000000000000102",
+   "note": "glyph_bitmap=0x2fd39c glyph_dsc=0x2fd3a0 cmaps=0x2fd370 kern=NULL kern_scale=0 cmap_num=1 bpp=1 kern_classes=0 bitmap_format=0 glyphs=2 bitmap_bytes=1"
+  },
+  {
+   "id": "dsc@2fd668",
+   "kind": "lv_font_fmt_txt_dsc_t",
+   "file_off": "0x2fd668",
+   "expect": "8c522d3cd0572f3ccc4f2d3cf4df303c10002202",
+   "note": "glyph_bitmap=0x2fd680 glyph_dsc=0x31dbc4 cmaps=0x2fd3c0 kern=0x3363e8 kern_scale=16 cmap_num=34 bpp=1 kern_classes=0 bitmap_format=0 glyphs=6032 bitmap_bytes=132419"
+  },
+  {
+   "id": "name_pool",
+   "kind": "literal-pool",
+   "file_off": "0x5e14b8",
+   "expect": "18a3693de4eb433c94eb433c007a3d3c1c78143c147a3d3c287a3d3cd4ec433c387a3d3c5cec433c4c7a3d3cbceb433c607a3d3c0cec433c5ce5133c28a3693dacec433cfce6133c84ec433cc8f8133c",
+   "note": "Literal pool of the font/resource registration fn (starts 0x5e11dc, push {r4,r5,r6,lr}). 0x5e14b8=fontMap(0x3d69a318) 0x5e14bc=font@466fd8 0x5e14c0=font@466f88 0x5e14c4..0x5e1504 alternate name/lv_font_t pointers; 0x5e14f4=resourceMap(0x3d69a328)."
+  },
+  {
+   "id": "register_fn",
+   "kind": "code",
+   "file_off": "0x5e11dc",
+   "expect": "70b5b64db64eb74c28463246b649fbf725fe2246b5492846fbf720fe3246b4492846fbf71bfe2246b2492846fbf716fe",
+   "note": "register_all_fonts_and_images(): ldr r5,=fontMap; then map_put(map,name,font) x10 via bl 0x5dce38."
+  },
+  {
+   "id": "getFont_helper",
+   "kind": "code",
+   "file_off": "0x5e2e80",
+   "expect": "01460148f9f73cbf",
+   "note": "getFont(const char*name) -> map_get(fontMap@0x3d69a318, name); tail-call 0x5dcd00."
+  },
+  {
+   "id": "getImage_helper",
+   "kind": "code",
+   "file_off": "0x5e2e8c",
+   "expect": "01460148f9f736bf",
+   "note": "getImage(const char*name) -> map_get(resourceMap@0x3d69a328, name)."
+  },
+  {
+   "id": "default_font_set",
+   "kind": "code",
+   "file_off": "0x5e2e64",
+   "expect": "08b5fef7b9f903490348bde80840f9f7",
+   "note": "font mgr init: bl 0x5e11dc then sets default font = font@467050 (FONT_CN_20_NORMAL) into fontMap via 0x5dcd38."
+  },
+  {
+   "id": "clock_font_literal",
+   "kind": "literal-word",
+   "file_off": "0x5d94d0",
+   "expect": "fce6133c",
+   "note": "THE STANDBY-CLOCK FONT SELECTOR. Literal word = VA of the string \"FONT_DUMMY_20\" (0x3c13e6fc -> file 0x166af0). Loaded by exactly ONE instruction, ldr r0,[pc] @0x5d934e, inside customTimeAndBatteryWidget (0x5d931c). Patch to 0x3c14781c (\"FONT_CN_36_BOLD\") to move the clock onto the 26 px bpp4 digit face."
+  },
+  {
+   "id": "clock_fn_prologue",
+   "kind": "code",
+   "file_off": "0x5d931c",
+   "expect": "2de9f0410d4682b0",
+   "note": "customTimeAndBatteryWidget() entry: push.w {r4,r5,r6,r7,r8,lr}."
+  },
+  {
+   "id": "clock_set_font",
+   "kind": "code",
+   "file_off": "0x5d934e",
+   "expect": "604809f096fd0022014628462df0",
+   "note": "ldr r0,=\"FONT_DUMMY_20\"; bl getFont(0x5e2e80); mov r1,r0; mov r0,label; bl lv_obj_set_style_text_font(0x606e38)."
+  },
+  {
+   "id": "clock_size_content",
+   "kind": "code",
+   "file_off": "0x5d935e",
+   "expect": "42f2d172284611462df0",
+   "note": "movw r2,#0x27d1 (LV_SIZE_CONTENT); lv_obj_set_size(label, CONTENT, CONTENT) @0x607048 -> the clock label is NOT a fixed box."
+  },
+  {
+   "id": "clock_align",
+   "kind": "code",
+   "file_off": "0x5d936a",
+   "expect": "0b230022022128462df0",
+   "note": "lv_obj_align(label, align=2 LV_ALIGN_TOP_MID, x=0, y=+11) @0x6072bc."
+  },
+  {
+   "id": "clock_widget_dispatch",
+   "kind": "code",
+   "file_off": "0x5d9d60",
+   "expect": "7368002b45d00f9b31460d9a2046fff7",
+   "note": "StandByWidget factory tbb case that calls 0x5d931c and, on empty title, logs \"[Launcher]customTimeAndBatteryWidget failed, title is empty\"."
+  },
+  {
+   "id": "time_format",
+   "kind": "string",
+   "file_off": "0x17c818",
+   "expect": "253032643a2530326400",
+   "note": "\"%02d:%02d\" - produced by Launcher/model/TimeModel.cpp (path string @0x1955d8), formatter at 0x5cded0 pool."
+  },
+  {
+   "id": "external_font_path",
+   "kind": "string",
+   "file_off": "0x426664",
+   "expect": "423a6c765f666f6e745f6169725f66756c6c5f636e5f32305f627070312e62696e00",
+   "note": "\"B:lv_font_air_full_cn_20_bpp1.bin\" - a SECOND font manager (lv_font_air_binary.c) loads FONT_20 from a LittleFS volume B:. That file is NOT in this OTA (the OTA contains only best1600_watch_bth.bin and platform_tester.bin)."
+  },
+  {
+   "id": "font_names",
+   "kind": "string-block",
+   "file_off": "0x3ffdf4",
+   "expect": "464f4e545f434e5f33325f4e4f524d414c000000464f4e545f454e5f33325f4e4f524d414c000000464f4e545f454e5f33365f424f4c4400464f4e545f434e5f31365f4e4f524d414c000000464f4e545f434e5f32305f4e4f524d414c000000464f4e545f434e5f32345f4e4f524d414c0000006e657874",
+   "note": "FONT_CN_32_NORMAL, FONT_EN_32_NORMAL, FONT_EN_36_BOLD, FONT_CN_16_NORMAL, FONT_CN_20_NORMAL, FONT_CN_24_NORMAL (contiguous, NUL+pad separated)."
+  },
+  {
+   "id": "font_name_CN36",
+   "kind": "string",
+   "file_off": "0x16fc10",
+   "expect": "464f4e545f434e5f33365f424f4c4400",
+   "note": "\"FONT_CN_36_BOLD\""
+  },
+  {
+   "id": "font_name_DUMMY16",
+   "kind": "string",
+   "file_off": "0x166950",
+   "expect": "464f4e545f44554d4d595f313600",
+   "note": "\"FONT_DUMMY_16\""
+  },
+  {
+   "id": "font_name_DUMMY20",
+   "kind": "string",
+   "file_off": "0x166af0",
+   "expect": "464f4e545f44554d4d595f323000",
+   "note": "\"FONT_DUMMY_20\""
+  },
+  {
+   "id": "font_name_DUMMY24",
+   "kind": "string",
+   "file_off": "0x167cbc",
+   "expect": "464f4e545f44554d4d595f323400",
+   "note": "\"FONT_DUMMY_24\""
+  }
+ ]
+}

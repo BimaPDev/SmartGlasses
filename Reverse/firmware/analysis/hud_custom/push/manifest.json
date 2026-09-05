@@ -1,0 +1,284 @@
+{
+  "claims": [
+    {
+      "id": "fw.tips.showTips_resId",
+      "kind": "string",
+      "file_off": "0x196128",
+      "expect": "[Launcher]TipsModel::showTips resId = %d, string is null",
+      "note": "DECISIVE: standby tips are resolved from an on-device resource id, not phone-supplied text. platform_tester.bin (x_1.0.12.83)."
+    },
+    {
+      "id": "fw.tips.showOperationTips_resId",
+      "kind": "string",
+      "file_off": "0x1962a8",
+      "expect": "[Launcher]TipsModel::showOperationTips resId = %d",
+      "note": "Operation tips also resId-driven."
+    },
+    {
+      "id": "fw.tips.showPriorityTips_resId",
+      "kind": "string",
+      "file_off": "0x1965a4",
+      "expect": "[Launcher]TipsModel::showPriorityTips resId = %d",
+      "note": "Priority tips also resId-driven."
+    },
+    {
+      "id": "fw.tips.initTipsVector",
+      "kind": "string",
+      "file_off": "0x196790",
+      "expect": "initTipsVector",
+      "note": "Tip ids come from a fixed on-device vector, with per-tip show counts persisted in preferences."
+    },
+    {
+      "id": "fw.standby.tipsId_log",
+      "kind": "string",
+      "file_off": "0x197840",
+      "expect": "[Launcher]StandByView:: tipsId = %d",
+      "note": "Brief's anchor. It logs an id, never a string -- consistent with resId lookup."
+    },
+    {
+      "id": "fw.standby.updateTipsViewAlign",
+      "kind": "string",
+      "file_off": "0x1977f0",
+      "expect": "[Launcher]StandByView::updateTipsViewAlign textWidth = %d",
+      "note": "Brief's anchor. Layout measurement of the already-resolved string, not an inbound field."
+    },
+    {
+      "id": "fw.standby.createHintLabel",
+      "kind": "string",
+      "file_off": "0x197744",
+      "expect": "[Launcher]StandByView::createHintLabel moveLabelHint = %d",
+      "note": "Brief's anchor. The hint label is a swipe-affordance counter (KEY_LAUNCHER_STANDBY_MOVE_HINT_COUNT), not a text sink."
+    },
+    {
+      "id": "fw.standby.view_source_path",
+      "kind": "string",
+      "file_off": "0x1976a4",
+      "expect": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/view/StandByView.cpp",
+      "note": "Confirms the StandByView anchors belong to the launcher's LVGL standby page."
+    },
+    {
+      "id": "fw.standby.createTextWidget",
+      "kind": "string",
+      "file_off": "0x199800",
+      "expect": "[Launcher]createTextWidget failed, title or content is empty",
+      "note": "UNVERIFIED lead: a title+content text widget primitive exists in StandByWidgetManager.cpp, but no inbound message routes phone text to it."
+    },
+    {
+      "id": "fw.standby.widget_names",
+      "kind": "string",
+      "file_off": "0x199774",
+      "expect": "weather_1x2",
+      "note": "Standby widget name table (weather_1x2, steps, weekday, aiBall, weather_1x1 follow contiguously to 0x1997a4). A fixed enumeration; arbitrary names are not accepted."
+    },
+    {
+      "id": "fw.weather.model_source_path",
+      "kind": "string",
+      "file_off": "0x192b9c",
+      "expect": "../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/WeatherModel.cpp",
+      "note": "The launcher's weather consumer."
+    },
+    {
+      "id": "fw.weather.launcher_fields_iconCode",
+      "kind": "string",
+      "file_off": "0x192c24",
+      "expect": "iconCode",
+      "note": "Launcher weather field block: iconCode 0x192c24, quality 0x192c30, aqi 0x192c38. areaName / dayTempMax / dayTempMin / sunriseTime / sunsetTime are absent from this block."
+    },
+    {
+      "id": "fw.weather.launcher_success_log",
+      "kind": "string",
+      "file_off": "0x192c40",
+      "expect": "[Launcher]WeatherModel::handleAppMsg success, temp %d, weatherIconCode %ld",
+      "note": "The launcher logs only temp and icon -- corroborates that city/hi/lo are dropped by the standby widget."
+    },
+    {
+      "id": "fw.weather.areaName_is_assistant_only",
+      "kind": "string",
+      "file_off": "0x1770f8",
+      "expect": "areaName",
+      "note": "The ONLY occurrence of areaName in the image, and it sits in the Assistant weather-scene field block (poi 0x1770f4, province 0x177104, dayTemp 0x177110, futureDays 0x177148) -- not the launcher's."
+    },
+    {
+      "id": "fw.notification.action_enum_show",
+      "kind": "string",
+      "file_off": "0x18dee8",
+      "expect": "SHOW_NOTIFICATION",
+      "note": "The working free-form-text path. Same switch also holds SHOW_TOAST 0x18de88, SHOW_DIALOG 0x18de94, DISMISS_NOTIFICATION 0x18df30, SYNC_SMART_REMINDER_CONFIG 0x18df48, CONNECT_ANCS_SERVICE 0x18df18, DISCONNECT_ANCS_SERVICE 0x18df88, QUERY_ANCS_SERVICE_STATE 0x18dfa0."
+    },
+    {
+      "id": "fw.notification.show_toast",
+      "kind": "string",
+      "file_off": "0x18de88",
+      "expect": "SHOW_TOAST",
+      "note": "UNVERIFIED. Not present anywhere in Sources/, Examples/ or Reference/. Handler onReceiveToast 0x18da34, log '[%s] content: %s' 0x18da44. Best unexplored short-free-text lead."
+    },
+    {
+      "id": "fw.notification.show_dialog",
+      "kind": "string",
+      "file_off": "0x18de94",
+      "expect": "SHOW_DIALOG",
+      "note": "UNVERIFIED. onReceiveDialog 0x18dc48, interactionPromptTxt 0x18dc64, sendPackage 0x18dc58."
+    },
+    {
+      "id": "fw.notification.onReceiveToast",
+      "kind": "string",
+      "file_off": "0x18da34",
+      "expect": "onReceiveToast",
+      "note": "Toast handler symbol."
+    },
+    {
+      "id": "fw.notification.crateTime_misspelling",
+      "kind": "string",
+      "file_off": "0x18d8b4",
+      "expect": "crateTime",
+      "note": "Confirms the firmware's own misspelling that AppLayer.swift:63 and Notifications.swift:95 reproduce verbatim."
+    },
+    {
+      "id": "fw.notification.displayTime_field",
+      "kind": "string",
+      "file_off": "0x18d668",
+      "expect": "notificationDisplayTime",
+      "note": "Cards are transient; this is the dismiss timer the phone sets via SYNC_SMART_REMINDER_CONFIG."
+    },
+    {
+      "id": "fw.notification.ios_ancs_gate",
+      "kind": "string",
+      "file_off": "0x18ed5d",
+      "expect": "ios notification not enabled",
+      "note": "The firmware drops the iOS notification path until notificationControlState is synced -- MyvuClient.enablePhoneNotifications must run first."
+    },
+    {
+      "id": "fw.gate.launch_fail_br_not_connected",
+      "kind": "string",
+      "file_off": "0x190c34",
+      "expect": "[Launcher]launch app failed, thirdparty phone, ble connect but br not, show toast",
+      "note": "Firmware corroboration of PROTOCOL.md's audio-link gate: open_app is refused when BLE is up but BR/EDR is not. Siblings at 0x190bf4 and 0x190ba8."
+    },
+    {
+      "id": "fw.system.dispatch_change_dock_items",
+      "kind": "string",
+      "file_off": "0x194bcc",
+      "expect": "change_dock_items",
+      "note": "Head of the contiguous handleSystemMsg action table (0x194bcc-0x194f58). set_standby_position 0x194be0, set_font_mode 0x194cc4, get_standby_widget_lists 0x194cd4, set_standby_widget_lists 0x194cf8."
+    },
+    {
+      "id": "fw.system.set_standby_widget_lists",
+      "kind": "string",
+      "file_off": "0x194cf8",
+      "expect": "set_standby_widget_lists",
+      "note": "Implemented in the SDK (SystemSettings.swift:197). Its value key 'widgets' is at 0x194cf0."
+    },
+    {
+      "id": "fw.system.no_handler_log",
+      "kind": "string",
+      "file_off": "0x194f68",
+      "expect": "[Launcher]MessageModel handleSystemMsg no handler for action %s",
+      "note": "Terminates the action table; anything outside it is a silent no-op with this log line."
+    },
+    {
+      "id": "fw.system.device_name_echo",
+      "kind": "string",
+      "file_off": "0x193a68",
+      "expect": "{\"device_name\": \"%s\", \"time\": \"%s\"}",
+      "note": "set_device_name is a real, if minor, free-text surface -- it reappears in the connect toast (0x192538)."
+    },
+    {
+      "id": "sdk.entry.sendRaw",
+      "kind": "file",
+      "path": "Sources/MyvuCore/MyvuClient.swift",
+      "expect": "public func sendRaw(_ actionJson: String,",
+      "note": "Line 1143. THE generic entry point -- no new SDK code is needed to send SHOW_TOAST, SHOW_DIALOG or any unimplemented system sub-action."
+    },
+    {
+      "id": "sdk.entry.sendAction",
+      "kind": "file",
+      "path": "Sources/MyvuCore/MyvuClient.swift",
+      "expect": "public func sendAction(_ actionJson: String,",
+      "note": "Line 902. What sendRaw forwards to; drops messages unless session.ready."
+    },
+    {
+      "id": "sdk.entry.buildSendActionBody",
+      "kind": "file",
+      "path": "Sources/MyvuCore/App/AppLayer.swift",
+      "expect": "public func buildSendActionBody(_ actionJson: String,",
+      "note": "Line 35. The StMessage envelope {2:src,3:dst,4:json,6:id}."
+    },
+    {
+      "id": "sdk.standby.setStandbyWidgets",
+      "kind": "file",
+      "path": "Sources/MyvuCore/App/Feature/SystemSettings.swift",
+      "expect": "public static func setStandbyWidgets(_ widgets: [String]) -> String {",
+      "note": "Line 197. CONTRADICTS the brief's premise: set_standby_widget_lists is already implemented. MyvuClient.setStandbyWidgets is at MyvuClient.swift:1090."
+    },
+    {
+      "id": "sdk.standby.setStandbyPosition",
+      "kind": "file",
+      "path": "Sources/MyvuCore/App/Feature/SystemSettings.swift",
+      "expect": "public static func setStandbyPosition(_ position: Int) -> String {",
+      "note": "Line 183. Already implemented; MyvuClient.swift:1058."
+    },
+    {
+      "id": "sdk.standby.setDockItems",
+      "kind": "file",
+      "path": "Sources/MyvuCore/App/Feature/SystemSettings.swift",
+      "expect": "public static func setDockItems(_ packages: [String]) -> String {",
+      "note": "Line 126. Already implemented; value is a pipe-joined STRING, not an array. MyvuClient.swift:1085."
+    },
+    {
+      "id": "sdk.standby.setFontSize",
+      "kind": "file",
+      "path": "Sources/MyvuCore/App/Feature/SystemSettings.swift",
+      "expect": "public static func setFontSize(_ size: FontSize) -> String {",
+      "note": "Line 107. set_font_mode, already implemented, 1-based value. MyvuClient.swift:1077."
+    },
+    {
+      "id": "sdk.text.notifications_buildShow",
+      "kind": "file",
+      "path": "Sources/MyvuCore/App/Feature/Notifications.swift",
+      "expect": "public static func buildShow(entries: [JsonObject]) -> String {",
+      "note": "Line 101. The free-form-text path that works over BLE today."
+    },
+    {
+      "id": "sdk.text.lenscards_buildShow",
+      "kind": "file",
+      "path": "Sources/MyvuCore/App/Feature/LensCards.swift",
+      "expect": "public static func buildShow(title: String, body: String, numericId: Int,",
+      "note": "Line 25. Stable-id card; re-showing repaints in place. LensScript (line 50) is the SDK's explicit teleprompter substitute."
+    },
+    {
+      "id": "sdk.text.ai_chatAnswer",
+      "kind": "file",
+      "path": "Sources/MyvuAI/AiProtocol.swift",
+      "expect": "public static func chatAnswer(sessionId: String, answer: String,",
+      "note": "Line 255. code:122 commits free-form answer text into the LLM card scene opened by chatQuery (line 216). BLE-only per PROTOCOL.md, but UNVERIFIED on this repo's hardware logs."
+    },
+    {
+      "id": "sdk.gate.teleprompterContentOnly",
+      "kind": "file",
+      "path": "Sources/MyvuCore/MyvuClient.swift",
+      "expect": "public func teleprompterContentOnly(_ text: String,",
+      "note": "Line 958. Its own doc comment states the open_app path needs the classic-BT audio link and steers iOS callers to LensScript."
+    },
+    {
+      "id": "sdk.absent.show_toast",
+      "kind": "file",
+      "path": "Sources/MyvuCore/App/Feature/Notifications.swift",
+      "expect": "ABSENT: SHOW_TOAST",
+      "note": "Negative claim: grep for SHOW_TOAST / SHOW_DIALOG / CONNECT_ANCS / QUERY_ANCS / interactionPromptTxt / DISMISS_REMINDER across Sources/, Examples/ and Reference/ returns nothing. Extend the constants at Notifications.swift:8-15 and reuse envelope(_:_:) at :40."
+    },
+    {
+      "id": "doc.protocol.audio_gate_table",
+      "kind": "file",
+      "path": "PROTOCOL.md",
+      "expect": "| Works over BLE alone (launcher already running) | Needs live HFP/A2DP (+ relay on Android/Windows) |",
+      "note": "Line 373. The authoritative TESTED split: notifications/settings/language/trackpad/queries/clock/weather on BLE; teleprompter, navigation and music gated."
+    },
+    {
+      "id": "doc.protocol.wake_code7",
+      "kind": "file",
+      "path": "PROTOCOL.md",
+      "expect": "code:7** = wake word",
+      "note": "Line 327. The bare code:7 the brief cites is an INBOUND trigger from the glasses, not a content-bearing outbound action."
+    }
+  ]
+}

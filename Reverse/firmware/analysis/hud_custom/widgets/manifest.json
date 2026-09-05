@@ -1,0 +1,281 @@
+{
+  "binary": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+  "version": "1.0.12.83",
+  "address_model": {
+    "code_va": "file_off + 0x2C010000",
+    "data_va": "file_off + 0x3BFD7C0C"
+  },
+  "claims": [
+    {
+      "id": "name.time",
+      "kind": "string",
+      "file_off": "0x195960",
+      "expect": "time",
+      "note": "widget name string 'time' -> id 1; data VA 0x3C16D56C"
+    },
+    {
+      "id": "name.weather_1x1",
+      "kind": "string",
+      "file_off": "0x199798",
+      "expect": "weather_1x1",
+      "note": "widget name string -> id 2; data VA 0x3C1713A4"
+    },
+    {
+      "id": "name.weather_1x2",
+      "kind": "string",
+      "file_off": "0x199774",
+      "expect": "weather_1x2",
+      "note": "widget name string -> id 3; data VA 0x3C171380; costs 2 grid slots"
+    },
+    {
+      "id": "name.steps",
+      "kind": "string",
+      "file_off": "0x199780",
+      "expect": "steps",
+      "note": "widget name string -> id 4; data VA 0x3C17138C"
+    },
+    {
+      "id": "name.weekday",
+      "kind": "string",
+      "file_off": "0x199788",
+      "expect": "weekday",
+      "note": "widget name string -> id 5; data VA 0x3C171394"
+    },
+    {
+      "id": "name.aiBall",
+      "kind": "string",
+      "file_off": "0x199790",
+      "expect": "aiBall",
+      "note": "widget name string -> id 6; data VA 0x3C17139C"
+    },
+    {
+      "id": "nametable.getName",
+      "kind": "code",
+      "file_off": "0x5d8c10",
+      "expect": "a413173c6cd5163c9c13173c8013173c8c13173c9413173c",
+      "note": "6 little-endian data VAs in getName order: weather_1x1(id2), time(id1), aiBall(id6), weather_1x2(id3), steps(id4), weekday(id5) = a413173c 6cd5163c 9c13173c 8013173c 8c13173c 9413173c"
+    },
+    {
+      "id": "code.getName.prologue",
+      "kind": "code",
+      "file_off": "0x5d8be0",
+      "expect": "436d013b052b10d8dfe803f0",
+      "note": "StandByWidget::getName: ldr r3,[r0,#0x54]; subs r3,#1; cmp r3,#5; bhi; tbb [pc,r3]"
+    },
+    {
+      "id": "code.getName.tbb",
+      "kind": "code",
+      "file_off": "0x5d8bec",
+      "expect": "0503090b0d07",
+      "note": "getName tbb table, base 0x5d8bec: id1->0x5d8bf6, id2->0x5d8bf2, id3->0x5d8bfe, id4->0x5d8c02, id5->0x5d8c06, id6->0x5d8bfa"
+    },
+    {
+      "id": "code.getId",
+      "kind": "code",
+      "file_off": "0x5d8bdc",
+      "expect": "406d7047",
+      "note": "StandByWidget::getId = ldr r0,[r0,#0x54]; bx lr -> widget id lives at StandByWidget+0x54"
+    },
+    {
+      "id": "code.rebuild.nameregs",
+      "kind": "code",
+      "file_off": "0x5db9fe",
+      "expect": "dff8d881dff8d891dff8d8a1",
+      "note": "rebuildFromWidgetSeq loads r8='time', r9='weather_1x1', r10='weather_1x2' into registers for the strcmp chain"
+    },
+    {
+      "id": "map.name_to_id",
+      "kind": "value",
+      "file_off": "0x5db9dc",
+      "expect": {
+        "time": 1,
+        "weather_1x1": 2,
+        "weather_1x2": 3,
+        "steps": 4,
+        "weekday": 5,
+        "aiBall": 6
+      },
+      "note": "rebuildFromWidgetSeq @0x5db9dc: strcmp arms load r1 immediates before bl createWidget(0x5db5e4) -- time@0x5dba6e r1=1, weather_1x1@0x5dbb60 r1=2, weather_1x2@0x5dbb74 r1=3, steps@0x5dbb88 r1=4, weekday@0x5dbbb0 r1=5, aiBall@0x5dbb9c r1=6"
+    },
+    {
+      "id": "code.factory.tbh",
+      "kind": "code",
+      "file_off": "0x5db260",
+      "expect": "dfe815f0b200db001c013e00",
+      "note": "widget factory 0x5db204: tbh [pc,r5,lsl#1] + 5-halfword table at 0x5db264 (b200 db00 1c01 3e00 9b00) -> id2=0x5db3c8 id3=0x5db41a id4=0x5db49c id5=0x5db2e0 id6=0x5db39a; id1 falls to 0x5db590"
+    },
+    {
+      "id": "code.factory.sentinels",
+      "kind": "value",
+      "file_off": "0x5db4b0",
+      "expect": "feffff7f",
+      "note": "literal word 0x7FFFFFFE (LE bytes feffff7f) in the factory pool at 0x5db4b0; 0x7FFFFFFF is materialised by mvn r3,#0x80000000 @0x5db276. 0x7FFFFFFF = disconnect placeholder (always appended); 0x7FFFFFFE has no caller in this build"
+    },
+    {
+      "id": "code.ctor.tbb",
+      "kind": "code",
+      "file_off": "0x5d9cf4",
+      "expect": "227e092a0ed8dfe802f01f2505313b4045536010",
+      "note": "StandByWidget ctor 0x5d9c78: ldrb r2,[r4,#0x18]; cmp r2,#9; bhi; tbb [pc,r2] + 10-byte table at 0x5d9cfe (1f 25 05 31 3b 40 45 53 60 10) -> style0=0x5d9d3c 1=0x5d9d48 2=0x5d9d08 3=0x5d9d60 4=0x5d9d74 5=0x5d9d7e 6=0x5d9d88 7=0x5d9da4 8=0x5d9dbe 9=0x5d9d1e"
+    },
+    {
+      "id": "str.createNormalWidget.err",
+      "kind": "string",
+      "file_off": "0x1997b8",
+      "expect": "[Launcher]createNormalWidget failed, title is empty",
+      "note": "error log proving ctor style 1 == createNormalWidget (StandByWidget.cpp:89, log site 0x5d9e06)"
+    },
+    {
+      "id": "str.createTextWidget.err",
+      "kind": "string",
+      "file_off": "0x199800",
+      "expect": "[Launcher]createTextWidget failed, title or content is empty",
+      "note": "error log proving ctor style 6 == createTextWidget (StandByWidget.cpp:114, log site 0x5d9d92)"
+    },
+    {
+      "id": "str.customTimeAndBattery.err",
+      "kind": "string",
+      "file_off": "0x19987c",
+      "expect": "[Launcher]customTimeAndBatteryWidget failed, title is empty",
+      "note": "error log proving ctor style 3 == customTimeAndBatteryWidget (StandByWidget.cpp:294, log site 0x5d9df2)"
+    },
+    {
+      "id": "str.createWeather1x2",
+      "kind": "string",
+      "file_off": "0x1998b8",
+      "expect": "createWeather1x2Widget",
+      "note": "__func__ proving ctor style 8 == createWeather1x2Widget (StandByWidget.cpp:720, log site 0x5d9e18)"
+    },
+    {
+      "id": "code.pack.loop",
+      "kind": "code",
+      "file_off": "0x5dbb0a",
+      "expect": "94f82400002134460d460e460f4601e014f8010f02463b463c2952ea0d1301f1040146ea020645ea0305f1d1",
+      "note": "rebuildFromWidgetSeq pack loop: bytes[0]=count at this+0x24, then LSLL r2,r3,r1 (Armv8.1-M long shift; capstone 5.0.7 mis-renders as 'orrs.w r3,r2,sp,lsl #4'), shift r1 += 4, cmp r1,#0x3c -> 15 nibbles, 4 bits each"
+    },
+    {
+      "id": "code.unpack.loop",
+      "kind": "code",
+      "file_off": "0x5db816",
+      "expect": "04f123000021dde904763a46334652ea2d13043102f00f02402900f8012ff4d1",
+      "note": "createDefaultWidgets unpack loop: ASRL r2,r3,r1 (capstone mis-renders as 'orrs.w r3,r2,sp,asr #4'), and r2,#0xf, cmp r1,#0x40 -> 16 nibbles written to this+0x24..this+0x33"
+    },
+    {
+      "id": "packing.layout",
+      "kind": "value",
+      "file_off": "0x5dbb0a",
+      "expect": {
+        "bits_per_entry": 4,
+        "nibble0": "widget count N (= |mWidgets| - 1, excluding the 0x7FFFFFFF placeholder)",
+        "nibble1_to_14": "widget id in display order",
+        "entries_written": 15,
+        "max_widgets": 14,
+        "unused_bits": "60..63"
+      },
+      "note": "derived from the pack loop (15 iterations, shift 0,4,..,0x38) and the unpack loop (16 iterations, shift 0,4,..,0x3c)"
+    },
+    {
+      "id": "code.pref.key",
+      "kind": "code",
+      "file_off": "0x5db644",
+      "expect": "47202468",
+      "note": "createSpecWidgets: movs r0,#0x47 before bl getPreference(0x5e31b4). Same key 0x47 used at 0x5db7ec (createDefaultWidgets read) and 0x5dbb54 (setPreference 0x5e317c)"
+    },
+    {
+      "id": "str.storeValue",
+      "kind": "string",
+      "file_off": "0x199dac",
+      "expect": "[Launcher]changeStandbyWidgetSeq, storeValue: %lld",
+      "note": "log format for the packed value, emitted at 0x5dbb36 inside rebuildFromWidgetSeq (StandByWidgetManager.cpp:440)"
+    },
+    {
+      "id": "str.foundSp",
+      "kind": "string",
+      "file_off": "0x199cb8",
+      "expect": "[Launcher]createDefaultWidgets found sp value : %lld",
+      "note": "log format for the value read back, emitted at 0x5db7fa in createDefaultWidgets (line 71)"
+    },
+    {
+      "id": "code.grid.capacity",
+      "kind": "code",
+      "file_off": "0x5db686",
+      "expect": "c5f10405002d3add",
+      "note": "createSpecWidgets: rsb r5,r5,#4 then cmp/ble -> total budget is 4 slots; the preceding loop at 0x5db664..0x5db684 charges 2 for a name equal to 'weather_1x2' and 1 otherwise"
+    },
+    {
+      "id": "code.grid.padcolumn",
+      "kind": "value",
+      "file_off": "0x5da6c4",
+      "expect": "042c",
+      "note": "adjustFlexPadColumn 0x5da6a8: cmp r4,#4; pad_column = 11 if size==4 else 10 -> the standby row is 4 across"
+    },
+    {
+      "id": "defaults.order",
+      "kind": "value",
+      "file_off": "0x5db7c4",
+      "expect": [
+        "time(id1,index0)",
+        "weather_1x1(id2,index1)",
+        "steps(id4,index2) or weekday(id5,index3) via createSpecWidgets",
+        "aiBall(id6,index4)",
+        "0x7FFFFFFF placeholder(index0xff, hidden)"
+      ],
+      "note": "createDefaultWidgets 0x5db7c4, no-preference branch at 0x5db8d2: 0x5db8d8 r1=1 r2=0; 0x5db8ea r1=2 r2=1; 0x5db8fc r1=6 r2=4; 0x5db892 r1=0x7FFFFFFF r2=0xff. createSpecWidgets (0x5db634) inserts steps@2 when isSupportStepCountWidget (0x5da9e8) else weekday@3"
+    },
+    {
+      "id": "str.createWidget.dup",
+      "kind": "string",
+      "file_off": "0x199b20",
+      "expect": "[Launcher]createWidget, already exist widget id %d, just change index",
+      "note": "proves ids are ints and that createWidget (0x5db5e4) dedupes by id, re-indexing instead of duplicating (StandByWidgetManager.cpp:162)"
+    },
+    {
+      "id": "pipeline.set",
+      "kind": "value",
+      "file_off": "0x5cc56c",
+      "expect": [
+        "handleStandbyWidgetsChange 0x5cc56c",
+        "LauncherProvider::setStandbyWidgets 0x5c7434",
+        "0x5d4f80 (+0x148)",
+        "0x5d4468 (+0x98)",
+        "changeStandbyWidgetSeq 0x5dbbe4",
+        "rebuildFromWidgetSeq 0x5db9dc"
+      ],
+      "note": "full traced call chain from the JSON command to the widget rebuild; 0x5d4468 = 'adds r0,#0x98; b.w 0x5dbbe4'"
+    },
+    {
+      "id": "pipeline.get",
+      "kind": "value",
+      "file_off": "0x5cc484",
+      "expect": [
+        "get_standby_widget_lists handler 0x5cc484",
+        "0x5c749c",
+        "0x5d4f88 (+0x148)",
+        "0x5d4470 (+0x98)",
+        "getWidgetNameList 0x5dab10"
+      ],
+      "note": "get_ copies StandByWidgetManager+0x34 (vector<std::string> of names) verbatim into value.widgets; it is EMPTY until a set_ has been received"
+    },
+    {
+      "id": "str.aiBall.image.default",
+      "kind": "string",
+      "file_off": "0x1980e4",
+      "expect": "launcher_standby_freestyle_default",
+      "note": "image chosen for aiBall (id 6): 0x5c6e8c is a stub returning 0, so the launcher_standby_hear_imp_mode branch at 0x199ac0 is dead in 1.0.12.83"
+    },
+    {
+      "id": "str.disconnect.image",
+      "kind": "string",
+      "file_off": "0x199ae0",
+      "expect": "launcher_standby_disconnect",
+      "note": "image for the 0x7FFFFFFF placeholder widget (factory arm 0x5db27e)"
+    },
+    {
+      "id": "str.sports.icon",
+      "kind": "string",
+      "file_off": "0x199afc",
+      "expect": "sports_standby_icon",
+      "note": "icon for the 0x7FFFFFFE widget (factory arm 0x5db4c4) -- arm has no caller in this build"
+    }
+  ]
+}

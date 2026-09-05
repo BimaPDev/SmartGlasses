@@ -1,0 +1,2871 @@
+{
+ "leaf": "1.3-statusbar",
+ "binary": "Reverse/firmware/x_1.0.12.83/platform_tester.bin",
+ "data_base": "0x3BFD7C0C",
+ "note": "file_off = runtime_ptr - 0x3BFD7C0C. All icons are LV_IMG_CF_INDEXED_4BIT (cf=9): 16 BGRA palette entries (64 B) followed by ceil(w/2)*h packed nibbles. In-place patching must preserve data_size exactly.",
+ "icons": {
+  "battery_100": {
+   "dsc_off": "0x3d1514",
+   "header": "0x02812009",
+   "cf": 9,
+   "w": 72,
+   "h": 20,
+   "data_size": 784,
+   "data_off": "0x3d1534",
+   "data_ptr": "0x3c3a9140",
+   "name_str_off": "0x40056c",
+   "registry_row_off": "0x5e2a78",
+   "patch_bytes": 784,
+   "pixel_bytes": 720,
+   "stride": 36
+  },
+  "launcher_connect_toast": {
+   "dsc_off": "0x342b6c",
+   "header": "0x0600c009",
+   "cf": 9,
+   "w": 48,
+   "h": 48,
+   "data_size": 1216,
+   "data_off": "0x342bb4",
+   "data_ptr": "0x3c31a7c0",
+   "name_str_off": "0x192568",
+   "registry_row_off": "0x5e16e0",
+   "patch_bytes": 1216,
+   "pixel_bytes": 1152,
+   "stride": 24
+  },
+  "launcher_disconnect_toast": {
+   "dsc_off": "0x34702c",
+   "header": "0x0600c009",
+   "cf": 9,
+   "w": 48,
+   "h": 48,
+   "data_size": 1216,
+   "data_off": "0x347074",
+   "data_ptr": "0x3c31ec80",
+   "name_str_off": "0x192604",
+   "registry_row_off": "0x5e16d8",
+   "patch_bytes": 1216,
+   "pixel_bytes": 1152,
+   "stride": 24
+  },
+  "launcher_health_normal": {
+   "dsc_off": "0x342464",
+   "header": "0x03807009",
+   "cf": 9,
+   "w": 28,
+   "h": 28,
+   "data_size": 456,
+   "data_off": "0x342474",
+   "data_ptr": "0x3c31a080",
+   "name_str_off": "0x199744",
+   "registry_row_off": "0x5e1a60",
+   "patch_bytes": 456,
+   "pixel_bytes": 392,
+   "stride": 14
+  },
+  "launcher_health_small": {
+   "dsc_off": "0x33c8b4",
+   "header": "0x03006009",
+   "cf": 9,
+   "w": 24,
+   "h": 24,
+   "data_size": 352,
+   "data_off": "0x33c8f4",
+   "data_ptr": "0x3c314500",
+   "name_str_off": "0x19975c",
+   "registry_row_off": "0x5e1a68",
+   "patch_bytes": 352,
+   "pixel_bytes": 288,
+   "stride": 12
+  },
+  "launcher_standby_battery_10": {
+   "dsc_off": "0x34322c",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x343274",
+   "data_ptr": "0x3c31ae80",
+   "name_str_off": "0x196a48",
+   "registry_row_off": "0x5e1ae8",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_100": {
+   "dsc_off": "0x33d66c",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33d6b4",
+   "data_ptr": "0x3c3152c0",
+   "name_str_off": "0x196948",
+   "registry_row_off": "0x5e1aa0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_20": {
+   "dsc_off": "0x33cdac",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33cdf4",
+   "data_ptr": "0x3c314a00",
+   "name_str_off": "0x196a2c",
+   "registry_row_off": "0x5e1ae0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_30": {
+   "dsc_off": "0x347e74",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x347eb4",
+   "data_ptr": "0x3c31fac0",
+   "name_str_off": "0x196a10",
+   "registry_row_off": "0x5e1ad8",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_40": {
+   "dsc_off": "0x33d4bc",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33d4f4",
+   "data_ptr": "0x3c315100",
+   "name_str_off": "0x1969f4",
+   "registry_row_off": "0x5e1ad0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_50": {
+   "dsc_off": "0x33e0bc",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33e0f4",
+   "data_ptr": "0x3c315d00",
+   "name_str_off": "0x1969d8",
+   "registry_row_off": "0x5e1ac8",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_60": {
+   "dsc_off": "0x3429ac",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x3429f4",
+   "data_ptr": "0x3c31a600",
+   "name_str_off": "0x1969bc",
+   "registry_row_off": "0x5e1ac0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_70": {
+   "dsc_off": "0x344674",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x3446b4",
+   "data_ptr": "0x3c31c2c0",
+   "name_str_off": "0x1969a0",
+   "registry_row_off": "0x5e1ab8",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_80": {
+   "dsc_off": "0x33cbec",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33cc34",
+   "data_ptr": "0x3c314840",
+   "name_str_off": "0x196984",
+   "registry_row_off": "0x5e1ab0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_90": {
+   "dsc_off": "0x349eb4",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x349ef4",
+   "data_ptr": "0x3c321b00",
+   "name_str_off": "0x196968",
+   "registry_row_off": "0x5e1aa8",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_battery_charge_lightning": {
+   "dsc_off": "0x33cf6c",
+   "header": "0x03003009",
+   "cf": 9,
+   "w": 12,
+   "h": 24,
+   "data_size": 208,
+   "data_off": "0x33cfb4",
+   "data_ptr": "0x3c314bc0",
+   "name_str_off": "0x1995a0",
+   "registry_row_off": "0x5e1a90",
+   "patch_bytes": 208,
+   "pixel_bytes": 144,
+   "stride": 6
+  },
+  "launcher_standby_battery_empty": {
+   "dsc_off": "0x346cbc",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x346cf4",
+   "data_ptr": "0x3c31e900",
+   "name_str_off": "0x199840",
+   "registry_row_off": "0x5e1a98",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_standby_calender": {
+   "dsc_off": "0x33f008",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x33f034",
+   "data_ptr": "0x3c316c40",
+   "name_str_off": "0x197ee4",
+   "registry_row_off": "0x5e1b28",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_car": {
+   "dsc_off": "0x33d82c",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x33d874",
+   "data_ptr": "0x3c315480",
+   "name_str_off": "0x197f50",
+   "registry_row_off": "0x5e1b20",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_disconnect": {
+   "dsc_off": "0x34802c",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x348074",
+   "data_ptr": "0x3c31fc80",
+   "name_str_off": "0x199ae0",
+   "registry_row_off": "0x5e1a80",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_flight": {
+   "dsc_off": "0x33dc7c",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x33dcb4",
+   "data_ptr": "0x3c3158c0",
+   "name_str_off": "0x197fb8",
+   "registry_row_off": "0x5e1b30",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_freestyle_call": {
+   "dsc_off": "0x33d084",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x33d0b4",
+   "data_ptr": "0x3c314cc0",
+   "name_str_off": "0x19806c",
+   "registry_row_off": "0x5e1b00",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_freestyle_default": {
+   "dsc_off": "0x347534",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x347574",
+   "data_ptr": "0x3c31f180",
+   "name_str_off": "0x1980e4",
+   "registry_row_off": "0x5e1af0",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_freestyle_pip": {
+   "dsc_off": "0x349574",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x3495b4",
+   "data_ptr": "0x3c3211c0",
+   "name_str_off": "0x197d30",
+   "registry_row_off": "0x5e1af8",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_move_dash": {
+   "dsc_off": "0x33f6ec",
+   "header": "0x0a040009",
+   "cf": 9,
+   "w": 256,
+   "h": 80,
+   "data_size": 10304,
+   "data_off": "0x33f734",
+   "data_ptr": "0x3c317340",
+   "name_str_off": "0x197658",
+   "registry_row_off": "0x5e1a70",
+   "patch_bytes": 10304,
+   "pixel_bytes": 10240,
+   "stride": 128
+  },
+  "launcher_standby_move_indicator": {
+   "dsc_off": "0x345f2c",
+   "header": "0x01003809",
+   "cf": 9,
+   "w": 14,
+   "h": 8,
+   "data_size": 120,
+   "data_off": "0x345f74",
+   "data_ptr": "0x3c31db80",
+   "name_str_off": "0x197674",
+   "registry_row_off": "0x5e1a78",
+   "patch_bytes": 120,
+   "pixel_bytes": 56,
+   "stride": 7
+  },
+  "launcher_standby_music": {
+   "dsc_off": "0x346874",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x3468b4",
+   "data_ptr": "0x3c31e4c0",
+   "name_str_off": "0x197dac",
+   "registry_row_off": "0x5e1b10",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_navigation": {
+   "dsc_off": "0x3450b4",
+   "header": "0x0580b009",
+   "cf": 9,
+   "w": 44,
+   "h": 44,
+   "data_size": 1032,
+   "data_off": "0x3450f4",
+   "data_ptr": "0x3c31cd00",
+   "name_str_off": "0x197e78",
+   "registry_row_off": "0x5e1b18",
+   "patch_bytes": 1032,
+   "pixel_bytes": 968,
+   "stride": 22
+  },
+  "launcher_standby_zen_mode": {
+   "dsc_off": "0x33f43c",
+   "header": "0x03003009",
+   "cf": 9,
+   "w": 12,
+   "h": 24,
+   "data_size": 208,
+   "data_off": "0x33f474",
+   "data_ptr": "0x3c317080",
+   "name_str_off": "0x199584",
+   "registry_row_off": "0x5e1a88",
+   "patch_bytes": 208,
+   "pixel_bytes": 144,
+   "stride": 6
+  },
+  "launcher_statusbar_battery_10": {
+   "dsc_off": "0x346e6c",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x346eb4",
+   "data_ptr": "0x3c31eac0",
+   "name_str_off": "0x16c510",
+   "registry_row_off": "0x5e1a10",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_100": {
+   "dsc_off": "0x34263c",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x342674",
+   "data_ptr": "0x3c31a280",
+   "name_str_off": "0x16c654",
+   "registry_row_off": "0x5e16f0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_20": {
+   "dsc_off": "0x33f544",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33f574",
+   "data_ptr": "0x3c317180",
+   "name_str_off": "0x16c534",
+   "registry_row_off": "0x5e1a08",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_30": {
+   "dsc_off": "0x33ca54",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33ca74",
+   "data_ptr": "0x3c314680",
+   "name_str_off": "0x16c558",
+   "registry_row_off": "0x5e1a00",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_40": {
+   "dsc_off": "0x34206c",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x3420b4",
+   "data_ptr": "0x3c319cc0",
+   "name_str_off": "0x16c57c",
+   "registry_row_off": "0x5e19f8",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_50": {
+   "dsc_off": "0x343074",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x3430b4",
+   "data_ptr": "0x3c31acc0",
+   "name_str_off": "0x16c5a0",
+   "registry_row_off": "0x5e19f0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_60": {
+   "dsc_off": "0x345d74",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x345db4",
+   "data_ptr": "0x3c31d9c0",
+   "name_str_off": "0x16c5c4",
+   "registry_row_off": "0x5e19e8",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_70": {
+   "dsc_off": "0x33e42c",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33e474",
+   "data_ptr": "0x3c316080",
+   "name_str_off": "0x16c5e8",
+   "registry_row_off": "0x5e19e0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_80": {
+   "dsc_off": "0x33e26c",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x33e2b4",
+   "data_ptr": "0x3c315ec0",
+   "name_str_off": "0x16c60c",
+   "registry_row_off": "0x5e19d8",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_90": {
+   "dsc_off": "0x3427ec",
+   "header": "0x03006809",
+   "cf": 9,
+   "w": 26,
+   "h": 24,
+   "data_size": 376,
+   "data_off": "0x342834",
+   "data_ptr": "0x3c31a440",
+   "name_str_off": "0x16c630",
+   "registry_row_off": "0x5e19d0",
+   "patch_bytes": 376,
+   "pixel_bytes": 312,
+   "stride": 13
+  },
+  "launcher_statusbar_battery_charge_lightning": {
+   "dsc_off": "0x341f74",
+   "header": "0x03002809",
+   "cf": 9,
+   "w": 10,
+   "h": 24,
+   "data_size": 184,
+   "data_off": "0x341fb4",
+   "data_ptr": "0x3c319bc0",
+   "name_str_off": "0x16fe80",
+   "registry_row_off": "0x5e16e8",
+   "patch_bytes": 184,
+   "pixel_bytes": 120,
+   "stride": 5
+  },
+  "launcher_system_alert": {
+   "dsc_off": "0x3499bc",
+   "header": "0x0600c009",
+   "cf": 9,
+   "w": 48,
+   "h": 48,
+   "data_size": 1216,
+   "data_off": "0x3499f4",
+   "data_ptr": "0x3c321600",
+   "name_str_off": "0x18283c",
+   "registry_row_off": "0x5e1a50",
+   "patch_bytes": 1216,
+   "pixel_bytes": 1152,
+   "stride": 24
+  },
+  "mic": {
+   "dsc_off": "0x3e033c",
+   "header": "0x04008009",
+   "cf": 9,
+   "w": 32,
+   "h": 32,
+   "data_size": 576,
+   "data_off": "0x3e0374",
+   "data_ptr": "0x3c3b7f80",
+   "name_str_off": "0x15fff4",
+   "registry_row_off": "0x5e2d04",
+   "patch_bytes": 576,
+   "pixel_bytes": 512,
+   "stride": 16
+  },
+  "phone_notification_icon": {
+   "dsc_off": "0x39b074",
+   "header": "0x0600c009",
+   "cf": 9,
+   "w": 48,
+   "h": 48,
+   "data_size": 1216,
+   "data_off": "0x39b0b4",
+   "data_ptr": "0x3c372cc0",
+   "name_str_off": "0x18e860",
+   "registry_row_off": "0x5e2a10",
+   "patch_bytes": 1216,
+   "pixel_bytes": 1152,
+   "stride": 24
+  },
+  "setting_mode": {
+   "dsc_off": "0x3f9a54",
+   "header": "0x04008009",
+   "cf": 9,
+   "w": 32,
+   "h": 32,
+   "data_size": 576,
+   "data_off": "0x3f9a74",
+   "data_ptr": "0x3c3d1680",
+   "name_str_off": "0x167a38",
+   "registry_row_off": "0x5e2d54",
+   "patch_bytes": 576,
+   "pixel_bytes": 512,
+   "stride": 16
+  },
+  "setting_vol": {
+   "dsc_off": "0x3fb034",
+   "header": "0x04008009",
+   "cf": 9,
+   "w": 32,
+   "h": 32,
+   "data_size": 576,
+   "data_off": "0x3fb074",
+   "data_ptr": "0x3c3d2c80",
+   "name_str_off": "0x167a1c",
+   "registry_row_off": "0x5e2d44",
+   "patch_bytes": 576,
+   "pixel_bytes": 512,
+   "stride": 16
+  },
+  "setting_wear": {
+   "dsc_off": "0x3fb7ac",
+   "header": "0x04008009",
+   "cf": 9,
+   "w": 32,
+   "h": 32,
+   "data_size": 576,
+   "data_off": "0x3fb7f4",
+   "data_ptr": "0x3c3d3400",
+   "name_str_off": "0x167a48",
+   "registry_row_off": "0x5e2d5c",
+   "patch_bytes": 576,
+   "pixel_bytes": 512,
+   "stride": 16
+  },
+  "smartlife_notification_default_icon": {
+   "dsc_off": "0x3f7854",
+   "header": "0x0600c009",
+   "cf": 9,
+   "w": 48,
+   "h": 48,
+   "data_size": 1216,
+   "data_off": "0x3f7874",
+   "data_ptr": "0x3c3cf480",
+   "name_str_off": "0x18eb98",
+   "registry_row_off": "0x5e2560",
+   "patch_bytes": 1216,
+   "pixel_bytes": 1152,
+   "stride": 24
+  }
+ },
+ "claims": [
+  {
+   "id": "name.battery_100",
+   "kind": "string",
+   "file_off": "0x40056c",
+   "expect": "battery_100",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.battery_100",
+   "kind": "u32le",
+   "file_off": "0x3d1514",
+   "expect": "0x02812009",
+   "note": "lv_img_dsc_t header: cf=9 w=72 h=20"
+  },
+  {
+   "id": "dsc.size.battery_100",
+   "kind": "u32le",
+   "file_off": "0x3d1518",
+   "expect": "0x00000310",
+   "note": "data_size = 64 + ceil(w/2)*h = 784"
+  },
+  {
+   "id": "dsc.ptr.battery_100",
+   "kind": "u32le",
+   "file_off": "0x3d151c",
+   "expect": "0x3c3a9140",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3d1534"
+  },
+  {
+   "id": "reg.img.battery_100",
+   "kind": "u32le",
+   "file_off": "0x5e2a78",
+   "expect": "0x3c3a9120",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.battery_100",
+   "kind": "u32le",
+   "file_off": "0x5e2a7c",
+   "expect": "0x3c3d8178",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_connect_toast",
+   "kind": "string",
+   "file_off": "0x192568",
+   "expect": "launcher_connect_toast",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_connect_toast",
+   "kind": "u32le",
+   "file_off": "0x342b6c",
+   "expect": "0x0600c009",
+   "note": "lv_img_dsc_t header: cf=9 w=48 h=48"
+  },
+  {
+   "id": "dsc.size.launcher_connect_toast",
+   "kind": "u32le",
+   "file_off": "0x342b70",
+   "expect": "0x000004c0",
+   "note": "data_size = 64 + ceil(w/2)*h = 1216"
+  },
+  {
+   "id": "dsc.ptr.launcher_connect_toast",
+   "kind": "u32le",
+   "file_off": "0x342b74",
+   "expect": "0x3c31a7c0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x342bb4"
+  },
+  {
+   "id": "reg.img.launcher_connect_toast",
+   "kind": "u32le",
+   "file_off": "0x5e16e0",
+   "expect": "0x3c31a778",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_connect_toast",
+   "kind": "u32le",
+   "file_off": "0x5e16e4",
+   "expect": "0x3c16a174",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_disconnect_toast",
+   "kind": "string",
+   "file_off": "0x192604",
+   "expect": "launcher_disconnect_toast",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_disconnect_toast",
+   "kind": "u32le",
+   "file_off": "0x34702c",
+   "expect": "0x0600c009",
+   "note": "lv_img_dsc_t header: cf=9 w=48 h=48"
+  },
+  {
+   "id": "dsc.size.launcher_disconnect_toast",
+   "kind": "u32le",
+   "file_off": "0x347030",
+   "expect": "0x000004c0",
+   "note": "data_size = 64 + ceil(w/2)*h = 1216"
+  },
+  {
+   "id": "dsc.ptr.launcher_disconnect_toast",
+   "kind": "u32le",
+   "file_off": "0x347034",
+   "expect": "0x3c31ec80",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x347074"
+  },
+  {
+   "id": "reg.img.launcher_disconnect_toast",
+   "kind": "u32le",
+   "file_off": "0x5e16d8",
+   "expect": "0x3c31ec38",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_disconnect_toast",
+   "kind": "u32le",
+   "file_off": "0x5e16dc",
+   "expect": "0x3c16a210",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_health_normal",
+   "kind": "string",
+   "file_off": "0x199744",
+   "expect": "launcher_health_normal",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_health_normal",
+   "kind": "u32le",
+   "file_off": "0x342464",
+   "expect": "0x03807009",
+   "note": "lv_img_dsc_t header: cf=9 w=28 h=28"
+  },
+  {
+   "id": "dsc.size.launcher_health_normal",
+   "kind": "u32le",
+   "file_off": "0x342468",
+   "expect": "0x000001c8",
+   "note": "data_size = 64 + ceil(w/2)*h = 456"
+  },
+  {
+   "id": "dsc.ptr.launcher_health_normal",
+   "kind": "u32le",
+   "file_off": "0x34246c",
+   "expect": "0x3c31a080",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x342474"
+  },
+  {
+   "id": "reg.img.launcher_health_normal",
+   "kind": "u32le",
+   "file_off": "0x5e1a60",
+   "expect": "0x3c31a070",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_health_normal",
+   "kind": "u32le",
+   "file_off": "0x5e1a64",
+   "expect": "0x3c171350",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_health_small",
+   "kind": "string",
+   "file_off": "0x19975c",
+   "expect": "launcher_health_small",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_health_small",
+   "kind": "u32le",
+   "file_off": "0x33c8b4",
+   "expect": "0x03006009",
+   "note": "lv_img_dsc_t header: cf=9 w=24 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_health_small",
+   "kind": "u32le",
+   "file_off": "0x33c8b8",
+   "expect": "0x00000160",
+   "note": "data_size = 64 + ceil(w/2)*h = 352"
+  },
+  {
+   "id": "dsc.ptr.launcher_health_small",
+   "kind": "u32le",
+   "file_off": "0x33c8bc",
+   "expect": "0x3c314500",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33c8f4"
+  },
+  {
+   "id": "reg.img.launcher_health_small",
+   "kind": "u32le",
+   "file_off": "0x5e1a68",
+   "expect": "0x3c3144c0",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_health_small",
+   "kind": "u32le",
+   "file_off": "0x5e1a6c",
+   "expect": "0x3c171368",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_10",
+   "kind": "string",
+   "file_off": "0x196a48",
+   "expect": "launcher_standby_battery_10",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_10",
+   "kind": "u32le",
+   "file_off": "0x34322c",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_10",
+   "kind": "u32le",
+   "file_off": "0x343230",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_10",
+   "kind": "u32le",
+   "file_off": "0x343234",
+   "expect": "0x3c31ae80",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x343274"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_10",
+   "kind": "u32le",
+   "file_off": "0x5e1ae8",
+   "expect": "0x3c31ae38",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_10",
+   "kind": "u32le",
+   "file_off": "0x5e1aec",
+   "expect": "0x3c16e654",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_100",
+   "kind": "string",
+   "file_off": "0x196948",
+   "expect": "launcher_standby_battery_100",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_100",
+   "kind": "u32le",
+   "file_off": "0x33d66c",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_100",
+   "kind": "u32le",
+   "file_off": "0x33d670",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_100",
+   "kind": "u32le",
+   "file_off": "0x33d674",
+   "expect": "0x3c3152c0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33d6b4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_100",
+   "kind": "u32le",
+   "file_off": "0x5e1aa0",
+   "expect": "0x3c315278",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_100",
+   "kind": "u32le",
+   "file_off": "0x5e1aa4",
+   "expect": "0x3c16e554",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_20",
+   "kind": "string",
+   "file_off": "0x196a2c",
+   "expect": "launcher_standby_battery_20",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_20",
+   "kind": "u32le",
+   "file_off": "0x33cdac",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_20",
+   "kind": "u32le",
+   "file_off": "0x33cdb0",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_20",
+   "kind": "u32le",
+   "file_off": "0x33cdb4",
+   "expect": "0x3c314a00",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33cdf4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_20",
+   "kind": "u32le",
+   "file_off": "0x5e1ae0",
+   "expect": "0x3c3149b8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_20",
+   "kind": "u32le",
+   "file_off": "0x5e1ae4",
+   "expect": "0x3c16e638",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_30",
+   "kind": "string",
+   "file_off": "0x196a10",
+   "expect": "launcher_standby_battery_30",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_30",
+   "kind": "u32le",
+   "file_off": "0x347e74",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_30",
+   "kind": "u32le",
+   "file_off": "0x347e78",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_30",
+   "kind": "u32le",
+   "file_off": "0x347e7c",
+   "expect": "0x3c31fac0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x347eb4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_30",
+   "kind": "u32le",
+   "file_off": "0x5e1ad8",
+   "expect": "0x3c31fa80",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_30",
+   "kind": "u32le",
+   "file_off": "0x5e1adc",
+   "expect": "0x3c16e61c",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_40",
+   "kind": "string",
+   "file_off": "0x1969f4",
+   "expect": "launcher_standby_battery_40",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_40",
+   "kind": "u32le",
+   "file_off": "0x33d4bc",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_40",
+   "kind": "u32le",
+   "file_off": "0x33d4c0",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_40",
+   "kind": "u32le",
+   "file_off": "0x33d4c4",
+   "expect": "0x3c315100",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33d4f4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_40",
+   "kind": "u32le",
+   "file_off": "0x5e1ad0",
+   "expect": "0x3c3150c8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_40",
+   "kind": "u32le",
+   "file_off": "0x5e1ad4",
+   "expect": "0x3c16e600",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_50",
+   "kind": "string",
+   "file_off": "0x1969d8",
+   "expect": "launcher_standby_battery_50",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_50",
+   "kind": "u32le",
+   "file_off": "0x33e0bc",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_50",
+   "kind": "u32le",
+   "file_off": "0x33e0c0",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_50",
+   "kind": "u32le",
+   "file_off": "0x33e0c4",
+   "expect": "0x3c315d00",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33e0f4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_50",
+   "kind": "u32le",
+   "file_off": "0x5e1ac8",
+   "expect": "0x3c315cc8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_50",
+   "kind": "u32le",
+   "file_off": "0x5e1acc",
+   "expect": "0x3c16e5e4",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_60",
+   "kind": "string",
+   "file_off": "0x1969bc",
+   "expect": "launcher_standby_battery_60",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_60",
+   "kind": "u32le",
+   "file_off": "0x3429ac",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_60",
+   "kind": "u32le",
+   "file_off": "0x3429b0",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_60",
+   "kind": "u32le",
+   "file_off": "0x3429b4",
+   "expect": "0x3c31a600",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3429f4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_60",
+   "kind": "u32le",
+   "file_off": "0x5e1ac0",
+   "expect": "0x3c31a5b8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_60",
+   "kind": "u32le",
+   "file_off": "0x5e1ac4",
+   "expect": "0x3c16e5c8",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_70",
+   "kind": "string",
+   "file_off": "0x1969a0",
+   "expect": "launcher_standby_battery_70",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_70",
+   "kind": "u32le",
+   "file_off": "0x344674",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_70",
+   "kind": "u32le",
+   "file_off": "0x344678",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_70",
+   "kind": "u32le",
+   "file_off": "0x34467c",
+   "expect": "0x3c31c2c0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3446b4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_70",
+   "kind": "u32le",
+   "file_off": "0x5e1ab8",
+   "expect": "0x3c31c280",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_70",
+   "kind": "u32le",
+   "file_off": "0x5e1abc",
+   "expect": "0x3c16e5ac",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_80",
+   "kind": "string",
+   "file_off": "0x196984",
+   "expect": "launcher_standby_battery_80",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_80",
+   "kind": "u32le",
+   "file_off": "0x33cbec",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_80",
+   "kind": "u32le",
+   "file_off": "0x33cbf0",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_80",
+   "kind": "u32le",
+   "file_off": "0x33cbf4",
+   "expect": "0x3c314840",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33cc34"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_80",
+   "kind": "u32le",
+   "file_off": "0x5e1ab0",
+   "expect": "0x3c3147f8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_80",
+   "kind": "u32le",
+   "file_off": "0x5e1ab4",
+   "expect": "0x3c16e590",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_90",
+   "kind": "string",
+   "file_off": "0x196968",
+   "expect": "launcher_standby_battery_90",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_90",
+   "kind": "u32le",
+   "file_off": "0x349eb4",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_90",
+   "kind": "u32le",
+   "file_off": "0x349eb8",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_90",
+   "kind": "u32le",
+   "file_off": "0x349ebc",
+   "expect": "0x3c321b00",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x349ef4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_90",
+   "kind": "u32le",
+   "file_off": "0x5e1aa8",
+   "expect": "0x3c321ac0",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_90",
+   "kind": "u32le",
+   "file_off": "0x5e1aac",
+   "expect": "0x3c16e574",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_charge_lightning",
+   "kind": "string",
+   "file_off": "0x1995a0",
+   "expect": "launcher_standby_battery_charge_lightning",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x33cf6c",
+   "expect": "0x03003009",
+   "note": "lv_img_dsc_t header: cf=9 w=12 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x33cf70",
+   "expect": "0x000000d0",
+   "note": "data_size = 64 + ceil(w/2)*h = 208"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x33cf74",
+   "expect": "0x3c314bc0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33cfb4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x5e1a90",
+   "expect": "0x3c314b78",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x5e1a94",
+   "expect": "0x3c1711ac",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_battery_empty",
+   "kind": "string",
+   "file_off": "0x199840",
+   "expect": "launcher_standby_battery_empty",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_battery_empty",
+   "kind": "u32le",
+   "file_off": "0x346cbc",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_battery_empty",
+   "kind": "u32le",
+   "file_off": "0x346cc0",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_battery_empty",
+   "kind": "u32le",
+   "file_off": "0x346cc4",
+   "expect": "0x3c31e900",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x346cf4"
+  },
+  {
+   "id": "reg.img.launcher_standby_battery_empty",
+   "kind": "u32le",
+   "file_off": "0x5e1a98",
+   "expect": "0x3c31e8c8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_battery_empty",
+   "kind": "u32le",
+   "file_off": "0x5e1a9c",
+   "expect": "0x3c17144c",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_calender",
+   "kind": "string",
+   "file_off": "0x197ee4",
+   "expect": "launcher_standby_calender",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_calender",
+   "kind": "u32le",
+   "file_off": "0x33f008",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_calender",
+   "kind": "u32le",
+   "file_off": "0x33f00c",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_calender",
+   "kind": "u32le",
+   "file_off": "0x33f010",
+   "expect": "0x3c316c40",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33f034"
+  },
+  {
+   "id": "reg.img.launcher_standby_calender",
+   "kind": "u32le",
+   "file_off": "0x5e1b28",
+   "expect": "0x3c316c14",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_calender",
+   "kind": "u32le",
+   "file_off": "0x5e1b2c",
+   "expect": "0x3c16faf0",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_car",
+   "kind": "string",
+   "file_off": "0x197f50",
+   "expect": "launcher_standby_car",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_car",
+   "kind": "u32le",
+   "file_off": "0x33d82c",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_car",
+   "kind": "u32le",
+   "file_off": "0x33d830",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_car",
+   "kind": "u32le",
+   "file_off": "0x33d834",
+   "expect": "0x3c315480",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33d874"
+  },
+  {
+   "id": "reg.img.launcher_standby_car",
+   "kind": "u32le",
+   "file_off": "0x5e1b20",
+   "expect": "0x3c315438",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_car",
+   "kind": "u32le",
+   "file_off": "0x5e1b24",
+   "expect": "0x3c16fb5c",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_disconnect",
+   "kind": "string",
+   "file_off": "0x199ae0",
+   "expect": "launcher_standby_disconnect",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_disconnect",
+   "kind": "u32le",
+   "file_off": "0x34802c",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_disconnect",
+   "kind": "u32le",
+   "file_off": "0x348030",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_disconnect",
+   "kind": "u32le",
+   "file_off": "0x348034",
+   "expect": "0x3c31fc80",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x348074"
+  },
+  {
+   "id": "reg.img.launcher_standby_disconnect",
+   "kind": "u32le",
+   "file_off": "0x5e1a80",
+   "expect": "0x3c31fc38",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_disconnect",
+   "kind": "u32le",
+   "file_off": "0x5e1a84",
+   "expect": "0x3c1716ec",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_flight",
+   "kind": "string",
+   "file_off": "0x197fb8",
+   "expect": "launcher_standby_flight",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_flight",
+   "kind": "u32le",
+   "file_off": "0x33dc7c",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_flight",
+   "kind": "u32le",
+   "file_off": "0x33dc80",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_flight",
+   "kind": "u32le",
+   "file_off": "0x33dc84",
+   "expect": "0x3c3158c0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33dcb4"
+  },
+  {
+   "id": "reg.img.launcher_standby_flight",
+   "kind": "u32le",
+   "file_off": "0x5e1b30",
+   "expect": "0x3c315888",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_flight",
+   "kind": "u32le",
+   "file_off": "0x5e1b34",
+   "expect": "0x3c16fbc4",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_freestyle_call",
+   "kind": "string",
+   "file_off": "0x19806c",
+   "expect": "launcher_standby_freestyle_call",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_freestyle_call",
+   "kind": "u32le",
+   "file_off": "0x33d084",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_freestyle_call",
+   "kind": "u32le",
+   "file_off": "0x33d088",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_freestyle_call",
+   "kind": "u32le",
+   "file_off": "0x33d08c",
+   "expect": "0x3c314cc0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33d0b4"
+  },
+  {
+   "id": "reg.img.launcher_standby_freestyle_call",
+   "kind": "u32le",
+   "file_off": "0x5e1b00",
+   "expect": "0x3c314c90",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_freestyle_call",
+   "kind": "u32le",
+   "file_off": "0x5e1b04",
+   "expect": "0x3c16fc78",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_freestyle_default",
+   "kind": "string",
+   "file_off": "0x1980e4",
+   "expect": "launcher_standby_freestyle_default",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_freestyle_default",
+   "kind": "u32le",
+   "file_off": "0x347534",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_freestyle_default",
+   "kind": "u32le",
+   "file_off": "0x347538",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_freestyle_default",
+   "kind": "u32le",
+   "file_off": "0x34753c",
+   "expect": "0x3c31f180",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x347574"
+  },
+  {
+   "id": "reg.img.launcher_standby_freestyle_default",
+   "kind": "u32le",
+   "file_off": "0x5e1af0",
+   "expect": "0x3c31f140",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_freestyle_default",
+   "kind": "u32le",
+   "file_off": "0x5e1af4",
+   "expect": "0x3c16fcf0",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_freestyle_pip",
+   "kind": "string",
+   "file_off": "0x197d30",
+   "expect": "launcher_standby_freestyle_pip",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_freestyle_pip",
+   "kind": "u32le",
+   "file_off": "0x349574",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_freestyle_pip",
+   "kind": "u32le",
+   "file_off": "0x349578",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_freestyle_pip",
+   "kind": "u32le",
+   "file_off": "0x34957c",
+   "expect": "0x3c3211c0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3495b4"
+  },
+  {
+   "id": "reg.img.launcher_standby_freestyle_pip",
+   "kind": "u32le",
+   "file_off": "0x5e1af8",
+   "expect": "0x3c321180",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_freestyle_pip",
+   "kind": "u32le",
+   "file_off": "0x5e1afc",
+   "expect": "0x3c16f93c",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_move_dash",
+   "kind": "string",
+   "file_off": "0x197658",
+   "expect": "launcher_standby_move_dash",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_move_dash",
+   "kind": "u32le",
+   "file_off": "0x33f6ec",
+   "expect": "0x0a040009",
+   "note": "lv_img_dsc_t header: cf=9 w=256 h=80"
+  },
+  {
+   "id": "dsc.size.launcher_standby_move_dash",
+   "kind": "u32le",
+   "file_off": "0x33f6f0",
+   "expect": "0x00002840",
+   "note": "data_size = 64 + ceil(w/2)*h = 10304"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_move_dash",
+   "kind": "u32le",
+   "file_off": "0x33f6f4",
+   "expect": "0x3c317340",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33f734"
+  },
+  {
+   "id": "reg.img.launcher_standby_move_dash",
+   "kind": "u32le",
+   "file_off": "0x5e1a70",
+   "expect": "0x3c3172f8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_move_dash",
+   "kind": "u32le",
+   "file_off": "0x5e1a74",
+   "expect": "0x3c16f264",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_move_indicator",
+   "kind": "string",
+   "file_off": "0x197674",
+   "expect": "launcher_standby_move_indicator",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_move_indicator",
+   "kind": "u32le",
+   "file_off": "0x345f2c",
+   "expect": "0x01003809",
+   "note": "lv_img_dsc_t header: cf=9 w=14 h=8"
+  },
+  {
+   "id": "dsc.size.launcher_standby_move_indicator",
+   "kind": "u32le",
+   "file_off": "0x345f30",
+   "expect": "0x00000078",
+   "note": "data_size = 64 + ceil(w/2)*h = 120"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_move_indicator",
+   "kind": "u32le",
+   "file_off": "0x345f34",
+   "expect": "0x3c31db80",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x345f74"
+  },
+  {
+   "id": "reg.img.launcher_standby_move_indicator",
+   "kind": "u32le",
+   "file_off": "0x5e1a78",
+   "expect": "0x3c31db38",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_move_indicator",
+   "kind": "u32le",
+   "file_off": "0x5e1a7c",
+   "expect": "0x3c16f280",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_music",
+   "kind": "string",
+   "file_off": "0x197dac",
+   "expect": "launcher_standby_music",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_music",
+   "kind": "u32le",
+   "file_off": "0x346874",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_music",
+   "kind": "u32le",
+   "file_off": "0x346878",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_music",
+   "kind": "u32le",
+   "file_off": "0x34687c",
+   "expect": "0x3c31e4c0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3468b4"
+  },
+  {
+   "id": "reg.img.launcher_standby_music",
+   "kind": "u32le",
+   "file_off": "0x5e1b10",
+   "expect": "0x3c31e480",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_music",
+   "kind": "u32le",
+   "file_off": "0x5e1b14",
+   "expect": "0x3c16f9b8",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_navigation",
+   "kind": "string",
+   "file_off": "0x197e78",
+   "expect": "launcher_standby_navigation",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_navigation",
+   "kind": "u32le",
+   "file_off": "0x3450b4",
+   "expect": "0x0580b009",
+   "note": "lv_img_dsc_t header: cf=9 w=44 h=44"
+  },
+  {
+   "id": "dsc.size.launcher_standby_navigation",
+   "kind": "u32le",
+   "file_off": "0x3450b8",
+   "expect": "0x00000408",
+   "note": "data_size = 64 + ceil(w/2)*h = 1032"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_navigation",
+   "kind": "u32le",
+   "file_off": "0x3450bc",
+   "expect": "0x3c31cd00",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3450f4"
+  },
+  {
+   "id": "reg.img.launcher_standby_navigation",
+   "kind": "u32le",
+   "file_off": "0x5e1b18",
+   "expect": "0x3c31ccc0",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_navigation",
+   "kind": "u32le",
+   "file_off": "0x5e1b1c",
+   "expect": "0x3c16fa84",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_standby_zen_mode",
+   "kind": "string",
+   "file_off": "0x199584",
+   "expect": "launcher_standby_zen_mode",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_standby_zen_mode",
+   "kind": "u32le",
+   "file_off": "0x33f43c",
+   "expect": "0x03003009",
+   "note": "lv_img_dsc_t header: cf=9 w=12 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_standby_zen_mode",
+   "kind": "u32le",
+   "file_off": "0x33f440",
+   "expect": "0x000000d0",
+   "note": "data_size = 64 + ceil(w/2)*h = 208"
+  },
+  {
+   "id": "dsc.ptr.launcher_standby_zen_mode",
+   "kind": "u32le",
+   "file_off": "0x33f444",
+   "expect": "0x3c317080",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33f474"
+  },
+  {
+   "id": "reg.img.launcher_standby_zen_mode",
+   "kind": "u32le",
+   "file_off": "0x5e1a88",
+   "expect": "0x3c317048",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_standby_zen_mode",
+   "kind": "u32le",
+   "file_off": "0x5e1a8c",
+   "expect": "0x3c171190",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_10",
+   "kind": "string",
+   "file_off": "0x16c510",
+   "expect": "launcher_statusbar_battery_10",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_10",
+   "kind": "u32le",
+   "file_off": "0x346e6c",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_10",
+   "kind": "u32le",
+   "file_off": "0x346e70",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_10",
+   "kind": "u32le",
+   "file_off": "0x346e74",
+   "expect": "0x3c31eac0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x346eb4"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_10",
+   "kind": "u32le",
+   "file_off": "0x5e1a10",
+   "expect": "0x3c31ea78",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_10",
+   "kind": "u32le",
+   "file_off": "0x5e1a14",
+   "expect": "0x3c14411c",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_100",
+   "kind": "string",
+   "file_off": "0x16c654",
+   "expect": "launcher_statusbar_battery_100",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_100",
+   "kind": "u32le",
+   "file_off": "0x34263c",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_100",
+   "kind": "u32le",
+   "file_off": "0x342640",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_100",
+   "kind": "u32le",
+   "file_off": "0x342644",
+   "expect": "0x3c31a280",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x342674"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_100",
+   "kind": "u32le",
+   "file_off": "0x5e16f0",
+   "expect": "0x3c31a248",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_100",
+   "kind": "u32le",
+   "file_off": "0x5e16f4",
+   "expect": "0x3c144260",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_20",
+   "kind": "string",
+   "file_off": "0x16c534",
+   "expect": "launcher_statusbar_battery_20",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_20",
+   "kind": "u32le",
+   "file_off": "0x33f544",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_20",
+   "kind": "u32le",
+   "file_off": "0x33f548",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_20",
+   "kind": "u32le",
+   "file_off": "0x33f54c",
+   "expect": "0x3c317180",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33f574"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_20",
+   "kind": "u32le",
+   "file_off": "0x5e1a08",
+   "expect": "0x3c317150",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_20",
+   "kind": "u32le",
+   "file_off": "0x5e1a0c",
+   "expect": "0x3c144140",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_30",
+   "kind": "string",
+   "file_off": "0x16c558",
+   "expect": "launcher_statusbar_battery_30",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_30",
+   "kind": "u32le",
+   "file_off": "0x33ca54",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_30",
+   "kind": "u32le",
+   "file_off": "0x33ca58",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_30",
+   "kind": "u32le",
+   "file_off": "0x33ca5c",
+   "expect": "0x3c314680",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33ca74"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_30",
+   "kind": "u32le",
+   "file_off": "0x5e1a00",
+   "expect": "0x3c314660",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_30",
+   "kind": "u32le",
+   "file_off": "0x5e1a04",
+   "expect": "0x3c144164",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_40",
+   "kind": "string",
+   "file_off": "0x16c57c",
+   "expect": "launcher_statusbar_battery_40",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_40",
+   "kind": "u32le",
+   "file_off": "0x34206c",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_40",
+   "kind": "u32le",
+   "file_off": "0x342070",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_40",
+   "kind": "u32le",
+   "file_off": "0x342074",
+   "expect": "0x3c319cc0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3420b4"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_40",
+   "kind": "u32le",
+   "file_off": "0x5e19f8",
+   "expect": "0x3c319c78",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_40",
+   "kind": "u32le",
+   "file_off": "0x5e19fc",
+   "expect": "0x3c144188",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_50",
+   "kind": "string",
+   "file_off": "0x16c5a0",
+   "expect": "launcher_statusbar_battery_50",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_50",
+   "kind": "u32le",
+   "file_off": "0x343074",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_50",
+   "kind": "u32le",
+   "file_off": "0x343078",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_50",
+   "kind": "u32le",
+   "file_off": "0x34307c",
+   "expect": "0x3c31acc0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3430b4"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_50",
+   "kind": "u32le",
+   "file_off": "0x5e19f0",
+   "expect": "0x3c31ac80",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_50",
+   "kind": "u32le",
+   "file_off": "0x5e19f4",
+   "expect": "0x3c1441ac",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_60",
+   "kind": "string",
+   "file_off": "0x16c5c4",
+   "expect": "launcher_statusbar_battery_60",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_60",
+   "kind": "u32le",
+   "file_off": "0x345d74",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_60",
+   "kind": "u32le",
+   "file_off": "0x345d78",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_60",
+   "kind": "u32le",
+   "file_off": "0x345d7c",
+   "expect": "0x3c31d9c0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x345db4"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_60",
+   "kind": "u32le",
+   "file_off": "0x5e19e8",
+   "expect": "0x3c31d980",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_60",
+   "kind": "u32le",
+   "file_off": "0x5e19ec",
+   "expect": "0x3c1441d0",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_70",
+   "kind": "string",
+   "file_off": "0x16c5e8",
+   "expect": "launcher_statusbar_battery_70",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_70",
+   "kind": "u32le",
+   "file_off": "0x33e42c",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_70",
+   "kind": "u32le",
+   "file_off": "0x33e430",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_70",
+   "kind": "u32le",
+   "file_off": "0x33e434",
+   "expect": "0x3c316080",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33e474"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_70",
+   "kind": "u32le",
+   "file_off": "0x5e19e0",
+   "expect": "0x3c316038",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_70",
+   "kind": "u32le",
+   "file_off": "0x5e19e4",
+   "expect": "0x3c1441f4",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_80",
+   "kind": "string",
+   "file_off": "0x16c60c",
+   "expect": "launcher_statusbar_battery_80",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_80",
+   "kind": "u32le",
+   "file_off": "0x33e26c",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_80",
+   "kind": "u32le",
+   "file_off": "0x33e270",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_80",
+   "kind": "u32le",
+   "file_off": "0x33e274",
+   "expect": "0x3c315ec0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x33e2b4"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_80",
+   "kind": "u32le",
+   "file_off": "0x5e19d8",
+   "expect": "0x3c315e78",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_80",
+   "kind": "u32le",
+   "file_off": "0x5e19dc",
+   "expect": "0x3c144218",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_90",
+   "kind": "string",
+   "file_off": "0x16c630",
+   "expect": "launcher_statusbar_battery_90",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_90",
+   "kind": "u32le",
+   "file_off": "0x3427ec",
+   "expect": "0x03006809",
+   "note": "lv_img_dsc_t header: cf=9 w=26 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_90",
+   "kind": "u32le",
+   "file_off": "0x3427f0",
+   "expect": "0x00000178",
+   "note": "data_size = 64 + ceil(w/2)*h = 376"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_90",
+   "kind": "u32le",
+   "file_off": "0x3427f4",
+   "expect": "0x3c31a440",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x342834"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_90",
+   "kind": "u32le",
+   "file_off": "0x5e19d0",
+   "expect": "0x3c31a3f8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_90",
+   "kind": "u32le",
+   "file_off": "0x5e19d4",
+   "expect": "0x3c14423c",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_statusbar_battery_charge_lightning",
+   "kind": "string",
+   "file_off": "0x16fe80",
+   "expect": "launcher_statusbar_battery_charge_lightning",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_statusbar_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x341f74",
+   "expect": "0x03002809",
+   "note": "lv_img_dsc_t header: cf=9 w=10 h=24"
+  },
+  {
+   "id": "dsc.size.launcher_statusbar_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x341f78",
+   "expect": "0x000000b8",
+   "note": "data_size = 64 + ceil(w/2)*h = 184"
+  },
+  {
+   "id": "dsc.ptr.launcher_statusbar_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x341f7c",
+   "expect": "0x3c319bc0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x341fb4"
+  },
+  {
+   "id": "reg.img.launcher_statusbar_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x5e16e8",
+   "expect": "0x3c319b80",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_statusbar_battery_charge_lightning",
+   "kind": "u32le",
+   "file_off": "0x5e16ec",
+   "expect": "0x3c147a8c",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.launcher_system_alert",
+   "kind": "string",
+   "file_off": "0x18283c",
+   "expect": "launcher_system_alert",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.launcher_system_alert",
+   "kind": "u32le",
+   "file_off": "0x3499bc",
+   "expect": "0x0600c009",
+   "note": "lv_img_dsc_t header: cf=9 w=48 h=48"
+  },
+  {
+   "id": "dsc.size.launcher_system_alert",
+   "kind": "u32le",
+   "file_off": "0x3499c0",
+   "expect": "0x000004c0",
+   "note": "data_size = 64 + ceil(w/2)*h = 1216"
+  },
+  {
+   "id": "dsc.ptr.launcher_system_alert",
+   "kind": "u32le",
+   "file_off": "0x3499c4",
+   "expect": "0x3c321600",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3499f4"
+  },
+  {
+   "id": "reg.img.launcher_system_alert",
+   "kind": "u32le",
+   "file_off": "0x5e1a50",
+   "expect": "0x3c3215c8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.launcher_system_alert",
+   "kind": "u32le",
+   "file_off": "0x5e1a54",
+   "expect": "0x3c15a448",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.mic",
+   "kind": "string",
+   "file_off": "0x15fff4",
+   "expect": "mic",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.mic",
+   "kind": "u32le",
+   "file_off": "0x3e033c",
+   "expect": "0x04008009",
+   "note": "lv_img_dsc_t header: cf=9 w=32 h=32"
+  },
+  {
+   "id": "dsc.size.mic",
+   "kind": "u32le",
+   "file_off": "0x3e0340",
+   "expect": "0x00000240",
+   "note": "data_size = 64 + ceil(w/2)*h = 576"
+  },
+  {
+   "id": "dsc.ptr.mic",
+   "kind": "u32le",
+   "file_off": "0x3e0344",
+   "expect": "0x3c3b7f80",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3e0374"
+  },
+  {
+   "id": "reg.img.mic",
+   "kind": "u32le",
+   "file_off": "0x5e2d04",
+   "expect": "0x3c3b7f48",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.mic",
+   "kind": "u32le",
+   "file_off": "0x5e2d08",
+   "expect": "0x3c137c00",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.phone_notification_icon",
+   "kind": "string",
+   "file_off": "0x18e860",
+   "expect": "phone_notification_icon",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.phone_notification_icon",
+   "kind": "u32le",
+   "file_off": "0x39b074",
+   "expect": "0x0600c009",
+   "note": "lv_img_dsc_t header: cf=9 w=48 h=48"
+  },
+  {
+   "id": "dsc.size.phone_notification_icon",
+   "kind": "u32le",
+   "file_off": "0x39b078",
+   "expect": "0x000004c0",
+   "note": "data_size = 64 + ceil(w/2)*h = 1216"
+  },
+  {
+   "id": "dsc.ptr.phone_notification_icon",
+   "kind": "u32le",
+   "file_off": "0x39b07c",
+   "expect": "0x3c372cc0",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x39b0b4"
+  },
+  {
+   "id": "reg.img.phone_notification_icon",
+   "kind": "u32le",
+   "file_off": "0x5e2a10",
+   "expect": "0x3c372c80",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.phone_notification_icon",
+   "kind": "u32le",
+   "file_off": "0x5e2a14",
+   "expect": "0x3c16646c",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.setting_mode",
+   "kind": "string",
+   "file_off": "0x167a38",
+   "expect": "setting_mode",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.setting_mode",
+   "kind": "u32le",
+   "file_off": "0x3f9a54",
+   "expect": "0x04008009",
+   "note": "lv_img_dsc_t header: cf=9 w=32 h=32"
+  },
+  {
+   "id": "dsc.size.setting_mode",
+   "kind": "u32le",
+   "file_off": "0x3f9a58",
+   "expect": "0x00000240",
+   "note": "data_size = 64 + ceil(w/2)*h = 576"
+  },
+  {
+   "id": "dsc.ptr.setting_mode",
+   "kind": "u32le",
+   "file_off": "0x3f9a5c",
+   "expect": "0x3c3d1680",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3f9a74"
+  },
+  {
+   "id": "reg.img.setting_mode",
+   "kind": "u32le",
+   "file_off": "0x5e2d54",
+   "expect": "0x3c3d1660",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.setting_mode",
+   "kind": "u32le",
+   "file_off": "0x5e2d58",
+   "expect": "0x3c13f644",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.setting_vol",
+   "kind": "string",
+   "file_off": "0x167a1c",
+   "expect": "setting_vol",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.setting_vol",
+   "kind": "u32le",
+   "file_off": "0x3fb034",
+   "expect": "0x04008009",
+   "note": "lv_img_dsc_t header: cf=9 w=32 h=32"
+  },
+  {
+   "id": "dsc.size.setting_vol",
+   "kind": "u32le",
+   "file_off": "0x3fb038",
+   "expect": "0x00000240",
+   "note": "data_size = 64 + ceil(w/2)*h = 576"
+  },
+  {
+   "id": "dsc.ptr.setting_vol",
+   "kind": "u32le",
+   "file_off": "0x3fb03c",
+   "expect": "0x3c3d2c80",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3fb074"
+  },
+  {
+   "id": "reg.img.setting_vol",
+   "kind": "u32le",
+   "file_off": "0x5e2d44",
+   "expect": "0x3c3d2c40",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.setting_vol",
+   "kind": "u32le",
+   "file_off": "0x5e2d48",
+   "expect": "0x3c13f628",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.setting_wear",
+   "kind": "string",
+   "file_off": "0x167a48",
+   "expect": "setting_wear",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.setting_wear",
+   "kind": "u32le",
+   "file_off": "0x3fb7ac",
+   "expect": "0x04008009",
+   "note": "lv_img_dsc_t header: cf=9 w=32 h=32"
+  },
+  {
+   "id": "dsc.size.setting_wear",
+   "kind": "u32le",
+   "file_off": "0x3fb7b0",
+   "expect": "0x00000240",
+   "note": "data_size = 64 + ceil(w/2)*h = 576"
+  },
+  {
+   "id": "dsc.ptr.setting_wear",
+   "kind": "u32le",
+   "file_off": "0x3fb7b4",
+   "expect": "0x3c3d3400",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3fb7f4"
+  },
+  {
+   "id": "reg.img.setting_wear",
+   "kind": "u32le",
+   "file_off": "0x5e2d5c",
+   "expect": "0x3c3d33b8",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.setting_wear",
+   "kind": "u32le",
+   "file_off": "0x5e2d60",
+   "expect": "0x3c13f654",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "name.smartlife_notification_default_icon",
+   "kind": "string",
+   "file_off": "0x18eb98",
+   "expect": "smartlife_notification_default_icon",
+   "note": "resource name string"
+  },
+  {
+   "id": "dsc.hdr.smartlife_notification_default_icon",
+   "kind": "u32le",
+   "file_off": "0x3f7854",
+   "expect": "0x0600c009",
+   "note": "lv_img_dsc_t header: cf=9 w=48 h=48"
+  },
+  {
+   "id": "dsc.size.smartlife_notification_default_icon",
+   "kind": "u32le",
+   "file_off": "0x3f7858",
+   "expect": "0x000004c0",
+   "note": "data_size = 64 + ceil(w/2)*h = 1216"
+  },
+  {
+   "id": "dsc.ptr.smartlife_notification_default_icon",
+   "kind": "u32le",
+   "file_off": "0x3f785c",
+   "expect": "0x3c3cf480",
+   "note": "data_ptr; file_off = ptr - 0x3BFD7C0C = 0x3f7874"
+  },
+  {
+   "id": "reg.img.smartlife_notification_default_icon",
+   "kind": "u32le",
+   "file_off": "0x5e2560",
+   "expect": "0x3c3cf460",
+   "note": "resource registry row: image dsc pointer"
+  },
+  {
+   "id": "reg.name.smartlife_notification_default_icon",
+   "kind": "u32le",
+   "file_off": "0x5e2564",
+   "expect": "0x3c1667a4",
+   "note": "resource registry row: name pointer"
+  },
+  {
+   "id": "lvltbl.name.10",
+   "kind": "u32le",
+   "file_off": "0x466d70",
+   "expect": "0x3c14411c",
+   "note": "battery level table: name ptr for 10%"
+  },
+  {
+   "id": "lvltbl.pct.10",
+   "kind": "u32le",
+   "file_off": "0x466d74",
+   "expect": "0x3c14413c",
+   "note": "battery level table: percent-text ptr for 10%"
+  },
+  {
+   "id": "lvltbl.name.20",
+   "kind": "u32le",
+   "file_off": "0x466d78",
+   "expect": "0x3c144140",
+   "note": "battery level table: name ptr for 20%"
+  },
+  {
+   "id": "lvltbl.pct.20",
+   "kind": "u32le",
+   "file_off": "0x466d7c",
+   "expect": "0x3c144160",
+   "note": "battery level table: percent-text ptr for 20%"
+  },
+  {
+   "id": "lvltbl.name.30",
+   "kind": "u32le",
+   "file_off": "0x466d80",
+   "expect": "0x3c144164",
+   "note": "battery level table: name ptr for 30%"
+  },
+  {
+   "id": "lvltbl.pct.30",
+   "kind": "u32le",
+   "file_off": "0x466d84",
+   "expect": "0x3c144184",
+   "note": "battery level table: percent-text ptr for 30%"
+  },
+  {
+   "id": "lvltbl.name.40",
+   "kind": "u32le",
+   "file_off": "0x466d88",
+   "expect": "0x3c144188",
+   "note": "battery level table: name ptr for 40%"
+  },
+  {
+   "id": "lvltbl.pct.40",
+   "kind": "u32le",
+   "file_off": "0x466d8c",
+   "expect": "0x3c1441a8",
+   "note": "battery level table: percent-text ptr for 40%"
+  },
+  {
+   "id": "lvltbl.name.50",
+   "kind": "u32le",
+   "file_off": "0x466d90",
+   "expect": "0x3c1441ac",
+   "note": "battery level table: name ptr for 50%"
+  },
+  {
+   "id": "lvltbl.pct.50",
+   "kind": "u32le",
+   "file_off": "0x466d94",
+   "expect": "0x3c1441cc",
+   "note": "battery level table: percent-text ptr for 50%"
+  },
+  {
+   "id": "lvltbl.name.60",
+   "kind": "u32le",
+   "file_off": "0x466d98",
+   "expect": "0x3c1441d0",
+   "note": "battery level table: name ptr for 60%"
+  },
+  {
+   "id": "lvltbl.pct.60",
+   "kind": "u32le",
+   "file_off": "0x466d9c",
+   "expect": "0x3c1441f0",
+   "note": "battery level table: percent-text ptr for 60%"
+  },
+  {
+   "id": "lvltbl.name.70",
+   "kind": "u32le",
+   "file_off": "0x466da0",
+   "expect": "0x3c1441f4",
+   "note": "battery level table: name ptr for 70%"
+  },
+  {
+   "id": "lvltbl.pct.70",
+   "kind": "u32le",
+   "file_off": "0x466da4",
+   "expect": "0x3c144214",
+   "note": "battery level table: percent-text ptr for 70%"
+  },
+  {
+   "id": "lvltbl.name.80",
+   "kind": "u32le",
+   "file_off": "0x466da8",
+   "expect": "0x3c144218",
+   "note": "battery level table: name ptr for 80%"
+  },
+  {
+   "id": "lvltbl.pct.80",
+   "kind": "u32le",
+   "file_off": "0x466dac",
+   "expect": "0x3c144238",
+   "note": "battery level table: percent-text ptr for 80%"
+  },
+  {
+   "id": "lvltbl.name.90",
+   "kind": "u32le",
+   "file_off": "0x466db0",
+   "expect": "0x3c14423c",
+   "note": "battery level table: name ptr for 90%"
+  },
+  {
+   "id": "lvltbl.pct.90",
+   "kind": "u32le",
+   "file_off": "0x466db4",
+   "expect": "0x3c14425c",
+   "note": "battery level table: percent-text ptr for 90%"
+  },
+  {
+   "id": "lvltbl.name.100",
+   "kind": "u32le",
+   "file_off": "0x466db8",
+   "expect": "0x3c144260",
+   "note": "battery level table: name ptr for 100%"
+  },
+  {
+   "id": "lvltbl.pct.100",
+   "kind": "u32le",
+   "file_off": "0x466dbc",
+   "expect": "0x3c144280",
+   "note": "battery level table: percent-text ptr for 100%"
+  },
+  {
+   "id": "lvltbl.first_name",
+   "kind": "string",
+   "file_off": "0x16c510",
+   "expect": "launcher_statusbar_battery_10",
+   "note": "start of 36B-stride name/percent string block"
+  },
+  {
+   "id": "lvltbl.pct100",
+   "kind": "string",
+   "file_off": "0x16c674",
+   "expect": "100%",
+   "note": "percent text for the 100% level"
+  },
+  {
+   "id": "absent.launcher_standby_hear_imp_mode",
+   "kind": "string",
+   "file_off": "0x199ac0",
+   "expect": "launcher_standby_hear_imp_mode",
+   "note": "referenced by launcher code but NO lv_img_dsc_t is registered for it in this build"
+  },
+  {
+   "id": "absent.launcher_standby_demo_mode",
+   "kind": "string",
+   "file_off": "0x197a50",
+   "expect": "launcher_standby_demo_mode",
+   "note": "referenced by launcher code but NO lv_img_dsc_t is registered for it in this build"
+  },
+  {
+   "id": "absent.sports_standby_icon",
+   "kind": "string",
+   "file_off": "0x199afc",
+   "expect": "sports_standby_icon",
+   "note": "referenced by launcher code but NO lv_img_dsc_t is registered for it in this build"
+  },
+  {
+   "id": "absent.sports_standby_mask",
+   "kind": "string",
+   "file_off": "0x1998d0",
+   "expect": "sports_standby_mask",
+   "note": "referenced by launcher code but NO lv_img_dsc_t is registered for it in this build"
+  }
+ ]
+}
