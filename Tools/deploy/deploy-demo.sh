@@ -22,8 +22,10 @@ DEVICE_NAME="${DEVICE_NAME:-Testing1}"
 BUNDLE="${BUNDLE:-dev.myvu.demo}"
 PROJ="$(cd "$(dirname "$0")/../.." && pwd)/Examples/MyvuDemo"
 
-DEV_ID=$(xcrun devicectl list devices 2>/dev/null \
-         | awk -v n="$DEVICE_NAME" '$0 ~ n {print $(NF-4)}' | head -1)
+# Match the UUID by shape, not by column position: the model name contains spaces
+# ("iPhone 14 Pro Max (iPhone15,3)"), so field offsets from the end are not stable.
+DEV_ID=$(xcrun devicectl list devices 2>/dev/null | grep -F "$DEVICE_NAME" \
+         | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -1)
 [ -z "$DEV_ID" ] && { echo "device '$DEVICE_NAME' not found — is it plugged in and unlocked?"; exit 1; }
 echo "device $DEVICE_NAME -> $DEV_ID"
 
@@ -38,6 +40,13 @@ APP=$(find ~/Library/Developer/Xcode/DerivedData -name MyvuDemo.app \
         -path "*Debug-iphoneos*" -not -path "*Index*" 2>/dev/null | head -1)
 [ -z "$APP" ] && { echo "built .app not found"; exit 1; }
 
-xcrun devicectl device install app --device "$DEV_ID" "$APP" 2>&1 | grep -E "bundleID|error" || true
-xcrun devicectl device process launch --device "$DEV_ID" "$BUNDLE" 2>&1 | grep -E "Launched|error" || true
+# The device tunnel drops intermittently ("Connection reset by peer", error 4000).
+# Retrying works; one attempt is not enough.
+for try in 1 2 3; do
+  if xcrun devicectl device install app --device "$DEV_ID" "$APP" 2>&1 | grep -qE "bundleID"; then
+    echo "installed (attempt $try)"; break
+  fi
+  echo "install attempt $try failed, retrying…"; sleep 8
+done
+xcrun devicectl device process launch --device "$DEV_ID" "$BUNDLE" 2>&1 | grep -E "Launched|ERROR" || true
 echo "done — Log tab › Probe"

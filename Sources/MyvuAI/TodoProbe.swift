@@ -18,6 +18,11 @@ public struct TodoProbe {
     public struct Attempt: Sendable {
         public let label: String
         public let json: String
+        /// Which glasses-side package the message is addressed to. Run 1 sent everything
+        /// to the launcher (the SDK default) and got no reaction — the inbound telemetry
+        /// showed messages are addressed package-to-package, and the todo domain lives in
+        /// the assistant, so the launcher would simply have dropped them.
+        public let target: String
         /// Why this shape is plausible — so a reader can judge it rather than trust it.
         public let rationale: String
     }
@@ -35,51 +40,65 @@ public struct TodoProbe {
     public static func candidates() -> [Attempt] {
         var out: [Attempt] = []
 
-        // 1. open_app against the assistant, naming the domain in `ext`.
-        //    Mirrors NavCommands.openApp, which IS confirmed for navigation.
+        // 1. open_app -> the LAUNCHER (it owns app launching), naming the assistant.
         for domain in ["todo", "schedule"] {
             out.append(Attempt(
-                label: "open_app ext.domain=\(domain)",
+                label: "open_app ext.domain=\(domain) -> launcher",
                 json: """
                 {"action":"app","data":{"launchMode":"scene","action":"open_app",\
                 "pkg":"\(Pkg.assistant)","show_status_bar":false,\
                 "ext":"{\\"domain\\":\\"\(domain)\\"}","app_name":"\(domain.capitalized)"}}
                 """,
-                rationale: "open_app is confirmed for com.upuphone.ar.navi.glass; the assistant may accept a domain selector in ext"))
+                target: Pkg.launcher,
+                rationale: "open_app is confirmed for navigation and is a LAUNCHER action"))
         }
 
-        // 2. Direct domain intents, using the intent names found in the binary.
-        //    TodoDomain.cpp logs "[%s] TODO_QUERTY_LIST" etc, so these tokens are real —
-        //    the JSON wrapper around them is the guess.
+        // 2. Domain intents addressed to the ASSISTANT, which owns TodoDomain.
         let intents = ["TODO_QUERTY_LIST", "TODO_CREATE_LIST", "SCHEDULE_LIST", "SCHEDULE_VIEW"]
         for intent in intents {
             out.append(Attempt(
-                label: "bare intent \(intent)",
-                json: """
-                {"action":"assistant","data":{"action":"\(intent)","list":[]}}
-                """,
-                rationale: "intent tokens are verbatim from TodoDomain.cpp / ScheduleDomain.cpp"))
+                label: "intent \(intent) -> assistant",
+                json: #"{"action":"\#(intent)","data":{"list":[]}}"#,
+                target: Pkg.assistant,
+                rationale: "intent as the top-level action, addressed to the package that owns the domain"))
         }
 
-        // 3. A populated todo list. If the domain opens on data arrival (like the contact
-        //    list, which is populated by the phone), this is the shape most likely to work.
+        // 3. Populated list to the assistant — the domain may open on data arrival,
+        //    which is how the contact list behaves.
         out.append(Attempt(
-            label: "TODO_CREATE_LIST with items",
-            json: """
-            {"action":"assistant","data":{"action":"TODO_CREATE_LIST","list":[\
-            {"id":1,"title":"Lunch with Alex","done":false},\
-            {"id":2,"title":"Vendor timeline alignment","done":false}]}}
-            """,
-            rationale: "the contact list is phone-populated via onConnectDataMessage; todo parses phone JSON too ('parse todo data fail')"))
+            label: "TODO_CREATE_LIST + items -> assistant",
+            json: #"""
+            {"action":"TODO_CREATE_LIST","data":{"list":[            {"id":1,"title":"Lunch with Alex","done":false},            {"id":2,"title":"Vendor timeline alignment","done":false}]}}
+            """#,
+            target: Pkg.assistant,
+            rationale: "TodoDomain logs 'parse todo data fail', so it expects phone JSON"))
 
-        // 4. Same, wrapped the way the contact list is delivered.
+        // 4. Nested-action shape, matching how system messages are wrapped.
         out.append(Attempt(
-            label: "connect-data wrapper",
-            json: """
-            {"action":"connect_data","data":{"type":"TODO_CREATE_LIST","list":[\
-            {"id":1,"title":"Lunch with Alex","done":false}]}}
-            """,
-            rationale: "PhonePage logs 'phone contact list json data: %s' from onConnectDataMessage; todo may share that path"))
+            label: "nested action wrapper -> assistant",
+            json: #"""
+            {"action":"assistant","data":{"action":"TODO_CREATE_LIST","list":[            {"id":1,"title":"Lunch with Alex","done":false}]}}
+            """#,
+            target: Pkg.assistant,
+            rationale: "system messages use {action, data:{action, ...}}; same shape, right address"))
+
+        // 5. The contact-list path verbatim, but with todo data.
+        out.append(Attempt(
+            label: "connect_data -> assistant",
+            json: #"""
+            {"action":"connect_data","data":{"type":"TODO_CREATE_LIST","list":[            {"id":1,"title":"Lunch with Alex","done":false}]}}
+            """#,
+            target: Pkg.assistant,
+            rationale: "PhonePage receives the contact list via onConnectDataMessage"))
+
+        // 6. Same again to the AI PHONE package, which is the other half of the pair.
+        out.append(Attempt(
+            label: "connect_data -> ai.phone",
+            json: #"""
+            {"action":"connect_data","data":{"type":"TODO_CREATE_LIST","list":[            {"id":1,"title":"Lunch with Alex","done":false}]}}
+            """#,
+            target: Pkg.phone,
+            rationale: "PhonePage.cpp suggests com.upuphone.ai.phone may own the list surface"))
 
         return out
     }
@@ -116,10 +135,11 @@ public struct TodoProbe {
         for (i, c) in candidates().enumerated() {
             await box.mark(c.label)
             onLine("")
-            onLine("[\(i + 1)/\(candidates().count)] -> \(c.label)")
+            onLine("[\(i + 1)/\(candidates().count)] \(c.label)")
             onLine("     why: \(c.rationale)")
+            onLine("     -> \(c.target)")
             onLine("     \(c.json)")
-            glasses.sendRaw(c.json)
+            glasses.client.sendRaw(c.json, targetPkg: c.target, sourcePkg: Pkg.launcher)
             try? await Task.sleep(nanoseconds: UInt64(gapSeconds * 1_000_000_000))
         }
 
