@@ -63,6 +63,20 @@ table.wid code{font-family:var(--mono);color:var(--accent);font-size:12px}
   border-radius:4px;padding:7px 10px;margin-bottom:6px;cursor:grab;font-size:12.5px}
 .slot.drag{opacity:.4}
 .slot .g{color:var(--dim);font-family:var(--mono);font-size:11px;margin-left:auto}
+#modal{position:fixed;inset:0;background:rgba(6,10,9,.88);display:none;z-index:50;
+  align-items:center;justify-content:center;padding:24px}
+#modal.on{display:flex}
+#mcard{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  max-width:min(90vw,900px);max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
+#mtop{padding:12px 18px;border-bottom:1px solid var(--line);display:flex;
+  align-items:baseline;gap:14px;flex-wrap:wrap}
+#mtop .t{font-size:14px} #mtop .g{color:var(--dim);font-family:var(--mono);font-size:11.5px}
+#mbody{padding:22px;overflow:auto;display:flex;align-items:center;justify-content:center;
+  background:#000;min-height:180px}
+#mbody canvas{image-rendering:pixelated;max-width:100%;max-height:56vh}
+#mfoot{padding:12px 18px;border-top:1px solid var(--line);display:flex;gap:9px;
+  align-items:center;flex-wrap:wrap}
+#mfoot .sp{flex:1}
 pre.out{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:11px;
   font-family:var(--mono);font-size:11.5px;color:var(--accent);overflow-x:auto;white-space:pre-wrap}
 </style></head><body>
@@ -131,6 +145,17 @@ pre.out{background:var(--panel);border:1px solid var(--line);border-radius:4px;p
   </div>
 </section>
 </main>
+
+<div id="modal"><div id="mcard">
+  <div id="mtop"><span class="t" id="mtitle">—</span><span class="g" id="mmeta"></span></div>
+  <div id="mbody"><canvas id="mcv"></canvas></div>
+  <div id="mfoot">
+    <span class="g" id="mnote"></span><span class="sp"></span>
+    <button class="act" id="mext">Extract PNG</button>
+    <button class="act" id="mrep">Replace…</button>
+    <button class="act" id="mcls">Close</button>
+  </div>
+</div></div>
 
 <script>
 
@@ -659,8 +684,16 @@ function renderImages(){
     c.ondragleave=()=>c.classList.remove('hot');
     c.ondrop=e=>{e.preventDefault();c.classList.remove('hot');
       if(e.dataTransfer.files[0])put(e.dataTransfer.files[0])};
-    c.onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='image/*';
-      i.onchange=()=>i.files[0]&&put(i.files[0]);i.click()};
+    c.onclick=()=>openModal({
+      kind:'img', w:im.w, h:im.h,
+      title:im.name||('image @'+hex(im.data)),
+      meta:im.w+'×'+im.h+' IDX4 · dsc '+hex(im.dsc)+' · data '+hex(im.data)+
+           ' · '+im.size.toLocaleString()+' B',
+      note:'replacement is scaled to '+im.w+'×'+im.h+'; byte length never changes',
+      file:(im.name||('img_'+im.data.toString(16)))+'_'+im.w+'x'+im.h,
+      pixels:()=>decodeImage(D,im),
+      replace:async f=>{ await put(f); }
+    });
     box.appendChild(c);
   });
 }
@@ -702,8 +735,22 @@ function renderGlyphs(){
     c.ondragleave=()=>c.classList.remove('hot');
     c.ondrop=e=>{e.preventDefault();c.classList.remove('hot');
       if(e.dataTransfer.files[0])put(e.dataTransfer.files[0])};
-    c.onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='image/*';
-      i.onchange=()=>i.files[0]&&put(i.files[0]);i.click()};
+    c.onclick=()=>{
+      const gl=decodeGlyph(D,face,r.g);
+      const side=Math.min(Math.floor(Math.sqrt(r.b*8/face.bpp)),27);
+      openModal({
+        kind:'gly', w:gl.boxW||1, h:gl.boxH||1,
+        title:'U+'+(r.cp||0).toString(16).toUpperCase().padStart(4,'0')+'  (glyph slot)',
+        meta:'gid '+r.g+' · bpp'+face.bpp+' · box '+gl.boxW+'×'+gl.boxH+
+             ' · budget '+r.b+' B',
+        note:'artwork will be fitted to '+side+'×'+side+' (line_height cap)',
+        file:'glyph_U'+(r.cp||0).toString(16).toUpperCase(),
+        pixels:()=>{ const g=decodeGlyph(D,face,r.g);
+                     return g.pixels||new Uint8Array((g.boxW||1)*(g.boxH||1)); },
+        replace:async f=>{ await put(f);
+          const g=decodeGlyph(D,face,r.g); MOD.w=g.boxW; MOD.h=g.boxH; }
+      });
+    };
     box.appendChild(c);
   });
 }
@@ -734,6 +781,49 @@ function renderWidgets(){
   $('wjson').textContent=JSON.stringify(
     {action:'set_standby_widget_lists',data:{widgets:layout}},null,2);
 }
+
+let MOD=null;   // {kind:'img'|'gly', ...}
+
+function openModal(m){
+  MOD=m;
+  $('mtitle').textContent=m.title;
+  $('mmeta').textContent=m.meta;
+  $('mnote').textContent=m.note||'';
+  const cv=$('mcv');
+  const sc=Math.max(1,Math.min(10,Math.floor(620/Math.max(m.w,m.h))||1));
+  paint(cv,m.pixels(),m.w,m.h,sc);
+  $('modal').classList.add('on');
+}
+function closeModal(){ $('modal').classList.remove('on'); MOD=null; }
+
+$('mcls').onclick=closeModal;
+$('modal').onclick=e=>{ if(e.target===$('modal')) closeModal(); };
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+$('mext').onclick=()=>{
+  if(!MOD) return;
+  const px=MOD.pixels(), c=document.createElement('canvas');
+  c.width=MOD.w; c.height=MOD.h;
+  const x=c.getContext('2d'), im=x.createImageData(MOD.w,MOD.h);
+  for(let i=0;i<MOD.w*MOD.h;i++){ const v=px[i];
+    im.data[i*4]=v; im.data[i*4+1]=v; im.data[i*4+2]=v; im.data[i*4+3]=255; }
+  x.putImageData(im,0,0);
+  c.toBlob(b=>{ const a=document.createElement('a');
+    a.href=URL.createObjectURL(b); a.download=MOD.file+'.png'; a.click(); });
+};
+
+$('mrep').onclick=()=>{
+  if(!MOD) return;
+  const i=document.createElement('input'); i.type='file'; i.accept='image/*';
+  i.onchange=async()=>{ if(!i.files[0])return;
+    try{ await MOD.replace(i.files[0]);
+      paint($('mcv'),MOD.pixels(),MOD.w,MOD.h,
+        Math.max(1,Math.min(10,Math.floor(620/Math.max(MOD.w,MOD.h))||1)));
+      $('mnote').textContent='replaced — export the .bin to keep it';
+      $('mnote').style.color='var(--accent)'; }
+    catch(e){ alert(e.message); } };
+  i.click();
+};
 
 $('q').oninput=()=>ST&&renderImages();
 $('sq').oninput=()=>ST&&renderStrings();
