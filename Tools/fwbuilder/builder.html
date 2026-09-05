@@ -691,7 +691,7 @@ $('gc').oninput=()=>{
         try{ const r=patchGlyph(D,h.face,h.gid,g,side,side);
           const gg=decodeGlyph(D,h.face,h.gid); paint(cv,gg.pixels,gg.boxW,gg.boxH,2);
           c.classList.add('done');
-          log('<b>glyph</b> ''+ch+'' bpp'+h.face.bpp+' → '+side+'×'+side+' ('+r.bytes+'/'+r.budget+' B)'); }
+          log('<b>glyph</b> ['+ch+'] bpp'+h.face.bpp+' → '+side+'×'+side+' ('+r.bytes+'/'+r.budget+' B)'); }
         catch(e){ alert(e.message); } };
       i.click(); };
     grid.appendChild(c);

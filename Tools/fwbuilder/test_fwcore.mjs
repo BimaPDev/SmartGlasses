@@ -110,8 +110,17 @@ function run(g) {
     const t = readFileSync(p, 'utf8');
     const noRemote = !/src\s*=\s*["']https?:/i.test(t) && !/fetch\(\s*["']https?:/i.test(t);
     const embeds = t.includes('deriveDataBase') && t.includes('findImages') && t.includes('patchGlyph');
-    ok('G6', noRemote && embeds,
-       `self-contained (no remote script/fetch): ${noRemote}; embeds fwcore: ${embeds}; ${(t.length / 1024).toFixed(0)} KB`);
+    // The inline script MUST parse. Without this, a generated syntax error ships silently
+    // and every handler in the page is dead — which is exactly what happened once.
+    let parses = false, perr = '';
+    const m = t.match(/<script>([\s\S]*)<\/script>/);
+    if (m) {
+      try { new Function(m[1]); parses = true; }
+      catch (e) { perr = e.message; }
+    }
+    ok('G6', noRemote && embeds && parses,
+       `self-contained: ${noRemote}; embeds fwcore: ${embeds}; inline script parses: ${parses}` +
+       (perr ? ` (${perr})` : '') + `; ${(t.length / 1024).toFixed(0)} KB`);
   }
   if (g === 'g7') {
     const d = load(FW['1.0.11.53']);
