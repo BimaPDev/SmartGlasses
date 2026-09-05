@@ -91,13 +91,17 @@ pre.out{background:var(--panel);border:1px solid var(--line);border-radius:4px;p
   <div class="k">Identity</div><dl class="kv" id="ident"><dd class="sub">—</dd></dl>
   <div class="k">Validation</div><div id="checks"><div class="sub">—</div></div>
   <div class="k">Change log</div><div class="log" id="log"><div>nothing modified</div></div>
-  <div style="margin-top:16px"><button class="act" id="save" disabled>Export patched .bin</button></div>
+  <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+    <button class="act" id="save" disabled>Export patched .bin</button>
+    <button class="act" id="undo" disabled>Revert all</button></div>
 </aside>
 
 <section>
   <nav>
     <button data-t="img" class="on">Images</button>
     <button data-t="gly">Glyph slots</button>
+    <button data-t="str">Strings</button>
+    <button data-t="aud">Audio</button>
     <button data-t="wid">HUD widgets</button>
   </nav>
   <div id="p-img">
@@ -107,11 +111,27 @@ pre.out{background:var(--panel);border:1px solid var(--line);border-radius:4px;p
       <span class="sub" id="imgn"></span></div>
     <div class="grid" id="imgs"></div>
   </div>
+  <div id="p-str" hidden>
+    <p class="hint">Edit any UI string in place. Replacements can be shorter (NUL-padded) but
+      <b>never longer</b> — the slot is fixed, and overrunning would corrupt the next string.
+      This is how you rename the assistant everywhere it appears on screen.</p>
+    <div class="bar"><input type="search" id="sq" placeholder="search strings… try: Aicy">
+      <span class="sub" id="strn"></span></div>
+    <div id="strs"></div>
+  </div>
+  <div id="p-aud" hidden>
+    <p class="hint">ADTS AAC clips embedded in the image. Replace one with a raw .aac of the
+      same or smaller size — the extent is fixed.</p>
+    <div class="bar"><span class="sub" id="audn"></span></div>
+    <div id="auds"></div>
+  </div>
   <div id="p-gly" hidden>
     <p class="hint">Unused glyph slots, largest first. Replace one with artwork and the phone can
       draw it by putting that codepoint in a string — no code patch. Keep height ≤ the face's
       line_height (medium = 27) or it may be clipped.</p>
-    <div class="bar"><span class="sub" id="glyn"></span></div>
+    <div class="bar"><input type="search" id="gc" placeholder="or edit a specific character… e.g. A"
+      maxlength="2" style="min-width:90px"><span class="sub" id="glyn"></span></div>
+    <div id="glychar"></div>
     <div class="grid" id="glys"></div>
   </div>
   <div id="p-wid" hidden>
@@ -128,7 +148,7 @@ pre.out{background:var(--panel);border:1px solid var(--line);border-radius:4px;p
 ${core}
 
 /* ---------------- UI ---------------- */
-let D=null, ST=null, changes=[];
+let D=null, SNAP=null, ST=null, changes=[];
 const $=id=>document.getElementById(id);
 const hex=n=>'0x'+n.toString(16);
 
@@ -163,7 +183,7 @@ async function pngToGray(file,w,h){
 }
 
 function load(buf){
-  D=new Uint8Array(buf); ST=validate(D); changes=[];
+  D=new Uint8Array(buf); SNAP=snapshot(D); ST=validate(D); changes=[];
   $('hdr').textContent=(ST.id.version||'unknown build')+' · '+D.length.toLocaleString()+' bytes';
   $('ident').innerHTML=
     '<dt>version</dt><dd>'+(ST.id.version||'—')+'</dd>'+
@@ -178,7 +198,53 @@ function load(buf){
     (c.pass?'':'<span class="w">'+c.where+'</span>')+'</div>').join('');
   $('save').disabled=false;
   log('<b>loaded</b> '+(ST.id.version||'?'));
-  renderImages(); renderGlyphs(); renderWidgets();
+  $('undo').disabled=false;
+  renderImages(); renderGlyphs(); renderWidgets(); renderStrings(); renderAudio();
+}
+
+function renderStrings(){
+  const q=$('sq').value; if(!ST) return;
+  if(!ST._strs) ST._strs=findStrings(D,5,140);
+  const list=q? ST._strs.filter(s=>s.text.toLowerCase().includes(q.toLowerCase())) : ST._strs.slice(0,300);
+  $('strn').textContent=q? list.length+' match'+(list.length===1?'':'es') : ST._strs.length.toLocaleString()+' strings (showing first 300)';
+  const box=$('strs'); box.innerHTML='';
+  list.slice(0,300).forEach(st=>{
+    const row=document.createElement('div'); row.className='slot'; row.style.cursor='text';
+    const inp=document.createElement('input');
+    inp.value=st.text; inp.maxLength=st.len;
+    inp.style.cssText='flex:1;background:#0d1110;border:1px solid var(--line);color:var(--ink);'+
+      'border-radius:3px;padding:4px 7px;font-family:var(--mono);font-size:12px';
+    const tag=document.createElement('span'); tag.className='g';
+    tag.textContent=hex(st.off)+' · '+st.len+'ch';
+    inp.onchange=()=>{ try{ const r=patchString(D,st.off,st.len,inp.value);
+        row.style.borderColor='var(--accent)'; tag.style.color='var(--accent)';
+        log('<b>string</b> '+hex(st.off)+' → "'+inp.value+'" ('+r.wrote+'/'+r.slot+')'); }
+      catch(e){ alert(e.message); inp.value=st.text; } };
+    row.appendChild(inp); row.appendChild(tag); box.appendChild(row);
+  });
+}
+
+function renderAudio(){
+  if(!ST) return;
+  if(!ST._aud) ST._aud=findAudio(D);
+  const tot=ST._aud.reduce((a,c)=>a+c.size,0);
+  $('audn').textContent=ST._aud.length+' clips · '+tot.toLocaleString()+' bytes total';
+  const box=$('auds'); box.innerHTML='';
+  ST._aud.forEach((c,i)=>{
+    const row=document.createElement('div'); row.className='slot';
+    row.innerHTML='<span>clip '+(i+1)+'</span><span class="g">'+hex(c.off)+' · '+
+      c.size.toLocaleString()+' B · '+c.frames+' frames · '+c.rate+' Hz</span>';
+    const b=document.createElement('button'); b.className='act'; b.textContent='replace';
+    b.style.cssText='padding:3px 10px;font-size:11px;margin-left:10px';
+    b.onclick=()=>{ const inp=document.createElement('input'); inp.type='file'; inp.accept='.aac,audio/aac';
+      inp.onchange=async()=>{ if(!inp.files[0])return;
+        const buf=new Uint8Array(await inp.files[0].arrayBuffer());
+        try{ const r=patchAudio(D,c,buf); row.style.borderColor='var(--accent)';
+          log('<b>audio</b> clip '+(i+1)+' @'+hex(c.off)+' ('+r.wrote+'/'+r.slot+' B)'); }
+        catch(e){ alert(e.message); } };
+      inp.click(); };
+    row.appendChild(b); box.appendChild(row);
+  });
 }
 
 function renderImages(){
@@ -279,9 +345,43 @@ function renderWidgets(){
 }
 
 $('q').oninput=()=>ST&&renderImages();
+$('sq').oninput=()=>ST&&renderStrings();
+$('gc').oninput=()=>{
+  const box=$('glychar'); box.innerHTML=''; const ch=$('gc').value;
+  if(!ST||!ch) return;
+  const hits=glyphByChar(D,ST.base,ST.faces,ch);
+  if(!hits.length){ box.innerHTML='<p class="hint">not in any face</p>'; return; }
+  const grid=document.createElement('div'); grid.className='grid'; grid.style.marginBottom='16px';
+  hits.forEach(h=>{
+    const c=document.createElement('div'); c.className='cell';
+    const cv=document.createElement('canvas'); const gl=decodeGlyph(D,h.face,h.gid);
+    if(gl.pixels) paint(cv,gl.pixels,gl.boxW,gl.boxH,Math.min(3,80/Math.max(gl.boxW,gl.boxH)));
+    c.appendChild(cv);
+    const nm=document.createElement('div'); nm.className='nm';
+    nm.textContent="'"+ch+"' bpp"+h.face.bpp+' · gid '+h.gid+' · '+h.dsc.boxW+'×'+h.dsc.boxH+' · '+h.budget+'B';
+    c.appendChild(nm);
+    c.onclick=()=>{ const i=document.createElement('input'); i.type='file'; i.accept='image/*';
+      i.onchange=async()=>{ if(!i.files[0])return;
+        const side=Math.min(Math.floor(Math.sqrt(h.budget*8/h.face.bpp)),40);
+        const g=await pngToGray(i.files[0],side,side);
+        try{ const r=patchGlyph(D,h.face,h.gid,g,side,side);
+          const gg=decodeGlyph(D,h.face,h.gid); paint(cv,gg.pixels,gg.boxW,gg.boxH,2);
+          c.classList.add('done');
+          log('<b>glyph</b> \''+ch+'\' bpp'+h.face.bpp+' → '+side+'×'+side+' ('+r.bytes+'/'+r.budget+' B)'); }
+        catch(e){ alert(e.message); } };
+      i.click(); };
+    grid.appendChild(c);
+  });
+  box.appendChild(grid);
+};
+$('undo').onclick=()=>{ if(!SNAP)return;
+  D.set(SNAP); changes=[];
+  log('<b>reverted</b> all edits');
+  ST._strs=null; ST._aud=null;
+  renderImages(); renderGlyphs(); renderWidgets(); renderStrings(); renderAudio(); };
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));
-  ['img','gly','wid'].forEach(t=>$('p-'+t).hidden=(t!==b.dataset.t)); });
+  ['img','gly','str','aud','wid'].forEach(t=>$('p-'+t).hidden=(t!==b.dataset.t)); });
 
 const drop=$('drop');
 drop.onclick=()=>$('file').click();

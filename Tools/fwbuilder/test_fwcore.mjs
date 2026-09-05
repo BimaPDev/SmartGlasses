@@ -113,8 +113,68 @@ function run(g) {
     ok('G6', noRemote && embeds,
        `self-contained (no remote script/fetch): ${noRemote}; embeds fwcore: ${embeds}; ${(t.length / 1024).toFixed(0)} KB`);
   }
+  if (g === 'g7') {
+    const d = load(FW['1.0.11.53']);
+    const before = d.length;
+    const strs = fw.findStrings(d, 6, 120);
+    // the Aicy prompt exists in 11.53 — the user's original question
+    const aicy = strs.find(s => s.text.includes("Hey Aicy"));
+    let refused = false;
+    try { fw.patchString(d, aicy.off, aicy.len, 'X'.repeat(aicy.len + 1)); }
+    catch { refused = true; }
+    const r = fw.patchString(d, aicy.off, aicy.len, "You can say 'Hey Buddy'");
+    const readBack = fw.cstr(d, aicy.off, 120);
+    ok('G7', strs.length > 10000 && aicy && refused && readBack === "You can say 'Hey Buddy'" && d.length === before,
+       `${strs.length.toLocaleString()} strings; found Aicy prompt @0x${aicy.off.toString(16)} (${aicy.len} ch); ` +
+       `over-long refused=${refused}; wrote "${readBack}" (${r.wrote}/${r.slot}); length unchanged`);
+  }
+
+  if (g === 'g8') {
+    // POSITIVE CONTROL first: the detector must reproduce the audit's 12.83 figures
+    // exactly (18 clips / 204,997 B). Only then is a different count on another build
+    // evidence about that build rather than about the detector.
+    const c83 = fw.findAudio(load(FW['1.0.12.83']));
+    const tot83 = c83.reduce((a, x) => a + x.size, 0);
+    const controlOk = c83.length === 18 && tot83 === 204997;
+
+    const d = load(FW['1.0.11.53']);
+    const before = d.length;
+    const clips = fw.findAudio(d);
+    let refused = false;
+    try { fw.patchAudio(d, clips[0], new Uint8Array(clips[0].size + 1)); } catch { refused = true; }
+    const rep = new Uint8Array(64); rep[0] = 0xFF; rep[1] = 0xF1;
+    const r = fw.patchAudio(d, clips[0], rep);
+    ok('G8', controlOk && clips.length >= 8 && refused && d[clips[0].off] === 0xFF && d.length === before,
+       `CONTROL 12.83 = ${c83.length} clips / ${tot83.toLocaleString()} B (expect 18 / 204,997) -> ${controlOk}; ` +
+       `11.53 = ${clips.length} clips, first @0x${clips[0].off.toString(16)} ` +
+       `(${clips[0].size} B, ${clips[0].frames} frames, ${clips[0].rate} Hz); ` +
+       `over-long refused=${refused}; wrote ${r.wrote}/${r.slot}; length unchanged`);
+  }
+
+  if (g === 'g9') {
+    const d = load(FW['1.0.11.53']);
+    const snap = fw.snapshot(d);
+    const { base } = fw.deriveDataBase(d);
+    const faces = fw.findFaces(d, base);
+    // address a NORMAL glyph by character — not an unused slot
+    const hits = fw.glyphByChar(d, base, faces, 'A');
+    const h = hits.find(x => x.face.bpp === 4 && x.face.glyphs > 1000);
+    const origDsc = { ...h.dsc };
+    const gw = 8, gh = 8;
+    fw.patchGlyph(d, h.face, h.gid, new Uint8Array(gw * gh).fill(255), gw, gh);
+    const edited = fw.glyphDsc(d, h.face, h.gid);
+    // revert the descriptor + bitmap from the snapshot
+    fw.revertRange(d, snap, h.face.dsc + h.gid * 16, 16);
+    fw.revertRange(d, snap, h.face.bitmap + origDsc.bitmapIndex, h.budget);
+    const restored = fw.glyphDsc(d, h.face, h.gid);
+    let identical = true;
+    for (let i = 0; i < d.length; i++) if (d[i] !== snap[i]) { identical = false; break; }
+    ok('G9', hits.length >= 3 && edited.boxW === gw && restored.boxW === origDsc.boxW && identical,
+       `'A' found in ${hits.length} faces; edited box ${origDsc.boxW}x${origDsc.boxH} -> ${edited.boxW}x${edited.boxH}; ` +
+       `reverted to ${restored.boxW}x${restored.boxH}; buffer byte-identical to snapshot: ${identical}`);
+  }
 }
 
-if (which === 'all') ['g1','g2','g3','g4','g5','g6'].forEach(run); else run(which);
+if (which === 'all') ['g1','g2','g3','g4','g5','g6','g7','g8','g9'].forEach(run); else run(which);
 if (fail) { console.log(`\n${fail} gate(s) unmet`); process.exit(1); }
 console.log('\nfw-builder gates passed');

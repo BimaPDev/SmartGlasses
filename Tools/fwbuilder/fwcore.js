@@ -276,3 +276,69 @@ export function validate(d) {
 
   return { ok: checks.every(c => c.pass), checks, base, id, faces, images, named };
 }
+
+/* ---------- 7. strings ---------- */
+export function findStrings(d, min = 4, max = 200) {
+  const out = [];
+  let i = 0;
+  while (i < d.length) {
+    if (d[i] >= 32 && d[i] < 127) {
+      const s = i;
+      while (i < d.length && d[i] >= 32 && d[i] < 127) i++;
+      const len = i - s;
+      if (len >= min && len <= max && d[i] === 0) out.push({ off: s, len, text: cstr(d, s, max) });
+    } else i++;
+  }
+  return out;
+}
+
+/** In-place string write. Never grows: a longer replacement would run into the next
+ *  string. Shorter is NUL-padded to the original length. */
+export function patchString(d, off, oldLen, text) {
+  const bytes = [];
+  for (const ch of text) { const c = ch.codePointAt(0); if (c > 126 || c < 32) throw new Error(`non-ASCII "${ch}" not supported`); bytes.push(c); }
+  if (bytes.length > oldLen) throw new Error(`"${text}" is ${bytes.length} chars; slot holds ${oldLen}`);
+  for (let i = 0; i < oldLen; i++) d[off + i] = i < bytes.length ? bytes[i] : 0;
+  return { at: off, wrote: bytes.length, slot: oldLen };
+}
+
+/* ---------- 8. audio (ADTS AAC) ---------- */
+export function findAudio(d) {
+  const out = [];
+  for (let i = 0; i < d.length - 7; i++) {
+    if (d[i] !== 0xFF || (d[i + 1] !== 0xF1 && d[i + 1] !== 0xF9)) continue;
+    let p = i, n = 0;
+    while (p + 7 < d.length && d[p] === 0xFF && (d[p + 1] === 0xF1 || d[p + 1] === 0xF9)) {
+      const L = ((d[p + 3] & 3) << 11) | (d[p + 4] << 3) | (d[p + 5] >> 5);
+      if (L < 7) break; p += L; n++;
+    }
+    if (n >= 4) {
+      const sr = [96000,88200,64000,48000,44100,32000,24000,22050,16000,12000,11025,8000][(d[i+2]>>2)&0xF];
+      out.push({ off: i, size: p - i, frames: n, rate: sr });
+      i = p - 1;
+    }
+  }
+  return out;
+}
+
+export function patchAudio(d, clip, bytes) {
+  if (bytes.length > clip.size) throw new Error(`clip is ${bytes.length} B; slot holds ${clip.size} B`);
+  for (let i = 0; i < clip.size; i++) d[clip.off + i] = i < bytes.length ? bytes[i] : 0;
+  return { at: clip.off, wrote: bytes.length, slot: clip.size };
+}
+
+/* ---------- 9. any glyph by character, and revert ---------- */
+export function glyphByChar(d, base, faces, ch) {
+  const cp = ch.codePointAt(0), hits = [];
+  for (const f of faces) {
+    const gid = gidForCp(d, base, f, cp);
+    if (gid) hits.push({ face: f, gid, budget: glyphBudget(d, f, gid), dsc: glyphDsc(d, f, gid) });
+  }
+  return hits;
+}
+
+export const snapshot = (d) => d.slice();
+export function revertRange(d, snap, off, len) {
+  for (let i = 0; i < len; i++) d[off + i] = snap[off + i];
+  return { at: off, len };
+}
