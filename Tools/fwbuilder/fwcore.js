@@ -342,3 +342,21 @@ export function revertRange(d, snap, off, len) {
   for (let i = 0; i < len; i++) d[off + i] = snap[off + i];
   return { at: off, len };
 }
+
+/** Copy a clip out as a standalone ADTS stream (what a browser decoder is handed). */
+export function extractAudio(d, clip) { return d.slice(clip.off, clip.off + clip.size); }
+
+/** Walk the ADTS frame chain. Returns {valid, frames, consumed, channels, rate}. */
+export function probeAdts(bytes) {
+  let p = 0, frames = 0, channels = 0, rate = 0;
+  const RATES = [96000,88200,64000,48000,44100,32000,24000,22050,16000,12000,11025,8000];
+  while (p + 7 <= bytes.length) {
+    if (bytes[p] !== 0xFF || (bytes[p + 1] & 0xF0) !== 0xF0) break;
+    const L = ((bytes[p + 3] & 3) << 11) | (bytes[p + 4] << 3) | (bytes[p + 5] >> 5);
+    if (L < 7 || p + L > bytes.length) break;
+    if (!frames) { rate = RATES[(bytes[p + 2] >> 2) & 0xF];
+                   channels = ((bytes[p + 2] & 1) << 2) | (bytes[p + 3] >> 6); }
+    p += L; frames++;
+  }
+  return { valid: frames >= 4 && p === bytes.length, frames, consumed: p, channels, rate };
+}

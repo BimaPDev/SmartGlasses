@@ -160,6 +160,24 @@ function run(g) {
        `over-long refused=${refused}; wrote ${r.wrote}/${r.slot}; length unchanged`);
   }
 
+  if (g === 'g10') {
+    // Extracted clips must be valid STANDALONE ADTS, or the browser decoder rejects them.
+    let good = 0, notes = [];
+    for (const [v, p] of Object.entries(FW)) {
+      const d = load(p), clips = fw.findAudio(d);
+      let allValid = true, tot = 0;
+      for (const c of clips) {
+        const bytes = fw.extractAudio(d, c);
+        const pr = fw.probeAdts(bytes);
+        if (!pr.valid || pr.frames !== c.frames || bytes.length !== c.size) allValid = false;
+        tot += pr.frames;
+      }
+      if (allValid && clips.length) good++;
+      notes.push(`${v}: ${clips.length} clips, ${tot} frames, all standalone-valid=${allValid}`);
+    }
+    ok('G10', good === 3, notes.join(' | '));
+  }
+
   if (g === 'g9') {
     const d = load(FW['1.0.11.53']);
     const snap = fw.snapshot(d);
@@ -184,6 +202,6 @@ function run(g) {
   }
 }
 
-if (which === 'all') ['g1','g2','g3','g4','g5','g6','g7','g8','g9'].forEach(run); else run(which);
+if (which === 'all') ['g1','g2','g3','g4','g5','g6','g7','g8','g9','g10'].forEach(run); else run(which);
 if (fail) { console.log(`\n${fail} gate(s) unmet`); process.exit(1); }
 console.log('\nfw-builder gates passed');

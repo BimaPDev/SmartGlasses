@@ -470,6 +470,24 @@ function revertRange(d, snap, off, len) {
   return { at: off, len };
 }
 
+/** Copy a clip out as a standalone ADTS stream (what a browser decoder is handed). */
+function extractAudio(d, clip) { return d.slice(clip.off, clip.off + clip.size); }
+
+/** Walk the ADTS frame chain. Returns {valid, frames, consumed, channels, rate}. */
+function probeAdts(bytes) {
+  let p = 0, frames = 0, channels = 0, rate = 0;
+  const RATES = [96000,88200,64000,48000,44100,32000,24000,22050,16000,12000,11025,8000];
+  while (p + 7 <= bytes.length) {
+    if (bytes[p] !== 0xFF || (bytes[p + 1] & 0xF0) !== 0xF0) break;
+    const L = ((bytes[p + 3] & 3) << 11) | (bytes[p + 4] << 3) | (bytes[p + 5] >> 5);
+    if (L < 7 || p + L > bytes.length) break;
+    if (!frames) { rate = RATES[(bytes[p + 2] >> 2) & 0xF];
+                   channels = ((bytes[p + 2] & 1) << 2) | (bytes[p + 3] >> 6); }
+    p += L; frames++;
+  }
+  return { valid: frames >= 4 && p === bytes.length, frames, consumed: p, channels, rate };
+}
+
 
 /* ---------------- UI ---------------- */
 let D=null, SNAP=null, ST=null, changes=[];
@@ -551,121 +569,63 @@ function renderStrings(){
 function renderAudio(){
   if(!ST) return;
   if(!ST._aud) ST._aud=findAudio(D);
+  if(ST._urls) ST._urls.forEach(u=>URL.revokeObjectURL(u));
+  ST._urls=[];
   const tot=ST._aud.reduce((a,c)=>a+c.size,0);
   $('audn').textContent=ST._aud.length+' clips · '+tot.toLocaleString()+' bytes total';
   const box=$('auds'); box.innerHTML='';
   ST._aud.forEach((c,i)=>{
-    const row=document.createElement('div'); row.className='slot';
-    row.innerHTML='<span>clip '+(i+1)+'</span><span class="g">'+hex(c.off)+' · '+
+    const row=document.createElement('div');
+    row.className='slot'; row.style.cssText+='flex-wrap:wrap;cursor:default';
+    const head=document.createElement('div');
+    head.style.cssText='display:flex;align-items:center;gap:9px;width:100%';
+    head.innerHTML='<span>clip '+(i+1)+'</span><span class="g">'+hex(c.off)+' · '+
       c.size.toLocaleString()+' B · '+c.frames+' frames · '+c.rate+' Hz</span>';
-    const b=document.createElement('button'); b.className='act'; b.textContent='replace';
-    b.style.cssText='padding:3px 10px;font-size:11px;margin-left:10px';
-    b.onclick=()=>{ const inp=document.createElement('input'); inp.type='file'; inp.accept='.aac,audio/aac';
+    row.appendChild(head);
+
+    const mkBlob=()=>{ const b=extractAudio(D,c);
+      const pr=probeAdts(b);
+      const url=URL.createObjectURL(new Blob([b],{type:'audio/aac'}));
+      ST._urls.push(url); return {url,pr}; };
+
+    const au=document.createElement('audio');
+    au.controls=true; au.preload='none';
+    au.style.cssText='width:100%;margin-top:7px;height:32px';
+    const made=mkBlob(); au.src=made.url;
+    au.onerror=()=>{ warn.textContent=
+      'this browser will not decode ADTS AAC — use Export and open in a player'; };
+    row.appendChild(au);
+
+    const warn=document.createElement('div');
+    warn.className='g';
+    warn.style.cssText='width:100%;margin-top:4px;color:var(--warn)';
+    warn.textContent = made.pr.valid ? '' :
+      'stream did not validate (' + made.pr.frames + ' frames, ' + made.pr.consumed + '/' + c.size + ' B)';
+    row.appendChild(warn);
+
+    const bar=document.createElement('div');
+    bar.style.cssText='display:flex;gap:6px;margin-top:7px';
+    const dl=document.createElement('button'); dl.className='act';
+    dl.textContent='export .aac'; dl.style.cssText='padding:3px 10px;font-size:11px';
+    dl.onclick=()=>{ const a=document.createElement('a');
+      a.href=mkBlob().url; a.download='clip'+(i+1)+'_'+c.rate+'.aac'; a.click(); };
+    const rp=document.createElement('button'); rp.className='act';
+    rp.textContent='replace'; rp.style.cssText='padding:3px 10px;font-size:11px';
+    rp.onclick=()=>{ const inp=document.createElement('input');
+      inp.type='file'; inp.accept='.aac,audio/aac';
       inp.onchange=async()=>{ if(!inp.files[0])return;
         const buf=new Uint8Array(await inp.files[0].arrayBuffer());
-        try{ const r=patchAudio(D,c,buf); row.style.borderColor='var(--accent)';
+        const pr=probeAdts(buf);
+        if(!pr.valid && !confirm('That file does not look like a valid ADTS AAC stream. Write it anyway?')) return;
+        try{ const r=patchAudio(D,c,buf);
+          row.style.borderColor='var(--accent)';
+          const nb=mkBlob(); au.src=nb.url;
           log('<b>audio</b> clip '+(i+1)+' @'+hex(c.off)+' ('+r.wrote+'/'+r.slot+' B)'); }
         catch(e){ alert(e.message); } };
       inp.click(); };
-    row.appendChild(b); box.appendChild(row);
+    bar.appendChild(dl); bar.appendChild(rp); row.appendChild(bar);
+    box.appendChild(row);
   });
-}
-
-function renderImages(){
-  const q=$('q').value.toLowerCase();
-  const list=ST.images.filter(im=>!q||(im.name||'').toLowerCase().includes(q)||
-                                   (im.w+'x'+im.h).includes(q));
-  $('imgn').textContent=list.length+' of '+ST.images.length+' shown';
-  const box=$('imgs'); box.innerHTML='';
-  list.slice(0,400).forEach(im=>{
-    const c=document.createElement('div'); c.className='cell';
-    const cv=document.createElement('canvas');
-    const sc=Math.min(1,96/Math.max(im.w,im.h));
-    paint(cv,decodeImage(D,im),im.w,im.h,sc);
-    c.appendChild(cv);
-    const nm=document.createElement('div'); nm.className='nm';
-    nm.textContent=(im.name||hex(im.data))+' · '+im.w+'×'+im.h; c.appendChild(nm);
-    const put=async f=>{ const g=await pngToGray(f,im.w,im.h);
-      patchImage(D,im,g); paint(cv,decodeImage(D,im),im.w,im.h,sc);
-      c.classList.add('done'); log('<b>image</b> '+(im.name||hex(im.data))+' ('+im.w+'×'+im.h+') @'+hex(im.data)); };
-    c.ondragover=e=>{e.preventDefault();c.classList.add('hot')};
-    c.ondragleave=()=>c.classList.remove('hot');
-    c.ondrop=e=>{e.preventDefault();c.classList.remove('hot');
-      if(e.dataTransfer.files[0])put(e.dataTransfer.files[0])};
-    c.onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='image/*';
-      i.onchange=()=>i.files[0]&&put(i.files[0]);i.click()};
-    box.appendChild(c);
-  });
-}
-
-function renderGlyphs(){
-  const face=ST.faces.filter(f=>f.glyphs>1000&&f.bpp===4)[0];
-  if(!face){ $('glys').innerHTML='<p class="hint">no bpp4 face found</p>'; return; }
-  const g2cp=new Map();
-  for(const r of face.ranges){
-    if([1,3].includes(r.type)&&r.ulist){ const b=r.ulist-ST.base;
-      for(let k=0;k<r.listLen;k++) g2cp.set(r.gidStart+k, r.start+(D[b+k*2]|(D[b+k*2+1]<<8))); }
-    else for(let k=0;k<r.len;k++) g2cp.set(r.gidStart+k, r.start+k);
-  }
-  const rows=[];
-  for(let g=96;g<face.glyphs-1;g++){ const b=glyphBudget(D,face,g);
-    if(b&&b>200) rows.push({g,b,cp:g2cp.get(g)}); }
-  rows.sort((a,b)=>b.b-a.b);
-  $('glyn').textContent=rows.length+' slots ≥200 B · face bpp'+face.bpp+' · '+face.glyphs+' glyphs';
-  const box=$('glys'); box.innerHTML='';
-  rows.slice(0,60).forEach(r=>{
-    const c=document.createElement('div'); c.className='cell';
-    const cv=document.createElement('canvas');
-    const gl=decodeGlyph(D,face,r.g);
-    if(gl.pixels) paint(cv,gl.pixels,gl.boxW,gl.boxH,Math.min(2,90/Math.max(gl.boxW,gl.boxH)));
-    c.appendChild(cv);
-    const side=Math.floor(Math.sqrt(r.b*8/face.bpp));
-    const nm=document.createElement('div'); nm.className='nm';
-    nm.textContent='U+'+(r.cp||0).toString(16).toUpperCase().padStart(4,'0')+' · '+r.b+'B · ≤'+side+'²';
-    c.appendChild(nm);
-    const put=async f=>{ const n=Math.min(side,27);
-      const g=await pngToGray(f,n,n);
-      try{ const res=patchGlyph(D,face,r.g,g,n,n);
-        const gg=decodeGlyph(D,face,r.g); paint(cv,gg.pixels,gg.boxW,gg.boxH,2);
-        c.classList.add('done');
-        log('<b>glyph</b> U+'+(r.cp||0).toString(16).toUpperCase()+' → '+n+'×'+n+
-            ' ('+res.bytes+'/'+res.budget+' B) @'+hex(res.at)); }
-      catch(err){ alert(err.message); } };
-    c.ondragover=e=>{e.preventDefault();c.classList.add('hot')};
-    c.ondragleave=()=>c.classList.remove('hot');
-    c.ondrop=e=>{e.preventDefault();c.classList.remove('hot');
-      if(e.dataTransfer.files[0])put(e.dataTransfer.files[0])};
-    c.onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='image/*';
-      i.onchange=()=>i.files[0]&&put(i.files[0]);i.click()};
-    box.appendChild(c);
-  });
-}
-
-function renderWidgets(){
-  const box=$('slots'); box.innerHTML='';
-  WIDGETS.forEach(w=>{
-    const on=layout.includes(w.n);
-    const el=document.createElement('div'); el.className='slot'; el.draggable=on;
-    el.innerHTML='<input type="checkbox" '+(on?'checked':'')+'> <span>'+w.n+'</span>'+
-      '<span class="g">id '+w.id+' · '+w.c+' slot'+(w.c>1?'s':'')+'</span>';
-    el.querySelector('input').onchange=e=>{
-      if(e.target.checked){ if(!layout.includes(w.n)) layout.push(w.n); }
-      else layout=layout.filter(x=>x!==w.n);
-      renderWidgets(); };
-    el.ondragstart=()=>{el.classList.add('drag'); box.dataset.from=w.n};
-    el.ondragend=()=>el.classList.remove('drag');
-    el.ondragover=e=>e.preventDefault();
-    el.ondrop=e=>{e.preventDefault(); const from=box.dataset.from;
-      if(!from||from===w.n||!layout.includes(from)||!layout.includes(w.n))return;
-      layout=layout.filter(x=>x!==from);
-      layout.splice(layout.indexOf(w.n),0,from); renderWidgets(); };
-    box.appendChild(el);
-  });
-  const used=layout.reduce((a,n)=>a+(WIDGETS.find(w=>w.n===n)?.c||1),0);
-  $('budget').textContent='grid: '+used+' of 4 slots'+(used>4?'  ⚠ OVER BUDGET':'');
-  $('budget').style.color=used>4?'var(--bad)':'var(--dim)';
-  $('wjson').textContent=JSON.stringify(
-    {action:'set_standby_widget_lists',data:{widgets:layout}},null,2);
 }
 
 $('q').oninput=()=>ST&&renderImages();
