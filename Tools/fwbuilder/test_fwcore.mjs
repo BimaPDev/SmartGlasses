@@ -118,9 +118,15 @@ function run(g) {
       try { new Function(m[1]); parses = true; }
       catch (e) { perr = e.message; }
     }
-    ok('G6', noRemote && embeds && parses,
+    // Every function the UI calls must be DEFINED. A careless edit once deleted three
+    // render functions; the script still PARSED and the page died only at runtime.
+    const need = ['load','loadInner','renderImages','renderGlyphs','renderWidgets',
+                  'renderStrings','renderAudio','paint','pngToGray','log'];
+    const missing = need.filter(f => !new RegExp('function\\s+' + f + '\\s*\\(').test(t));
+    ok('G6', noRemote && embeds && parses && missing.length === 0,
        `self-contained: ${noRemote}; embeds fwcore: ${embeds}; inline script parses: ${parses}` +
-       (perr ? ` (${perr})` : '') + `; ${(t.length / 1024).toFixed(0)} KB`);
+       (perr ? ` (${perr})` : '') + `; UI fns defined: ${need.length - missing.length}/${need.length}` +
+       (missing.length ? ` MISSING ${missing.join(',')}` : '') + `; ${(t.length / 1024).toFixed(0)} KB`);
   }
   if (g === 'g7') {
     const d = load(FW['1.0.11.53']);

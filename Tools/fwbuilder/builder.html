@@ -525,6 +525,16 @@ async function pngToGray(file,w,h){
 }
 
 function load(buf){
+  try{ loadInner(buf); }
+  catch(err){
+    $('checks').innerHTML='<div class="chk"><span class="dot f"></span><span class="n">'+
+      'builder error<br><span class="d">'+(err&&err.message||err)+'</span></span></div>';
+    $('hdr').textContent='failed to parse — see left panel';
+    console.error(err);
+  }
+}
+
+function loadInner(buf){
   D=new Uint8Array(buf); SNAP=snapshot(D); ST=validate(D); changes=[];
   $('hdr').textContent=(ST.id.version||'unknown build')+' · '+D.length.toLocaleString()+' bytes';
   $('ident').innerHTML=
@@ -628,6 +638,103 @@ function renderAudio(){
   });
 }
 
+function renderImages(){
+  const q=$('q').value.toLowerCase();
+  const list=ST.images.filter(im=>!q||(im.name||'').toLowerCase().includes(q)||
+                                   (im.w+'x'+im.h).includes(q));
+  $('imgn').textContent=list.length+' of '+ST.images.length+' shown';
+  const box=$('imgs'); box.innerHTML='';
+  list.slice(0,400).forEach(im=>{
+    const c=document.createElement('div'); c.className='cell';
+    const cv=document.createElement('canvas');
+    const sc=Math.min(1,96/Math.max(im.w,im.h));
+    paint(cv,decodeImage(D,im),im.w,im.h,sc);
+    c.appendChild(cv);
+    const nm=document.createElement('div'); nm.className='nm';
+    nm.textContent=(im.name||hex(im.data))+' · '+im.w+'×'+im.h; c.appendChild(nm);
+    const put=async f=>{ const g=await pngToGray(f,im.w,im.h);
+      patchImage(D,im,g); paint(cv,decodeImage(D,im),im.w,im.h,sc);
+      c.classList.add('done'); log('<b>image</b> '+(im.name||hex(im.data))+' ('+im.w+'×'+im.h+') @'+hex(im.data)); };
+    c.ondragover=e=>{e.preventDefault();c.classList.add('hot')};
+    c.ondragleave=()=>c.classList.remove('hot');
+    c.ondrop=e=>{e.preventDefault();c.classList.remove('hot');
+      if(e.dataTransfer.files[0])put(e.dataTransfer.files[0])};
+    c.onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='image/*';
+      i.onchange=()=>i.files[0]&&put(i.files[0]);i.click()};
+    box.appendChild(c);
+  });
+}
+
+function renderGlyphs(){
+  const face=ST.faces.filter(f=>f.glyphs>1000&&f.bpp===4)[0];
+  if(!face){ $('glys').innerHTML='<p class="hint">no bpp4 face found</p>'; return; }
+  const g2cp=new Map();
+  for(const r of face.ranges){
+    if([1,3].includes(r.type)&&r.ulist){ const b=r.ulist-ST.base;
+      for(let k=0;k<r.listLen;k++) g2cp.set(r.gidStart+k, r.start+(D[b+k*2]|(D[b+k*2+1]<<8))); }
+    else for(let k=0;k<r.len;k++) g2cp.set(r.gidStart+k, r.start+k);
+  }
+  const rows=[];
+  for(let g=96;g<face.glyphs-1;g++){ const b=glyphBudget(D,face,g);
+    if(b&&b>200) rows.push({g,b,cp:g2cp.get(g)}); }
+  rows.sort((a,b)=>b.b-a.b);
+  $('glyn').textContent=rows.length+' slots ≥200 B · face bpp'+face.bpp+' · '+face.glyphs+' glyphs';
+  const box=$('glys'); box.innerHTML='';
+  rows.slice(0,60).forEach(r=>{
+    const c=document.createElement('div'); c.className='cell';
+    const cv=document.createElement('canvas');
+    const gl=decodeGlyph(D,face,r.g);
+    if(gl.pixels) paint(cv,gl.pixels,gl.boxW,gl.boxH,Math.min(2,90/Math.max(gl.boxW,gl.boxH)));
+    c.appendChild(cv);
+    const side=Math.floor(Math.sqrt(r.b*8/face.bpp));
+    const nm=document.createElement('div'); nm.className='nm';
+    nm.textContent='U+'+(r.cp||0).toString(16).toUpperCase().padStart(4,'0')+' · '+r.b+'B · ≤'+side+'²';
+    c.appendChild(nm);
+    const put=async f=>{ const n=Math.min(side,27);
+      const g=await pngToGray(f,n,n);
+      try{ const res=patchGlyph(D,face,r.g,g,n,n);
+        const gg=decodeGlyph(D,face,r.g); paint(cv,gg.pixels,gg.boxW,gg.boxH,2);
+        c.classList.add('done');
+        log('<b>glyph</b> U+'+(r.cp||0).toString(16).toUpperCase()+' → '+n+'×'+n+
+            ' ('+res.bytes+'/'+res.budget+' B) @'+hex(res.at)); }
+      catch(err){ alert(err.message); } };
+    c.ondragover=e=>{e.preventDefault();c.classList.add('hot')};
+    c.ondragleave=()=>c.classList.remove('hot');
+    c.ondrop=e=>{e.preventDefault();c.classList.remove('hot');
+      if(e.dataTransfer.files[0])put(e.dataTransfer.files[0])};
+    c.onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='image/*';
+      i.onchange=()=>i.files[0]&&put(i.files[0]);i.click()};
+    box.appendChild(c);
+  });
+}
+
+function renderWidgets(){
+  const box=$('slots'); box.innerHTML='';
+  WIDGETS.forEach(w=>{
+    const on=layout.includes(w.n);
+    const el=document.createElement('div'); el.className='slot'; el.draggable=on;
+    el.innerHTML='<input type="checkbox" '+(on?'checked':'')+'> <span>'+w.n+'</span>'+
+      '<span class="g">id '+w.id+' · '+w.c+' slot'+(w.c>1?'s':'')+'</span>';
+    el.querySelector('input').onchange=e=>{
+      if(e.target.checked){ if(!layout.includes(w.n)) layout.push(w.n); }
+      else layout=layout.filter(x=>x!==w.n);
+      renderWidgets(); };
+    el.ondragstart=()=>{el.classList.add('drag'); box.dataset.from=w.n};
+    el.ondragend=()=>el.classList.remove('drag');
+    el.ondragover=e=>e.preventDefault();
+    el.ondrop=e=>{e.preventDefault(); const from=box.dataset.from;
+      if(!from||from===w.n||!layout.includes(from)||!layout.includes(w.n))return;
+      layout=layout.filter(x=>x!==from);
+      layout.splice(layout.indexOf(w.n),0,from); renderWidgets(); };
+    box.appendChild(el);
+  });
+  const used=layout.reduce((a,n)=>a+(WIDGETS.find(w=>w.n===n)?.c||1),0);
+  $('budget').textContent='grid: '+used+' of 4 slots'+(used>4?'  ⚠ OVER BUDGET':'');
+  $('budget').style.color=used>4?'var(--bad)':'var(--dim)';
+  $('wjson').textContent=JSON.stringify(
+    {action:'set_standby_widget_lists',data:{widgets:layout}},null,2);
+}
+
 $('q').oninput=()=>ST&&renderImages();
 $('sq').oninput=()=>ST&&renderStrings();
 $('gc').oninput=()=>{
@@ -666,6 +773,10 @@ $('undo').onclick=()=>{ if(!SNAP)return;
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));
   ['img','gly','str','aud','wid'].forEach(t=>$('p-'+t).hidden=(t!==b.dataset.t)); });
+
+window.addEventListener('error',e=>{
+  const c=$('checks'); if(c) c.innerHTML='<div class="chk"><span class="dot f"></span>'+
+    '<span class="n">script error<br><span class="d">'+e.message+'</span></span></div>'; });
 
 const drop=$('drop');
 drop.onclick=()=>$('file').click();
