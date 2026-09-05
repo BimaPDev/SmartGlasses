@@ -40,65 +40,59 @@ public struct TodoProbe {
     public static func candidates() -> [Attempt] {
         var out: [Attempt] = []
 
-        // 1. open_app -> the LAUNCHER (it owns app launching), naming the assistant.
-        for domain in ["todo", "schedule"] {
-            out.append(Attempt(
-                label: "open_app ext.domain=\(domain) -> launcher",
-                json: """
-                {"action":"app","data":{"launchMode":"scene","action":"open_app",\
-                "pkg":"\(Pkg.assistant)","show_status_bar":false,\
-                "ext":"{\\"domain\\":\\"\(domain)\\"}","app_name":"\(domain.capitalized)"}}
-                """,
-                target: Pkg.launcher,
-                rationale: "open_app is confirmed for navigation and is a LAUNCHER action"))
-        }
+        // Run 3. Runs 1 and 2 invented message names and got nothing. These use the
+        // ACTUAL message-type enum recovered from the firmware at 0x191640-0x191964,
+        // and the domain-namespace strings from DomainRuntime at 0x192144-0x192264.
+        //
+        // Dispatch path, from DomainRuntime.cpp log strings:
+        //   NLU_RESULT -> "parse succeed. Domain Namespace %s" -> findDomain -> startDomain
+        // Namespaces present: freechat, INNER_STKS, application, VSP_ERROR, alarm,
+        //                     todo, systemsetting.
 
-        // 2. Domain intents addressed to the ASSISTANT, which owns TodoDomain.
-        let intents = ["TODO_QUERTY_LIST", "TODO_CREATE_LIST", "SCHEDULE_LIST", "SCHEDULE_VIEW"]
-        for intent in intents {
+        // A. Let the glasses' own NLU classify plain text. If NLU runs on-device this is
+        //    the least assumption-laden route: no envelope to guess beyond the text.
+        for phrase in ["open my todo list", "show my schedule", "what are my tasks"] {
             out.append(Attempt(
-                label: "intent \(intent) -> assistant",
-                json: #"{"action":"\#(intent)","data":{"list":[]}}"#,
+                label: "SYS_TEXT_TO_NLU \"\(phrase)\"",
+                json: #"{"action":"SYS_TEXT_TO_NLU","data":{"text":"\#(phrase)"}}"#,
                 target: Pkg.assistant,
-                rationale: "intent as the top-level action, addressed to the package that owns the domain"))
+                rationale: "SYS_TEXT_TO_NLU is a real message type (0x1918a4); routing text through NLU is how a domain normally starts"))
         }
 
-        // 3. Populated list to the assistant — the domain may open on data arrival,
-        //    which is how the contact list behaves.
+        // B. Inject a pre-classified NLU result naming the domain, bypassing NLU.
+        for ns in ["todo", "alarm"] {          // alarm included as a CONTROL: a namespace
+            out.append(Attempt(                 // we have no reason to think is special
+                label: "NLU_RESULT domain=\(ns)",
+                json: #"{"action":"NLU_RESULT","data":{"domain":"\#(ns)","namespace":"\#(ns)","intent":"","slots":{}}}"#,
+                target: Pkg.assistant,
+                rationale: "NLU_RESULT (0x1918e4) is parsed for a Domain Namespace, then findDomain runs"))
+        }
+
+        // C. The connect-data path, using its real field names (connectData/connectType
+        //    at 0x19161c/0x191628) — the same route the WeChat contact list uses.
         out.append(Attempt(
-            label: "TODO_CREATE_LIST + items -> assistant",
+            label: "SYS_CONNECT_DATA connectType=todo",
             json: #"""
-            {"action":"TODO_CREATE_LIST","data":{"list":[            {"id":1,"title":"Lunch with Alex","done":false},            {"id":2,"title":"Vendor timeline alignment","done":false}]}}
+            {"action":"SYS_CONNECT_DATA","data":{"connectType":"todo","connectData":            "{\"list\":[{\"id\":1,\"title\":\"Lunch with Alex\",\"done\":false}]}"}}
             """#,
             target: Pkg.assistant,
-            rationale: "TodoDomain logs 'parse todo data fail', so it expects phone JSON"))
+            rationale: "CONNECT_DATA->connectData is parsed for a Domain Namespace too (0x192588)"))
 
-        // 4. Nested-action shape, matching how system messages are wrapped.
         out.append(Attempt(
-            label: "nested action wrapper -> assistant",
+            label: "SYNC_SEND_CONNECT_DATA connectType=todo",
             json: #"""
-            {"action":"assistant","data":{"action":"TODO_CREATE_LIST","list":[            {"id":1,"title":"Lunch with Alex","done":false}]}}
+            {"action":"SYNC_SEND_CONNECT_DATA","data":{"connectType":"todo","connectData":            "{\"list\":[{\"id\":1,\"title\":\"Lunch with Alex\",\"done\":false}]}"}}
             """#,
             target: Pkg.assistant,
-            rationale: "system messages use {action, data:{action, ...}}; same shape, right address"))
+            rationale: "SYNC_SEND_CONNECT_DATA (0x191964) is the sync variant of the same path"))
 
-        // 5. The contact-list path verbatim, but with todo data.
+        // D. Same NLU_RESULT, addressed to the launcher instead — cheap way to test
+        //    whether addressing or shape is the blocker.
         out.append(Attempt(
-            label: "connect_data -> assistant",
-            json: #"""
-            {"action":"connect_data","data":{"type":"TODO_CREATE_LIST","list":[            {"id":1,"title":"Lunch with Alex","done":false}]}}
-            """#,
-            target: Pkg.assistant,
-            rationale: "PhonePage receives the contact list via onConnectDataMessage"))
-
-        // 6. Same again to the AI PHONE package, which is the other half of the pair.
-        out.append(Attempt(
-            label: "connect_data -> ai.phone",
-            json: #"""
-            {"action":"connect_data","data":{"type":"TODO_CREATE_LIST","list":[            {"id":1,"title":"Lunch with Alex","done":false}]}}
-            """#,
-            target: Pkg.phone,
-            rationale: "PhonePage.cpp suggests com.upuphone.ai.phone may own the list surface"))
+            label: "NLU_RESULT domain=todo -> launcher",
+            json: #"{"action":"NLU_RESULT","data":{"domain":"todo","namespace":"todo","intent":"","slots":{}}}"#,
+            target: Pkg.launcher,
+            rationale: "isolates addressing from shape: identical payload, different target"))
 
         return out
     }
