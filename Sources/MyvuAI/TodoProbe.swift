@@ -46,9 +46,22 @@ public struct TodoProbe {
     /// VSP_ERROR, alarm, todo, systemsetting.
     static func vui(namespace: String, name: String = "default",
                     query: String = "", sessionId: String) -> String {
-        """
-        {"code":102,"payload":{        "header":{"name":"\(name)","namespace":"\(namespace)","specialCmdInChatGptScene":false},        "metadata":{"msgId":""},        "payload":{"isSoundOpened":true,"query":"\(query)","isNextRecorded":false,        "utterance":{"speech":"","screen":"","id":""}},        "source":0,        "utterance":{"id":"","screen":"","speech":""},        "sessionId":"\(sessionId)"}}
-        """
+        // Built by concatenation, not a multiline literal: an earlier version left the
+        // source indentation inside the JSON (legal but noisy, and it obscured run 3's
+        // payloads). One line, no stray bytes.
+        let header = "{\"name\":\"\(name)\",\"namespace\":\"\(namespace)\","
+                   + "\"specialCmdInChatGptScene\":false}"
+        let inner  = "{\"speech\":\"\",\"screen\":\"\",\"id\":\"\"}"
+        let pl     = "{\"isSoundOpened\":true,\"query\":\"\(query)\","
+                   + "\"isNextRecorded\":false,\"utterance\":\(inner)}"
+        let utt    = "{\"id\":\"\",\"screen\":\"\",\"speech\":\"\"}"
+        return "{\"code\":102,\"payload\":{"
+             + "\"header\":\(header),"
+             + "\"metadata\":{\"msgId\":\"\"},"
+             + "\"payload\":\(pl),"
+             + "\"source\":0,"
+             + "\"utterance\":\(utt),"
+             + "\"sessionId\":\"\(sessionId)\"}}"
     }
 
     public static func candidates() -> [Attempt] {
