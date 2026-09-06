@@ -1,3 +1,12 @@
+/* ============================ DO NOT USE AS-IS ============================
+ * Verified 2026-09-06: this cave is INSIDE the HiFi4 DSP image (0x04E9B4-0x13351C
+ * in 12.83, -0x143F14 in 11.53). Splicing ARM code here corrupts the Xtensa DSP
+ * payload. The ORIGIN below is also wrong: 0x12F2E4 is PSRAM-copied data, whose
+ * runtime address is file_off + 0x3BFD7C0C = 0x3C106EF0, not 0x2C12F2E4.
+ * And on 1.0.11.53 the cave does not exist at all (0 zero bytes there).
+ * See TOOLCHAIN.md. Fix the target before using this file.
+ * ========================================================================= */
+
 /* veneer.ld — place compiled code into the firmware's zero cave.
  *
  * Cave: file 0x12F2E4 / VA 0x2C12F2E4, measured 0x1750 bytes (5968) of zeros,

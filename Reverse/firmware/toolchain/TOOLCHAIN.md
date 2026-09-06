@@ -1,5 +1,46 @@
 # Matched Toolchain Spec (Star Air / myvu)
 
+> ## ⚠ STOP — `veneer.ld` IS UNSAFE AS WRITTEN (verified 2026-09-06)
+>
+> The toolchain identification below is sound and still stands. **The cave plan is not.**
+> `veneer.ld` would splice ARM Thumb code into another processor's firmware. Three
+> independent faults, each verified against the binaries:
+>
+> **1. The cave is inside the HiFi4 DSP image.** `veneer.ld` targets file `0x12F2E4`.
+> The embedded Xtensa DSP payload spans `0x04E9B4`–`0x13351C` (12.83) and
+> `0x04E9B4`–`0x143F14` (11.53). `0x12F2E4` is inside it in **both** builds. Those 5,968
+> zero bytes are DSP-image padding, not free M55 space.
+>
+> **2. The runtime address is wrong by an entire region.** `veneer.ld` declares
+> `ORIGIN = 0x2C12F2E4`, i.e. old-base `0x2C000000 + file_off`. But `0x12F2E4` lies in
+> the PSRAM-copied region (`0x283F4`–`0x469954`), so at runtime it is at
+> `file_off + 0x3BFD7C0C` = **`0x3C106EF0`** (12.83). Not a `0x10000` base slip — a
+> different memory region entirely. See `../analysis/layout/LAYOUT.md` and
+> `firmware-memory-map`.
+>
+> **3. The cave does not exist on 1.0.11.53** — the build on the device in hand. At
+> `0x12F2E4` there are **0** zero bytes. The cave is 12.83-only.
+>
+> ### And there is no drop-in replacement cave
+>
+> Scanning 11.53 for runs of ≥512 zero bytes: ~85 KB found, but **zero in XIP `.text`**.
+> All of it is PSRAM-copied data, and most is padding inside the DSP and sensor_hub
+> sub-images. Classic cave injection currently has nowhere to live on this build.
+>
+> ### Routes not yet explored (each needs establishing before use)
+>
+> - **Is PSRAM data executable?** MPU-dependent, unverified. If it is, the ~1.28 MB
+>   reclaimable from CJK glyphs becomes candidate space.
+> - **Overwrite a genuinely dead function** instead of relying on padding.
+> - **Grow the image.** The OTA carries explicit size fields; whether the loader accepts a
+>   larger image is unknown and worth testing before assuming a fixed length.
+>
+> ### Prerequisite, not optional
+>
+> Code injection is the tier that bricks. Two units were lost to LVGL timing at v5/v6, and
+> those were far milder changes than new code at a wrong address. **Prove a UART recovery
+> path on the already-bricked unit before the first injection attempt.**
+
 Goal: reproduce a build environment whose codegen is **byte-compatible** with the shipped
 firmware, so new code can be compiled and linked into the existing image (cave veneers,
 function replacement) rather than byte-patched by hand.
