@@ -37,62 +37,55 @@ public struct TodoProbe {
     // MARK: - Candidate payloads
 
     /// Ladder of guesses, cheapest/most-likely first.
+    /// A VUI (code 102) message with a chosen Domain Namespace.
+    ///
+    /// This is the shape `AiProtocol.chatQuery` already uses to open the LLM scene, with
+    /// `header.namespace` swapped. That field is what DomainRuntime logs as
+    /// "Domain Namespace %s" before calling findDomain, and the namespaces in the binary
+    /// (0x192144-0x192264) are its legal values: freechat, INNER_STKS, application,
+    /// VSP_ERROR, alarm, todo, systemsetting.
+    static func vui(namespace: String, name: String = "default",
+                    query: String = "", sessionId: String) -> String {
+        """
+        {"code":102,"payload":{        "header":{"name":"\(name)","namespace":"\(namespace)","specialCmdInChatGptScene":false},        "metadata":{"msgId":""},        "payload":{"isSoundOpened":true,"query":"\(query)","isNextRecorded":false,        "utterance":{"speech":"","screen":"","id":""}},        "source":0,        "utterance":{"id":"","screen":"","speech":""},        "sessionId":"\(sessionId)"}}
+        """
+    }
+
     public static func candidates() -> [Attempt] {
         var out: [Attempt] = []
+        let sid = "probe-\(Int(Date().timeIntervalSince1970))"
 
-        // Run 3. Runs 1 and 2 invented message names and got nothing. These use the
-        // ACTUAL message-type enum recovered from the firmware at 0x191640-0x191964,
-        // and the domain-namespace strings from DomainRuntime at 0x192144-0x192264.
+        // Run 4. Runs 1-3 used {"action":...} via the LAUNCHER protocol; the assistant
+        // speaks com.xjsd.ai.assistant.protocol with {"code":N,"payload":...}, sourced
+        // from AND addressed to com.upuphone.ai.assistant. So nothing before now even
+        // reached its handler.
         //
-        // Dispatch path, from DomainRuntime.cpp log strings:
-        //   NLU_RESULT -> "parse succeed. Domain Namespace %s" -> findDomain -> startDomain
-        // Namespaces present: freechat, INNER_STKS, application, VSP_ERROR, alarm,
-        //                     todo, systemsetting.
+        // These are code-102 VUI messages — the exact shape that already opens the LLM
+        // scene — with header.namespace swapped to a namespace taken from the binary.
 
-        // A. Let the glasses' own NLU classify plain text. If NLU runs on-device this is
-        //    the least assumption-laden route: no envelope to guess beyond the text.
-        for phrase in ["open my todo list", "show my schedule", "what are my tasks"] {
+        // CONTROL FIRST: "llm" is the namespace the SDK already uses successfully. If this
+        // draws no reaction, the transport or session is wrong and nothing below means
+        // anything.
+        out.append(Attempt(
+            label: "CONTROL vui namespace=llm (known-good)",
+            json: vui(namespace: "llm", query: "hello", sessionId: sid),
+            target: Pkg.assistant,
+            rationale: "AiProtocol.chatQuery uses exactly this and it works — proves the channel"))
+
+        for ns in ["todo", "schedule", "alarm", "systemsetting"] {
             out.append(Attempt(
-                label: "SYS_TEXT_TO_NLU \"\(phrase)\"",
-                json: #"{"action":"SYS_TEXT_TO_NLU","data":{"text":"\#(phrase)"}}"#,
+                label: "vui namespace=\(ns)",
+                json: vui(namespace: ns, sessionId: sid),
                 target: Pkg.assistant,
-                rationale: "SYS_TEXT_TO_NLU is a real message type (0x1918a4); routing text through NLU is how a domain normally starts"))
+                rationale: "header.namespace is what DomainRuntime reads as 'Domain Namespace'"))
         }
 
-        // B. Inject a pre-classified NLU result naming the domain, bypassing NLU.
-        for ns in ["todo", "alarm"] {          // alarm included as a CONTROL: a namespace
-            out.append(Attempt(                 // we have no reason to think is special
-                label: "NLU_RESULT domain=\(ns)",
-                json: #"{"action":"NLU_RESULT","data":{"domain":"\#(ns)","namespace":"\#(ns)","intent":"","slots":{}}}"#,
-                target: Pkg.assistant,
-                rationale: "NLU_RESULT (0x1918e4) is parsed for a Domain Namespace, then findDomain runs"))
-        }
-
-        // C. The connect-data path, using its real field names (connectData/connectType
-        //    at 0x19161c/0x191628) — the same route the WeChat contact list uses.
+        // Namespace with an intent-ish name, in case findDomain keys on both fields.
         out.append(Attempt(
-            label: "SYS_CONNECT_DATA connectType=todo",
-            json: #"""
-            {"action":"SYS_CONNECT_DATA","data":{"connectType":"todo","connectData":            "{\"list\":[{\"id\":1,\"title\":\"Lunch with Alex\",\"done\":false}]}"}}
-            """#,
+            label: "vui namespace=todo name=TODO_QUERTY_LIST",
+            json: vui(namespace: "todo", name: "TODO_QUERTY_LIST", sessionId: sid),
             target: Pkg.assistant,
-            rationale: "CONNECT_DATA->connectData is parsed for a Domain Namespace too (0x192588)"))
-
-        out.append(Attempt(
-            label: "SYNC_SEND_CONNECT_DATA connectType=todo",
-            json: #"""
-            {"action":"SYNC_SEND_CONNECT_DATA","data":{"connectType":"todo","connectData":            "{\"list\":[{\"id\":1,\"title\":\"Lunch with Alex\",\"done\":false}]}"}}
-            """#,
-            target: Pkg.assistant,
-            rationale: "SYNC_SEND_CONNECT_DATA (0x191964) is the sync variant of the same path"))
-
-        // D. Same NLU_RESULT, addressed to the launcher instead — cheap way to test
-        //    whether addressing or shape is the blocker.
-        out.append(Attempt(
-            label: "NLU_RESULT domain=todo -> launcher",
-            json: #"{"action":"NLU_RESULT","data":{"domain":"todo","namespace":"todo","intent":"","slots":{}}}"#,
-            target: Pkg.launcher,
-            rationale: "isolates addressing from shape: identical payload, different target"))
+            rationale: "header.name may select the intent within the domain"))
 
         return out
     }
@@ -117,6 +110,7 @@ public struct TodoProbe {
         let watcher = Task {
             for await raw in glasses.rawInbound() {
                 await box.append(raw)
+                await box.countInbound()
                 onLine("  <- \(raw)")
             }
         }
@@ -133,14 +127,18 @@ public struct TodoProbe {
             onLine("     why: \(c.rationale)")
             onLine("     -> \(c.target)")
             onLine("     \(c.json)")
-            glasses.client.sendRaw(c.json, targetPkg: c.target, sourcePkg: Pkg.launcher)
+                        // AssistantPreferences.sendAssistant uses the assistant as BOTH source and
+            // target; run 3 sourced from the launcher, which may be why it was ignored.
+            let src = (c.target == Pkg.assistant) ? Pkg.assistant : Pkg.launcher
+            glasses.client.sendRaw(c.json, targetPkg: c.target, sourcePkg: src)
             try? await Task.sleep(nanoseconds: UInt64(gapSeconds * 1_000_000_000))
         }
 
         onLine("")
         let seen = await box.all()
-        onLine("TodoProbe done. \(seen.count) inbound message(s) captured.")
-        if seen.isEmpty {
+        let n = await box.inboundCount()
+        onLine("TodoProbe done. \(n) inbound message(s) captured.")
+        if n == 0 {
             onLine("NOTHING came back. That is a real result: either the domain needs a "
                  + "different message, or it is unreachable on this build.")
         }
@@ -150,7 +148,10 @@ public struct TodoProbe {
     private actor Collector {
         private var lines: [String] = []
         func append(_ s: String) { lines.append(s) }
+        private var inbound = 0
         func mark(_ s: String) { lines.append("--- sent: \(s)") }
+        func countInbound() { inbound += 1 }
         func all() -> [String] { lines }
+        func inboundCount() -> Int { inbound }
     }
 }

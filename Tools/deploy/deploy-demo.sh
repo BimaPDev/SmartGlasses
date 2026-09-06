@@ -29,6 +29,10 @@ DEV_ID=$(xcrun devicectl list devices 2>/dev/null | grep -F "$DEVICE_NAME" \
 [ -z "$DEV_ID" ] && { echo "device '$DEVICE_NAME' not found — is it plugged in and unlocked?"; exit 1; }
 echo "device $DEVICE_NAME -> $DEV_ID"
 
+# NOTE two different id spaces: devicectl uses a UUID (105620E7-...), xcodebuild uses the
+# ECID form (00008120-...). They are not interchangeable, so build by NAME and install by
+# the devicectl UUID. If xcodebuild says "Timed out waiting for all destinations", the
+# phone is almost certainly LOCKED — unlock it and rerun.
 echo "building (team $TEAM)…"
 xcodebuild -project "$PROJ/MyvuDemo.xcodeproj" -scheme MyvuDemo -configuration Debug \
   -destination "platform=iOS,name=$DEVICE_NAME" \
