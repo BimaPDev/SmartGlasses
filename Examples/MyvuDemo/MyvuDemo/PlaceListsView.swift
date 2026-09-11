@@ -16,6 +16,7 @@ struct PlaceListsView: View {
     var body: some View {
         List {
             statusSection
+            tryItSection
 
             Section("Places") {
                 ForEach(store.lists) { list in
@@ -73,6 +74,47 @@ struct PlaceListsView: View {
             }
             monitor.refresh()
         }
+    }
+
+
+    /// One-tap test of both surfaces, so the push path can be checked without first
+    /// building a place and walking into it.
+    private var tryItSection: some View {
+        Section("Try it now") {
+            Text("Sends a sample list straight to the glasses. Compare the two "
+               + "surfaces before deciding which a real place should use.")
+                .font(.caption).foregroundStyle(.secondary)
+
+            Button {
+                store.note(PlaceListPush.send(sample(.card), to: model.glasses,
+                                              ready: model.isReady))
+            } label: {
+                Label("Send as notification card", systemImage: "rectangle.badge.plus")
+            }
+            .disabled(!model.isReady)
+
+            Button {
+                store.note(PlaceListPush.send(sample(.teleprompter), to: model.glasses,
+                                              ready: model.isReady))
+            } label: {
+                Label("Send as teleprompter", systemImage: "list.bullet.rectangle")
+            }
+            .disabled(!model.isReady)
+
+            Text("The teleprompter needs the HFP + RFCOMM audio link. Without it the "
+               + "glasses show \"Please Connect to the mobile first\" — so a card is "
+               + "always sent alongside it as a floor.")
+                .font(.caption2).foregroundStyle(.secondary)
+        }
+    }
+
+    private func sample(_ surface: PlaceList.Surface) -> PlaceList {
+        var l = PlaceList()
+        l.name = "Gym"
+        l.surface = surface
+        l.items = ["Squats 5x5", "Bench press 3x8", "Deadlift 1x5",
+                   "Pull-ups 3x10", "Stretch 10 min"]
+        return l
     }
 
     private var statusSection: some View {
