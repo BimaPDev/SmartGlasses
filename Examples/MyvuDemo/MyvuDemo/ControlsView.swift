@@ -39,6 +39,16 @@ struct ControlsView: View {
             Form {
                 Section {
                     NavigationLink {
+                        HudView()
+                    } label: {
+                        Label("HUD", systemImage: "rectangle.portrait.on.rectangle.portrait")
+                    }
+                    Text("A full-panel readout on the teleprompter surface — clock, "
+                       + "date and your own lines, with no tiles and no rings. Phone "
+                       + "side only; nothing is flashed.")
+                        .font(.caption).foregroundStyle(.secondary)
+
+                    NavigationLink {
                         PlaceListsView()
                     } label: {
                         Label("Place lists", systemImage: "mappin.and.ellipse")
