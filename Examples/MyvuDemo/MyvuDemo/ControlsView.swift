@@ -690,21 +690,29 @@ private struct FirmwareUpdateSection: View {
         } header: {
             Text("Firmware update")
         } footer: {
-            Text("About still says MYVU because that name is stored on the glasses, "
-                + "not in the ROM you just flashed. Rename writes it with "
-                + "set_device_name (same command as the official app). Splash "
-                + "MYVU is the Latin font drawing the patched ASCII — reboot if "
-                + "you have not seen BIMA there yet. Flash is a full BLE rewrite.")
+            Text("Big clock: the standby clock goes from 14px to 48px — 10% of panel "
+                + "height — with tabular digits so the time does not shift as it "
+                + "changes. Built against 1.0.11.53, which is what these glasses run, "
+                + "and declared as 1.0.11.99 so the OTA is seen as newer.\n\n"
+                + "The patch changes no instructions: four bytes in .text, all of them "
+                + "one font-name literal. That is the difference from the v5/v6 images "
+                + "that bootlooped, which hooked code that then ran before the display "
+                + "was up. 28 gates pass (verify-big-clock.mjs).\n\n"
+                + "Flash is a full BLE rewrite and takes a while. Keep the glasses on "
+                + "the charger and the phone nearby.")
         }
         .confirmationDialog("Flash \(BundledOtaPack.label)?",
                             isPresented: $confirmOta, titleVisibility: .visible) {
-            Button("Flash (downgrade)", role: .destructive) {
+            Button("Flash", role: .destructive) {
                 model.startFirmwareUpdate()
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("The glasses will reboot if the apply succeeds. USB-C is charge-only "
-                + "on this model, so the file has to go over BLE.")
+            Text("The glasses reboot if the apply succeeds. USB-C is charge-only on "
+                + "this model, so the file goes over BLE and there is no cable "
+                + "recovery if it does not come back — the spare pair is still "
+                + "bricked with no UART recovery. This patch adds no code, but that "
+                + "is a reasoned argument, not a guarantee.")
         }
     }
 }
