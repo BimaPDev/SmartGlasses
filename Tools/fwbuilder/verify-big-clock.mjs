@@ -168,6 +168,33 @@ ok('G18 line_height >= digit height', lh >= digitH, `line_height=${lh} base_line
 ok('G18b font object still points at the patched face', u32(B, FONTOBJ + 16) === FACE + BASE,
    `dsc -> 0x${(u32(B, FONTOBJ + 16) - BASE).toString(16)}`);
 
+// ---------- registration order: the timing risk that bricked v5/v6 ----------
+// v5/v6 bootlooped because patched CODE ran before the display was up. This patch adds
+// no code, but it does make the clock ask for a different font NAME — so that name must
+// be registered no later than the one it replaces. Both are registered by the same
+// function at 0x622810; EN_32 is registered EARLIER in it than DUMMY_20, so if
+// DUMMY_20 resolves when the clock is built, EN_32 necessarily does too.
+const nameLdrAt = (d, nameOff) => {     // the LDR that loads this name inside the registrar
+  for (let a = 0x622810; a < 0x622890; a += 2) {
+    const w = d.readUInt16LE(a);
+    if ((w & 0xF800) !== 0x4800) continue;
+    const pool = ((((a + 0x2C010000) + 4) & ~3) + (w & 0xFF) * 4) - 0x2C010000;
+    if (u32(d, pool) === nameOff + BASE) return a;
+  }
+  return -1;
+};
+const en32At = nameLdrAt(B, NAME_EN32), dummyAt = nameLdrAt(B, NAME_DUMMY20);
+ok('G19 donor font registers no later than the one it replaces',
+   en32At > 0 && dummyAt > 0 && en32At < dummyAt,
+   `EN_32 @0x${en32At.toString(16)} before DUMMY_20 @0x${dummyAt.toString(16)} ` +
+   `in the same registrar — availability is guaranteed, not assumed`);
+ok('G19b patch adds NO code: nothing changed in the XIP .text region except one literal',
+   (() => { let n = 0;
+     for (let i = 0x469954; i < A.length; i++) if (A[i] !== B[i]) n++;
+     return n === 4; })(),
+   'only the 4-byte font-name literal at 0x61b2c4 — no instructions altered, ' +
+   'which is the class of change that bootlooped v5/v6');
+
 // ---------- NEGATIVE CONTROLS: these must FAIL on the stock image ----------
 const stockRl = u16(A, CMAP + 4);
 ok('N1  NEG: stock cmap does NOT cover ":"', !(u32(A, CMAP) <= 0x3A && u32(A, CMAP) + stockRl > 0x3A),
