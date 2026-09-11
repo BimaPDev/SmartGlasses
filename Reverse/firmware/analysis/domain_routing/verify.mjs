@@ -47,11 +47,18 @@ ok('G4c envelope has payload.data.intent', parsed?.payload?.data?.intent === 'In
 ok('G4d envelope has payload.text', typeof parsed?.payload?.text === 'string', `= ${JSON.stringify(parsed?.payload?.text)}`);
 
 // G5 — page registry, and the fact Todo is NOT in it
-const PAGES = ['Pages/Launcher','Pages/Assistant','Pages/Translation','Pages/Navigation','Pages/Phone',
-               'Pages/AirMusic','Pages/Settings','Pages/SmartLife','Pages/StarryNetApp','Pages/Ring',
-               'Pages/Ota','Pages/MMIPage'];
-const missing = PAGES.filter(p => !has(p));
-ok('G5  page registry has 12 known pages', missing.length === 0, missing.length ? `missing ${missing}` : PAGES.length + ' present');
+// Counted inside the pool, not image-wide: the image holds 19 distinct Pages/*
+// strings, but only these 13 are registry entries. An earlier draft of the doc said
+// 12 — it missed Pages/Prompt — so this gate asserts the exact SET, and fails on a
+// miscount in either direction rather than merely on a missing name.
+const PAGES = ['Pages/AirMusic','Pages/Assistant','Pages/Launcher','Pages/MMIPage',
+               'Pages/Navigation','Pages/Ota','Pages/Phone','Pages/Prompt','Pages/Ring',
+               'Pages/Settings','Pages/SmartLife','Pages/StarryNetApp','Pages/Translation'];
+const pool = d.subarray(0x176b90, 0x176ce0).toString('latin1');
+const found = [...new Set(pool.match(/Pages\/[A-Za-z0-9_]+/g) || [])].sort();
+ok('G5  registry pool holds exactly 13 pages',
+   found.length === 13 && found.join(',') === PAGES.join(','),
+   `${found.length} found: ${found.join(' ')}`);
 ok('G5b registry block @0x176ba0', str(0x176ba0) === 'Pages/StarryNetApp' && str(0x176bb4) === 'Pages/Launcher',
    'contiguous Pages/* + delegate-name pool');
 // NEGATIVE CONTROL: Todo is a domain, never a page. If this ever fails, a Todo app was added.

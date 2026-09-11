@@ -66,20 +66,29 @@ from the binary; the outcome is untested. Run it with a known-good control.
 
 ## 4. App registration — `0x176b94`
 
-Twelve `Pages/X` → delegate-class pairs, contiguous (G5, G5b):
+**Thirteen** `Pages/X` → delegate-class pairs, contiguous in `0x176b90`–`0x176ce0`
+(G5, G5b):
 
 ```
 Pages/Launcher→Launcher   Pages/Translation→Translation   Pages/Phone→PhonePage
 Pages/AirMusic→AirMusic   Pages/Assistant→AssistantAppDelegate
 Pages/SmartLife→SmartLife Pages/Settings   Pages/Navigation  Pages/StarryNetApp
-Pages/Ring→Ring           Pages/Ota→Ota    Pages/MMIPage
+Pages/Ring→Ring           Pages/Ota→Ota    Pages/MMIPage     Pages/Prompt
 ```
+
+> Corrected 2026-09-11: an earlier draft said *twelve* and omitted `Pages/Prompt`.
+> The original G5 only checked that named pages were present, so it could not catch
+> the omission — a gate that cannot fail proves nothing. G5 now asserts the exact
+> set and count within the pool. Count inside the pool, not image-wide: the image
+> holds 19 distinct `Pages/*` strings; `Pages/SimuTranslation`, `Pages/Transcribe`,
+> `Pages/StartupGuide`, `Pages/Speech`, `Pages/MMI` and `Pages/Setting` are not
+> registry entries.
 
 **There is no `Pages/Todo`** (G5c, a negative control that will fail the day one is
 added). Todo is an *Assistant domain* — `domain/todo/TodoDomainView.cpp`, intents
 `TODO_CREATE_LIST` / `TODO_QUERTY_LIST` / `TODO_UPDATE_SELECT` / `TODO_DELETE_LIST`,
 icons `assistant_todo_domian_done` / `_undone` (vendor's typo). Different layer from
-Translate. A genuinely new app means a 13th registry entry **plus a delegate class**
+Translate. A genuinely new app means a 14th registry entry **plus a delegate class**
 — i.e. new C++ against a fully stripped binary (G10: no `.symtab`, no `_ZN`, no
 `__cxa_`; built `-fno-rtti -fno-exceptions`).
 
