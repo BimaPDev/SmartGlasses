@@ -59,7 +59,6 @@ public struct TodoProbe {
 
     /// Codes from `AiProtocol` / `PhoneContacts`. 103 is the business-data carrier
     /// already proven to work for the Phone page.
-    static let codeVui = 102
     static let codeBusinessData = 103
     static let codeAsrTrans = 101
 
@@ -80,18 +79,9 @@ public struct TodoProbe {
       + "\"dataType\":\"\(dataType)\"}}"
     }
 
-    /// VUI, kept only as the control.
-    static func vui(namespace: String, query: String, sessionId: String) -> String {
-        let header = "{\"name\":\"default\",\"namespace\":\"\(namespace)\","
-                   + "\"specialCmdInChatGptScene\":false}"
-        let inner  = "{\"speech\":\"\",\"screen\":\"\",\"id\":\"\"}"
-        let pl     = "{\"isSoundOpened\":true,\"query\":\"\(query)\","
-                   + "\"isNextRecorded\":false,\"utterance\":\(inner)}"
-        return "{\"code\":\(codeVui),\"payload\":{\"header\":\(header),"
-             + "\"metadata\":{\"msgId\":\"\"},\"payload\":\(pl),\"source\":0,"
-             + "\"utterance\":{\"id\":\"\",\"screen\":\"\",\"speech\":\"\"},"
-             + "\"sessionId\":\"\(sessionId)\"}}"
-    }
+    // Deliberately absent: a code:102 builder. Sending one without the code:2
+    // preamble crashes the lvgl_ui thread. If a VUI message is ever needed here,
+    // drive it through AiSession, which does the configuration first.
 
     // MARK: - Candidates
 
@@ -101,15 +91,17 @@ public struct TodoProbe {
         let env = domainEnvelope(namespace: "todo", intent: "TODO_QUERTY_LIST",
                                  text: "open my todo list")
 
-        // 1. CONTROL. This is what the SDK already uses successfully to open the LLM
-        //    scene. If THIS draws no reaction, the link or session is wrong and
-        //    nothing below means anything. Runs 1-4 had no control, which is why
-        //    four silent runs taught us nothing.
-        out.append(Attempt(
-            label: "CONTROL — vui code:102 namespace=llm (known-good)",
-            json: vui(namespace: "llm", query: "hello", sessionId: sid),
-            target: Pkg.assistant,
-            rationale: "AiProtocol.chatQuery uses exactly this and it works — proves the channel is live"))
+        // NO code:102 CONTROL. Run 5 used one and it CRASHED THE GLASSES: a BusFault
+        // in the lvgl_ui thread ~2s after the send (dump 09-11 12:38:14, PC
+        // 0x2C67F10C). PROTOCOL.md line 313 says why, and said so before the probe
+        // was written: "code:2 must enable isChatGptCardDisplayEnable and
+        // isContinuousDialogueEnable or the scene is never configured". AiSession
+        // sends assistantConfig BEFORE chatQuery; the probe sent code:102 raw, so
+        // the LLM card scene was opened unconfigured.
+        //
+        // Liveness is now proven by `ancsState()` in run(), which returns an actual
+        // reply, instead of by a command that opens a scene. A control must be safe
+        // and must round-trip; that one was neither.
 
         // 2. businessData carrying the firmware's own envelope under `nluResult`.
         //    The log reads "NLU_RESULT->data", so NLU_RESULT is the message and its
@@ -180,7 +172,22 @@ public struct TodoProbe {
 
     // MARK: - Runner
 
-    /// Sends each candidate with a pause between, while logging every inbound message.
+    /// Confirms the glasses are alive AND answering, by a query with a known reply.
+    ///
+    /// This is the control. It has to be something that round-trips, because the
+    /// question "did nothing come back because the domain ignored us, or because the
+    /// device is dead?" is precisely what four silent runs could not answer — and
+    /// run 5 answered wrongly, having crashed the device with its own control.
+    static func alive(_ glasses: MyvuGlasses) async -> Bool {
+        (try? await glasses.ancsState(timeout: 4)) != nil
+    }
+
+    /// Sends each candidate with a pause between, checking liveness around every one.
+    ///
+    /// **Stops at the first candidate that kills the device.** Run 5 crashed on its
+    /// control and then fired seven more payloads into a rebooting device, producing
+    /// eight identical "(nothing)" lines from a single cause — which reads like eight
+    /// independent negative results and is worth nothing.
     @discardableResult
     public static func run(on glasses: MyvuGlasses,
                            gapSeconds: Double = 3,
@@ -197,10 +204,21 @@ public struct TodoProbe {
         defer { watcher.cancel() }
 
         let all = candidates()
-        onLine("TodoProbe run 5 — \(all.count) candidates on the code:103 business-data")
-        onLine("carrier. Runs 1-4 used code:102, which DomainRuntime does not listen to.")
-        onLine("Field names are read from the firmware; how they compose is the guess.")
-        onLine("Watch the <- lines. Candidate 1 is a known-good control, 8 is a negative.")
+        onLine("TodoProbe run 6 — \(all.count) candidates on the code:103 business-data")
+        onLine("carrier. No code:102 anywhere: run 5's control was a code:102 and it")
+        onLine("CRASHED the glasses (BusFault in lvgl_ui, 2s in), which is why all eight")
+        onLine("of its candidates read '(nothing)' — one cause, not eight results.")
+        onLine("")
+
+        onLine("[control] checking the glasses answer at all…")
+        guard await alive(glasses) else {
+            onLine("     ** NO REPLY — stopping before sending anything. **")
+            onLine("     The glasses are not answering queries. Reconnect (and power-cycle")
+            onLine("     them if run 5 left them wedged), then run this again. Nothing")
+            onLine("     below would have been interpretable.")
+            return await box.all()
+        }
+        onLine("     ok — glasses answered. Proceeding.")
 
         for (i, c) in all.enumerated() {
             onLine("")
@@ -209,30 +227,33 @@ public struct TodoProbe {
             onLine("     -> \(c.target)")
             onLine("     \(c.json)")
 
-            // The assistant is both source and target; sourcing from the launcher is
-            // one of the things that may have made run 3 a no-op.
             let before = await box.count()
             glasses.client.sendRaw(c.json, targetPkg: c.target, sourcePkg: Pkg.assistant)
             try? await Task.sleep(nanoseconds: UInt64(gapSeconds * 1_000_000_000))
             let after = await box.count()
 
-            // Attribute per candidate, so one reaction in eight is visible rather
-            // than drowned in a single end-of-run total.
             onLine(after > before
                    ? "     ** \(after - before) message(s) came back after this one **"
-                   : "     (nothing)")
+                   : "     (no reply)")
+
+            // Liveness after every send, so a crash is attributed to the payload that
+            // caused it rather than smeared across the rest of the run.
+            if await alive(glasses) {
+                onLine("     (still alive)")
+            } else {
+                onLine("     ** THE GLASSES STOPPED ANSWERING AFTER THIS PAYLOAD. **")
+                onLine("     Stopping. Treat this candidate as the suspect and pull the")
+                onLine("     crash dump before running anything else.")
+                break
+            }
         }
 
         onLine("")
         let seen = await box.all()
-        // Count only what the glasses actually sent. An earlier version counted its
-        // own "--- sent:" markers and reported "8 inbound captured" when the true
-        // figure was zero.
         onLine("TodoProbe done. \(seen.count) inbound message(s) captured.")
         if seen.isEmpty {
-            onLine("NOTHING came back — INCLUDING THE CONTROL. That means the link or "
-                 + "session is wrong, and says nothing about any domain. Fix the "
-                 + "control before reading anything into candidates 2-7.")
+            onLine("No domain reaction, but the control passed and the device stayed up —")
+            onLine("so this IS a real negative for these seven shapes, unlike run 5.")
         }
         return seen
     }

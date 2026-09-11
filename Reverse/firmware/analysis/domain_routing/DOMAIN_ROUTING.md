@@ -155,3 +155,53 @@ stripped-binary facts.
 
 **Not established:** that any specific message opens `TodoDomainView`. That is the
 next experiment, and it needs a control that is known to work.
+
+---
+
+## 8. Run 5 crashed the glasses — and the fault was the control
+
+Probe run 5 (2026-09-11 12:38) opened with a `code:102` VUI message as its "known-good
+control". Two seconds later the device took a **BusFault**:
+
+```
+Dump Time: 09-11 12:38:14.052          probe started 12:38:12
+### EXCEPTION ###
+PC =2C67F10C  ExceptionNumber=D'-11 (BusFault)  EXC_RETURN=FFFFFFED
+LR =2C67EDC9  R1 =3D662679  R3 =3D662874
+Thread 24  name=lvgl_ui  prio=40  state=RUNNING
+```
+
+All five recorded addresses decode into `.text` under `VA = file + 0x2C010000`:
+
+| | VA | file |
+|---|---|---|
+| PC | `0x2C67F10C` | `0x66F10C` |
+| LR | `0x2C67EDC9` | `0x66EDC8` |
+| bt | `0x2C6C339E`, `0x2C67F3F8`, `0x2C67F484` | `0x6B339E`, `0x66F3F8`, `0x66F484` |
+
+**The cause was already documented in this repo before the probe was written.**
+`PROTOCOL.md` line 313:
+
+> `code:2` must enable `isChatGptCardDisplayEnable` and `isContinuousDialogueEnable`
+> or the scene is never configured and a second answer crashes it.
+
+`AiSession` sends `assistantConfig` (code:2) *before* `chatQuery`. The probe sent
+`code:102` raw, so the LLM card scene was opened unconfigured and `lvgl_ui` faulted.
+
+### Two separate design faults
+
+1. **The control was unsafe.** A control must round-trip and must not change device
+   state. A scene-opening command does the opposite of both.
+2. **The run did not stop.** Seven further payloads were fired into a rebooting
+   device, yielding eight identical `(nothing)` lines from **one** cause. That reads
+   like eight independent negative results and is worth nothing — the same
+   absence-of-evidence trap as runs 1–4, one layer up.
+
+### Run 6
+
+- No `code:102` anywhere; the builder is deleted so nothing can reach for it.
+- Control is `ancsState()`, which returns an actual reply — safe, and round-trips.
+- Liveness is re-checked **after every candidate**; the run aborts at the first
+  payload the device does not survive, naming it as the suspect.
+
+> A negative result is only worth something if the device was alive to produce it.
