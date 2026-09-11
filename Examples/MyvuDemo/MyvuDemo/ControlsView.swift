@@ -11,6 +11,14 @@ struct ControlsView: View {
     @State private var scriptTitle = "Script"
     @State private var notificationTitle = "Reminder"
     @State private var notificationBody = "Stand up and stretch."
+    @State private var msgSender = "Alex"
+    @State private var msgBody = "Running ten minutes late — order without me."
+    @State private var msgGroup = ""
+    @State private var msgApp = Notifications.Pkg.messages
+    @State private var msgCanReply = false
+    @State private var ancsNote = ""
+    @AppStorage("claudeBridgeHost") private var bridgeHost = ""
+    @State private var bridgePrompt = ""
     @State private var brightness = 5.0
     @State private var volume = 8.0
     @State private var demoMode = false
@@ -29,6 +37,16 @@ struct ControlsView: View {
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    NavigationLink {
+                        PlaceListsView()
+                    } label: {
+                        Label("Place lists", systemImage: "mappin.and.ellipse")
+                    }
+                    Text("Arrive somewhere, and that place's list appears on the lens.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+
                 Section {
                     TextField("Spotify Client ID", text: Binding(
                         get: { model.spotifyAuth.clientId },
@@ -245,6 +263,132 @@ struct ControlsView: View {
                 }
                 .requiresSession(model.isReady)
 
+                Section {
+                    Picker("From", selection: $msgApp) {
+                        ForEach(Self.messagingApps, id: \.pkg) { app in
+                            Text(app.label).tag(app.pkg)
+                        }
+                    }
+                    TextField("Sender", text: $msgSender)
+                    TextField("Message", text: $msgBody, axis: .vertical)
+                        .lineLimit(1 ... 4)
+                    TextField("Group name (blank for a 1:1)", text: $msgGroup)
+                    Toggle("Offer a reply", isOn: $msgCanReply)
+                    Button("Send as a text message") {
+                        let group = msgGroup.trimmingCharacters(in: .whitespaces)
+                        model.glasses.showTextMessage(
+                            from: msgSender,
+                            body: msgBody,
+                            group: group.isEmpty ? nil : group,
+                            packageName: msgApp,
+                            appName: Self.appName(for: msgApp),
+                            canReply: msgCanReply)
+                    }
+                } header: {
+                    Text("Test a text message")
+                } footer: {
+                    Text("Renders what an incoming text looks like on the lens, on "
+                        + "demand — the card the glasses draw for a real one. The "
+                        + "app you pick is what selects the icon: the firmware "
+                        + "keeps a bundle-id table, so com.apple.MobileSMS gets "
+                        + "the Messages glyph where this app's own id gets the "
+                        + "generic one.\n\n"
+                        + "This does not read your Messages. Real texts reach the "
+                        + "lens over ANCS, straight from iOS — turn that on under "
+                        + "Settings > Smart Reminder.")
+                }
+                .requiresSession(model.isReady)
+
+                Section {
+                    TextField("host:port from the server banner", text: $bridgeHost)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .font(.system(.footnote, design: .monospaced))
+                    if model.claudeBridge.connected {
+                        Label("Bridge connected", systemImage: "checkmark.circle.fill")
+                            .foregroundStyle(.green)
+                        TextField("Ask Claude…", text: $bridgePrompt, axis: .vertical)
+                            .lineLimit(1 ... 4)
+                        Button("Send to Claude") {
+                            model.claudeBridge.send(prompt: bridgePrompt)
+                            bridgePrompt = ""
+                        }
+                        .disabled(bridgePrompt.trimmingCharacters(in: .whitespaces).isEmpty)
+                        Button("Disconnect", role: .destructive) {
+                            model.claudeBridge.disconnect()
+                        }
+                    } else {
+                        Button("Connect to the laptop bridge") {
+                            model.claudeBridge.connect(host: bridgeHost)
+                        }
+                        .disabled(bridgeHost.trimmingCharacters(in: .whitespaces).isEmpty)
+                    }
+                    if !model.claudeBridge.statusMessage.isEmpty {
+                        Text(model.claudeBridge.statusMessage)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    if !model.claudeBridge.lastFrame.isEmpty {
+                        Text(model.claudeBridge.lastFrame)
+                            .font(.system(.caption2, design: .monospaced))
+                            .foregroundStyle(.secondary)
+                    }
+                } header: {
+                    Text("Claude Code bridge")
+                } footer: {
+                    Text("Runs the real claude CLI on your laptop and streams it "
+                        + "to the lens. On the laptop: "
+                        + "cd Tools/bridge && npm i ws && node claude-bridge.mjs "
+                        + "— it prints the host:port to paste above. Paste exactly "
+                        + "what it prints; on the phone's own hotspot the laptop "
+                        + "lands on 172.20.10.x, not a 192.168 address.\n\n"
+                        + "iOS will ask once for Local Network permission. Say yes "
+                        + "— without it the connection fails silently.\n\n"
+                        + "The lens is one card repainted in place, not a feed: "
+                        + "about five flowed lines showing the tail of the run. "
+                        + "The laptop coalesces to 2 fps, because every repaint "
+                        + "is a BLE write sharing the link with everything else.")
+                }
+                .requiresSession(model.isReady)
+
+                Section {
+                    Button("Ask whether ANCS is connected") {
+                        ancsNote = "asking…"
+                        Task {
+                            do {
+                                let state = try await model.glasses.ancsState()
+                                ancsNote = state == Notifications.ancsStateConnected
+                                    ? "ANCS is CONNECTED — the glasses are subscribed "
+                                        + "to this phone's notifications"
+                                    : "ANCS state: \(state)"
+                            } catch {
+                                ancsNote = "no answer: \(error.localizedDescription)"
+                            }
+                        }
+                    }
+                    Button("Connect ANCS") {
+                        ancsNote = "sent CONNECT_ANCS_SERVICE — watch the Log tab"
+                        model.glasses.connectAncs()
+                    }
+                    Button("Disconnect ANCS", role: .destructive) {
+                        ancsNote = "sent DISCONNECT_ANCS_SERVICE — watch the Log tab"
+                        model.glasses.disconnectAncs()
+                    }
+                    if !ancsNote.isEmpty {
+                        Text(ancsNote)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                } header: {
+                    Text("ANCS link")
+                } footer: {
+                    Text("Smart Reminder sets the filter; this drives the link the "
+                        + "filter applies to. Ask first if real texts never arrive "
+                        + "while Bluetooth looks fine — a CONNECTED answer means "
+                        + "the problem is the filter or a Focus, not the link.")
+                }
+                .requiresSession(model.isReady)
+
                 Section("Display and sound") {
                     VStack(alignment: .leading) {
                         Text("Brightness \(Int(brightness))")
@@ -434,6 +578,23 @@ struct ControlsView: View {
             }
             await MainActor.run { iosBtRetrying = false }
         }
+    }
+
+    /// Bundle ids the firmware's icon table knows, so the card comes up with the
+    /// right glyph. Read out of 1.0.12.83 at file `0x18f0bc`-`0x18f274`; an id
+    /// not in that table falls through to the generic icon.
+    static let messagingApps: [(pkg: String, label: String)] = [
+        (Notifications.Pkg.messages, "Messages"),
+        (Notifications.Pkg.whatsapp, "WhatsApp"),
+        (Notifications.Pkg.telegram, "Telegram"),
+        (Notifications.Pkg.messenger, "Messenger"),
+        (Notifications.Pkg.instagram, "Instagram"),
+        (Notifications.Pkg.line, "LINE"),
+        (Notifications.Pkg.wechat, "WeChat"),
+    ]
+
+    static func appName(for pkg: String) -> String {
+        messagingApps.first { $0.pkg == pkg }?.label ?? "Messages"
     }
 
     private func runQuery(_ subAction: String) {
