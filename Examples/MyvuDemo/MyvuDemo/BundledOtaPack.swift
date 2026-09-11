@@ -46,7 +46,7 @@ enum BundledOtaPack {
         label: "No rings",
         detail: "Stock clock, but the circular ring around each standby tile is gone. "
               + "ONE byte: border_opa 92 -> 0 at 0x61b7f8. Opacity rather than width, "
-              + "so no geometry moves. 14 gates pass.",
+              + "so no geometry moves. 14 gates pass, and CONFIRMED ON HARDWARE.",
         isStock: false)
 
     /// Stock first: it is the one to reach for when something is wrong.

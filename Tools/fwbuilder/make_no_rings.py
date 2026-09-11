@@ -36,6 +36,13 @@ BLAST RADIUS — measured, not assumed
 
 Nothing outside the standby row reaches it, so no other UI element changes.
 
+CONFIRMED ON HARDWARE 2026-09-11: flashed to a real XGA010C on 1.0.11.53. The rings
+are gone, the tiles and their contents are unmoved, and the device booted normally.
+This closes the one link static analysis could not prove — that THIS border was the
+visible circle. Everything else was established by disassembly; the identification was
+circumstantial (right layer, right shape, 2px, faint, applied uniformly before type
+dispatch) until the flash settled it.
+
 RISK CLASS: same as the big-clock font patch, which flashed and booted cleanly. No
 instruction is added or removed; one immediate operand changes value. The instruction
 stream keeps its exact length and layout, so nothing downstream shifts.
