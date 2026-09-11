@@ -49,6 +49,34 @@ struct SettingsView: View {
                         + "the glasses connect, because the firmware is not known "
                         + "to keep them across a power cycle.")
                 }
+
+                Section {
+                    Text("Does a shorter widget row give the clock more width? The "
+                       + "48px clock needs ~180px and its circular slot is ~74px, so "
+                       + "it clips to \"3:0\". If the flex row widens a lone widget, "
+                       + "the big font fits with no firmware change.")
+                        .font(.caption).foregroundStyle(.secondary)
+
+                    Button("Time only (no assistant ball)") {
+                        model.settings.pushRawStandbyWidgets(["time"])
+                    }
+                    .disabled(!model.isReady)
+                    Button("Time + assistant ball") {
+                        model.settings.pushRawStandbyWidgets(["time", "aiBall"])
+                    }
+                    .disabled(!model.isReady)
+                    Button("Restore the usual four") {
+                        model.settings.pushRawStandbyWidgets(
+                            ["time", "weather_1x1", "weekday", "aiBall"])
+                    }
+                    .disabled(!model.isReady)
+                } header: {
+                    Text("Experiment — clock room")
+                } footer: {
+                    Text("Sent verbatim, so these bypass Standby Components and do "
+                       + "not change what its toggles show. Nothing is flashed; any "
+                       + "preset is undone by tapping another.")
+                }
             }
             .navigationTitle("Settings")
         }
@@ -255,30 +283,6 @@ private struct StandbyComponentsScreen: View {
             } footer: {
                 Text("The clock and the assistant ball are always shown and always "
                     + "sit at either end of the row, so they are not listed here.")
-            }
-
-            Section {
-                Text("Does a shorter row give the clock more width? The 48px clock "
-                   + "needs ~180px and its circular slot is ~74px, so it currently "
-                   + "clips to \"3:0\". If the flex row widens a lone widget, the big "
-                   + "font fits with no firmware change.")
-                    .font(.caption).foregroundStyle(.secondary)
-
-                Button("Time only (no assistant ball)") {
-                    model.settings.pushRawStandbyWidgets(["time"])
-                }
-                Button("Time + assistant ball") {
-                    model.settings.pushRawStandbyWidgets(["time", "aiBall"])
-                }
-                Button("Restore the usual four") {
-                    model.settings.pushRawStandbyWidgets(
-                        ["time", "weather_1x1", "weekday", "aiBall"])
-                }
-                Text("Sent verbatim, so these bypass the toggles above and do not "
-                   + "change what they show. Reversible by tapping another one.")
-                    .font(.caption2).foregroundStyle(.secondary)
-            } header: {
-                Text("Experiment — clock room")
             }
 
             Section {
