@@ -47,6 +47,15 @@ Superseded by: `analysis/images_v2/`, `analysis/fonts_v2/`, `extract_lvgl_fonts_
 
 - **OTA has no signature gate** (MD5 + A/B only) — modified images flash and boot; v4 is proven.
   The brick risk is **boot-time execution order** (LVGL objects created during splash), not signing.
+- **Assistant domains are reached via `NLU_RESULT` / `CONNECT_DATA`, not `code:102`.**
+  Four probe runs sent VUI `code:102` and got silence; the messages never reached
+  `DomainRuntime`'s matcher, so the silence said nothing about the domain. Namespace
+  table at `0x192144` (11.53): freechat, INNER_STKS, application, VSP_ERROR, alarm,
+  todo, systemsetting. A worked envelope sits at `0x192664`.
+- **`STKS` is voice shortcuts, not stocks.** There is no stock feature in the firmware
+  (negative control: zero hits for ticker/NASDAQ/portfolio/equity/NYSE).
+- **Todo is a domain, not an app.** The page registry at `0x176b94` has 12 `Pages/X`
+  entries and no `Pages/Todo`; a new app needs a 13th entry **plus** a delegate class.
 - **Wake word:** the model is **not** in the firmware. It is `kws_model.nn`
   (`STAR_NN V0.1.0` / DFSMN / float32 / 1.4 MB) in the Android app. Branding differs per
   firmware version (7.83 Xiaoxi → 11.53 Hey Aicy → 12.83 Xiaoxi) — **confirm which build is
@@ -63,6 +72,7 @@ Superseded by: `analysis/images_v2/`, `analysis/fonts_v2/`, `extract_lvgl_fonts_
 | `Reverse/firmware/analysis/ADDRESS_AUDIT.md` | prior audit — read **with** the corrections above |
 | `Reverse/firmware/analysis/BOOTLOOP_EXPLAINED.md`, `BATT_CIRCLE_POSTMORTEM.md` | why v5/v6 bricked |
 | `Reverse/firmware/analysis/full_rev/` | per-subsystem leaves + `verify*.mjs` |
+| `Reverse/firmware/analysis/domain_routing/` | domain routing, app registry, phone→glasses text surfaces (27 gates) |
 | `PROTOCOL.md` | BLE/StarryNet protocol (wake = bare `code:7`, line 327) |
 | `Reverse/extracted/base/assets/fsp/res/` | the real NN models (KWS/VAD/CWR/NS) |
 | `.unlazy/` | gate ledgers per work scope (see `.agents/skills/unlazy/SKILL.md`) |
