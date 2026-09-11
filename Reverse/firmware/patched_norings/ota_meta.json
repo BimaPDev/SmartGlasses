@@ -1,0 +1,20 @@
+{
+  "zip": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/patched_norings/ota_star-air_1.0.11.98_NORINGS.zip",
+  "digest": "ff0ebdba16568d4224a3416f294656f8",
+  "fileSize": 4523109,
+  "latestVersion": "1.0.11.98",
+  "baseVersion": "1.0.11.53.20241126_Air_intl_FR",
+  "patch": "border_opa 92->0 at 0x61b7f8 (1 byte); stock clock otherwise",
+  "bins": {
+    "best1600_watch_bth.bin": {
+      "size": 1340040,
+      "md5": "15b27b7aa74e5cea100ccaa4b9c2ac4c",
+      "changed": false
+    },
+    "platform_tester.bin": {
+      "size": 7042632,
+      "md5": "9d2265fd6ae011cf10d0d42ea938ccf7",
+      "changed": true
+    }
+  }
+}

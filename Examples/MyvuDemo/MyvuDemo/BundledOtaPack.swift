@@ -40,8 +40,17 @@ enum BundledOtaPack {
               + "Flash this to undo any patch and get a readable clock back.",
         isStock: true)
 
+    static let noRings = OtaPack(
+        id: "norings",
+        resource: "ota_star-air_1.0.11.98_NORINGS",
+        label: "No rings",
+        detail: "Stock clock, but the circular ring around each standby tile is gone. "
+              + "ONE byte: border_opa 92 -> 0 at 0x61b7f8. Opacity rather than width, "
+              + "so no geometry moves. 14 gates pass.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, bigClock]
+    static let all: [OtaPack] = [stock, noRings, bigClock]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
