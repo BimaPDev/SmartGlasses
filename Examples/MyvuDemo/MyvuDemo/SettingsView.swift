@@ -258,6 +258,30 @@ private struct StandbyComponentsScreen: View {
             }
 
             Section {
+                Text("Does a shorter row give the clock more width? The 48px clock "
+                   + "needs ~180px and its circular slot is ~74px, so it currently "
+                   + "clips to \"3:0\". If the flex row widens a lone widget, the big "
+                   + "font fits with no firmware change.")
+                    .font(.caption).foregroundStyle(.secondary)
+
+                Button("Time only (no assistant ball)") {
+                    model.settings.pushRawStandbyWidgets(["time"])
+                }
+                Button("Time + assistant ball") {
+                    model.settings.pushRawStandbyWidgets(["time", "aiBall"])
+                }
+                Button("Restore the usual four") {
+                    model.settings.pushRawStandbyWidgets(
+                        ["time", "weather_1x1", "weekday", "aiBall"])
+                }
+                Text("Sent verbatim, so these bypass the toggles above and do not "
+                   + "change what they show. Reversible by tapping another one.")
+                    .font(.caption2).foregroundStyle(.secondary)
+            } header: {
+                Text("Experiment — clock room")
+            }
+
+            Section {
                 Picker("Display position", selection: Binding(
                     get: { model.settings.standbyPosition },
                     set: { model.settings.standbyPosition = $0 })) {

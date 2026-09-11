@@ -93,6 +93,17 @@ final class GlassesSettings: ObservableObject {
         standbyWidgets = chosen
     }
 
+    /// Sends a widget list VERBATIM, bypassing `StandbyWidgets.ordered`.
+    ///
+    /// `ordered` always brackets the list with `time` first and `aiBall` last, which is
+    /// what the official app does — so it cannot express "time, and nothing else".
+    /// That exact case is what we need to test: whether the flex row gives a lone
+    /// widget more width, which would let the 48px clock fit without any firmware
+    /// change. Not for normal use; the toggles above are.
+    func pushRawStandbyWidgets(_ widgets: [String]) {
+        changed { $0.setStandbyWidgets(widgets) }
+    }
+
     private func pushStandbyWidgets() {
         changed { $0.setStandbyWidgets(SystemSettings.StandbyWidgets.ordered(standbyWidgets)) }
     }
