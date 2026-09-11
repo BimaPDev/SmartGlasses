@@ -654,6 +654,27 @@ struct ControlsView: View {
 }
 
 private struct FirmwareUpdateSection: View {
+    @State private var pendingPack: OtaPack?
+
+    /// Held as a stored constant: as one inline concatenation this blew the Swift
+    /// type-checker's budget ("unable to type-check this expression in reasonable
+    /// time") and failed the build.
+    private static let stockWarning = """
+        Restores the unmodified factory image. This is the way back from any patch.         Full BLE rewrite — keep the glasses on the charger.
+        """
+
+    private static let patchWarning = """
+        The glasses reboot if the apply succeeds. USB-C is charge-only on this model,         so the file goes over BLE and there is no cable recovery if it does not come         back — the spare pair is still bricked with no UART recovery.
+        """
+
+    private static let footerText = """
+        Both packs are built from 1.0.11.53, which is what these glasses run. Stock is         byte-identical to the factory image and is the way back from anything.
+
+        Big clock flashed and booted cleanly — the font works — but the 48px clock         overflows its circular standby widget and reads as "3:0". The font is correct;         the container is ~74px wide. Fixing that means widget geometry, which is the         subsystem that bootlooped v5/v6, so it is not a patch to make casually.
+
+        Downgrades work: nothing on this path compares versions.
+        """
+
     @EnvironmentObject private var model: GlassesModel
     @Binding var confirmOta: Bool
 
@@ -682,37 +703,40 @@ private struct FirmwareUpdateSection: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
-                Button("Flash \(BundledOtaPack.label)") {
-                    confirmOta = true
+                ForEach(BundledOtaPack.all, id: \.id) { pack in
+                    VStack(alignment: .leading, spacing: 4) {
+                        Button {
+                            pendingPack = pack
+                            confirmOta = true
+                        } label: {
+                            HStack {
+                                Image(systemName: pack.isStock
+                                      ? "arrow.uturn.backward.circle" : "clock.badge")
+                                Text("Flash \(pack.label)")
+                                Spacer()
+                            }
+                        }
+                        .disabled(!model.isReady)
+                        Text(pack.detail)
+                            .font(.caption)
+                            .foregroundStyle(pack.isStock ? Color.secondary : Color.orange)
+                    }
+                    .padding(.vertical, 2)
                 }
-                .disabled(!model.isReady)
             }
         } header: {
             Text("Firmware update")
         } footer: {
-            Text("Big clock: the standby clock goes from 14px to 48px — 10% of panel "
-                + "height — with tabular digits so the time does not shift as it "
-                + "changes. Built against 1.0.11.53, which is what these glasses run, "
-                + "and declared as 1.0.11.99 so the OTA is seen as newer.\n\n"
-                + "The patch changes no instructions: four bytes in .text, all of them "
-                + "one font-name literal. That is the difference from the v5/v6 images "
-                + "that bootlooped, which hooked code that then ran before the display "
-                + "was up. 28 gates pass (verify-big-clock.mjs).\n\n"
-                + "Flash is a full BLE rewrite and takes a while. Keep the glasses on "
-                + "the charger and the phone nearby.")
+            Text(Self.footerText)
         }
-        .confirmationDialog("Flash \(BundledOtaPack.label)?",
+        .confirmationDialog("Flash \(pendingPack?.label ?? "")?",
                             isPresented: $confirmOta, titleVisibility: .visible) {
             Button("Flash", role: .destructive) {
-                model.startFirmwareUpdate()
+                if let p = pendingPack { model.startFirmwareUpdate(p) }
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("The glasses reboot if the apply succeeds. USB-C is charge-only on "
-                + "this model, so the file goes over BLE and there is no cable "
-                + "recovery if it does not come back — the spare pair is still "
-                + "bricked with no UART recovery. This patch adds no code, but that "
-                + "is a reasoned argument, not a guarantee.")
+            Text(pendingPack?.isStock == true ? Self.stockWarning : Self.patchWarning)
         }
     }
 }

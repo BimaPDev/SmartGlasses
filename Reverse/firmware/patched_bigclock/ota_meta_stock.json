@@ -1,0 +1,17 @@
+{
+  "zip": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/patched_bigclock/ota_star-air_1.0.11.53_STOCK.zip",
+  "digest": "de41f383c3891a155200ddb932df5812",
+  "fileSize": 4523111,
+  "latestVersion": "1.0.11.53",
+  "note": "UNMODIFIED stock 1.0.11.53 \u2014 the revert target",
+  "bins": {
+    "best1600_watch_bth.bin": {
+      "size": 1340040,
+      "md5": "15b27b7aa74e5cea100ccaa4b9c2ac4c"
+    },
+    "platform_tester.bin": {
+      "size": 7042632,
+      "md5": "1cb015e8779f58549ca2cc6448789ed0"
+    }
+  }
+}

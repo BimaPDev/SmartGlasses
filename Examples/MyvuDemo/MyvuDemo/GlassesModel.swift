@@ -104,6 +104,7 @@ final class GlassesModel: ObservableObject {
     let contacts = ContactsAccess()
     let spotifyAuth = SpotifyAuth()
     let spotifyLyrics: SpotifyLyricsSession
+    let claudeBridge: ClaudeBridgeSession
 
     /// Alerts the wearer as the glasses' battery falls past each threshold.
     private let batteryAlerts = BatteryMonitor()
@@ -120,6 +121,8 @@ final class GlassesModel: ObservableObject {
     private var unidenDriveDetector: DriveDetector?
     private var lastUnidenAlerts: [UnidenAlert] = []
     private var lastUnidenIdentity = ""
+    /// Keeps one speed/red-light camera to one alert per pass.
+    private var unidenPoiEncounter = UnidenPoiEncounter()
     private var lastUnidenSendAt: Date?
     private var unidenFlushTask: Task<Void, Never>?
     /// Avoids restarting a BLE scan on every GPS tick after a miss.
@@ -140,6 +143,7 @@ final class GlassesModel: ObservableObject {
 
     init() {
         spotifyLyrics = SpotifyLyricsSession(auth: spotifyAuth, client: glasses.client)
+        claudeBridge = ClaudeBridgeSession(client: glasses.client)
         settings = GlassesSettings(glasses: glasses)
         observe()
         settings.objectWillChange
@@ -191,7 +195,10 @@ final class GlassesModel: ObservableObject {
                     // ALWAYS, even when mirroring is off. The init burst replays
                     // a capture whose SYNC_SMART_REMINDER_CONFIG enables three
                     // categories and omits MSG_TYPE_IM; skipping our push leaves
-                    // that stranger's filter in force instead of the wearer's.
+                    // that stranger's filter in force instead of the wearer's,
+                    // so the de-dupe below is cleared first: the value may be
+                    // unchanged from last session and still MUST go out.
+                    self.lastPushedConfig = nil
                     self.pushNotificationConfig()
                     // After the SDK's init burst, which asserts wear detection,
                     // zen mode and the screen-off time with its own fixed
@@ -249,7 +256,7 @@ final class GlassesModel: ObservableObject {
                     self.firmwareBusy = false
                     self.firmwareFraction = success ? 1 : self.firmwareFraction
                     if success {
-                        let ver = rom.isEmpty ? BundledOtaPack.label : rom
+                        let ver = rom.isEmpty ? "unknown" : rom
                         self.firmwareStatus = "Installed \(ver). \(message)"
                     } else {
                         self.firmwareStatus = "Update failed: \(message)"
@@ -288,13 +295,13 @@ final class GlassesModel: ObservableObject {
         UIApplication.shared.isIdleTimerDisabled = false
     }
 
-    /// Pushes the bundled 1.0.12.83 BIMA pack over BLE.
-    func startFirmwareUpdate() {
+    /// Pushes one of the bundled 1.0.11.53-based packs over BLE.
+    func startFirmwareUpdate(_ pack: OtaPack) {
         do {
-            let files = try BundledOtaPack.load()
+            let files = try BundledOtaPack.load(pack)
             firmwareBusy = true
             firmwareFraction = 0
-            firmwareStatus = "Starting \(BundledOtaPack.label)…"
+            firmwareStatus = "Starting \(pack.label)…"
             UIApplication.shared.isIdleTimerDisabled = true
             glasses.startFirmwareUpdate(files: files)
         } catch {
@@ -510,20 +517,51 @@ final class GlassesModel: ObservableObject {
             .store(in: &bag)
     }
 
+    /// Everything `pushNotificationConfig` puts on the wire, so an unchanged
+    /// push can be recognised and dropped.
+    private struct NotificationConfigState: Equatable {
+        var enabled: Bool
+        var types: [String: Bool]
+        var calls: Bool
+        var announce: Bool
+        var brighten: Bool
+        var dismissMs: Int
+    }
+
+    /// Last value actually sent, or nil when it must be sent regardless —
+    /// cleared on every new session, where re-asserting is the whole point.
+    private var lastPushedConfig: NotificationConfigState?
+
     /// Sends the whole filter, on or off. Sending it with
     /// `notificationControlState:false` is how mirroring gets DISABLED, so this
     /// must run even when the wearer has it switched off.
+    ///
+    /// Ten call sites reach this — every settings toggle, plus both lock-state
+    /// transitions — and the lock ones fire on each screen off/on whether or not
+    /// they change anything. A captured 40-minute session sent this 640-byte
+    /// payload ~25 times, a third of them in identical pairs milliseconds apart
+    /// (two observers, one event). Unchanged pushes are dropped here rather than
+    /// at each caller, so no future caller has to remember.
     private func pushNotificationConfig() {
         guard isReady else { return }
         let types = Dictionary(uniqueKeysWithValues:
             Notifications.allTypes.map { ($0, isNotificationType($0)) })
         let suppressed = muteWhileUsingPhoneRaw && phoneUnlocked
-        glasses.enablePhoneNotifications(phoneNotificationsRaw && !suppressed,
-                                         types: types,
-                                         calls: phoneNotificationCallsRaw,
-                                         announce: notificationAnnounceRaw,
-                                         brightenScreen: notificationBrightenRaw,
-                                         dismissMs: Int64(notificationDismissMsRaw))
+        let next = NotificationConfigState(enabled: phoneNotificationsRaw && !suppressed,
+                                           types: types,
+                                           calls: phoneNotificationCallsRaw,
+                                           announce: notificationAnnounceRaw,
+                                           brighten: notificationBrightenRaw,
+                                           dismissMs: notificationDismissMsRaw)
+        guard next != lastPushedConfig else { return }
+        lastPushedConfig = next
+
+        glasses.enablePhoneNotifications(next.enabled,
+                                         types: next.types,
+                                         calls: next.calls,
+                                         announce: next.announce,
+                                         brightenScreen: next.brighten,
+                                         dismissMs: Int64(next.dismissMs))
     }
 
     /// Answers the glasses' "who is this number?" question.
@@ -820,7 +858,7 @@ final class GlassesModel: ObservableObject {
 
     private func handleUnidenAlerts(_ hits: [UnidenAlert]) {
         lastUnidenAlerts = hits
-        let changed = UnidenAlertCard.notifyIdentity(for: hits) != lastUnidenIdentity
+        let changed = unidenPoiEncounter.notifyIdentity(for: hits) != lastUnidenIdentity
         switch UnidenAlertGate.decision(hasHits: !hits.isEmpty,
                                        changed: changed,
                                        lastSentAt: lastUnidenSendAt,
@@ -870,7 +908,7 @@ final class GlassesModel: ObservableObject {
         // it belongs on the lens the driver is already looking through, and a
         // notification for something the glasses just showed is only noise. The
         // bookkeeping below still runs — it is what paces the lens card.
-        let identity = UnidenAlertCard.notifyIdentity(for: hits)
+        let identity = unidenPoiEncounter.notifyIdentity(for: hits)
         guard identity != lastUnidenIdentity else { return }
         lastUnidenIdentity = identity
         lastUnidenSendAt = Date()
@@ -882,16 +920,28 @@ final class GlassesModel: ObservableObject {
                        body: UnidenAlertCard.body(for: lastUnidenAlerts))
     }
 
+    /// Whether a Uniden card is currently up on the lens.
+    ///
+    /// The detector reports on every frame, and a quiet frame decides `.clear`,
+    /// so without this the dismiss went out once a second for the whole drive —
+    /// 50+ redundant BLE writes in the first minute of a captured session, each
+    /// one acked, all of them dismissing a card that was already gone.
+    private var unidenCardShown = false
+
     private func pushUnidenCard(title: String, body: String) {
         guard isReady else { return }
         glasses.showLensCard(title: title, body: body,
                              numericId: LensCards.unidenAlertNumericId)
+        unidenCardShown = true
     }
 
     private func clearUnidenCard() {
         lastUnidenAlerts = []
+        unidenPoiEncounter.reset()
         unidenLastAlert = ""
-        guard isReady else { return }
+        // Local bookkeeping above always runs; only the radio write is gated.
+        guard isReady, unidenCardShown else { return }
+        unidenCardShown = false
         glasses.dismissLensCard(numericId: LensCards.unidenAlertNumericId)
     }
 
