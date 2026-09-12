@@ -1,6 +1,22 @@
 #!/usr/bin/env python3
 """Reshape the standby widget row. Every knob is one immediate.
 
+CONFIRMED ON HARDWARE 2026-09-13: row width 640 + pad_left 225, with "Time only",
+centres the 46px clock on the panel — measured x262..414, y320..365, i.e. 3.3x the
+stock clock height. Predicted centre was 320, measured 338: the tile centres correctly,
+but the ink sits ~18px right within it because the final glyph's advance runs past its
+visible ink. pad_left 207 would compensate.
+
+KNOWN-BAD VALUE: main_place = CENTER(2) at 0x6167f6 does NOT boot, and the device A/B
+rolls back. SPACE_BETWEEN(5) at the same offset boots fine, and 2 is a valid
+LV_FLEX_ALIGN, so there is no static explanation for this — it is recorded as an
+observed fact. Centre a single tile with pad_left instead.
+
+WIDTH BUDGET, and it is not optional: n tiles of 190px need n*190 + (n-1)*gap against a
+(640 - pad_left - pad_right) box. Four tiles need 790px and overflow, and ROW_WRAP then
+pushes one onto a second line that an 80px row makes invisible. Pair a widened row with
+"Time only" or two widgets.
+
   python3 make_flex_layout.py <in.bin> <out.bin> [--flow ROW_WRAP] [--main START]
         [--cross CENTER] [--gap 10] [--pad-left 2] [--pad-right 2]
         [--row-h 80] [--row-w CONTENT] [--dry-run]

@@ -277,6 +277,27 @@ Row object is stored at `StandByView+0x94` and handed to `StandByWidgetManager`
 > `lv_obj_set_flex_flow` (`0x669b14`), which tail-calls it. Searching for callers of a
 > low-level setter misses everything that goes via the API wrapping it.
 
+### Flex knobs — what boots and what does not
+
+**CONFIRMED ON HARDWARE:** row width `640` + `pad_left 225` + `"Time only"` centres the
+46px clock — measured `x262..414`, `y320..365`.
+
+| Knob | Values proven to boot | Known bad |
+|---|---|---|
+| `main_place` `0x6167f6` | `0` START, `5` SPACE_BETWEEN | **`2` CENTER — does NOT boot** |
+| `pad_left` `0x616810` | `2`, `24`, `225` | — |
+| row width `0x6167d2` | `LV_SIZE_CONTENT`, `640` | — |
+| row height `0x6167cc` | `80` | `190` — boots, but clips the clock to its top edge |
+
+`main_place = CENTER(2)` failing is genuinely odd: it is a valid `LV_FLEX_ALIGN` and
+`SPACE_BETWEEN(5)` at the same offset is fine. No static explanation. Centre a single
+tile with `pad_left = (640 - tile) / 2` instead.
+
+**Width budget, not optional:** `n` tiles of 190px need `n*190 + (n-1)*gap` against a
+`640 - pad_left - pad_right` box. Four need 790px, overflow, and `ROW_WRAP` pushes one
+tile onto a second line that an 80px row makes invisible. That failure looks like "the
+clock vanished".
+
 ### Per-widget positioning is NOT reachable without CODE
 
 Two independent reasons, either sufficient:
