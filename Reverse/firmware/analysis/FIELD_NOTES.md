@@ -246,6 +246,51 @@ LV_ALIGN:  1 TOP_LEFT  2 TOP_MID  3 TOP_RIGHT  4 BOTTOM_LEFT  5 BOTTOM_MID
 - Row width budget: `n × tile + (n−1) × 10 ≤ 620`. At tile 190, three widgets fit (590 px);
   four do not (790 px).
 
+### The row is a FLEX container — configured in StandByView, not in the row machinery
+
+Nothing in `0x61ca1c` / `0x61b950` / `0x61b784` positions a tile because it does not have
+to: the parent's flex layout computes every x at layout time. Setup is at **`0x6167bc`**
+(one caller, `0x616fa0`), and every knob is a single-byte `MOVS`:
+
+```
+0x6167cc  movs r2,#0x50    row height = 80
+0x6167d2  movw r1,#0x27d1  row width  = LV_SIZE_CONTENT
+0x6167e0  movs r1,#0x10    radius 16
+0x6167ea  movs r1,#4       flex_flow   = ROW_WRAP        <- the arrangement
+0x6167f0  movs r3,#2       cross/track = CENTER
+0x6167f6  movs r1,#0       main_place  = START
+0x616804  movs r1,#0x0a    pad_column (gap) = 10
+0x616810  movs r1,#2       pad_left
+0x61681c  movs r1,#2       pad_right
+```
+
+Row object is stored at `StandByView+0x94` and handed to `StandByWidgetManager`
+(`+0x98`) at `0x616844`; the manager keeps it at `manager+0`, which is the `[r7]` that
+`createWidget` reads as the parent.
+
+`LV_FLEX_FLOW`: `0` ROW · `1` COLUMN · `4` ROW_WRAP · `5` COLUMN_WRAP · `8`/`9` reversed.
+`LV_FLEX_ALIGN`: `0` START · `1` END · `2` CENTER · `3` SPACE_EVENLY · `4` SPACE_AROUND ·
+`5` SPACE_BETWEEN.
+
+> **Trap:** `lv_obj_set_style_layout` (`0x64a640`) shows **zero** launcher callers, which
+> once led to "the row is not a flex layout". Wrong — the launcher reaches it *through*
+> `lv_obj_set_flex_flow` (`0x669b14`), which tail-calls it. Searching for callers of a
+> low-level setter misses everything that goes via the API wrapping it.
+
+### Per-widget positioning is NOT reachable without CODE
+
+Two independent reasons, either sufficient:
+
+1. **No per-widget coordinate exists to patch.** `StandByWidgetManager` issues zero
+   align / size / style calls. Positive control: the same scan finds **42** such calls in
+   the adjacent `StandByWidget.cpp`, so the absence is real, not a dead decoder.
+2. **Flex overwrites child coordinates on every layout pass.** Escaping it needs
+   `LV_OBJ_FLAG_IGNORE_LAYOUT` per child *plus* an `lv_obj_align` per child — both new
+   calls, with no spare BL in the manager to host them.
+
+So a Halliday-style layout (big clock centred, four small elements in four corners) is
+**two-axis**, and this is **one flex line**. Corners need CODE.
+
 ### Widget ids for `set_standby_widget_lists`
 
 ```
