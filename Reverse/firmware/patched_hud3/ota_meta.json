@@ -1,0 +1,11 @@
+{
+  "digest": "86e37b7b5afcb7b291a3d47aaf2d28aa",
+  "fileSize": 4524013,
+  "latestVersion": "1.0.11.95",
+  "patches": [
+    "regenerated 46px clock face (aligned tables, Helvetica 64px)",
+    "rings off",
+    "tile 72->190",
+    "clock centred"
+  ]
+}
