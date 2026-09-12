@@ -23,15 +23,6 @@ struct OtaPack: Identifiable, Hashable {
 
 enum BundledOtaPack {
 
-    static let bigClock = OtaPack(
-        id: "bigclock",
-        resource: "ota_star-air_1.0.11.99_BIGCLOCK",
-        label: "Big clock 48px",
-        detail: "Standby clock 14px → 48px with tabular digits. "
-              + "NOTE: the clock overflows its circular widget and shows as \"3:0\" — "
-              + "the font is right, the container is too small. 28 gates pass.",
-        isStock: false)
-
     static let stock = OtaPack(
         id: "stock",
         resource: "ota_star-air_1.0.11.53_STOCK",
@@ -49,18 +40,18 @@ enum BundledOtaPack {
               + "so no geometry moves. 14 gates pass, and CONFIRMED ON HARDWARE.",
         isStock: false)
 
-    static let hud = OtaPack(
-        id: "hud",
-        resource: "ota_star-air_1.0.11.97_HUD",
-        label: "Big clock HUD",
-        detail: "All three together: 48px clock, no rings, and the standby tile 72 -> 190 "
-              + "so the clock is no longer clipped. Pair it with Settings > Experiment "
-              + "> \"Time only\" for the full effect. 17 gates; 6 .text bytes changed, "
-              + "all of them operands.",
+    static let hud2 = OtaPack(
+        id: "hud2",
+        resource: "ota_star-air_1.0.11.96_HUD2",
+        label: "Big clock centred",
+        detail: "48px clock, no rings, tile 190, and the clock CENTRED in its tile "
+              + "instead of top-aligned. The previous build clipped to a 10px sliver "
+              + "because the row is only ~92px tall and a top-aligned clock fell above "
+              + "it. 21 gates; 8 .text bytes, all operands.",
         isStock: false)
 
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, hud, noRings, bigClock]
+    static let all: [OtaPack] = [stock, hud2, noRings]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))

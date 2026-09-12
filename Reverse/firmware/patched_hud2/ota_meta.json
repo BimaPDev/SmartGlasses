@@ -1,0 +1,14 @@
+{
+  "zip": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/patched_hud2/ota_star-air_1.0.11.96_HUD2.zip",
+  "digest": "de62a81a4c34e58bb3f299c4bc69fe11",
+  "fileSize": 4524108,
+  "latestVersion": "1.0.11.96",
+  "baseVersion": "1.0.11.53.20241126_Air_intl_FR",
+  "patches": [
+    "48px clock font",
+    "border_opa 92->0 (rings off)",
+    "tile 72->190",
+    "clock align TOP_MID->CENTER, y 11->0"
+  ],
+  "textBytesChanged": 8
+}
