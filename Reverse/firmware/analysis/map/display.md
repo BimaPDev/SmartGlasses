@@ -92,7 +92,7 @@ app view (C++)  ->  LVGL v8 fork  ->  lv_port_disp_speedup_bgra8888.c : disp_flu
   `device:left ID:%x,device:right ID:%x` — stereo, addressed as device 0/1.
 * **Resolution 640×480.** In 11.53 the geometry is *not* a `movw #640` immediate (searched the
   whole `.text` region `0x469954`–`0x6b7000`: zero `movw` of 640 or 480). The evidence is the
-  factory pattern names `AA_Pattern_640_480_R32` / `_R40` @`0x1727f8`/`0x17280f`, and a
+  factory pattern names `AA_Pattern_640_480_R32` / `_R40` @`0x172800`/`0x172818`, and a
   `u16{640,480}` literal pair @`0x671594`. The 12.83 decomp (`analysis/jbd013/`) shows
   `jbd_panel_init` and `vg_lite_init(640,480)` hardcoding the same. **Flagged: in 11.53 this is
   string + literal evidence, not a decoded init sequence.**
@@ -134,12 +134,13 @@ app view (C++)  ->  LVGL v8 fork  ->  lv_port_disp_speedup_bgra8888.c : disp_flu
 A single initialiser at **`0x622810`** fills two name→pointer maps by repeated calls to a
 3-arg register function at **`0x61e46c`** (`r0`=map, `r1`=name, `r2`=value). The initialiser
 is a 5-function tail-call chain: `0x622810 → 0x622d2c → 0x623244 → 0x623760 → 0x623c7c`,
-**358 register calls** in total. The maps are RAM globals:
+**357 register calls** in total (verified twice: by walking the chain, and by a raw
+`.text` scan for `BL 0x61e46c`). The maps are RAM globals:
 
 | map | VA | entries |
 |---|---|---|
 | font registry | `0x3D653748` | **10** |
-| resource (image) registry | `0x3D653758` | **348** |
+| resource (image) registry | `0x3D653758` | **347** |
 
 `0x624188` is the font lookup (`getFontByName`) — the clock constructor calls it with the
 `FONT_DUMMY_20` literal and feeds the result straight to the `text_font` style setter.
@@ -231,15 +232,40 @@ Descriptor: `bitmap_index 1853, adv_w 217 (13.56 px), box 14×14, ofs 0,0`. Deco
 split into two legs at x∈{1,2} and x∈{11,12}. Total ink 58 px. **Shifting the bitmap base by
 one byte destroys the apex-centring test** — that is the verifier's negative control.
 
-### 3.4 The 1-bpp faces are compressed — unresolved
+### 3.4 The 1-bpp faces are **not** compressed — corrected
 
-For the 1-bpp faces the per-glyph byte budget is **smaller than an uncompressed bitmap needs**:
-`0x491e0c` `'A'` is `box 10×12` (needs 24 B at 1 bpp) but `bitmap_index[35] − bitmap_index[34]
-= 15 B`; `0x491cf4` `'A'` is `15×17` (needs 34 B) with a 32 B budget. Decoding them as flat
-1 bpp produces noise. So `bitmap_format` is effectively compressed even though the bitfield at
-`dsc+18` reads 0. **I did not crack this**, and I did not use a row-shift fudge to hide it —
-CLAUDE.md flags exactly that fudge in the old `extract_lvgl_fonts.py`. The 4-bpp faces (the
-clock digits and the 27 px body face) decode cleanly and are the safe patch targets.
+An earlier pass in this file claimed the 1-bpp faces were compressed, on the grounds that
+`0x491e0c` `'A'` is `box 10x12` with only a 15 B budget while "a 1-bpp bitmap needs 24 B".
+**That arithmetic assumed byte-aligned rows, and it is wrong.** LVGL's `lv_font_fmt_txt`
+bitmaps are a *continuous* bit stream: no per-row padding. `ceil(10*12/8) = 15` — the budget
+matches exactly. Same for `0x491cf4` `'A'`, `box 15x17`, `ceil(15*17/8) = 32`, budget 32.
+
+Decoded that way both render legibly (verifier checks the shape, not the size):
+
+```
+0x491e0c 'A' 10x12          0x491cf4 'A' 15x17
+....##....                  ......##.......
+....###...                  .....####......
+....#.#...                  .....####......
+...##.#...                  .....##.##.....
+...##.##..                  ....##..##.....
+...#...#..                  ....##..##.....
+..##...#..                  ....##...##....
+..##...##.                  ...##....##....
+..#######.                  ...##....##....
+.##.....##                  ..##......##...
+.#......##                  ..##########...
+.#.......#                  ..###########..
+                            .##........##..
+                            .##........##..
+                            .##.........##.
+                            ##..........##.
+                            ##..........##.
+```
+
+So **`bitmap_format` really is 0 (plain), for 1 bpp and 4 bpp alike**, and the 1-bpp faces —
+including the three full CJK faces — are ordinary in-place patch targets, same rules as the
+4-bpp ones: MSB-first, row-major, continuous, must fit the existing byte budget.
 
 ### 3.5 Fonts that live in a filesystem, not in flash
 
@@ -267,7 +293,7 @@ pursuing first. (Where that volume lives on the partition map is leaf-1.7's.)
 | Retarget a whole UI face | **DATA** | 4-byte `fallback` ptr, e.g. `0x491df8` | low; passive pointer |
 | Nudge a glyph (bearing/advance) | DATA | `glyph_dsc` 16-B entry, `adv_w` in 1/16 px | very low |
 | Repaint a 4-bpp glyph | DATA | in-place, **must fit the byte budget** | very low |
-| Repaint a 1-bpp glyph | **blocked** | compression not cracked (§3.4) | — |
+| Repaint a 1-bpp glyph | **DATA** | continuous MSB-first bits, must fit the byte budget (§3.4) | very low |
 | Change `line_height` | DATA | u16 at obj+8 | low; reflows text |
 | Bind a *new* FONT_ name | CODE | new register call in the `0x622810` chain | high |
 
@@ -293,9 +319,9 @@ remainder-strip padding term.
 ### 4.2 How many, and where
 
 Scanning the whole file for `cf==9 && always_zero==0 && data_size == 64+ceil(w/2)*h &&
-data ptr resolves in-file` yields **348** descriptors — and the name registry at `0x3D653758`
-holds **exactly 348** entries, 348 unique names. The two numbers come from independent
-methods (structural scan vs. disassembled initialiser) and agree.
+data ptr resolves in-file` yields **348** descriptors. The name registry at `0x3D653758` holds
+**347** entries. The two numbers come from independent methods (structural scan vs.
+disassembled initialiser) and they reconcile, they are not equal — see §4.3.
 
 * descriptor range `0x34964c` … `0x459a90`
 * pixel-data range `0x349690` … `0x459b42`
@@ -310,14 +336,16 @@ methods (structural scan vs. disassembled initialiser) and agree.
 Same initialiser chain as the fonts, second map. Names are plain `snake_case` C strings in
 the `0x3c3f1f...`/`0x18....` pools. Distribution by prefix:
 
-`here_*` 57 · `launcher_*` 52 · `smartlife_*` 47 · `weather_*` 23 · `ring_*` 20 ·
+(recovered names, 346 of 347) `here_*` 57 · `launcher_*` 52 · `smartlife_*` 46 · `weather_*` 23 · `ring_*` 19 ·
 `setting_*` 15 · `qqmusic_*` 13 · `navigation_*` 13 · `indicator_*` 13 · `music_*` 11 ·
 `assistant_*` 10 · `starrynet_*` 6 · `play_*`/`connect_*`/`phone_*` 4 each · rest singletons.
 
-**15 of the 348 registry values are not `lv_img_dsc_t`** — they are animation objects
+**17 of the 347 registry values are not `lv_img_dsc_t`** — they are animation objects
 (`next_play_anim`, `previous_anim`, `music_play_to_pause_v3`, `music_puase_to_play_v3`,
-`qqmusic_playlist_loading`, …). So: **333 named static images + 15 named animations**, plus
-15 unnamed IDX4 descriptors reachable only as animation frames. (`puase` is the vendor's
+`qqmusic_playlist_loading`, …). So the registry is **329 named static images + 17 named
+animations**, and of the 348 IDX4 descriptors, **19 carry no name at all** — they are
+reachable only as animation frames. (One of the 347 register calls loads its operands from
+behind a literal pool and is counted but not classified; 329 + 17 = 346 recovered names.) (`puase` is the vendor's
 spelling; it is load-bearing — do not "fix" it.)
 
 Lookup is by **string**, at runtime, through `0x61e46c`'s map. That means a resource-name
@@ -366,8 +394,8 @@ Property ids present, in table order:
 |---|---|---|---|
 | `0x64a628` | 11 | `radius` | `0x61b7dc`, arg = `height/2` (computed by `asrs r1,r1,#1` on `[r4,#0x40]`) — a pill |
 | `0x64a544` | 48 | `border_color` | `0x61b7e8`, arg `0xFF00FF00` |
-| `0x64a550` | 49 | `border_opa` | `0x61b7fc`, arg `92`; **setting it to 0 removed the ring on hardware** |
-| `0x64a55c` | 50 | `border_width` | `0x61b7f2`, arg `2` |
+| `0x64a550` | 49 | `border_opa` | BL @`0x61b7fc`, arg `92` (`movs r1,#0x5c` @`0x61b7f8`); **setting it to 0 removed the ring on hardware** |
+| `0x64a55c` | 50 | `border_width` | BL @`0x61b7f2`, arg `2` (`movs r1,#2` @`0x61b7ee`) |
 | `0x64a5e0` | 85 | `text_color` | `0x61b13e`, arg `0xFF00FF00`, on the clock label |
 | `0x64a5f8` | 87 | `text_font` | `0x61b14e`, arg = return of `getFontByName("FONT_DUMMY_20")` |
 
@@ -488,8 +516,6 @@ above. Cite `restoreFlexLayout` / `createFlexContent` instead.
 
 ## 7. What I could not establish
 
-* **1-bpp glyph compression** (§3.4). Budget arithmetic proves it is compressed; the codec is
-  not decoded. Do not patch those faces.
 * **Panel resolution as a decoded immediate in 11.53.** String and literal-pool evidence only
   (§2); no `movw #640`/`#480` exists anywhere in `.text`.
 * **39 of the 45 style property ids** are LVGL-v8-consistent but not individually tied to a
