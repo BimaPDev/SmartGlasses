@@ -40,18 +40,18 @@ enum BundledOtaPack {
               + "so no geometry moves. 14 gates pass, and CONFIRMED ON HARDWARE.",
         isStock: false)
 
-    static let hud8 = OtaPack(
-        id: "hud8",
-        resource: "ota_star-air_1.0.11.90_HUD8",
-        label: "Big clock + spread row",
-        detail: "The working 46px clock, with the standby row widened to the full 640px "
-              + "and its widgets spread to the edges (SPACE_BETWEEN, 24px insets). Row "
-              + "HEIGHT is left at its stock 80 — raising it to 190 clipped the clock, "
-              + "so that change is reverted and only the horizontal reshape is kept.",
+    static let centred = OtaPack(
+        id: "centred",
+        resource: "ota_star-air_1.0.11.89_CENTRED",
+        label: "Big clock, centred",
+        detail: "The 46px clock centred on the panel. Row widened to 640 and "
+              + "main_place set to CENTER — four bytes different from the build whose "
+              + "clock already renders correctly. PAIR IT WITH \"Time only\": a single "
+              + "190px tile has room, four would overflow and wrap one off-screen.",
         isStock: false)
 
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, hud8, noRings]
+    static let all: [OtaPack] = [stock, centred, noRings]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
