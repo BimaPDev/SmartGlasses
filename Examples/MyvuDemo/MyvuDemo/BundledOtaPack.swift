@@ -48,7 +48,7 @@ enum BundledOtaPack {
               + "\"/6/15\" because the cmap remaps codepoints through a "
               + "glyph_id_ofs_list that I had ignored — stock maps BOTH '0' and ':' to "
               + "the same glyph. v6 orders the glyphs to match that list and gives ':' "
-              + "its own id. 30 gates, resolved the firmware's way.",
+              + "its own id. 30 gates, and CONFIRMED ON HARDWARE.",
         isStock: false)
 
     /// Stock first: it is the one to reach for when something is wrong.

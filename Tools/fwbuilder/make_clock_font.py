@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Generate a big clock face by CLONING a stock face's byte structure.
 
+CONFIRMED ON HARDWARE 2026-09-12: flashed to a real XGA010C on 1.0.11.53 and renders
+"07:40" correctly — 46px tall with glyph widths 31/31/7/31/31, matching the font tables
+exactly, 3.3x the stock clock, upright, no shear, correct colon, no rings.
+
   python3 make_clock_font.py <in.bin> <out.bin> [--size auto] [--font PATH] [--dry-run]
 
 WHY A CLONE RATHER THAN A FIX
