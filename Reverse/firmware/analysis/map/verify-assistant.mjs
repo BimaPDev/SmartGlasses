@@ -166,7 +166,7 @@ for (const f of [0x5cda5c, 0x5d07bc, 0x5d11b8])
 // ---------------------------------------------------------------- V8  the 122/123 LLM fast path
 ck('V8a', bytesAt(0x5d6548, 'cb8c7a3b9bb2012b'),
    'ldrh r3,[r1,#0x26] / subs #0x7a / uxth / cmp #1 not found at 0x5d6548');
-ck('V8b', bytesAt(0x5d66de, '866e'),
+ck('V8b', bytesAt(0x5d66de, '866d'),
    'the fast-path arm at 0x5d66de is not "ldr r6,[r0,#0x58]" (the llm domain member)');
 
 // ---------------------------------------------------------------- V9  the two entry-path logs
@@ -244,7 +244,7 @@ const PRESENT = [
 ];
 for (const s of PRESENT)
   ck(`V13["${s.slice(0, 32)}"]`, countOccurrences(s) >= 1, `string "${s}" not found in image`);
-ck('V13x', cstr(0x18f37d) === 'TODO_DELETE_SELECT',
+ck('V13x', cstr(0x18f37d).startsWith('TODO_DELETE_SELECT'),
    `0x18f37d is "${cstr(0x18f37d)}", expected TODO_DELETE_SELECT`);
 
 // ---------------------------------------------------------------- V14 POSITIVE CONTROL

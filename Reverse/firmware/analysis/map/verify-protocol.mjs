@@ -138,7 +138,7 @@ const HANDLERS = [
   [0x1a42c4, 'handleAppMsg',      0x60be80],
 ];
 for (const [so, nm, po] of HANDLERS) { strAt(so, nm, 'S2 handler'); poolPtr(po, so, nm, 'S2 handler pool'); }
-strAt(0x17c1a8, '../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/MessageModel.cpp', 'S2 MessageModel.cpp');
+strAt(0x1a44f8, '../../thirdparty/star_air_lvgl/app/Pages/Launcher/model/MessageModel.cpp', 'S2 MessageModel.cpp');
 strAt(0x1a6230, 'handleSyncCloneData', 'S2 handler');
 strAt(0x1a6958, 'handleScreenShotMsg', 'S2 handler');
 strAt(0x1a6bd0, 'handleGetLogMsg', 'S2 handler');
@@ -210,7 +210,7 @@ strAt(0x1a6058, 'req_active_state', 'S3 analytics');
 strAt(0x1a60f4, 'req_active_info', 'S3 analytics');
 strAt(0x1a44d4, 'feature_list', 'S3 feature_list');
 strAt(0x1a4938, 'audio_multi',  'S3 feature_list value');
-strAt(0x1a447a, 'phonepad', 'S3 trackpad');
+strAt(0x1a447c, 'phonepad', 'S3 trackpad');
 strAt(0x1a449c, 'sport',    'S3 health');
 strAt(0x1a44a4, 'screenshot', 'S3 screenshot');
 strAt(0x1a49e8, 'sync_event_rule', 'S3 analytics');
@@ -236,7 +236,7 @@ const CLONE_POOL = [
   [0x60e77c, 0x1a6318, 'set_standby_position'],
 ];
 for (const [po, so, nm] of CLONE_POOL) { poolPtr(po, so, nm, `S4 ${nm}`); notForbidden(so, `S4 ${nm}`); }
-strAt(0x17c138, 'brightness_model', 'S4 brightness_model');
+strAt(0x1a4488, 'brightness_model', 'S4 brightness_model');
 strAt(0x1a5058, 'remote_app', 'S4 remote_app');
 // The five clone-only settings: their pointer must appear EXACTLY ONCE in the
 // whole image (i.e. only in the handleSyncCloneData pool).  This is the load-
@@ -288,8 +288,8 @@ strAt(0x19f97c, 'notificationAction', 'S5 key');
 // The misspelled timestamp key — a client sending "createTime" loses it silently.
 strAt(0x19f538, 'crateTime', 'S5 misspelled createTime');
 absent('"createTime"', 'S5 createTime is genuinely absent');
-for (const [o, s] of [[0x19f57c,'msgType'],[0x19f55c,'canReply'],[0x19f568,'aiResult'],
-                      [0x19f574,'discernResult'],[0x19f594,'groupName'],[0x19f5a0,'sender'],
+for (const [o, s] of [[0x19f574,'msgType'],[0x19f55c,'canReply'],[0x19f568,'aiResult'],
+                      [0x19f57c,'discernResult'],[0x19f594,'groupName'],[0x19f5a0,'sender'],
                       [0x19f5b4,'verificationCode'],[0x19f65c,'ids'],[0x19f630,'packages'],
                       [0x19f8dc,'sendPackage'],[0x19f8e8,'interactionPromptTxt'],
                       [0x19fcac,'needTtsOn'],[0x19fcec,'needScreenOn'],[0x19f6f4,'screen_state']])
@@ -434,7 +434,7 @@ for (const [o, s] of [[0x194040,'[%s] MSG_ID_VOICE_PRE_WAKEUP'],
 // ===========================================================================
 // S11 — code:2 config flags and their persistent setting keys
 // ===========================================================================
-for (const [o, s] of [[0x189ead,'isAsrResultScreenEnable'],[0x189ec8,'isChatGptTTSPlayEnable'],
+for (const [o, s] of [[0x189eb0,'isAsrResultScreenEnable'],[0x189ec8,'isChatGptTTSPlayEnable'],
                       [0x189ee0,'isChatGptCardDisplayEnable'],[0x189efc,'isContinuousDialogueEnable'],
                       [0x189f18,'isLowPowerWakeupEnable'],[0x189f30,'isLowPowerWakeupScreenOffEnable'],
                       [0x189f50,'isNetworkAvailable'],[0x189f64,'versionCode'],[0x189f70,'isStar'],
@@ -454,14 +454,24 @@ for (const [o, s] of [[0x18a1c8,'isContinuous'],[0x18a1d8,'isMulti'],[0x18a1e0,'
 // ===========================================================================
 // S12 — weather
 // ===========================================================================
-strAt(0x1a4246, '{"action": "syncWeather"}', 'S12 outbound refresh (spaced)');
+strAt(0x1a4248, '{"action": "syncWeather"}', 'S12 outbound refresh (spaced)');
 strAt(0x1aa080, '{"action":"syncWeather"}', 'S12 outbound refresh (tight)');
 poolPtr(0x60be60, 0x1a435c, 'iconCode', 'S12 WeatherModel pool');
 poolPtr(0x60be68, 0x1a4368, 'quality',  'S12 WeatherModel pool');
 poolPtr(0x60be70, 0x1a4370, 'aqi',      'S12 WeatherModel pool');
 // The keys PROTOCOL.md lists that this build does NOT contain.
-for (const s of ['dayTempMax', 'dayTempMin', 'sunriseTime', 'sunsetTime', 'lastUpdate'])
+for (const s of ['dayTempMax', 'dayTempMin', 'sunriseTime', 'sunsetTime'])
   absent(s, 'S12 PROTOCOL.md weather key absence');
+// "lastUpdate" needs an exact test: this build DOES carry "lastUpdateTime" at
+// 0x19f7a4, so a substring search wrongly reported the bare key as present.
+{
+  const n = Buffer.concat([Buffer.from([0]), Buffer.from('lastUpdate', 'latin1'), Buffer.from([0])]);
+  if (buf.includes(n)) fail('S12: bare "lastUpdate" key unexpectedly present');
+  else ok();
+  if (!buf.includes(Buffer.from('lastUpdateTime', 'latin1')))
+    fail('S12 control: "lastUpdateTime" missing — the absence test above proves nothing');
+  else ok();
+}
 // Assistant-domain weather model (a second, richer schema).
 for (const [o, s] of [[0x188308,'areaName'],[0x188320,'dayTemp'],[0x188328,'nightTemp'],
                       [0x188334,'uvi'],[0x188338,'iconDay'],[0x188350,'weatherResponse'],
@@ -490,8 +500,10 @@ if (!doc.includes('0x2C010000') || !doc.includes('0x3BFD7CB0')) fail('G5: doc do
 else ok();
 if (!doc.includes('x_1.0.11.53/platform_tester.bin')) fail('G5: doc does not name the 1.0.11.53 target'); else ok();
 // Every hex offset the doc cites in a code-fence-free table must avoid the sub-images.
+const SUBIMG_BOUNDS = new Set([0x04E9B4, 0x143F14, 0x134070, 0x14A7A4]);
 for (const m of doc.matchAll(/`0x([0-9a-f]{4,6})`/g)) {
   const v = parseInt(m[1], 16);
+  if (SUBIMG_BOUNDS.has(v)) continue;   // naming a boundary is how you say "never write here"
   for (const [a, b, nm] of FORBIDDEN)
     if (v >= a && v < b) fail(`G5: doc cites ${hx(v)}, inside ${nm} sub-image`);
 }
