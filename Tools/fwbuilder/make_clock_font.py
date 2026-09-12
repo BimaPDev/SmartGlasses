@@ -47,9 +47,15 @@ NAME_DUMMY_20 = 0x177B0C    # "FONT_DUMMY_20" -> the stock 14px face
 HOLE_LO, HOLE_HI = 0x3EC950, 0x3ED22E
 DATA_DELTA = 0x3BFD7CB0
 BUILD = b'Flyme XR 1.0.11.53.20241126_Air_intl_FR'
-CHARS = "./0123456789:"
-CP_LO = 0x2E             # '.'; the donor's EXISTING cmap is U+002E..U+003A, 13 entries,
-                         # and this set is chosen to match it so the cmap is not touched
+CHARS = ".0123456789:"
+CP_LO = 0x2E             # the cmap's range_start
+OFS_LIST = 0x212410      # glyph_id_ofs_list — the REAL codepoint->gid mapping.
+                         # Stock: [0,0,1,2,3,4,5,6,7,8,9,10,1] for ". / 0..9 :"
+                         # so '.' and '/' SHARE gid 1, '0' is gid 2 (not 3), and ':'
+                         # collides with '0' at gid 2. That collision is why a clock
+                         # rendered "06:15" as "/6/15": the device asked for gid 2 twice.
+                         # CHARS is therefore ordered to match the list, and entry 12 is
+                         # repointed at a gid of its own.
 DEFAULT_FONT = "/System/Library/Fonts/Helvetica.ttc"
 
 
@@ -173,6 +179,13 @@ def main():
     packed = (1 & 0x1FF) | (1 << 9) | (0 << 13) | (0 << 14)    # cmaps=1 bpp=1 fmt=plain
     struct.pack_into('<H', d, s + 18, packed)
 
+    # Give ':' a glyph id of its own. Stock maps it to gid 2, which is '0'.
+    colon_ofs = len(CHARS) - 1            # ':' is the last glyph -> gid len(CHARS)
+    if d[OFS_LIST + 12] != colon_ofs:
+        print(f"  ofs_list[12] (':'): {d[OFS_LIST + 12]} -> {colon_ofs}  "
+              f"(was colliding with '0' at gid {1 + d[OFS_LIST + 12]})")
+        d[OFS_LIST + 12] = colon_ofs
+
     # Extend the EXISTING cmap in place to cover ':'. Stock covers U+002E..U+0039 —
     # twelve codepoints, NO colon — so a clock rendered "05:30" as "05<box>30". v2 did
     # exactly this (same cmap address, length 12 -> 13) and boots; v3 RELOCATED the cmap
@@ -180,10 +193,16 @@ def main():
     cmap_off = struct.unpack_from('<I', d, FACE + 12 + 8)[0] - DATA_DELTA
     cstart, clen, cgid = struct.unpack_from('<IHH', d, cmap_off)
     assert cstart == CP_LO, f'cmap starts at U+{cstart:04X}, expected U+{CP_LO:04X}'
-    if clen < len(CHARS):
-        struct.pack_into('<H', d, cmap_off + 4, len(CHARS))
-        print(f'  cmap 0x{cmap_off:06x}: range_length {clen} -> {len(CHARS)} '
-              f'(now covers U+{cstart:04X}..U+{cstart + len(CHARS) - 1:04X}, i.e. through ":")')
+    assert struct.unpack_from('<I', d, cmap_off + 12)[0] != 0, 'no glyph_id_ofs_list'
+    NEED = 13                              # '.' '/' '0'-'9' ':' = 13 codepoints
+    if clen != NEED:
+        struct.pack_into('<H', d, cmap_off + 4, NEED)
+        print(f'  cmap range_length {clen} -> {NEED}')
+    llen = struct.unpack_from('<H', d, cmap_off + 16)[0]
+    if llen != NEED:
+        struct.pack_into('<H', d, cmap_off + 16, NEED)
+        print(f'  cmap list_length   {llen} -> {NEED}   '
+              f'(v2 bumped BOTH; v5 bumped only range_length)')
 
     # lv_font_t: keep base_line at the donor's value (2). v2 used 2 and boots; v3 used
     # the typeface descent (15) and does not. Only line_height grows for taller glyphs.

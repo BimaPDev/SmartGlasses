@@ -41,9 +41,38 @@ ok('G8 glyph_dsc is 4-BYTE ALIGNED (v2 was misaligned by 3)',
    `v4 dsc 0x${dsc.toString(16)} align ${dsc%4}; v2 was align ${(u32(V2,FACE+4)-DELTA)%4}`);
 ok('G9 glyph_bitmap also aligned', bm%4===0, `0x${bm.toString(16)} align ${bm%4}`);
 
+// ---- RESOLVE THE WAY THE FIRMWARE DOES: via glyph_id_ofs_list ------------------------
+// The cmap is NOT a plain dense range. It carries a glyph_id_ofs_list that remaps
+// codepoints, and ignoring it is what rendered "06:15" as "/6/15": stock maps BOTH '0'
+// and ':' to gid 2. Resolve through the list, and require no two characters of a clock
+// string to land on the same glyph.
+{
+  const cmo=u32(B,FACE+8)-DELTA;
+  const rs=u32(B,cmo), rl=u16(B,cmo+4), gs=u16(B,cmo+6);
+  const gol=u32(B,cmo+12)-DELTA, ll=u16(B,cmo+16);
+  ok('G9a cmap has a glyph_id_ofs_list', u32(B,cmo+12)!==0, `@0x${gol.toString(16)}`);
+  ok('G9b range_length AND list_length both cover the colon', rl===13 && ll===13,
+     `range_length=${rl} list_length=${ll} — v5 bumped only the first and lost ':'`);
+  const gidOf=(ch)=>gs+B[gol+(ch.codePointAt(0)-rs)];
+  const seen=new Map(); let dup=null;
+  for(const ch of "0123456789:"){const g=gidOf(ch);
+    if(seen.has(g)) dup=`'${ch}' and '${seen.get(g)}' both -> gid ${g}`; seen.set(g,ch);}
+  ok('G9c NO two clock characters share a glyph id', dup===null,
+     dup||`11 characters -> 11 distinct gids`);
+  ok('G9d ":" has its own gid, not "0"s', gidOf(':')!==gidOf('0'),
+     `':'->gid ${gidOf(':')}, '0'->gid ${gidOf('0')}`);
+  ok('G9e NEG: stock DOES collide — the fault this gate catches',
+     (()=>{const c=u32(A,FACE+8)-DELTA, g0=u32(A,c+12)-DELTA, st=u32(A,c), gst=u16(A,c+6);
+       return gst+A[g0+(0x3A-st)] === gst+A[g0+(0x30-st)];})(),
+     "stock maps ':' and '0' to the same gid — exactly what produced \"/6/15\"");
+}
+
 // ---- SEMANTIC glyph checks -----------------------------------------------------------
 const cm=u32(B,FACE+8)-DELTA, cs=u32(B,cm), cg=u16(B,cm+6);
-function glyph(ch){const gid=cg+(ch.codePointAt(0)-cs);const o=dsc+gid*16;
+function glyph(ch){
+  const gol=u32(B,cm+12)-DELTA;
+  const gid=cg+B[gol+(ch.codePointAt(0)-cs)];      // firmware's path, not a dense range
+  const o=dsc+gid*16;
   const bi=u32(B,o),adv=u32(B,o+4),bw=u16(B,o+8),bh=u16(B,o+10);const px=[];
   for(let r=0;r<bh;r++){const row=[];for(let c=0;c<bw;c++){const i=r*bw+c;
     row.push((B[bm+bi+(i>>3)]>>(7-(i&7)))&1);}px.push(row);}
@@ -78,9 +107,15 @@ let d=[];for(let i=0;i<A.length;i++) if(A[i]!==B[i]) d.push(i);
 // the cmap's range_length field: two bytes at cmap+4, deliberately 12 -> 13 so ':' is
 // covered. Declared explicitly rather than by widening the filter, so any OTHER byte in
 // the cmap struct would still be caught.
-const CMLEN=(u32(A,FACE+8)-DELTA)+4;
+// Three deliberate edits OUTSIDE the font hole, each derived from the cmap rather than
+// hardcoded, so a stray byte anywhere else in these structures still fails:
+//   cmap.range_length (+4)  12 -> 13   so ':' is inside the range
+//   cmap.list_length (+16)  12 -> 13   so the ofs list is read that far
+//   ofs_list[12]            1  -> 11   so ':' stops colliding with '0'
+const CMO=u32(A,FACE+8)-DELTA;
+const CMLEN=CMO+4, CMLL=CMO+16, OFS12=(u32(A,CMO+12)-DELTA)+12;
 const stray=d.filter(i=>!(i>=HOLE_LO&&i<HOLE_HI)&&!(i>=FACE&&i<FACE+20)&&!(i>=FO+8&&i<FO+12)
-  &&i!==CMLEN&&i!==CMLEN+1
+  &&i!==CMLEN&&i!==CMLEN+1&&i!==CMLL&&i!==CMLL+1&&i!==OFS12
   &&!(i>=LIT&&i<LIT+4)&&i!==ALIGN&&i!==ALIGN+1&&i!==YOFS&&i!==YOFS+1&&i!==TILE&&i!==TILE+1
   &&i!==OPA&&i!==OPA+1);
 ok('G19 every changed byte accounted for', stray.length===0,
