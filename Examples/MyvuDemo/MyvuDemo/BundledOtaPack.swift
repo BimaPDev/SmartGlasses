@@ -49,8 +49,19 @@ enum BundledOtaPack {
               + "an earlier build already flashed successfully. PAIR WITH \"Time only\".",
         isStock: false)
 
+    static let appendTest = OtaPack(
+        id: "appendtest",
+        resource: "ota_star-air_1.0.11.87_APPENDTEST",
+        label: "TEST — appended space",
+        detail: "EXPERIMENT, not a feature. Same as \"Big clock, middle\" except the "
+              + "clock's glyph bitmap is COPIED past the end of the image and the font "
+              + "points at the copy. If the clock still renders, space appended past "
+              + "the image is mapped and readable — which is what adding CODE would "
+              + "need. If it garbles or does not boot, that route is closed.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, midClock, noRings]
+    static let all: [OtaPack] = [stock, midClock, appendTest]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
