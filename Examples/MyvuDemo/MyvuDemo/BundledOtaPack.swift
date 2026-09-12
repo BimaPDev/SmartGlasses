@@ -49,8 +49,18 @@ enum BundledOtaPack {
               + "so no geometry moves. 14 gates pass, and CONFIRMED ON HARDWARE.",
         isStock: false)
 
+    static let hud = OtaPack(
+        id: "hud",
+        resource: "ota_star-air_1.0.11.97_HUD",
+        label: "Big clock HUD",
+        detail: "All three together: 48px clock, no rings, and the standby tile 72 -> 190 "
+              + "so the clock is no longer clipped. Pair it with Settings > Experiment "
+              + "> \"Time only\" for the full effect. 17 gates; 6 .text bytes changed, "
+              + "all of them operands.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, noRings, bigClock]
+    static let all: [OtaPack] = [stock, hud, noRings, bigClock]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))

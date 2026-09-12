@@ -1,0 +1,23 @@
+{
+  "zip": "/Users/bimap/Documents/Coding/SmartGlasses/Reverse/firmware/patched_hud/ota_star-air_1.0.11.97_HUD.zip",
+  "digest": "b3095ea4f87df92daec1bd44447dd27f",
+  "fileSize": 4524108,
+  "latestVersion": "1.0.11.97",
+  "baseVersion": "1.0.11.53.20241126_Air_intl_FR",
+  "patches": [
+    "48px clock font (injected face + name literal)",
+    "border_opa 92->0 @0x61b7f8 (rings off)",
+    "tile 72->190 @0x61b79e (clock no longer clipped)"
+  ],
+  "textBytesChanged": 6,
+  "bins": {
+    "best1600_watch_bth.bin": {
+      "md5": "15b27b7aa74e5cea100ccaa4b9c2ac4c",
+      "changed": false
+    },
+    "platform_tester.bin": {
+      "md5": "01ee96903f2220e7969d657edeeb527d",
+      "changed": true
+    }
+  }
+}
