@@ -83,6 +83,7 @@ Superseded by: `analysis/images_v2/`, `analysis/fonts_v2/`, `extract_lvgl_fonts_
 | `Reverse/firmware/analysis/ADDRESS_AUDIT.md` | prior audit — read **with** the corrections above |
 | `Reverse/firmware/analysis/BOOTLOOP_EXPLAINED.md`, `BATT_CIRCLE_POSTMORTEM.md` | why v5/v6 bricked |
 | `Reverse/firmware/analysis/full_rev/` | per-subsystem leaves + `verify*.mjs` |
+| `Reverse/firmware/analysis/FIELD_NOTES.md` | **start here** — traps, verified offsets, retracted beliefs, method rules |
 | `Reverse/firmware/analysis/map/` | **full subsystem map** — 8 leaves + oracles; start at `INDEX.md` |
 | `Reverse/firmware/analysis/domain_routing/` | domain routing, app registry, phone→glasses text surfaces (27 gates) |
 | `PROTOCOL.md` | BLE/StarryNet protocol (wake = bare `code:7`, line 327) |
