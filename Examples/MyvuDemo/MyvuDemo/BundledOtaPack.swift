@@ -40,18 +40,17 @@ enum BundledOtaPack {
               + "so no geometry moves. 14 gates pass, and CONFIRMED ON HARDWARE.",
         isStock: false)
 
-    static let hud4 = OtaPack(
-        id: "hud4",
-        resource: "ota_star-air_1.0.11.94_HUD4",
-        label: "Big clock v4",
-        detail: "46px clock, rings off, tile 190, centred. v3 failed to boot because it "
-              + "nulled kern_dsc and replaced the cmap; v4 keeps both exactly as the "
-              + "booting image had them and changes only the glyph table, now 4-byte "
-              + "aligned. 23 gates, checked against the image that boots.",
+    static let hud5 = OtaPack(
+        id: "hud5",
+        resource: "ota_star-air_1.0.11.93_HUD5",
+        label: "Big clock v5",
+        detail: "46px clock, rings off, tile 190, centred. v4 rendered \"05<box>30\" "
+              + "because stock's cmap stops at '9' and has no colon; v5 extends that "
+              + "length field in place, exactly as the booting build did. 25 gates.",
         isStock: false)
 
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, hud4, noRings]
+    static let all: [OtaPack] = [stock, hud5, noRings]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))

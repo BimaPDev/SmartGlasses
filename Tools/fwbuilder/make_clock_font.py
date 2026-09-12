@@ -173,6 +173,18 @@ def main():
     packed = (1 & 0x1FF) | (1 << 9) | (0 << 13) | (0 << 14)    # cmaps=1 bpp=1 fmt=plain
     struct.pack_into('<H', d, s + 18, packed)
 
+    # Extend the EXISTING cmap in place to cover ':'. Stock covers U+002E..U+0039 —
+    # twelve codepoints, NO colon — so a clock rendered "05:30" as "05<box>30". v2 did
+    # exactly this (same cmap address, length 12 -> 13) and boots; v3 RELOCATED the cmap
+    # and did not. Change the length field, never the pointer.
+    cmap_off = struct.unpack_from('<I', d, FACE + 12 + 8)[0] - DATA_DELTA
+    cstart, clen, cgid = struct.unpack_from('<IHH', d, cmap_off)
+    assert cstart == CP_LO, f'cmap starts at U+{cstart:04X}, expected U+{CP_LO:04X}'
+    if clen < len(CHARS):
+        struct.pack_into('<H', d, cmap_off + 4, len(CHARS))
+        print(f'  cmap 0x{cmap_off:06x}: range_length {clen} -> {len(CHARS)} '
+              f'(now covers U+{cstart:04X}..U+{cstart + len(CHARS) - 1:04X}, i.e. through ":")')
+
     # lv_font_t: keep base_line at the donor's value (2). v2 used 2 and boots; v3 used
     # the typeface descent (15) and does not. Only line_height grows for taller glyphs.
     struct.pack_into('<h', d, FONT_OBJ + 8, max(g['bh'] for g in gl) + 8)

@@ -48,8 +48,15 @@ function glyph(ch){const gid=cg+(ch.codePointAt(0)-cs);const o=dsc+gid*16;
   for(let r=0;r<bh;r++){const row=[];for(let c=0;c<bw;c++){const i=r*bw+c;
     row.push((B[bm+bi+(i>>3)]>>(7-(i&7)))&1);}px.push(row);}
   return {gid,adv:adv/16,bw,bh,px};}
-ok('G10 cmap is the donor range U+002E..U+003A', cs===0x2E && cg===1,
-   `start=U+${cs.toString(16)} gid0=${cg} — CHARS was chosen to match it`);
+const clen=u16(B,cm+4);
+ok('G10 cmap covers U+002E..U+003A INCLUDING the colon', cs===0x2E && cg===1 && clen===13,
+   `start=U+${cs.toString(16)} len=${clen} gid0=${cg}`);
+ok('G10b NEG: stock len is 12 and would render ":" as a missing-glyph box',
+   u16(A,(u32(A,FACE+8)-DELTA)+4)===12,
+   'exactly the fault seen on the panel as "/5<box>30"');
+ok('G10c cmap POINTER unchanged from stock and v2 — only the length field moved',
+   u32(B,FACE+8)===u32(A,FACE+8) && u32(B,FACE+8)===u32(V2,FACE+8),
+   'v3 relocated the cmap and did not boot; v2 edited the length in place and boots');
 const z=glyph('0'),one=glyph('1'),col=glyph(':');
 const ink=(g,r)=>g.px[r].reduce((a,b)=>a+b,0);
 ok('G11 "0" is a closed loop with a hollow middle',
@@ -68,7 +75,12 @@ ok('G18 clock font literal repointed', u32(B,LIT)===0x41A2A4+DELTA,`0x${u32(B,LI
 
 // ---- containment -------------------------------------------------------------------------
 let d=[];for(let i=0;i<A.length;i++) if(A[i]!==B[i]) d.push(i);
+// the cmap's range_length field: two bytes at cmap+4, deliberately 12 -> 13 so ':' is
+// covered. Declared explicitly rather than by widening the filter, so any OTHER byte in
+// the cmap struct would still be caught.
+const CMLEN=(u32(A,FACE+8)-DELTA)+4;
 const stray=d.filter(i=>!(i>=HOLE_LO&&i<HOLE_HI)&&!(i>=FACE&&i<FACE+20)&&!(i>=FO+8&&i<FO+12)
+  &&i!==CMLEN&&i!==CMLEN+1
   &&!(i>=LIT&&i<LIT+4)&&i!==ALIGN&&i!==ALIGN+1&&i!==YOFS&&i!==YOFS+1&&i!==TILE&&i!==TILE+1
   &&i!==OPA&&i!==OPA+1);
 ok('G19 every changed byte accounted for', stray.length===0,
