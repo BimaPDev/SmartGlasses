@@ -61,7 +61,7 @@ enum BundledOtaPack {
         isStock: false)
 
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, midClock, appendTest]
+    static let all: [OtaPack] = [stock, midClock, noRings, appendTest]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
