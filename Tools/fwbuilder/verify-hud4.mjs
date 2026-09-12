@@ -114,8 +114,14 @@ let d=[];for(let i=0;i<A.length;i++) if(A[i]!==B[i]) d.push(i);
 //   ofs_list[12]            1  -> 11   so ':' stops colliding with '0'
 const CMO=u32(A,FACE+8)-DELTA;
 const CMLEN=CMO+4, CMLL=CMO+16, OFS12=(u32(A,CMO+12)-DELTA)+12;
+// The standby flex-row immediates in StandByView (see make_flex_layout.py). Declared
+// here because a shipped image may carry both the clock and the layout patch; each is
+// still gated by its own verifier.
+const FLEX=[0x6167CC,0x6167EA,0x6167F0,0x6167F6,0x616804,0x616810,0x61681C];
+const FLEXW=0x6167D2;   // movw r1,#row_width, 4 bytes
 const stray=d.filter(i=>!(i>=HOLE_LO&&i<HOLE_HI)&&!(i>=FACE&&i<FACE+20)&&!(i>=FO+8&&i<FO+12)
   &&i!==CMLEN&&i!==CMLEN+1&&i!==CMLL&&i!==CMLL+1&&i!==OFS12
+  &&!FLEX.some(f=>i===f||i===f+1)&&!(i>=FLEXW&&i<FLEXW+4)
   &&!(i>=LIT&&i<LIT+4)&&i!==ALIGN&&i!==ALIGN+1&&i!==YOFS&&i!==YOFS+1&&i!==TILE&&i!==TILE+1
   &&i!==OPA&&i!==OPA+1);
 ok('G19 every changed byte accounted for', stray.length===0,
