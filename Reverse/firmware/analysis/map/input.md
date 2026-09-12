@@ -192,7 +192,7 @@ brightness.
 
 ### 4.5 Power-off / reboot view
 
-`"PowerOffAndRebootView: power off ing ,don't handle LV_KEY_SWIPE_LEFT"` @`0x182100`
+`"[STARRYNET_LOG][Info] PowerOffAndRebootView: power off ing ,don't handle LV_KEY_SWIPE_LEFT"` @`0x1820fc`
 and the `_RIGHT` twin @`0x18215c`: swipes are explicitly suppressed once shutdown starts.
 
 ### 4.6 Music

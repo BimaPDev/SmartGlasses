@@ -149,7 +149,7 @@ Named by the log string in the same basic block:
 | 21, 22 | flash self-test scratch keys | `0x4a6fc0`, `0x4a6f36` | `xjxr_starrynet_test_m55.c` |
 | 24 | TTS state gate | `0x55bba4` | `ai_speech_tts_api.c` |
 | 54 | glass-active record time | `0x60cb04` | `MessageModel::sendGlassActiveInfoMsg` |
-| 110–122 | 13 consecutive avatar/hint counters | `0x592856`–`0x592b36` | `app/avatar/Hint.cpp` |
+| 111–122 | 13 consecutive avatar/hint counters | `0x592856`–`0x592b36` | `app/avatar/Hint.cpp` |
 
 Related but string-named (same store, wrapped by the Assistant/Launcher layers):
 `lpWakeupEnable` `0x1893d0`, `asrOnscreenEnable` `0x1893f8`, `continueDialogEnable`

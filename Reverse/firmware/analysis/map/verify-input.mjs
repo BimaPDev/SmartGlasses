@@ -197,6 +197,7 @@ const ANCHORS = [
   [0x170920, 'set_tp_sensitivity'],
   [0x18120c, 'tp_click_area_img'],
   [0x1820fc, "[STARRYNET_LOG][Info] PowerOffAndRebootView: power off ing ,don't handle LV_KEY_SWIPE_LEFT"],
+  [0x18215c, "[STARRYNET_LOG][Info] PowerOffAndRebootView: power off ing ,don't handle LV_KEY_SWIPE_RIGHT"],
   [0x19a23c, 'registerPlayCenterTpEvent'],
   [0x19a190, 'refreshTpHintByStatus'],
   [0x178206, 'T,../../thirdparty/star_air_lvgl/app/Pages/Setting/ui/BrightView.cpp'],

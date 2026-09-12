@@ -54,8 +54,19 @@ Superseded by: `analysis/images_v2/`, `analysis/fonts_v2/`, `extract_lvgl_fonts_
   todo, systemsetting. A worked envelope sits at `0x192664`.
 - **`STKS` is voice shortcuts, not stocks.** There is no stock feature in the firmware
   (negative control: zero hits for ticker/NASDAQ/portfolio/equity/NYSE).
-- **Todo is a domain, not an app.** The page registry at `0x176b94` has 12 `Pages/X`
-  entries and no `Pages/Todo`; a new app needs a 13th entry **plus** a delegate class.
+- **Todo is a domain, not an app.** The page registry at `0x176b94` has **13** `Pages/X`
+  entries and no `Pages/Todo`; a new app needs a 14th entry **plus** a delegate class.
+- **Sub-image bounds are CONTRADICTORY.** DSP `0x04E9B4`–`0x143F14` and sensor_hub
+  `0x134070`–`0x14A7A4` overlap by 65,188 bytes, which is impossible. The DSP *end* is
+  the suspect number: `0x143ef8`/`0x143f13` hold M55 rodata (`best1600_dsp`,
+  `dsp_loader.c`) inside the claimed DSP range. **Treat the union
+  `[0x04E9B4, 0x14A7A4)` as forbidden** until resolved by byte evidence.
+- **`LV_STYLE_TEXT_COLOR`/`TEXT_FONT` are 85/87**, not 79/80. Style setters are 12-byte
+  thunks at `0x64a43c`–`0x64a64c`; radius 11, border_color 48, border_opa 49,
+  border_width 50.
+- **Two DATA-tier patches are hardware-confirmed:** the big-clock font, and no-rings
+  (`border_opa 92→0` at `0x61b7f8`). Both changed only operands — no instruction added,
+  removed, or resized. That is the low-risk pattern.
 - **Wake word:** the model is **not** in the firmware. It is `kws_model.nn`
   (`STAR_NN V0.1.0` / DFSMN / float32 / 1.4 MB) in the Android app. Branding differs per
   firmware version (7.83 Xiaoxi → 11.53 Hey Aicy → 12.83 Xiaoxi) — **confirm which build is
@@ -72,6 +83,7 @@ Superseded by: `analysis/images_v2/`, `analysis/fonts_v2/`, `extract_lvgl_fonts_
 | `Reverse/firmware/analysis/ADDRESS_AUDIT.md` | prior audit — read **with** the corrections above |
 | `Reverse/firmware/analysis/BOOTLOOP_EXPLAINED.md`, `BATT_CIRCLE_POSTMORTEM.md` | why v5/v6 bricked |
 | `Reverse/firmware/analysis/full_rev/` | per-subsystem leaves + `verify*.mjs` |
+| `Reverse/firmware/analysis/map/` | **full subsystem map** — 8 leaves + oracles; start at `INDEX.md` |
 | `Reverse/firmware/analysis/domain_routing/` | domain routing, app registry, phone→glasses text surfaces (27 gates) |
 | `PROTOCOL.md` | BLE/StarryNet protocol (wake = bare `code:7`, line 327) |
 | `Reverse/extracted/base/assets/fsp/res/` | the real NN models (KWS/VAD/CWR/NS) |
