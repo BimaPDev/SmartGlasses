@@ -471,7 +471,17 @@ Tools/fwbuilder/make_center_clock.py  align TOP_MID -> CENTER
 Tools/fwbuilder/make_clock_font.py    regenerate the clock face, sized to the 2,270 B hole
 Tools/fwbuilder/verify-hud4.mjs       30 gates, primary control is an image that BOOTS
 
-# previews, before flashing anything
+# PREVIEW BEFORE FLASHING — run this on the exact .bin you are about to send
+Tools/fwbuilder/preview.py <fw.bin> [--widgets time,weather] [--time 17:39]
+  Reads every layout constant out of the image, lays the row out the way lv_flex does,
+  resolves glyphs through the cmap's ofs list, and reports the INK extent (what a
+  screenshot measures) plus warnings.
+  Validated against all five known hardware outcomes: the working centred clock
+  (predicts ink x261..414 vs measured x262..414), the 4-widget wrap, the CENTER(2)
+  no-boot, the row-height clipping, and the missing colon.
+  Its x origin carries a FITTED constant ROW_X_CAL=16 from one measurement — re-measure
+  if the row setup changes.
+
 Tools/fwbuilder/render_hud.py         the panel as the firmware would draw it
 Tools/fwbuilder/render_standby.py     the widget row at any tile size
 ```
