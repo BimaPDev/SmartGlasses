@@ -47,8 +47,9 @@ NAME_DUMMY_20 = 0x177B0C    # "FONT_DUMMY_20" -> the stock 14px face
 HOLE_LO, HOLE_HI = 0x3EC950, 0x3ED22E
 DATA_DELTA = 0x3BFD7CB0
 BUILD = b'Flyme XR 1.0.11.53.20241126_Air_intl_FR'
-CHARS = "0123456789:"
-CP_LO = 0x30             # '0'; ':' is 0x3A, so the dense range is 11 codepoints
+CHARS = "./0123456789:"
+CP_LO = 0x2E             # '.'; the donor's EXISTING cmap is U+002E..U+003A, 13 entries,
+                         # and this set is chosen to match it so the cmap is not touched
 DEFAULT_FONT = "/System/Library/Fonts/Helvetica.ttc"
 
 
@@ -95,7 +96,7 @@ def build(size, fontpath):
     blob = pack(gl)
     bm_len = (len(blob) + 3) & ~3
     dsc_len = (len(gl) + 1) * 16          # +1 for the reserved gid 0
-    total = bm_len + dsc_len + 20
+    total = bm_len + dsc_len
     return gl, asc, desc, blob, bm_len, dsc_len, total
 
 
@@ -131,17 +132,17 @@ def main():
 
     bm_at = HOLE_LO
     dsc_at = bm_at + bm_len
-    cmap_at = dsc_at + dsc_len
-    assert bm_at % 4 == 0 and dsc_at % 4 == 0 and cmap_at % 4 == 0, 'alignment'
-    assert cmap_at + 20 <= HOLE_HI, 'overruns the hole'
+    cmap_at = None                     # the existing cmap is reused untouched
+    assert bm_at % 4 == 0 and dsc_at % 4 == 0, 'alignment'
+    assert dsc_at + dsc_len <= HOLE_HI, 'overruns the hole'
 
     tall = max(g['bh'] for g in gl)
     print(f'  font       {Path(a.font).name} @ {size}px')
     print(f'  glyphs     {len(gl)} ({CHARS})  tallest {tall}px  widest {max(g["bw"] for g in gl)}px')
     print(f'  space      bitmap {len(blob)}B -> {bm_len}B (pad), dsc {dsc_len}B, cmap 20B'
           f'  = {total}B of {budget}B')
-    print(f'  layout     bitmap 0x{bm_at:06x}  dsc 0x{dsc_at:06x}  cmap 0x{cmap_at:06x}'
-          f'   (all 4-byte aligned)')
+    print(f'  layout     bitmap 0x{bm_at:06x}  dsc 0x{dsc_at:06x}  (4-byte aligned); '
+          f'cmap + kern_dsc left as the donor had them')
     print(f'  metrics    ascent {asc} descent {desc} -> line_height {asc + desc}')
 
     if a.dry_run:
@@ -160,20 +161,21 @@ def main():
         struct.pack_into('<IIHHhh', d, o, g['index'], int(round(g['adv'] * 16)),
                          g['bw'], g['bh'], g['ox'], g['oy'])
 
-    # cmap: 20 bytes, type 0 dense
-    struct.pack_into('<IHHIIHBB', d, cmap_at,
-                     CP_LO, len(CHARS), 1, 0, 0, 0, 0, 0)
-
-    # repoint the face struct (real struct begins at FACE+12)
+    # DO NOT write a new cmap and DO NOT null kern_dsc.
+    #
+    # Established by diffing a booting image against a crashing one: v2 kept the donor's
+    # ORIGINAL cmap (0x3c1e9844) and kern_dsc (0x3c1ea120) and boots; v3 replaced the
+    # cmap and set kern_dsc = NULL and does not boot. A null kern_dsc dereferenced
+    # without a guard is a boot-time fault, and the existing cmap already describes
+    # exactly U+002E..U+003A -> gid 1.., which is why CHARS matches that range.
     s = FACE + 12
-    struct.pack_into('<III', d, s, bm_at + DATA_DELTA, dsc_at + DATA_DELTA,
-                     cmap_at + DATA_DELTA)
-    struct.pack_into('<I', d, s + 12, 0)                       # kern_dsc = NULL
+    struct.pack_into('<II', d, s, bm_at + DATA_DELTA, dsc_at + DATA_DELTA)
     packed = (1 & 0x1FF) | (1 << 9) | (0 << 13) | (0 << 14)    # cmaps=1 bpp=1 fmt=plain
     struct.pack_into('<H', d, s + 18, packed)
 
-    # lv_font_t line_height / base_line
-    struct.pack_into('<hh', d, FONT_OBJ + 8, asc + desc, desc)
+    # lv_font_t: keep base_line at the donor's value (2). v2 used 2 and boots; v3 used
+    # the typeface descent (15) and does not. Only line_height grows for taller glyphs.
+    struct.pack_into('<h', d, FONT_OBJ + 8, max(g['bh'] for g in gl) + 8)
 
     # point the standby clock at this face. The ctor loads a FONT_* NAME literal, so
     # this swaps which name it asks for rather than touching the font manager.
