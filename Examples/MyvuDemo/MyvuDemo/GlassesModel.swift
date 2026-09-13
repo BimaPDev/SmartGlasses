@@ -591,9 +591,15 @@ final class GlassesModel: ObservableObject {
             let st = try await glasses.ancsState(timeout: 5)
             return st == Notifications.ancsStateConnected
                 ? "ANCS CONNECTED — the glasses are subscribed to this phone"
-                : "config sent, ANCS state: \(st). If this is not CONNECTED, check "
-                  + "iOS Settings > Bluetooth > (i) on the glasses for "
-                  + "\"Share System Notifications\". No app can prompt for that."
+                : "Config accepted, ANCS still \(st). The firmware gate is open, so "
+                  + "what is left is the BLE bond.\n\nCheck Settings > Bluetooth > (i) "
+                  + "on the glasses. If there is no \"Share System Notifications\" row, "
+                  + "there is no usable LE bond — tap Forget This Device and pair again. "
+                  + "The prompt appears during pairing; no app can raise it later.\n\n"
+                  + "Flashing firmware wipes the glasses' bond keys while iOS keeps its "
+                  + "own, which shows up in the Log tab as \"Peer removed pairing "
+                  + "information\". The data link still connects unencrypted, which is "
+                  + "enough for this app and not enough for ANCS."
         } catch {
             return "config + connect sent, but the glasses did not answer the state "
                  + "query. Check the Log tab for the raw exchange."

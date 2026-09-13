@@ -436,6 +436,33 @@ pushes a session generates and wrong after a reconnect, where re-asserting is th
 text is a filter or a Focus, not the link. Anything else, check Settings > Bluetooth before
 touching the protocol.
 
+### CONFIRMED ON HARDWARE 2026-09-12: the blocker is the bond, not the config
+
+A correctly-ordered run (`SYNC_SMART_REMINDER_CONFIG` msgId 59, `CONNECT_ANCS_SERVICE`
+msgId 60, both acked) still answered `DISCONNECTED`. Gate 1 was open — the init burst
+already sends the config at msgId 34 — so **gate 1 was never this device's problem**, and
+the earlier "the config was not sent" reading is superseded.
+
+Three independent facts pin it to the LE bond:
+
+1. The connect attempt logged `BLE Peer removed pairing information`
+   (`CBError.peerRemovedPairingInformation`): **iOS holds bond keys the glasses no longer
+   have.** The SDK already fails hard on this rather than retrying — see
+   `BleCentral.describe` and `MyvuClient.onTransportDisconnected`.
+2. Settings > Bluetooth > ⓘ for the glasses showed **no "Share System Notifications" row**
+   at all — only Name, Device Type, Disconnect, Forget This Device. That row exists only
+   where a valid LE bond carries an ANCS request.
+3. A manual retry 17 s later connected fine and ran the whole session. That is the trap:
+   **the vendor protocol does not need an encrypted link.** It carries its own ECDH bond on
+   the link characteristic (logged as "BLE bond established"), which is application-layer
+   and says nothing about LE security. ANCS needs the *link* encrypted; the app does not.
+   So everything looks healthy while the one thing ANCS depends on is absent.
+
+**Cause:** flashing firmware wipes the glasses' bond database. iOS keeps its half.
+**Fix:** Forget This Device, then pair again — the prompt appears during pairing.
+**Implication for this project:** every custom flash costs the ANCS bond. Re-pair after a
+flash, before concluding anything about notifications.
+
 ## 9. Retracted / corrected beliefs
 
 | Was believed | Actually |
