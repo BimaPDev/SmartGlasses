@@ -398,6 +398,44 @@ icons. Nothing has opened one yet. Still open.
 
 ---
 
+## 8b. ANCS — two gates, and only one is ours
+
+Real iPhone notifications reach the lens over **ANCS**, negotiated between the glasses and
+iOS directly. The phone app never carries the text. Two independent gates must both be
+open, and they belong to different owners:
+
+| Gate | Owner | Reachable from our app? |
+|---|---|---|
+| firmware `notification_enable_key` | whichever client speaks the protocol | **yes** — `SYNC_SMART_REMINDER_CONFIG` |
+| iOS "Share System Notifications" | iOS, at BLE **bonding** time | **no** — nor from the MYVU app |
+
+**The firmware gate.** `CONNECT_ANCS_SERVICE` (msgId 100) is *acked and then dropped* when
+`notification_enable_key` is unset. The guard's own string is in the image:
+
+```
+[%s] ios notification not enabled, pls open in MYVU app
+```
+
+That string names the vendor app, which invites the wrong conclusion. The flag is ordinary
+protocol state with no privileged path — `enablePhoneNotifications` sets it. **Order
+matters**: config first, then connect. A bare connect on a fresh session gets an ack that
+means nothing, which is exactly what a capture will show you.
+
+**The iOS gate.** iOS raises the "Share System Notifications" prompt when the *glasses*
+request ANCS over a **bonded** link. It is a pairing-time decision about a peripheral, not
+an app permission — there is no API for it, so no app can trigger it. If the glasses are
+absent from Settings > Bluetooth, no bond exists and nothing app-side can help. Firmware
+carries the matching bond state machine (`xr_bond.c`, `XR_BONDED`, `ble encrypt state = %d`).
+
+**A dedupe that hides the first gate.** `GlassesModel.pushNotificationConfig` drops
+unchanged configs (`guard next != lastPushedConfig`), which is right for the ~25 redundant
+pushes a session generates and wrong after a reconnect, where re-asserting is the point.
+`enableNotificationsThenConnectAncs` clears the memo, sends, waits, connects, then queries.
+
+**Diagnosis order:** query state first. `CONNECTED` means both gates are open and a missing
+text is a filter or a Focus, not the link. Anything else, check Settings > Bluetooth before
+touching the protocol.
+
 ## 9. Retracted / corrected beliefs
 
 | Was believed | Actually |

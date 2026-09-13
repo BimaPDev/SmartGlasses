@@ -376,8 +376,13 @@ struct ControlsView: View {
                             }
                         }
                     }
-                    Button("Connect ANCS") {
-                        ancsNote = "sent CONNECT_ANCS_SERVICE — watch the Log tab"
+                    Button("Enable notifications, then connect ANCS") {
+                        ancsNote = "enabling the filter, then opening the link…"
+                        Task { ancsNote = await model.enableNotificationsThenConnectAncs() }
+                    }
+                    Button("Connect ANCS only (no config first)") {
+                        ancsNote = "sent CONNECT_ANCS_SERVICE alone — the firmware "
+                            + "drops this if the filter was never enabled"
                         model.glasses.connectAncs()
                     }
                     Button("Disconnect ANCS", role: .destructive) {
@@ -392,10 +397,21 @@ struct ControlsView: View {
                 } header: {
                     Text("ANCS link")
                 } footer: {
-                    Text("Smart Reminder sets the filter; this drives the link the "
-                        + "filter applies to. Ask first if real texts never arrive "
-                        + "while Bluetooth looks fine — a CONNECTED answer means "
-                        + "the problem is the filter or a Focus, not the link.")
+                    Text("Two gates stand between you and a text on the lens, and "
+                        + "only one of them is ours.\n\n"
+                        + "OURS: the firmware guards ANCS behind the notification "
+                        + "filter and drops a bare connect when it was never enabled "
+                        + "— the image even carries the string \"ios notification not "
+                        + "enabled, pls open in MYVU app\". That names the vendor app, "
+                        + "but the flag is ordinary protocol state, so the first "
+                        + "button sets it and connects in the right order.\n\n"
+                        + "NOT OURS: iOS's \"Share System Notifications\" prompt. iOS "
+                        + "shows it when the GLASSES ask for ANCS over a bonded link, "
+                        + "so no app can raise it — not this one and not MYVU. If you "
+                        + "never saw it, check Settings > Bluetooth > (i) next to the "
+                        + "glasses. No entry there means no bond, and ANCS cannot work "
+                        + "until you pair them; a switched-off entry you can just "
+                        + "switch on.")
                 }
                 .requiresSession(model.isReady)
 

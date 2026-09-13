@@ -564,6 +564,42 @@ final class GlassesModel: ObservableObject {
                                          dismissMs: Int64(next.dismissMs))
     }
 
+    /// Sends the notification config unconditionally, then opens ANCS.
+    ///
+    /// The two are separate messages and the ORDER MATTERS: the firmware guards ANCS
+    /// behind `notification_enable_key` and logs
+    /// "ios notification not enabled, pls open in MYVU app" when it is unset, so a
+    /// CONNECT_ANCS_SERVICE sent first is simply dropped. That string names the vendor's
+    /// app, but the flag is ordinary protocol state — any client can set it.
+    ///
+    /// `pushNotificationConfig` dedupes against `lastPushedConfig` and will not re-send
+    /// an unchanged config, which is exactly wrong after a reconnect. This clears that
+    /// memo so the config always goes out.
+    ///
+    /// WHAT THIS CANNOT DO: make iOS show its "Share System Notifications" prompt. That
+    /// is granted at BLE BONDING time, to the GLASSES, not to any app. If the glasses
+    /// are not bonded in iOS Settings > Bluetooth, no app can conjure the prompt.
+    func enableNotificationsThenConnectAncs() async -> String {
+        guard isReady else { return "not connected" }
+        phoneNotificationsRaw = true
+        lastPushedConfig = nil
+        pushNotificationConfig()
+        try? await Task.sleep(nanoseconds: 600_000_000)
+        glasses.connectAncs()
+        try? await Task.sleep(nanoseconds: 900_000_000)
+        do {
+            let st = try await glasses.ancsState(timeout: 5)
+            return st == Notifications.ancsStateConnected
+                ? "ANCS CONNECTED — the glasses are subscribed to this phone"
+                : "config sent, ANCS state: \(st). If this is not CONNECTED, check "
+                  + "iOS Settings > Bluetooth > (i) on the glasses for "
+                  + "\"Share System Notifications\". No app can prompt for that."
+        } catch {
+            return "config + connect sent, but the glasses did not answer the state "
+                 + "query. Check the Log tab for the raw exchange."
+        }
+    }
+
     /// Answers the glasses' "who is this number?" question.
     ///
     /// This is what puts a name on the incoming-call card. The glasses read the
