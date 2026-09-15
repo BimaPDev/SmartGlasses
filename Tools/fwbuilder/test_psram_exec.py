@@ -55,22 +55,33 @@ argument to one fixed character and tail-jumps to the real function:
 Glyph ADVANCE still comes from get_glyph_dsc, which is not patched, so spacing stays
 correct and only the pixels change.
 
-READING THE RESULT -- three outcomes, all distinguishable
+READING THE RESULT -- and why this build also turns the rings off
 
-  clock reads 88:88        PSRAM EXECUTES. The stub ran. The CODE tier is open, and
-    (every digit the        the next step is real compiled C in this region.
-     same glyph)
-  device does not boot     PSRAM does not execute: prefetch abort on the first glyph
-                           draw. A/B rollback recovers. Route closed, and the answer
-                           is still worth having.
-  clock looks NORMAL       The stub never ran -- wrong font object, or this face is
-                           not the one the standby clock uses. Says NOTHING about
-                           PSRAM; it means the detour point was wrong, not the region.
+FIRST ATTEMPT, 2026-09-15, ON HARDWARE: clock read 07:24 normally. Two flaws, both
+fixed here.
 
-That third outcome is why the stub forces a visible change instead of being a
-transparent trampoline: a transparent one would render normally whether it executed or
-not, and "it worked" would be indistinguishable from "it never ran". This project has
-already shipped one vacuous gate that way.
+  1. It detoured ONE font -- the 40px big-clock face at 0x491D1C. The standby row's
+     tiles draw with a smaller face, so the stub was simply never called. This build
+     repoints ALL NINE lv_font_t objects, discovered by scanning for the shared
+     callback pair rather than hardcoding one address.
+
+  2. Worse: "display looks normal" was AMBIGUOUS. It means either the stub never ran,
+     OR the device faulted and A/B rolled back to stock. Those are opposite answers --
+     the second IS the PSRAM result -- and a photo cannot tell them apart.
+
+The fix for (2) is a MARKER: this build also carries the no-rings patch (border_opa
+92 -> 0 at 0x61b7f8), which is hardware-confirmed and visible on the standby screen.
+The rings answer "did my image actually boot?" independently of whether PSRAM runs:
+
+  rings GONE + every glyph '8'   PSRAM EXECUTES. The code tier is open.
+  rings GONE + text normal       The image booted and the stub still did not run. Not
+                                 a PSRAM answer; the detour point is wrong again.
+  rings STILL THERE              The image faulted and A/B rolled back to stock, which
+                                 with 9 fonts detoured means the jump into PSRAM is
+                                 what faulted: PSRAM does NOT execute.
+
+A marker that costs nothing and removes an ambiguity is worth more than a cleverer
+stub. The first attempt had no way to fail informatively.
 
 RISK: higher than every patch shipped so far, and stated plainly. This is the first
 build that creates NEW instructions and redirects control flow into them. If PSRAM is
@@ -84,7 +95,8 @@ import sys
 from pathlib import Path
 
 BUILD = b'Flyme XR 1.0.11.53.20241126_Air_intl_FR'
-FONT = 0x491D1C          # lv_font_t for the clock face
+DSC_FN, BMP_FN = 0x2C67B659, 0x2C67B5F1   # the shared lv_font_fmt_txt callbacks
+FONT = 0x491D1C          # the 40px clock face -- kept only as a sanity anchor
 # LVGL 8 order, and it is NOT the obvious one: get_glyph_dsc comes FIRST.
 #   +0  get_glyph_dsc     (font, dsc_out, letter, letter_next)   4 args
 #   +4  get_glyph_bitmap  (font, letter)                         2 args
@@ -126,36 +138,34 @@ def main():
     if BUILD not in d:
         sys.exit('refusing: not 1.0.11.53_Air_intl_FR')
 
-    orig = struct.unpack_from('<I', d, GET_BITMAP)[0]
-    dsc = struct.unpack_from('<I', d, DSC_PTR)[0]
+    # Discover every lv_font_t by its callback pair. Scanning beats hardcoding: it
+    # cannot miss a face, and finding the expected pair IS the layout proof.
+    fonts = []
+    for off in range(PSRAM_LO, PSRAM_HI - 8, 4):
+        if (struct.unpack_from('<I', d, off)[0] == DSC_FN
+                and struct.unpack_from('<I', d, off + 4)[0] == BMP_FN):
+            fonts.append(off)
+    if not fonts:
+        sys.exit('refusing: found no lv_font_t with the expected callback pair')
+    if FONT not in fonts:
+        sys.exit(f'refusing: the known clock face 0x{FONT:06X} is not among the fonts '
+                 f'found -- the scan or the build is wrong')
 
-    # --- guards: prove this really is the font object before redirecting anything ---
-    if dsc - DATA_DELTA != FMT_DSC_FILE:
-        sys.exit(f'refusing: font dsc points at file 0x{dsc - DATA_DELTA:06X}, expected '
-                 f'0x{FMT_DSC_FILE:06X} -- this is not the clock face')
-    if not (orig & 1):
-        sys.exit(f'refusing: get_glyph_bitmap 0x{orig:08X} has no Thumb bit -- not a '
-                 f'function pointer')
+    orig = BMP_FN
     fn_file = (orig & ~1) - CODE_DELTA
+    dsc_file = (DSC_FN & ~1) - CODE_DELTA
+
+    # --- guards: prove which callback is which, by opcode, not by assumption ---
     if not PSRAM_HI <= fn_file < len(d):
-        sys.exit(f'refusing: get_glyph_bitmap resolves to file 0x{fn_file:06X}, which is '
-                 f'not in .text (starts 0x{PSRAM_HI:06X}) -- wrong struct layout')
-    # SEMANTIC GUARD: the detour target must be the 2-arg bitmap function. Its first
-    # instruction is `cmp r1,#9` (0x2909). The 4-arg dsc function opens with a push.w
-    # and `cmp r2,#9` instead, so this single check separates them.
+        sys.exit(f'refusing: get_glyph_bitmap resolves to file 0x{fn_file:06X}, not .text')
     first = struct.unpack_from('<H', d, fn_file)[0]
     if first != 0x2909:
         sys.exit(f'refusing: the target at file 0x{fn_file:06X} opens with 0x{first:04X}, '
                  f'not `cmp r1,#9` (0x2909). That is not get_glyph_bitmap -- r1 is not '
                  f'the letter there, and forcing it would corrupt memory.')
-    # CONTROL: the OTHER pointer must be the 4-arg dsc function, which proves the
-    # layout rather than assuming it. push.w {r4..lr} = 0xE92D.
-    other = struct.unpack_from('<I', d, GET_DSC)[0]
-    other_file = (other & ~1) - CODE_DELTA
-    if struct.unpack_from('<H', d, other_file)[0] != 0xE92D:
-        sys.exit(f'refusing: font+0 at file 0x{other_file:06X} is not the expected '
-                 f'get_glyph_dsc prologue -- struct layout is not what this tool assumes')
-
+    if struct.unpack_from('<H', d, dsc_file)[0] != 0xE92D:
+        sys.exit(f'refusing: font+0 at file 0x{dsc_file:06X} is not the get_glyph_dsc '
+                 f'prologue -- struct layout is not what this tool assumes')
     if any(d[HOLE:HOLE + HOLE_LEN]):
         sys.exit(f'refusing: the hole at 0x{HOLE:06X} is not empty -- already patched?')
     if not PSRAM_LO <= HOLE < PSRAM_HI:
@@ -172,28 +182,34 @@ def main():
     stub_va = HOLE + DATA_DELTA
     new_ptr = stub_va | 1                        # Thumb
 
-    print(f'  font object      file 0x{FONT:06X}')
-    print(f'    get_glyph_bitmap 0x{orig:08X}  -> file 0x{fn_file:06X} (.text)')
-    print(f'    dsc              0x{dsc:08X}  -> file 0x{FMT_DSC_FILE:06X}  MATCHES')
+    print(f'  fonts found      {len(fonts)} lv_font_t objects, all detoured:')
+    for f in fonts:
+        lh = struct.unpack_from('<H', d, f + 8)[0]
+        print(f'      file 0x{f:06X}  line_height {lh:3}'
+              + ('   <- 40px clock face' if f == FONT else ''))
+    print(f'  get_glyph_bitmap 0x{orig:08X} -> file 0x{fn_file:06X}  '
+          f'opens `cmp r1,#9`  CONFIRMED 2-arg')
+    print(f'  get_glyph_dsc    0x{DSC_FN:08X} -> file 0x{dsc_file:06X}  '
+          f'opens push.w      CONFIRMED 4-arg')
     print(f'  stub             file 0x{HOLE:06X}  VA 0x{stub_va:08X}  '
           f'({len(stub)} bytes in a {HOLE_LEN}-byte hole)')
     print(f'    movs r1,#{letter}        {stub[0:2].hex()}      force letter {a.letter!r}')
     print(f'    movw r12,#0x{orig & 0xFFFF:04X}  {stub[2:6].hex()}')
     print(f'    movt r12,#0x{orig >> 16:04X}  {stub[6:10].hex()}')
     print(f'    bx   r12          {stub[10:12].hex()}')
-    print(f'\n  the ONE redirect: get_glyph_bitmap 0x{orig:08X} -> 0x{new_ptr:08X}')
-    print(f'  (a .text pointer becomes a PSRAM pointer -- if PSRAM cannot execute, '
-          f'this faults)')
-    print(f'\n  EXPECT: clock reads all {a.letter!r} -> PSRAM EXECUTES')
-    print(f'          no boot             -> PSRAM does not execute (A/B recovers)')
-    print(f'          clock normal        -> stub never ran; wrong font, not a PSRAM answer')
+    print(f'\n  redirect: {len(fonts)} x get_glyph_bitmap 0x{orig:08X} -> 0x{new_ptr:08X}')
+    print(f'\n  EXPECT (this image must ALSO carry no-rings as the boot marker):')
+    print(f'    rings gone + all glyphs {a.letter!r}  -> PSRAM EXECUTES')
+    print(f'    rings gone + text normal     -> booted, stub never ran; not an answer')
+    print(f'    rings still there            -> faulted, A/B rolled back; PSRAM does NOT execute')
 
     if a.dry_run:
         print('\n  --dry-run: nothing written')
         return
 
     d[HOLE:HOLE + len(stub)] = stub
-    struct.pack_into('<I', d, GET_BITMAP, new_ptr)
+    for f in fonts:
+        struct.pack_into('<I', d, f + 4, new_ptr)   # +4 is get_glyph_bitmap
 
     out = a.outfile or a.infile.replace('.bin', '_psramexec.bin')
     Path(out).write_bytes(bytes(d))

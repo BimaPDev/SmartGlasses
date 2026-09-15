@@ -97,8 +97,24 @@ enum BundledOtaPack {
               + "them, so it is the riskiest so far. Flash Stock to undo.",
         isStock: false)
 
+    static let psramExec2 = OtaPack(
+        id: "psramexec2",
+        resource: "ota_star-air_1.0.11.85_PSRAMEXEC2",
+        label: "TEST — PSRAM code, take 2",
+        detail: "Replaces the first PSRAM test, which was inconclusive: it detoured only "
+              + "the 40px clock face, which the standby tiles do not use.\n\n"
+              + "Now ALL NINE fonts point at the stub, and the image also carries "
+              + "no-rings as a BOOT MARKER — the rings answer \"did my image run?\" "
+              + "even if the stub does not.\n\n"
+              + "RINGS GONE + every glyph an '8' -> PSRAM EXECUTES.\n"
+              + "RINGS GONE + text normal -> booted, stub never ran; not an answer.\n"
+              + "RINGS STILL THERE -> it faulted and A/B rolled back; PSRAM cannot "
+              + "execute.\n\n"
+              + "Photograph the standby screen either way. Flash Stock to undo.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, noRingsBima, psramExec, appendTest]
+    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, noRingsBima, psramExec2, appendTest]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
