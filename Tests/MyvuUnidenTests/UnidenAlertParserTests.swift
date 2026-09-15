@@ -275,3 +275,124 @@ final class UnidenEtcParserTests: XCTestCase {
         XCTAssertEqual(UnidenAlertCard.title(for: combined), "Speed camera + 1")
     }
 }
+
+final class UnidenPoiEncounterTests: XCTestCase {
+    private func speedCam(_ feet: Int, limit: Int = 45) -> [UnidenAlert] {
+        UnidenEtcParser.poiAlerts(from: "12.6&SPEEDCAM,\(feet),\(limit)&0")
+    }
+
+    private func redLight(_ feet: Int) -> [UnidenAlert] {
+        UnidenEtcParser.poiAlerts(from: "12.6&REDLIGHT,\(feet),0&0")
+    }
+
+    func testSpeedCameraAlertsOnceForTheWholeApproach() {
+        var enc = UnidenPoiEncounter()
+        let first = enc.notifyIdentity(for: speedCam(900))
+        for feet in [850, 800, 600, 400, 250, 100, 40] {
+            XCTAssertEqual(enc.notifyIdentity(for: speedCam(feet)), first)
+        }
+    }
+
+    func testRedLightCameraAlertsOnceForTheWholeApproach() {
+        var enc = UnidenPoiEncounter()
+        let first = enc.notifyIdentity(for: redLight(900))
+        XCTAssertEqual(enc.notifyIdentity(for: redLight(300)), first)
+        XCTAssertEqual(enc.notifyIdentity(for: redLight(120)), first)
+    }
+
+    func testRepeatedCallsWithTheSameHitsDoNotAdvanceThePass() {
+        var enc = UnidenPoiEncounter()
+        let a = enc.notifyIdentity(for: speedCam(500))
+        let b = enc.notifyIdentity(for: speedCam(500))
+        XCTAssertEqual(a, b)
+    }
+
+    func testPassingOneCameraAndLatchingTheNextAlertsAgain() {
+        var enc = UnidenPoiEncounter()
+        let approaching = enc.notifyIdentity(for: speedCam(400))
+        XCTAssertEqual(enc.notifyIdentity(for: speedCam(80)), approaching)
+        // Distance climbing back up is the detector switching to the next one.
+        let next = enc.notifyIdentity(for: speedCam(1_500))
+        XCTAssertNotEqual(next, approaching)
+        XCTAssertEqual(enc.notifyIdentity(for: speedCam(900)), next)
+    }
+
+    func testJitterInsideTheResetMarginIsStillTheSamePass() {
+        var enc = UnidenPoiEncounter()
+        let first = enc.notifyIdentity(for: speedCam(600))
+        XCTAssertEqual(enc.notifyIdentity(for: speedCam(500)), first)
+        // Back up a little — GPS noise, not a new camera.
+        XCTAssertEqual(enc.notifyIdentity(for: speedCam(700)), first)
+    }
+
+    func testDifferentCameraKindAlertsImmediately() {
+        var enc = UnidenPoiEncounter()
+        let cam = enc.notifyIdentity(for: speedCam(400))
+        XCTAssertNotEqual(enc.notifyIdentity(for: redLight(400)), cam)
+    }
+
+    func testDifferentPostedLimitIsADifferentCamera() {
+        var enc = UnidenPoiEncounter()
+        let thirty = enc.notifyIdentity(for: speedCam(400, limit: 30))
+        XCTAssertNotEqual(enc.notifyIdentity(for: speedCam(400, limit: 45)), thirty)
+    }
+
+    func testCameraDroppingOutAndComingBackAlertsAgain() {
+        var enc = UnidenPoiEncounter()
+        let first = enc.notifyIdentity(for: speedCam(500))
+        _ = enc.notifyIdentity(for: [])
+        XCTAssertNotEqual(enc.notifyIdentity(for: speedCam(500)), first)
+    }
+
+    func testResetMakesTheSameCameraAlertAgain() {
+        var enc = UnidenPoiEncounter()
+        let first = enc.notifyIdentity(for: speedCam(500))
+        enc.reset()
+        XCTAssertNotEqual(enc.notifyIdentity(for: speedCam(500)), first)
+    }
+
+    func testRadarHitBesideACameraStillAlertsOnItsOwnTerms() {
+        var enc = UnidenPoiEncounter()
+        let camOnly = enc.notifyIdentity(for: speedCam(600))
+        let withKa = enc.notifyIdentity(
+            for: speedCam(500) + UnidenAlertParser.parse("1,0,KA,3,34.700,,F,1,0"))
+        XCTAssertNotEqual(withKa, camOnly)
+        let louder = enc.notifyIdentity(
+            for: speedCam(400) + UnidenAlertParser.parse("1,0,KA,6,34.700,,F,1,0"))
+        XCTAssertNotEqual(louder, withKa)
+        // The camera itself is still the same pass: strength falling back to
+        // where it was returns the same identity, distance notwithstanding.
+        XCTAssertEqual(
+            enc.notifyIdentity(
+                for: speedCam(200) + UnidenAlertParser.parse("1,0,KA,3,34.700,,F,1,0")),
+            withKa)
+    }
+
+    func testNonCameraAlertsKeepTheirNormalIdentity() {
+        var enc = UnidenPoiEncounter()
+        let one = UnidenAlertParser.parse("1,0,KA,1,34.700,,F,1,0")
+        let two = UnidenAlertParser.parse("1,0,KA,2,34.700,,F,1,0")
+        XCTAssertEqual(enc.notifyIdentity(for: one),
+                       UnidenAlertCard.notifyIdentity(for: one))
+        XCTAssertNotEqual(enc.notifyIdentity(for: two),
+                          UnidenAlertCard.notifyIdentity(for: one))
+    }
+
+    func testUserMarkStillCountsDown() {
+        var enc = UnidenPoiEncounter()
+        let far = UnidenEtcParser.poiAlerts(from: "12.6&USERMARK,900,0&0")
+        let near = UnidenEtcParser.poiAlerts(from: "12.6&USERMARK,300,0&0")
+        XCTAssertFalse(far[0].isCameraPoi)
+        XCTAssertNotEqual(enc.notifyIdentity(for: near),
+                          enc.notifyIdentity(for: far))
+    }
+
+    func testTheCardItselfStillReadsTheCurrentDistance() {
+        // Only the re-alert decision is collapsed; a card that does get pushed
+        // must never show a stale number.
+        XCTAssertEqual(UnidenAlertCard.body(for: speedCam(250, limit: 30)),
+                       "250 ft · limit 30 mph")
+        XCTAssertNotEqual(UnidenAlertCard.identity(for: speedCam(900)),
+                          UnidenAlertCard.identity(for: speedCam(250)))
+    }
+}

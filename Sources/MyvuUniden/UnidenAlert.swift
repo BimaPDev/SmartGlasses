@@ -74,6 +74,23 @@ public struct UnidenAlert: Equatable, Sendable {
         }
     }
 
+    /// A fixed camera the detector counts you down to. Unlike a radar hit,
+    /// nothing about it changes on approach except the distance, so it is the
+    /// one alert kind that is worth saying exactly once per pass.
+    /// `USERMARK` is deliberately not here — a user mark is a place the driver
+    /// saved themselves, and they still get the running countdown.
+    public var isCameraPoi: Bool {
+        switch type.uppercased() {
+        case "SPEEDCAM", "REDLIGHT": return true
+        default: return false
+        }
+    }
+
+    /// Distance in feet from `info`, or nil when the detector sent none.
+    public var poiDistanceFeet: Double? {
+        info.isEmpty ? nil : Double(info)
+    }
+
     public var displayName: String {
         switch type.uppercased() {
         case "SPEEDCAM": return "Speed camera"
@@ -272,6 +289,71 @@ public enum UnidenAlertCard {
     private static func strengthLine(direction: String, rssi: String) -> String {
         if direction.isEmpty { return "strength \(rssi)" }
         return "\(direction) · strength \(rssi)"
+    }
+}
+
+/// Collapses one approach to a speed or red-light camera into a single alert.
+///
+/// A camera is a fixed point the detector counts you down to — `SPEEDCAM 900`,
+/// `850`, `800` — and each of those readings is a different card, so the plain
+/// card identity re-fires the lens the whole way in. There is nothing new to
+/// say after the first announcement: the camera is not moving, and re-showing a
+/// lens card is a fresh notification to the glasses, not a quiet update. So the
+/// distance drops out of the re-alert identity and one pass gets one banner,
+/// showing the distance it was first seen at. The card is cleared the usual way
+/// when the detector stops reporting the camera.
+///
+/// A second camera is still a second alert. Two ways it is recognised: the
+/// camera key changes (red light after a speed camera, or a different posted
+/// limit), or the distance climbs back up by `resetGainFeet` — which on an
+/// approach it never does, so it means the detector has passed one camera and
+/// latched the next. Anything that is not a camera — radar and laser hits, user
+/// marks — keeps the full moment-to-moment identity it had.
+///
+/// `identity(for:)` is unchanged: what the card *reads* still follows the
+/// distance, so a card pushed for some other reason shows current numbers.
+public struct UnidenPoiEncounter: Sendable {
+    /// Distance gain that means "different camera", not "still approaching".
+    /// Well above GPS jitter on a POI countdown, well below the gap to the next
+    /// camera the detector would latch.
+    public static let resetGainFeet: Double = 300
+
+    private var key = ""
+    private var nearestFeet = Double.infinity
+    private var pass = 0
+
+    public init() {}
+
+    /// Identity for the re-alert decision. Idempotent: calling it twice with
+    /// the same hits gives the same answer and does not advance the pass.
+    public mutating func notifyIdentity(for alerts: [UnidenAlert]) -> String {
+        guard let camera = alerts.first(where: \.isCameraPoi) else {
+            key = ""
+            nearestFeet = .infinity
+            return UnidenAlertCard.notifyIdentity(for: alerts)
+        }
+        let cameraKey = "\(camera.type.uppercased())|\(camera.rawValue)"
+        let feet = camera.poiDistanceFeet ?? .infinity
+        if cameraKey != key || feet > nearestFeet + Self.resetGainFeet {
+            key = cameraKey
+            nearestFeet = feet
+            pass &+= 1
+        } else {
+            nearestFeet = min(nearestFeet, feet)
+        }
+        // Everything that is not the camera still varies normally, so a radar
+        // hit arriving alongside a camera alerts on its own terms.
+        let rest = alerts.filter { !$0.isCameraPoi }
+        let others = rest.isEmpty ? "" : UnidenAlertCard.notifyIdentity(for: rest)
+        return "camera \(pass) \(cameraKey)\n\(others)"
+    }
+
+    /// Forget the current pass, so the next sighting of the same camera alerts
+    /// again. For a disconnect or a detector teardown — not for a camera simply
+    /// dropping out of range, which `notifyIdentity` already handles.
+    public mutating func reset() {
+        key = ""
+        nearestFeet = .infinity
     }
 }
 

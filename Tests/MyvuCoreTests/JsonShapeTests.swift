@@ -71,6 +71,79 @@ final class JsonShapeTests: XCTestCase {
         XCTAssertEqual(TestJson.string(entry, "extra"), "{}")
     }
 
+    // MARK: - Text-message card
+
+    /// The whole point of `buildMessage`: `packageName` is what the firmware's
+    /// icon table keys on, so a test text must claim to come from Messages or it
+    /// renders with the generic icon and proves nothing.
+    func testTextMessageClaimsTheMessagesBundleId() {
+        let action = TestJson.object(
+            Notifications.buildMessage(sender: "Alex", text: "on my way"))
+        let data = TestJson.nested(action, "data")
+        XCTAssertEqual(TestJson.string(data, "notificationAction"), "SHOW_NOTIFICATION")
+
+        let entry = TestJson.array(data, "data").first as? [String: Any] ?? [:]
+        XCTAssertEqual(TestJson.string(entry, "packageName"), "com.apple.MobileSMS")
+        XCTAssertEqual(TestJson.string(entry, "appName"), "Messages")
+        XCTAssertEqual(TestJson.string(entry, "title"), "Alex")
+        XCTAssertEqual(TestJson.string(entry, "content"), "on my way")
+        XCTAssertEqual(TestJson.string(entry, "sender"), "Alex")
+        // A one-to-one text, so the SMS sub-kind and no group.
+        XCTAssertEqual(TestJson.string(entry, "msgType"), "Im:phone")
+        XCTAssertNil(entry["groupName"])
+        XCTAssertEqual(TestJson.string(entry, "id")?.hasPrefix("phone-com.apple.MobileSMS-"),
+                       true)
+    }
+
+    func testGroupTextCarriesTheGroupNameAndChatKind() {
+        let entry = TestJson.array(
+            TestJson.nested(TestJson.object(
+                Notifications.buildMessage(sender: "Alex", text: "hi",
+                                           group: "Climbing")), "data"),
+            "data").first as? [String: Any] ?? [:]
+        XCTAssertEqual(TestJson.string(entry, "groupName"), "Climbing")
+        XCTAssertEqual(TestJson.string(entry, "msgType"), "Im:im")
+    }
+
+    /// `type` on a card is NOT a `reminderOpenState` key. Sending `MSG_TYPE_IM`
+    /// here hits `[%s] invalid normal msg type` in `createNormalMsg`, so the
+    /// default stays on the value the firmware validates.
+    func testCardTypeDefaultsToNormalNotTheFilterCategory() {
+        let entry = TestJson.array(
+            TestJson.nested(TestJson.object(
+                Notifications.buildMessage(sender: "A", text: "b")), "data"),
+            "data").first as? [String: Any] ?? [:]
+        XCTAssertEqual(TestJson.string(entry, "type"), "MSG_TYPE_NORMAL")
+        XCTAssertFalse(Notifications.allTypes.contains(Notifications.typeNormal))
+        XCTAssertFalse(Notifications.allTypes.contains(Notifications.typeMissedCall))
+    }
+
+    /// The IM extras are Gson-optional: a plain card must not grow keys it never
+    /// had, because the glasses were built against payloads where an unknown
+    /// field is absent rather than null.
+    func testPlainCardStillOmitsTheImExtras() {
+        let entry = TestJson.object(
+            Notifications.entry(packageName: "com.example", numericId: 1,
+                                title: "T", content: "C", appName: "E",
+                                postTime: 1, canReply: false).serialized())
+        XCTAssertNil(entry["sender"])
+        XCTAssertNil(entry["groupName"])
+        XCTAssertNil(entry["msgType"])
+        XCTAssertEqual(TestJson.string(entry, "type"), "MSG_TYPE_NORMAL")
+    }
+
+    // MARK: - ANCS link
+
+    func testAncsActionsRideTheNotificationEnvelope() {
+        for sub in [Notifications.connectAncs, Notifications.disconnectAncs,
+                    Notifications.queryAncsState] {
+            let action = TestJson.object(Notifications.buildAncs(sub))
+            XCTAssertEqual(TestJson.string(action, "action"), "notification")
+            XCTAssertEqual(TestJson.string(TestJson.nested(action, "data"),
+                                           "notificationAction"), sub)
+        }
+    }
+
     func testSyncReminderConfigUsesGsonFieldNames() {
         let action = TestJson.object(Notifications.buildSyncConfig(enabled: true))
         XCTAssertEqual(TestJson.string(action, "action"), "notification")
@@ -84,6 +157,26 @@ final class JsonShapeTests: XCTestCase {
         XCTAssertEqual(TestJson.bool(types, "MSG_TYPE_IM"), true)
         XCTAssertNil(cfg["createTime"])
         XCTAssertNotNil(cfg["notificationDisplayTime"])
+    }
+
+    /// REGRESSION: `notificationControlState` gates a card pushed over
+    /// StarryNet, but `AncsManager` checks `iosNotificationState` before it will
+    /// accept anything from iOS at all. Sending only the former is why a test
+    /// card rendered while real texts never arrived.
+    func testSyncConfigCarriesTheIosAncsGate() {
+        let cfg = TestJson.nested(TestJson.nested(TestJson.object(
+            Notifications.buildSyncConfig(enabled: true)), "data"), "data")
+        XCTAssertEqual(TestJson.bool(cfg, "iosNotificationState"), true)
+        XCTAssertEqual(TestJson.bool(cfg, "iosUsingTurnOffNotification"), false)
+    }
+
+    /// Turning mirroring off must close the iOS gate too — otherwise the filter
+    /// says off while ANCS stays armed.
+    func testDisablingMirroringAlsoClosesTheIosGate() {
+        let cfg = TestJson.nested(TestJson.nested(TestJson.object(
+            Notifications.buildSyncConfig(enabled: false)), "data"), "data")
+        XCTAssertEqual(TestJson.bool(cfg, "notificationControlState"), false)
+        XCTAssertEqual(TestJson.bool(cfg, "iosNotificationState"), false)
     }
 
     func testMutingOneCategoryStillSendsTheWholeFilter() {

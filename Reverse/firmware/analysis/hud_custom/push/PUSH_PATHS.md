@@ -182,16 +182,54 @@ you want first-class builders rather than `sendRaw`):
   payload shapes.
 - `Notifications` (`Sources/MyvuCore/App/Feature/Notifications.swift`) — add
   `SHOW_TOAST` / `SHOW_DIALOG` / `DISMISS_REMINDER` /
-  `SYNC_SMART_REMINDER_TAXI` / `SYNC_SMART_REMINDER_FLYME_FLIGHT` /
-  `CONNECT_ANCS_SERVICE` / `DISCONNECT_ANCS_SERVICE` /
-  `QUERY_ANCS_SERVICE_STATE` beside the existing `show`/`dismiss`/`syncConfig`
-  constants at `:8-15`; the `envelope(_:_:)` helper at `:40` already builds the
-  wrapper. All of these literals are in the firmware's `notificationAction` switch
-  (`0x18de88`–`0x18dfa0`) and **none** is in `Sources/`.
+  `SYNC_SMART_REMINDER_TAXI` / `SYNC_SMART_REMINDER_FLYME_FLIGHT` beside the
+  existing constants; the `envelope(_:_:)` helper already builds the wrapper.
+  These literals are in the firmware's `notificationAction` switch
+  (`0x18de88`–`0x18dfa0` in 12.83) and are still absent from `Sources/`.
+  `CONNECT_ANCS_SERVICE` / `DISCONNECT_ANCS_SERVICE` / `QUERY_ANCS_SERVICE_STATE`
+  were added on 2026-09-10 — see §6.1.
+
+### 6.1 iOS notification mirroring — the gate that was missing `[TESTED 2026-09-10]`
+
+**Real texts never reached the lens on iOS, while a pushed card rendered fine.**
+The two are different entry points that share only the renderer:
+
+| | entry point | gated by |
+| --- | --- | --- |
+| `SHOW_NOTIFICATION` (test card) | `SmartLifeAdapter::createNormalMsg` | `notificationControlState` |
+| a real text | **`AncsManager`** → then the same renderer | **`iosNotificationState`** |
+
+`AncsManager.cpp` refuses before the renderer is ever reached:
+
+```
+0x1a09e0  [%s] ios notification not enabled, pls open in MYVU app
+0x1a0a18  [%s] ios device not bonded
+```
+
+`iosNotificationState` (`0x19f440`) and `iosUsingTurnOffNotification` (`0x19f458`,
+the firmware's own "suppress while using the phone") sit directly after the seven
+`MSG_TYPE_*` keys (`…MSG_TYPE_IM` at `0x19f434`) in the same `NotificationConfig`
+block — offsets from 1.0.11.53. `buildSyncConfig` wrote the filter and the master
+switch but **never the iOS flag**, so the filter said "texts allowed" while ANCS
+stayed shut. Adding `iosNotificationState` made real texts appear on the lens
+immediately. Pinned by `testSyncConfigCarriesTheIosAncsGate`.
+
+`QUERY_ANCS_SERVICE_STATE` is `[TESTED]` and answers in <200 ms; note the reply is
+**not** wrapped in a `notification` envelope:
+
+```
+-> {"action":"notification","data":{"notificationAction":"QUERY_ANCS_SERVICE_STATE","data":{}}}
+<- {"action":"QUERY_ANCS_SERVICE_STATE","value":{"state":"CONNECTED"}}
+```
+
+A `CONNECTED` answer says the link is up; it does **not** mean cards will draw —
+that was true throughout the period texts were being dropped.
 
 ## 7. Honest ledger
 
-- `[TESTED]` on hardware, per this repo's own logs: notifications rendering a card;
+- `[TESTED]` on hardware, per this repo's own logs: **iOS ANCS mirroring, once
+  `iosNotificationState` is sent** (§6.1); `QUERY_ANCS_SERVICE_STATE` →
+  `{"state":"CONNECTED"}`; notifications rendering a card;
   brightness/volume/zen/screen-timeout; `set_language`; trackpad; clock; weather
   arriving; device queries; and the *negative* result that `tici`/nav/music are
   gated on HFP.

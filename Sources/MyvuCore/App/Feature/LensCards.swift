@@ -21,6 +21,9 @@ public enum LensCards {
     /// The current line of a song, when lyrics run on a card rather than in the
     /// prompter.
     public static let lyricsNumericId = 7_010_006
+    /// A headless Claude Code session streamed from a laptop. One id for the
+    /// whole run: the card is a viewport repainted in place, not a feed.
+    public static let bridgeNumericId = 7_010_007
 
     public static func buildShow(title: String, body: String, numericId: Int,
                                  nowMs: Int64 = Session.nowMillis()) -> String {

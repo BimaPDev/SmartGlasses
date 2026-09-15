@@ -1,0 +1,8 @@
+{
+  "name": "myvu-claude-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": { "claude-bridge": "./claude-bridge.mjs" },
+  "dependencies": { "ws": "^8.18.0" }
+}

@@ -966,6 +966,49 @@ public final class MyvuClient {
         sendAction(Notifications.buildShow(title: title, content: body))
     }
 
+    /// Pushes one card shaped like an incoming text message.
+    ///
+    /// A test rig, not mirroring: it renders what a text looks like on the lens
+    /// on demand. Real texts arrive over ANCS between the glasses and iOS
+    /// directly — see `enablePhoneNotifications` — because no third-party iOS
+    /// app can read Messages.
+    ///
+    /// The difference from `showNotification` is `packageName`: the firmware
+    /// keys its icon table on it, so `com.apple.MobileSMS` draws the Messages
+    /// glyph where this SDK's own `dev.myvu.sdk` gets the generic one.
+    public func showTextMessage(from sender: String, body: String,
+                                group: String? = nil,
+                                packageName: String = Notifications.Pkg.messages,
+                                appName: String = "Messages",
+                                canReply: Bool = false,
+                                type: String = Notifications.typeNormal) {
+        sendAction(Notifications.buildMessage(sender: sender, text: body,
+                                              group: group,
+                                              packageName: packageName,
+                                              appName: appName,
+                                              canReply: canReply,
+                                              type: type))
+    }
+
+    /// Connects, disconnects or queries the glasses' own ANCS client.
+    ///
+    /// `enablePhoneNotifications` sets the filter; this drives the link the
+    /// filter applies to. When texts do not arrive on iOS and the Bluetooth bond
+    /// looks fine, `queryAncsState()` is the first thing to ask.
+    ///
+    /// `[TESTED]` on 1.0.11.53: the empty-object payload is accepted and the
+    /// query answers `{"state":"CONNECTED"}`. Prefer `MyvuGlasses.ancsState()`,
+    /// which awaits that reply instead of leaving it in the log.
+    public func connectAncs() { sendAction(Notifications.buildAncs(Notifications.connectAncs)) }
+
+    public func disconnectAncs() {
+        sendAction(Notifications.buildAncs(Notifications.disconnectAncs))
+    }
+
+    public func queryAncsState() {
+        sendAction(Notifications.buildAncs(Notifications.queryAncsState))
+    }
+
     /// Tells the glasses to accept iOS ANCS (texts, calls, other apps).
     ///
     /// This is the MYVU-app toggle, not a push of a card. iMessage still needs
@@ -980,11 +1023,13 @@ public final class MyvuClient {
                                          calls: Bool = true,
                                          announce: Bool = false,
                                          brightenScreen: Bool = true,
-                                         dismissMs: Int64 = 10_000) {
+                                         dismissMs: Int64 = 10_000,
+                                         iosMuteWhileUsingPhone: Bool = false) {
         sendAction(Notifications.buildSyncConfig(enabled: enabled, types: types,
                                                  calls: calls, dismissMs: dismissMs,
                                                  announce: announce,
-                                                 brightenScreen: brightenScreen))
+                                                 brightenScreen: brightenScreen,
+                                                 iosMuteWhileUsingPhone: iosMuteWhileUsingPhone))
     }
 
     /// Shows or updates a stable lens card (same numeric id replaces in place).

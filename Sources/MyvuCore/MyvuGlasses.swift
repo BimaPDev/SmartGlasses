@@ -144,16 +144,70 @@ public final class MyvuGlasses {
         client.showNotification(title: title, body: body)
     }
 
+    /// Pushes one card shaped like an incoming text message. See
+    /// `MyvuClient.showTextMessage` — this is a test push, not mirroring.
+    public func showTextMessage(from sender: String, body: String,
+                                group: String? = nil,
+                                packageName: String = Notifications.Pkg.messages,
+                                appName: String = "Messages",
+                                canReply: Bool = false,
+                                type: String = Notifications.typeNormal) {
+        client.showTextMessage(from: sender, body: body, group: group,
+                               packageName: packageName, appName: appName,
+                               canReply: canReply, type: type)
+    }
+
+    /// Asks whether the glasses' ANCS client is connected and awaits the answer.
+    ///
+    /// Cannot go through `query(_:)`: that one wraps a `system` sub-action and
+    /// correlates on a token derived from a `get_`/`request_` prefix. This reply
+    /// comes back as a top-level action named after the query itself
+    /// (`{"action":"QUERY_ANCS_SERVICE_STATE","value":{"state":"CONNECTED"}}`),
+    /// so it is matched on the action name.
+    public func ancsState(timeout: TimeInterval = 5) async throws -> String {
+        let stream = events()
+        client.queryAncsState()
+
+        return try await withThrowingTaskGroup(of: String.self) { group in
+            group.addTask {
+                for await event in stream {
+                    guard case .unknown(let raw) = event,
+                          raw.contains(Notifications.queryAncsState),
+                          let reader = JsonReader(parsing: raw),
+                          let state = Notifications.ancsState(from: reader)
+                    else { continue }
+                    return state
+                }
+                throw MyvuError.disconnected("the event stream ended before a reply arrived")
+            }
+            group.addTask {
+                try await Task.sleep(nanoseconds: UInt64(timeout * 1_000_000_000))
+                throw MyvuError.timedOut("no ANCS state within \(Int(timeout))s")
+            }
+            defer { group.cancelAll() }
+            guard let first = try await group.next() else {
+                throw MyvuError.timedOut("no ANCS state")
+            }
+            return first
+        }
+    }
+
+    public func connectAncs() { client.connectAncs() }
+    public func disconnectAncs() { client.disconnectAncs() }
+    public func queryAncsState() { client.queryAncsState() }
+
     public func enablePhoneNotifications(_ enabled: Bool = true,
                                          types: [String: Bool] = [:],
                                          calls: Bool = true,
                                          announce: Bool = false,
                                          brightenScreen: Bool = true,
-                                         dismissMs: Int64 = 10_000) {
+                                         dismissMs: Int64 = 10_000,
+                                         iosMuteWhileUsingPhone: Bool = false) {
         client.enablePhoneNotifications(enabled, types: types, calls: calls,
                                         announce: announce,
                                         brightenScreen: brightenScreen,
-                                        dismissMs: dismissMs)
+                                        dismissMs: dismissMs,
+                                        iosMuteWhileUsingPhone: iosMuteWhileUsingPhone)
     }
 
     /// Sets the gesture that pauses a notification being read aloud.

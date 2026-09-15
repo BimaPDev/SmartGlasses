@@ -14,6 +14,18 @@ public enum Notifications {
     /// Sets the read-aloud pause gesture on its own. See `buildBroadcastPauseType`.
     public static let syncBroadcastPauseType = "SYNC_CONFIG_BROADCAST_PAUSE_TYPE"
 
+    /// The ANCS link itself, as opposed to the filter `syncConfig` applies to
+    /// what comes over it. All three are in the firmware's `notificationAction`
+    /// switch beside `SHOW_NOTIFICATION` (literals at file `0x18df18`,
+    /// `0x18df88`, `0x18dfa0` in 1.0.12.83), so they are reachable over BLE.
+    ///
+    /// On iOS this is the difference between "the glasses are allowed to show
+    /// texts" and "the glasses are actually subscribed to the phone's
+    /// Notification Source". `syncConfig` alone only sets the former.
+    public static let connectAncs = "CONNECT_ANCS_SERVICE"
+    public static let disconnectAncs = "DISCONNECT_ANCS_SERVICE"
+    public static let queryAncsState = "QUERY_ANCS_SERVICE_STATE"
+
     /// Category keys in `NotificationConfig.reminderOpenState`. Texts/iMessage
     /// land as `MSG_TYPE_IM` after ANCS maps `com.apple.MobileSMS`.
     public static let typeIm = "MSG_TYPE_IM"
@@ -29,6 +41,43 @@ public enum Notifications {
     /// an individual pushed card, not a category the filter knows about.
     public static let allTypes = [typeIm, typeReminder, typeTaxi, typeFlight,
                                   typeTakeout, typeExpress, typeWeather]
+
+    /// Card types — the `type` field on one pushed entry. A different namespace
+    /// from `allTypes` above, and the firmware keeps them in a different string
+    /// block: the seven filter categories sit at `0x18d740`-`0x18d7b0`, these
+    /// two at `0x18dde4` and `0x18de74`. `SmartLifeAdapter::createNormalMsg`
+    /// validates this field — `[%s] invalid normal msg type` at `0x18d974` —
+    /// so do not invent values here.
+    public static let typeNormal = "MSG_TYPE_NORMAL"
+    public static let typeMissedCall = "MSG_TYPE_MISSEDCALL"
+
+    /// `msgType`, the IM sub-kind, from the same field list.
+    /// `Im:phone` at `0x18d924` is an SMS; `Im:im` at `0x18d908` is a chat app.
+    public static let imKindSms = "Im:phone"
+    public static let imKindChat = "Im:im"
+
+    /// Bundle ids the firmware's own table maps to a built-in icon, so a pushed
+    /// card gets the right glyph with no patching. `AncsManager` (`0x18ece4`)
+    /// holds the iOS side of the table; the ids below are read straight out of
+    /// it at `0x18f0bc`-`0x18f274` in 1.0.12.83.
+    ///
+    /// This is why a test card should carry a REAL bundle id rather than
+    /// `AppLayer.pkgSelf`: an unknown package falls through to the generic icon,
+    /// which is exactly the difference between "a card" and "a text message".
+    public enum Pkg {
+        /// -> `smartlife_notification_ios_sms_icon`
+        public static let messages = "com.apple.MobileSMS"
+        /// -> `smartlife_notification_ios_calendar_icon`
+        public static let calendar = "com.apple.mobilecal"
+        /// -> `smartlife_notification_ios_weather_icon`
+        public static let weather = "com.apple.weather"
+        public static let whatsapp = "net.whatsapp.WhatsApp"
+        public static let telegram = "ph.telegra.Telegraph"
+        public static let messenger = "com.facebook.Messenger"
+        public static let instagram = "com.burbn.instagram"
+        public static let line = "jp.naver.line"
+        public static let wechat = "com.tencent.xin"
+    }
 
     /// Longest title/content we will send. The glasses render on a small lens and
     /// have shown themselves to be fragile about malformed notification
@@ -79,17 +128,29 @@ public enum Notifications {
     /// One notification entry (ArNotificationModel).
     ///
     /// The id MUST come from `notificationId` — see the warning there.
+    /// - Parameters:
+    ///   - type: one of the card types above, NOT a `reminderOpenState` key.
+    ///   - sender / groupName / msgType: the IM extras `createNormalMsg` parses
+    ///     (`0x18d8f0`-`0x18d924`). Left off the wire when nil, Gson-style, so a
+    ///     plain card is byte-identical to what this built before they existed.
     public static func entry(packageName: String, numericId: Int, title: String,
                              content: String, appName: String, postTime: Int64,
-                             canReply: Bool) -> JsonObject {
+                             canReply: Bool,
+                             type: String = typeNormal,
+                             sender: String? = nil,
+                             groupName: String? = nil,
+                             msgType: String? = nil) -> JsonObject {
         var out = JsonObject()
         out.put("appName", sanitize(appName, max: maxTitle))
         out.put("title", sanitize(title, max: maxTitle))
         out.put("content", sanitize(content, max: maxContent))
         out.put("canReply", canReply)
-        out.put("type", "MSG_TYPE_NORMAL")
+        out.put("type", type)
         out.put("id", notificationId(packageName: packageName, numericId: numericId))
         out.put("packageName", packageName)
+        out.putIfPresent("sender", sender.map { sanitize($0, max: maxTitle) })
+        out.putIfPresent("groupName", groupName.map { sanitize($0, max: maxTitle) })
+        out.putIfPresent("msgType", msgType)
         // "crateTime" is the device's own misspelling. Correcting it to
         // createTime means the field silently never binds.
         out.put("crateTime", postTime)
@@ -112,6 +173,78 @@ public enum Notifications {
                                          title: title, content: content,
                                          appName: AppLayer.defaultAppName,
                                          postTime: nowMs, canReply: false)])
+    }
+
+    /// Builds one card shaped like an incoming text message.
+    ///
+    /// The only thing separating this from `buildShow` is that it names a real
+    /// sending app. `packageName` is what the firmware's icon table keys on
+    /// (`NormalManager::filterNotification` `0x18e240`, `AncsManager`
+    /// `0x18ece4`), so `com.apple.MobileSMS` is what puts the Messages glyph on
+    /// the card instead of the fallback.
+    ///
+    /// Note what this is NOT: it does not read your Messages, and it is not
+    /// mirroring. iOS gives no third-party app access to another app's
+    /// notifications — real texts reach the lens over ANCS, between the glasses
+    /// and iOS directly (see `buildSyncConfig` and `buildAncs`). This pushes one
+    /// card that *looks* like a text, which is what you want to check rendering,
+    /// wording and dwell time without waiting for someone to message you.
+    ///
+    /// - Parameters:
+    ///   - sender: shown as the card title, the way Messages shows a name.
+    ///   - text: the message body.
+    ///   - group: set for a group thread; nil for a one-to-one.
+    ///   - canReply: advertises a reply affordance. Replying needs an inbound
+    ///     path this SDK does not implement, so it defaults to false.
+    public static func buildMessage(sender: String, text: String,
+                                    group: String? = nil,
+                                    packageName: String = Pkg.messages,
+                                    appName: String = "Messages",
+                                    canReply: Bool = false,
+                                    type: String = typeNormal,
+                                    nowMs: Int64 = Session.nowMillis()) -> String {
+        let numericId = Int(nowMs / 1000) & 0x7FFF_FFFF
+        return buildShow(entries: [entry(packageName: packageName,
+                                         numericId: numericId,
+                                         title: sender,
+                                         content: text,
+                                         appName: appName,
+                                         postTime: nowMs,
+                                         canReply: canReply,
+                                         type: type,
+                                         sender: sender,
+                                         groupName: group,
+                                         msgType: group == nil
+                                             ? imKindSms : imKindChat)])
+    }
+
+    /// Connects, disconnects or queries the glasses' ANCS client.
+    ///
+    /// `[TESTED]` on 1.0.11.53. An empty `data` object is accepted — the query
+    /// answered in 167 ms and the connect was acked:
+    ///
+    /// ```
+    /// -> {"action":"notification","data":{"notificationAction":"QUERY_ANCS_SERVICE_STATE","data":{}}}
+    /// <- {"action":"QUERY_ANCS_SERVICE_STATE","value":{"state":"CONNECTED"}}
+    /// ```
+    ///
+    /// Note the reply does NOT come back inside a `notification` envelope: it
+    /// arrives as a top-level action named after the query, with the answer
+    /// under `value.state`. See `ancsState()`.
+    public static func buildAncs(_ subAction: String) -> String {
+        envelope(subAction, .object(JsonObject()))
+    }
+
+    /// `value.state` in a `QUERY_ANCS_SERVICE_STATE` reply. Only `CONNECTED` is
+    /// confirmed from hardware; the disconnected spelling has not been observed,
+    /// so callers should compare against `connected` rather than guess at its
+    /// opposite.
+    public static let ancsStateConnected = "CONNECTED"
+
+    /// Pulls `value.state` out of a reply, or nil if this is not one.
+    public static func ancsState(from reply: JsonReader) -> String? {
+        guard reply.optString("action") == queryAncsState else { return nil }
+        return reply.optObject("value")?.optString("state")
     }
 
     /// Dismisses previously shown notifications by id.
@@ -145,7 +278,9 @@ public enum Notifications {
                                        brightenScreen: Bool = true,
                                        scenes: Bool = true,
                                        scheduleMs: Int = 30_000,
-                                       broadcastPauseType: Int = defaultBroadcastPauseType)
+                                       broadcastPauseType: Int = defaultBroadcastPauseType,
+                                       iosEnabled: Bool? = nil,
+                                       iosMuteWhileUsingPhone: Bool = false)
         -> String {
         var openState = JsonObject()
         for type in allTypes {
@@ -162,6 +297,21 @@ public enum Notifications {
         cfg.put("callNotificationState", calls)
         cfg.put("scheduleDisplayTime", scheduleMs)
         cfg.put("notificationBroadcastPauseType", broadcastPauseType)
+
+        // The iOS-only half of the gate. `notificationControlState` above is
+        // what `SmartLifePresenter` reads for a card pushed over StarryNet;
+        // `AncsManager` checks THESE before it will even accept a notification
+        // from iOS, and refuses with
+        //   `[%s] ios notification not enabled, pls open in MYVU app`  (0x1a09e0)
+        // Both keys sit directly after the seven `MSG_TYPE_*` filter keys in the
+        // same `NotificationConfig` string block (`0x19f440` / `0x19f458` in
+        // 1.0.11.53), which is why they are written here and not in their own
+        // action.
+        //
+        // Defaulting `iosEnabled` to `enabled` keeps the two halves in step: a
+        // caller that turns mirroring on has never meant "on, but not for iOS".
+        cfg.put("iosNotificationState", iosEnabled ?? enabled)
+        cfg.put("iosUsingTurnOffNotification", iosMuteWhileUsingPhone)
         return envelope(syncConfig, .object(cfg))
     }
 

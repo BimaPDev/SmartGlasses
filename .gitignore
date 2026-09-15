@@ -39,3 +39,4 @@ Examples/MyvuDemo/build/
 
 # iOS app archive - 290 MB, over GitHub's 100 MB file limit; keep local only
 *.ipa
+Tools/bridge/node_modules/
