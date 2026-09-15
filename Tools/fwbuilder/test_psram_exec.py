@@ -6,7 +6,7 @@
 THE QUESTION, AND WHY IT IS THE ONLY ONE LEFT
 
 Adding code to this firmware needs somewhere to put it. Two candidate homes, and for
-1.0.11.53 the boot copy descriptor at file 0x0002C8 settles what each one is:
+1.0.11.53 the boot copy descriptor at file 0x0002C0 settles what each one is:
 
     src 0x2C038350..0x2C4B1270  ->  dst 0x3C000000..0x3C478F20   (length 0x478F20)
 

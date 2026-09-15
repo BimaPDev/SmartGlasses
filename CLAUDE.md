@@ -30,7 +30,7 @@ Three regions, not one flat base:
 - **Data:** `file = VA − 0x3BFD7C0C`. That constant is the PSRAM copy delta (`0x283F4`),
   not a "TRACE quirk". Never use `VA − 0x3C000000`.
 - **THE REGION BOUNDS AND THE DATA DELTA ARE PER BUILD.** The table above is 12.83's.
-  Every build states its own in a copy descriptor at file `0x0002C8`, as
+  Every build states its own in a copy descriptor at file `0x0002C0`, as
   `(src_start, src_end, dst_start, dst_end)` in VAs — read it, never assume:
 
   | | 1.0.12.83 | **1.0.11.53** |

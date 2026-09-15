@@ -9,7 +9,7 @@
  *     code  VA = file + 0x2C010000        (.text is file 0x4A1270..EOF)
  *     data  VA = file + 0x3BFD7CB0        (PSRAM is file 0x028350..0x4A1270)
  * Both constants differ per build -- see CLAUDE.md. Read them from the boot copy
- * descriptor at file 0x0002C8, never carry them between images.
+ * descriptor at file 0x0002C0, never carry them between images.
  */
 #ifndef VENDOR_1_0_11_53_H
 #define VENDOR_1_0_11_53_H

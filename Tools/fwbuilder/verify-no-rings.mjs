@@ -30,7 +30,7 @@ let diff=[]; for(let i=0;i<A.length;i++) if(A[i]!==B[i]) diff.push(i);
 // run against a COMBINED build -- no-rings stacked with a data-only patch such as the
 // BIMA wordmark -- while keeping the claim that matters exactly as strong: this patch
 // changes ONE byte of CODE and nothing else executable moves.
-// 1.0.11.53's .text start, read from the boot copy descriptor at file 0x0002C8
+// 1.0.11.53's .text start, read from the boot copy descriptor at file 0x0002C0
 // (src 0x2C038350..0x2C4B1270 -> dst 0x3C000000..0x3C478F20). NOT 12.83's 0x469954 --
 // this file carried that stale constant and it misclassified the lv_font_t table at
 // 0x491CCC as code, failing a build that was actually correct.
