@@ -463,6 +463,46 @@ Three independent facts pin it to the LE bond:
 **Implication for this project:** every custom flash costs the ANCS bond. Re-pair after a
 flash, before concluding anything about notifications.
 
+## 8c. PSRAM IS EXECUTABLE — CONFIRMED ON HARDWARE 2026-09-15
+
+**12 bytes of new code, written into free space inside the image, ran on the device.**
+This is the fact that gates every tier above operand patching, and it is now settled.
+
+```
+stub at file 0x3EC950  ->  VA 0x3C3C4600   (PSRAM-copied region)
+    movs r1, #0x38          force the letter to '8'
+    movw r12, #0xB5F1
+    movt r12, #0x2C67       r12 = 0x2C67B5F1 = the real get_glyph_bitmap
+    bx   r12                tail-call back into .text
+```
+
+All nine `lv_font_t` objects had `get_glyph_bitmap` (that is **+4**, not +0) repointed at
+`0x3C3C4601`. The panel came up reading `88:8]` with notification text in 8s.
+
+**What this proves, precisely.** Not just that the region is readable — the wordmark
+already showed that. It proves the full round trip:
+
+1. bytes written inside the image at `0x3EC950` are flashed and land in PSRAM;
+2. the CPU **fetches and executes** instructions from `0x3C3C4600`;
+3. a `bx` from PSRAM **back into XIP `.text`** works, the real function ran and returned
+   a valid bitmap pointer — otherwise nothing would have rendered at all.
+
+That is everything a detour needs, in both directions.
+
+**The test only worked because it carried a marker.** The first attempt came back
+showing a normal clock, which was ambiguous between "the stub never ran" and "it faulted
+and A/B rolled back" — opposite answers, one of them the result being sought. Adding the
+hardware-confirmed no-rings patch as an independent "did my image boot?" signal is what
+made the outcome readable. **Design experiments so the null result and the failure mode
+look different.**
+
+**Space available now:** 2,270 bytes free at `0x3EC950`, plus ~152 KB reclaimable from
+the AAC sound effects at `0x46712C`–`0x48E771` (both PSRAM). XIP `.text` still has zero
+free bytes and that has not changed.
+
+**Still unproven:** only 12 bytes were executed. Larger code, a real GCC build, literal
+pools, and whether PSRAM code can safely use its own data are all untested.
+
 ## 9. Retracted / corrected beliefs
 
 | Was believed | Actually |

@@ -62,10 +62,13 @@ Superseded by: `analysis/images_v2/`, `analysis/fonts_v2/`, `extract_lvgl_fonts_
 
 - **OTA has no signature gate** (MD5 + A/B only) — modified images flash and boot; v4 is proven.
   The brick risk is **boot-time execution order** (LVGL objects created during splash), not signing.
+- **PSRAM IS EXECUTABLE — confirmed on hardware 2026-09-15.** 12 bytes of new code at
+  file `0x3EC950` (VA `0x3C3C4600`) executed, and tail-called back into XIP `.text`
+  successfully. **The code tier is open.** See `FIELD_NOTES.md` §8c and
+  `Tools/fwbuilder/test_psram_exec.py`.
 - **There is NO cave in XIP `.text`.** On 11.53, zero runs of even 64 zero/`0xFF` bytes in
-  all 2,188,248 bytes of it. Free space exists only in PSRAM: 2,270 bytes at `0x3EC950`,
-  plus ~152 KB reclaimable from the AAC sound effects. So **whether PSRAM is executable
-  is the single fact gating the code tier** — `Tools/fwbuilder/test_psram_exec.py`.
+  all 2,188,248 bytes of it. Put code in PSRAM instead: 2,270 free bytes at `0x3EC950`,
+  plus ~152 KB reclaimable from the AAC sound effects at `0x46712C`–`0x48E771`.
 - **LVGL 8 `lv_font_t` order is `get_glyph_dsc` FIRST, `get_glyph_bitmap` second.**
   Getting it backwards is not a near miss: on `get_glyph_dsc`, `r1` is the *output struct
   pointer*. Tell them apart by disassembly — dsc opens `cmp r2,#9` (4 args), bitmap opens
