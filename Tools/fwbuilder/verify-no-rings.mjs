@@ -25,8 +25,25 @@ ok('G1  build is 1.0.11.53', A.includes('Flyme XR 1.0.11.53.20241126_Air_intl_FR
 ok('G2  length unchanged', A.length===B.length, `${A.length.toLocaleString()} bytes`);
 
 let diff=[]; for(let i=0;i<A.length;i++) if(A[i]!==B[i]) diff.push(i);
-ok('G3  exactly one byte changed, at the border_opa immediate',
-   diff.length===1 && diff[0]===OPA, `changed: ${diff.map(x=>'0x'+x.toString(16)).join(' ')}`);
+// The .text/data split: below TEXT is PSRAM-copied data (images, strings, fonts),
+// at or above it is executable code. Splitting the gate this way lets the SAME gates
+// run against a COMBINED build -- no-rings stacked with a data-only patch such as the
+// BIMA wordmark -- while keeping the claim that matters exactly as strong: this patch
+// changes ONE byte of CODE and nothing else executable moves.
+const TEXT = 0x469954;
+const codeDiff = diff.filter(i => i >= TEXT), dataDiff = diff.filter(i => i < TEXT);
+ok('G3  exactly one byte of CODE changed, at the border_opa immediate',
+   codeDiff.length===1 && codeDiff[0]===OPA,
+   `code bytes changed: ${codeDiff.map(x=>'0x'+x.toString(16)).join(' ') || 'none'}`);
+// Standalone, a data change is unexplained and must fail. Pass --combined only when
+// another patch is deliberately stacked in, and verify that one with its own gates.
+const COMBINED = process.argv.includes('--combined');
+ok('G3b no data bytes changed' + (COMBINED ? ' beyond the stacked patch' : ''),
+   COMBINED || dataDiff.length===0,
+   dataDiff.length
+     ? `${dataDiff.length} data byte(s), 0x${dataDiff[0].toString(16)}..0x${dataDiff[dataDiff.length-1].toString(16)}`
+       + (COMBINED ? ' -- declared as a stacked patch; run ITS verifier too' : ' -- UNEXPLAINED')
+     : 'none');
 
 const so=movs(A,OPA), po=movs(B,OPA);
 ok('G4  stock border_opa was movs r1,#92', so && so.rd===1 && so.imm===92, `stock imm=${so?.imm}`);

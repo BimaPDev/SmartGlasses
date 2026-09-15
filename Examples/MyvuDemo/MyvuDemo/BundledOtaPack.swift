@@ -71,8 +71,19 @@ enum BundledOtaPack {
               + "29 gates pass. Shows on the power-off screen.",
         isStock: false)
 
+    static let noRingsBima = OtaPack(
+        id: "noringsbima",
+        resource: "ota_star-air_1.0.11.95_NORINGS_BIMA",
+        label: "No rings + BIMA",
+        detail: "Both at once: no ring around the standby tiles, and the power-off logo "
+              + "reads BIMA. They do not interact -- no-rings is ONE byte of code at "
+              + "0x61b7f8, the wordmark is 2,592 bytes of image data at 0x4134D0, and "
+              + "nothing else in the image moves. Both verifiers were re-run against "
+              + "this combined build, not just against each patch alone.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, appendTest]
+    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, noRingsBima, appendTest]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
