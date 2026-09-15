@@ -90,6 +90,29 @@ class Elf:
         s = self.sections.get(name)
         return s['data'] if s else b''
 
+    def func_symbols(self):
+        """{name: offset} for every FUNC symbol defined in .text.
+
+        A payload can hold more than one entry point -- detouring get_glyph_bitmap and
+        get_glyph_dsc needs two -- and the caller has to know where each one starts.
+        Guessing "the first function is at 0" only works for a single-function blob,
+        and -Os is free to order functions however it likes.
+        """
+        sym, strt = self.sections.get('.symtab'), self.sections.get('.strtab')
+        if not sym or not strt:
+            return {}
+        text_idx = list(self.sections).index('.text')
+        out = {}
+        for o in range(0, sym['size'], 16):
+            n, value, size, info, other, shndx = struct.unpack_from('<IIIBBH', sym['data'], o)
+            if (info & 0xF) != 2:          # STT_FUNC
+                continue
+            if shndx != text_idx:
+                continue
+            raw = strt['data'][n:]
+            out[raw[:raw.index(b'\0')].decode()] = value & ~1   # drop the Thumb bit
+        return out
+
     def reloc_count(self, section):
         """Relocations that apply to `section`, by name (.rel.X / .rela.X)."""
         n = 0
@@ -177,7 +200,10 @@ def build(src: Path, max_size=None, extra=()):
     if max_size is not None and len(text) > max_size:
         sys.exit(f'refusing: the blob is {len(text)} bytes but only {max_size} are '
                  f'available')
-    return text, cmd
+    syms = elf.func_symbols()
+    if not syms:
+        sys.exit('refusing: no FUNC symbols in .text -- cannot tell where to enter')
+    return text, cmd, syms
 
 
 def main():
@@ -190,10 +216,12 @@ def main():
     ap.add_argument('--disasm', action='store_true')
     a = ap.parse_args()
 
-    blob, cmd = build(Path(a.source), a.max_size)
+    blob, cmd, syms = build(Path(a.source), a.max_size)
     print(f'  source     {a.source}')
     print(f'  target     {TRIPLE} / {CPU}')
     print(f'  .text      {len(blob)} bytes, 0 relocations, no .data, no .bss')
+    for n, off in sorted(syms.items(), key=lambda kv: kv[1]):
+        print(f'  entry      {n} @ +{off}')
     if a.disasm:
         lines = disasm(blob, a.va)
         if lines:

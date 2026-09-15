@@ -115,18 +115,18 @@ enum BundledOtaPack {
 
     static let digitFlip = OtaPack(
         id: "digitflip",
-        resource: "ota_star-air_1.0.11.84_DIGITFLIP",
-        label: "TEST — compiled C in PSRAM",
-        detail: "The first COMPILED payload. 22 bytes of C, built with clang for "
-              + "cortex-m55 and dropped into the PSRAM hole; all nine fonts detour "
-              + "through it. It renders every digit as 9 minus itself.\n\n"
-              + "RINGS GONE + clock reads 92:75 at 07:24 -> compiled C runs in PSRAM. "
-              + "The toolchain works end to end.\n"
-              + "RINGS GONE + digits normal -> booted, payload never ran.\n"
-              + "RINGS STILL THERE -> faulted, A/B rolled back.\n\n"
-              + "Deliberately not the all-8s stub: this one needs a range test and "
-              + "arithmetic, so it proves the compiler is doing real work rather than "
-              + "emitting the same tail call by hand. Flash Stock to undo.",
+        resource: "ota_star-air_1.0.11.83_DIGITFLIP2",
+        label: "Compiled C — digits flipped",
+        detail: "60 bytes of C, built with clang for cortex-m55 and run from the PSRAM "
+              + "hole. Every decimal digit renders as 9 minus itself, so 07:24 shows as "
+              + "92:75 and letters are untouched.\n\n"
+              + "It detours BOTH halves of the font interface. The first version "
+              + "detoured only get_glyph_bitmap and the digits came out garbled: LVGL "
+              + "slices a glyph bitmap using box_w/box_h from get_glyph_dsc, so new "
+              + "pixels with the old dimensions misalign every row after the first. "
+              + "Two entry points in one blob fix it.\n\n"
+              + "Carries no-rings as a boot marker. Rings gone + 92:75 = it ran; rings "
+              + "still there = it faulted and rolled back. Flash Stock to undo.",
         isStock: false)
 
     /// Stock first: it is the one to reach for when something is wrong.

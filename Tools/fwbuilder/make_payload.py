@@ -63,7 +63,22 @@ def main():
     if BUILD not in d:
         sys.exit('refusing: not 1.0.11.53_Air_intl_FR')
 
-    blob, _ = fwcc.build(Path(a.source), max_size=HOLE_LEN)
+    blob, _, syms = fwcc.build(Path(a.source), max_size=HOLE_LEN)
+
+    # Which entry point drives which callback. A payload may detour the bitmap side
+    # alone, but a payload that changes WHICH GLYPH is drawn must do both: LVGL slices
+    # the glyph bitstream using box_w/box_h from get_glyph_dsc, so returning new pixels
+    # with the old dimensions garbles every row after the first. That is not a theory --
+    # it is what the panel showed when digit_flip.c detoured only the bitmap.
+    entries = {}
+    if 'bitmap_stub' in syms:
+        entries['bitmap'] = syms['bitmap_stub']
+    elif 'stub' in syms:
+        entries['bitmap'] = syms['stub']
+    else:
+        sys.exit("refusing: the payload defines neither `bitmap_stub` nor `stub`")
+    if 'dsc_stub' in syms:
+        entries['dsc'] = syms['dsc_stub']
 
     # --- find every font, which also proves the struct layout ---------------------
     fonts = [o for o in range(PSRAM_LO, PSRAM_HI - 8, 4)
@@ -84,13 +99,20 @@ def main():
         sys.exit(f'refusing: the hole at 0x{HOLE:06X} is not empty -- already patched?')
 
     stub_va = HOLE + DATA_DELTA
-    new_ptr = stub_va | 1
+    bmp_ptr = (stub_va + entries['bitmap']) | 1
+    dsc_ptr = (stub_va + entries['dsc']) | 1 if 'dsc' in entries else None
 
     marker = d[NO_RINGS] == 0
     print(f'  payload      {a.source}')
     print(f'  blob         {len(blob)} bytes -> file 0x{HOLE:06X} (VA 0x{stub_va:08X}), '
           f'{HOLE_LEN - len(blob)} bytes of the hole left')
-    print(f'  fonts        {len(fonts)} lv_font_t, get_glyph_bitmap -> 0x{new_ptr:08X}')
+    print(f'  fonts        {len(fonts)} lv_font_t')
+    print(f'    get_glyph_bitmap (+4) -> 0x{bmp_ptr:08X}   [+{entries["bitmap"]}]')
+    if dsc_ptr:
+        print(f'    get_glyph_dsc    (+0) -> 0x{dsc_ptr:08X}   [+{entries["dsc"]}]')
+    else:
+        print(f'    get_glyph_dsc    (+0) -> unchanged'
+              f'   <-- metrics will come from the ORIGINAL glyph')
     print(f'  boot marker  no-rings is {"PRESENT" if marker else "ABSENT"}'
           f'{"" if marker else "  <-- run make_no_rings.py FIRST, or the result is ambiguous"}')
     lines = fwcc.disasm(blob, stub_va)
@@ -110,12 +132,15 @@ def main():
 
     d[HOLE:HOLE + len(blob)] = blob
     for f in fonts:
-        struct.pack_into('<I', d, f + 4, new_ptr)
+        struct.pack_into('<I', d, f + 4, bmp_ptr)
+        if dsc_ptr:
+            struct.pack_into('<I', d, f, dsc_ptr)
 
     out = a.outfile or a.infile.replace('.bin', '_payload.bin')
     Path(out).write_bytes(bytes(d))
     print(f'\n  wrote {out}  ({len(d):,} bytes, unchanged length, '
-          f'{len(blob)} bytes of COMPILED CODE + {len(fonts)} pointers)')
+          f'{len(blob)} bytes of COMPILED CODE + '
+          f'{len(fonts) * (2 if dsc_ptr else 1)} pointers)')
 
 
 if __name__ == '__main__':

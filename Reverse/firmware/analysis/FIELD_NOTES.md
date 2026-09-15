@@ -500,8 +500,20 @@ look different.**
 the AAC sound effects at `0x46712C`–`0x48E771` (both PSRAM). XIP `.text` still has zero
 free bytes and that has not changed.
 
-**Still unproven:** only 12 bytes were executed. Larger code, a real GCC build, literal
-pools, and whether PSRAM code can safely use its own data are all untested.
+**COMPILED C ALSO CONFIRMED, same day.** A clang payload (cortex-m55, no linker) ran
+from the same hole — see `Tools/fwbuilder/TOOLCHAIN.md`. No relocations are needed
+because vendor functions are called through absolute-address function pointers.
+
+**Substituting a glyph means detouring BOTH font callbacks.** The first compiled payload
+changed only `get_glyph_bitmap` and the digits came out garbled rather than flipped. The
+code was correct; the font interface was left inconsistent. LVGL decodes a glyph bitmap
+as a continuous bitstream with no row padding, and the dimensions that slice it into rows
+come from `get_glyph_dsc` — so the flipped glyph's pixels were being cut up using the
+original glyph's `box_w`. Measured `box_w` across these faces: 1,2,3,4,5,7,9,10, so most
+digit pairs disagree and only the accidentally-matching ones rendered cleanly.
+
+**Still unproven:** no payload has used `.data`, `.bss`, a string literal or a literal
+pool. `fwcc.py` refuses each of those rather than guessing.
 
 ## 9. Retracted / corrected beliefs
 
