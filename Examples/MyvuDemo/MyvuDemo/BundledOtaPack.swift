@@ -60,8 +60,19 @@ enum BundledOtaPack {
               + "need. If it garbles or does not boot, that route is closed.",
         isStock: false)
 
+    static let bimaWordmark = OtaPack(
+        id: "bimawordmark",
+        resource: "ota_star-air_1.0.11.96_BIMA",
+        label: "BIMA wordmark",
+        detail: "The power-off logo reads BIMA instead of MYVU. Pure data: the 2,592 "
+              + "bytes of pixel payload at 0x4134D0 are redrawn and nothing else moves "
+              + "-- descriptor, palette and every instruction are byte-identical to "
+              + "stock, and the image length is unchanged. The safest patch here. "
+              + "29 gates pass. Shows on the power-off screen.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, midClock, noRings, appendTest]
+    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, appendTest]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
