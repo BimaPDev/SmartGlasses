@@ -113,8 +113,24 @@ enum BundledOtaPack {
               + "Photograph the standby screen either way. Flash Stock to undo.",
         isStock: false)
 
+    static let digitFlip = OtaPack(
+        id: "digitflip",
+        resource: "ota_star-air_1.0.11.84_DIGITFLIP",
+        label: "TEST — compiled C in PSRAM",
+        detail: "The first COMPILED payload. 22 bytes of C, built with clang for "
+              + "cortex-m55 and dropped into the PSRAM hole; all nine fonts detour "
+              + "through it. It renders every digit as 9 minus itself.\n\n"
+              + "RINGS GONE + clock reads 92:75 at 07:24 -> compiled C runs in PSRAM. "
+              + "The toolchain works end to end.\n"
+              + "RINGS GONE + digits normal -> booted, payload never ran.\n"
+              + "RINGS STILL THERE -> faulted, A/B rolled back.\n\n"
+              + "Deliberately not the all-8s stub: this one needs a range test and "
+              + "arithmetic, so it proves the compiler is doing real work rather than "
+              + "emitting the same tail call by hand. Flash Stock to undo.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, noRingsBima, psramExec2, appendTest]
+    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, noRingsBima, psramExec2, digitFlip, appendTest]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
