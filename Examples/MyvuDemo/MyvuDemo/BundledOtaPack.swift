@@ -82,8 +82,23 @@ enum BundledOtaPack {
               + "this combined build, not just against each patch alone.",
         isStock: false)
 
+    static let psramExec = OtaPack(
+        id: "psramexec",
+        resource: "ota_star-air_1.0.11.86_PSRAMEXEC",
+        label: "TEST — can PSRAM run code?",
+        detail: "EXPERIMENT, not a feature. 12 bytes of NEW code in the free PSRAM hole "
+              + "at 0x3EC950, and the clock font's get_glyph_bitmap pointer aimed at it. "
+              + "The stub forces every glyph to '8' and tail-calls the real function.\n\n"
+              + "CLOCK READS 88:88 -> PSRAM executes; the code tier is open.\n"
+              + "WILL NOT BOOT -> PSRAM cannot execute. A/B rollback recovers it.\n"
+              + "CLOCK NORMAL -> the stub never ran; wrong font, and NOT an answer "
+              + "about PSRAM.\n\n"
+              + "This is the first build here that creates instructions and jumps into "
+              + "them, so it is the riskiest so far. Flash Stock to undo.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, noRingsBima, appendTest]
+    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, noRingsBima, psramExec, appendTest]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))

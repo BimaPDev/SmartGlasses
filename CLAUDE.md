@@ -29,6 +29,20 @@ Three regions, not one flat base:
   rule is `0x10000` low; its vtable footnote is the correct one.
 - **Data:** `file = VA − 0x3BFD7C0C`. That constant is the PSRAM copy delta (`0x283F4`),
   not a "TRACE quirk". Never use `VA − 0x3C000000`.
+- **THE REGION BOUNDS AND THE DATA DELTA ARE PER BUILD.** The table above is 12.83's.
+  Every build states its own in a copy descriptor at file `0x0002C8`, as
+  `(src_start, src_end, dst_start, dst_end)` in VAs — read it, never assume:
+
+  | | 1.0.12.83 | **1.0.11.53** |
+  |---|---|---|
+  | PSRAM region (file) | `0x0283F4`–`0x469954` | **`0x028350`–`0x4A1270`** |
+  | data delta | `0x3BFD7C0C` | **`0x3BFD7CB0`** |
+  | XIP `.text` begins | `0x469954` | **`0x4A1270`** |
+
+  The two deltas are 164 bytes apart, which is the nastiest possible gap: using the
+  wrong one still lands inside plausible data, so an image decodes into something that
+  *looks* almost right. Confirmed on 11.53 by the wordmark work — 12.83's constant gives
+  an all-zero palette and a bitmap shifted ~2.3 rows, and still renders as a wordmark.
 
 ### Known-bad artifacts — do not trust
 
@@ -39,7 +53,8 @@ Three regions, not one flat base:
 | `ADDRESS_AUDIT.md` sensor_hub | size is `0x16734`, not `0x100000`; ~10,524 strings misattributed |
 | `analysis/tile_crack/**`, `extracted_images/` | "112 px strip tiling" was a wrong-offset artifact |
 | `extract_lvgl_fonts.py` + fonts manifest | `bitmap_off` off by 1–2 B; `row_shift` heuristics exist only to hide it |
-| `STAR_AIR_*` writeups | claim AAC payloads aren't in the OTA — they are, at `0x431a64`–`0x463b46` |
+| `STAR_AIR_*` writeups | claim AAC payloads aren't in the OTA — they are, but see the AAC row below |
+| **AAC location `0x431a64`–`0x463b46`** | **WRONG.** That range is UTF-8 Japanese UI text (`もう一度開始してください`, entropy 5.96). Real AAC is `0x46712C`–`0x48E771` in 11.53 — ADTS frames carrying the encoder tag `Lavc60.17.100`, entropy 7.99, validated by chaining frame lengths. A 2-byte `FFF1` sync scan hits 1,440 times across the image and proves nothing. |
 
 Superseded by: `analysis/images_v2/`, `analysis/fonts_v2/`, `extract_lvgl_fonts_v2.py`.
 
@@ -47,6 +62,14 @@ Superseded by: `analysis/images_v2/`, `analysis/fonts_v2/`, `extract_lvgl_fonts_
 
 - **OTA has no signature gate** (MD5 + A/B only) — modified images flash and boot; v4 is proven.
   The brick risk is **boot-time execution order** (LVGL objects created during splash), not signing.
+- **There is NO cave in XIP `.text`.** On 11.53, zero runs of even 64 zero/`0xFF` bytes in
+  all 2,188,248 bytes of it. Free space exists only in PSRAM: 2,270 bytes at `0x3EC950`,
+  plus ~152 KB reclaimable from the AAC sound effects. So **whether PSRAM is executable
+  is the single fact gating the code tier** — `Tools/fwbuilder/test_psram_exec.py`.
+- **LVGL 8 `lv_font_t` order is `get_glyph_dsc` FIRST, `get_glyph_bitmap` second.**
+  Getting it backwards is not a near miss: on `get_glyph_dsc`, `r1` is the *output struct
+  pointer*. Tell them apart by disassembly — dsc opens `cmp r2,#9` (4 args), bitmap opens
+  `cmp r1,#9` (2 args).
 - **Assistant domains are reached via `NLU_RESULT` / `CONNECT_DATA`, not `code:102`.**
   Four probe runs sent VUI `code:102` and got silence; the messages never reached
   `DomainRuntime`'s matcher, so the silence said nothing about the domain. Namespace
