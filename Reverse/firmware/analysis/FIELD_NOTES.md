@@ -512,8 +512,24 @@ come from `get_glyph_dsc` — so the flipped glyph's pixels were being cut up us
 original glyph's `box_w`. Measured `box_w` across these faces: 1,2,3,4,5,7,9,10, so most
 digit pairs disagree and only the accidentally-matching ones rendered cleanly.
 
+**THE FIX IS CONFIRMED ON HARDWARE, same day.** With both callbacks detoured, the panel
+read `81:75` at 18:24 — cleanly formed digits, correct spacing, and a full notification
+card (`Open MYVU AR App to connect the phone`) rendering perfectly. Clean output after
+the two-entry fix is also what confirms the `box_w` diagnosis: the repair predicted from
+it worked.
+
+So the following are all now hardware-confirmed:
+
+| | |
+|---|---|
+| PSRAM executes hand-written Thumb | ✅ |
+| PSRAM executes **compiled C** | ✅ |
+| **several entry points in one blob**, each detouring a different callback | ✅ |
+| calls from PSRAM back into vendor `.text`, in both stubs | ✅ |
+
 **Still unproven:** no payload has used `.data`, `.bss`, a string literal or a literal
-pool. `fwcc.py` refuses each of those rather than guessing.
+pool. `fwcc.py` refuses each of those rather than guessing. That is the next real
+frontier, because any payload that holds its own text needs at least one of them.
 
 ## 9. Retracted / corrected beliefs
 
