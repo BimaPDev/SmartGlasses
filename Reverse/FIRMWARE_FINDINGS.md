@@ -479,6 +479,12 @@ TRACE of its name. Finding the pad still needs a board photo / fixture
 schematic, or a Ghidra recursive-descent of `eshell_platform.c` once that
 `.text` is force-disassembled.
 
+> **Partial answer from execution (1.0.11.53).** The register block the trace
+> path writes to is `0x50190000`–`0x501903FF` — TX data at `+0x8`, FIFO level in
+> bits [12:8] of `+0xC`, `0x20` stride. That does not give the pads, but it
+> identifies the controller. The same port carries full ASSERT crash dumps
+> (registers + RTOS thread list). See [`M55_TRACE_UART.md`](M55_TRACE_UART.md).
+
 ### 8.5 BLE `handleSystemMsg` dispatch
 
 Packed inner-action names sit next to the miss path
