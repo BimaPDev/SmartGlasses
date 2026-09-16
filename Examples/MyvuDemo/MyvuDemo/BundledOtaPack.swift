@@ -60,28 +60,6 @@ enum BundledOtaPack {
               + "need. If it garbles or does not boot, that route is closed.",
         isStock: false)
 
-    static let bimaWordmark = OtaPack(
-        id: "bimawordmark",
-        resource: "ota_star-air_1.0.11.96_BIMA",
-        label: "BIMA wordmark",
-        detail: "The power-off logo reads BIMA instead of MYVU. Pure data: the 2,592 "
-              + "bytes of pixel payload at 0x4134D0 are redrawn and nothing else moves "
-              + "-- descriptor, palette and every instruction are byte-identical to "
-              + "stock, and the image length is unchanged. The safest patch here. "
-              + "29 gates pass. Shows on the power-off screen.",
-        isStock: false)
-
-    static let noRingsBima = OtaPack(
-        id: "noringsbima",
-        resource: "ota_star-air_1.0.11.95_NORINGS_BIMA",
-        label: "No rings + BIMA",
-        detail: "Both at once: no ring around the standby tiles, and the power-off logo "
-              + "reads BIMA. They do not interact -- no-rings is ONE byte of code at "
-              + "0x61b7f8, the wordmark is 2,592 bytes of image data at 0x4134D0, and "
-              + "nothing else in the image moves. Both verifiers were re-run against "
-              + "this combined build, not just against each patch alone.",
-        isStock: false)
-
     static let psramExec = OtaPack(
         id: "psramexec",
         resource: "ota_star-air_1.0.11.86_PSRAMEXEC",
@@ -129,8 +107,24 @@ enum BundledOtaPack {
               + "still there = it faulted and rolled back. Flash Stock to undo.",
         isStock: false)
 
+    static let bimaFull = OtaPack(
+        id: "bimafull",
+        resource: "ota_star-air_1.0.11.82_BIMA_FULL",
+        label: "BIMA — full rebrand",
+        detail: "Everything that can say BIMA, does. No rings on the standby tiles, the "
+              + "power-off logo redrawn, and all 179 MYVU strings across every language "
+              + "renamed.\n\n"
+              + "Pure data apart from one byte: MYVU and BIMA are both 4 ASCII bytes, so "
+              + "no string moves and no pointer changes. Only the no-rings operand "
+              + "touches code. 15 rebrand gates plus the no-rings and wordmark sets.\n\n"
+              + "NOT the boot logo — that is not in the OTA. It lives in a bootloader "
+              + "partition the update never touches, so it needs physical flash access. "
+              + "The phone app may also still call the glasses MYVU: that name comes "
+              + "from the NV partition, not this image.",
+        isStock: false)
+
     /// Stock first: it is the one to reach for when something is wrong.
-    static let all: [OtaPack] = [stock, midClock, noRings, bimaWordmark, noRingsBima, psramExec2, digitFlip, appendTest]
+    static let all: [OtaPack] = [stock, midClock, noRings, bimaFull, psramExec2, digitFlip, appendTest]
 
     static func load(_ pack: OtaPack) throws -> [OtaFile] {
         try AirOta.files(fromZip: Data(contentsOf: locate(pack)))
